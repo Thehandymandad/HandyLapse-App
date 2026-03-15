@@ -1,4 +1,5 @@
 import { createServerClient } from "@supabase/ssr";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 
 export async function createClient() {
@@ -24,4 +25,12 @@ export async function createClient() {
       },
     }
   );
+}
+
+/** Client con service role: bypassa RLS. Usare solo per lettura pubblica (es. pagina progetto per id). */
+export function createServiceRoleClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) throw new Error("Supabase service role non configurata");
+  return createSupabaseClient(url, key);
 }

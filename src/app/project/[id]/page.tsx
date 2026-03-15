@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createServiceRoleClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ProjectAnalyzer } from "@/components/project-analyzer";
@@ -12,7 +12,11 @@ interface ProjectPageProps {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { id } = await params;
-  const supabase = await createClient();
+  // Service role bypassa RLS: la pagina progetto è pubblica per id (anon non può leggere con RLS)
+  const supabase =
+    process.env.SUPABASE_SERVICE_ROLE_KEY != null
+      ? createServiceRoleClient()
+      : await createClient();
 
   const { data: project, error } = await supabase
     .from("projects")
