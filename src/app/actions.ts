@@ -1,9 +1,8 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
-import { redirect } from "next/navigation";
 
-export type CreateProjectResult = { error?: string } | void;
+export type CreateProjectResult = { id?: string; error?: string };
 
 export async function createProject(formData: FormData): Promise<CreateProjectResult> {
   try {
@@ -31,17 +30,8 @@ export async function createProject(formData: FormData): Promise<CreateProjectRe
       return { error: error.message };
     }
 
-    redirect(`/project/${data.id}`);
+    return { id: data.id };
   } catch (err) {
-    if (
-      typeof err === "object" &&
-      err !== null &&
-      "digest" in err &&
-      typeof (err as { digest?: string }).digest === "string" &&
-      (err as { digest: string }).digest.startsWith("NEXT_REDIRECT")
-    ) {
-      throw err;
-    }
     console.error("[createProject] Unhandled error:", err);
     return {
       error: err instanceof Error ? err.message : "Failed to create project. Please try again.",

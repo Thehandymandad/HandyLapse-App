@@ -1,20 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createProject } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 
-function isRedirectError(error: unknown): boolean {
-  return (
-    typeof error === "object" &&
-    error !== null &&
-    "digest" in error &&
-    typeof (error as { digest?: string }).digest === "string" &&
-    (error as { digest: string }).digest.startsWith("NEXT_REDIRECT")
-  );
-}
-
 export function CreateProjectForm() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,9 +22,13 @@ export function CreateProjectForm() {
       const result = await createProject(formData);
       if (result?.error) {
         setError(result.error);
+        return;
+      }
+      if (result?.id) {
+        router.push(`/project/${result.id}`);
+        return;
       }
     } catch (e) {
-      if (isRedirectError(e)) throw e;
       setError(e instanceof Error ? e.message : "Qualcosa è andato storto. Riprova.");
     } finally {
       setIsLoading(false);
