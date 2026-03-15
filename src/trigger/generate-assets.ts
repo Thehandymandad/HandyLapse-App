@@ -1,18 +1,29 @@
 import { task } from "@trigger.dev/sdk/v3";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { GoogleGenAI } from "@google/genai";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+let _supabase: SupabaseClient | null = null;
+function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) throw new Error("Supabase env not configured");
+    _supabase = createClient(url, key);
+  }
+  return _supabase;
+}
 
-const googleAi = new GoogleGenAI({
-  apiKey: process.env.GOOGLE_GENAI_API_KEY ?? process.env.GEMINI_API_KEY ?? "",
-});
+let _googleAi: GoogleGenAI | null = null;
+function getGoogleAi(): GoogleGenAI {
+  if (!_googleAi) {
+    const apiKey = process.env.GOOGLE_GENAI_API_KEY ?? process.env.GEMINI_API_KEY ?? "";
+    _googleAi = new GoogleGenAI({ apiKey });
+  }
+  return _googleAi;
+}
 
 const STORAGE_BUCKET = "assets";
 
@@ -58,6 +69,7 @@ async function generateImageGoogleAndUpload(
   const config = { numberOfImages: 1 as const, aspectRatio: "9:16" as const };
   const promptSlice = prompt.slice(0, 1000);
 
+  const googleAi = getGoogleAi();
   let response: Awaited<ReturnType<typeof googleAi.models.generateImages>>;
   try {
     response = await googleAi.models.generateImages({
@@ -84,20 +96,21 @@ async function generateImageGoogleAndUpload(
 
   const imageBuffer = Buffer.from(imageBytes, "base64");
   const storagePath = `images/${projectId}/${filename}.png`;
-  const { error } = await supabase.storage
+  const { error } = await getSupabase().storage
     .from(STORAGE_BUCKET)
     .upload(storagePath, imageBuffer, { contentType: "image/png", upsert: true });
   if (error) throw error;
-  return supabase.storage.from(STORAGE_BUCKET).getPublicUrl(storagePath).data.publicUrl;
+  return getSupabase().storage.from(STORAGE_BUCKET).getPublicUrl(storagePath).data.publicUrl;
 }
 
 const VEO_POLL_INTERVAL_MS = 8000;
 
 async function pollVeoAndDownload(
-  operation: Awaited<ReturnType<typeof googleAi.models.generateVideos>>,
+  operation: Awaited<ReturnType<ReturnType<typeof getGoogleAi>["models"]["generateVideos"]>>,
   projectId: string,
   sceneId: string
 ): Promise<Buffer> {
+  const googleAi = getGoogleAi();
   let op = operation;
   while (!op.done) {
     await new Promise((r) => setTimeout(r, VEO_POLL_INTERVAL_MS));
@@ -148,6 +161,7 @@ async function generateVideoVeoFromImages(
   const fullPrompt = `Vertical 9:16. Full video in smooth timelapse style so the whole process is visible. Cinematic timelapse from first frame to last frame. ${prompt}`.slice(0, 1000);
   const textOnlyPrompt = `Vertical 9:16 portrait. Entire video in smooth timelapse style. Cinematic. ${prompt}`.slice(0, 1000);
 
+  const googleAi = getGoogleAi();
   let videoBuffer: Buffer;
 
   try {
@@ -191,14 +205,14 @@ async function uploadVideoBuffer(
   sceneId: string
 ): Promise<string> {
   const videoFileName = `video/${projectId}/${sceneId}.mp4`;
-  const { error } = await supabase.storage
+  const { error } = await getSupabase().storage
     .from(STORAGE_BUCKET)
     .upload(videoFileName, videoBuffer, {
       contentType: "video/mp4",
       upsert: true,
     });
   if (error) throw error;
-  return supabase.storage.from(STORAGE_BUCKET).getPublicUrl(videoFileName).data.publicUrl;
+  return getSupabase().storage.from(STORAGE_BUCKET).getPublicUrl(videoFileName).data.publicUrl;
 }
 
 export type StoryboardScene = {
@@ -217,7 +231,7 @@ export type StoryboardPayload = { scenes: StoryboardScene[] };
 export const generateSingleVideoTask = task({
   id: "generate-single-video",
   run: async (payload: { projectId: string; storyboard?: StoryboardPayload }) => {
-    const { data: project, error: projectError } = await supabase
+    const { data: project, error: projectError } = await getSupabase()
       .from("projects")
       .select("id, user_prompt, status")
       .eq("id", payload.projectId)
@@ -232,19 +246,19 @@ export const generateSingleVideoTask = task({
       throw new Error("Storyboard con almeno una scena richiesto (start_image_prompt, end_image_prompt, video_transition_prompt)");
     }
 
-    await supabase
+    await getSupabase()
       .from("projects")
       .update({ status: "generating_assets", updated_at: new Date().toISOString() })
       .eq("id", payload.projectId);
 
     const startImageUrl = await generateImageGoogleAndUpload(scene.start_image_prompt, payload.projectId, "start");
-    await supabase
+    await getSupabase()
       .from("projects")
       .update({ start_image_url: startImageUrl, updated_at: new Date().toISOString() })
       .eq("id", payload.projectId);
 
     const endImageUrl = await generateImageGoogleAndUpload(scene.end_image_prompt, payload.projectId, "end");
-    await supabase
+    await getSupabase()
       .from("projects")
       .update({ end_image_url: endImageUrl, updated_at: new Date().toISOString() })
       .eq("id", payload.projectId);
@@ -260,7 +274,7 @@ export const generateSingleVideoTask = task({
     );
 
     const estimatedCostUsd = estimateCostPerVideo();
-    await supabase
+    await getSupabase()
       .from("projects")
       .update({
         video_url: videoUrl,
