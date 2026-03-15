@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { createProject } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 
 export function CreateProjectForm() {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,14 +18,20 @@ export function CreateProjectForm() {
 
     try {
       const result = await createProject(formData);
-      if (result?.error) {
+      if (!result) {
+        setError("Nessuna risposta dal server. Riprova.");
+        return;
+      }
+      if (result.error) {
         setError(result.error);
         return;
       }
-      if (result?.id) {
-        router.push(`/project/${result.id}`);
+      if (result.id) {
+        // Navigazione full page: funziona sempre (anche Safari/iPhone)
+        window.location.href = `/project/${result.id}`;
         return;
       }
+      setError("Risposta non valida. Riprova.");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Qualcosa è andato storto. Riprova.");
     } finally {

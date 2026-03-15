@@ -18,7 +18,8 @@ export async function createProject(formData: FormData): Promise<CreateProjectRe
       .from("projects")
       .insert({
         user_prompt: prompt.trim(),
-        target_url: "", // flusso "solo idea": nessun URL; colonna può essere NOT NULL nel DB
+        target_url: "",
+        url: "", // compatibilità se la colonna url è ancora NOT NULL
         status: "pending",
         updated_at: new Date().toISOString(),
       })
