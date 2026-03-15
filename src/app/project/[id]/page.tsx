@@ -1,5 +1,4 @@
 import { createClient, getServiceRoleClientSafe } from "@/lib/supabase/server";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ProjectAnalyzer } from "@/components/project-analyzer";
 import { ProjectScenesPreview } from "@/components/project-scenes-preview";
@@ -22,7 +21,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     .single();
 
   if (error || !project) {
-    notFound();
+    return (
+      <div className="min-h-screen bg-grid-pattern flex flex-col items-center justify-center px-4">
+        <div className="max-w-md w-full p-6 rounded-2xl border-2 border-border bg-card shadow-3d space-y-4">
+          <h1 className="text-xl font-semibold text-foreground">Progetto non trovato</h1>
+          <p className="text-sm text-muted-foreground">Id richiesto: <code className="bg-muted px-1 rounded">{id}</code></p>
+          {error != null && (
+            <p className="text-sm text-destructive break-all">Errore Supabase: {error.message}</p>
+          )}
+          <p className="text-xs text-muted-foreground">
+            Se vedi &quot;row-level security&quot; o &quot;policy&quot;: in Supabase SQL Editor esegui la migration{" "}
+            <code className="bg-muted px-1 rounded">20240319000000_allow_public_read_projects.sql</code>.
+            Oppure imposta <code className="bg-muted px-1 rounded">SUPABASE_SERVICE_ROLE_KEY</code> su Vercel.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center text-sm font-semibold text-handy-yellow hover:underline"
+          >
+            ← Torna alla home
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   const isPromptOnly = !!project.user_prompt?.trim();
