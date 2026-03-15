@@ -27,10 +27,10 @@ export async function createClient() {
   );
 }
 
-/** Client con service role: bypassa RLS. Usare solo per lettura pubblica (es. pagina progetto per id). */
-export function createServiceRoleClient() {
+/** Client con service role: bypassa RLS. Ritorna null se env non configurata (es. build). */
+export function getServiceRoleClientSafe(): ReturnType<typeof createSupabaseClient> | null {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) throw new Error("Supabase service role non configurata");
+  if (!url?.trim() || !key?.trim()) return null;
   return createSupabaseClient(url, key);
 }
