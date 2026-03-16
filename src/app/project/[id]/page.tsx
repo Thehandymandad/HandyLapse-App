@@ -70,27 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </header>
       <main className="flex-1 flex flex-col items-center justify-center px-4 pb-12">
         <div className="w-full max-w-lg p-6 sm:p-8 rounded-2xl border-2 border-border bg-card shadow-3d hover:shadow-3d-lg transition-shadow duration-300 space-y-6">
-          {/* Schermata unica "Sto realizzando il video" quando in attesa o in generazione */}
-          {isPromptOnly && (project.status === "pending" || project.status === "generating_assets") ? (
-            <div className="flex flex-col items-center justify-center py-8 sm:py-12 text-center">
-              <div className="w-14 h-14 rounded-full border-4 border-handy-yellow border-t-transparent animate-spin mb-6" />
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Sto realizzando il video per te
-              </h2>
-              <p className="text-sm text-muted-foreground max-w-xs">
-                Le immagini e il video stanno venendo generati. La pagina si aggiorna da sola.
-              </p>
-              <SingleVideoGenerator
-                projectId={project.id}
-                status={project.status}
-                userPrompt={project.user_prompt}
-                videoUrl={project.video_url}
-                startImageUrl={project.start_image_url}
-                endImageUrl={project.end_image_url}
-              />
-            </div>
-          ) : (
-            <>
+          <>
           <h1 className="text-2xl font-semibold text-foreground">
             {isPromptOnly ? "Il tuo video" : "Project"}
           </h1>

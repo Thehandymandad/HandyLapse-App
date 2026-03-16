@@ -82,10 +82,18 @@ export function SingleVideoGenerator({
   const displayEndUrl = live?.end_image_url ?? endImageUrl;
 
   if (displayStatus === "pending" || displayStatus === "generating_assets") {
-    if (error) {
-      return <p className="text-sm text-destructive">{error}</p>;
-    }
-    return null;
+    return (
+      <div className="flex flex-col items-center justify-center py-6 text-center space-y-3">
+        <div className="w-10 h-10 rounded-full border-4 border-handy-yellow border-t-transparent animate-spin" />
+        <h2 className="text-sm font-semibold text-foreground">
+          Sto realizzando il video per te
+        </h2>
+        <p className="text-xs text-muted-foreground max-w-xs">
+          Le immagini e il video stanno venendo generati. La pagina si aggiorna da sola appena è pronto.
+        </p>
+        {error && <p className="text-xs text-destructive">{error}</p>}
+      </div>
+    );
   }
 
   if (displayStatus === "completed") {
