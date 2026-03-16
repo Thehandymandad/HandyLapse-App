@@ -5,6 +5,8 @@ import { ProjectScenesPreview } from "@/components/project-scenes-preview";
 import { SingleVideoGenerator } from "@/components/single-video-generator";
 import { CreditsBadge } from "@/components/credits-badge";
 
+export const dynamic = "force-dynamic";
+
 interface ProjectPageProps {
   params: Promise<{ id: string }>;
 }

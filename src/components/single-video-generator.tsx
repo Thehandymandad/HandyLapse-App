@@ -45,10 +45,11 @@ export function SingleVideoGenerator({
       });
   }, [projectId, status, userPrompt, started, router]);
 
-  // Polling per aggiornare la pagina quando il worker completa (così il video si vede subito)
+  // Polling: refresh immediato + ogni 1.5s in generazione così vediamo "completed" appena il backend finisce
   useEffect(() => {
     if (status !== "generating_assets" && status !== "completed") return;
-    const interval = status === "generating_assets" ? 1500 : 3000;
+    router.refresh();
+    const interval = 1500;
     const t = setInterval(() => router.refresh(), interval);
     return () => clearInterval(t);
   }, [status, router]);
