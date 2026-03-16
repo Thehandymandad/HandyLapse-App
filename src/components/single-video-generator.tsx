@@ -12,6 +12,13 @@ interface SingleVideoGeneratorProps {
   endImageUrl: string | null;
 }
 
+type LiveProject = {
+  status: string;
+  video_url: string | null;
+  start_image_url: string | null;
+  end_image_url: string | null;
+};
+
 export function SingleVideoGenerator({
   projectId,
   status,
@@ -23,6 +30,7 @@ export function SingleVideoGenerator({
   const router = useRouter();
   const [started, setStarted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [live, setLive] = useState<LiveProject | null>(null);
 
   useEffect(() => {
     if (status !== "pending" || !userPrompt?.trim() || started) return;
@@ -45,51 +53,68 @@ export function SingleVideoGenerator({
       });
   }, [projectId, status, userPrompt, started, router]);
 
-  // Polling: refresh immediato + ogni 1.5s in generazione così vediamo "completed" appena il backend finisce
+  // Polling API stato: dati sempre freschi dal DB; quando completed aggiorniamo subito la UI (senza aspettare refresh pagina)
   useEffect(() => {
-    if (status !== "generating_assets" && status !== "completed") return;
-    router.refresh();
-    const interval = 1500;
-    const t = setInterval(() => router.refresh(), interval);
-    return () => clearInterval(t);
-  }, [status, router]);
+    if (status !== "pending" && status !== "generating_assets") return;
 
-  // Durante pending e generating_assets non mostriamo UI qui: la pagina mostra "Sto realizzando il video per te"
-  if (status === "pending" || status === "generating_assets") {
+    let intervalId: ReturnType<typeof setInterval>;
+
+    const fetchStatus = () => {
+      fetch(`/api/project/${projectId}/status`)
+        .then((res) => res.ok ? res.json() : null)
+        .then((data: LiveProject | null) => {
+          if (data) {
+            setLive(data);
+            if (data.status === "completed") clearInterval(intervalId);
+          }
+        })
+        .catch(() => {});
+    };
+
+    fetchStatus();
+    intervalId = setInterval(fetchStatus, 1500);
+    return () => clearInterval(intervalId);
+  }, [projectId, status]);
+
+  const displayStatus = live?.status ?? status;
+  const displayVideoUrl = live?.video_url ?? videoUrl;
+  const displayStartUrl = live?.start_image_url ?? startImageUrl;
+  const displayEndUrl = live?.end_image_url ?? endImageUrl;
+
+  if (displayStatus === "pending" || displayStatus === "generating_assets") {
     if (error) {
       return <p className="text-sm text-destructive">{error}</p>;
     }
     return null;
   }
 
-  if (status === "completed") {
+  if (displayStatus === "completed") {
     return (
       <div className="space-y-4">
-        {/* Anteprima immagini + video in fila */}
         <div className="grid grid-cols-2 gap-3">
-          {startImageUrl && (
+          {displayStartUrl && (
             <div className="rounded-xl overflow-hidden border-2 border-handy-yellow/30 shadow-3d-sm aspect-[9/16] max-h-[140px]">
-              <img src={startImageUrl} alt="Inizio" className="w-full h-full object-cover" />
+              <img src={displayStartUrl} alt="Inizio" className="w-full h-full object-cover" />
               <p className="text-[10px] text-center py-0.5 bg-handy-yellow/20 text-neutral-700 font-medium">Inizio</p>
             </div>
           )}
-          {endImageUrl && (
+          {displayEndUrl && (
             <div className="rounded-xl overflow-hidden border-2 border-handy-yellow/30 shadow-3d-sm aspect-[9/16] max-h-[140px]">
-              <img src={endImageUrl} alt="Fine" className="w-full h-full object-cover" />
+              <img src={displayEndUrl} alt="Fine" className="w-full h-full object-cover" />
               <p className="text-[10px] text-center py-0.5 bg-handy-yellow/20 text-neutral-700 font-medium">Fine</p>
             </div>
           )}
         </div>
         <div className="space-y-2">
           <h3 className="text-sm font-medium text-foreground">Il tuo video</h3>
-          {videoUrl ? (
+          {displayVideoUrl ? (
             <>
               <div
                 className="mx-auto w-full max-w-[280px] overflow-hidden rounded-xl border-2 border-handy-yellow/40 bg-neutral-100 shadow-3d hover:shadow-3d-lg transition-all duration-300"
                 style={{ aspectRatio: "9/16" }}
               >
                 <video
-                  src={videoUrl}
+                  src={displayVideoUrl}
                   controls
                   playsInline
                   preload="metadata"
@@ -98,7 +123,7 @@ export function SingleVideoGenerator({
                 />
               </div>
               <a
-                href={videoUrl}
+                href={displayVideoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm font-medium text-handy-yellow hover:underline"
