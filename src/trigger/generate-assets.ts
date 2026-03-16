@@ -48,8 +48,12 @@ const IMAGE_MODEL_FALLBACK = "imagen-4.0-generate-001";
 
 /** Veo: verticale 9:16, 720p. */
 const VEO_MODEL = process.env.VEO_MODEL ?? "veo-3.1-generate-preview";
-/** Veo accetta solo 4–8 secondi. Usiamo il massimo (8). */
-const VEO_DURATION_SEC = 8;
+/** Veo accetta solo 4–8 secondi. Usiamo 4 secondi per ridurre costi e forzare transizione veloce. */
+const VEO_DURATION_SEC = 4;
+
+/** Parole chiave aggiuntive per rendere il movimento molto rapido nei 4 secondi. */
+const VEO_SPEED_KEYWORDS =
+  "fast-paced hyperlapse, high-speed construction time-lapse, rapid dynamic transformation";
 
 /** Stima costo in USD per 1 video (1 storyboard Gemini + 2 immagini + 1 video Veo 8s). Fonte: prezzi indicativi Google AI Studio. */
 function estimateCostPerVideo(): number {
@@ -170,8 +174,13 @@ async function generateVideoVeoFromImages(
     resolution: "720p" as const,
   };
 
-  const fullPrompt = `Vertical 9:16. Full video in smooth timelapse style so the whole process is visible. Cinematic timelapse from first frame to last frame. ${prompt}`.slice(0, 1000);
-  const textOnlyPrompt = `Vertical 9:16 portrait. Entire video in smooth timelapse style. Cinematic. ${prompt}`.slice(0, 1000);
+  const fullPrompt = (
+    `Vertical 9:16. Full video in smooth timelapse style so the whole process is visible. ` +
+    `Cinematic timelapse from first frame to last frame. ${prompt}. ${VEO_SPEED_KEYWORDS}`
+  ).slice(0, 1000);
+  const textOnlyPrompt = (
+    `Vertical 9:16 portrait. Entire video in smooth timelapse style. Cinematic. ${prompt}. ${VEO_SPEED_KEYWORDS}`
+  ).slice(0, 1000);
 
   const googleAi = getGoogleAi();
   let videoBuffer: Buffer;
