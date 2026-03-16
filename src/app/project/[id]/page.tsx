@@ -68,6 +68,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </header>
       <main className="flex-1 flex flex-col items-center justify-center px-4 pb-12">
         <div className="w-full max-w-lg p-6 sm:p-8 rounded-2xl border-2 border-border bg-card shadow-3d hover:shadow-3d-lg transition-shadow duration-300 space-y-6">
+          {/* Schermata unica "Sto realizzando il video" quando in attesa o in generazione */}
+          {isPromptOnly && (project.status === "pending" || project.status === "generating_assets") ? (
+            <div className="flex flex-col items-center justify-center py-8 sm:py-12 text-center">
+              <div className="w-14 h-14 rounded-full border-4 border-handy-yellow border-t-transparent animate-spin mb-6" />
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                Sto realizzando il video per te
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-xs">
+                Le immagini e il video stanno venendo generati. La pagina si aggiorna da sola.
+              </p>
+              <SingleVideoGenerator
+                projectId={project.id}
+                status={project.status}
+                userPrompt={project.user_prompt}
+                videoUrl={project.video_url}
+                startImageUrl={project.start_image_url}
+                endImageUrl={project.end_image_url}
+              />
+            </div>
+          ) : (
+            <>
           <h1 className="text-2xl font-semibold text-foreground">
             {isPromptOnly ? "Il tuo video" : "Project"}
           </h1>
@@ -86,28 +107,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <dd className="text-foreground mt-0.5 break-all">{project.target_url}</dd>
             </div>
           )}
+          {project.status !== "pending" && project.status !== "generating_assets" && (
           <div>
             <dt className="text-muted-foreground">Status</dt>
             <dd>
               <span
                 className={`inline-flex px-2 py-1 rounded-md text-xs font-medium ${
-                  project.status === "pending"
-                    ? "bg-handy-yellow/20 text-neutral-800"
-                    : project.status === "analyzing"
-                      ? "bg-blue-500/20 text-blue-600"
-                      : project.status === "generating_assets"
-                        ? "bg-handy-yellow/20 text-neutral-800"
-                        : project.status === "completed"
-                          ? "bg-green-500/20 text-green-700"
-                          : project.status === "failed"
-                            ? "bg-red-500/20 text-red-600"
-                            : "bg-handy-yellow/20 text-neutral-800"
+                  project.status === "analyzing"
+                    ? "bg-blue-500/20 text-blue-600"
+                    : project.status === "completed"
+                      ? "bg-green-500/20 text-green-700"
+                      : project.status === "failed"
+                        ? "bg-red-500/20 text-red-600"
+                        : "bg-handy-yellow/20 text-neutral-800"
                 }`}
               >
                 {project.status.replace(/_/g, " ")}
               </span>
             </dd>
           </div>
+          )}
           {isPromptOnly ? (
             <SingleVideoGenerator
               projectId={project.id}
@@ -153,6 +172,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </Link>
           </div>
         </dl>
+            </>
+          )}
         </div>
       </main>
     </div>

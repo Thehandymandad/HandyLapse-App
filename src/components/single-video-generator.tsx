@@ -45,64 +45,23 @@ export function SingleVideoGenerator({
       });
   }, [projectId, status, userPrompt, started, router]);
 
+  // Polling per aggiornare la pagina quando il worker completa (così il video si vede subito)
   useEffect(() => {
     if (status !== "generating_assets" && status !== "completed") return;
-    const interval = status === "generating_assets" ? 2000 : 5000;
+    const interval = status === "generating_assets" ? 1500 : 3000;
     const t = setInterval(() => router.refresh(), interval);
     return () => clearInterval(t);
   }, [status, router]);
 
-  if (status === "pending" && userPrompt) {
-    return (
-      <div className="rounded-xl border-2 border-handy-yellow/40 bg-handy-yellow/10 p-4 space-y-2">
-        {error ? (
-          <p className="text-sm text-destructive">{error}</p>
-        ) : started ? (
-          <div className="flex items-center gap-2 text-neutral-800">
-            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-handy-yellow border-t-transparent" />
-            <span className="text-sm font-medium">Avvio generazione video...</span>
-          </div>
-        ) : (
-          <div className="flex items-center gap-2 text-neutral-800">
-            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-handy-yellow border-t-transparent" />
-            <span className="text-sm font-medium">Preparazione...</span>
-          </div>
-        )}
-      </div>
-    );
+  // Durante pending e generating_assets non mostriamo UI qui: la pagina mostra "Sto realizzando il video per te"
+  if (status === "pending" || status === "generating_assets") {
+    if (error) {
+      return <p className="text-sm text-destructive">{error}</p>;
+    }
+    return null;
   }
 
-  if (status === "generating_assets") {
-    return (
-      <div className="space-y-6">
-        <div className="flex items-center gap-2 text-neutral-800">
-          <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-handy-yellow border-t-transparent" />
-          <span className="text-sm font-medium">Generazione in corso...</span>
-        </div>
-
-        {/* Le due immagini che si realizzano */}
-        <div className="grid grid-cols-2 gap-4">
-          <ImageSlot
-            label="Inizio"
-            sublabel="Prima immagine"
-            imageUrl={startImageUrl}
-            step={1}
-          />
-          <ImageSlot
-            label="Fine"
-            sublabel="Seconda immagine"
-            imageUrl={endImageUrl}
-            step={2}
-          />
-        </div>
-        <p className="text-xs text-muted-foreground text-center">
-          Poi generiamo il video timelapse tra le due → aggiornamento automatico
-        </p>
-      </div>
-    );
-  }
-
-  if (status === "completed" && videoUrl) {
+  if (status === "completed") {
     return (
       <div className="space-y-4">
         {/* Anteprima immagini + video in fila */}
@@ -121,19 +80,36 @@ export function SingleVideoGenerator({
           )}
         </div>
         <div className="space-y-2">
-          <h3 className="text-sm font-medium text-foreground">Video (9:16)</h3>
-          <div
-            className="mx-auto w-full max-w-[280px] overflow-hidden rounded-xl border-2 border-handy-yellow/40 bg-neutral-100 shadow-3d hover:shadow-3d-lg transition-all duration-300"
-            style={{ aspectRatio: "9/16" }}
-          >
-            <video
-              src={videoUrl}
-              controls
-              playsInline
-              className="h-full w-full object-contain"
-              style={{ aspectRatio: "9/16" }}
-            />
-          </div>
+          <h3 className="text-sm font-medium text-foreground">Il tuo video</h3>
+          {videoUrl ? (
+            <>
+              <div
+                className="mx-auto w-full max-w-[280px] overflow-hidden rounded-xl border-2 border-handy-yellow/40 bg-neutral-100 shadow-3d hover:shadow-3d-lg transition-all duration-300"
+                style={{ aspectRatio: "9/16" }}
+              >
+                <video
+                  src={videoUrl}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-contain"
+                  style={{ aspectRatio: "9/16" }}
+                />
+              </div>
+              <a
+                href={videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm font-medium text-handy-yellow hover:underline"
+              >
+                Apri video in nuova scheda →
+              </a>
+            </>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              Video pronto, aggiornamento in corso…
+            </p>
+          )}
         </div>
       </div>
     );
