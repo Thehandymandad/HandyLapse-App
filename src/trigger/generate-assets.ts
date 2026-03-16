@@ -1,9 +1,14 @@
 import { task } from "@trigger.dev/sdk/v3";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { GoogleGenAI } from "@google/genai";
+import sharp from "sharp";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
+
+/** Risoluzione fissa 9:16 per Veo (720p verticale). Start e end image devono avere identiche dimensioni. */
+const VEO_IMAGE_WIDTH = 720;
+const VEO_IMAGE_HEIGHT = 1280;
 
 let _supabase: SupabaseClient | null = null;
 function getSupabase(): SupabaseClient {
@@ -30,6 +35,7 @@ const STORAGE_BUCKET = "assets";
 /** Task legacy (URL → scene + TTS): non più supportato. Usare il flusso con user_prompt e generate-single-video. */
 export const generateAssetsTask = task({
   id: "generate-ad-assets",
+  retry: { maxAttempts: 1 },
   run: async (_payload: { projectId: string }) => {
     throw new Error(
       "Flusso con URL e scene non più supportato. Usa la descrizione dell'idea (textarea) e l'API generate-video con storyboard."
@@ -94,7 +100,13 @@ async function generateImageGoogleAndUpload(
   const imageBytes = response.generatedImages?.[0]?.image?.imageBytes;
   if (!imageBytes) throw new Error("Google non ha restituito immagine");
 
-  const imageBuffer = Buffer.from(imageBytes, "base64");
+  const rawBuffer = Buffer.from(imageBytes, "base64");
+  // Ridimensiona a 720x1280 (9:16) identico per start e end, così Veo riceve dimensioni uniformi
+  const imageBuffer = await sharp(rawBuffer)
+    .resize(VEO_IMAGE_WIDTH, VEO_IMAGE_HEIGHT, { fit: "cover", position: "center" })
+    .png()
+    .toBuffer();
+
   const storagePath = `images/${projectId}/${filename}.png`;
   const { error } = await getSupabase().storage
     .from(STORAGE_BUCKET)
@@ -230,6 +242,7 @@ export type StoryboardPayload = { scenes: StoryboardScene[] };
  */
 export const generateSingleVideoTask = task({
   id: "generate-single-video",
+  retry: { maxAttempts: 1 },
   run: async (payload: { projectId: string; storyboard?: StoryboardPayload }) => {
     const { data: project, error: projectError } = await getSupabase()
       .from("projects")
