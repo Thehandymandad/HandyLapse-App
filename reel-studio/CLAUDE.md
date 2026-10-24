@@ -72,12 +72,21 @@ di partenza: se qualcosa nella reference è diverso, si scrive codice nuovo finc
 - Grafica `{"type": "vanish", "at": …, "duration": …}` → la persona sparisce con un glitch (resta un "fantasma",
   `props.ghost`) sopra lo sfondo vuoto e ricompare con un lampo orizzontale.
 
+## Oggetti agganciati alle mani (o a qualsiasi punto)
+
+`python3 scripts/track.py <video> --at <s> --x <0..1> --y <0..1> --from <s> --to <s>` segue un punto (es. il polso)
+fotogramma per fotogramma (NCC) e stampa JSON. Converti i punti nelle coordinate del reel (reinquadratura `framing`
+× alternanza sui tagli) e passali alla grafica come `props.track: [{ f, x, y }]` (frame relativi all'inizio della grafica):
+`logo3d` li segue. Verifica sempre disegnando i punti sui fotogrammi.
+
 ## Stili copiati finora
 
 - `claude-reel` (reference "Claude ha montato il 100% di questo video", analisi in `references/ref1/` in locale):
   sottotitoli a una parola, badge fisso, grafiche `badge`, `timeline` (props: title, time, exitFrames), `chat` (text = prompt,
-  props: morph, sendAt), `logo3d` (x, y), `vanish`, `carousel3d` (behind: true, props.images = copertine dei reel in public/,
-  radius, speed), `guide` (props: tag, title, subtitle, cta). Testi con markup `[c]corallo[/c] [y]giallo[/y] [b]evidenziato[/b]`.
+  props: morph, sendAt), `logo3d` (x, y, props: logo "claude"|"openai", size, track, spin "turn"|"wobble", enter), `vanish`,
+  `carousel3d` (due grafiche gemelle: props.mode "ring" con behind: true + props.mode "front"; props.icons = icone uniche
+  instagram/tiktok/claude/openai oppure props.images = copertine in public/; props.flyOut = [{frame, icon}] → l'icona
+  nominata esce dall'anello e va in fila sotto la persona; radius, speed, slotY, slotSize), `guide` (props: tag, title, subtitle, cta). Testi con markup `[c]corallo[/c] [y]giallo[/y] [b]evidenziato[/b]`.
   Il piano automatico mette solo badge e guida finale: le altre grafiche vanno messe dove il parlato le chiama
   (es. "timeline" quando si parla di montaggio, "chat" quando si dice cosa si è chiesto a Claude).
   Per replicarla del tutto servono dall'utente: le copertine dei suoi reel (carosello), qualche secondo di inquadratura

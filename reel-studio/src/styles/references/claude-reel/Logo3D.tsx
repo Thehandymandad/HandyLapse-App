@@ -56,9 +56,23 @@ export const Logo3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const enter = g.props?.enter === false ? 1 : spring({ frame: f, fps, config: { damping: 11, stiffness: 140, mass: 0.8 } });
   const exit = interpolate(f, [g.frames - 6, g.frames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const t = f / fps;
-  const spin = t * ((Math.PI * 2) / 2.4) + (1 - enter) * Math.PI * 2.5;
-  const x = g.x ?? 0.47;
-  const y = g.y ?? 0.42;
+  // props.spin: "turn" (giro continuo, come la reference) | "wobble" (oscilla mostrando sempre la faccia)
+  const spin =
+    g.props?.spin === "wobble"
+      ? Math.sin(t * 2.6) * 0.55 + (1 - enter) * Math.PI * 2
+      : t * ((Math.PI * 2) / 2.4) + (1 - enter) * Math.PI * 2.5;
+  // props.track: [{ f, x, y }] posizione (0..1 nel reel) per frame della grafica → il logo segue la mano
+  const track = Array.isArray(g.props?.track) ? (g.props!.track as { f: number; x: number; y: number }[]) : null;
+  let x = g.x ?? 0.47;
+  let y = g.y ?? 0.42;
+  if (track?.length) {
+    const i = Math.max(0, track.findIndex((p) => p.f > f) - 1);
+    const a = track[Math.min(i, track.length - 1)];
+    const b = track[Math.min(i + 1, track.length - 1)];
+    const k = b.f > a.f ? Math.min(1, Math.max(0, (f - a.f) / (b.f - a.f))) : 0;
+    x = a.x + (b.x - a.x) * k;
+    y = a.y + (b.y - a.y) * k;
+  }
   return (
     <div style={{ position: "absolute", left: `${x * 100}%`, top: `${y * 100}%`, width: size, height: size, transform: "translate(-50%, -50%)" }}>
       <ThreeCanvas width={size} height={size} camera={{ fov: 30, position: [0, 0, 7] }} gl={{ antialias: true, alpha: true }}>

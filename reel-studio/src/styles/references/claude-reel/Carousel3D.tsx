@@ -80,19 +80,46 @@ function placeholder(i: number) {
   });
 }
 
+type Fly = { frame: number; icon: AppIcon };
+
+/** Fotocamera a tutto schermo equivalente a quella della reference (fov 32° su 1000 px, anello a y≈0.43). */
+const FULL_W = 1080;
+const FULL_H = 1920;
+const FOV = 2 * Math.atan(Math.tan((16 * Math.PI) / 180) * (FULL_H / 1000)); // stessa scala in pixel
+const FOCAL = FULL_H / 2 / Math.tan(FOV / 2); // px per unità a distanza 1
+const CAM_Z = 9.4;
+
+function rotateXY(v: [number, number, number], rx: number, ry: number): [number, number, number] {
+  // prima Y poi X (come <group rotation={[rx, ry, 0]}> con ordine XYZ applicato al vettore)
+  const [x, y, z] = v;
+  const x1 = x * Math.cos(ry) + z * Math.sin(ry);
+  const z1 = -x * Math.sin(ry) + z * Math.cos(ry);
+  const y2 = y * Math.cos(rx) - z1 * Math.sin(rx);
+  const z2 = y * Math.sin(rx) + z1 * Math.cos(rx);
+  return [x1, y2, z2];
+}
+
+const ease = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.pow(1 - t, 3));
+
+/**
+ * props.mode:
+ *  - "ring" (con "behind": true): l'anello di icone/card che gira DIETRO la persona; le icone già chiamate escono dall'anello
+ *  - "front" (stessa grafica, senza behind): le icone chiamate (props.flyOut) volano in avanti e si fermano in fila sotto la persona
+ * props.flyOut: [{ frame, icon }] frame relativo all'inizio della grafica. props.slotY (0..1), props.slotSize (px).
+ */
 export const Carousel3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const mode = g.props?.mode === "front" ? "front" : "ring";
   const images = (Array.isArray(g.props?.images) ? (g.props!.images as string[]) : []).slice(0, 12);
   const icons = (Array.isArray(g.props?.icons) ? (g.props!.icons as AppIcon[]) : []).slice(0, 8);
-  const repeat = typeof g.props?.repeat === "number" ? g.props.repeat : 2;
-  const count = icons.length ? icons.length * repeat : Math.max(images.length, typeof g.props?.count === "number" ? g.props.count : 9);
-  const highlights = Array.isArray(g.props?.highlights) ? (g.props!.highlights as { frame: number; icon: AppIcon }[]) : [];
-  const [handle] = useState(() => (images.length ? delayRender("copertine carosello") : null));
+  const count = icons.length || Math.max(images.length, typeof g.props?.count === "number" ? g.props.count : 9);
+  const flyOut = Array.isArray(g.props?.flyOut) ? (g.props!.flyOut as Fly[]) : [];
+  const [handle] = useState(() => (images.length && !icons.length ? delayRender("copertine carosello") : null));
   const [loaded, setLoaded] = useState<THREE.Texture[]>([]);
 
   useEffect(() => {
-    if (!images.length || handle === null) return;
+    if (handle === null) return;
     const loader = new THREE.TextureLoader();
     Promise.all(
       images.map(
@@ -112,47 +139,75 @@ export const Carousel3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   }, []);
 
   const textures = useMemo(
-    () =>
-      Array.from({ length: count }, (_, i) =>
-        icons.length ? iconTexture(icons[i % icons.length]) : loaded[i % Math.max(1, loaded.length)] ?? placeholder(i),
-      ),
+    () => Array.from({ length: count }, (_, i) => (icons.length ? iconTexture(icons[i]) : loaded[i % Math.max(1, loaded.length)] ?? placeholder(i))),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [count, loaded, icons.join(",")],
   );
   const cardW = icons.length ? 1.15 : CARD_W;
   const cardH = icons.length ? 1.15 : CARD_H;
-  /**
-   * Icona nominata: si ingrandisce con un rimbalzo e resta in evidenza finché non viene nominata la successiva;
-   * le altre si attenuano.
-   */
-  const active = [...highlights].filter((h) => h.frame <= f).sort((x, y) => y.frame - x.frame)[0];
-  const emphasis = (i: number) => {
-    if (!icons.length || !active) return { scale: 1, opacity: 1 };
-    const on = icons[i % icons.length] === active.icon;
-    const k = spring({ frame: f - active.frame, fps, config: { damping: 9, stiffness: 220 } });
-    return on ? { scale: 1 + 0.6 * k, opacity: 1 } : { scale: 1, opacity: 1 - 0.55 * k };
-  };
   const exit = interpolate(f, [g.frames - 8, g.frames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const radius = typeof g.props?.radius === "number" ? g.props.radius : 3.1;
   const speed = typeof g.props?.speed === "number" ? g.props.speed : 0.35; // radianti al secondo
-  const rot = (f / fps) * speed + 0.6;
-  const width = 1080;
-  const height = 1000;
+  const rotAt = (frame: number) => (frame / fps) * speed + 0.6;
+  const RX = 0.05;
+  // centro dell'anello a schermo come nella reference (y≈0.43 + 55 px), quindi camera spostata di conseguenza
+  const ringScreenY = (g.y ?? 0.43) * FULL_H + 55.6;
+  const camY = (ringScreenY - FULL_H / 2) / (FOCAL / CAM_Z);
+
+  const ringPos = (i: number, frame: number): [number, number, number] => {
+    const a = (i / count) * Math.PI * 2;
+    const s = spring({ frame: frame - i * 3, fps, config: { damping: 13, stiffness: 120 } });
+    return rotateXY([Math.sin(a) * radius * s, (1 - s) * -1.2, Math.cos(a) * radius * s], RX, rotAt(frame));
+  };
+
+  const meshes: React.ReactNode[] = [];
+  const slotY = typeof g.props?.slotY === "number" ? g.props.slotY : 0.8;
+  const slotSize = typeof g.props?.slotSize === "number" ? g.props.slotSize : 190;
+  const n = flyOut.length;
+  for (let i = 0; i < count; i++) {
+    const fly = icons.length ? flyOut.find((x) => x.icon === icons[i]) : undefined;
+    const flying = fly && f >= fly.frame;
+    if (mode === "ring" && !flying) {
+      const a = (i / count) * Math.PI * 2;
+      const s = spring({ frame: f - i * 3, fps, config: { damping: 13, stiffness: 120 } });
+      const [x, y, z] = ringPos(i, f);
+      meshes.push(
+        <mesh key={i} position={[x, y, z]} rotation={[RX, a + rotAt(f), 0]} scale={Math.max(0.001, s)}>
+          <planeGeometry args={[cardW, cardH]} />
+          <meshBasicMaterial map={textures[i]} transparent side={THREE.DoubleSide} toneMapped={false} />
+        </mesh>,
+      );
+    }
+    if (mode === "front" && fly && flying) {
+      const k = flyOut.indexOf(fly);
+      const p = ease((f - fly.frame) / 18);
+      const land = spring({ frame: f - fly.frame - 14, fps, config: { damping: 8, stiffness: 220 } });
+      const start = ringPos(i, fly.frame);
+      // posto in fila sotto la persona, più vicino alla camera
+      const zT = 5;
+      const d = CAM_Z - zT;
+      const px = FULL_W / 2 + (k - (n - 1) / 2) * (slotSize * 1.25);
+      const py = slotY * FULL_H;
+      const target: [number, number, number] = [((px - FULL_W / 2) * d) / FOCAL, camY - ((py - FULL_H / 2) * d) / FOCAL, zT];
+      const pos = start.map((v, j) => v + (target[j] - v) * p) as [number, number, number];
+      pos[2] += Math.sin(Math.PI * p) * 1.2; // arco verso la camera
+      const scaleT = (slotSize * d) / FOCAL / cardW;
+      let ang = ((i / count) * Math.PI * 2 + rotAt(fly.frame)) % (Math.PI * 2);
+      if (ang > Math.PI) ang -= Math.PI * 2;
+      const scale = (1 + (scaleT - 1) * p) * (p >= 1 ? 1 + 0.12 * (1 - land) * Math.sin(land * Math.PI) + 0 : 1);
+      meshes.push(
+        <mesh key={i} position={pos} rotation={[RX * (1 - p), ang * (1 - p) + Math.sin(Math.PI * p) * 0.6, 0]} scale={Math.max(0.001, scale)}>
+          <planeGeometry args={[cardW, cardH]} />
+          <meshBasicMaterial map={textures[i]} transparent side={THREE.DoubleSide} toneMapped={false} />
+        </mesh>,
+      );
+    }
+  }
+
   return (
-    <div style={{ position: "absolute", left: 0, top: `${(g.y ?? 0.43) * 100}%`, width, height, transform: "translateY(-50%)", opacity: exit }}>
-      <ThreeCanvas width={width} height={height} camera={{ fov: 32, position: [0, 0.3, 9.4] }} gl={{ antialias: true, alpha: true }}>
-        <group rotation={[0.05, rot, 0]}>
-          {textures.map((tex, i) => {
-            const a = (i / count) * Math.PI * 2;
-            const s = spring({ frame: f - i * 2, fps, config: { damping: 13, stiffness: 120 } });
-            return (
-              <mesh key={i} position={[Math.sin(a) * radius * s, (1 - s) * -1.2, Math.cos(a) * radius * s]} rotation={[0, a, 0]} scale={Math.max(0.001, s * emphasis(i).scale)}>
-                <planeGeometry args={[cardW, cardH]} />
-                <meshBasicMaterial map={tex} transparent opacity={emphasis(i).opacity} side={THREE.DoubleSide} toneMapped={false} />
-              </mesh>
-            );
-          })}
-        </group>
+    <div style={{ position: "absolute", inset: 0, opacity: exit }}>
+      <ThreeCanvas width={FULL_W} height={FULL_H} camera={{ fov: (FOV * 180) / Math.PI, position: [0, camY, CAM_Z] }} gl={{ antialias: true, alpha: true }}>
+        {meshes}
       </ThreeCanvas>
     </div>
   );
