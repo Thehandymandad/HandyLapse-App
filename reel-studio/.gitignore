@@ -8,3 +8,4 @@ projects/*/*.mov
 # materiale estratto dalle reference (video di terzi): resta solo in locale
 references/*/
 whisper.cpp/
+models/

@@ -38,6 +38,23 @@ export const CameraFx: React.FC<{ cam: CameraState }> = ({ cam }) => {
   );
 };
 
+/** Lampo orizzontale che attraversa il frame (ricomparsa della persona). */
+export const Streak: React.FC<{ amount: number }> = ({ amount }) => (
+  <AbsoluteFill style={{ mixBlendMode: "screen", opacity: amount }}>
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        top: `${(1 - amount) * 70 + 15}%`,
+        height: 220,
+        background: "linear-gradient(180deg, transparent, rgba(255,190,140,0.55) 45%, rgba(255,255,255,0.85) 50%, rgba(255,190,140,0.55) 55%, transparent)",
+        filter: "blur(6px)",
+      }}
+    />
+  </AbsoluteFill>
+);
+
 export const ProgressBar: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl, style }) => {
   const frame = useCurrentFrame();
   if (style.motion.progressBar === "none") return null;

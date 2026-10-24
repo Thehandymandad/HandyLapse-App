@@ -9,6 +9,9 @@ const SFX: Record<string, { expr: string; d: number; af?: string }> = {
   ding: { expr: "(sin(2*PI*1320*t)*exp(-5*t)*0.5+sin(2*PI*1980*t)*exp(-7*t)*0.25+sin(2*PI*2640*t)*exp(-9*t)*0.12)", d: 0.9 },
   click: { expr: "sin(2*PI*2400*t)*exp(-110*t)*0.9", d: 0.05 },
   riser: { expr: "(sin(2*PI*(180*t+260*t*t))*0.35+(random(0)-0.5)*0.35)*t/1.2", d: 1.2, af: "highpass=f=150" },
+  // tasti della tastiera: click brevi ogni ~85 ms con intensità variabile
+  typing: { expr: "sin(2*PI*2600*t)*exp(-260*mod(t,0.085))*(0.25+0.2*sin(37*t)*sin(11*t))", d: 1.3, af: "highpass=f=800" },
+  send: { expr: "sin(2*PI*(700*t+900*t*t))*exp(-22*t)*0.6", d: 0.18 },
   boom: { expr: "sin(2*PI*(70*t-18*t*t))*exp(-3.5*t)*0.95", d: 1.1, af: "lowpass=f=400" },
 };
 

@@ -24,6 +24,9 @@ npm run render -- trapano                                # → out/trapano.mp4
 # copiare lo stile di un reel
 npm run reference -- ~/Desktop/reference.mp4 --name mio-stile   # → references/mio-stile/ (poi Claude scrive lo stile)
 
+npm run matte -- trapano                                 # ritaglia la persona (grafiche dietro di te, sparizione)
+npm run compare -- trapano --ref mio-stile --at 1,3,5    # reference e render affiancati
+
 npm run studio    # anteprima interattiva (Remotion Studio)
 ```
 
@@ -34,8 +37,9 @@ Con Claude Code basta dire: *"montami ~/Desktop/girato.mov con lo stile della re
 - Node 18+ e ffmpeg nel PATH
 - Per la trascrizione: `git`, `make` e un compilatore C++ (whisper.cpp viene compilato al primo uso) + connessione per scaricare il modello
 - Remotion scarica da solo il suo Chromium al primo render
+- Per ritagliare la persona (grafiche dietro di te, effetto sparizione): Python 3 con `pip install ai-edge-litert numpy`
 
 ## Stili inclusi
 
 `hormozi`, `cartoon`, `minimal`, `podcast`, `handylapse` (in `src/styles/presets.ts`). Gli stili copiati dalle reference
-finiscono in `src/styles/references/`.
+finiscono in `src/styles/references/`: il primo è `claude-reel`.

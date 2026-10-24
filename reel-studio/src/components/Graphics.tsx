@@ -289,27 +289,31 @@ export const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelSt
   arrow: ArrowGraphic,
 };
 
-export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: StylePack }> = ({ tl, style, pack }) => {
+/** Grafiche: `layer="behind"` disegna solo quelle con behind=true (dietro la persona), `front` tutte le altre + hook e CTA. */
+export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: StylePack; layer?: "front" | "behind" }> = ({ tl, style, pack, layer = "front" }) => {
   const renderers = { ...RENDERERS, ...pack.graphics };
   const Hook = pack.Hook ?? HookTitle;
   const Cta = pack.Cta ?? CallToAction;
+  const front = layer === "front";
   return (
     <AbsoluteFill>
-      {tl.hook && (
+      {front && tl.hook && (
         <Sequence from={tl.hook.from} durationInFrames={tl.hook.frames} name="Hook">
           <Hook text={tl.hook.text} icon={tl.hook.icon} frames={tl.hook.frames} style={style} />
         </Sequence>
       )}
-      {tl.graphics.map((g) => {
-        const C = renderers[g.type];
-        if (!C) return null;
-        return (
-          <Sequence key={g.key} from={g.from} durationInFrames={g.frames} name={`${g.type}: ${g.text ?? g.icon ?? g.object ?? ""}`} premountFor={10}>
-            <C g={g} style={style} />
-          </Sequence>
-        );
-      })}
-      {tl.cta && (
+      {tl.graphics
+        .filter((g) => (front ? !g.behind : g.behind))
+        .map((g) => {
+          const C = renderers[g.type];
+          if (!C) return null;
+          return (
+            <Sequence key={g.key} from={g.from} durationInFrames={g.frames} name={`${g.type}: ${g.text ?? g.icon ?? g.object ?? ""}`} premountFor={10}>
+              <C g={g} style={style} />
+            </Sequence>
+          );
+        })}
+      {front && tl.cta && (
         <Sequence from={tl.cta.from} durationInFrames={tl.cta.frames} name="CTA">
           <Cta text={tl.cta.text} icon={tl.cta.icon} style={style} />
         </Sequence>

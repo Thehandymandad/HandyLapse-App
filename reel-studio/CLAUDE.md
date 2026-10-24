@@ -52,10 +52,33 @@ di partenza: se qualcosa nella reference è diverso, si scrive codice nuovo finc
    - `Hook`, `Cta`: titolo iniziale e chiusura su misura
    - `graphics`: grafiche su misura (stesso nome di una base = la sostituisce; nome nuovo = nuovo `type` in edit.json). Usa i mattoni di `src/components/Graphics.tsx` (`useInOut`, `Positioned`, `IconBadge`, `cardText`), le icone SVG di `src/icons/` (aggiungine di nuove, griglia 24×24) e gli oggetti three.js di `src/three/objects.tsx` (aggiungine di nuovi con geometrie da codice, `ThreeCanvas` di `@remotion/three`, anche con camera 3D animata)
    - `Overlay`/`Underlay`: grana, light leak, cornici, sfondi
+   - `plan`: piano automatico dello stile (quali grafiche mettere in automatico), così l'ingest non aggiunge grafiche che la reference non ha
    - effetti sonori nuovi: sintesi ffmpeg in `scripts/sfx.ts` (poi `npm run sfx`)
 4. Verifica: monta un progetto con `"styleId": "<stile>"` e confronta: `npm run compare -- <progetto> --ref <stile> --at 0.5,2,4`
    → `out/compare/<progetto>/*.png` (reference a sinistra, render a destra). Controlla anche il movimento con più still ravvicinati
    (`npm run render -- <progetto> --still 30,32,34,36,38`). Ripeti finché non è uguale.
+
+## Persona ritagliata: grafiche dietro la persona e "sparizione"
+
+- `npm run matte -- <progetto>` ritaglia la persona in locale (modello MediaPipe selfie multiclass eseguito con LiteRT,
+  `pip install ai-edge-litert numpy`; il modello si scarica in `models/` al primo uso) → `public/projects/<nome>/person.webm`
+  (VP9 con alpha) e `source.matte` in edit.json. Ricostruisce anche uno sfondo senza persona (`source.plate`):
+  meglio passare un'inquadratura vuota vera (`--plate foto.jpg` o `--plate-at <secondi>`), oppure limitare la
+  ricostruzione alla stessa inquadratura (`--plate-window 10-14`).
+- Grafica con `"behind": true` → disegnata tra il video e la persona (es. carosello 3D che gira dietro la testa).
+- Grafica `{"type": "vanish", "at": …, "duration": …}` → la persona sparisce con un glitch (resta un "fantasma",
+  `props.ghost`) sopra lo sfondo vuoto e ricompare con un lampo orizzontale.
+
+## Stili copiati finora
+
+- `claude-reel` (reference "Claude ha montato il 100% di questo video", analisi in `references/ref1/` in locale):
+  sottotitoli a una parola, badge fisso, grafiche `badge`, `timeline` (props: title, time, exitFrames), `chat` (text = prompt,
+  props: morph, sendAt), `logo3d` (x, y), `vanish`, `carousel3d` (behind: true, props.images = copertine dei reel in public/,
+  radius, speed), `guide` (props: tag, title, subtitle, cta). Testi con markup `[c]corallo[/c] [y]giallo[/y] [b]evidenziato[/b]`.
+  Il piano automatico mette solo badge e guida finale: le altre grafiche vanno messe dove il parlato le chiama
+  (es. "timeline" quando si parla di montaggio, "chat" quando si dice cosa si è chiesto a Claude).
+  Per replicarla del tutto servono dall'utente: le copertine dei suoi reel (carosello), qualche secondo di inquadratura
+  vuota (sparizione), e l'inquadratura della mano aperta per il logo 3D.
 
 ## Note tecniche
 

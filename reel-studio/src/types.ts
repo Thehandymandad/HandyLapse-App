@@ -129,6 +129,8 @@ export type Graphic = {
   /** Per "arrow": direzione in gradi (0 = destra). */
   angle?: number;
   sfx?: SfxName | "none";
+  /** Disegna la grafica DIETRO la persona (serve source.matte). */
+  behind?: boolean;
   /** Dati extra per le grafiche personalizzate di uno style pack. */
   props?: Record<string, unknown>;
 };
@@ -143,7 +145,17 @@ export type SfxName = "whoosh" | "pop" | "ding" | "click" | "riser" | "boom" | (
 export type EditProject = {
   version: 1;
   name: string;
-  source: { file: string; width: number; height: number; fps: number; duration: number };
+  source: {
+    file: string;
+    width: number;
+    height: number;
+    fps: number;
+    duration: number;
+    /** Persona ritagliata (WebM con alpha, da npm run matte): serve per grafiche dietro la persona e per farla sparire. */
+    matte?: string;
+    /** Inquadratura vuota (immagine, senza persona): sfondo quando la persona sparisce. */
+    plate?: string;
+  };
   styleId: string;
   /** Override parziali sopra lo stile scelto. */
   styleOverrides?: DeepPartial<ReelStyle>;

@@ -13,7 +13,7 @@ import { saveProject } from "./lib/project";
 import { arg, ffmpeg, flag, log, positional, probe, ROOT, slug } from "./lib/sh";
 import { autoThreshold, detectSpeech, envelopeDb, extractWav16k } from "./lib/silence";
 import { distributeText, readTextFile, transcribeWords } from "./lib/transcribe";
-import { resolveStyle } from "../src/styles";
+import { getPack, resolveStyle } from "../src/styles";
 import type { EditProject, Word } from "../src/types";
 import type { WhisperModel } from "@remotion/install-whisper-cpp";
 
@@ -64,7 +64,9 @@ export async function ingest(input: string, opts: { name?: string; style?: strin
     }
   }
 
-  const plan = autoPlan(words, style, norm.duration);
+  const generic = autoPlan(words, style, norm.duration);
+  const pack = getPack(styleId);
+  const plan = { ...generic, ...(pack.plan?.({ words, duration: norm.duration, plan: generic }) ?? {}) };
   const project: EditProject = {
     version: 1,
     name,

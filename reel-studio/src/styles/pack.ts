@@ -1,7 +1,7 @@
 import type React from "react";
 import type { CameraContext, CameraState } from "../lib/camera";
 import type { GraphicEvent, Timeline } from "../lib/timeline";
-import type { IconName, ReelStyle } from "../types";
+import type { EditProject, IconName, ReelStyle, Word } from "../types";
 
 /**
  * Style pack: tutto ciò che serve per replicare una reference.
@@ -22,6 +22,13 @@ export type StylePack = {
   Overlay?: React.FC<{ tl: Timeline; style: ReelStyle }>;
   /** Livelli extra sotto il video (sfondi, se il video non copre tutto il frame). */
   Underlay?: React.FC<{ tl: Timeline; style: ReelStyle }>;
+  /**
+   * Piano automatico dello stile: riceve quello generico e restituisce le parti da sostituire,
+   * così l'ingest usa solo il "vocabolario" di grafiche della reference.
+   */
+  plan?: (input: { words: Word[]; duration: number; plan: AutoPlan }) => Partial<AutoPlan>;
 };
+
+export type AutoPlan = Pick<EditProject, "cuts" | "emphasis" | "hook" | "zooms" | "graphics" | "cta">;
 
 export const definePack = (pack: StylePack) => pack;
