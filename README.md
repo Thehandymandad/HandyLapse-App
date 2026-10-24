@@ -2,6 +2,10 @@
 
 SaaS AI-driven per la generazione di video pubblicitari. Stack: Next.js 14, TypeScript, Tailwind CSS, Shadcn/UI, Supabase.
 
+## Reel Editor AI
+
+Pagina `/reel`: carica un video grezzo e ottieni un reel montato (pause tagliate, sottotitoli animati, zoom, motion graphics, effetti sonori), con stile copiabile da una reference. Dettagli in [docs/REEL_EDITOR.md](docs/REEL_EDITOR.md).
+
 ## Setup
 
 ### 1. Variabili d'ambiente

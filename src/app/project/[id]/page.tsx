@@ -155,7 +155,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </dl>
             </>
-          )}
         </div>
       </main>
     </div>
