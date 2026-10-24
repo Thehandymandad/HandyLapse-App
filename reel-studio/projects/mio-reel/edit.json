@@ -37,11 +37,163 @@
       "end": 20.687
     }
   ],
-  "words": [],
+  "words": [
+    {
+      "text": "Questo",
+      "start": 3.1,
+      "end": 3.46
+    },
+    {
+      "text": "è",
+      "start": 3.64,
+      "end": 3.66
+    },
+    {
+      "text": "un",
+      "start": 3.68,
+      "end": 3.72
+    },
+    {
+      "text": "video",
+      "start": 3.74,
+      "end": 3.9
+    },
+    {
+      "text": "di",
+      "start": 3.92,
+      "end": 3.98
+    },
+    {
+      "text": "prova.",
+      "start": 4.019,
+      "end": 4.32
+    },
+    {
+      "text": "Allora",
+      "start": 4.42,
+      "end": 4.68
+    },
+    {
+      "text": "qui",
+      "start": 4.74,
+      "end": 4.82
+    },
+    {
+      "text": "vediamo",
+      "start": 4.86,
+      "end": 5.22
+    },
+    {
+      "text": "Claude",
+      "start": 5.38,
+      "end": 5.72
+    },
+    {
+      "text": "e",
+      "start": 7.28,
+      "end": 7.34
+    },
+    {
+      "text": "qui",
+      "start": 7.38,
+      "end": 7.5
+    },
+    {
+      "text": "vediamo",
+      "start": 7.52,
+      "end": 7.88
+    },
+    {
+      "text": "OpenAI.",
+      "start": 7.94,
+      "end": 8.46
+    },
+    {
+      "text": "E",
+      "start": 10.1,
+      "end": 10.16
+    },
+    {
+      "text": "dietro",
+      "start": 10.2,
+      "end": 10.46
+    },
+    {
+      "text": "di",
+      "start": 10.48,
+      "end": 10.56
+    },
+    {
+      "text": "me",
+      "start": 10.6,
+      "end": 10.76
+    },
+    {
+      "text": "ora",
+      "start": 10.9,
+      "end": 11.06
+    },
+    {
+      "text": "vediamo",
+      "start": 11.1,
+      "end": 11.6
+    },
+    {
+      "text": "una",
+      "start": 12.96,
+      "end": 13.08
+    },
+    {
+      "text": "serie",
+      "start": 13.14,
+      "end": 13.58
+    },
+    {
+      "text": "di,",
+      "start": 14.02,
+      "end": 14.2
+    },
+    {
+      "text": "ehm,",
+      "start": 14.52,
+      "end": 14.92
+    },
+    {
+      "text": "icone:",
+      "start": 17.04,
+      "end": 17.38
+    },
+    {
+      "text": "Instagram,",
+      "start": 18.08,
+      "end": 18.5
+    },
+    {
+      "text": "TikTok,",
+      "start": 18.66,
+      "end": 19.12
+    },
+    {
+      "text": "Claude,",
+      "start": 19.46,
+      "end": 19.72
+    },
+    {
+      "text": "OpenAI",
+      "start": 19.94,
+      "end": 20.44
+    }
+  ],
   "captionOffset": 0,
   "framingX": 0.5,
   "music": null,
-  "cuts": [],
+  "cuts": [
+    {
+      "start": 14.48,
+      "end": 14.96,
+      "reason": "filler"
+    }
+  ],
   "emphasis": [],
   "hook": null,
   "zooms": [],
@@ -49,55 +201,105 @@
     {
       "type": "badge",
       "at": 0,
-      "duration": 25,
+      "duration": 30,
       "text": "[c]Claude[/c] ha montato il [y]100%[/y]\ndi questo video",
       "sfx": "none"
     },
     {
-      "type": "timeline",
-      "at": 3.1,
-      "duration": 2,
+      "type": "logo3d",
+      "at": 5.38,
+      "duration": 0.75,
+      "x": 0.789,
+      "y": 0.401,
       "props": {
-        "exitFrames": 0
+        "logo": "claude",
+        "size": 0.75
       },
       "sfx": "whoosh"
-    },
-    {
-      "type": "chat",
-      "at": 5.1,
-      "duration": 2.6,
-      "text": "Edita questo video!",
-      "props": {
-        "morph": true,
-        "sendAt": 0.5
-      },
-      "sfx": "typing"
     },
     {
       "type": "logo3d",
-      "at": 13.0,
-      "duration": 1.9,
-      "x": 0.506,
-      "y": 0.67,
-      "sfx": "whoosh"
+      "at": 7.21,
+      "duration": 1.39,
+      "x": 0.87,
+      "y": 0.535,
+      "props": {
+        "logo": "claude",
+        "size": 0.7,
+        "enter": false
+      },
+      "sfx": "none"
     },
     {
-      "type": "vanish",
-      "at": 10.1,
-      "duration": 1.8,
-      "sfx": "whoosh"
+      "type": "logo3d",
+      "at": 7.94,
+      "duration": 0.66,
+      "x": 0.2,
+      "y": 0.478,
+      "props": {
+        "logo": "openai",
+        "size": 0.7
+      },
+      "sfx": "pop"
     },
     {
       "type": "carousel3d",
-      "at": 16.95,
-      "duration": 2.5,
+      "at": 10.15,
+      "duration": 7.366666666666666,
       "behind": true,
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "props": {
+        "icons": [
+          "instagram",
+          "tiktok",
+          "claude",
+          "openai"
+        ],
+        "repeat": 3,
+        "radius": 2.6,
+        "speed": 0.45,
+        "highlights": [
+          {
+            "frame": 127,
+            "icon": "instagram"
+          },
+          {
+            "frame": 145,
+            "icon": "tiktok"
+          },
+          {
+            "frame": 169,
+            "icon": "claude"
+          },
+          {
+            "frame": 183,
+            "icon": "openai"
+          }
+        ]
+      }
     },
     {
-      "type": "guide",
-      "at": 19.35,
-      "duration": 2.5,
+      "type": "sfx-only",
+      "at": 18.08,
+      "duration": 0.3,
+      "sfx": "pop"
+    },
+    {
+      "type": "sfx-only",
+      "at": 18.66,
+      "duration": 0.3,
+      "sfx": "pop"
+    },
+    {
+      "type": "sfx-only",
+      "at": 19.46,
+      "duration": 0.3,
+      "sfx": "pop"
+    },
+    {
+      "type": "sfx-only",
+      "at": 19.94,
+      "duration": 0.3,
       "sfx": "pop"
     }
   ],
@@ -105,10 +307,13 @@
   "styleOverrides": {
     "cuts": {
       "silenceDb": -38
+    },
+    "zoom": {
+      "alternateScale": 1.08
     }
   },
   "framing": {
-    "scale": 1.35,
+    "scale": 1.3,
     "originX": 0.49,
     "originY": 0.4,
     "offsetY": 0

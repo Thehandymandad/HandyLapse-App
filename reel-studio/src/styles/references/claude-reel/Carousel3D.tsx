@@ -3,11 +3,14 @@ import { continueRender, delayRender, interpolate, spring, staticFile, useCurren
 import { ThreeCanvas } from "@remotion/three";
 import * as THREE from "three";
 import type { GraphicEvent } from "../../../lib/timeline";
+import { drawAppIcon, type AppIcon } from "./appIcons";
 
 /**
  * Carosello 3D di "reel" (card verticali con angoli arrotondati) che gira attorno alla testa, DIETRO la persona
  * (usare "behind": true + source.matte). Reference 18,7–23,4 s: le card entrano a ventaglio e ruotano lente.
  * props.images: copertine dei tuoi reel (percorsi in public/), altrimenti card generate.
+ * props.icons: ["instagram","tiktok","claude","openai"] → card quadrate con le icone delle app (ripetute props.repeat volte).
+ * props.highlights: [{ frame, icon }] → l'icona nominata "salta" (frame relativo all'inizio della grafica).
  */
 const CARD_W = 1;
 const CARD_H = 1.78;
@@ -34,6 +37,19 @@ function roundedCanvas(draw: (ctx: CanvasRenderingContext2D, w: number, h: numbe
   ctx.lineWidth = 8;
   ctx.strokeStyle = "rgba(255,255,255,0.85)";
   ctx.stroke();
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
+/** Card quadrata con l'icona di un'app (con un leggero bordo luminoso). */
+function iconTexture(icon: AppIcon) {
+  const size = 512;
+  const c = document.createElement("canvas");
+  c.width = c.height = size;
+  const ctx = c.getContext("2d")!;
+  ctx.translate(16, 16);
+  drawAppIcon(ctx, icon, size - 32);
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   return t;
@@ -68,7 +84,10 @@ export const Carousel3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const images = (Array.isArray(g.props?.images) ? (g.props!.images as string[]) : []).slice(0, 12);
-  const count = Math.max(images.length, typeof g.props?.count === "number" ? g.props.count : 9);
+  const icons = (Array.isArray(g.props?.icons) ? (g.props!.icons as AppIcon[]) : []).slice(0, 8);
+  const repeat = typeof g.props?.repeat === "number" ? g.props.repeat : 2;
+  const count = icons.length ? icons.length * repeat : Math.max(images.length, typeof g.props?.count === "number" ? g.props.count : 9);
+  const highlights = Array.isArray(g.props?.highlights) ? (g.props!.highlights as { frame: number; icon: AppIcon }[]) : [];
   const [handle] = useState(() => (images.length ? delayRender("copertine carosello") : null));
   const [loaded, setLoaded] = useState<THREE.Texture[]>([]);
 
@@ -92,7 +111,27 @@ export const Carousel3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const textures = useMemo(() => Array.from({ length: count }, (_, i) => loaded[i % Math.max(1, loaded.length)] ?? placeholder(i)), [count, loaded]);
+  const textures = useMemo(
+    () =>
+      Array.from({ length: count }, (_, i) =>
+        icons.length ? iconTexture(icons[i % icons.length]) : loaded[i % Math.max(1, loaded.length)] ?? placeholder(i),
+      ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [count, loaded, icons.join(",")],
+  );
+  const cardW = icons.length ? 1.15 : CARD_W;
+  const cardH = icons.length ? 1.15 : CARD_H;
+  /**
+   * Icona nominata: si ingrandisce con un rimbalzo e resta in evidenza finché non viene nominata la successiva;
+   * le altre si attenuano.
+   */
+  const active = [...highlights].filter((h) => h.frame <= f).sort((x, y) => y.frame - x.frame)[0];
+  const emphasis = (i: number) => {
+    if (!icons.length || !active) return { scale: 1, opacity: 1 };
+    const on = icons[i % icons.length] === active.icon;
+    const k = spring({ frame: f - active.frame, fps, config: { damping: 9, stiffness: 220 } });
+    return on ? { scale: 1 + 0.6 * k, opacity: 1 } : { scale: 1, opacity: 1 - 0.55 * k };
+  };
   const exit = interpolate(f, [g.frames - 8, g.frames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const radius = typeof g.props?.radius === "number" ? g.props.radius : 3.1;
   const speed = typeof g.props?.speed === "number" ? g.props.speed : 0.35; // radianti al secondo
@@ -107,9 +146,9 @@ export const Carousel3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             const a = (i / count) * Math.PI * 2;
             const s = spring({ frame: f - i * 2, fps, config: { damping: 13, stiffness: 120 } });
             return (
-              <mesh key={i} position={[Math.sin(a) * radius * s, (1 - s) * -1.2, Math.cos(a) * radius * s]} rotation={[0, a, 0]} scale={Math.max(0.001, s)}>
-                <planeGeometry args={[CARD_W, CARD_H]} />
-                <meshBasicMaterial map={tex} transparent side={THREE.DoubleSide} toneMapped={false} />
+              <mesh key={i} position={[Math.sin(a) * radius * s, (1 - s) * -1.2, Math.cos(a) * radius * s]} rotation={[0, a, 0]} scale={Math.max(0.001, s * emphasis(i).scale)}>
+                <planeGeometry args={[cardW, cardH]} />
+                <meshBasicMaterial map={tex} transparent opacity={emphasis(i).opacity} side={THREE.DoubleSide} toneMapped={false} />
               </mesh>
             );
           })}
