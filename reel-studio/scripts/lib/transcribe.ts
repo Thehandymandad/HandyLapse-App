@@ -42,15 +42,16 @@ export async function transcribeWords(wav16k: string, opts: { model: WhisperMode
  * Usa curl (rispetta proxy e certificati di sistema).
  */
 export async function transcribeElevenLabs(audioPath: string, language: string): Promise<Word[]> {
+  // Senza ELEVENLABS_API_KEY la richiesta parte lo stesso: in un ambiente cloud con un "network secret"
+  // per api.elevenlabs.io la chiave la aggiunge il proxy, e lo script non la vede mai.
   const key = process.env.ELEVENLABS_API_KEY;
-  if (!key) throw new Error("ELEVENLABS_API_KEY non impostata");
   const lang = { it: "ita", en: "eng", es: "spa", fr: "fra", de: "deu" }[language] ?? language;
   log(`ElevenLabs Scribe (${process.env.ELEVENLABS_STT_MODEL ?? "scribe_v1"})…`);
   const { stdout } = await run(
     "curl",
     [
       "-sS", "--fail-with-body", "-X", "POST", "https://api.elevenlabs.io/v1/speech-to-text",
-      "-H", `xi-api-key: ${key}`,
+      ...(key ? ["-H", `xi-api-key: ${key}`] : []),
       "-F", `model_id=${process.env.ELEVENLABS_STT_MODEL ?? "scribe_v1"}`,
       "-F", `file=@${audioPath}`,
       "-F", "timestamps_granularity=word",
@@ -67,7 +68,7 @@ export async function transcribeElevenLabs(audioPath: string, language: string):
 
 /** ElevenLabs se c'è la chiave, altrimenti whisper.cpp in locale. */
 export async function transcribeAuto(wav16k: string, opts: { model: WhisperModel; language: string }): Promise<Word[]> {
-  if (process.env.ELEVENLABS_API_KEY) {
+  if (process.env.ELEVENLABS_API_KEY || process.env.ELEVENLABS_VIA_PROXY !== "0") {
     try {
       return await transcribeElevenLabs(wav16k, opts.language);
     } catch (e) {
