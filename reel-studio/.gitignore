@@ -9,3 +9,4 @@ projects/*/*.mov
 references/*/
 whisper.cpp/
 models/
+inbox/

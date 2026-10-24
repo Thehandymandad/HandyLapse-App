@@ -13,6 +13,8 @@ Rispondi all'utente in italiano.
 
 ## Flusso: "montami questo video"
 
+Video troppo grandi per la chat (>50 MB): l'utente manda un link Google Drive/Dropbox → `npm run fetch -- <link>` lo scarica in `inbox/`, poi ingest.
+
 Trascrizione di un progetto già importato (senza toccare tagli e grafiche): `npm run transcribe -- <nome>`.
 
 1. `npm run ingest -- <video> --name <nome> --style <stile>` → crea `projects/<nome>/edit.json` + `transcript.txt`
