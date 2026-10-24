@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CreateProjectForm } from "@/components/create-project-form";
 import { CreditsBadge } from "@/components/credits-badge";
 
@@ -11,15 +10,7 @@ export default function HomePage() {
           <h2 className="text-xl font-bold text-handy-yellow drop-shadow-[0_2px_4px_rgba(255,210,0,0.3)]">HandyLapse</h2>
           <p className="text-xs text-muted-foreground">by Thehandymandad</p>
         </div>
-        <div className="flex items-center gap-3">
-          <Link
-            href="/reel"
-            className="rounded-full border-2 border-handy-yellow bg-handy-yellow/15 px-3 py-1.5 text-sm font-semibold shadow-3d-sm transition hover:-translate-y-0.5 hover:shadow-3d"
-          >
-            ✂️ Reel Editor
-          </Link>
-          <CreditsBadge />
-        </div>
+        <CreditsBadge />
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center px-4 pt-10 sm:pt-16 pb-12">

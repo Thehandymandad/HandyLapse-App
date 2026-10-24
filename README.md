@@ -2,9 +2,9 @@
 
 SaaS AI-driven per la generazione di video pubblicitari. Stack: Next.js 14, TypeScript, Tailwind CSS, Shadcn/UI, Supabase.
 
-## Reel Editor AI
+## Reel Studio
 
-Pagina `/reel`: carica un video grezzo e ottieni un reel montato (pause tagliate, sottotitoli animati, zoom, motion graphics, effetti sonori), con stile copiabile da una reference. Dettagli in [docs/REEL_EDITOR.md](docs/REEL_EDITOR.md).
+Cartella [`reel-studio/`](reel-studio/README.md): monta i reel dal girato grezzo con Remotion (tagli delle pause, sottotitoli animati, zoom, motion graphics con icone SVG e oggetti 3D three.js, effetti sonori ffmpeg), copiando lo stile da una reference. Il montaggio lo dirige Claude Code.
 
 ## Setup
 
