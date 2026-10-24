@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "name": "mio-reel",
+  "source": {
+    "file": "projects/mio-reel/source.mp4",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 20.687,
+    "matte": "projects/mio-reel/person.webm",
+    "plate": "projects/mio-reel/plate-auto.jpg"
+  },
+  "styleId": "claude-reel",
+  "keep": [
+    {
+      "start": 3.021,
+      "end": 6.133
+    },
+    {
+      "start": 7.205,
+      "end": 8.604
+    },
+    {
+      "start": 10.016,
+      "end": 11.96
+    },
+    {
+      "start": 12.868,
+      "end": 15.002
+    },
+    {
+      "start": 16.947,
+      "end": 17.668
+    },
+    {
+      "start": 17.979,
+      "end": 20.687
+    }
+  ],
+  "words": [],
+  "captionOffset": 0,
+  "framingX": 0.5,
+  "music": null,
+  "cuts": [],
+  "emphasis": [],
+  "hook": null,
+  "zooms": [],
+  "graphics": [
+    {
+      "type": "badge",
+      "at": 0,
+      "duration": 25,
+      "text": "[c]Claude[/c] ha montato il [y]100%[/y]\ndi questo video",
+      "sfx": "none"
+    },
+    {
+      "type": "timeline",
+      "at": 3.1,
+      "duration": 2,
+      "props": {
+        "exitFrames": 0
+      },
+      "sfx": "whoosh"
+    },
+    {
+      "type": "chat",
+      "at": 5.1,
+      "duration": 2.6,
+      "text": "Edita questo video!",
+      "props": {
+        "morph": true,
+        "sendAt": 0.5
+      },
+      "sfx": "typing"
+    },
+    {
+      "type": "logo3d",
+      "at": 13.0,
+      "duration": 1.9,
+      "x": 0.506,
+      "y": 0.67,
+      "sfx": "whoosh"
+    },
+    {
+      "type": "vanish",
+      "at": 10.1,
+      "duration": 1.8,
+      "sfx": "whoosh"
+    },
+    {
+      "type": "carousel3d",
+      "at": 16.95,
+      "duration": 2.5,
+      "behind": true,
+      "sfx": "whoosh"
+    },
+    {
+      "type": "guide",
+      "at": 19.35,
+      "duration": 2.5,
+      "sfx": "pop"
+    }
+  ],
+  "cta": null,
+  "styleOverrides": {
+    "cuts": {
+      "silenceDb": -38
+    }
+  },
+  "framing": {
+    "scale": 1.35,
+    "originX": 0.49,
+    "originY": 0.4,
+    "offsetY": 0
+  }
+}
