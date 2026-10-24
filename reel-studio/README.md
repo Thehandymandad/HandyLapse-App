@@ -35,7 +35,8 @@ Con Claude Code basta dire: *"montami ~/Desktop/girato.mov con lo stile della re
 ## Requisiti
 
 - Node 18+ e ffmpeg nel PATH
-- Per la trascrizione: `git`, `make` e un compilatore C++ (whisper.cpp viene compilato al primo uso) + connessione per scaricare il modello
+- Per la trascrizione: `export ELEVENLABS_API_KEY=...` (ElevenLabs Scribe, consigliato). Senza chiave si usa whisper.cpp
+  in locale: servono `git`, `make`, un compilatore C++ e la connessione per scaricare il modello
 - Remotion scarica da solo il suo Chromium al primo render
 - Per ritagliare la persona (grafiche dietro di te, effetto sparizione): Python 3 con `pip install ai-edge-litert numpy`
 

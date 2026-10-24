@@ -5,12 +5,15 @@ dalle reference guardando i fotogrammi. Non si usano Gemini né altre AI esterne
 
 - **Remotion** (`src/`) per comporre e renderizzare il video (React → MP4 1080×1920 30 fps)
 - **ffmpeg** (`scripts/`) per normalizzare il video, trovare le pause, analizzare le reference, sintetizzare gli effetti sonori e fare il loudnorm finale
-- **whisper.cpp** in locale (`@remotion/install-whisper-cpp`) per la trascrizione parola per parola
+- **ElevenLabs Speech-to-Text (Scribe)** per la trascrizione parola per parola (chiave in `ELEVENLABS_API_KEY`);
+  senza chiave si usa **whisper.cpp** in locale (`@remotion/install-whisper-cpp`)
 - **SVG scritto a mano** (`src/icons/index.tsx`) per le icone e **three.js** (`src/three/objects.tsx`, via `@remotion/three`) per gli oggetti 3D
 
 Rispondi all'utente in italiano.
 
 ## Flusso: "montami questo video"
+
+Trascrizione di un progetto già importato (senza toccare tagli e grafiche): `npm run transcribe -- <nome>`.
 
 1. `npm run ingest -- <video> --name <nome> --style <stile>` → crea `projects/<nome>/edit.json` + `transcript.txt`
    (video normalizzato in `public/projects/<nome>/source.mp4`, pause trovate con silencedetect, trascrizione whisper, piano automatico).

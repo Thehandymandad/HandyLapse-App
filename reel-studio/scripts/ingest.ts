@@ -12,7 +12,7 @@ import { autoPlan } from "./lib/autoplan";
 import { saveProject } from "./lib/project";
 import { arg, ffmpeg, flag, log, positional, probe, ROOT, slug } from "./lib/sh";
 import { autoThreshold, detectSpeech, envelopeDb, extractWav16k } from "./lib/silence";
-import { distributeText, readTextFile, transcribeWords } from "./lib/transcribe";
+import { distributeText, readTextFile, transcribeAuto } from "./lib/transcribe";
 import { getPack, resolveStyle } from "../src/styles";
 import type { EditProject, Word } from "../src/types";
 import type { WhisperModel } from "@remotion/install-whisper-cpp";
@@ -56,7 +56,7 @@ export async function ingest(input: string, opts: { name?: string; style?: strin
       log(`Testo manuale: ${words.length} parole distribuite sul parlato`);
     } else if (opts.whisper !== false) {
       try {
-        words = await transcribeWords(wav, { model: (opts.model ?? "small") as WhisperModel, language: opts.lang ?? "it" });
+        words = await transcribeAuto(wav, { model: (opts.model ?? "small") as WhisperModel, language: opts.lang ?? "it" });
         log(`Trascritte ${words.length} parole`);
       } catch (e) {
         console.warn(`⚠️  Trascrizione non riuscita: ${e instanceof Error ? e.message.split("\n")[0] : e}\n   Puoi passare il testo con --text testo.txt`);

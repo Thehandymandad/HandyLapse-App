@@ -12,7 +12,8 @@
     "make": "tsx scripts/make.ts",
     "typecheck": "tsc --noEmit",
     "compare": "tsx scripts/compare.ts",
-    "matte": "tsx scripts/matte.ts"
+    "matte": "tsx scripts/matte.ts",
+    "transcribe": "tsx scripts/transcribe.ts"
   },
   "dependencies": {
     "@fontsource/anton": "5.3.0",

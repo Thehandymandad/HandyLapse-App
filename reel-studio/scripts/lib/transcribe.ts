@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { downloadWhisperModel, installWhisperCpp, toCaptions, transcribe, type WhisperModel } from "@remotion/install-whisper-cpp";
-import { log, ROOT } from "./sh";
+import { log, ROOT, run } from "./sh";
 import type { Range, Word } from "../../src/types";
 
 const WHISPER_DIR = path.join(ROOT, "whisper.cpp");
@@ -34,6 +34,47 @@ export async function transcribeWords(wav16k: string, opts: { model: WhisperMode
   return captions
     .map((c) => ({ text: c.text.trim(), start: c.startMs / 1000, end: c.endMs / 1000 }))
     .filter((w) => w.text && !/^\[.*\]$/.test(w.text));
+}
+
+/**
+ * Trascrizione con ElevenLabs Speech-to-Text (Scribe), tempi parola per parola.
+ * Chiave in ELEVENLABS_API_KEY; modello in ELEVENLABS_STT_MODEL (default scribe_v1).
+ * Usa curl (rispetta proxy e certificati di sistema).
+ */
+export async function transcribeElevenLabs(audioPath: string, language: string): Promise<Word[]> {
+  const key = process.env.ELEVENLABS_API_KEY;
+  if (!key) throw new Error("ELEVENLABS_API_KEY non impostata");
+  const lang = { it: "ita", en: "eng", es: "spa", fr: "fra", de: "deu" }[language] ?? language;
+  log(`ElevenLabs Scribe (${process.env.ELEVENLABS_STT_MODEL ?? "scribe_v1"})…`);
+  const { stdout } = await run(
+    "curl",
+    [
+      "-sS", "--fail-with-body", "-X", "POST", "https://api.elevenlabs.io/v1/speech-to-text",
+      "-H", `xi-api-key: ${key}`,
+      "-F", `model_id=${process.env.ELEVENLABS_STT_MODEL ?? "scribe_v1"}`,
+      "-F", `file=@${audioPath}`,
+      "-F", "timestamps_granularity=word",
+      "-F", "tag_audio_events=false",
+      ...(lang ? ["-F", `language_code=${lang}`] : []),
+    ],
+    { quiet: true },
+  );
+  const json = JSON.parse(stdout) as { words?: { text: string; start: number; end: number; type?: string }[] };
+  return (json.words ?? [])
+    .filter((w) => (w.type ?? "word") === "word" && w.text.trim())
+    .map((w) => ({ text: w.text.trim(), start: +w.start.toFixed(3), end: +w.end.toFixed(3) }));
+}
+
+/** ElevenLabs se c'è la chiave, altrimenti whisper.cpp in locale. */
+export async function transcribeAuto(wav16k: string, opts: { model: WhisperModel; language: string }): Promise<Word[]> {
+  if (process.env.ELEVENLABS_API_KEY) {
+    try {
+      return await transcribeElevenLabs(wav16k, opts.language);
+    } catch (e) {
+      console.warn(`⚠️  ElevenLabs non riuscito (${e instanceof Error ? e.message.split("\n")[0] : e}), provo whisper.cpp`);
+    }
+  }
+  return transcribeWords(wav16k, opts);
 }
 
 /** Testo scritto a mano distribuito sul parlato rilevato (fallback senza whisper). */
