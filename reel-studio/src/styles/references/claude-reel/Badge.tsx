@@ -11,7 +11,8 @@ import { ClaudeLogo, POPPINS, Rich } from "./shared";
 export const Badge: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const frame = useCurrentFrame();
   const [l1, l2] = (g.text ?? "[c]Claude[/c] ha montato il [y]100%[/y]\ndi questo video").split("\n");
-  const o = interpolate(frame, [0, 4], [0, 1], { extrapolateRight: "clamp" });
+  // nella reference il badge c'è già dal primo frame; dissolvenza solo se entra più tardi
+  const o = g.from === 0 ? 1 : interpolate(frame, [0, 4], [0, 1], { extrapolateRight: "clamp" });
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: `${(g.y ?? 0.174) * 100}%`, display: "flex", justifyContent: "center", transform: "translateY(-50%)", opacity: o }}>
       <div

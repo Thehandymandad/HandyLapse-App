@@ -176,6 +176,8 @@ export type EditProject = {
   music?: { file: string; volume?: number } | null;
   /** Inquadratura orizzontale se il sorgente non è 9:16 (0..1). */
   framingX?: number;
+  /** Reinquadratura di base (es. da piano largo a mezzo busto): zoom attorno a (originX, originY) + spostamento verticale in px. */
+  framing?: { scale: number; originX?: number; originY?: number; offsetY?: number };
 };
 
 export type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };

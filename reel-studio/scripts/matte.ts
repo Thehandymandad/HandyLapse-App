@@ -44,6 +44,8 @@ export async function makeMatte(name: string, opts: { plate?: string; plateAt?: 
     "-i", src, "-i", matte, "-filter_complex", "[0:v][1:v]alphamerge,format=yuva420p", "-an",
     "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-b:v", "0", "-crf", "28", "-deadline", "good", "-cpu-used", "5", "-row-mt", "1", person,
   ]);
+  // ricarico il progetto: edit.json può essere stato modificato mentre il ritaglio girava
+  Object.assign(project, loadProject(name));
   project.source.matte = path.relative(path.join(ROOT, "public"), person);
   if (wantAuto && fs.existsSync(autoPlate)) {
     project.source.plate = path.relative(path.join(ROOT, "public"), autoPlate);

@@ -113,9 +113,9 @@ def build_plate(video, matte, samples, fps, w, h, out):
     A = np.stack(alphas)
     # allarga la persona di qualche pixel: i bordi del ritaglio non sono perfetti
     from numpy.lib.stride_tricks import sliding_window_view
-    pad = np.pad(A, ((0, 0), (3, 3), (3, 3)), mode="edge")
-    A = sliding_window_view(pad, (7, 7), axis=(1, 2)).max(axis=(-1, -2))
-    visible = A < 0.15
+    pad = np.pad(A, ((0, 0), (6, 6), (6, 6)), mode="edge")
+    A = sliding_window_view(pad, (13, 13), axis=(1, 2)).max(axis=(-1, -2))
+    visible = A < 0.1
     Fm = np.where(visible[..., None], F, np.nan)
     plate = np.nanmedian(Fm, axis=0)
     known = visible.any(axis=0)
@@ -133,6 +133,13 @@ def build_plate(video, matte, samples, fps, w, h, out):
         hole = weight < 0.5
         filled = np.where(hole[..., None] & (den > 1e-3), guess, filled)
         weight = np.where(hole & (den[..., 0] > 1e-3), 1.0, weight)
+    # ammorbidisce solo le zone ricostruite (niente blocchi)
+    k = np.ones(9, np.float32) / 9
+    soft = filled.copy()
+    for _ in range(3):
+        soft = np.apply_along_axis(lambda m: np.convolve(m, k, mode="same"), 0, soft)
+        soft = np.apply_along_axis(lambda m: np.convolve(m, k, mode="same"), 1, soft)
+    filled = np.where(known[..., None], filled, soft)
     img = np.clip(np.nan_to_num(filled), 0, 255).astype(np.uint8)
     subprocess.run(
         ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{pw}x{ph}", "-i", "-", "-vf", f"scale={w}:{h}:flags=bicubic", "-q:v", "2", out],

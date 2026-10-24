@@ -22,7 +22,18 @@ export const Reel: React.FC<ReelProps> = ({ project, style }) => {
   ]);
   const ctx = cameraContext(frame, tl, style);
   const base = defaultCamera(ctx);
-  const cam = pack.camera ? pack.camera(ctx, base) : base;
+  const styled = pack.camera ? pack.camera(ctx, base) : base;
+  // reinquadratura di base del progetto (sopra a tutti i movimenti di camera)
+  const fr = project.framing;
+  const cam = fr
+    ? {
+        ...styled,
+        scale: styled.scale * fr.scale,
+        y: styled.y + (fr.offsetY ?? 0),
+        originX: fr.originX ?? styled.originX,
+        originY: fr.originY ?? styled.originY,
+      }
+    : styled;
   const CaptionsC = pack.Captions ?? Captions;
 
   // persona ritagliata: serve per grafiche dietro di lei e per farla sparire
