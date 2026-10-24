@@ -15,7 +15,9 @@ export function run(bin: string, args: string[], opts: { quiet?: boolean; cwd?: 
       if (!opts.quiet) process.stderr.write(d);
     });
     p.on("error", reject);
-    p.on("close", (code) => (code === 0 ? resolve({ stdout, stderr }) : reject(new Error(`${bin} ${args.join(" ")} → exit ${code}\n${stderr.slice(-2000)}`))));
+    // mai chiavi/token nei messaggi d'errore
+    const shown = args.map((a) => a.replace(/((?:api[-_]?key|token|authorization)\s*[:=]\s*)\S+/gi, "$1***"));
+    p.on("close", (code) => (code === 0 ? resolve({ stdout, stderr }) : reject(new Error(`${bin} ${shown.join(" ")} → exit ${code}\n${stderr.slice(-2000)}`))));
   });
 }
 
