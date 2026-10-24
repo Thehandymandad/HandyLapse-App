@@ -33,26 +33,36 @@ Rispondi all'utente in italiano.
 
 ## Flusso: "copia lo stile di questa reference"
 
-1. `npm run reference -- <reel> --name <stile>` → `references/<stile>/` con `report.md`, `stats.json`,
-   `sheets/sheet-XX.jpg` (fogli provino, 2 fotogrammi al secondo), `sheets/burst.jpg` (15 fps: animazione dei sottotitoli),
-   `cuts/` (fotogramma dopo ogni taglio), `frames/`.
-2. **Guarda tu le immagini** (Read su fogli provino, burst e tagli) e ricava tutto quello che dice la checklist del report:
-   font (il più simile tra quelli in `src/lib/fonts.ts`; se nessuno va bene, installa il pacchetto `@fontsource/<font>` e aggiungilo lì),
-   dimensioni (i fotogrammi sono 540 px di larghezza → ×2 per i px su 1080), colori esatti, contorno, ombra, parola attiva,
-   parole per volta, posizione, animazione, ritmo dei tagli, zoom, tipo di grafiche e colori, color grading, effetti sonori.
-3. Scrivi `src/styles/references/<stile>.ts` con `defineStyle("<stile>", "Nome", "descrizione", { ... })` ed esportalo da
-   `src/styles/references/index.ts`. Usa `stats.json` per il ritmo (`cutsPerMinute` → `zoom.every`, pause rimaste → `cuts.minSilence`).
-4. Se la reference ha grafiche che non esistono ancora (un tipo di card, un'icona, un oggetto 3D, una transizione),
-   **creale**: nuove icone SVG in `src/icons/index.tsx` (griglia 24×24, solo tracciati), nuovi oggetti in `src/three/objects.tsx`
-   (geometrie three.js da codice, niente modelli scaricati), nuovi componenti in `src/components/Graphics.tsx`
-   (registrali in `RENDERERS` e aggiungi il tipo a `GraphicType` in `src/types.ts`). Nuovi effetti sonori: aggiungili in `scripts/sfx.ts` (sintesi ffmpeg) e in `SfxName`.
-5. Verifica: applica lo stile a un progetto (`"styleId": "<stile>"` in edit.json), renderizza degli still e confrontali
-   con i fotogrammi della reference, finché non sono uguali.
+Regola: **dalla reference si copia tutto** — font, colori, dimensioni, animazioni dei sottotitoli, movimenti di camera
+(anche 3D), transizioni, ogni motion graphic, effetti sonori, colore. Gli stili e i componenti di base sono solo un punto
+di partenza: se qualcosa nella reference è diverso, si scrive codice nuovo finché il risultato non è uguale.
+
+1. `npm run reference -- <reel> --name <stile> [--whisper]` → `references/<stile>/`:
+   - `sheets/motion-XX.jpg`: **tutto il video a 10 fps** (6×5 = 3 s per foglio, si legge riga per riga): è la fonte principale per animazioni, camera e transizioni
+   - `frames/f-NNNN.jpg`: fotogramma al secondo N/10 a 540 px, per misurare font, spessori e colori esatti
+   - `cuts/`: fotogramma prima/dopo ogni taglio → tipo di transizione
+   - `camera.json`: zoom e spostamento stimati per inquadratura + curva a 10 campioni/s (stima 2D: le rotazioni 3D si vedono nei fogli)
+   - `colors.json` (dominanti e accesi), `audio.json` (loudness, pause, picchi = effetti sonori, se cadono sui tagli), `stats.json`, `report.md`
+2. **Guarda tu le immagini** (Read) seguendo la checklist del report. Per ogni elemento annota: aspetto, entrata, permanenza, uscita, durata in frame, posizione.
+3. Crea lo style pack: copia `src/styles/references/_modello/` in `src/styles/references/<stile>/` e registralo in
+   `src/styles/references/index.ts` (`export { pack as <stile> } from "./<stile>";`). Un pack contiene:
+   - `style` (`defineStyle`): tutti i parametri misurati (font da `src/lib/fonts.ts`, se manca installa `@fontsource/<font>` e aggiungilo in `src/load-fonts.ts` e `FONTS`)
+   - `camera(ctx, base)`: movimenti di camera su misura (push-in, pan, orbite e rotazioni 3D con `rotateX/rotateY`, shake, curve di `camera.json`), transizioni (whip, zoom blur, glitch, flash, rotazione 3D o nuove: `blur`, `flash`, `glitch`, trasformazioni)
+   - `Captions`: componente sottotitoli su misura quando l'animazione non è identica a una di quelle base
+   - `Hook`, `Cta`: titolo iniziale e chiusura su misura
+   - `graphics`: grafiche su misura (stesso nome di una base = la sostituisce; nome nuovo = nuovo `type` in edit.json). Usa i mattoni di `src/components/Graphics.tsx` (`useInOut`, `Positioned`, `IconBadge`, `cardText`), le icone SVG di `src/icons/` (aggiungine di nuove, griglia 24×24) e gli oggetti three.js di `src/three/objects.tsx` (aggiungine di nuovi con geometrie da codice, `ThreeCanvas` di `@remotion/three`, anche con camera 3D animata)
+   - `Overlay`/`Underlay`: grana, light leak, cornici, sfondi
+   - effetti sonori nuovi: sintesi ffmpeg in `scripts/sfx.ts` (poi `npm run sfx`)
+4. Verifica: monta un progetto con `"styleId": "<stile>"` e confronta: `npm run compare -- <progetto> --ref <stile> --at 0.5,2,4`
+   → `out/compare/<progetto>/*.png` (reference a sinistra, render a destra). Controlla anche il movimento con più still ravvicinati
+   (`npm run render -- <progetto> --still 30,32,34,36,38`). Ripeti finché non è uguale.
 
 ## Note tecniche
 
 - Tempi in `edit.json` = secondi del video **sorgente**; `src/lib/timeline.ts` li converte in frame di output dopo i tagli.
 - `styleOverrides` in `edit.json` permette ritocchi a un solo progetto senza toccare lo stile.
+- La camera di base (`src/lib/camera.ts`) combina zoom, alternanza sui tagli, push-in per inquadratura, oscillazione, inclinazione 3D, shake e transizioni (`style.camera`); il video sta dentro una prospettiva CSS, quindi `rotateX/rotateY` danno movimenti 3D veri.
+- Negli script Node non importare CSS: i font si caricano solo da `src/load-fonts.ts` (entry Remotion).
 - `npm run studio` apre Remotion Studio con un'anteprima per ogni progetto (`reel-<nome>`) e la composizione `Gallery` (tutte le icone e gli oggetti 3D).
 - Render senza GPU: three.js usa `swangle`. Se Remotion non riesce a scaricare il suo Chromium, imposta
   `REMOTION_BROWSER_EXECUTABLE` (in questo cloud: `/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`).

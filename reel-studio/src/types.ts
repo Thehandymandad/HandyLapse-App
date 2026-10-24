@@ -57,6 +57,20 @@ export type ReelStyle = {
     /** Secondi medi tra zoom nel piano automatico. */
     every: number;
   };
+  /** Movimenti di camera sul video (anche 3D) e transizioni sui tagli. */
+  camera: {
+    /** Prospettiva CSS in px per le rotazioni 3D (più basso = più marcato). */
+    perspective: number;
+    /** Push-in lento su ogni inquadratura: scala raggiunta a fine inquadratura (1 = fermo). */
+    pushPerShot: number;
+    /** Oscillazione "a mano" (px). */
+    drift: number;
+    /** Inclinazione 3D durante gli zoom (gradi su X/Y). */
+    tilt3d: number;
+    /** Transizione sui jump cut. */
+    transition: "none" | "flash" | "whip" | "zoom-blur" | "shake" | "glitch" | "rotate-3d";
+    transitionFrames: number;
+  };
   motion: {
     fontFamily: string;
     accentColor: string;
@@ -96,7 +110,9 @@ export type IconName =
 
 export type Object3DName = "coin" | "star" | "heart" | "house" | "gem" | "bolt" | "arrow" | "gift";
 
-export type GraphicType = "keyword" | "stat" | "list" | "icon" | "object3d" | "arrow" | "cta";
+export type BuiltinGraphicType = "keyword" | "stat" | "list" | "icon" | "object3d" | "arrow" | "cta";
+/** Tipi base + tipi creati apposta per una reference (registrati nel suo style pack). */
+export type GraphicType = BuiltinGraphicType | (string & {});
 
 /** Grafica sul video. `at` è il tempo SORGENTE in cui compare (meglio se allineato all'inizio di una parola). */
 export type Graphic = {
@@ -113,13 +129,15 @@ export type Graphic = {
   /** Per "arrow": direzione in gradi (0 = destra). */
   angle?: number;
   sfx?: SfxName | "none";
+  /** Dati extra per le grafiche personalizzate di uno style pack. */
+  props?: Record<string, unknown>;
 };
 
 export type Zoom = { at: number; kind: "punch" | "smooth"; strength: number; duration?: number };
 
 export type Cut = Range & { reason: "filler" | "retake" | "manual" | "off-topic" };
 
-export type SfxName = "whoosh" | "pop" | "ding" | "click" | "riser" | "boom";
+export type SfxName = "whoosh" | "pop" | "ding" | "click" | "riser" | "boom" | (string & {});
 
 /** File di montaggio (projects/<nome>/edit.json): lo scrive l'ingest e lo rifinisce Claude Code. */
 export type EditProject = {

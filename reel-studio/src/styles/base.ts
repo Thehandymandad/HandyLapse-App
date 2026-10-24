@@ -29,6 +29,7 @@ export const BASE_STYLE: ReelStyle = {
   },
   cuts: { silenceDb: null, minSilence: 0.35, paddingBefore: 0.08, paddingAfter: 0.12 },
   zoom: { enabled: true, intensity: 1.22, alternateOnCuts: true, alternateScale: 1.1, focusX: 0.5, focusY: 0.38, shake: false, every: 4 },
+  camera: { perspective: 1400, pushPerShot: 1, drift: 0, tilt3d: 0, transition: "none", transitionFrames: 5 },
   motion: {
     fontFamily: "Montserrat",
     accentColor: "#FFD200",

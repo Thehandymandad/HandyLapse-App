@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
+import type { CameraState } from "../lib/camera";
 import type { Timeline } from "../lib/timeline";
 import type { EditProject, ReelStyle } from "../types";
 
@@ -8,11 +9,33 @@ export const Vignette: React.FC<{ amount: number }> = ({ amount }) =>
     <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,${(amount * 0.85).toFixed(3)}) 100%)` }} />
   ) : null;
 
-export const CutFlash: React.FC<{ tl: Timeline }> = ({ tl }) => {
+/** Effetti della camera sopra il video: lampo bianco e glitch (scanline + bande colorate). */
+export const CameraFx: React.FC<{ cam: CameraState }> = ({ cam }) => {
   const frame = useCurrentFrame();
-  const c = tl.cuts.find((c) => frame >= c && frame < c + 4);
-  if (c === undefined) return null;
-  return <AbsoluteFill style={{ background: "#fff", opacity: interpolate(frame - c, [0, 4], [0.5, 0]) }} />;
+  return (
+    <>
+      {cam.flash > 0.01 && <AbsoluteFill style={{ background: "#fff", opacity: cam.flash }} />}
+      {cam.glitch > 0.01 && (
+        <AbsoluteFill style={{ opacity: cam.glitch, mixBlendMode: "screen" }}>
+          <AbsoluteFill style={{ background: "repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 2px, transparent 2px 6px)" }} />
+          {[0, 1, 2].map((i) => (
+            <div
+              key={i}
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                top: `${((frame * 37 + i * 311) % 100).toFixed(0)}%`,
+                height: 30 + i * 25,
+                background: i === 1 ? "rgba(0,255,255,0.35)" : "rgba(255,0,90,0.35)",
+                transform: `translateX(${(i - 1) * 40}px)`,
+              }}
+            />
+          ))}
+        </AbsoluteFill>
+      )}
+    </>
+  );
 };
 
 export const ProgressBar: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl, style }) => {

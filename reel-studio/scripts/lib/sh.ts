@@ -4,9 +4,9 @@ import { fileURLToPath } from "node:url";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-export function run(bin: string, args: string[], opts: { quiet?: boolean } = {}): Promise<{ stdout: string; stderr: string }> {
+export function run(bin: string, args: string[], opts: { quiet?: boolean; cwd?: string } = {}): Promise<{ stdout: string; stderr: string }> {
   return new Promise((resolve, reject) => {
-    const p = spawn(bin, args, { cwd: ROOT });
+    const p = spawn(bin, args, { cwd: opts.cwd ?? ROOT });
     let stdout = "";
     let stderr = "";
     p.stdout.on("data", (d) => (stdout += d));
@@ -19,7 +19,25 @@ export function run(bin: string, args: string[], opts: { quiet?: boolean } = {})
   });
 }
 
-export const ffmpeg = (args: string[]) => run("ffmpeg", ["-hide_banner", "-y", "-loglevel", "error", ...args], { quiet: true });
+export const ffmpeg = (args: string[], cwd?: string) => run("ffmpeg", ["-hide_banner", "-y", "-loglevel", "error", ...args], { quiet: true, cwd });
+
+/** Decodifica un video in frame RGB grezzi piccoli (per analisi colori/movimento in Node). */
+export async function rawFrames(input: string, opts: { fps: number; width: number; height: number }): Promise<Buffer[]> {
+  const { spawn } = await import("node:child_process");
+  return new Promise((resolve, reject) => {
+    const p = spawn("ffmpeg", ["-v", "error", "-i", input, "-vf", `fps=${opts.fps},scale=${opts.width}:${opts.height}`, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"]);
+    const chunks: Buffer[] = [];
+    p.stdout.on("data", (d: Buffer) => chunks.push(d));
+    p.on("error", reject);
+    p.on("close", () => {
+      const all = Buffer.concat(chunks);
+      const size = opts.width * opts.height * 3;
+      const frames: Buffer[] = [];
+      for (let o = 0; o + size <= all.length; o += size) frames.push(all.subarray(o, o + size));
+      resolve(frames);
+    });
+  });
+}
 
 export async function probe(file: string) {
   const { stdout } = await run("ffprobe", ["-v", "error", "-print_format", "json", "-show_format", "-show_streams", file], { quiet: true });

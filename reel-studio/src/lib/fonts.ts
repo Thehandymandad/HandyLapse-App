@@ -1,38 +1,6 @@
 import { useEffect, useState } from "react";
 import { continueRender, delayRender } from "remotion";
 
-// Font locali (fontsource): niente download durante il render.
-import "@fontsource/montserrat/latin-500.css";
-import "@fontsource/montserrat/latin-700.css";
-import "@fontsource/montserrat/latin-800.css";
-import "@fontsource/montserrat/latin-900.css";
-import "@fontsource/poppins/latin-500.css";
-import "@fontsource/poppins/latin-700.css";
-import "@fontsource/poppins/latin-800.css";
-import "@fontsource/poppins/latin-900.css";
-import "@fontsource/inter/latin-500.css";
-import "@fontsource/inter/latin-700.css";
-import "@fontsource/inter/latin-800.css";
-import "@fontsource/inter/latin-900.css";
-import "@fontsource/anton/latin-400.css";
-import "@fontsource/bebas-neue/latin-400.css";
-import "@fontsource/oswald/latin-500.css";
-import "@fontsource/oswald/latin-700.css";
-import "@fontsource/barlow-condensed/latin-700.css";
-import "@fontsource/barlow-condensed/latin-900.css";
-import "@fontsource/archivo-black/latin-400.css";
-import "@fontsource/rubik/latin-700.css";
-import "@fontsource/rubik/latin-900.css";
-import "@fontsource/kanit/latin-700.css";
-import "@fontsource/kanit/latin-900.css";
-import "@fontsource/bangers/latin-400.css";
-import "@fontsource/luckiest-guy/latin-400.css";
-import "@fontsource/lilita-one/latin-400.css";
-import "@fontsource/titan-one/latin-400.css";
-import "@fontsource/permanent-marker/latin-400.css";
-import "@fontsource/playfair-display/latin-700.css";
-import "@fontsource/playfair-display/latin-900.css";
-
 /** Font disponibili e pesi caricati. Quando si copia una reference si sceglie il più simile. */
 export const FONTS: Record<string, { weights: number[]; note: string }> = {
   Montserrat: { weights: [500, 700, 800, 900], note: "sans geometrico, classico Hormozi" },

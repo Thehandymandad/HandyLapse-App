@@ -5,10 +5,11 @@ import { Icon } from "../icons";
 import { fontStack, fontWeightFor } from "../lib/fonts";
 import { seeded, type GraphicEvent, type Timeline } from "../lib/timeline";
 import { Object3DMesh } from "../three/objects";
+import type { StylePack } from "../styles/pack";
 import type { IconName, ReelStyle } from "../types";
 
 /** Entrata a molla + uscita negli ultimi frame. */
-function useInOut(frames: number, damping = 12, stiffness = 220) {
+export function useInOut(frames: number, damping = 12, stiffness = 220) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const enter = spring({ frame, fps, config: { damping, stiffness, mass: 0.7 } });
@@ -16,15 +17,15 @@ function useInOut(frames: number, damping = 12, stiffness = 220) {
   return { frame, fps, enter, exit };
 }
 
-const defaultY = (style: ReelStyle) => (style.captions.positionY > 0.5 ? 0.26 : 0.72);
+export const defaultY = (style: ReelStyle) => (style.captions.positionY > 0.5 ? 0.26 : 0.72);
 
-const Positioned: React.FC<{ x?: number; y: number; children: React.ReactNode; style?: React.CSSProperties }> = ({ x = 0.5, y, children, style }) => (
+export const Positioned: React.FC<{ x?: number; y: number; children: React.ReactNode; style?: React.CSSProperties }> = ({ x = 0.5, y, children, style }) => (
   <AbsoluteFill>
     <div style={{ position: "absolute", left: `${x * 100}%`, top: `${y * 100}%`, transform: "translate(-50%, -50%)", ...style }}>{children}</div>
   </AbsoluteFill>
 );
 
-const cardText = (style: ReelStyle, size: number): React.CSSProperties => ({
+export const cardText = (style: ReelStyle, size: number): React.CSSProperties => ({
   fontFamily: fontStack(style.motion.fontFamily),
   fontWeight: fontWeightFor(style.motion.fontFamily, 900),
   fontSize: size,
@@ -35,7 +36,7 @@ const cardText = (style: ReelStyle, size: number): React.CSSProperties => ({
 });
 
 /** Badge rotondo con icona che si disegna. */
-const IconBadge: React.FC<{ name: IconName; size: number; style: ReelStyle; progress: number; color?: string }> = ({ name, size, style, progress, color }) => {
+export const IconBadge: React.FC<{ name: IconName; size: number; style: ReelStyle; progress: number; color?: string }> = ({ name, size, style, progress, color }) => {
   const solid = style.motion.iconStyle === "solid";
   return (
     <div
@@ -279,7 +280,7 @@ export const CallToAction: React.FC<{ text: string; icon?: IconName; style: Reel
   );
 };
 
-const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelStyle }>> = {
+export const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelStyle }>> = {
   keyword: KeywordCard,
   stat: StatCounter,
   list: ListItem,
@@ -288,26 +289,31 @@ const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelStyle }>>
   arrow: ArrowGraphic,
 };
 
-export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl, style }) => (
-  <AbsoluteFill>
-    {tl.hook && (
-      <Sequence from={tl.hook.from} durationInFrames={tl.hook.frames} name="Hook">
-        <HookTitle text={tl.hook.text} icon={tl.hook.icon} frames={tl.hook.frames} style={style} />
-      </Sequence>
-    )}
-    {tl.graphics.map((g) => {
-      const C = RENDERERS[g.type];
-      if (!C) return null;
-      return (
-        <Sequence key={g.key} from={g.from} durationInFrames={g.frames} name={`${g.type}: ${g.text ?? g.icon ?? g.object ?? ""}`} premountFor={10}>
-          <C g={g} style={style} />
+export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: StylePack }> = ({ tl, style, pack }) => {
+  const renderers = { ...RENDERERS, ...pack.graphics };
+  const Hook = pack.Hook ?? HookTitle;
+  const Cta = pack.Cta ?? CallToAction;
+  return (
+    <AbsoluteFill>
+      {tl.hook && (
+        <Sequence from={tl.hook.from} durationInFrames={tl.hook.frames} name="Hook">
+          <Hook text={tl.hook.text} icon={tl.hook.icon} frames={tl.hook.frames} style={style} />
         </Sequence>
-      );
-    })}
-    {tl.cta && (
-      <Sequence from={tl.cta.from} durationInFrames={tl.cta.frames} name="CTA">
-        <CallToAction text={tl.cta.text} icon={tl.cta.icon} style={style} />
-      </Sequence>
-    )}
-  </AbsoluteFill>
-);
+      )}
+      {tl.graphics.map((g) => {
+        const C = renderers[g.type];
+        if (!C) return null;
+        return (
+          <Sequence key={g.key} from={g.from} durationInFrames={g.frames} name={`${g.type}: ${g.text ?? g.icon ?? g.object ?? ""}`} premountFor={10}>
+            <C g={g} style={style} />
+          </Sequence>
+        );
+      })}
+      {tl.cta && (
+        <Sequence from={tl.cta.from} durationInFrames={tl.cta.frames} name="CTA">
+          <Cta text={tl.cta.text} icon={tl.cta.icon} style={style} />
+        </Sequence>
+      )}
+    </AbsoluteFill>
+  );
+};

@@ -1,18 +1,24 @@
 import type { DeepPartial, ReelStyle } from "../types";
 import { mergeStyle } from "./base";
+import type { StylePack } from "./pack";
 import * as presets from "./presets";
 import * as references from "./references/index";
 
 /**
- * Registro degli stili. Gli stili copiati dalle reference stanno in ./references/*.ts
- * (li scrive Claude Code dopo aver analizzato la reference, vedi CLAUDE.md).
+ * Registro degli style pack. I preset sono solo parametri; le reference (./references/<nome>/)
+ * possono avere componenti propri. Le scrive Claude Code dopo aver analizzato la reference (vedi CLAUDE.md).
  */
-export const STYLES: Record<string, ReelStyle> = Object.fromEntries(
-  ([...Object.values(presets), ...Object.values(references)] as ReelStyle[]).map((s) => [s.id, s]),
-);
+export const PACKS: Record<string, StylePack> = Object.fromEntries([
+  ...(Object.values(presets) as ReelStyle[]).map((s) => [s.id, { style: s }] as const),
+  ...(Object.values(references) as StylePack[]).map((p) => [p.style.id, p] as const),
+]);
+
+export const STYLES: Record<string, ReelStyle> = Object.fromEntries(Object.entries(PACKS).map(([id, p]) => [id, p.style]));
 
 export function resolveStyle(id: string, overrides?: DeepPartial<ReelStyle>): ReelStyle {
-  const base = STYLES[id];
-  if (!base) throw new Error(`Stile "${id}" non trovato. Disponibili: ${Object.keys(STYLES).join(", ")}`);
-  return mergeStyle(base, overrides);
+  const pack = PACKS[id];
+  if (!pack) throw new Error(`Stile "${id}" non trovato. Disponibili: ${Object.keys(PACKS).join(", ")}`);
+  return mergeStyle(pack.style, overrides);
 }
+
+export const getPack = (id: string): StylePack => PACKS[id] ?? { style: PACKS.hormozi.style };

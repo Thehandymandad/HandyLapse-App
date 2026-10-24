@@ -5,7 +5,6 @@ public/projects/
 projects/*/*.wav
 projects/*/*.mp4
 projects/*/*.mov
-references/*/frames/
-references/*/burst/
-references/*/*.wav
+# materiale estratto dalle reference (video di terzi): resta solo in locale
+references/*/
 whisper.cpp/
