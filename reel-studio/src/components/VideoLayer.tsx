@@ -23,7 +23,7 @@ export const CameraFrame: React.FC<{ cam: CameraState; style: ReelStyle; extraFi
     cam.blur > 0.3 ? `blur(${cam.blur.toFixed(1)}px)` : "",
     extraFilter ?? "",
   ].join(" ");
-  return (
+  const inner = (
     <AbsoluteFill style={{ perspective: style.camera.perspective, overflow: "hidden", opacity }}>
       <AbsoluteFill
         style={{
@@ -33,6 +33,22 @@ export const CameraFrame: React.FC<{ cam: CameraState; style: ReelStyle; extraFi
         }}
       >
         {children}
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+  const inset = cam.inset ?? 1;
+  if (inset >= 0.999 && !cam.insetRotateX && !cam.insetRotateY) return inner;
+  // riquadro: tutto il video rimpicciolito al centro, angoli arrotondati, inclinato in 3D
+  return (
+    <AbsoluteFill style={{ perspective: 2200 }}>
+      <AbsoluteFill
+        style={{
+          transform: `rotateX(${cam.insetRotateX ?? 0}deg) rotateY(${cam.insetRotateY ?? 0}deg) scale(${inset})`,
+          borderRadius: (cam.insetRadius ?? 0) / Math.max(0.01, inset),
+          overflow: "hidden",
+        }}
+      >
+        {inner}
       </AbsoluteFill>
     </AbsoluteFill>
   );

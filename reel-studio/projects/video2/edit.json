@@ -8,7 +8,7 @@
     "fps": 30,
     "duration": 50.836
   },
-  "styleId": "claude-reel",
+  "styleId": "pulse",
   "keep": [
     {
       "start": 0.35,
@@ -713,51 +713,155 @@
       "reason": "retake"
     }
   ],
-  "emphasis": [],
+  "emphasis": [
+    7,
+    11,
+    17,
+    33,
+    44,
+    56,
+    119,
+    121
+  ],
   "hook": null,
-  "zooms": [],
+  "zooms": [
+    {
+      "at": 1.02,
+      "kind": "punch",
+      "strength": 0.6
+    },
+    {
+      "at": 11.58,
+      "kind": "punch",
+      "strength": 0.8
+    },
+    {
+      "at": 15.42,
+      "kind": "punch",
+      "strength": 1
+    }
+  ],
   "graphics": [
     {
-      "type": "badge",
-      "at": 0,
-      "duration": 60,
-      "text": "[c]Claude[/c] ha montato il [y]100%[/y]\ndi questo video",
-      "sfx": "none"
+      "type": "rec",
+      "at": 0.37,
+      "duration": 3.45,
+      "sfx": "beep",
+      "props": {
+        "shutterAt": 88,
+        "focusX": 0.45,
+        "focusY": 0.4
+      }
     },
     {
-      "type": "timeline",
-      "at": 4.5,
-      "duration": 4.87,
+      "type": "sfx",
+      "at": 3.3,
+      "duration": 0.6,
+      "sfx": "shutter"
+    },
+    {
+      "type": "tape",
+      "at": 5.137,
+      "duration": 1.6,
+      "text": "EDITING",
+      "sfx": "whoosh"
+    },
+    {
+      "type": "hours",
+      "at": 6.737,
+      "duration": 1.93,
+      "sfx": "tick",
       "props": {
-        "title": "Timeline · reel_finale",
-        "time": "03:47:12"
-      },
+        "hitAt": 23,
+        "hours": 6
+      }
+    },
+    {
+      "type": "nope",
+      "at": 8.97,
+      "duration": 1.27,
+      "text": "NOPE",
+      "sfx": "boom",
+      "props": {
+        "kicker": "RISULTATO"
+      }
+    },
+    {
+      "type": "route",
+      "at": 11.57,
+      "duration": 3.13,
       "sfx": "whoosh",
-      "y": 0.705
+      "props": {
+        "arriveAt": 59,
+        "to": "Lavoro"
+      }
     },
     {
-      "type": "chat",
-      "at": 14.6,
-      "duration": 2.53,
-      "text": "Edita questo video!",
-      "props": {
-        "sendAt": 0.45
-      },
-      "sfx": "typing",
-      "y": 0.705
+      "type": "sfx",
+      "at": 13.537,
+      "duration": 0.6,
+      "sfx": "pop"
     },
     {
-      "type": "guide",
-      "at": 46.8,
-      "duration": 2.8,
-      "sfx": "pop",
+      "type": "claude",
+      "at": 15.437,
+      "duration": 1.7,
+      "sfx": "riser",
       "props": {
-        "tag": "GUIDA GRATUITA",
-        "title": "Fai montare i tuoi reel a [c]Claude[/c]",
-        "subtitle": "Come faccio, passo per passo: ti mando tutto in DM.",
-        "cta": "Scrivimi [b]EDITING[/b]"
-      },
-      "y": 0.735
+        "doneAt": 42
+      }
+    },
+    {
+      "type": "sfx",
+      "at": 16.837,
+      "duration": 0.6,
+      "sfx": "ding"
+    },
+    {
+      "type": "phone",
+      "at": 17.46,
+      "duration": 3.1,
+      "sfx": "whoosh",
+      "props": {
+        "statsAt": 29
+      }
+    },
+    {
+      "type": "sfx",
+      "at": 18.4,
+      "duration": 0.6,
+      "sfx": "pop"
+    },
+    {
+      "type": "dm",
+      "at": 46.867,
+      "duration": 3,
+      "text": "EDITING",
+      "sfx": "whoosh",
+      "props": {
+        "typeAt": 15,
+        "sendAt": 31,
+        "replyAt": 46,
+        "reply": "Ecco la guida completa"
+      }
+    },
+    {
+      "type": "sfx",
+      "at": 47.367,
+      "duration": 0.6,
+      "sfx": "typing"
+    },
+    {
+      "type": "sfx",
+      "at": 47.9,
+      "duration": 0.6,
+      "sfx": "send"
+    },
+    {
+      "type": "sfx",
+      "at": 48.4,
+      "duration": 0.6,
+      "sfx": "pop"
     }
   ],
   "cta": null,
@@ -772,14 +876,8 @@
       "brightness": 0.93,
       "contrast": 1.12,
       "saturation": 1.1,
-      "warmth": 0.12,
-      "vignette": 0.38
-    },
-    "zoom": {
-      "alternateScale": 1.08
-    },
-    "captions": {
-      "positionY": 0.575
+      "warmth": 0.08,
+      "vignette": 0.4
     }
   }
 }

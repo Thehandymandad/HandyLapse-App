@@ -94,6 +94,20 @@ fotogramma per fotogramma (NCC) e stampa JSON. Converti i punti nelle coordinate
   Per replicarla del tutto servono dall'utente: le copertine dei suoi reel (carosello), qualche secondo di inquadratura
   vuota (sparizione), e l'inquadratura della mano aperta per il logo 3D.
 
+## Stili originali
+
+Quando l'utente chiede "mettici del tuo" / niente copia della reference: stili in `src/styles/originals/<nome>/`
+(stessa struttura dei pack, registrati in `src/styles/originals/index.ts`).
+
+- `pulse`: lime elettrico su vetro nero, Anton + Inter. Sottotitoli cinetici (parole che salgono a fuoco, attiva lime,
+  `emphasis` su etichetta lime), tagli alternati punch/whip 3D. Grafiche (frame in props relativi all'inizio della grafica):
+  `rec` (mirino REC + messa a fuoco, props: shutterAt, focusX, focusY), `tape` (nastri incrociati con `text`),
+  `hours` (orologio + contatore ore, props: hitAt, hours, label), `nope` (video in bianco e nero + timbro rosso, `text`,
+  props.kicker; la camera trema), `route` (navigatore, props: arriveAt, to), `claude` (progress di Claude, props: doneAt, tasks),
+  `phone` (il video entra in uno smartphone 3D con cuori e statistiche, props: statsAt, stats), `dm` (chat che scrive
+  `text` e lo invia, props: typeAt, sendAt, replyAt, reply). Grafiche fuori dalla zona sopra la testa (y ≈ 0.765).
+- Effetti sonori in più su una grafica: aggiungi `{"type": "sfx", "at": …, "duration": 0.6, "sfx": "<nome>"}` (non disegna nulla).
+
 ## Note tecniche
 
 - Tempi in `edit.json` = secondi del video **sorgente**; `src/lib/timeline.ts` li converte in frame di output dopo i tagli.

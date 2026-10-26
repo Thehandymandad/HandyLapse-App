@@ -2,6 +2,7 @@ import type { DeepPartial, ReelStyle } from "../types";
 import { mergeStyle } from "./base";
 import type { StylePack } from "./pack";
 import * as presets from "./presets";
+import * as originals from "./originals/index";
 import * as references from "./references/index";
 
 /**
@@ -11,6 +12,7 @@ import * as references from "./references/index";
 export const PACKS: Record<string, StylePack> = Object.fromEntries([
   ...(Object.values(presets) as ReelStyle[]).map((s) => [s.id, { style: s }] as const),
   ...(Object.values(references) as StylePack[]).map((p) => [p.style.id, p] as const),
+  ...(Object.values(originals) as StylePack[]).map((p) => [p.style.id, p] as const),
 ]);
 
 export const STYLES: Record<string, ReelStyle> = Object.fromEntries(Object.entries(PACKS).map(([id, p]) => [id, p.style]));

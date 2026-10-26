@@ -20,6 +20,14 @@ export type CameraState = {
   /** Punto di fuoco delle trasformazioni (0..1). */
   originX: number;
   originY: number;
+  /**
+   * Riquadro: il video intero si rimpicciolisce attorno al centro (1 = pieno schermo), con angoli arrotondati
+   * e inclinazione 3D — per effetti "dentro uno smartphone". Applicato dopo la reinquadratura del progetto.
+   */
+  inset?: number;
+  insetRadius?: number;
+  insetRotateX?: number;
+  insetRotateY?: number;
 };
 
 export type CameraContext = {

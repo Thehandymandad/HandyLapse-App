@@ -12,6 +12,12 @@ const SFX: Record<string, { expr: string; d: number; af?: string }> = {
   // tasti della tastiera: click brevi ogni ~85 ms con intensità variabile
   typing: { expr: "sin(2*PI*2600*t)*exp(-260*mod(t,0.085))*(0.25+0.2*sin(37*t)*sin(11*t))", d: 1.3, af: "highpass=f=800" },
   send: { expr: "sin(2*PI*(700*t+900*t*t))*exp(-22*t)*0.6", d: 0.18 },
+  // bip doppio della messa a fuoco
+  beep: { expr: "sin(2*PI*2100*t)*(lt(t,0.06)+gte(t,0.11)*lt(t,0.17))*0.4", d: 0.22 },
+  // orologio che corre: tic metallici sempre più fitti
+  tick: { expr: "sin(2*PI*3300*t)*exp(-170*mod(t*(1+t*1.5),0.09))*0.45", d: 1.6, af: "highpass=f=1200" },
+  // otturatore: due scatti di rumore filtrato
+  shutter: { expr: "(random(0)-0.5)*(exp(-70*t)+0.8*exp(-70*abs(t-0.085))*gte(t,0.085))*1.4", d: 0.25, af: "bandpass=f=2800:width_type=h:w=3000" },
   boom: { expr: "sin(2*PI*(70*t-18*t*t))*exp(-3.5*t)*0.95", d: 1.1, af: "lowpass=f=400" },
 };
 
