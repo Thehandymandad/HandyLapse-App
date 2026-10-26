@@ -1,0 +1,34 @@
+# Deploy del worker Trigger.dev (montaggio dei reel e generazione video) senza computer:
+# parte da solo quando cambiano i task o reel-studio su main, oppure a mano da GitHub → Actions → "Run workflow".
+# Serve il secret TRIGGER_ACCESS_TOKEN (Trigger.dev → Account → Personal Access Tokens).
+name: Deploy Trigger.dev worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/trigger/**"
+      - "trigger.config.ts"
+      - "package.json"
+      - "package-lock.json"
+      - "reel-studio/src/**"
+      - "reel-studio/scripts/**"
+      - "reel-studio/public/sfx/**"
+      - "reel-studio/package.json"
+      - "reel-studio/package-lock.json"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: npm
+      - run: npm ci
+      - name: Deploy su Trigger.dev
+        env:
+          TRIGGER_ACCESS_TOKEN: ${{ secrets.TRIGGER_ACCESS_TOKEN }}
+        run: npx trigger.dev@4.4.3 deploy

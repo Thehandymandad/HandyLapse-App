@@ -16,6 +16,7 @@ import { HoursBurn } from "./HoursBurn";
 import { NopeStamp } from "./NopeStamp";
 import { RecHud } from "./RecHud";
 import { PulseBackdrop, ResultPhone } from "./ResultPhone";
+import { pulsePlan } from "./plan";
 import { RouteMap } from "./RouteMap";
 import { clamp01, P, phoneState } from "./shared";
 import { TapeBand } from "./TapeBand";
@@ -50,6 +51,7 @@ const TRANSITION = 7;
 export const pack = definePack({
   style,
   Captions: PulseCaptions,
+  plan: pulsePlan,
   Underlay: PulseBackdrop,
   camera: (ctx, base) => {
     const { frame, tl, sinceCut } = ctx;
