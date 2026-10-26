@@ -1,0 +1,785 @@
+{
+  "version": 1,
+  "name": "video2",
+  "source": {
+    "file": "projects/video2/source.mp4",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 50.836
+  },
+  "styleId": "claude-reel",
+  "keep": [
+    {
+      "start": 0.35,
+      "end": 3.8200000000000003
+    },
+    {
+      "start": 4.07,
+      "end": 7.76
+    },
+    {
+      "start": 8.069,
+      "end": 13.88
+    },
+    {
+      "start": 14.27,
+      "end": 17.119999999999997
+    },
+    {
+      "start": 17.41,
+      "end": 20.56
+    },
+    {
+      "start": 20.91,
+      "end": 21.979999999999997
+    },
+    {
+      "start": 22.45,
+      "end": 24.299999999999997
+    },
+    {
+      "start": 27.39,
+      "end": 28.4
+    },
+    {
+      "start": 29.25,
+      "end": 31.72
+    },
+    {
+      "start": 32.69,
+      "end": 34.739999999999995
+    },
+    {
+      "start": 35.35,
+      "end": 35.54
+    },
+    {
+      "start": 35.95,
+      "end": 39.019999999999996
+    },
+    {
+      "start": 39.97,
+      "end": 43.46
+    },
+    {
+      "start": 43.79,
+      "end": 44.5
+    },
+    {
+      "start": 45.49,
+      "end": 49.14
+    }
+  ],
+  "words": [
+    {
+      "text": "Avete",
+      "start": 0.4,
+      "end": 0.64
+    },
+    {
+      "text": "appena",
+      "start": 0.68,
+      "end": 0.96
+    },
+    {
+      "text": "finito",
+      "start": 1.02,
+      "end": 1.64
+    },
+    {
+      "text": "di",
+      "start": 1.7,
+      "end": 1.86
+    },
+    {
+      "text": "registrare",
+      "start": 1.9,
+      "end": 2.64
+    },
+    {
+      "text": "il",
+      "start": 2.7,
+      "end": 2.78
+    },
+    {
+      "text": "vostro",
+      "start": 2.84,
+      "end": 3.2
+    },
+    {
+      "text": "reel.",
+      "start": 3.36,
+      "end": 3.74
+    },
+    {
+      "text": "Ora",
+      "start": 4.12,
+      "end": 4.22
+    },
+    {
+      "text": "dovete",
+      "start": 4.26,
+      "end": 4.52
+    },
+    {
+      "text": "passare",
+      "start": 4.56,
+      "end": 5.02
+    },
+    {
+      "text": "all'editing",
+      "start": 5.14,
+      "end": 5.7
+    },
+    {
+      "text": "e",
+      "start": 5.96,
+      "end": 6.02
+    },
+    {
+      "text": "lì",
+      "start": 6.06,
+      "end": 6.3
+    },
+    {
+      "text": "cacchio",
+      "start": 6.36,
+      "end": 6.66
+    },
+    {
+      "text": "ci",
+      "start": 6.72,
+      "end": 6.82
+    },
+    {
+      "text": "perdete",
+      "start": 6.86,
+      "end": 7.34
+    },
+    {
+      "text": "ore",
+      "start": 7.5,
+      "end": 7.68
+    },
+    {
+      "text": "e",
+      "start": 8.119,
+      "end": 8.16
+    },
+    {
+      "text": "alla",
+      "start": 8.18,
+      "end": 8.3
+    },
+    {
+      "text": "fine",
+      "start": 8.34,
+      "end": 8.46
+    },
+    {
+      "text": "il",
+      "start": 8.5,
+      "end": 8.54
+    },
+    {
+      "text": "risultato",
+      "start": 8.54,
+      "end": 8.96
+    },
+    {
+      "text": "non",
+      "start": 8.98,
+      "end": 9.08
+    },
+    {
+      "text": "è",
+      "start": 9.12,
+      "end": 9.14
+    },
+    {
+      "text": "quello",
+      "start": 9.18,
+      "end": 9.34
+    },
+    {
+      "text": "che",
+      "start": 9.36,
+      "end": 9.44
+    },
+    {
+      "text": "volete.",
+      "start": 9.48,
+      "end": 9.88
+    },
+    {
+      "text": "Bene",
+      "start": 10.22,
+      "end": 10.36
+    },
+    {
+      "text": "ragazzi,",
+      "start": 10.4,
+      "end": 10.76
+    },
+    {
+      "text": "io",
+      "start": 10.92,
+      "end": 10.98
+    },
+    {
+      "text": "ora",
+      "start": 11.08,
+      "end": 11.34
+    },
+    {
+      "text": "sto",
+      "start": 11.42,
+      "end": 11.54
+    },
+    {
+      "text": "guidando,",
+      "start": 11.58,
+      "end": 12
+    },
+    {
+      "text": "sono",
+      "start": 12.2,
+      "end": 12.32
+    },
+    {
+      "text": "in",
+      "start": 12.34,
+      "end": 12.4
+    },
+    {
+      "text": "macchina,",
+      "start": 12.46,
+      "end": 12.84
+    },
+    {
+      "text": "sto",
+      "start": 13.1,
+      "end": 13.16
+    },
+    {
+      "text": "andando",
+      "start": 13.2,
+      "end": 13.42
+    },
+    {
+      "text": "al",
+      "start": 13.44,
+      "end": 13.48
+    },
+    {
+      "text": "lavoro",
+      "start": 13.52,
+      "end": 13.8
+    },
+    {
+      "text": "e",
+      "start": 14.32,
+      "end": 14.44
+    },
+    {
+      "text": "nel",
+      "start": 14.64,
+      "end": 14.76
+    },
+    {
+      "text": "frattempo",
+      "start": 14.82,
+      "end": 15.36
+    },
+    {
+      "text": "Claude",
+      "start": 15.42,
+      "end": 15.76
+    },
+    {
+      "text": "sta",
+      "start": 15.8,
+      "end": 15.88
+    },
+    {
+      "text": "editando",
+      "start": 15.92,
+      "end": 16.26
+    },
+    {
+      "text": "questo",
+      "start": 16.3,
+      "end": 16.48
+    },
+    {
+      "text": "video",
+      "start": 16.52,
+      "end": 16.7
+    },
+    {
+      "text": "per",
+      "start": 16.74,
+      "end": 16.84
+    },
+    {
+      "text": "me.",
+      "start": 16.9,
+      "end": 17.04
+    },
+    {
+      "text": "Questo",
+      "start": 17.46,
+      "end": 17.66
+    },
+    {
+      "text": "che",
+      "start": 17.7,
+      "end": 17.76
+    },
+    {
+      "text": "vedete",
+      "start": 17.78,
+      "end": 18.18
+    },
+    {
+      "text": "è",
+      "start": 18.28,
+      "end": 18.36
+    },
+    {
+      "text": "il",
+      "start": 18.36,
+      "end": 18.38
+    },
+    {
+      "text": "risultato",
+      "start": 18.42,
+      "end": 19.46
+    },
+    {
+      "text": "di",
+      "start": 19.5,
+      "end": 19.62
+    },
+    {
+      "text": "quello",
+      "start": 19.7,
+      "end": 20.26
+    },
+    {
+      "text": "che",
+      "start": 20.32,
+      "end": 20.48
+    },
+    {
+      "text": "riesce",
+      "start": 20.96,
+      "end": 21.42
+    },
+    {
+      "text": "a",
+      "start": 21.48,
+      "end": 21.54
+    },
+    {
+      "text": "fare.",
+      "start": 21.62,
+      "end": 21.9
+    },
+    {
+      "text": "Se",
+      "start": 22.5,
+      "end": 22.56
+    },
+    {
+      "text": "volete",
+      "start": 22.58,
+      "end": 22.78
+    },
+    {
+      "text": "saperne",
+      "start": 22.8,
+      "end": 23.12
+    },
+    {
+      "text": "di",
+      "start": 23.14,
+      "end": 23.24
+    },
+    {
+      "text": "più",
+      "start": 23.28,
+      "end": 23.6
+    },
+    {
+      "text": "scrivetemi",
+      "start": 23.7,
+      "end": 24.22
+    },
+    {
+      "text": "editing",
+      "start": 27.44,
+      "end": 27.82
+    },
+    {
+      "text": "Claude.",
+      "start": 27.88,
+      "end": 28.32
+    },
+    {
+      "text": "Se",
+      "start": 29.3,
+      "end": 29.36
+    },
+    {
+      "text": "volete",
+      "start": 29.38,
+      "end": 29.58
+    },
+    {
+      "text": "saperne",
+      "start": 29.62,
+      "end": 29.92
+    },
+    {
+      "text": "di",
+      "start": 29.96,
+      "end": 30.04
+    },
+    {
+      "text": "più",
+      "start": 30.08,
+      "end": 30.26
+    },
+    {
+      "text": "scrivetemi",
+      "start": 30.3,
+      "end": 30.92
+    },
+    {
+      "text": "editing.",
+      "start": 31.06,
+      "end": 31.64
+    },
+    {
+      "text": "Se",
+      "start": 32.74,
+      "end": 32.8
+    },
+    {
+      "text": "volete",
+      "start": 32.82,
+      "end": 32.98
+    },
+    {
+      "text": "saperne",
+      "start": 33.02,
+      "end": 33.3
+    },
+    {
+      "text": "di",
+      "start": 33.34,
+      "end": 33.42
+    },
+    {
+      "text": "più",
+      "start": 33.46,
+      "end": 33.62
+    },
+    {
+      "text": "scrivetemi",
+      "start": 33.66,
+      "end": 34.04
+    },
+    {
+      "text": "nei",
+      "start": 34.06,
+      "end": 34.12
+    },
+    {
+      "text": "commenti.",
+      "start": 34.16,
+      "end": 34.66
+    },
+    {
+      "text": "Se",
+      "start": 35.4,
+      "end": 35.46
+    },
+    {
+      "text": "volete",
+      "start": 36,
+      "end": 36.2
+    },
+    {
+      "text": "saperne",
+      "start": 36.24,
+      "end": 36.48
+    },
+    {
+      "text": "di",
+      "start": 36.52,
+      "end": 36.6
+    },
+    {
+      "text": "più",
+      "start": 36.64,
+      "end": 36.8
+    },
+    {
+      "text": "scrivetemi",
+      "start": 36.84,
+      "end": 37.34
+    },
+    {
+      "text": "editing",
+      "start": 37.44,
+      "end": 37.74
+    },
+    {
+      "text": "in",
+      "start": 37.78,
+      "end": 37.82
+    },
+    {
+      "text": "DM",
+      "start": 37.86,
+      "end": 38.28
+    },
+    {
+      "text": "e",
+      "start": 38.34,
+      "end": 38.38
+    },
+    {
+      "text": "vi",
+      "start": 38.4,
+      "end": 38.48
+    },
+    {
+      "text": "manderò.",
+      "start": 38.52,
+      "end": 38.94
+    },
+    {
+      "text": "Se",
+      "start": 40.02,
+      "end": 40.1
+    },
+    {
+      "text": "volete",
+      "start": 40.12,
+      "end": 40.34
+    },
+    {
+      "text": "sapere",
+      "start": 40.38,
+      "end": 40.66
+    },
+    {
+      "text": "come",
+      "start": 40.7,
+      "end": 40.86
+    },
+    {
+      "text": "faccio,",
+      "start": 40.92,
+      "end": 41.18
+    },
+    {
+      "text": "se",
+      "start": 41.52,
+      "end": 41.58
+    },
+    {
+      "text": "volete",
+      "start": 41.6,
+      "end": 41.8
+    },
+    {
+      "text": "sapere",
+      "start": 41.84,
+      "end": 42.1
+    },
+    {
+      "text": "come",
+      "start": 42.14,
+      "end": 42.28
+    },
+    {
+      "text": "è",
+      "start": 42.32,
+      "end": 42.34
+    },
+    {
+      "text": "strutturata",
+      "start": 42.36,
+      "end": 42.76
+    },
+    {
+      "text": "questa",
+      "start": 42.78,
+      "end": 43.02
+    },
+    {
+      "text": "cosa",
+      "start": 43.06,
+      "end": 43.38
+    },
+    {
+      "text": "per",
+      "start": 43.84,
+      "end": 43.96
+    },
+    {
+      "text": "farvi...",
+      "start": 44.02,
+      "end": 44.42
+    },
+    {
+      "text": "Se",
+      "start": 45.54,
+      "end": 45.6
+    },
+    {
+      "text": "volete",
+      "start": 45.62,
+      "end": 45.82
+    },
+    {
+      "text": "sapere",
+      "start": 45.86,
+      "end": 46.12
+    },
+    {
+      "text": "come",
+      "start": 46.14,
+      "end": 46.32
+    },
+    {
+      "text": "faccio",
+      "start": 46.38,
+      "end": 46.82
+    },
+    {
+      "text": "scrivetemi",
+      "start": 46.86,
+      "end": 47.32
+    },
+    {
+      "text": "editing",
+      "start": 47.42,
+      "end": 47.72
+    },
+    {
+      "text": "in",
+      "start": 47.76,
+      "end": 47.84
+    },
+    {
+      "text": "DM",
+      "start": 47.88,
+      "end": 48.24
+    },
+    {
+      "text": "e",
+      "start": 48.28,
+      "end": 48.32
+    },
+    {
+      "text": "vi",
+      "start": 48.36,
+      "end": 48.42
+    },
+    {
+      "text": "manderò",
+      "start": 48.46,
+      "end": 48.72
+    },
+    {
+      "text": "tutto.",
+      "start": 48.78,
+      "end": 49.06
+    }
+  ],
+  "captionOffset": 0,
+  "framingX": 0.5,
+  "music": null,
+  "cuts": [
+    {
+      "start": 22.3,
+      "end": 45.45,
+      "reason": "retake"
+    }
+  ],
+  "emphasis": [],
+  "hook": null,
+  "zooms": [],
+  "graphics": [
+    {
+      "type": "badge",
+      "at": 0,
+      "duration": 60,
+      "text": "[c]Claude[/c] ha montato il [y]100%[/y]\ndi questo video",
+      "sfx": "none"
+    },
+    {
+      "type": "timeline",
+      "at": 4.5,
+      "duration": 4.87,
+      "props": {
+        "title": "Timeline · reel_finale",
+        "time": "03:47:12"
+      },
+      "sfx": "whoosh",
+      "y": 0.705
+    },
+    {
+      "type": "chat",
+      "at": 14.6,
+      "duration": 2.53,
+      "text": "Edita questo video!",
+      "props": {
+        "sendAt": 0.45
+      },
+      "sfx": "typing",
+      "y": 0.705
+    },
+    {
+      "type": "guide",
+      "at": 46.8,
+      "duration": 2.8,
+      "sfx": "pop",
+      "props": {
+        "tag": "GUIDA GRATUITA",
+        "title": "Fai montare i tuoi reel a [c]Claude[/c]",
+        "subtitle": "Come faccio, passo per passo: ti mando tutto in DM.",
+        "cta": "Scrivimi [b]EDITING[/b]"
+      },
+      "y": 0.735
+    }
+  ],
+  "cta": null,
+  "framing": {
+    "scale": 1.15,
+    "originX": 0.5,
+    "originY": 0.43,
+    "offsetY": -80
+  },
+  "styleOverrides": {
+    "grade": {
+      "brightness": 0.93,
+      "contrast": 1.12,
+      "saturation": 1.1,
+      "warmth": 0.12,
+      "vignette": 0.38
+    },
+    "zoom": {
+      "alternateScale": 1.08
+    },
+    "captions": {
+      "positionY": 0.575
+    }
+  }
+}

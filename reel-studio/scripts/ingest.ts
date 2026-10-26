@@ -11,7 +11,7 @@ import path from "node:path";
 import { autoPlan } from "./lib/autoplan";
 import { saveProject } from "./lib/project";
 import { arg, ffmpeg, flag, log, positional, probe, ROOT, slug } from "./lib/sh";
-import { autoThreshold, detectSpeech, envelopeDb, extractWav16k } from "./lib/silence";
+import { autoThreshold, detectSpeech, envelopeDb, extractWav16k, speechFromWords } from "./lib/silence";
 import { distributeText, readTextFile, transcribeAuto } from "./lib/transcribe";
 import { getPack, resolveStyle } from "../src/styles";
 import type { EditProject, Word } from "../src/types";
@@ -64,6 +64,12 @@ export async function ingest(input: string, opts: { name?: string; style?: strin
     }
   }
 
+  // audio rumoroso: se il volume non trova pause ma abbiamo i tempi delle parole, si taglia sulle parole
+  const kept = speech.reduce((n, r) => n + r.end - r.start, 0);
+  if (words.length > 3 && kept > norm.duration * 0.9) {
+    speech = speechFromWords(words, norm.duration, style.cuts);
+    log(`Audio rumoroso: pause ricavate dalle parole → ${speech.reduce((n, r) => n + r.end - r.start, 0).toFixed(1)}s di parlato`);
+  }
   const generic = autoPlan(words, style, norm.duration);
   const pack = getPack(styleId);
   const plan = { ...generic, ...(pack.plan?.({ words, duration: norm.duration, plan: generic }) ?? {}) };

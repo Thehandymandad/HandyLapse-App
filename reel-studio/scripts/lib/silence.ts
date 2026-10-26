@@ -93,6 +93,22 @@ export async function detectSpeech(
   return { speech: padded, silences };
 }
 
+/**
+ * Parlato ricavato dai tempi delle parole: per audio rumorosi (auto, strada, musica) dove il volume
+ * non distingue le pause. Le parole vicine (pausa < minSilence) formano un unico blocco.
+ */
+export function speechFromWords(words: { start: number; end: number }[], duration: number, opts: { minSilence: number; paddingBefore: number; paddingAfter: number }): Range[] {
+  const out: Range[] = [];
+  for (const w of words) {
+    const a = Math.max(0, w.start - opts.paddingBefore);
+    const b = Math.min(duration, w.end + opts.paddingAfter);
+    const last = out[out.length - 1];
+    if (last && a - last.end < opts.minSilence) last.end = Math.max(last.end, b);
+    else out.push({ start: +a.toFixed(3), end: +b.toFixed(3) });
+  }
+  return out;
+}
+
 export async function extractWav16k(input: string, out: string) {
   await ffmpeg(["-i", input, "-vn", "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le", out]);
 }
