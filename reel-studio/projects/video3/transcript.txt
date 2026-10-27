@@ -1,0 +1,153 @@
+# video3 — 71.5s
+
+## Frasi
+[2.0s] Questo video non l'ho montato io.
+[3.8s] La parte più difficile di fare reel non è registrare.
+[10.6s] È tutto quello che viene dopo.
+[13.7s] Così ho costruito un editor con Claude-- così ho costruito un editor con Claude Code: gli do il video grezzo e lui taglia le pause.
+[23.2s] Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.
+[28.6s] E questo video non l'ho toccato.
+[31.7s] Zero tagli.
+[34.9s] Zero tagli a mano, zero app aperte.
+[37.2s] L'ho dregistrato io-- l'ho registrato io, l'ho registrato io e gliel'ho mandato.
+[43.4s] E me l'ha restituito così.
+[46.4s] Dentro ci sono tre strumenti: uno trascrive, uno taglia, uno anima.
+[53.5s] Ma il segreto è come li fai lavorare insieme.
+[57.3s] Ti ho scritto una guida gratuita su come l'ho fatto.
+[65.9s] Commenta "guida" e te la mando in DM.
+
+## Parole (indice | inizio | fine | testo)
+   0 |    1.98 |    2.20 | Questo
+   1 |    2.26 |    2.50 | video
+   2 |    2.64 |    2.78 | non
+   3 |    2.80 |    2.88 | l'ho
+   4 |    2.94 |    3.26 | montato
+   5 |    3.32 |    3.42 | io.
+   6 |    3.80 |    3.86 | La
+   7 |    3.92 |    4.14 | parte
+   8 |    4.22 |    4.30 | più
+   9 |    4.32 |    4.66 | difficile
+  10 |    4.70 |    4.80 | di
+  11 |    4.84 |    5.02 | fare
+  12 |    5.06 |    5.28 | reel
+  13 |    5.46 |    5.60 | non
+  14 |    5.66 |    5.76 | è
+  15 |    5.80 |    6.40 | registrare.
+  16 |   10.64 |   10.70 | È
+  17 |   10.74 |   10.94 | tutto
+  18 |   11.04 |   11.26 | quello
+  19 |   11.38 |   11.46 | che
+  20 |   11.50 |   11.68 | viene
+  21 |   11.72 |   11.96 | dopo.
+  22 |   13.66 |   14.00 | Così
+  23 |   14.02 |   14.10 | ho
+  24 |   14.14 |   14.60 | costruito
+  25 |   14.68 |   14.76 | un
+  26 |   14.82 |   15.14 | editor
+  27 |   15.30 |   15.42 | con
+  28 |   15.52 |   15.86 | Claude--
+  29 |   17.28 |   17.62 | così
+  30 |   17.64 |   17.70 | ho
+  31 |   17.74 |   18.12 | costruito
+  32 |   18.14 |   18.22 | un
+  33 |   18.26 |   18.56 | editor
+  34 |   18.62 |   18.74 | con
+  35 |   18.82 |   19.00 | Claude
+  36 |   19.10 |   19.38 | Code:
+  37 |   20.14 |   20.22 | gli
+  38 |   20.26 |   20.32 | do
+  39 |   20.36 |   20.42 | il
+  40 |   20.46 |   20.66 | video
+  41 |   20.70 |   21.04 | grezzo
+  42 |   21.24 |   21.30 | e
+  43 |   21.36 |   21.52 | lui
+  44 |   21.72 |   22.04 | taglia
+  45 |   22.06 |   22.16 | le
+  46 |   22.18 |   22.50 | pause.
+  47 |   23.18 |   23.26 | Gli
+  48 |   23.28 |   23.34 | do
+  49 |   23.36 |   23.42 | il
+  50 |   23.44 |   23.64 | video
+  51 |   23.70 |   24.10 | grezzo
+  52 |   24.14 |   24.18 | e
+  53 |   24.20 |   24.32 | lui
+  54 |   24.36 |   24.54 | taglia
+  55 |   24.56 |   24.66 | le
+  56 |   24.70 |   25.00 | pause,
+  57 |   25.44 |   25.70 | scrive
+  58 |   25.72 |   25.76 | i
+  59 |   25.80 |   26.34 | sottotitoli,
+  60 |   26.70 |   26.96 | mette
+  61 |   27.04 |   27.20 | zoom
+  62 |   27.38 |   27.44 | e
+  63 |   27.46 |   27.90 | grafiche.
+  64 |   28.62 |   28.68 | E
+  65 |   28.72 |   28.98 | questo
+  66 |   29.00 |   29.28 | video
+  67 |   30.44 |   30.52 | non
+  68 |   30.54 |   30.64 | l'ho
+  69 |   30.68 |   31.10 | toccato.
+  70 |   31.70 |   31.90 | Zero
+  71 |   31.94 |   32.26 | tagli.
+  72 |   34.92 |   35.12 | Zero
+  73 |   35.16 |   35.30 | tagli
+  74 |   35.34 |   35.38 | a
+  75 |   35.42 |   35.64 | mano,
+  76 |   36.04 |   36.20 | zero
+  77 |   36.22 |   36.32 | app
+  78 |   36.36 |   36.76 | aperte.
+  79 |   37.22 |   37.32 | L'ho
+  80 |   37.36 |   38.00 | dregistrato
+  81 |   38.04 |   38.14 | io--
+  82 |   38.58 |   38.68 | l'ho
+  83 |   38.70 |   39.22 | registrato
+  84 |   39.30 |   39.40 | io,
+  85 |   40.70 |   40.78 | l'ho
+  86 |   40.82 |   41.26 | registrato
+  87 |   41.32 |   41.42 | io
+  88 |   41.56 |   41.60 | e
+  89 |   41.64 |   41.86 | gliel'ho
+  90 |   41.90 |   42.30 | mandato.
+  91 |   43.38 |   43.44 | E
+  92 |   43.46 |   43.52 | me
+  93 |   43.54 |   43.64 | l'ha
+  94 |   43.68 |   44.26 | restituito
+  95 |   44.52 |   44.78 | così.
+  96 |   46.36 |   46.66 | Dentro
+  97 |   46.74 |   46.82 | ci
+  98 |   46.88 |   47.06 | sono
+  99 |   47.22 |   47.34 | tre
+ 100 |   47.42 |   47.96 | strumenti:
+ 101 |   49.16 |   49.30 | uno
+ 102 |   49.44 |   49.92 | trascrive,
+ 103 |   50.24 |   50.36 | uno
+ 104 |   50.46 |   50.78 | taglia,
+ 105 |   51.16 |   51.42 | uno
+ 106 |   51.52 |   51.80 | anima.
+ 107 |   53.52 |   53.58 | Ma
+ 108 |   53.60 |   53.64 | il
+ 109 |   53.68 |   54.18 | segreto
+ 110 |   54.24 |   54.30 | è
+ 111 |   54.34 |   54.48 | come
+ 112 |   54.52 |   54.60 | li
+ 113 |   54.64 |   54.76 | fai
+ 114 |   54.80 |   55.06 | lavorare
+ 115 |   55.08 |   55.48 | insieme.
+ 116 |   57.34 |   57.40 | Ti
+ 117 |   57.42 |   57.46 | ho
+ 118 |   57.50 |   57.96 | scritto
+ 119 |   58.04 |   58.22 | una
+ 120 |   58.32 |   58.58 | guida
+ 121 |   58.60 |   59.10 | gratuita
+ 122 |   59.62 |   59.70 | su
+ 123 |   59.88 |   60.04 | come
+ 124 |   60.06 |   60.16 | l'ho
+ 125 |   60.20 |   60.50 | fatto.
+ 126 |   65.90 |   66.30 | Commenta
+ 127 |   66.34 |   66.60 | "guida"
+ 128 |   66.74 |   66.78 | e
+ 129 |   66.84 |   66.90 | te
+ 130 |   66.94 |   66.98 | la
+ 131 |   67.04 |   67.26 | mando
+ 132 |   67.28 |   67.34 | in
+ 133 |   67.38 |   67.72 | DM.
