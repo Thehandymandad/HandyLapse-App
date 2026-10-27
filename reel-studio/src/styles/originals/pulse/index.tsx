@@ -4,7 +4,7 @@
  * - Sottotitoli cinetici a 2–3 parole: ogni parola sale a fuoco quando è detta, attiva in lime, parole chiave su etichetta lime.
  * - Camera: tagli alternati "punch" (zoom + sfocatura + rotazione) e "whip 3D" (scivolata con rotazione Y),
  *   oscillazione a mano leggera, tremore sui timbri, spinta in avanti sulle grafiche di tensione, riquadro-smartphone.
- * - Grafiche (type in edit.json): rec, tape, hours, nope, route, claude, phone, dm. Vedi i singoli file.
+ * - Grafiche (type in edit.json): rec, tape, hours, nope, route, claude, phone, dm, pile, zero, send, trio, guidebook. Vedi i singoli file.
  */
 import { seeded } from "../../../lib/timeline";
 import { defineStyle } from "../../base";
@@ -20,6 +20,11 @@ import { pulsePlan } from "./plan";
 import { RouteMap } from "./RouteMap";
 import { clamp01, P, phoneState } from "./shared";
 import { TapeBand } from "./TapeBand";
+import { GuideBook } from "./GuideBook";
+import { PaperPlane } from "./PaperPlane";
+import { pileImpacts, TaskPile } from "./TaskPile";
+import { ToolTrio } from "./ToolTrio";
+import { zeroImpacts, ZeroStamps } from "./ZeroStamps";
 
 const style = defineStyle("pulse", "Pulse", "Originale: sottotitoli cinetici lime, tagli punch/whip 3D, grafiche UI in vetro scuro (REC, navigatore, progress, telefono, DM)", {
   captions: {
@@ -84,6 +89,19 @@ export const pack = definePack({
         st.rotateZ += Math.sin(f * 1.7) * 1.4 * k;
         st.scale *= 1 + 0.04 * k;
       }
+      if (g.type === "pile" || g.type === "zero") {
+        // ogni pezzo che atterra / timbro che sbatte dà un colpo alla camera
+        const hits = g.type === "pile" ? pileImpacts(g) : zeroImpacts(g);
+        for (const h of hits) {
+          const d = f - h;
+          if (d < 0 || d > 7) continue;
+          const k = (1 - d / 7) * (g.type === "zero" ? 1 : 0.6);
+          st.x += Math.sin(d * 2.9 + h) * 22 * k;
+          st.y += Math.cos(d * 2.3 + h) * 16 * k;
+          st.rotateZ += Math.sin(d * 1.7 + h) * 1.2 * k;
+          st.scale *= 1 + 0.03 * k;
+        }
+      }
       if (g.type === "hours") {
         // tensione: spinta lenta in avanti e inclinazione
         const p = clamp01(f / g.frames);
@@ -109,5 +127,10 @@ export const pack = definePack({
     claude: ClaudeWorking,
     phone: ResultPhone,
     dm: DmSend,
+    pile: TaskPile,
+    zero: ZeroStamps,
+    send: PaperPlane,
+    trio: ToolTrio,
+    guidebook: GuideBook,
   },
 });

@@ -31,6 +31,8 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const replyAt = typeof g.props?.replyAt === "number" ? g.props.replyAt : sendAt + 22;
   const reply = (g.props?.reply as string) ?? "Ecco la guida completa";
   const name = (g.props?.name as string) ?? "Messaggi";
+  const placeholder = (g.props?.placeholder as string) ?? "Scrivi un messaggio…";
+  const sentLabel = (g.props?.sentLabel as string) ?? "Inviato";
   const a = flipIn(f, g.frames, fps);
   const typed = Math.max(0, Math.min(word.length, Math.floor((f - typeAt) / 2) + 1));
   const sent = f >= sendAt;
@@ -63,7 +65,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               {sent && (
                 <div style={{ alignSelf: "flex-end", transform: `translateY(${(1 - bubble) * 120}px) scale(${0.6 + 0.4 * bubble})`, transformOrigin: "100% 100%", opacity: Math.min(1, bubble * 2) }}>
                   <div style={{ background: P.lime, color: P.ink, fontWeight: 900, fontSize: 44, letterSpacing: 2, padding: "12px 30px", borderRadius: "30px 30px 8px 30px" }}>{word}</div>
-                  <div style={{ textAlign: "right", fontWeight: 700, fontSize: 20, color: P.grey, marginTop: 4 }}>Inviato</div>
+                  <div style={{ textAlign: "right", fontWeight: 700, fontSize: 20, color: P.grey, marginTop: 4 }}>{sentLabel}</div>
                 </div>
               )}
               {typing && (
@@ -106,7 +108,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                     <span style={{ width: 4, height: 46, background: P.lime, marginLeft: 6, opacity: caret ? 1 : 0 }} />
                   </>
                 ) : (
-                  <span style={{ color: P.grey, fontWeight: 700, fontSize: 32, letterSpacing: 0 }}>Scrivi un messaggio…</span>
+                  <span style={{ color: P.grey, fontWeight: 700, fontSize: 32, letterSpacing: 0 }}>{placeholder}</span>
                 )}
               </div>
               <div

@@ -13,10 +13,14 @@ const LOGO = logoSvgPath();
 export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const doneAt = typeof g.props?.doneAt === "number" ? g.props.doneAt : g.frames - 12;
   const tasks = (Array.isArray(g.props?.tasks) ? (g.props!.tasks as string[]) : null) ?? ["Taglio pause", "Sottotitoli", "Zoom & camera", "Grafiche"];
+  // props.checkAt: frame in cui si spunta ogni lavorazione (es. quando viene nominata); senza, avanzamento regolare fino a doneAt
+  const checkAt = Array.isArray(g.props?.checkAt) ? (g.props!.checkAt as number[]).slice(0, tasks.length) : null;
+  const doneAt = checkAt?.length ? checkAt[checkAt.length - 1] : typeof g.props?.doneAt === "number" ? g.props.doneAt : g.frames - 12;
   const a = flipIn(f, g.frames, fps, 5);
-  const p = easeInOut(interpolate(f, [4, doneAt], [0, 1], clamp));
+  const p = checkAt?.length
+    ? interpolate(f, [4, ...checkAt], [0, ...checkAt.map((_, i) => (i + 1) / checkAt.length)], { ...clamp, easing: easeInOut })
+    : easeInOut(interpolate(f, [4, doneAt], [0, 1], clamp));
   const done = f >= doneAt;
   const pop = spring({ frame: f - doneAt, fps, config: { damping: 8, stiffness: 300 } });
   const glow = done ? Math.max(0.3, 1 - (f - doneAt) / 12) : 0;
@@ -52,8 +56,8 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               </div>
               <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "1fr 1fr", rowGap: 14, columnGap: 18 }}>
                 {tasks.map((t, i) => {
-                  const on = p >= (i + 1) / tasks.length - 0.02;
-                  const at = Math.round(4 + ((i + 1) / tasks.length) * (doneAt - 4));
+                  const at = checkAt?.[i] ?? Math.round(4 + ((i + 1) / tasks.length) * (doneAt - 4));
+                  const on = f >= at - 1;
                   const ck = interpolate(f, [at - 3, at + 4], [0, 1], clamp);
                   return (
                     <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, fontWeight: 800, fontSize: 30, color: on ? P.white : "rgba(255,255,255,0.4)" }}>

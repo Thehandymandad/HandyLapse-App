@@ -105,7 +105,13 @@ Quando l'utente chiede "mettici del tuo" / niente copia della reference: stili i
   `hours` (orologio + contatore ore, props: hitAt, hours, label), `nope` (video in bianco e nero + timbro rosso, `text`,
   props.kicker; la camera trema), `route` (navigatore, props: arriveAt, to), `claude` (progress di Claude, props: doneAt, tasks),
   `phone` (il video entra in uno smartphone 3D con cuori e statistiche, props: statsAt, stats), `dm` (chat che scrive
-  `text` e lo invia, props: typeAt, sendAt, replyAt, reply). Grafiche fuori dalla zona sopra la testa (y ≈ 0.765).
+  `text` e lo invia, props: typeAt, sendAt, replyAt, reply, name, placeholder, sentLabel → anche come commenti),
+  `pile` (lavori che cadono e si accumulano, props: items, last, every), `zero` (timbri rossi, props.items [{at, text}]),
+  `send` (aeroplanino + "INVIATO", props: flyFrames, label), `trio` (tre tessere "?" che si girano, props: reveal, labels,
+  secretAt, connectAt), `guidebook` (copertina della guida in 3D + bollino GRATIS, props: freeAt, tag, title, subtitle);
+  `claude` accetta props.checkAt (spunte sulle parole). Grafiche fuori dalla zona sopra la testa (y ≈ 0.765).
+- Se tagli a mano le frasi rifatte modificando `keep`, metti anche quei tratti in `cuts`: le parole fuori da `keep` ma non
+  in `cuts` finiscono comunque nei sottotitoli.
 - Effetti sonori in più su una grafica: aggiungi `{"type": "sfx", "at": …, "duration": 0.6, "sfx": "<nome>"}` (non disegna nulla).
 
 ## Note tecniche
