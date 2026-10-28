@@ -54,3 +54,4 @@ next-env.d.ts
 /editor/videos/**/node_modules/
 /editor/videos/**/edit/transcripts/
 /editor/assets/objects/raw/
+__pycache__/
