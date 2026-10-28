@@ -36,3 +36,21 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Editor video: skill pubbliche installate da editor/setup.sh (non nel repo)
+/.claude/skills/video-use/
+/.claude/skills/hyperframes*/
+/.claude/skills/media-use/
+/.agents/
+# girato e render: restano solo i testi (piani, design, review, sorgenti HTML)
+/editor/videos/**/*.mp4
+/editor/videos/**/*.mov
+/editor/videos/**/*.webm
+/editor/videos/**/*.wav
+/editor/videos/**/*.mp3
+/editor/videos/**/*.m4a
+/editor/videos/**/*.png
+/editor/videos/**/*.jpg
+/editor/videos/**/node_modules/
+/editor/videos/**/edit/transcripts/
+/editor/assets/objects/raw/

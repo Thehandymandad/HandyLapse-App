@@ -1,0 +1,63 @@
+# Editor video con l'AI
+
+Il montaggio lo fa Claude Code con delle **skill**: cartelle di istruzioni che gli insegnano un mestiere.
+Niente programmi di montaggio: si gira il video, lo si dà a Claude e si descrive il risultato come a un montatore.
+
+## Le skill
+
+Pubbliche (installate da `bash editor/setup.sh` in `.claude/skills/`, non sono nel repo):
+
+| Skill | Cosa fa |
+| --- | --- |
+| `video-use` ([browser-use/video-use](https://github.com/browser-use/video-use)) | il montatore: trascrive con ElevenLabs Scribe, taglia sulle parole (tiene l'ultima ripresa buona, fade audio di 30 ms), rende il montato |
+| `hyperframes` + `hyperframes-cli` + `hyperframes-registry` ([hyperframes.heygen.com](https://hyperframes.heygen.com)) | il motore delle grafiche: pagine HTML + GSAP renderizzate in video, anche trasparente |
+| `media-use` (incluso con HyperFrames) | trova o genera asset: musica, effetti, immagini, voce, rimozione sfondo |
+
+Le 5 custom, con il gusto della casa (in `.claude/skills/`, nel repo):
+
+| Skill | Riceve → consegna |
+| --- | --- |
+| `motion-director` | idea, script, riferimenti, trascrizione → `MOTION-BRIEF.md` + `motion-plan.json` |
+| `motion-design` | brief + piano → `DESIGN.md` |
+| `motion-library` | un verbo ("perdere", "unire") → la ricetta di movimento giusta (92 ricette) |
+| `motion-hyperframes` | piano + design → composizione HyperFrames → `final.mp4` (con camera, suono e master) |
+| `motion-review` | il render → `MOTION-REVIEW.md` + correzioni |
+
+`idea → director → design → library → hyperframes → review → video`
+
+## I sei passi
+
+1. **Trascrizione** — ogni parola col suo tempo (ElevenLabs Scribe, video-use).
+2. **Tagli** — via le riprese sbagliate (si tiene l'ultima buona), via ogni pausa sopra ~0,25 s, piccolo margine ai bordi, 30 ms di dissolvenza audio.
+3. **Grafiche animate** — HTML + GSAP (HyperFrames) renderizzate come video trasparente sopra il parlato: ogni frase diventa un'azione visiva.
+4. **Oggetti 3D** — generati su Google Flow con Nano Banana Pro ("render 3D iper-realistico di … su fondo bianco, nient'altro nel frame", 2K), scontornati e animati (caduta, rotazione, ombre, scintille).
+5. **Suono** — voce con più corpo (EQ + compressione), un effetto diverso per ogni evento visivo, tutti allo stesso livello ~7 dB sotto la voce, master −14 LUFS.
+6. **Composizione e verifica** — fondo + parlato + grafiche + audio, poi si guardano i fotogrammi chiave: testo, sovrapposizioni, zone sicure di Instagram.
+
+## Come si usa
+
+1. Metti il girato in `editor/videos/<nome>/` (video grandi: link Google Drive "Chiunque abbia il link", Claude lo scarica lì).
+2. Scrivi a Claude, per esempio:
+
+   > Edita il video che trovi in `editor/videos/<nome>`. Trascrivilo parola per parola, togli pause, esitazioni e
+   > riprese sbagliate (tieni sempre l'ultima buona). Aggiungi grafiche animate sopra il parlato, una per ogni concetto
+   > chiave, nello stile del video di riferimento che ti allego: colori, font e ritmo uguali. Inserisci oggetti 3D
+   > realistici dove servono e un effetto sonoro per ogni animazione, a volume pulito sotto la voce. Alla fine controlla
+   > i fotogrammi e dimmi cosa hai sistemato.
+
+3. Il trucco: allega sempre **riferimenti visivi** (video che ti piacciono) invece di descrivere l'effetto a parole.
+
+Tutti i file di lavoro finiscono in `editor/videos/<nome>/edit/` (piano, design, review, render). Nel repo restano solo
+i testi (piani, HTML, review); i video no.
+
+## Librerie che crescono
+
+- `editor/assets/objects/` — oggetti 3D scontornati (PNG), riusabili; i generati grezzi in `objects/raw/`.
+- `editor/assets/sfx/` — effetti sonori, uno per evento, con `catalog.json` (prompt usati).
+- `editor/assets/fonts/` — Instrument Serif (corsivo per le parole chiave, licenza OFL).
+
+## Installazione
+
+`bash editor/setup.sh` — servono ffmpeg, Node.js 22+, Python 3 e git. Scarica ed esegue codice di terze parti
+(video-use da GitHub, HyperFrames da npm). La chiave ElevenLabs va in `ELEVENLABS_API_KEY` (in questo cloud la aggiunge
+il proxy di rete).
