@@ -60,8 +60,5 @@ __pycache__/
 /editor/videos/**/edit/clips_graded/
 /editor/videos/**/edit/stems/
 /editor/videos/**/edit/review/frames/
-/editor/videos/**/edit/hf/.hyperframes/
-/editor/videos/**/edit/hf/renders/
-/editor/videos/**/edit/hf/assets/lib/
+/editor/videos/**/edit/review/remotion/*.png
 /editor/videos/**/edit/work-*/
-/editor/videos/**/edit/.*hf-transaction*/

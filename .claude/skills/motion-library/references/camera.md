@@ -2,9 +2,13 @@
 
 Due tipi di camera:
 
-- **Sul footage** (il parlato): la fa `motion-hyperframes/scripts/compose.py` leggendo `camera` in `motion-plan.json`
-  (tipi `punch`, `push`, `shake`, `whip`, `inset`, `desat`, sotto). Le grafiche trasparenti restano ferme sopra.
-- **Dentro una scena grafica**: GSAP sul contenitore della scena (parallasse, dolly, tilt).
+- **Sul footage** (il parlato): la fa la camera di Remotion (`editor/remotion/src/lib/camera.ts` + `camera` dello style
+  pack). Dal piano arrivano gli zoom: `{"type": "punch", "t": <parola>, "strength": 0–1}` (secco) e
+  `{"type": "push", "t": …, "strength": …, "dur": …}` (lento). Whip 3D e punch sfocato sui tagli, tremori sui timbri,
+  push sulle grafiche di tensione e riquadro-telefono li fa il pack da solo. (`compose.py --overlay` sa fare gli stessi
+  tipi con ffmpeg — `punch`, `push`, `shake`, `whip`, `inset`, `desat` — quando le grafiche arrivano come overlay
+  trasparente invece che da Remotion.)
+- **Dentro una scena grafica**: trasformazioni sul contenitore del componente (parallasse, dolly, tilt).
 
 ### camera/punch-in
 - **Verbi**: questo, attenzione, colpo, la frase che conta.

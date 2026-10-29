@@ -38,8 +38,8 @@ fondo dietro il footage rimpicciolito (`inset`) e per dare leggibilità.
 
 ### sfondi/grana
 - **Verbi**: cinematografico, ricordo.
-- **Come**: grana e vignetta sul footage vanno via `npx hyperframes media-treatment` (`/media-use`) o nel grade di
-  video-use, mai con filtri CSS sopra.
+- **Come**: grana e vignetta sul footage vanno nel grade di video-use (o `/media-use`) oppure in un livello
+  `Overlay` dello style pack sotto le grafiche, mai sopra il testo.
 - **Suono**: nessuno.
 - **Difetti**: grana sopra le grafiche (sporca il testo).
 

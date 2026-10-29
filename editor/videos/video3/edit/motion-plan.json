@@ -1,11 +1,21 @@
 {
  "video": "video3",
+ "engine": "remotion",
+ "style": "pulse",
+ "styleOverrides": {
+  "grade": {
+   "brightness": 1,
+   "contrast": 1.04,
+   "saturation": 1.04,
+   "warmth": 0
+  }
+ },
  "canvas": {
   "width": 1080,
   "height": 1920,
   "fps": 30
  },
- "duration": 32.5,
+ "duration": 33.8,
  "hold": 1.3,
  "face": {
   "x": 0.5,
@@ -13,25 +23,17 @@
   "note": "viso tra y 560 e 1075: sottotitoli a y 1150, grafiche tra y 1230 e 1550, x 112–900"
  },
  "captions": {
-  "y": 1150,
-  "maxWidth": 720,
-  "keywords": [
-   "montato",
-   "difficile",
-   "dopo",
-   "Claude",
-   "grezzo",
-   "toccato",
-   "zero",
-   "Zero",
-   "mandato",
-   "così",
-   "tre",
-   "segreto",
-   "insieme",
-   "gratuita",
-   "guida",
-   "DM"
+  "style": "pulse",
+  "emphasis": [
+   9,
+   21,
+   28,
+   52,
+   70,
+   74,
+   84,
+   96,
+   102
   ],
   "words": "edit/words_out.json"
  },
@@ -39,16 +41,17 @@
   {
    "id": "s01",
    "start": 0.0,
-   "end": 1.8,
+   "end": 1.7,
    "line": "Questo video non l'ho montato io.",
-   "action": "Ciak 3D che cade (già in movimento al frame 0) e si chiude su 'io'.",
-   "recipes": [
-    "oggetto/caduta-rimbalzo",
-    "oggetto/chiusura-scatto"
-   ],
-   "objects": [
-    "ciak"
-   ],
+   "action": "Mirino REC che si chiude sul viso, timecode che corre, il fuoco aggancia la faccia; su «io» scatta l'otturatore (lampo) e gli angoli volano fuori.",
+   "graphic": {
+    "type": "rec",
+    "props": {
+     "shutterAt": 1.39,
+     "focusX": 0.5,
+     "focusY": 0.42
+    }
+   },
    "payoff": {
     "word": "io",
     "t": 1.39
@@ -56,121 +59,97 @@
    "sfx": [
     {
      "t": 0.0,
-     "name": "ciak-entra"
+     "name": "rec-pop"
     },
     {
      "t": 1.39,
-     "name": "ciak-chiusura"
+     "name": "scatto"
     }
    ]
   },
   {
    "id": "s02",
-   "start": 1.95,
-   "end": 4.5,
+   "start": 1.75,
+   "end": 4.55,
    "line": "La parte più difficile di fare reel non è registrare.",
-   "action": "Pillola REC che pulsa; su 'registrare' diventa lime con spunta e 'LA PARTE FACILE'.",
-   "recipes": [
-    "ui/notifica-scende",
-    "accenti/spunta-disegnata"
-   ],
+   "action": "Niente grafica: punch-in secco su «difficile», «difficile» in lime nei sottotitoli. Respiro prima della pila.",
    "payoff": {
-    "word": "registrare",
-    "t": 3.87
+    "word": "difficile",
+    "t": 2.39
    },
-   "sfx": [
-    {
-     "t": 1.95,
-     "name": "rec-pop"
-    },
-    {
-     "t": 3.87,
-     "name": "spunta-facile"
-    }
-   ]
+   "sfx": []
   },
   {
    "id": "s03",
-   "start": 4.57,
+   "start": 4.62,
    "end": 6.2,
    "line": "È tutto quello che viene dopo.",
-   "action": "Pila di lavori che cadono, l'ultimo 'ORE E ORE' su 'dopo', poi crollo.",
-   "recipes": [
-    "oggetto/pila-che-crolla"
-   ],
+   "action": "I lavori del montaggio (TAGLI, SOTTOTITOLI, ZOOM, GRAFICHE…) cadono dall'alto e si accumulano, ogni impatto fa tremare la camera; l'ultimo è rosso ORE PERSE; alla fine la pila crolla.",
+   "graphic": {
+    "type": "pile",
+    "props": {
+     "every": 4,
+     "items": [
+      "TAGLI",
+      "SOTTOTITOLI",
+      "ZOOM",
+      "GRAFICHE"
+     ],
+     "last": "ORE PERSE"
+    },
+    "y": 0.8
+   },
    "payoff": {
     "word": "dopo",
     "t": 5.7
    },
    "sfx": [
     {
-     "t": 4.62,
+     "t": 4.92,
      "name": "pila-tonfi"
     },
     {
-     "t": 5.96,
+     "t": 5.95,
      "name": "pila-crollo"
     }
    ]
   },
   {
    "id": "s04",
-   "start": 6.15,
-   "end": 8.6,
-   "line": "Così ho costruito un editor con Claude Code.",
-   "action": "Cubo 3D con asterisco corallo che cade ruotando e atterra su 'Claude'; pillola CLAUDE CODE su 'Code'.",
-   "recipes": [
-    "oggetto/caduta-rimbalzo",
-    "oggetto/rotazione-turntable"
-   ],
-   "objects": [
-    "cubo-claude"
-   ],
-   "payoff": {
-    "word": "Claude",
-    "t": 7.62
+   "start": 7.62,
+   "end": 13.12,
+   "line": "…con Claude Code. Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
+   "action": "Card in vetro di Claude con il logo che gira e la barra che corre; ogni lavorazione si spunta quando viene nominata, a «grafiche» 100% e la card si accende.",
+   "graphic": {
+    "type": "claude",
+    "props": {
+     "tasks": [
+      "Taglio pause",
+      "Sottotitoli",
+      "Zoom",
+      "Grafiche"
+     ],
+     "checkAt": [
+      9.84,
+      10.94,
+      12.18,
+      12.6
+     ]
+    },
+    "y": 0.72,
+    "scale": 0.85
    },
-   "sfx": [
-    {
-     "t": 6.54,
-     "name": "cubo-cade"
-    },
-    {
-     "t": 7.62,
-     "name": "cubo-atterra"
-    },
-    {
-     "t": 7.9,
-     "name": "tag-claude"
-    }
-   ]
-  },
-  {
-   "id": "s05",
-   "start": 8.3,
-   "end": 13.1,
-   "line": "Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
-   "action": "File 'video3.mov · GREZZO' che entra, card di montaggio con spunte sulle parole.",
-   "recipes": [
-    "dati/progress-checklist"
-   ],
    "payoff": {
     "word": "grafiche",
     "t": 12.6
    },
-   "checkAt": [
-    9.5,
-    10.94,
-    12.18,
-    12.6
-   ],
    "sfx": [
     {
-     "t": 8.84,
-     "name": "file-entra"
+     "t": 7.62,
+     "name": "tag-claude"
     },
     {
-     "t": 9.5,
+     "t": 9.84,
      "name": "check-1"
     },
     {
@@ -188,54 +167,44 @@
    ]
   },
   {
-   "id": "s06",
-   "start": 13.15,
+   "id": "s05",
+   "start": 13.18,
    "end": 14.75,
    "line": "E questo video non l'ho toccato.",
-   "action": "Cursore che scivola verso il video, bloccato da un divieto rosso su 'toccato'.",
-   "recipes": [
-    "ui/cursore-click",
-    "accenti/croce-disegnata"
-   ],
+   "action": "Punch-in su «toccato» (parola chiave lime).",
    "payoff": {
     "word": "toccato",
     "t": 14.24
    },
-   "sfx": [
-    {
-     "t": 13.25,
-     "name": "cursore-scivola"
-    },
-    {
-     "t": 14.24,
-     "name": "x-negato"
-    }
-   ]
+   "sfx": []
   },
   {
-   "id": "s07",
-   "start": 14.78,
-   "end": 17.1,
+   "id": "s06",
+   "start": 14.82,
+   "end": 16.8,
    "line": "Zero tagli a mano, zero app aperte.",
-   "action": "Due timbri rossi, uno per 'zero'.",
-   "recipes": [
-    "testo/timbro",
-    "camera/shake-colpo"
-   ],
+   "action": "Due timbri rossi sbattono uno sotto l'altro, ognuno sul suo «zero»; la camera trema a ogni colpo.",
+   "graphic": {
+    "type": "zero",
+    "props": {
+     "items": [
+      {
+       "at": 14.82,
+       "text": "0 tagli a mano"
+      },
+      {
+       "at": 15.94,
+       "text": "0 app aperte"
+      }
+     ]
+    },
+    "y": 0.728,
+    "scale": 0.9
+   },
    "payoff": {
     "word": "zero",
     "t": 15.94
    },
-   "stamps": [
-    {
-     "t": 14.82,
-     "text": "0 tagli a mano"
-    },
-    {
-     "t": 15.94,
-     "text": "0 app aperte"
-    }
-   ],
    "sfx": [
     {
      "t": 14.82,
@@ -248,46 +217,51 @@
    ]
   },
   {
-   "id": "s08",
-   "start": 16.8,
-   "end": 19.45,
-   "line": "L'ho registrato io e gliel'ho mandato…",
-   "action": "Aeroplanino che parte su 'mandato' con scia lime; chip INVIATO.",
-   "recipes": [
-    "accenti/aeroplanino-scia"
-   ],
+   "id": "s07",
+   "start": 17.76,
+   "end": 19.59,
+   "line": "…e gliel'ho mandato.",
+   "action": "Aeroplanino di carta in curva con scia lime tratteggiata, sotto la pillola INVIATO.",
+   "graphic": {
+    "type": "send",
+    "props": {
+     "flyFrames": 26
+    }
+   },
    "payoff": {
     "word": "mandato",
     "t": 18.02
    },
    "sfx": [
     {
-     "t": 18.02,
+     "t": 17.76,
      "name": "aereo-parte"
     },
     {
-     "t": 18.32,
+     "t": 18.62,
      "name": "inviato"
     }
    ]
   },
   {
-   "id": "s09",
-   "start": 19.5,
-   "end": 21.4,
-   "line": "…e me l'ha restituito così.",
-   "action": "Video dentro uno smartphone; scintille e PRONTO su 'così'.",
-   "recipes": [
-    "camera/zoom-out-schermo",
-    "ui/telefono-3d"
-   ],
+   "id": "s08",
+   "start": 19.66,
+   "end": 21.88,
+   "line": "E me l'ha restituito così.",
+   "action": "Il video si rimpicciolisce dentro uno smartphone che ondeggia in 3D, cuori che salgono di lato; su «così» punch.",
+   "graphic": {
+    "type": "phone",
+    "props": {
+     "stats": []
+    }
+   },
    "payoff": {
     "word": "così",
     "t": 20.64
    },
    "sfx": [
     {
-     "t": 19.5,
+     "t": 19.66,
      "name": "telefono-entra"
     },
     {
@@ -297,26 +271,29 @@
    ]
   },
   {
-   "id": "s10",
-   "start": 21.45,
-   "end": 27.55,
+   "id": "s09",
+   "start": 21.91,
+   "end": 27.76,
    "line": "Dentro ci sono tre strumenti: uno trascrive, uno taglia, uno anima. Ma il segreto è come li fai lavorare insieme.",
-   "action": "Tre tessere '?' che si girano sulle parole, lucchetto su 'segreto', scia che le collega su 'lavorare insieme'.",
-   "recipes": [
-    "testo/tessere-che-si-girano",
-    "accenti/linea-che-collega"
-   ],
+   "action": "Tre tessere coperte «?» che si girano una per verbo (TRASCRIVE, TAGLIA, ANIMA), poi il lucchetto IL SEGRETO, a «insieme» la scia lime le collega.",
+   "graphic": {
+    "type": "trio",
+    "props": {
+     "reveal": [
+      23.04,
+      24.06,
+      25.12
+     ],
+     "secretAt": 25.73,
+     "connectAt": 27.11
+    },
+    "y": 0.745,
+    "scale": 0.82
+   },
    "payoff": {
     "word": "insieme",
     "t": 27.11
    },
-   "reveal": [
-    23.04,
-    24.06,
-    25.12
-   ],
-   "secretAt": 25.73,
-   "connectAt": 26.81,
    "sfx": [
     {
      "t": 21.91,
@@ -339,39 +316,32 @@
      "name": "lucchetto"
     },
     {
-     "t": 25.15,
-     "name": "collegamento"
-    },
-    {
      "t": 27.11,
      "name": "insieme-ping"
     }
    ]
   },
   {
-   "id": "s11",
-   "start": 27.62,
+   "id": "s10",
+   "start": 27.79,
    "end": 30.5,
    "line": "Ti ho scritto una guida gratuita su come l'ho fatto.",
-   "action": "Libro 3D che cade su 'guida', bollino GRATIS su 'gratuita'.",
-   "recipes": [
-    "oggetto/libro-3d-fluttua",
-    "accenti/bollino-timbro"
-   ],
-   "objects": [
-    "libro-guida"
-   ],
+   "action": "La copertina della guida cade inclinata in 3D e fluttua con un riflesso; su «gratuita» sbatte il bollino GRATIS.",
+   "graphic": {
+    "type": "guidebook",
+    "props": {
+     "freeAt": 28.89
+    },
+    "y": 0.72,
+    "scale": 0.72
+   },
    "payoff": {
     "word": "gratuita",
     "t": 28.89
    },
    "sfx": [
     {
-     "t": 27.6,
-     "name": "whip-cta"
-    },
-    {
-     "t": 28.61,
+     "t": 27.95,
      "name": "libro-atterra"
     },
     {
@@ -381,24 +351,33 @@
    ]
   },
   {
-   "id": "s12",
-   "start": 30.55,
+   "id": "s11",
+   "start": 30.53,
    "end": 33.8,
    "line": "Commenta guida e te la mando in DM.",
-   "action": "Box commenti: GUIDA si scrive, si pubblica, risposta su 'DM'.",
-   "recipes": [
-    "ui/commento-scritto"
-   ],
+   "action": "Box commenti: GUIDA si scrive da solo su «guida», parte su «mando», arriva la risposta «Guida inviata in DM» su «DM»; fermo finale per leggerla.",
+   "graphic": {
+    "type": "dm",
+    "text": "GUIDA",
+    "props": {
+     "name": "Commenti",
+     "placeholder": "Aggiungi un commento…",
+     "sentLabel": "Pubblicato",
+     "typeAt": 31.04,
+     "sendAt": 31.72,
+     "replyAt": 32.06,
+     "reply": "Guida inviata in DM"
+    },
+    "y": 0.716,
+    "scale": 0.85
+   },
    "payoff": {
     "word": "DM",
     "t": 32.06
    },
-   "typeAt": 31.04,
-   "publishAt": 31.45,
-   "replyAt": 32.06,
    "sfx": [
     {
-     "t": 30.58,
+     "t": 30.53,
      "name": "commenti-apre"
     },
     {
@@ -406,7 +385,7 @@
      "name": "digita-guida"
     },
     {
-     "t": 31.45,
+     "t": 31.72,
      "name": "pubblica"
     },
     {
@@ -416,71 +395,32 @@
    ]
   }
  ],
- "objects": [
-  {
-   "id": "ciak",
-   "engine": "three.js"
-  },
-  {
-   "id": "cubo-claude",
-   "engine": "three.js"
-  },
-  {
-   "id": "libro-guida",
-   "engine": "three.js"
-  }
- ],
+ "objects": [],
  "camera": [
   {
-   "type": "punch",
-   "t": 1.39,
-   "scale": 1.08,
-   "hold": 0.3
+   "t": 1.01,
+   "strength": 0.7,
+   "type": "punch"
   },
   {
-   "type": "push",
-   "start": 4.57,
-   "end": 6.03,
-   "from": 1.0,
-   "to": 1.05
+   "t": 2.39,
+   "strength": 0.6,
+   "type": "punch"
   },
   {
-   "type": "punch",
-   "t": 7.62,
-   "scale": 1.06,
-   "hold": 0.4
-  },
-  {
-   "type": "shake",
    "t": 14.24,
-   "amp": 10
+   "strength": 0.9,
+   "type": "punch"
   },
   {
-   "type": "shake",
-   "t": 14.82,
-   "amp": 18
+   "t": 20.64,
+   "strength": 1.0,
+   "type": "punch"
   },
   {
-   "type": "shake",
-   "t": 15.94,
-   "amp": 18
-  },
-  {
-   "type": "inset",
-   "start": 19.5,
-   "end": 21.4,
-   "scale": 0.74
-  },
-  {
-   "type": "punch",
    "t": 25.73,
-   "scale": 1.06,
-   "hold": 0.5
-  },
-  {
-   "type": "whip",
-   "t": 27.6,
-   "dir": 1
+   "strength": 0.8,
+   "type": "punch"
   }
  ]
 }

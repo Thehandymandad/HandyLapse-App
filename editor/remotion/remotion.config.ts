@@ -1,0 +1,7 @@
+import { Config } from "@remotion/cli/config";
+
+Config.setVideoImageFormat("jpeg");
+Config.setJpegQuality(92);
+Config.setOverwriteOutput(true);
+// three.js senza GPU: rendering WebGL software
+Config.setChromiumOpenGlRenderer("swangle");

@@ -1,0 +1,752 @@
+{
+ "version": 1,
+ "name": "video3",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 32.5
+ },
+ "styleId": "pulse",
+ "styleOverrides": {
+  "grade": {
+   "brightness": 1,
+   "contrast": 1.04,
+   "saturation": 1.04,
+   "warmth": 0
+  }
+ },
+ "keep": [],
+ "cuts": [],
+ "joins": [
+  4.567,
+  6.033,
+  8.267,
+  13.133,
+  13.933,
+  14.767,
+  16.767,
+  21.0,
+  22.733,
+  25.5,
+  27.6,
+  29.5,
+  30.533
+ ],
+ "hold": 1.3,
+ "words": [
+  {
+   "text": "Questo",
+   "start": 0.05,
+   "end": 0.27
+  },
+  {
+   "text": "video",
+   "start": 0.33,
+   "end": 0.57
+  },
+  {
+   "text": "non",
+   "start": 0.71,
+   "end": 0.85
+  },
+  {
+   "text": "l'ho",
+   "start": 0.87,
+   "end": 0.95
+  },
+  {
+   "text": "montato",
+   "start": 1.01,
+   "end": 1.33
+  },
+  {
+   "text": "io.",
+   "start": 1.39,
+   "end": 1.49
+  },
+  {
+   "text": "La",
+   "start": 1.87,
+   "end": 1.93
+  },
+  {
+   "text": "parte",
+   "start": 1.99,
+   "end": 2.21
+  },
+  {
+   "text": "più",
+   "start": 2.29,
+   "end": 2.37
+  },
+  {
+   "text": "difficile",
+   "start": 2.39,
+   "end": 2.73
+  },
+  {
+   "text": "di",
+   "start": 2.77,
+   "end": 2.87
+  },
+  {
+   "text": "fare",
+   "start": 2.91,
+   "end": 3.09
+  },
+  {
+   "text": "reel",
+   "start": 3.13,
+   "end": 3.51
+  },
+  {
+   "text": "non",
+   "start": 3.55,
+   "end": 3.67
+  },
+  {
+   "text": "è",
+   "start": 3.73,
+   "end": 3.83
+  },
+  {
+   "text": "registrare.",
+   "start": 3.87,
+   "end": 4.47
+  },
+  {
+   "text": "È",
+   "start": 4.617,
+   "end": 4.677
+  },
+  {
+   "text": "tutto",
+   "start": 4.717,
+   "end": 4.957
+  },
+  {
+   "text": "quello",
+   "start": 5.017,
+   "end": 5.237
+  },
+  {
+   "text": "che",
+   "start": 5.357,
+   "end": 5.437
+  },
+  {
+   "text": "viene",
+   "start": 5.477,
+   "end": 5.657
+  },
+  {
+   "text": "dopo.",
+   "start": 5.697,
+   "end": 5.937
+  },
+  {
+   "text": "così",
+   "start": 6.083,
+   "end": 6.423
+  },
+  {
+   "text": "ho",
+   "start": 6.443,
+   "end": 6.503
+  },
+  {
+   "text": "costruito",
+   "start": 6.543,
+   "end": 6.923
+  },
+  {
+   "text": "un",
+   "start": 6.943,
+   "end": 7.023
+  },
+  {
+   "text": "editor",
+   "start": 7.063,
+   "end": 7.363
+  },
+  {
+   "text": "con",
+   "start": 7.403,
+   "end": 7.583
+  },
+  {
+   "text": "Claude",
+   "start": 7.623,
+   "end": 7.803
+  },
+  {
+   "text": "Code.",
+   "start": 7.903,
+   "end": 8.183
+  },
+  {
+   "text": "Gli",
+   "start": 8.317,
+   "end": 8.397
+  },
+  {
+   "text": "do",
+   "start": 8.417,
+   "end": 8.477
+  },
+  {
+   "text": "il",
+   "start": 8.497,
+   "end": 8.557
+  },
+  {
+   "text": "video",
+   "start": 8.577,
+   "end": 8.797
+  },
+  {
+   "text": "grezzo",
+   "start": 8.837,
+   "end": 9.237
+  },
+  {
+   "text": "e",
+   "start": 9.277,
+   "end": 9.317
+  },
+  {
+   "text": "lui",
+   "start": 9.337,
+   "end": 9.457
+  },
+  {
+   "text": "taglia",
+   "start": 9.497,
+   "end": 9.677
+  },
+  {
+   "text": "le",
+   "start": 9.697,
+   "end": 9.797
+  },
+  {
+   "text": "pause,",
+   "start": 9.837,
+   "end": 10.137
+  },
+  {
+   "text": "scrive",
+   "start": 10.577,
+   "end": 10.837
+  },
+  {
+   "text": "i",
+   "start": 10.857,
+   "end": 10.897
+  },
+  {
+   "text": "sottotitoli,",
+   "start": 10.937,
+   "end": 11.477
+  },
+  {
+   "text": "mette",
+   "start": 11.837,
+   "end": 12.097
+  },
+  {
+   "text": "zoom",
+   "start": 12.177,
+   "end": 12.337
+  },
+  {
+   "text": "e",
+   "start": 12.517,
+   "end": 12.577
+  },
+  {
+   "text": "grafiche.",
+   "start": 12.597,
+   "end": 13.037
+  },
+  {
+   "text": "E",
+   "start": 13.183,
+   "end": 13.243
+  },
+  {
+   "text": "questo",
+   "start": 13.283,
+   "end": 13.543
+  },
+  {
+   "text": "video",
+   "start": 13.563,
+   "end": 13.843
+  },
+  {
+   "text": "non",
+   "start": 13.983,
+   "end": 14.083
+  },
+  {
+   "text": "l'ho",
+   "start": 14.103,
+   "end": 14.203
+  },
+  {
+   "text": "toccato.",
+   "start": 14.243,
+   "end": 14.663
+  },
+  {
+   "text": "Zero",
+   "start": 14.817,
+   "end": 15.017
+  },
+  {
+   "text": "tagli",
+   "start": 15.057,
+   "end": 15.197
+  },
+  {
+   "text": "a",
+   "start": 15.237,
+   "end": 15.277
+  },
+  {
+   "text": "mano,",
+   "start": 15.317,
+   "end": 15.537
+  },
+  {
+   "text": "zero",
+   "start": 15.937,
+   "end": 16.097
+  },
+  {
+   "text": "app",
+   "start": 16.137,
+   "end": 16.217
+  },
+  {
+   "text": "aperte.",
+   "start": 16.257,
+   "end": 16.657
+  },
+  {
+   "text": "l'ho",
+   "start": 16.817,
+   "end": 16.897
+  },
+  {
+   "text": "registrato",
+   "start": 16.937,
+   "end": 17.377
+  },
+  {
+   "text": "io",
+   "start": 17.437,
+   "end": 17.537
+  },
+  {
+   "text": "e",
+   "start": 17.677,
+   "end": 17.717
+  },
+  {
+   "text": "gliel'ho",
+   "start": 17.757,
+   "end": 17.977
+  },
+  {
+   "text": "mandato.",
+   "start": 18.017,
+   "end": 18.417
+  },
+  {
+   "text": "E",
+   "start": 19.497,
+   "end": 19.557
+  },
+  {
+   "text": "me",
+   "start": 19.577,
+   "end": 19.637
+  },
+  {
+   "text": "l'ha",
+   "start": 19.657,
+   "end": 19.757
+  },
+  {
+   "text": "restituito",
+   "start": 19.797,
+   "end": 20.377
+  },
+  {
+   "text": "così.",
+   "start": 20.637,
+   "end": 20.897
+  },
+  {
+   "text": "Dentro",
+   "start": 21.05,
+   "end": 21.39
+  },
+  {
+   "text": "ci",
+   "start": 21.43,
+   "end": 21.51
+  },
+  {
+   "text": "sono",
+   "start": 21.57,
+   "end": 21.75
+  },
+  {
+   "text": "tre",
+   "start": 21.91,
+   "end": 22.03
+  },
+  {
+   "text": "strumenti:",
+   "start": 22.11,
+   "end": 22.65
+  },
+  {
+   "text": "uno",
+   "start": 22.783,
+   "end": 23.003
+  },
+  {
+   "text": "trascrive,",
+   "start": 23.043,
+   "end": 23.523
+  },
+  {
+   "text": "uno",
+   "start": 23.843,
+   "end": 24.023
+  },
+  {
+   "text": "taglia,",
+   "start": 24.063,
+   "end": 24.383
+  },
+  {
+   "text": "uno",
+   "start": 24.763,
+   "end": 25.023
+  },
+  {
+   "text": "anima.",
+   "start": 25.123,
+   "end": 25.403
+  },
+  {
+   "text": "Ma",
+   "start": 25.55,
+   "end": 25.59
+  },
+  {
+   "text": "il",
+   "start": 25.61,
+   "end": 25.65
+  },
+  {
+   "text": "segreto",
+   "start": 25.73,
+   "end": 26.19
+  },
+  {
+   "text": "è",
+   "start": 26.25,
+   "end": 26.31
+  },
+  {
+   "text": "come",
+   "start": 26.35,
+   "end": 26.49
+  },
+  {
+   "text": "li",
+   "start": 26.53,
+   "end": 26.61
+  },
+  {
+   "text": "fai",
+   "start": 26.65,
+   "end": 26.77
+  },
+  {
+   "text": "lavorare",
+   "start": 26.81,
+   "end": 27.07
+  },
+  {
+   "text": "insieme.",
+   "start": 27.11,
+   "end": 27.49
+  },
+  {
+   "text": "Ti",
+   "start": 27.65,
+   "end": 27.69
+  },
+  {
+   "text": "ho",
+   "start": 27.71,
+   "end": 27.75
+  },
+  {
+   "text": "scritto",
+   "start": 27.79,
+   "end": 28.25
+  },
+  {
+   "text": "una",
+   "start": 28.33,
+   "end": 28.51
+  },
+  {
+   "text": "guida",
+   "start": 28.61,
+   "end": 28.87
+  },
+  {
+   "text": "gratuita",
+   "start": 28.89,
+   "end": 29.39
+  },
+  {
+   "text": "su",
+   "start": 29.55,
+   "end": 29.63
+  },
+  {
+   "text": "come",
+   "start": 29.81,
+   "end": 29.97
+  },
+  {
+   "text": "l'ho",
+   "start": 29.99,
+   "end": 30.09
+  },
+  {
+   "text": "fatto.",
+   "start": 30.13,
+   "end": 30.43
+  },
+  {
+   "text": "Commenta",
+   "start": 30.583,
+   "end": 30.983
+  },
+  {
+   "text": "guida",
+   "start": 31.043,
+   "end": 31.403
+  },
+  {
+   "text": "e",
+   "start": 31.423,
+   "end": 31.463
+  },
+  {
+   "text": "te",
+   "start": 31.523,
+   "end": 31.583
+  },
+  {
+   "text": "la",
+   "start": 31.623,
+   "end": 31.683
+  },
+  {
+   "text": "mando",
+   "start": 31.723,
+   "end": 31.943
+  },
+  {
+   "text": "in",
+   "start": 31.963,
+   "end": 32.023
+  },
+  {
+   "text": "DM.",
+   "start": 32.063,
+   "end": 32.403
+  }
+ ],
+ "emphasis": [
+  9,
+  21,
+  28,
+  52,
+  70,
+  74,
+  84,
+  96,
+  102
+ ],
+ "hook": null,
+ "zooms": [
+  {
+   "at": 1.01,
+   "kind": "punch",
+   "strength": 0.7
+  },
+  {
+   "at": 2.39,
+   "kind": "punch",
+   "strength": 0.6
+  },
+  {
+   "at": 14.24,
+   "kind": "punch",
+   "strength": 0.9
+  },
+  {
+   "at": 20.64,
+   "kind": "punch",
+   "strength": 1.0
+  },
+  {
+   "at": 25.73,
+   "kind": "punch",
+   "strength": 0.8
+  }
+ ],
+ "graphics": [
+  {
+   "type": "rec",
+   "at": 0.0,
+   "duration": 1.7,
+   "props": {
+    "shutterAt": 42,
+    "focusX": 0.5,
+    "focusY": 0.42
+   }
+  },
+  {
+   "type": "pile",
+   "at": 4.62,
+   "duration": 1.58,
+   "y": 0.8,
+   "props": {
+    "every": 4,
+    "items": [
+     "TAGLI",
+     "SOTTOTITOLI",
+     "ZOOM",
+     "GRAFICHE"
+    ],
+    "last": "ORE PERSE"
+   }
+  },
+  {
+   "type": "claude",
+   "at": 7.62,
+   "duration": 5.5,
+   "y": 0.72,
+   "scale": 0.85,
+   "props": {
+    "tasks": [
+     "Taglio pause",
+     "Sottotitoli",
+     "Zoom",
+     "Grafiche"
+    ],
+    "checkAt": [
+     67,
+     100,
+     137,
+     149
+    ]
+   }
+  },
+  {
+   "type": "zero",
+   "at": 14.82,
+   "duration": 1.98,
+   "y": 0.728,
+   "scale": 0.9,
+   "props": {
+    "items": [
+     {
+      "at": 0,
+      "text": "0 tagli a mano"
+     },
+     {
+      "at": 34,
+      "text": "0 app aperte"
+     }
+    ]
+   }
+  },
+  {
+   "type": "send",
+   "at": 17.76,
+   "duration": 1.83,
+   "props": {
+    "flyFrames": 26
+   }
+  },
+  {
+   "type": "phone",
+   "at": 19.66,
+   "duration": 2.22,
+   "props": {
+    "stats": []
+   }
+  },
+  {
+   "type": "trio",
+   "at": 21.91,
+   "duration": 5.85,
+   "y": 0.745,
+   "scale": 0.82,
+   "props": {
+    "reveal": [
+     34,
+     64,
+     96
+    ],
+    "secretAt": 115,
+    "connectAt": 156
+   }
+  },
+  {
+   "type": "guidebook",
+   "at": 27.79,
+   "duration": 2.71,
+   "y": 0.72,
+   "scale": 0.72,
+   "props": {
+    "freeAt": 33
+   }
+  },
+  {
+   "type": "dm",
+   "at": 30.53,
+   "duration": 3.27,
+   "text": "GUIDA",
+   "y": 0.716,
+   "scale": 0.85,
+   "props": {
+    "name": "Commenti",
+    "placeholder": "Aggiungi un commento…",
+    "sentLabel": "Pubblicato",
+    "typeAt": 15,
+    "sendAt": 36,
+    "replyAt": 46,
+    "reply": "Guida inviata in DM"
+   }
+  }
+ ],
+ "cta": null
+}

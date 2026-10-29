@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Installa le skill pubbliche usate dall'editor (guida "Come edito i miei video con l'AI"):
 #   - Video Use (github.com/browser-use/video-use): trascrizione Scribe, tagli sulle parole, render del montato
-#   - HyperFrames (hyperframes.heygen.com): grafiche HTML + GSAP renderizzate in video, + media-use
+#   - media-use (con le skill di HyperFrames, hyperframes.heygen.com): i suoni gratuiti di base per gli effetti
+# e installa le dipendenze del motore delle animazioni (Remotion, editor/remotion).
 # Idempotente: se è già tutto installato non fa nulla. Le 5 skill custom (motion-*) sono già nel repo.
 #
 # Uso:  bash editor/setup.sh
@@ -18,7 +19,7 @@ mkdir -p "$SKILLS"
 for bin in ffmpeg ffprobe node npx python3 git; do
   command -v "$bin" >/dev/null || { echo "Manca $bin: installalo prima di continuare." >&2; exit 1; }
 done
-node -e 'process.exit(Number(process.versions.node.split(".")[0]) < 22 ? 1 : 0)' || { echo "HyperFrames richiede Node.js 22+." >&2; exit 1; }
+node -e 'process.exit(Number(process.versions.node.split(".")[0]) < 22 ? 1 : 0)' || { echo "Serve Node.js 22+." >&2; exit 1; }
 
 # 1. Video Use: la cartella intera dentro .claude/skills (SKILL.md e helpers/ devono stare insieme)
 if [ ! -f "$VIDEO_USE/SKILL.md" ]; then
@@ -33,10 +34,14 @@ if [ ! -f "$VIDEO_USE/.deps-ok" ]; then
   touch "$VIDEO_USE/.deps-ok"
 fi
 
-# 2. HyperFrames: skill core (/hyperframes, /hyperframes-cli, /hyperframes-registry, /media-use) nel progetto
-# (l'installer di HyperFrames le mette in ~/.claude/skills, globali per l'utente)
+# 2. media-use (arriva con le skill di HyperFrames; l'installer le mette in ~/.claude/skills, globali per l'utente)
 if [ ! -f "$SKILLS/hyperframes/SKILL.md" ] && [ ! -f "$HOME/.claude/skills/hyperframes/SKILL.md" ]; then
   (cd "$ROOT" && npx --yes "hyperframes@$HYPERFRAMES_VERSION" skills update)
+fi
+
+# 3. Remotion (motore delle animazioni): dipendenze npm con le versioni fissate in package-lock.json
+if [ ! -d "$ROOT/editor/remotion/node_modules/remotion" ]; then
+  (cd "$ROOT/editor/remotion" && npm ci --no-audit --no-fund)
 fi
 
 echo "Editor pronto. Skill del progetto ($SKILLS):"

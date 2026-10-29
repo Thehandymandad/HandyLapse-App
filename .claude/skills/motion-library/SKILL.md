@@ -1,6 +1,6 @@
 ---
 name: motion-library
-description: Il vocabolario del movimento. Ricette di animazione (oggetti, testo, camera, sfondi, transizioni, dati, interfacce, accenti) indicizzate per verbo ("perdere", "unire", "crescere", "sbagliare"…), ognuna con cosa comunica, come si fa in GSAP/HyperFrames, il suono adatto e i difetti da evitare. Usare quando si deve trasformare una frase in un'azione visiva o scegliere come animare un elemento.
+description: Il vocabolario del movimento. Ricette di animazione (oggetti, testo, camera, sfondi, transizioni, dati, interfacce, accenti) indicizzate per verbo ("perdere", "unire", "crescere", "sbagliare"…), ognuna con cosa comunica, come si fa (in GSAP, con la traduzione in Remotion e i componenti già pronti dello style pack Pulse), il suono adatto e i difetti da evitare. Usare quando si deve trasformare una frase in un'azione visiva o scegliere come animare un elemento.
 ---
 
 # Motion Library
@@ -18,11 +18,13 @@ ricetta giusta, con i parametri. Le ricette sono in `references/`, una categoria
 | `references/dati.md` | numeri e confronti: contatori, barre, prima/dopo, timeline, classifiche |
 | `references/ui.md` | interfacce: chat, notifiche, cursori, finestre, commenti, pulsanti |
 | `references/accenti.md` | particelle, linee, frecce, cerchiature, luci, scintille |
+| `references/remotion.md` | **componenti già pronti** nel motore Remotion (Pulse: rec, pile, hours, claude, zero, send, phone, trio, guidebook, dm…) e come tradurre le ricette GSAP in Remotion |
 
 ## Come scegliere
 
 1. Prendi il **verbo** della frase (non il sostantivo). "Ci perdete ore" → *perdere* (tempo).
-2. Cerca il verbo nell'indice qui sotto → 1–3 ricette candidate.
+2. Guarda prima i **componenti pronti** in `references/remotion.md` (colonna Verbi): se uno va bene, usalo.
+   Altrimenti cerca il verbo nell'indice qui sotto → 1–3 ricette candidate, da scrivere come componente Remotion.
 3. Scegli quella che il materiale regge (c'è un oggetto? c'è spazio sotto il viso? la frase dura 0,8 s o 3 s?).
 4. Consegna: id della ricetta + parametri adattati (tempi sulla parola, dimensioni nella zona libera, suono).
 
@@ -54,9 +56,10 @@ ricetta giusta, con i parametri. Le ricette sono in `references/`, una categoria
 
 ## Regole dure (valgono per tutte le ricette)
 
-- **Deterministico** (contratto HyperFrames): niente `Math.random()` non seminato, niente `repeat: -1`, niente timer.
-  Cicli infiniti = `repeat` calcolato dalla durata della scena. Rumore = funzione seminata del tempo.
-- `fromTo`, non `from`, dentro le scene. Si animano le trasformazioni, mai `left/top/width/height`.
+- **Deterministico**: tutto è funzione del fotogramma (`useCurrentFrame()`), niente `Math.random()` non seminato
+  (`seeded()`), niente timer né animazioni CSS. Cicli = funzioni periodiche del frame. Rumore = funzione seminata del tempo.
+- Le ricette sono scritte in GSAP (`fromTo`, easing): traducile con la tabella di `references/remotion.md`.
+  Si animano le trasformazioni, mai `left/top/width/height` frame per frame.
 - Nessun easing `linear`, tranne rotazioni continue e scorrimenti.
 - Il colpo (atterraggio, scatto, timbro) cade sul tempo della parola chiave: l'entrata parte prima.
 - Ogni ricetta che produce un evento visibile ha un suono suo, diverso dagli altri del video.

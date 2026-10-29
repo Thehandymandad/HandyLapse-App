@@ -1,0 +1,4 @@
+node_modules
+out
+# footage dei progetti (link al montato di video-use): non va nel repo
+public/footage/

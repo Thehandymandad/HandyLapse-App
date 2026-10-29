@@ -1,6 +1,6 @@
 ---
 name: motion-design
-description: Il direttore artistico. Definisce palette, tipografia, materiali, spazi e leggibilità di un video motion o di un reel prima di scrivere una riga di codice, partendo dal brief e dal piano di motion-director. Usare dopo motion-director e prima di motion-hyperframes; anche quando l'utente chiede di cambiare lo stile o di copiare quello di un riferimento.
+description: Il direttore artistico. Definisce palette, tipografia, materiali, spazi e leggibilità di un video motion o di un reel prima di scrivere una riga di codice, partendo dal brief e dal piano di motion-director. Usare dopo motion-director e prima di motion-remotion; anche quando l'utente chiede di cambiare lo stile o di copiare quello di un riferimento.
 ---
 
 # Motion Design
@@ -13,34 +13,39 @@ Trasformi il gusto in numeri. Chi anima non deve mai indovinare un colore, una m
 
 ## Cosa consegni
 
-`edit/DESIGN.md`: i token come variabili CSS pronte da incollare, le regole di layout scena per scena (dove sta ogni
+`edit/DESIGN.md`: i token pronti da usare nei componenti Remotion (oggetto palette TS / stili inline), le regole di layout scena per scena (dove sta ogni
 grafica rispetto al viso), i materiali, cosa NON fare. Se l'utente ha un riferimento, i valori vengono misurati da lì
 (fotogrammi a piena risoluzione: colori con il contagocce, altezze del testo in px) e sostituiscono quelli della casa.
 
-## Lo stile della casa (default)
+## Lo stile della casa (default): Pulse
 
-```css
-:root {
-  --ink: #0B0B0C;        /* inchiostro: fondi, testo su chiaro */
-  --paper: #F4F4EF;      /* bianco carta: card chiare */
-  --white: #FFFFFF;
-  --accent: #D4FF3A;     /* l'UNICA tinta d'accento */
-  --muted: #8B8D93;      /* etichette secondarie */
-  --glass: rgba(11, 11, 12, 0.78);
-  --font-display: "Inter";            /* 900, tracking -0.045em, interlinea 0.92 */
-  --font-key: "Instrument Serif";     /* corsivo, solo parole chiave */
-  --font-mono: "JetBrains Mono";      /* tag e etichette piccole, maiuscolo, tracking +0.08em */
-}
+È lo style pack `pulse` del motore Remotion (`editor/remotion/src/styles/originals/pulse/`, palette `P` in `shared.tsx`).
+
+```ts
+const P = {
+  lime: "#D4FF3A",                 // l'UNICA tinta d'accento
+  limeDim: "rgba(212,255,58,0.35)", // bagliori
+  ink: "#0A0B0E",                  // inchiostro: testo su lime, fondi
+  red: "#FF2E4D",                  // solo per un "no" esplicito (errore, divieto, timbro)
+  white: "#FFFFFF",
+  grey: "#8A8F98",                 // etichette secondarie
+  glass: "rgba(12,13,17,0.80)",    // card vetro scuro
+  line: "rgba(255,255,255,0.12)",  // bordi
+  claude: "#D97757",               // solo per il logo di Claude
+};
+// Font (fontsource, locali): Anton 400 maiuscolo per sottotitoli, titoli e numeri; Inter 700–900 per UI ed etichette.
 ```
 
-- Inter e JetBrains Mono sono nel bundle di HyperFrames. Instrument Serif è in `editor/assets/fonts/` (corsivo e
-  normale, licenza OFL): copialo in `assets/fonts/` del progetto HyperFrames e dichiaralo con `@font-face`.
+- Sottotitoli Pulse: Anton 98 px maiuscolo, centro a y≈1123 (0,585), 2–3 parole, parola detta in lime, parole chiave
+  su etichetta lime con testo ink.
+- Un altro stile (riferimento dell'utente, "fai qualcosa di diverso") = un nuovo style pack con i suoi token misurati.
+  Instrument Serif (corsivo, OFL) è in `editor/assets/fonts/` se serve un serif per le parole chiave.
 
 ## Regole dure
 
 - **Una sola tinta d'accento**: lime `#D4FF3A` su inchiostro e bianco. Niente blu, niente arcobaleni, niente gradienti
   colorati. Il rosso esiste solo per un "no" esplicito (errore, divieto), mai decorativo.
-- **Il serif corsivo solo per le parole chiave** (quelle marcate `*così*` nel piano), mai per frasi intere.
+- **Parole chiave con parsimonia**: una ogni 2–3 s (`captions.emphasis`), mai frasi intere evidenziate.
 - **Zone sicure di Instagram** su 1080×1920: niente di importante sopra **y=280**, sotto **y=1560**, né a destra di
   **x=900** nella metà bassa (y>960). Margini laterali ≥ 64 px.
 - **Leggibilità**: testo minimo 44 px; sottotitoli 64–84 px; titoli 110–170 px. Contrasto sempre pieno: su footage
@@ -55,21 +60,23 @@ grafica rispetto al viso), i materiali, cosa NON fare. Se l'utente ha un riferim
 
 - Griglia 8 px. Raggi: card 36–44 px, pillole 999 px, tag 10 px.
 - ~40% di spazio vuoto per scena; massimo 3 elementi di testo visibili insieme.
-- Gerarchia: 1 titolo (display 900) → 1 parola chiave (serif corsivo lime o pillola lime con testo ink) → etichette mono.
+- Gerarchia: 1 titolo (Anton) → 1 parola chiave (pillola lime con testo ink) → etichette Inter 800–900 maiuscolo.
 
 ## Materiali
 
-- **Vetro scuro**: `background: var(--glass); backdrop-filter: blur(22px); border: 1.5px solid rgba(255,255,255,.12);`
-  ombra `0 40px 90px rgba(0,0,0,.5)`.
-- **Card carta**: `var(--paper)`, testo ink, ombra morbida `0 30px 70px rgba(0,0,0,.35)`.
-- **Pillola lime**: fondo `var(--accent)`, testo `var(--ink)` 900.
+- **Vetro scuro** (componente `Glass`): `background: P.glass; backdropFilter: blur(22px) saturate(1.4); border: 2px solid P.line`,
+  raggio 40, ombra `0 40px 90px rgba(0,0,0,.55)`; quando "si accende" bordo e bagliore lime.
+- **Card carta**: `#F4F4EF`, testo ink, ombra morbida `0 30px 70px rgba(0,0,0,.35)`.
+- **Pillola lime**: fondo `P.lime`, testo `P.ink` Inter 900.
+- **Timbro rosso**: bordo e testo `P.red` Anton, ruotato −5°/+4°, sbatte da scala 2,5.
 - **Luce**: riflessi che passano (gradiente bianco 12% a 110°), bagliori lime al 25–35% dietro gli oggetti protagonisti.
 
 ## Movimento (il carattere, i dettagli sono in motion-library)
 
 - **Mai statico**: entrate con sfocatura di movimento (blur 10–18 px → 0), oggetti che fluttuano (±8 px, 2–3 s per
   ciclo), luci che passano. Ma il testo da leggere sta fermo almeno 0,6 s: lascia respirare.
-- Easing: entrate `power3.out`/`expo.out`, uscite `power2.in`, rimbalzi `back.out(1.6)`; mai `linear` (tranne rotazioni continue).
+- Easing: entrate a molla (`spring`, damping 12–13, stiffness 150–220) o `Easing.out(Easing.cubic)`, uscite sfocate
+  negli ultimi 6–7 frame, colpi con molla stretta (damping 8, stiffness 320); mai lineare (tranne rotazioni continue).
 - Durate: entrata 0,25–0,45 s, uscita 0,2–0,3 s, colpi 0,12–0,18 s.
 
 ## Libertà

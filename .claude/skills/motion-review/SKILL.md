@@ -1,6 +1,6 @@
 ---
 name: motion-review
-description: Il revisore. Guarda il video renderizzato fotogramma per fotogramma, misura l'audio, annota i difetti con il tempo esatto in MOTION-REVIEW.md e li fa correggere prima di consegnare. Usare sempre dopo motion-hyperframes (o dopo qualsiasi render) e prima di mandare un video all'utente.
+description: Il revisore. Guarda il video renderizzato fotogramma per fotogramma, misura l'audio, annota i difetti con il tempo esatto in MOTION-REVIEW.md e li fa correggere prima di consegnare. Usare sempre dopo motion-remotion (o dopo qualsiasi render) e prima di mandare un video all'utente.
 ---
 
 # Motion Review
@@ -20,8 +20,9 @@ checklist spuntata. Poi le correzioni fatte (piano, HTML o composizione) e un nu
 
 ## Processo
 
-0. Prima del render, sulle istantanee di HyperFrames: `python .claude/skills/motion-review/scripts/over.py <dir_snapshot>
-   --base edit/base.mp4` le sovrappone ai fotogrammi veri del montato con le zone di Instagram segnate.
+0. Prima del render completo, sugli still di Remotion (`npx tsx scripts/render.ts <edit> --still …` in
+   `editor/remotion`): `python .claude/skills/motion-review/scripts/stills.py edit/review/remotion` → fogli con le
+   zone di Instagram segnate. Costano secondi, un render minuti: correggi qui posizioni e tempi.
 
 1. `python .claude/skills/motion-review/scripts/review.py --edit edit` → fotogrammi in `edit/review/frames/`, fogli
    di contatto `edit/review/sheet_NN.jpg` con le zone coperte da Instagram in rosso, `edit/review/audio.json`.
@@ -62,4 +63,4 @@ checklist spuntata. Poi le correzioni fatte (piano, HTML o composizione) e un nu
 ## Quando trovi un errore che si ripete
 
 Non correggere solo il video: aggiungi la regola alla skill giusta (motion-director, motion-design, motion-library o
-motion-hyperframes), così non si ripresenta. È così che il gusto si accumula.
+motion-remotion), così non si ripresenta. È così che il gusto si accumula.
