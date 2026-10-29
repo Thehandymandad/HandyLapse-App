@@ -66,8 +66,9 @@ Un altro accento per un solo video: `styleOverrides.motion.accentColor` nel pian
 - **Una sola tinta d'accento**: arancione elettrico `#FF6633` su inchiostro e bianco. Niente blu, niente arcobaleni, niente gradienti
   colorati. Il rosso esiste solo per un "no" esplicito (errore, divieto), mai decorativo.
 - **Parole chiave con parsimonia**: una ogni 2–3 s (`captions.emphasis`), mai frasi intere evidenziate.
-- **Zone sicure di Instagram** su 1080×1920: niente di importante sopra **y=280**, sotto **y=1560**, né a destra di
-  **x=900** nella metà bassa (y>960). Margini laterali ≥ 64 px.
+- **Zone sicure di Instagram** su 1080×1920 (misurate su iPhone): niente di importante sopra **y=250**, sotto
+  **y=1720**, a meno di **70 px** dai lati (gli schermi alti tagliano ~55 px per lato), né a destra di **x=930** da
+  **y=1250** (icone).
 - **Leggibilità**: testo minimo 44 px; sottotitoli 64–84 px; titoli 110–170 px. Contrasto sempre pieno: su footage
   chiaro il testo bianco ha uno scrim scuro o sta su una card; mai bianco su bianco.
 - **Il viso è sacro**: nessuna grafica copre occhi e bocca. Scrivi per ogni scena la zona libera in px.
