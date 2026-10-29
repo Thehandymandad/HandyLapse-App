@@ -35,7 +35,7 @@ def key_times(edit: Path, dur: float, every: float) -> dict[float, str]:
     t: dict[float, str] = {}
 
     def add(x, why):
-        x = round(min(max(0.0, x), dur - 0.05), 2)
+        x = round(min(max(0.0, x), dur - 0.2), 2)  # troppo vicino alla fine ffmpeg non trova il fotogramma
         t[x] = (t.get(x, "") + " · " + why).strip(" ·")
 
     plan_p = edit / "motion-plan.json"
@@ -51,7 +51,7 @@ def key_times(edit: Path, dur: float, every: float) -> dict[float, str]:
         for s in json.loads(wo.read_text()).get("segments", [])[1:]:
             add(s["out_start"] - 0.05, "prima del taglio")
             add(s["out_start"] + 0.05, "dopo il taglio")
-    for x in (0.0, 1.0, 2.0, dur - 2, dur - 1, dur - 0.1):
+    for x in (0.0, 1.0, 2.0, dur - 2, dur - 1, dur - 0.2):
         add(x, "inizio" if x < 3 else "fine")
     if every > 0:
         for x in np.arange(0, dur, every):
@@ -84,24 +84,30 @@ def audio_report(edit: Path, video: Path) -> dict:
     if not (stems / "voice.wav").exists() or not plan_p.exists():
         return rep
 
-    def load(p):
-        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(p), "-ac", "1", "-ar", "48000", "-f", "f32le", "-"], check=True, stdout=subprocess.PIPE).stdout
-        return np.frombuffer(raw, np.float32)
+    # stessa misura di compose.py: loudness percepita (LUFS, pesatura K), non RMS piatto
+    def lufs_integrated(p):
+        out = sh(["ffmpeg", "-hide_banner", "-nostats", "-i", str(p), "-af", "ebur128", "-f", "null", "-"]).stderr
+        return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", out)[-1])
 
-    voice, sfx = load(stems / "voice.wav"), load(stems / "sfx.wav")
-    sr = 48000
-    loud = voice[np.abs(voice) > 10 ** (-40 / 20)]
-    v_rms = 20 * np.log10(np.sqrt(np.mean(loud ** 2)) + 1e-9) if len(loud) else -60
+    def lufs_peak(p, t0, t1):
+        out = sh(["ffmpeg", "-hide_banner", "-nostats", "-ss", f"{t0:.3f}", "-t", f"{max(0.45, t1 - t0):.3f}", "-i", str(p),
+                  "-af", "apad=pad_dur=0.5,ebur128", "-f", "null", "-"]).stderr
+        vals = [float(v) for v in re.findall(r"M:\s*(-?[\d.]+)", out) if float(v) > -70]
+        return max(vals) if vals else -90.0
+
+    v_lufs = lufs_integrated(stems / "voice.wav")
     plan = json.loads(plan_p.read_text())
     events = list(plan.get("sfx", []))
     for sc in plan.get("scenes", []):
         events += sc.get("sfx", [])
-    for e in sorted(events, key=lambda e: float(e["t"])):
-        a = int(max(0, float(e["t"]) - 0.05) * sr)
-        seg = sfx[a: a + int(0.4 * sr)]
-        s_rms = 20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9) if len(seg) else -90
-        rep["sfx"].append({"t": e["t"], "name": e.get("name") or e.get("file"), "rel_db": round(float(s_rms - v_rms), 1)})
-    rep["voice_rms_dbfs"] = round(float(v_rms), 1)
+    ev = sorted(events, key=lambda e: float(e["t"]))
+    for k, e in enumerate(ev):
+        # finestra: dall'evento fino al successivo (max 2 s); livello = la finestra di 400 ms più forte (i riser crescono)
+        t0 = max(0.0, float(e["t"]) - 0.05)
+        t1 = min(float(e["t"]) + 2.0, float(ev[k + 1]["t"]) - 0.02) if k + 1 < len(ev) else float(e["t"]) + 2.0
+        s_lufs = lufs_peak(stems / "sfx.wav", t0, t1)
+        rep["sfx"].append({"t": e["t"], "name": e.get("name") or e.get("file"), "rel_db": round(s_lufs - v_lufs, 1)})
+    rep["voice_lufs"] = round(v_lufs, 1)
     return rep
 
 
@@ -123,6 +129,9 @@ def main():
     for t, why in times.items():
         p = fdir / f"t_{t:06.2f}.png"
         sh(["ffmpeg", "-y", "-v", "error", "-ss", f"{t:.3f}", "-i", str(video), "-frames:v", "1", str(p)])
+        if not p.exists():
+            print(f"fotogramma a {t:.2f}s non estratto, salto")
+            continue
         thumbs.append(guides(Image.open(p).resize((W, H)), f"{t:.2f}s  {why}").resize((360, 640)))
     sheets = []
     for k in range(0, len(thumbs), 8):

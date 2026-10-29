@@ -74,10 +74,11 @@
   "file": "collegamento.wav",
   "from": "riser.mp3",
   "pitch": 1.0,
-  "trim_start": 8.83,
-  "trim": 0.0,
+  "trim_start": 2.0,
+  "trim": 2.3,
   "reverse": false,
   "layer": null,
+  "layer_gain": -6.0,
   "seq": null
  },
  "commenti-apre": {

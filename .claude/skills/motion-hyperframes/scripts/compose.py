@@ -8,7 +8,8 @@
   (i sottotitoli vanno per ULTIMI).
 - camera: `camera` di <edit_dir>/motion-plan.json → punch, push, shake, whip, inset, desat (vedi motion-library/camera.md).
 - suono: la voce passa per EQ (+corpo, −fango, +presenza) e compressione; ogni effetto di `scenes[].sfx` / `sfx`
-  ({"t": s, "name": "..."} o {"t": s, "file": "..."}) viene normalizzato allo stesso livello, `--gap` dB sotto la voce,
+  ({"t": s, "name": "..."} o {"t": s, "file": "..."}) viene normalizzato allo stesso livello (picco di loudness su
+  400 ms, quello che si sente) `--gap` dB sotto la loudness integrata della voce,
   anticipato del suo attacco così il transiente cade sul fotogramma; poi master a `--lufs` LUFS (true peak −1 dBTP).
 - `hold` nel piano (o --hold): l'ultimo fotogramma resta fermo quei secondi, così la CTA finale si legge.
 - salva gli stem in <edit_dir>/stems/ (voice.wav, sfx.wav) per motion-review.
@@ -57,6 +58,14 @@ def loudness(path: Path) -> float:
         m = re.search(r"mean_volume: (-?[\d.]+) dB", out)
         val = float(m.group(1)) if m else -30.0
     return val
+
+
+def peak_loudness(path: Path) -> float:
+    """Loudness momentanea massima (finestra 400 ms): per un effetto breve è quella che si sente, la media inganna."""
+    out = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "apad=pad_dur=0.5,ebur128", "-f", "null", "-"], capture=True)
+    vals = [float(v) for v in re.findall(r"M:\s*(-?[\d.]+)", out)]
+    vals = [v for v in vals if v > -70]
+    return max(vals) if vals else loudness(path)
 
 
 def attack_seconds(path: Path) -> float:
@@ -140,7 +149,7 @@ def video_graph(cam: dict, n_overlays: int, cx: float, cy: float, dur: float, ho
     z = cam["zoom"]
     pad = f"tpad=stop_mode=clone:stop_duration={hold:.3f}," if hold > 0 else ""
     g = [
-        f"[0:v]fps={FPS},{pad}scale=w='2*trunc({W}*({z})/2)':h='2*trunc({H}*({z})/2)':eval=frame,"
+        f"[0:v]setpts=PTS-STARTPTS,fps={FPS},{pad}scale=w='2*trunc({W}*({z})/2)':h='2*trunc({H}*({z})/2)':eval=frame,"
         f"crop={W}:{H}:x='clip((iw-{W})*{cx}+({cam['sx']}),0,iw-{W})':y='clip((ih-{H})*{cy}+({cam['sy']}),0,ih-{H})'"
     ]
     for a, b in cam["blur"]:
@@ -151,9 +160,11 @@ def video_graph(cam: dict, n_overlays: int, cx: float, cy: float, dur: float, ho
     last = "cam"
     if cam["has_inset"]:
         s = cam["inset"]
-        g.append(f"[cam]scale=w='2*trunc({W}*({s})/2)':h='2*trunc({H}*({s})/2)':eval=frame[small]")
-        g.append(f"color=c=0x0B0B0C:s={W}x{H}:r={FPS}:d={dur:.3f}[bg]")
-        g.append("[bg][small]overlay=x='(W-w)/2':y='(H-h)/2':eval=frame:shortest=1[ins]")
+        # il fondo nasce dallo stesso flusso (stessi tempi): un fondo `color` partirebbe prima e darebbe un fotogramma vuoto
+        g.append("[cam]split[camA][camB]")
+        g.append(f"[camA]scale=w='2*trunc({W}*({s})/2)':h='2*trunc({H}*({s})/2)':eval=frame[small]")
+        g.append("[camB]drawbox=x=0:y=0:w=iw:h=ih:color=0x0B0B0C:t=fill[bg]")
+        g.append("[bg][small]overlay=x='(W-w)/2':y='(H-h)/2':eval=frame[ins]")
         last = "ins"
     for i in range(n_overlays):
         g.append(f"[{last}][{i + 1}:v]overlay=0:0:eof_action=pass:format=auto[o{i}]")
@@ -201,7 +212,7 @@ def build_audio(base: Path, plan: dict, sfx_dir: Path, gap: float, lufs: float, 
         for i, e in enumerate(events):
             p = resolve_sfx(e, sfx_dir)
             if p not in cache:
-                cache[p] = (loudness(p), attack_seconds(p))
+                cache[p] = (peak_loudness(p), attack_seconds(p))
             ls, att = cache[p]
             gain = (lv - gap) - ls + float(e.get("gain", 0))
             start_ms = max(0, int(round((float(e["t"]) - att) * 1000)))
@@ -218,14 +229,15 @@ def build_audio(base: Path, plan: dict, sfx_dir: Path, gap: float, lufs: float, 
     # master: voce + effetti, loudnorm in due passate
     pre = stems / "mix.wav"
     run(["ffmpeg", "-y", "-v", "error", "-i", str(voice), "-i", str(sfx), "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0:duration=first[m]", "-map", "[m]", str(pre)])
-    out = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(pre), "-af", f"loudnorm=I={lufs}:TP=-1:LRA=11:print_format=json", "-f", "null", "-"], capture=True)
+    out = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(pre), "-af", f"loudnorm=I={lufs}:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture=True)
     meas = json.loads(out[out.rindex("{"): out.rindex("}") + 1])
     master = stems / "master.wav"
     ln = (
-        f"loudnorm=I={lufs}:TP=-1:LRA=11:measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:"
+        f"loudnorm=I={lufs}:TP=-1.5:LRA=11:measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:"
         f"measured_LRA={meas['input_lra']}:measured_thresh={meas['input_thresh']}:offset={meas['target_offset']}:linear=true"
     )
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(pre), "-af", ln, "-ar", "48000", str(master)])
+    # limitatore dopo il loudnorm: il true peak deve restare sotto −1 dBTP
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(pre), "-af", ln + ",alimiter=limit=0.79:attack=1:release=50:level=false", "-ar", "48000", str(master)])
     print(f"voce {lv:.1f} LUFS, {len(events)} effetti a {lv - gap:.1f} LUFS ({gap} dB sotto), master {lufs} LUFS")
     return master
 
