@@ -22,6 +22,7 @@ Master −14,0 LUFS, true peak −1,5 dBFS. Voce −15,7 LUFS; 27 effetti, tutti
 | 16,3 | Primo timbro a contatto con i sottotitoli | timbri a y 0,728, scala 0,9 | corretto |
 | 4,9–5,2 | I pezzi della pila attraversano il viso mentre cadono (0,3 s) | è il movimento dello stile Pulse: lasciato | accettato |
 | tutto | Footage un fotogramma avanti rispetto alla voce (setpts azzerava i 21 ms di ritardo del video) | camera.py legge con i tempi assoluti (`fps=30:start_time=0`) | corretto |
+| 6,0 · 13,1 · 14,8 · 25,5 · 29,5 | Fondo nero ai lati durante i whip sui tagli | `camera.py`: bordi del video allungati e sfocati in orizzontale (scia), il fondo Pulse resta solo dietro il telefono | corretto |
 | 28,9 | Copertina della guida con «CLAUDE CODE · REMOTION» | `footer` del componente, default «CLAUDE CODE · HYPERFRAMES» | corretto |
 
 ## Checklist prima di pubblicare

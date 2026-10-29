@@ -10,7 +10,8 @@ lo stesso codice di Remotion) e la applica come fa il browser:
   (cv2.warpPerspective, sub-pixel: niente scalini come con scale/crop di ffmpeg);
 - riquadro-telefono: secondo livello di prospettiva, angoli arrotondati;
 - filtri del footage (luminosità, contrasto, saturazione, seppia, sfocatura), vignetta, lampo;
-- fondo dello style pack dove il footage non copre (pulse: inchiostro, bagliore lime e pavimento a griglia);
+- dove il footage non copre: nel riquadro-telefono il fondo dello style pack (pulse: inchiostro, bagliore lime e
+  pavimento a griglia); nei whip e nelle oscillazioni la scia del video stesso (bordi allungati e sfocati), mai il nero;
 - fermo finale: dopo l'ultimo fotogramma del montato resta quello.
 Scrive il video MUTO (<edit_dir>/video.mp4); il suono lo mette compose.py --video.
 """
@@ -208,7 +209,16 @@ def render_frame(cam: dict, n: int, src: np.ndarray, ov: np.ndarray | None, vign
     elif covers_frame(hin):
         warped = cv2.warpPerspective(img, hin, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
     else:
-        warped = cv2.warpPerspective(np.dstack([img, np.full((H, W), 255, np.uint8)]), hin, (W, H), **warp)
+        # whip, oscillazione: il video non copre tutto. Niente fondo nero: i bordi del video si allungano e si sfocano
+        # in orizzontale, come la scia di una panoramica a frusta
+        warped = cv2.warpPerspective(img, hin, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+        cover = cv2.warpPerspective(np.full((H, W), 255, np.uint8), hin, (W, H), flags=cv2.INTER_LINEAR,
+                                    borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+        if cover.min() < 250:
+            m = cv2.GaussianBlur(cover, (0, 0), 6).astype(np.float32) * np.float32(1 / 255)
+            smear = cv2.blur(warped, (91, 1)).astype(np.float32)
+            m3 = cv2.merge([m, m, m])
+            warped = np.clip(warped.astype(np.float32) * m3 + smear * (1 - m3) + 0.5, 0, 255).astype(np.uint8)
     if warped.shape[2] == 4:
         bg = backdrop.frame(n) if backdrop else np.zeros((H, W, 3), np.float32)
         al = warped[..., 3].astype(np.float32) * np.float32(1 / 255)
