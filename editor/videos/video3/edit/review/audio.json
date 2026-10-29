@@ -1,6 +1,6 @@
 {
  "integrated_lufs": -14.0,
- "true_peak_dbtp": -1.9,
+ "true_peak_dbtp": -1.8,
  "sfx": [
   {
    "t": 0.0,
@@ -40,32 +40,32 @@
   {
    "t": 7.62,
    "name": "tag-claude",
-   "rel_db": -6.1
+   "rel_db": -6.8
   },
   {
-   "t": 7.9,
+   "t": 7.75,
    "name": "barra-carica",
-   "rel_db": -9.0
+   "rel_db": -12.0
   },
   {
    "t": 9.84,
    "name": "check-1",
-   "rel_db": -5.2
+   "rel_db": -5.8
   },
   {
    "t": 10.94,
    "name": "check-2",
-   "rel_db": -5.4
+   "rel_db": -5.3
   },
   {
    "t": 12.18,
    "name": "check-3",
-   "rel_db": -4.9
+   "rel_db": -5.1
   },
   {
    "t": 12.6,
    "name": "check-completo",
-   "rel_db": -7.4
+   "rel_db": -7.5
   },
   {
    "t": 13.18,

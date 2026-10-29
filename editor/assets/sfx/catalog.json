@@ -22,14 +22,10 @@
  },
  "barra-carica": {
   "file": "barra-carica.wav",
-  "from": "click-soft.mp3",
-  "pitch": 1.5,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": "0.00,0.17,0.34,0.51,0.68,0.85,1.02,1.19,1.36,1.53,1.70,1.87,2.04,2.21,2.38,2.55,2.72,2.89,3.06,3.23,3.40,3.57,3.74,3.91,4.08,4.25,4.42,4.59"
+  "synth": "charge",
+  "duration": 4.85,
+  "f0": 240.0,
+  "f1": 760.0
  },
  "barra-rossa": {
   "file": "barra-rossa.wav",

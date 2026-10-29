@@ -4,6 +4,7 @@
     python sfx_library.py missing <edit_dir>                     # effetti del motion-plan che non sono in libreria
     python sfx_library.py generate <nome> "<prompt in inglese>" [--duration 1.2] [--influence 0.6]
     python sfx_library.py rebuild                                # ricrea le varianti dal catalogo (i WAV non sono nel repo)
+    python sfx_library.py synth <nome> --kind charge --duration 4.8 [--f0 260 --f1 780]   # barra che si carica
     python sfx_library.py variant <nome> --from <file o nome bundled di media-use> [--pitch 1.2] [--trim-start 0]
                                   [--trim 0.6] [--reverse] [--layer <altro file/nome>] [--layer-gain -6] [--seq 0,0.13,0.26]
 
@@ -110,10 +111,32 @@ def variant(name, src, pitch, trim_start, trim, reverse, layer, layer_gain, seq)
     print(out)
 
 
+def synth(name: str, kind: str, duration: float, f0: float, f1: float) -> None:
+    """Suoni sintetizzati in locale (gratis, senza licenze). kind "charge": il suono di una barra che si carica, un tono
+    morbido che sale da f0 a f1 Hz per `duration` secondi (glissando esponenziale + ottava, leggero luccichio, piccolo
+    riverbero), cresce un po' di volume e si chiude pulito sul 100%."""
+    if kind != "charge":
+        sys.exit(f"tipo di sintesi sconosciuto: {kind}")
+    T, r = duration, f1 / f0
+    ph = f"2*PI*{f0}*{T}/log({r})*(pow({r},t/{T})-1)"
+    expr = f"0.32*(sin({ph})+0.28*sin(2*({ph}))+0.08*sin(3*({ph})))*(0.55+0.45*t/{T})*(1+0.12*sin(2*PI*13*t))"
+    # dissolvenze sul tono, PRIMA del riverbero: la coda si spegne da sola, niente clic alla fine
+    graph = (f"aevalsrc='{expr}|{expr}':s=48000:d={T},afade=t=in:d=0.25,afade=t=out:st={T - 0.14:.3f}:d=0.14,"
+             f"lowpass=f=5200,apad=pad_dur=0.25,aecho=0.8:0.5:60|110:0.22|0.12")
+    out = LIB / f"{name}.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", graph, "-ar", "48000", str(out)], check=True)
+    cat = load()
+    cat[name] = {"file": out.name, "synth": kind, "duration": duration, "f0": f0, "f1": f1}
+    save(cat)
+    print(out)
+
+
 def rebuild() -> None:
     """Le varianti derivano da suoni Pixabay (licenza: uso nei video sì, ridistribuzione come libreria no): nel repo
     c'è solo catalog.json con le ricette, i WAV si rigenerano qui."""
     for name, v in load().items():
+        if "synth" in v and not (LIB / v["file"]).exists():
+            synth(name, v["synth"], v["duration"], v["f0"], v["f1"])
         if "from" in v and not (LIB / v["file"]).exists():
             variant(name, Path(v["from"]).stem, v.get("pitch", 1.0), v.get("trim_start", 0.0), v.get("trim", 0.0),
                     v.get("reverse", False), v.get("layer"), v.get("layer_gain", -6.0), v.get("seq"))
@@ -153,14 +176,22 @@ def main() -> None:
     v.add_argument("--layer")
     v.add_argument("--layer-gain", type=float, default=-6.0)
     v.add_argument("--seq")
+    y = sub.add_parser("synth")
+    y.add_argument("name")
+    y.add_argument("--kind", default="charge")
+    y.add_argument("--duration", type=float, default=2.0)
+    y.add_argument("--f0", type=float, default=260.0)
+    y.add_argument("--f1", type=float, default=780.0)
     a = ap.parse_args()
     if a.cmd == "list":
         for k, v in load().items():
-            print(f"{k:28s} {v.get('prompt') or 'da ' + str(v.get('from'))}")
+            print(f"{k:28s} {v.get('prompt') or ('sintesi ' + v['synth'] if 'synth' in v else 'da ' + str(v.get('from')))}")
     elif a.cmd == "rebuild":
         rebuild()
     elif a.cmd == "variant":
         variant(a.name, a.src, a.pitch, a.trim_start, a.trim, a.reverse, a.layer, a.layer_gain, a.seq)
+    elif a.cmd == "synth":
+        synth(a.name, a.kind, a.duration, a.f0, a.f1)
     elif a.cmd == "missing":
         missing(a.edit_dir)
     else:
