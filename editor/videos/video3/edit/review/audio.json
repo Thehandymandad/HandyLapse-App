@@ -1,6 +1,6 @@
 {
  "integrated_lufs": -14.0,
- "true_peak_dbtp": -2.0,
+ "true_peak_dbtp": -1.9,
  "sfx": [
   {
    "t": 0.0,
@@ -40,27 +40,32 @@
   {
    "t": 7.62,
    "name": "tag-claude",
-   "rel_db": -7.0
+   "rel_db": -6.1
+  },
+  {
+   "t": 7.9,
+   "name": "barra-carica",
+   "rel_db": -9.0
   },
   {
    "t": 9.84,
    "name": "check-1",
-   "rel_db": -7.0
+   "rel_db": -5.2
   },
   {
    "t": 10.94,
    "name": "check-2",
-   "rel_db": -7.0
+   "rel_db": -5.4
   },
   {
    "t": 12.18,
    "name": "check-3",
-   "rel_db": -7.0
+   "rel_db": -4.9
   },
   {
    "t": 12.6,
    "name": "check-completo",
-   "rel_db": -7.5
+   "rel_db": -7.4
   },
   {
    "t": 13.18,
@@ -93,77 +98,72 @@
    "rel_db": -7.0
   },
   {
-   "t": 18.62,
-   "name": "inviato",
+   "t": 18.56,
+   "name": "aereo-torna",
    "rel_db": -7.0
   },
   {
-   "t": 19.66,
-   "name": "telefono-entra",
-   "rel_db": -7.0
-  },
-  {
-   "t": 20.64,
+   "t": 19.7,
    "name": "cosi-scintilla",
    "rel_db": -7.1
   },
   {
-   "t": 21.91,
+   "t": 20.977,
    "name": "tessere-appaiono",
    "rel_db": -7.0
   },
   {
-   "t": 23.04,
+   "t": 22.107,
    "name": "flip-1",
    "rel_db": -8.3
   },
   {
-   "t": 24.06,
+   "t": 23.127,
    "name": "flip-2",
    "rel_db": -8.7
   },
   {
-   "t": 25.12,
+   "t": 24.187,
    "name": "flip-3",
    "rel_db": -9.2
   },
   {
-   "t": 25.73,
+   "t": 24.797,
    "name": "lucchetto",
    "rel_db": -7.0
   },
   {
-   "t": 27.11,
+   "t": 26.177,
    "name": "insieme-ping",
    "rel_db": -7.0
   },
   {
-   "t": 27.95,
+   "t": 27.017,
    "name": "libro-atterra",
    "rel_db": -6.9
   },
   {
-   "t": 28.89,
+   "t": 27.957,
    "name": "gratis-timbro",
    "rel_db": -7.0
   },
   {
-   "t": 30.53,
+   "t": 29.597,
    "name": "commenti-apre",
    "rel_db": -7.0
   },
   {
-   "t": 31.04,
+   "t": 30.107,
    "name": "digita-guida",
    "rel_db": -7.0
   },
   {
-   "t": 31.72,
+   "t": 30.787,
    "name": "pubblica",
    "rel_db": -6.8
   },
   {
-   "t": 32.06,
+   "t": 31.127,
    "name": "risposta-dm",
    "rel_db": -6.9
   }

@@ -35,8 +35,11 @@ suo tempo, il suo suono e il suo oggetto.
 - **Una cosa alla volta.** Mai due elementi nuovi che entrano nello stesso istante: uno, pausa, il successivo (≥ 0,25 s).
 - **Una scena per passaggio del discorso.** Quando cambia l'idea cambia la scena; dentro la scena gli elementi si
   trasformano invece di sparire e ricomparire.
-- **Ogni evento visivo ha il suo suono**, e sono tutti diversi tra loro (campo `sfx`, nome descrittivo dell'evento:
+- **Ogni evento visivo ha il suo suono**, anche quelli che durano (una barra che si carica, un contatore che corre:
+  un suono continuo per tutta la durata, es. ticchettio, non solo il colpo finale), e sono tutti diversi tra loro (campo `sfx`, nome descrittivo dell'evento:
   "lapide-impatto-pietra", non "boom"). Niente suoni senza un evento visibile.
+- **Discorso fluido**: se tra due frasi collegate ("gliel'ho mandato e me l'ha restituito") resta una pausa nel
+  montato, si taglia (si divide il range dell'EDL e si rifà il montato) prima di fare il piano.
 - **Niente di inventato.** Nessun dato, numero, logo, nome o citazione che non sia nel parlato o fornito dall'utente.
   Le statistiche "finte" non si usano.
 - **Il primo secondo ferma lo scroll.** Dal fotogramma 0 c'è già qualcosa in movimento sullo schermo.

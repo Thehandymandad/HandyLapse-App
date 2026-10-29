@@ -63,10 +63,18 @@
     {
       "source": "video3",
       "start": 40.65,
+      "end": 42.38,
+      "beat": "PROVA",
+      "quote": "L'ho registrato io e gliel'ho mandato.",
+      "reason": "Tolta la pausa di 1 s prima di «E me l'ha restituito»: discorso continuo (richiesta dell'utente)."
+    },
+    {
+      "source": "video3",
+      "start": 43.32,
       "end": 44.86,
       "beat": "PROVA",
-      "quote": "l'ho registrato io e gliel'ho mandato… e me l'ha restituito così.",
-      "reason": "Ultima ripresa di 'l'ho registrato io'; tenuto apposta il secondo di silenzio prima di 'e me l'ha restituito così' (pausa del copione)."
+      "quote": "E me l'ha restituito così.",
+      "reason": "Attaccato subito dopo «mandato»."
     },
     {
       "source": "video3",
@@ -119,5 +127,5 @@
   ],
   "grade": "neutral_punch",
   "overlays": [],
-  "total_duration_s": 32.24
+  "total_duration_s": 31.3
 }

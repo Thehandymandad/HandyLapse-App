@@ -6,12 +6,15 @@ import { ANTON, clamp, P } from "./shared";
 /**
  * "...è tutto quello che viene dopo": i lavori del montaggio cadono dall'alto uno dopo l'altro e si accumulano
  * in una pila (ogni impatto fa tremare la camera, vedi pileImpacts), l'ultimo è rosso. Alla fine la pila crolla giù.
- * props.items, props.last, props.every (frame tra un pezzo e l'altro).
+ * props.items, props.last, props.every (frame tra un pezzo e l'altro), props.center (y = centro della pila, pezzi
+ * bilanciati attorno al centro, l'ultimo in cima: per la fascia delle grafiche sopra la cornice).
  */
 const SLOTS: [number, number, number][] = [
   // [spostamento x px, riga dal basso, rotazione]
   [-150, 0, -4], [170, 0, 5], [-20, 1, 3], [-230, 1, -7], [200, 1, -3], [60, 2, -5], [-170, 2, 6], [10, 3, 2],
 ];
+// pila centrata (props.center): due file sotto, l'ultimo pezzo (rosso) in cima al centro
+const SLOTS_CENTER: [number, number, number][] = [[-175, 0, -4], [160, 0, 5], [-195, 1, 3], [180, 1, -6], [-20, 1, 4], [-10, 2, -3]];
 const ROW = 92;
 const FALL = 9;
 
@@ -32,7 +35,13 @@ export const TaskPile: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const { fps, width, height } = useVideoConfig();
   const every = typeof g.props?.every === "number" ? g.props.every : 4;
   const items = pileItems(g);
-  const baseY = (g.y ?? 0.83) * height;
+  // props.center: y è il centro della pila (non la base) e i pezzi stanno in equilibrio attorno al centro dello schermo
+  const centered = g.props?.center === true;
+  const slots = centered
+    ? [...SLOTS_CENTER.slice(0, Math.min(items.length - 1, SLOTS_CENTER.length - 1)), SLOTS_CENTER[SLOTS_CENTER.length - 1]]
+    : SLOTS;
+  const topRow = Math.max(...slots.slice(0, items.length).map((sl) => sl[1]));
+  const baseY = (g.y ?? 0.83) * height + (centered ? (topRow * ROW) / 2 : 0);
   const collapse = interpolate(f, [g.frames - 9, g.frames], [0, 1], clamp);
   return (
     <AbsoluteFill>
@@ -40,7 +49,7 @@ export const TaskPile: React.FC<{ g: GraphicEvent }> = ({ g }) => {
         const start = i * every;
         const age = f - start;
         if (age < 0) return null;
-        const [dx, row, rot] = SLOTS[i];
+        const [dx, row, rot] = slots[Math.min(i, slots.length - 1)];
         const isLast = i === items.length - 1;
         // caduta accelerata, poi rimbalzo all'impatto
         const fall = Math.min(1, age / FALL);

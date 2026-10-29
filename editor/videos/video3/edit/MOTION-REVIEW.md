@@ -1,6 +1,6 @@
 # Motion review — video3 (HyperFrames + camera.py, layout della referenza: cornice in basso, tema chiaro, accento arancione)
 
-Video: `final.mp4` — 33,93 s (32,63 s di montato + 1,3 s di fermo). Fogli: `review/sheet_01.jpg` … `sheet_09.jpg`,
+Video: `final.mp4` — 33,00 s (31,69 s di montato + 1,3 s di fermo). Fogli: `review/sheet_01.jpg` … `sheet_09.jpg`,
 still prima del render in `review/stills/sheet.jpg`.
 
 Motore: grafiche e sottotitoli Pulse disegnati da HyperFrames (2 min), camera con `camera.py` (1 min), suono (40 s):
@@ -26,6 +26,10 @@ Master −14,0 LUFS, true peak −1,5 dBFS. Voce −15,7 LUFS; 27 effetti, tutti
 | tutto | Richiesta dell'utente: accento arancione Claude elettrico al posto del lime, parlato dentro una cornice con bordo arancione sfocato, grafiche solo fuori | palette `P.accent` #FF6633, `frame` nel piano, maschera `OutsideFrame`, `result` al posto del telefono | fatto |
 | tutto | Richiesta dell'utente: come la referenza, cornice in basso, grafiche e sottotitoli sopra, fondo chiaro sfumato arancione | tema chiaro del pack (card bianche, testo nero), sottotitoli Inter + serif corsivo, fondo chiaro in camera.py, mirino REC attorno alla cornice | fatto |
 | 1,7–4,6 · 6,2–7,6 · 13,1–14,8 · 16,8–17,8 | Richiesta dell'utente: fascia sopra la cornice vuota troppo a lungo, e alcune animazioni in 3D | bottone 3D REC premuto su «registrare», tessere 3D (martello, videocamera), scheda «Toccato da me» barrata: niente più vuoti | fatto |
+| 7,9–12,7 | La barra di Claude si caricava in silenzio | `barra-carica`: ticchettio continuo per tutta la carica, −9 dB dalla voce | corretto |
+| 18,4 | Pausa di 1 s tra «gliel'ho mandato» ed «E me l'ha restituito» | range dell'EDL diviso (42,38 / 43,32 s del girato), montato rifatto, piano spostato di −0,93 s dopo il taglio | corretto |
+| 18,6–20,9 | «Me l'ha restituito così» non diceva che il video torna montato | l'aeroplanino torna indietro in arco e consegna la pillola EDITATO su «così» | corretto |
+| 4,6–6,2 | Pila di parole bassa e spostata, piccola | `center`: pila bilanciata al centro della fascia (y 0,30), scala 1,15 | corretto |
 | 28,9 | Copertina della guida con «CLAUDE CODE · REMOTION» | `footer` del componente, default «CLAUDE CODE · HYPERFRAMES» | corretto |
 
 ## Checklist prima di pubblicare

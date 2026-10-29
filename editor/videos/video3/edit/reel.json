@@ -6,7 +6,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "duration": 32.5
+  "duration": 31.567
  },
  "styleId": "pulse",
  "styleOverrides": {
@@ -47,12 +47,13 @@
   13.933,
   14.767,
   16.767,
-  21.0,
-  22.733,
-  25.5,
-  27.6,
-  29.5,
-  30.533
+  18.5,
+  20.067,
+  21.8,
+  24.567,
+  26.667,
+  28.567,
+  29.6
  ],
  "hold": 1.3,
  "words": [
@@ -388,218 +389,218 @@
   },
   {
    "text": "E",
-   "start": 19.497,
-   "end": 19.557
+   "start": 18.56,
+   "end": 18.62
   },
   {
    "text": "me",
-   "start": 19.577,
-   "end": 19.637
+   "start": 18.64,
+   "end": 18.7
   },
   {
    "text": "l'ha",
-   "start": 19.657,
-   "end": 19.757
+   "start": 18.72,
+   "end": 18.82
   },
   {
    "text": "restituito",
-   "start": 19.797,
-   "end": 20.377
+   "start": 18.86,
+   "end": 19.44
   },
   {
    "text": "così.",
-   "start": 20.637,
-   "end": 20.897
+   "start": 19.7,
+   "end": 19.96
   },
   {
    "text": "Dentro",
-   "start": 21.05,
-   "end": 21.39
+   "start": 20.117,
+   "end": 20.457
   },
   {
    "text": "ci",
-   "start": 21.43,
-   "end": 21.51
+   "start": 20.497,
+   "end": 20.577
   },
   {
    "text": "sono",
-   "start": 21.57,
-   "end": 21.75
+   "start": 20.637,
+   "end": 20.817
   },
   {
    "text": "tre",
-   "start": 21.91,
-   "end": 22.03
+   "start": 20.977,
+   "end": 21.097
   },
   {
    "text": "strumenti:",
-   "start": 22.11,
-   "end": 22.65
+   "start": 21.177,
+   "end": 21.717
   },
   {
    "text": "uno",
-   "start": 22.783,
-   "end": 23.003
+   "start": 21.85,
+   "end": 22.07
   },
   {
    "text": "trascrive,",
-   "start": 23.043,
-   "end": 23.523
+   "start": 22.11,
+   "end": 22.59
   },
   {
    "text": "uno",
-   "start": 23.843,
-   "end": 24.023
+   "start": 22.91,
+   "end": 23.09
   },
   {
    "text": "taglia,",
-   "start": 24.063,
-   "end": 24.383
+   "start": 23.13,
+   "end": 23.45
   },
   {
    "text": "uno",
-   "start": 24.763,
-   "end": 25.023
+   "start": 23.83,
+   "end": 24.09
   },
   {
    "text": "anima.",
-   "start": 25.123,
-   "end": 25.403
+   "start": 24.19,
+   "end": 24.47
   },
   {
    "text": "Ma",
-   "start": 25.55,
-   "end": 25.59
+   "start": 24.617,
+   "end": 24.657
   },
   {
    "text": "il",
-   "start": 25.61,
-   "end": 25.65
+   "start": 24.677,
+   "end": 24.717
   },
   {
    "text": "segreto",
-   "start": 25.73,
-   "end": 26.19
+   "start": 24.797,
+   "end": 25.257
   },
   {
    "text": "è",
-   "start": 26.25,
-   "end": 26.31
+   "start": 25.317,
+   "end": 25.377
   },
   {
    "text": "come",
-   "start": 26.35,
-   "end": 26.49
+   "start": 25.417,
+   "end": 25.557
   },
   {
    "text": "li",
-   "start": 26.53,
-   "end": 26.61
+   "start": 25.597,
+   "end": 25.677
   },
   {
    "text": "fai",
-   "start": 26.65,
-   "end": 26.77
+   "start": 25.717,
+   "end": 25.837
   },
   {
    "text": "lavorare",
-   "start": 26.81,
-   "end": 27.07
+   "start": 25.877,
+   "end": 26.137
   },
   {
    "text": "insieme.",
-   "start": 27.11,
-   "end": 27.49
+   "start": 26.177,
+   "end": 26.557
   },
   {
    "text": "Ti",
-   "start": 27.65,
-   "end": 27.69
+   "start": 26.717,
+   "end": 26.757
   },
   {
    "text": "ho",
-   "start": 27.71,
-   "end": 27.75
+   "start": 26.777,
+   "end": 26.817
   },
   {
    "text": "scritto",
-   "start": 27.79,
-   "end": 28.25
+   "start": 26.857,
+   "end": 27.317
   },
   {
    "text": "una",
-   "start": 28.33,
-   "end": 28.51
+   "start": 27.397,
+   "end": 27.577
   },
   {
    "text": "guida",
-   "start": 28.61,
-   "end": 28.87
+   "start": 27.677,
+   "end": 27.937
   },
   {
    "text": "gratuita",
-   "start": 28.89,
-   "end": 29.39
+   "start": 27.957,
+   "end": 28.457
   },
   {
    "text": "su",
-   "start": 29.55,
-   "end": 29.63
+   "start": 28.617,
+   "end": 28.697
   },
   {
    "text": "come",
-   "start": 29.81,
-   "end": 29.97
+   "start": 28.877,
+   "end": 29.037
   },
   {
    "text": "l'ho",
-   "start": 29.99,
-   "end": 30.09
+   "start": 29.057,
+   "end": 29.157
   },
   {
    "text": "fatto.",
-   "start": 30.13,
-   "end": 30.43
+   "start": 29.197,
+   "end": 29.497
   },
   {
    "text": "Commenta",
-   "start": 30.583,
-   "end": 30.983
+   "start": 29.65,
+   "end": 30.05
   },
   {
    "text": "guida",
-   "start": 31.043,
-   "end": 31.403
+   "start": 30.11,
+   "end": 30.47
   },
   {
    "text": "e",
-   "start": 31.423,
-   "end": 31.463
+   "start": 30.49,
+   "end": 30.53
   },
   {
    "text": "te",
-   "start": 31.523,
-   "end": 31.583
+   "start": 30.59,
+   "end": 30.65
   },
   {
    "text": "la",
-   "start": 31.623,
-   "end": 31.683
+   "start": 30.69,
+   "end": 30.75
   },
   {
    "text": "mando",
-   "start": 31.723,
-   "end": 31.943
+   "start": 30.79,
+   "end": 31.01
   },
   {
    "text": "in",
-   "start": 31.963,
-   "end": 32.023
+   "start": 31.03,
+   "end": 31.09
   },
   {
    "text": "DM.",
-   "start": 32.063,
-   "end": 32.403
+   "start": 31.13,
+   "end": 31.47
   }
  ],
  "emphasis": [
@@ -631,12 +632,12 @@
    "strength": 0.9
   },
   {
-   "at": 20.64,
+   "at": 19.703,
    "kind": "punch",
    "strength": 1.0
   },
   {
-   "at": 25.73,
+   "at": 24.797,
    "kind": "punch",
    "strength": 0.8
   }
@@ -676,8 +677,8 @@
    "type": "pile",
    "at": 4.62,
    "duration": 1.58,
-   "y": 0.44,
-   "scale": 0.85,
+   "y": 0.302,
+   "scale": 1.15,
    "props": {
     "every": 4,
     "items": [
@@ -686,7 +687,8 @@
      "ZOOM",
      "GRAFICHE"
     ],
-    "last": "ORE PERSE"
+    "last": "ORE PERSE",
+    "center": true
    }
   },
   {
@@ -777,25 +779,34 @@
   {
    "type": "send",
    "at": 17.76,
-   "duration": 1.83,
+   "duration": 0.78,
    "y": 0.4,
    "props": {
-    "flyFrames": 26
+    "flyFrames": 22
    }
   },
   {
    "type": "result",
-   "at": 19.66,
-   "duration": 2.22,
+   "at": 18.56,
+   "duration": 2.39,
    "y": 0.3,
    "props": {
-    "label": "PRONTO",
-    "burstAt": 29
+    "label": "EDITATO",
+    "burstAt": 34,
+    "plane": true,
+    "sides": [
+     0.13,
+     0.87
+    ],
+    "rise": [
+     0.5,
+     0.16
+    ]
    }
   },
   {
    "type": "trio",
-   "at": 21.91,
+   "at": 20.977,
    "duration": 5.85,
    "y": 0.3,
    "scale": 0.9,
@@ -811,7 +822,7 @@
   },
   {
    "type": "guidebook",
-   "at": 27.79,
+   "at": 26.857,
    "duration": 2.71,
    "y": 0.29,
    "scale": 0.8,
@@ -821,7 +832,7 @@
   },
   {
    "type": "dm",
-   "at": 30.53,
+   "at": 29.597,
    "duration": 3.27,
    "text": "GUIDA",
    "y": 0.3,

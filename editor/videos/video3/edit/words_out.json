@@ -1,5 +1,5 @@
 {
- "duration": 32.5,
+ "duration": 31.567,
  "segments": [
   {
    "source": "video3",
@@ -60,57 +60,65 @@
   {
    "source": "video3",
    "start": 40.65,
-   "end": 44.86,
+   "end": 42.38,
    "out_start": 16.767,
-   "out_end": 21.0,
+   "out_end": 18.5,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 43.32,
+   "end": 44.86,
+   "out_start": 18.5,
+   "out_end": 20.067,
    "beat": "PROVA"
   },
   {
    "source": "video3",
    "start": 46.31,
    "end": 48.04,
-   "out_start": 21.0,
-   "out_end": 22.733,
+   "out_start": 20.067,
+   "out_end": 21.8,
    "beat": "COME"
   },
   {
    "source": "video3",
    "start": 49.13,
    "end": 51.88,
-   "out_start": 22.733,
-   "out_end": 25.5,
+   "out_start": 21.8,
+   "out_end": 24.567,
    "beat": "COME"
   },
   {
    "source": "video3",
    "start": 53.49,
    "end": 55.56,
-   "out_start": 25.5,
-   "out_end": 27.6,
+   "out_start": 24.567,
+   "out_end": 26.667,
    "beat": "COME"
   },
   {
    "source": "video3",
    "start": 57.31,
    "end": 59.18,
-   "out_start": 27.6,
-   "out_end": 29.5,
+   "out_start": 26.667,
+   "out_end": 28.567,
    "beat": "CTA"
   },
   {
    "source": "video3",
    "start": 59.57,
    "end": 60.58,
-   "out_start": 29.5,
-   "out_end": 30.533,
+   "out_start": 28.567,
+   "out_end": 29.6,
    "beat": "CTA"
   },
   {
    "source": "video3",
    "start": 65.85,
    "end": 67.8,
-   "out_start": 30.533,
-   "out_end": 32.5,
+   "out_start": 29.6,
+   "out_end": 31.567,
    "beat": "CTA"
   }
  ],
@@ -513,260 +521,260 @@
   },
   {
    "text": "E",
-   "start": 19.497,
-   "end": 19.557,
+   "start": 18.56,
+   "end": 18.62,
    "source": "video3"
   },
   {
    "text": "me",
-   "start": 19.577,
-   "end": 19.637,
+   "start": 18.64,
+   "end": 18.7,
    "source": "video3"
   },
   {
    "text": "l'ha",
-   "start": 19.657,
-   "end": 19.757,
+   "start": 18.72,
+   "end": 18.82,
    "source": "video3"
   },
   {
    "text": "restituito",
-   "start": 19.797,
-   "end": 20.377,
+   "start": 18.86,
+   "end": 19.44,
    "source": "video3"
   },
   {
    "text": "così.",
-   "start": 20.637,
-   "end": 20.897,
+   "start": 19.7,
+   "end": 19.96,
    "source": "video3"
   },
   {
    "text": "Dentro",
-   "start": 21.05,
-   "end": 21.39,
+   "start": 20.117,
+   "end": 20.457,
    "source": "video3"
   },
   {
    "text": "ci",
-   "start": 21.43,
-   "end": 21.51,
+   "start": 20.497,
+   "end": 20.577,
    "source": "video3"
   },
   {
    "text": "sono",
-   "start": 21.57,
-   "end": 21.75,
+   "start": 20.637,
+   "end": 20.817,
    "source": "video3"
   },
   {
    "text": "tre",
-   "start": 21.91,
-   "end": 22.03,
+   "start": 20.977,
+   "end": 21.097,
    "source": "video3"
   },
   {
    "text": "strumenti:",
-   "start": 22.11,
-   "end": 22.65,
+   "start": 21.177,
+   "end": 21.717,
    "source": "video3"
   },
   {
    "text": "uno",
-   "start": 22.783,
-   "end": 23.003,
+   "start": 21.85,
+   "end": 22.07,
    "source": "video3"
   },
   {
    "text": "trascrive,",
-   "start": 23.043,
-   "end": 23.523,
+   "start": 22.11,
+   "end": 22.59,
    "source": "video3"
   },
   {
    "text": "uno",
-   "start": 23.843,
-   "end": 24.023,
+   "start": 22.91,
+   "end": 23.09,
    "source": "video3"
   },
   {
    "text": "taglia,",
-   "start": 24.063,
-   "end": 24.383,
+   "start": 23.13,
+   "end": 23.45,
    "source": "video3"
   },
   {
    "text": "uno",
-   "start": 24.763,
-   "end": 25.023,
+   "start": 23.83,
+   "end": 24.09,
    "source": "video3"
   },
   {
    "text": "anima.",
-   "start": 25.123,
-   "end": 25.403,
+   "start": 24.19,
+   "end": 24.47,
    "source": "video3"
   },
   {
    "text": "Ma",
-   "start": 25.55,
-   "end": 25.59,
+   "start": 24.617,
+   "end": 24.657,
    "source": "video3"
   },
   {
    "text": "il",
-   "start": 25.61,
-   "end": 25.65,
+   "start": 24.677,
+   "end": 24.717,
    "source": "video3"
   },
   {
    "text": "segreto",
-   "start": 25.73,
-   "end": 26.19,
+   "start": 24.797,
+   "end": 25.257,
    "source": "video3"
   },
   {
    "text": "è",
-   "start": 26.25,
-   "end": 26.31,
+   "start": 25.317,
+   "end": 25.377,
    "source": "video3"
   },
   {
    "text": "come",
-   "start": 26.35,
-   "end": 26.49,
+   "start": 25.417,
+   "end": 25.557,
    "source": "video3"
   },
   {
    "text": "li",
-   "start": 26.53,
-   "end": 26.61,
+   "start": 25.597,
+   "end": 25.677,
    "source": "video3"
   },
   {
    "text": "fai",
-   "start": 26.65,
-   "end": 26.77,
+   "start": 25.717,
+   "end": 25.837,
    "source": "video3"
   },
   {
    "text": "lavorare",
-   "start": 26.81,
-   "end": 27.07,
+   "start": 25.877,
+   "end": 26.137,
    "source": "video3"
   },
   {
    "text": "insieme.",
-   "start": 27.11,
-   "end": 27.49,
+   "start": 26.177,
+   "end": 26.557,
    "source": "video3"
   },
   {
    "text": "Ti",
-   "start": 27.65,
-   "end": 27.69,
+   "start": 26.717,
+   "end": 26.757,
    "source": "video3"
   },
   {
    "text": "ho",
-   "start": 27.71,
-   "end": 27.75,
+   "start": 26.777,
+   "end": 26.817,
    "source": "video3"
   },
   {
    "text": "scritto",
-   "start": 27.79,
-   "end": 28.25,
+   "start": 26.857,
+   "end": 27.317,
    "source": "video3"
   },
   {
    "text": "una",
-   "start": 28.33,
-   "end": 28.51,
+   "start": 27.397,
+   "end": 27.577,
    "source": "video3"
   },
   {
    "text": "guida",
-   "start": 28.61,
-   "end": 28.87,
+   "start": 27.677,
+   "end": 27.937,
    "source": "video3"
   },
   {
    "text": "gratuita",
-   "start": 28.89,
-   "end": 29.39,
+   "start": 27.957,
+   "end": 28.457,
    "source": "video3"
   },
   {
    "text": "su",
-   "start": 29.55,
-   "end": 29.63,
+   "start": 28.617,
+   "end": 28.697,
    "source": "video3"
   },
   {
    "text": "come",
-   "start": 29.81,
-   "end": 29.97,
+   "start": 28.877,
+   "end": 29.037,
    "source": "video3"
   },
   {
    "text": "l'ho",
-   "start": 29.99,
-   "end": 30.09,
+   "start": 29.057,
+   "end": 29.157,
    "source": "video3"
   },
   {
    "text": "fatto.",
-   "start": 30.13,
-   "end": 30.43,
+   "start": 29.197,
+   "end": 29.497,
    "source": "video3"
   },
   {
    "text": "Commenta",
-   "start": 30.583,
-   "end": 30.983,
+   "start": 29.65,
+   "end": 30.05,
    "source": "video3"
   },
   {
    "text": "guida",
-   "start": 31.043,
-   "end": 31.403,
+   "start": 30.11,
+   "end": 30.47,
    "source": "video3"
   },
   {
    "text": "e",
-   "start": 31.423,
-   "end": 31.463,
+   "start": 30.49,
+   "end": 30.53,
    "source": "video3"
   },
   {
    "text": "te",
-   "start": 31.523,
-   "end": 31.583,
+   "start": 30.59,
+   "end": 30.65,
    "source": "video3"
   },
   {
    "text": "la",
-   "start": 31.623,
-   "end": 31.683,
+   "start": 30.69,
+   "end": 30.75,
    "source": "video3"
   },
   {
    "text": "mando",
-   "start": 31.723,
-   "end": 31.943,
+   "start": 30.79,
+   "end": 31.01,
    "source": "video3"
   },
   {
    "text": "in",
-   "start": 31.963,
-   "end": 32.023,
+   "start": 31.03,
+   "end": 31.09,
    "source": "video3"
   },
   {
    "text": "DM.",
-   "start": 32.063,
-   "end": 32.403,
+   "start": 31.13,
+   "end": 31.47,
    "source": "video3"
   }
  ]
