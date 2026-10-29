@@ -43,8 +43,8 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
   `useState`/`useEffect` per animare, niente timer né transizioni CSS. Gli oggetti three.js (`@remotion/three`) in
   HyperFrames non si vedono: vanno fatti con il protocollo `hf-seek` (`/hyperframes`, `references/types/3d.md`) o come PNG.
 - **Cornice** (default della casa, `frame` in `reel.json` da `plan_to_reel.py`): `camera.py` mette il footage con la
-  camera dentro il rettangolo arrotondato su fondo scuro con bagliore d'accento; in HyperFrames il bordo arancione con
-  alone (`FrameBorder`) e la maschera che tiene le grafiche **fuori** dalla cornice (`OutsideFrame`). Il render
+  camera dentro il rettangolo arrotondato su fondo scuro con bagliore d'accento; in HyperFrames il bordo al neon arancione (`FrameBorder`: tubo netto,
+  anima chiara, alone stretto) e la maschera che tiene le grafiche **fuori** dalla cornice (`OutsideFrame`). Il render
   Remotion (`render.ts`) la cornice non la fa.
 - **Il footage non entra in HyperFrames** e i componenti non devono contare su `backdrop-filter` per un effetto
   visibile (sotto c'è il trasparente): un effetto sul footage va in `camera-track.ts` + `camera.py` (come `gray`).
