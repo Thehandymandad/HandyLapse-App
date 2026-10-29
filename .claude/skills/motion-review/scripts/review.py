@@ -5,8 +5,8 @@
 Scrive in <edit_dir>/review/:
   frames/t_XX.XX.png     fotogrammi a piena risoluzione (inizio/payoff/fine di ogni scena, confini dei tagli,
                          primi e ultimi 2 s; con --every N anche uno ogni N secondi)
-  sheet_NN.jpg           fogli di contatto con le zone coperte da Instagram in rosso (sopra y=280, sotto y=1560,
-                         a destra di x=900 nella metà bassa) e il tempo su ogni fotogramma
+  sheet_NN.jpg           fogli di contatto con le zone coperte da Instagram in rosso (sopra y=250, sotto y=1720,
+                         55 px per lato tagliati su iPhone, icone a destra di x=930 da y=1250) e il tempo
   audio.json             loudness integrata e true peak del master, livello di ogni effetto rispetto alla voce
 e prepara <edit_dir>/MOTION-REVIEW.md con la checklist da compilare GUARDANDO i fogli.
 """
@@ -20,7 +20,10 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 W, H = 1080, 1920
-SAFE_TOP, SAFE_BOTTOM, SAFE_RIGHT = 280, 1560, 900
+# zone di Instagram misurate su iPhone (schermo più alto del 9:16): il video riempie lo schermo e perde ~55 px per lato,
+# in alto ci sono indietro/+, in basso nome e descrizione, a destra la colonna di icone
+SAFE_TOP, SAFE_BOTTOM, SAFE_SIDE = 250, 1720, 55
+ICONS_X, ICONS_Y = (930, 1250)
 
 
 def sh(cmd):
@@ -66,7 +69,9 @@ def guides(img: Image.Image, label: str) -> Image.Image:
     red = (255, 40, 60, 70)
     d.rectangle((0, 0, W, SAFE_TOP), fill=red)
     d.rectangle((0, SAFE_BOTTOM, W, H), fill=red)
-    d.rectangle((SAFE_RIGHT, H // 2, W, SAFE_BOTTOM), fill=red)
+    d.rectangle((0, SAFE_TOP, SAFE_SIDE, SAFE_BOTTOM), fill=red)
+    d.rectangle((W - SAFE_SIDE, SAFE_TOP, W, SAFE_BOTTOM), fill=red)
+    d.rectangle((ICONS_X, ICONS_Y, W - SAFE_SIDE, SAFE_BOTTOM), fill=red)
     im = Image.alpha_composite(im, ov).convert("RGB")
     d = ImageDraw.Draw(im)
     d.rectangle((0, 0, W, 64), fill=(0, 0, 0))

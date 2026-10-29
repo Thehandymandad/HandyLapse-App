@@ -4,7 +4,7 @@
     python stills.py <edit_dir>/review/stills [-o <dir>/sheet.jpg]
 
 Legge i `t_XX.XX.png` della cartella e salva fogli 4×2 con le zone coperte da Instagram in rosso
-(sopra y=280, sotto y=1560, a destra di x=900 nella metà bassa) e il tempo su ogni fotogramma.
+(sopra y=250, sotto y=1720, 55 px per lato, icone a destra di x=930 da y=1250) e il tempo su ogni fotogramma.
 """
 import argparse
 import sys

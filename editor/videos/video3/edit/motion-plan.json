@@ -11,7 +11,7 @@
    "vignette": 0.15
   },
   "captions": {
-   "positionY": 0.493,
+   "positionY": 0.432,
    "fontSize": 88,
    "uppercase": false
   },
@@ -29,7 +29,7 @@
  "face": {
   "x": 0.5,
   "y": 0.42,
-  "note": "come la referenza: cornice in basso x 36–1044, y 1060–1880 (viso dentro); grafiche sopra (y 280–880), sottotitoli tra grafiche e cornice (y≈946)"
+  "note": "iPhone: Instagram taglia ~55 px per lato e copre il fondo (nome, descrizione): cornice x 80–1000, y 900–1700; grafiche nella fascia y 250–760 (centro ≈0,265); sottotitoli centrati a y≈830"
  },
  "captions": {
   "style": "pulse",
@@ -58,14 +58,14 @@
     "props": {
      "shutterAt": 1.264,
      "focusX": 0.5,
-     "focusY": 0.723,
+     "focusY": 0.66,
      "box": [
-      22,
-      1046,
-      1058,
-      1894
+      66,
+      886,
+      1014,
+      1714
      ],
-     "labelY": 800
+     "labelY": 690
     }
    },
    "payoff": {
@@ -91,7 +91,7 @@
    "action": "Un bottone 3D nero con «● REC» entra girando; il cursore arriva e lo preme su «registrare»: il tasto affonda, onda di luce, sopra scatta la pillola LA PARTE FACILE.",
    "graphic": {
     "type": "button3d",
-    "y": 0.29,
+    "y": 0.265,
     "props": {
      "label": "REC",
      "dot": "#FF2E4D",
@@ -134,8 +134,8 @@
      "last": "ORE PERSE",
      "center": true
     },
-    "y": 0.302,
-    "scale": 1.15
+    "y": 0.265,
+    "scale": 1.1
    },
    "payoff": {
     "word": "dopo",
@@ -160,7 +160,7 @@
    "action": "Una tessera 3D arancione col martello atterra girando su «costruito», sotto: IL MIO EDITOR.",
    "graphic": {
     "type": "icon3d",
-    "y": 0.3,
+    "y": 0.26,
     "props": {
      "items": [
       {
@@ -190,7 +190,7 @@
    "action": "Come nel primo editor (video2): la card di Claude entra a ribalta, la barra corre liscia da 0 a 100% in 1,4 s con le spunte che scattano quando la barra le supera, a 100% la card si accende (Montaggio completato).",
    "graphic": {
     "type": "claude",
-    "y": 0.31,
+    "y": 0.265,
     "scale": 1.0,
     "props": {
      "tasks": [
@@ -225,7 +225,7 @@
    "action": "Quattro tessere 3D (forbici, sottotitoli, lente, scintille) atterrano girando una per parola: PAUSE, SOTTOTITOLI, ZOOM, GRAFICHE.",
    "graphic": {
     "type": "icon3d",
-    "y": 0.3,
+    "y": 0.26,
     "props": {
      "items": [
       {
@@ -282,7 +282,7 @@
    "action": "Scheda stile referenza (pillola QUESTO VIDEO, cerchio con occhio, MONTAGGIO A MANO, «Toccato da me»): su «toccato» il titolo viene barrato in rosso.",
    "graphic": {
     "type": "idcard",
-    "y": 0.3,
+    "y": 0.265,
     "props": {
      "tag": "QUESTO VIDEO",
      "icon": "eye",
@@ -291,7 +291,8 @@
      "bar": 0.12,
      "barAt": 12.182,
      "strikeAt": 12.945
-    }
+    },
+    "scale": 0.95
    },
    "payoff": {
     "word": "toccato",
@@ -328,7 +329,7 @@
       }
      ]
     },
-    "y": 0.31,
+    "y": 0.27,
     "scale": 0.95
    },
    "payoff": {
@@ -354,7 +355,7 @@
    "action": "Una tessera 3D con la videocamera atterra su «registrato»: REGISTRATO DA ME.",
    "graphic": {
     "type": "icon3d",
-    "y": 0.3,
+    "y": 0.26,
     "props": {
      "items": [
       {
@@ -387,7 +388,7 @@
     "props": {
      "flyFrames": 22
     },
-    "y": 0.4
+    "y": 0.33
    },
    "payoff": {
     "word": "mandato",
@@ -408,7 +409,7 @@
    "action": "L'aeroplanino TORNA indietro in curva con la scia e su «così» consegna la pillola EDITATO (onda di luce); cuori e fiamme salgono ai lati. Si capisce che il video è tornato montato.",
    "graphic": {
     "type": "result",
-    "y": 0.3,
+    "y": 0.25,
     "props": {
      "label": "EDITATO",
      "burstAt": 17.909,
@@ -418,8 +419,8 @@
       0.87
      ],
      "rise": [
-      0.5,
-      0.16
+      0.42,
+      0.14
      ]
     }
    },
@@ -455,7 +456,7 @@
      "secretAt": 22.543,
      "connectAt": 23.797
     },
-    "y": 0.3,
+    "y": 0.265,
     "scale": 0.9
    },
    "payoff": {
@@ -500,8 +501,8 @@
     "props": {
      "freeAt": 25.415
     },
-    "y": 0.29,
-    "scale": 0.8
+    "y": 0.26,
+    "scale": 0.78
    },
    "payoff": {
     "word": "gratuita",
@@ -536,7 +537,7 @@
      "replyAt": 28.297,
      "reply": "Guida inviata in DM"
     },
-    "y": 0.3,
+    "y": 0.265,
     "scale": 0.9
    },
    "payoff": {
@@ -592,20 +593,20 @@
   }
  ],
  "frame": {
-  "x": 36,
-  "y": 1060,
-  "w": 1008,
-  "h": 820,
+  "x": 80,
+  "y": 900,
+  "w": 920,
+  "h": 800,
   "radius": 56,
   "border": 7,
   "zoom": 1.0,
   "faceY": 0.42,
   "faceAt": 0.4
  },
- "speed": 1.1,
  "music": {
   "file": "editor/assets/music/tech-pulse-video3.wav",
   "gap": 9,
   "note": "composta in locale: python .claude/skills/motion-hyperframes/scripts/music.py -o editor/assets/music/tech-pulse-video3.wav --duration 30.233 --bpm 120 --end 28.75 (elettronica tech 120 BPM, la–fa–do–sol)"
- }
+ },
+ "speed": 1.1
 }

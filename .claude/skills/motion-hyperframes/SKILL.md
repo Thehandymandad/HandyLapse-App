@@ -49,7 +49,8 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
   Remotion (`render.ts`) la cornice non la fa.
 - **Il footage non entra in HyperFrames** e i componenti non devono contare su `backdrop-filter` per un effetto
   visibile (sotto c'è il trasparente): un effetto sul footage va in `camera-track.ts` + `camera.py` (come `gray`).
-- **Zone sicure**: niente di importante sopra y=280, sotto y=1560, a destra di x=900 nella metà bassa. Le card Pulse
+- **Zone sicure** (iPhone): niente di importante sopra y=250, sotto y=1720, a meno di 70 px dai lati, a destra di
+  x=930 da y=1250. Le card Pulse
   sono grandi: regola `y` e `scale` nel piano e guarda gli still.
 - **Sottotitoli corretti**: parole da `words_out.json`; una parola sbagliata si corregge in `reel.json` (i tempi restano).
 - **Suono**: ogni evento visivo ha il suo effetto nel piano (`scenes[].sfx`), tutti diversi, ~7 dB sotto la voce; voce

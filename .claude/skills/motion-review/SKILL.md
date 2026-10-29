@@ -42,7 +42,8 @@ checklist spuntata. Poi le correzioni fatte (piano, HTML o composizione) e un nu
 ## Regole dure (difetti che bloccano la consegna)
 
 - Pause, esitazioni o riprese sbagliate rimaste nel montato.
-- Qualcosa di importante nelle zone coperte: sopra y=280, sotto y=1560, a destra di x=900 nella metà bassa.
+- Qualcosa di importante nelle zone coperte (misurate su iPhone): sopra y=250, sotto y=1720, a meno di 70 px dai lati
+  (Instagram riempie gli schermi alti tagliando ~55 px per lato), a destra di x=930 da y=1250 (icone).
 - Testo sovrapposto a un altro testo o a un oggetto; grafiche sul viso (occhi, bocca).
 - Sottotitoli sbagliati, coperti da una grafica o fuori sincrono di più di 2 frame.
 - Animazione che arriva dopo la parola che la chiama; due elementi nuovi che entrano insieme.

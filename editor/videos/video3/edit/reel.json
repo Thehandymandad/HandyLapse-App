@@ -14,7 +14,7 @@
    "theme": "light"
   },
   "captions": {
-   "positionY": 0.493,
+   "positionY": 0.432,
    "fontSize": 88,
    "uppercase": false
   },
@@ -29,10 +29,10 @@
  "keep": [],
  "cuts": [],
  "frame": {
-  "x": 36,
-  "y": 1060,
-  "w": 1008,
-  "h": 820,
+  "x": 80,
+  "y": 900,
+  "w": 920,
+  "h": 800,
   "radius": 56,
   "border": 7,
   "zoom": 1.0,
@@ -650,21 +650,21 @@
    "props": {
     "shutterAt": 38,
     "focusX": 0.5,
-    "focusY": 0.723,
+    "focusY": 0.66,
     "box": [
-     22,
-     1046,
-     1058,
-     1894
+     66,
+     886,
+     1014,
+     1714
     ],
-    "labelY": 800
+    "labelY": 690
    }
   },
   {
    "type": "button3d",
    "at": 1.591,
    "duration": 2.545,
-   "y": 0.29,
+   "y": 0.265,
    "props": {
     "label": "REC",
     "dot": "#FF2E4D",
@@ -677,8 +677,8 @@
    "type": "pile",
    "at": 4.2,
    "duration": 1.436,
-   "y": 0.302,
-   "scale": 1.15,
+   "y": 0.265,
+   "scale": 1.1,
    "props": {
     "every": 4,
     "items": [
@@ -695,7 +695,7 @@
    "type": "icon3d",
    "at": 5.636,
    "duration": 1.237,
-   "y": 0.3,
+   "y": 0.26,
    "props": {
     "items": [
      {
@@ -710,7 +710,7 @@
    "type": "claude",
    "at": 6.927,
    "duration": 1.664,
-   "y": 0.31,
+   "y": 0.265,
    "scale": 1.0,
    "props": {
     "tasks": [
@@ -726,7 +726,7 @@
    "type": "icon3d",
    "at": 8.609,
    "duration": 3.318,
-   "y": 0.3,
+   "y": 0.26,
    "props": {
     "items": [
      {
@@ -756,7 +756,8 @@
    "type": "idcard",
    "at": 11.982,
    "duration": 1.436,
-   "y": 0.3,
+   "y": 0.265,
+   "scale": 0.95,
    "props": {
     "tag": "QUESTO VIDEO",
     "icon": "eye",
@@ -771,7 +772,7 @@
    "type": "zero",
    "at": 13.473,
    "duration": 1.8,
-   "y": 0.31,
+   "y": 0.27,
    "scale": 0.95,
    "props": {
     "items": [
@@ -790,7 +791,7 @@
    "type": "icon3d",
    "at": 15.291,
    "duration": 0.818,
-   "y": 0.3,
+   "y": 0.26,
    "props": {
     "items": [
      {
@@ -805,7 +806,7 @@
    "type": "send",
    "at": 16.145,
    "duration": 0.71,
-   "y": 0.4,
+   "y": 0.33,
    "props": {
     "flyFrames": 22
    }
@@ -814,7 +815,7 @@
    "type": "result",
    "at": 16.873,
    "duration": 2.172,
-   "y": 0.3,
+   "y": 0.25,
    "props": {
     "label": "EDITATO",
     "burstAt": 31,
@@ -824,8 +825,8 @@
      0.87
     ],
     "rise": [
-     0.5,
-     0.16
+     0.42,
+     0.14
     ]
    }
   },
@@ -833,7 +834,7 @@
    "type": "trio",
    "at": 19.07,
    "duration": 5.318,
-   "y": 0.3,
+   "y": 0.265,
    "scale": 0.9,
    "props": {
     "reveal": [
@@ -849,8 +850,8 @@
    "type": "guidebook",
    "at": 24.415,
    "duration": 2.464,
-   "y": 0.29,
-   "scale": 0.8,
+   "y": 0.26,
+   "scale": 0.78,
    "props": {
     "freeAt": 30
    }
@@ -860,7 +861,7 @@
    "at": 26.906,
    "duration": 2.973,
    "text": "GUIDA",
-   "y": 0.3,
+   "y": 0.265,
    "scale": 0.9,
    "props": {
     "name": "Commenti",

@@ -32,6 +32,7 @@ Master −14,0 LUFS, true peak −1,5 dBFS. Voce −15,7 LUFS; 27 effetti, tutti
 | 4,6–6,2 | Pila di parole bassa e spostata, piccola | `center`: pila bilanciata al centro della fascia (y 0,30), scala 1,15 | corretto |
 | tutto | Richiesta dell'utente: tutto un po' più veloce, anche la voce | `speed.py --factor 1.1`: voce accelerata senza cambiare tono, piano e parole riallineati; limitatore del master a −3 dBFS perché dopo l'AAC il picco restava sotto −1 dBTP | fatto |
 | tutto | Richiesta dell'utente: musica di sottofondo che c'entri | brano originale composto con `music.py` (elettronica tech allegra 120 BPM), 9 dB sotto la voce con abbassamento automatico mentre parli: −30,5 LUFS durante il parlato contro −15,7 della voce; si ferma dopo «DM» | fatto |
+| tutto | Su iPhone Instagram tagliava i lati della cornice e la prima tessera, e copriva il fondo della cornice | zone sicure rimisurate su iPhone (55 px per lato, fondo da y 1720): cornice x 80–1000, y 900–1700, grafiche e sottotitoli più in alto, tessere più vicine; `review.py` disegna le zone nuove | corretto |
 | 25,4 | Copertina della guida con «CLAUDE CODE · REMOTION» | `footer` del componente, default «CLAUDE CODE · HYPERFRAMES» | corretto |
 
 ## Checklist prima di pubblicare

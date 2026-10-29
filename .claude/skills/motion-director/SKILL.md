@@ -51,11 +51,11 @@ suo tempo, il suo suono e il suo oggetto.
   grafiche (il punch della camera da solo non basta). Per le frasi senza un oggetto loro: `idcard`.
 - **Alcune grafiche in 3D** (three.js): icone e bottoni (`icon3d`, `button3d`) per le azioni e gli oggetti concreti,
   almeno 2–3 per video, alternate alle card 2D.
-- **Zone sicure di Instagram** (1080×1920): niente di importante sopra y=280, sotto y=1560, né a destra di x=900 nella
-  metà bassa. Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
-- **Layout della casa** (motion-design): il parlato sta in una cornice in basso (x 36–1044, y 1060–1880); le grafiche
-  vivono **sopra**, su fondo chiaro (y 280–880: centro di una card a y≈0,30, `scale` 0,8–1), i sottotitoli tra le
-  grafiche e la cornice (y≈946). Niente grafiche dentro la cornice. Il telefono 3D (`phone`) non si usa con la cornice:
+- **Zone sicure di Instagram** (1080×1920, misurate su iPhone): niente di importante sopra y=250, sotto y=1720, a meno
+  di 70 px dai lati (Instagram taglia ~55 px per lato sugli schermi alti), né a destra di x=930 da y=1250 (icone). Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
+- **Layout della casa** (motion-design): il parlato sta in una cornice in basso (x 80–1000, y 900–1700); le grafiche
+  vivono **sopra**, su fondo chiaro (y 250–760: centro di una card a y≈0,265, `scale` 0,8–1), i sottotitoli tra le
+  grafiche e la cornice (y≈830). Niente grafiche dentro la cornice. Il telefono 3D (`phone`) non si usa con la cornice:
   per "il risultato" c'è `result`; il mirino `rec` abbraccia la cornice con `props.box` e le scritte a `props.labelY`.
 - **Oggetti 3D solo dove servono**: cose concrete nominate o metafore fisiche forti. Per ognuno scrivi il prompt per
   Nano Banana Pro (Google Flow): `render 3D iper-realistico di <oggetto>, <materiale e luce>, su fondo bianco, nient'altro nel frame`.

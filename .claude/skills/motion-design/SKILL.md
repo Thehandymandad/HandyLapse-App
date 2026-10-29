@@ -39,20 +39,23 @@ const P = {
 
 Un altro accento per un solo video: `styleOverrides.motion.accentColor` nel piano (tutti i componenti lo seguono).
 
-### Layout della casa (dalla referenza dell'utente)
+### Layout della casa (dalla referenza dell'utente, misurato su iPhone)
 
 ```
  y 0 ───────────────────────────────  fondo chiaro sfumato: in alto velatura d'accento → carta #F4F2EE
-      (sopra y=280 lo copre Instagram)
- y 280–880  le grafiche: card bianche con ombra morbida, testo nero, dettagli in accento (centro y≈0,30, scala 0,8–1)
- y ≈946     i sottotitoli: Inter 900 nero, minuscolo, 88 px; la parola chiave in Instrument Serif corsivo
-            dentro una pillola d'accento con testo ink
- y 1060 ┌─────────────────────────────┐  cornice: x 36–1044, y 1060–1880, angoli 56 px,
-        │      il parlato (viso)       │  bordo 7 px al neon arancione elettrico (tubo netto, anima chiara,
-        │                              │  alone stretto); footage con la camera solo qui dentro
- y 1880 └─────────────────────────────┘
+      (sopra y=250 ci sono indietro e + di Instagram)
+ y 250–760  le grafiche: card bianche con ombra morbida, testo nero, dettagli in accento (centro y≈0,265)
+ y ≈830     i sottotitoli: Inter 900 nero, minuscolo, 88 px; parola chiave in Instrument Serif corsivo su
+            pillola d'accento con testo ink
+ y 900 ┌───────────────────────┐  cornice: x 80–1000, y 900–1700, angoli 56 px, bordo 7 px al neon
+       │   il parlato (viso)    │  arancione (tubo netto, anima chiara, alone stretto)
+ y 1700└───────────────────────┘
+      (sotto y≈1720 nome e descrizione di Instagram)
 ```
 
+- **Su iPhone Instagram riempie lo schermo (più alto del 9:16) e taglia ~55 px per lato**: niente di importante a
+  meno di 70 px dai bordi, la cornice a 80 px. La colonna di icone sta a destra di x≈930 da y≈1250: copre il lato
+  destro della cornice, mai una grafica o un sottotitolo.
 - Tema chiaro (`motion.theme: "light"`): card bianche (`P.glass`), testo `P.fg` nero, ombre calde morbide; il resto
   della palette uguale. Il tema scuro (vetro nero, testo bianco, Anton maiuscolo) resta per lo schermo pieno.
 - Le grafiche si vedono **solo fuori dalla cornice** (maschera); il mirino REC abbraccia la cornice (`props.box`).

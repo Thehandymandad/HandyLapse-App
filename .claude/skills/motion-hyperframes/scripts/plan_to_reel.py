@@ -19,10 +19,12 @@ import json
 from pathlib import Path
 
 FPS = 30
-# layout della casa (come la referenza dell'utente): parlato in una cornice in basso quasi a tutta larghezza, con bordo
-# al neon; sopra, su fondo chiaro sfumato, le grafiche (y 280–880) e i sottotitoli (centro y≈946) tra grafiche e cornice
-HOUSE_FRAME = {"x": 36, "y": 1060, "w": 1008, "h": 820, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.4}
-HOUSE_STYLE = {"motion": {"theme": "light"}, "captions": {"positionY": 0.493, "fontSize": 88, "uppercase": False}}
+# layout della casa (come la referenza dell'utente): parlato in una cornice in basso con bordo al neon; sopra, su fondo
+# chiaro sfumato, le grafiche (y 250–760) e i sottotitoli (centro y≈830). Misure per l'iPhone: Instagram riempie lo
+# schermo alto tagliando ~55 px per lato e copre il fondo con nome e descrizione, quindi la cornice sta in x 80–1000 e
+# finisce a y 1700.
+HOUSE_FRAME = {"x": 80, "y": 900, "w": 920, "h": 800, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.4}
+HOUSE_STYLE = {"motion": {"theme": "light"}, "captions": {"positionY": 0.432, "fontSize": 88, "uppercase": False}}
 
 
 def deep_merge(base: dict, over: dict) -> dict:

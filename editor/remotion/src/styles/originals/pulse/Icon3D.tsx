@@ -48,7 +48,7 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const items = ((Array.isArray(g.props?.items) ? g.props!.items : [{ icon: g.icon ?? "spark", label: g.text, at: 6 }]) as Item[]).slice(0, 4);
   const n = items.length;
   // con 4 tessere più strette e più piccole, così stanno tutte nella fascia
-  const gap = n >= 4 ? 1.55 : 2.25;
+  const gap = n >= 4 ? 1.38 : 2.25;
   const tile = n >= 4 ? 0.7 : 1;
   const out = interpolate(f, [g.frames - 7, g.frames], [0, 1], clamp);
   const ref = useThreeStage(
