@@ -45,8 +45,8 @@ Un altro accento per un solo video: `styleOverrides.motion.accentColor` nel pian
  y 0 ─────────────────────────────  (sopra y=280 lo copre Instagram)
       fascia alta: le grafiche
  y 580 ┌───────────────────────┐    cornice: x 150–930 (~1 cm per lato), y 580–1340,
-       │   il parlato (viso)   │    angoli 56 px, bordo 7 px arancione elettrico con alone sfocato
-       │                       │    (respira piano); il footage con la camera sta solo qui dentro
+       │   il parlato (viso)   │    angoli 56 px, bordo 7 px al neon arancione elettrico (tubo netto, anima chiara, alone stretto)
+       │                       │    (respira appena); il footage con la camera sta solo qui dentro
  y 1340└───────────────────────┘
       sottotitoli (centro y≈1405, Anton 86)
  y 1560 ──────────────────────────  (sotto lo copre Instagram)

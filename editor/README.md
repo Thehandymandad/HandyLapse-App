@@ -13,7 +13,7 @@ Pubbliche (installate da `bash editor/setup.sh` in `.claude/skills/`, non sono n
 | `hyperframes` + `hyperframes-cli` + `remotion-to-hyperframes` ([hyperframes.heygen.com](https://hyperframes.heygen.com)) | il motore di render delle grafiche (HTML → video trasparente) |
 | `media-use` (incluso con HyperFrames) | i suoni gratuiti di base per gli effetti, e asset: musica, immagini, voce, rimozione sfondo |
 
-Lo stile della casa: tu dentro una **cornice** arrotondata al centro (bordo arancione elettrico con alone, ~1 cm di
+Lo stile della casa: tu dentro una **cornice** arrotondata al centro (bordo al neon arancione elettrico, ~1 cm di
 margine ai lati), le grafiche solo fuori dalla cornice (fascia alta e margini), i sottotitoli sotto. Accento:
 l'arancione del logo di Claude reso elettrico (`#FF6633`).
 

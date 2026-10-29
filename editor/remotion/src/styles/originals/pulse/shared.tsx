@@ -25,6 +25,13 @@ export function rgba(hex: string, a: number) {
   return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${+a.toFixed(3)})`;
 }
 
+/** Stessa tinta, più scura (0..1 verso il nero): seconda striscia delle barre, ombre colorate. */
+export function darken(hex: string, t: number) {
+  const n = parseInt(hex.replace("#", ""), 16);
+  const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => Math.round(v * (1 - t)));
+  return `#${c.map((v) => v.toString(16).padStart(2, "0")).join("")}`;
+}
+
 export function setAccent(hex: string | undefined) {
   if (!hex || !/^#[0-9a-f]{6}$/i.test(hex)) return;
   P.accent = hex;

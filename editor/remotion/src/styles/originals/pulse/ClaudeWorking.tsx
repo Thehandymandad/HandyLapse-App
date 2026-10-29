@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
 import { logoSvgPath } from "../../references/claude-reel/logo";
-import { ANTON, At, Check, clamp, easeInOut, flipIn, Glass, INTER, P } from "./shared";
+import { ANTON, At, Check, clamp, easeInOut, flipIn, Glass, INTER, P, darken } from "./shared";
 
 const LOGO = logoSvgPath();
 
@@ -48,7 +48,7 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                     width: `${p * 100}%`,
                     height: "100%",
                     borderRadius: 13,
-                    background: `repeating-linear-gradient(115deg, ${P.accent} 0 22px, #B8EA14 22px 44px)`,
+                    background: `repeating-linear-gradient(115deg, ${P.accent} 0 22px, ${darken(P.accent, 0.22)} 22px 44px)`,
                     backgroundPosition: `${f * 4}px 0`,
                     boxShadow: `0 0 24px ${P.accentDim}`,
                   }}
