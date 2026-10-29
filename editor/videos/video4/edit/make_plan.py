@@ -1,7 +1,7 @@
 import json
 
 E = "/home/user/HandyLapse-App/editor/videos/video4/edit/"
-wo = json.load(open(E + "words_out.json"))
+wo = json.load(open(E + "words_out_1x.json"))  # tempi a velocità 1x
 W = wo["words"]
 clean = lambda s: s.strip('"«»,.:?!').lower()
 
@@ -27,12 +27,12 @@ T = dict(caccia=t("caccia"), scorri=t("scorri"), misura=t("misura", 7.7), chiami
          scrivi=t("scrivi", 27.6), quantita=t("quantità", 29.3), aggiunto=t("aggiunto"), solo=t("solo", 29.9),
          aggiorna=t("aggiorna"), magazzino3=t("magazzino", 35.6), commerciale=t("commerciale"), sa=t("sa"), telefono=t("telefono"),
          recuperi=t("recuperi"), scrivilo=t("Scrivilo"), commenti=t("commenti"), automatizzare=t("automatizzare"),
-         giorno=t("giorno", 0.8), qualcuno=t("qualcuno"), ce=t("Ce", 2.3), due=t("due", 15.95))
+         giorno=t("giorno", 0.8), chiunque=t("chiunque"), qualcuno=t("qualcuno"), ce=t("Ce", 2.3), due=t("due", 15.95))
 end = wo["duration"]
 scenes = [
     dict(id="s01", start=0.0, end=3.45, line="Quante volte al giorno in azienda qualcuno chiede: «Ce l'abbiamo questo pezzo?»",
-         action="Le domande arrivano in chat una dopo l'altra, alternate, le vecchie salgono; l'ultima è proprio «Ce l'abbiamo questo pezzo?». Il contatore sale.",
-         graphic={"type": "bubbles", "props": {"counter": "× {n}", "items": [
+         action="Le domande arrivano in chat una dopo l'altra, alternate, le vecchie salgono; l'ultima è proprio «Ce l'abbiamo questo pezzo?». ",
+         graphic={"type": "bubbles", "props": {"items": [
              {"at": 0.1, "name": "Commerciale", "text": "Avete la lastra da 3 mm?"}, {"at": T["giorno"], "name": "Cliente", "text": "Quante ne restano?"},
              {"at": T["qualcuno"], "name": "Ufficio", "text": "È arrivato il profilo?"}, {"at": T["ce"], "name": "Collega", "text": "Ce l'abbiamo questo pezzo?"}]}},
          payoff={"word": "pezzo", "t": T["ce"]}, sfx=[S(0.1, "bolla-1"), S(T["giorno"], "bolla-2"), S(T["qualcuno"], "bolla-3"), S(T["ce"], "bolla-4")]),
@@ -64,8 +64,8 @@ scenes = [
                                                         {"icon": "chat", "label": "WHATSAPP", "at": T["whatsapp2"], "color": "#22B35E"}], "linkAt": round(T["whatsapp2"] + 0.25, 2)}},
          payoff={"word": "WhatsApp", "t": T["whatsapp2"]}, sfx=[S(T["excel"], "tessera-excel"), S(T["whatsapp2"], "tessera-whatsapp"), S(round(T["whatsapp2"] + 0.25, 2), "collega-ping")]),
     dict(id="s07", start=22.0, end=24.2, line="niente programmi nuovi, niente gestionali da imparare.",
-         action="Due timbri rossi uno sotto l'altro: 0 PROGRAMMI NUOVI su «niente», 0 GESTIONALI DA IMPARARE su «gestionali».",
-         graphic={"type": "zero", "props": {"items": [{"at": T["niente1"], "text": "0 programmi nuovi"}, {"at": T["gestionali"], "text": "0 gestionali da imparare"}]}},
+         action="Due timbri rossi uno sotto l'altro: 0 PROGRAMMI NUOVI su «niente», 0 GESTIONALI su «gestionali».",
+         graphic={"type": "zero", "props": {"items": [{"at": T["niente1"], "text": "0 programmi nuovi"}, {"at": T["gestionali"], "text": "0 gestionali"}]}},
          payoff={"word": "gestionali", "t": T["gestionali"]}, sfx=[S(T["niente1"], "timbro-1"), S(T["gestionali"], "timbro-2")]),
     dict(id="s08", start=24.23, end=29.25, line="E non serve solo a cercare. Arriva un pezzo nuovo, lo scrivi in chat, nome, misura, quantità,",
          action="La chat torna: su «lo scrivi» si scrive il pezzo nuovo, il nome, la misura e la quantità compaiono mentre li dici, poi il messaggio parte.",
@@ -79,17 +79,17 @@ scenes = [
          payoff={"word": "aggiorna", "t": T["aggiorna"]}, sfx=[S(29.27, "foglio-entra-2"), S(T["solo"], "riga-aggiunta"), S(T["aggiorna"], "quantita-sale")]),
     dict(id="s10", start=34.12, end=41.12,
          line="Così chiunque in azienda, dal magazzino al commerciale in giro dai clienti, sa in un attimo cosa c'è e cosa manca, direttamente dal telefono.",
-         action="Tre tessere 3D: MAGAZZINO, COMMERCIALE (auto), poi su «sa in un attimo» la linea le collega e su «telefono» arriva DAL TELEFONO.",
-         graphic={"type": "icon3d", "props": {"items": [{"icon": "house", "label": "MAGAZZINO", "at": T["magazzino3"]}, {"icon": "car", "label": "COMMERCIALE", "at": T["commerciale"]},
-                                                        {"icon": "phone", "label": "DAL TELEFONO", "at": T["telefono"]}], "linkAt": T["sa"]}},
+         action="Quattro tessere 3D: CHIUNQUE su «chiunque», MAGAZZINO, COMMERCIALE (auto), poi su «sa in un attimo» la linea le collega e su «telefono» arriva TELEFONO.",
+         graphic={"type": "icon3d", "props": {"items": [{"icon": "family", "label": "CHIUNQUE", "at": T["chiunque"]}, {"icon": "house", "label": "MAGAZZINO", "at": T["magazzino3"]}, {"icon": "car", "label": "COMMERCIALE", "at": T["commerciale"]},
+                                                        {"icon": "phone", "label": "TELEFONO", "at": T["telefono"]}], "linkAt": T["sa"]}},
          payoff={"word": "telefono", "t": T["telefono"]},
-         sfx=[S(T["magazzino3"], "tessera-magazzino"), S(T["commerciale"], "tessera-commerciale"), S(T["sa"], "collega-2"), S(T["telefono"], "tessera-telefono")]),
+         sfx=[S(T["chiunque"], "tessera-chiunque"), S(T["magazzino3"], "tessera-magazzino"), S(T["commerciale"], "tessera-commerciale"), S(T["sa"], "collega-2"), S(T["telefono"], "tessera-telefono")]),
     dict(id="s11", start=41.14, end=44.21, line="Se hai una piccola azienda è tempo che recuperi ogni singolo giorno.",
          action="Scheda: pillola PICCOLA AZIENDA, orologio, «Ogni singolo giorno», «Tempo perso» che su «recuperi» diventa «Tempo recuperato» (pillola d'accento), barra piena.",
          graphic={"type": "idcard", "props": {"tag": "PICCOLA AZIENDA", "tag2": "RECUPERATO", "icon": "clock", "kicker": "Ogni singolo giorno", "title": "Tempo perso",
                                               "title2": "Tempo recuperato", "swapAt": T["recuperi"], "bar": 1.0, "barAt": T["recuperi"]}},
          payoff={"word": "recuperi", "t": T["recuperi"]}, sfx=[S(41.14, "scheda-entra-3"), S(T["recuperi"], "tempo-recuperato")]),
-    dict(id="s12", start=44.24, end=round(end + 1.3, 3),
+    dict(id="s12", start=44.24, end=51.0,
          line="Qual è il lavoro che ti fa perdere più tempo in azienda? Scrivilo nei commenti, magari si può automatizzare.",
          action="Box commenti: su «Scrivilo» si scrive «L'INVENTARIO», parte su «commenti», su «automatizzare» arriva la risposta «Si può automatizzare ✓»; fermo finale.",
          graphic={"type": "dm", "text": "L'inventario", "props": {"name": "Commenti", "placeholder": "Aggiungi un commento…", "sentLabel": "Pubblicato",
@@ -111,5 +111,7 @@ plan = {"video": "video4", "engine": "hyperframes", "style": "pulse", "canvas": 
         "captions": {"style": "pulse", "emphasis": emph, "words": "edit/words_out.json"},
         "scenes": scenes, "objects": [],
         "camera": [{"type": "punch", "t": T[k], "strength": s} for k, s in [("caccia", 0.7), ("quarto", 0.8), ("due", 0.6), ("gestionali", 0.8), ("solo", 0.6), ("telefono", 0.7), ("automatizzare", 0.9)]]}
-json.dump(plan, open(E + "motion-plan.json", "w"), ensure_ascii=False, indent=1)
+plan["music"] = {"file": "editor/assets/music/tech-pulse-video4.wav", "gap": 9, "note": "composta in locale: python .claude/skills/motion-hyperframes/scripts/music.py -o editor/assets/music/tech-pulse-video4.wav --duration 46.133 --bpm 120 --end 44.6"}
+# il piano è a velocità 1x: speed.py lo accelera (motion-plan_1x.json → motion-plan.json)
+json.dump(plan, open(E + "motion-plan_1x.json", "w"), ensure_ascii=False, indent=1)
 print("emph", [W[i]["text"] for i in emph]); print(len(scenes), "scene", T)

@@ -7,7 +7,7 @@
   "height": 1920,
   "fps": 30
  },
- "duration": 50.333,
+ "duration": 45.875,
  "hold": 1.3,
  "face": {
   "x": 0.5,
@@ -64,31 +64,30 @@
   {
    "id": "s01",
    "start": 0.0,
-   "end": 3.45,
+   "end": 3.136,
    "line": "Quante volte al giorno in azienda qualcuno chiede: «Ce l'abbiamo questo pezzo?»",
-   "action": "Le domande arrivano in chat una dopo l'altra, alternate, le vecchie salgono; l'ultima è proprio «Ce l'abbiamo questo pezzo?». Il contatore sale.",
+   "action": "Le domande arrivano in chat una dopo l'altra, alternate, le vecchie salgono; l'ultima è proprio «Ce l'abbiamo questo pezzo?». ",
    "graphic": {
     "type": "bubbles",
     "props": {
-     "counter": "× {n}",
      "items": [
       {
-       "at": 0.1,
+       "at": 0.091,
        "name": "Commerciale",
        "text": "Avete la lastra da 3 mm?"
       },
       {
-       "at": 0.8,
+       "at": 0.727,
        "name": "Cliente",
        "text": "Quante ne restano?"
       },
       {
-       "at": 1.58,
+       "at": 1.436,
        "name": "Ufficio",
        "text": "È arrivato il profilo?"
       },
       {
-       "at": 2.34,
+       "at": 2.127,
        "name": "Collega",
        "text": "Ce l'abbiamo questo pezzo?"
       }
@@ -98,31 +97,31 @@
    },
    "payoff": {
     "word": "pezzo",
-    "t": 2.34
+    "t": 2.127
    },
    "sfx": [
     {
-     "t": 0.1,
+     "t": 0.091,
      "name": "bolla-1"
     },
     {
-     "t": 0.8,
+     "t": 0.727,
      "name": "bolla-2"
     },
     {
-     "t": 1.58,
+     "t": 1.436,
      "name": "bolla-3"
     },
     {
-     "t": 2.34,
+     "t": 2.127,
      "name": "bolla-4"
     }
    ]
   },
   {
    "id": "s02",
-   "start": 3.5,
-   "end": 8.15,
+   "start": 3.182,
+   "end": 7.409,
    "line": "E parte la caccia. Apri l'Excel del magazzino, scorri centinaia di righe, controlli la misura,",
    "action": "Il foglio Excel del magazzino entra; su «scorri» le righe volano (centinaia) e frenano; su «misura» si illumina la colonna Misura.",
    "graphic": {
@@ -174,10 +173,10 @@
       ]
      ],
      "scrollAt": [
-      5.95,
-      7.15
+      5.409,
+      6.5
      ],
-     "highlightAt": 7.71,
+     "highlightAt": 7.009,
      "highlightCol": 1
     },
     "y": 0.265,
@@ -185,27 +184,27 @@
    },
    "payoff": {
     "word": "misura",
-    "t": 7.71
+    "t": 7.009
    },
    "sfx": [
     {
-     "t": 3.5,
+     "t": 3.182,
      "name": "foglio-entra"
     },
     {
-     "t": 5.95,
+     "t": 5.409,
      "name": "righe-scorrono"
     },
     {
-     "t": 7.71,
+     "t": 7.009,
      "name": "colonna-misura"
     }
    ]
   },
   {
    "id": "s03",
-   "start": 8.18,
-   "end": 9.42,
+   "start": 7.436,
+   "end": 8.564,
    "line": "chiami chi sta in magazzino",
    "action": "Tessera 3D col telefono che atterra girando: CHIAMI IL MAGAZZINO.",
    "graphic": {
@@ -215,7 +214,7 @@
       {
        "icon": "phone",
        "label": "CHIAMI IL MAGAZZINO",
-       "at": 8.21
+       "at": 7.464
       }
      ]
     },
@@ -223,23 +222,23 @@
    },
    "payoff": {
     "word": "chiami",
-    "t": 8.21
+    "t": 7.464
    },
    "sfx": [
     {
-     "t": 8.21,
+     "t": 7.464,
      "name": "tessera-telefono-chiama"
     },
     {
-     "t": 8.56,
+     "t": 7.782,
      "name": "squillo"
     }
    ]
   },
   {
    "id": "s04",
-   "start": 9.45,
-   "end": 11.0,
+   "start": 8.591,
+   "end": 10.0,
    "line": "e intanto è passato un quarto d'ora.",
    "action": "Scheda stile referenza (pillola INTANTO, orologio, «Per una sola domanda», 15 minuti), barra che si riempie fino a «quarto».",
    "graphic": {
@@ -250,30 +249,30 @@
      "kicker": "Per una sola domanda",
      "title": "15 minuti",
      "bar": 0.95,
-     "barAt": 9.49
+     "barAt": 8.627
     },
     "y": 0.265,
     "scale": 0.95
    },
    "payoff": {
     "word": "quarto",
-    "t": 10.41
+    "t": 9.464
    },
    "sfx": [
     {
-     "t": 9.45,
+     "t": 8.591,
      "name": "scheda-entra-2"
     },
     {
-     "t": 10.41,
+     "t": 9.464,
      "name": "orologio"
     }
    ]
   },
   {
    "id": "s05",
-   "start": 11.03,
-   "end": 19.18,
+   "start": 10.027,
+   "end": 17.436,
    "line": "Ora immagina di scrivere su WhatsApp: «Lastre 3 millimetri trasparente, quanti ne abbiamo?» E in due secondi ti arriva la risposta, quanti pezzi hai e dove sono.",
    "action": "Chat WhatsApp col Magazzino: il messaggio si scrive mentre lo dici e parte su «abbiamo»; il bot «sta scrivendo» e su «risposta» arriva: 24 pezzi, scaffale B3; «24 pezzi» si evidenzia su «quanti pezzi», «scaffale B3» su «dove sono».",
    "graphic": {
@@ -285,22 +284,22 @@
       {
        "from": "me",
        "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
-       "typeFrom": 11.86,
-       "at": 15.58
+       "typeFrom": 10.782,
+       "at": 14.164
       },
       {
        "from": "bot",
        "text": "**Lastra PMMA trasparente 3 mm**\n24 pezzi · scaffale B3",
-       "at": 16.91
+       "at": 15.373
       }
      ],
      "highlights": [
       {
-       "at": 17.67,
+       "at": 16.064,
        "text": "24 pezzi"
       },
       {
-       "at": 18.63,
+       "at": 16.936,
        "text": "scaffale B3"
       }
      ]
@@ -310,39 +309,39 @@
    },
    "payoff": {
     "word": "risposta",
-    "t": 16.91
+    "t": 15.373
    },
    "sfx": [
     {
-     "t": 11.03,
+     "t": 10.027,
      "name": "chat-entra"
     },
     {
-     "t": 11.86,
+     "t": 10.782,
      "name": "digita-messaggio"
     },
     {
-     "t": 15.58,
+     "t": 14.164,
      "name": "invio-messaggio"
     },
     {
-     "t": 16.91,
+     "t": 15.373,
      "name": "risposta-messaggio"
     },
     {
-     "t": 17.67,
+     "t": 16.064,
      "name": "evidenzia-pezzi"
     },
     {
-     "t": 18.63,
+     "t": 16.936,
      "name": "evidenzia-scaffale"
     }
    ]
   },
   {
    "id": "s06",
-   "start": 19.2,
-   "end": 21.97,
+   "start": 17.455,
+   "end": 19.973,
    "line": "Si può fare, si collega l'Excel che usi già a WhatsApp.",
    "action": "Due tessere 3D: EXCEL (verde foglio) su «l'Excel», WHATSAPP (verde chat) su «WhatsApp», poi una linea d'accento le collega con impulsi che corrono.",
    "graphic": {
@@ -352,56 +351,56 @@
       {
        "icon": "sheet",
        "label": "EXCEL",
-       "at": 20.25,
+       "at": 18.409,
        "color": "#1F7A4C"
       },
       {
        "icon": "chat",
        "label": "WHATSAPP",
-       "at": 21.49,
+       "at": 19.536,
        "color": "#22B35E"
       }
      ],
-     "linkAt": 21.74
+     "linkAt": 19.764
     },
     "y": 0.26
    },
    "payoff": {
     "word": "WhatsApp",
-    "t": 21.49
+    "t": 19.536
    },
    "sfx": [
     {
-     "t": 20.25,
+     "t": 18.409,
      "name": "tessera-excel"
     },
     {
-     "t": 21.49,
+     "t": 19.536,
      "name": "tessera-whatsapp"
     },
     {
-     "t": 21.74,
+     "t": 19.764,
      "name": "collega-ping"
     }
    ]
   },
   {
    "id": "s07",
-   "start": 22.0,
-   "end": 24.2,
+   "start": 20.0,
+   "end": 22.0,
    "line": "niente programmi nuovi, niente gestionali da imparare.",
-   "action": "Due timbri rossi uno sotto l'altro: 0 PROGRAMMI NUOVI su «niente», 0 GESTIONALI DA IMPARARE su «gestionali».",
+   "action": "Due timbri rossi uno sotto l'altro: 0 PROGRAMMI NUOVI su «niente», 0 GESTIONALI su «gestionali».",
    "graphic": {
     "type": "zero",
     "props": {
      "items": [
       {
-       "at": 22.03,
+       "at": 20.027,
        "text": "0 programmi nuovi"
       },
       {
-       "at": 23.27,
-       "text": "0 gestionali da imparare"
+       "at": 21.155,
+       "text": "0 gestionali"
       }
      ]
     },
@@ -410,23 +409,23 @@
    },
    "payoff": {
     "word": "gestionali",
-    "t": 23.27
+    "t": 21.155
    },
    "sfx": [
     {
-     "t": 22.03,
+     "t": 20.027,
      "name": "timbro-1"
     },
     {
-     "t": 23.27,
+     "t": 21.155,
      "name": "timbro-2"
     }
    ]
   },
   {
    "id": "s08",
-   "start": 24.23,
-   "end": 29.25,
+   "start": 22.027,
+   "end": 26.591,
    "line": "E non serve solo a cercare. Arriva un pezzo nuovo, lo scrivi in chat, nome, misura, quantità,",
    "action": "La chat torna: su «lo scrivi» si scrive il pezzo nuovo, il nome, la misura e la quantità compaiono mentre li dici, poi il messaggio parte.",
    "graphic": {
@@ -438,8 +437,8 @@
       {
        "from": "me",
        "text": "Nuovo: Lastra PMMA opale · 5 mm · 10 pz",
-       "typeFrom": 26.92,
-       "at": 28.86
+       "typeFrom": 24.473,
+       "at": 26.236
       }
      ]
     },
@@ -448,27 +447,27 @@
    },
    "payoff": {
     "word": "quantità",
-    "t": 28.56
+    "t": 25.964
    },
    "sfx": [
     {
-     "t": 24.23,
+     "t": 22.027,
      "name": "chat-entra-2"
     },
     {
-     "t": 26.92,
+     "t": 24.473,
      "name": "digita-nuovo"
     },
     {
-     "t": 28.86,
+     "t": 26.236,
      "name": "invio-nuovo"
     }
    ]
   },
   {
    "id": "s09",
-   "start": 29.27,
-   "end": 34.09,
+   "start": 26.609,
+   "end": 30.991,
    "line": "e viene aggiunto da solo nell'Excel. Hai preso delle lastre nuove? Lo scrivi e la quantità si aggiorna.",
    "action": "Il foglio: su «da solo» entra in cima la riga NUOVO (Lastra PMMA opale, 5 mm, 10); su «aggiorna» la quantità della lastra trasparente lampeggia e sale da 24 a 34.",
    "graphic": {
@@ -519,14 +518,14 @@
        "E2"
       ]
      ],
-     "addAt": 29.87,
+     "addAt": 27.155,
      "addRow": [
       "Lastra PMMA opale",
       "5 mm",
       "10",
       "B4"
      ],
-     "updateAt": 33.62,
+     "updateAt": 30.564,
      "updateRow": 0,
      "updateCol": 2,
      "updateTo": 34
@@ -536,80 +535,89 @@
    },
    "payoff": {
     "word": "aggiorna",
-    "t": 33.62
+    "t": 30.564
    },
    "sfx": [
     {
-     "t": 29.27,
+     "t": 26.609,
      "name": "foglio-entra-2"
     },
     {
-     "t": 29.87,
+     "t": 27.155,
      "name": "riga-aggiunta"
     },
     {
-     "t": 33.62,
+     "t": 30.564,
      "name": "quantita-sale"
     }
    ]
   },
   {
    "id": "s10",
-   "start": 34.12,
-   "end": 41.12,
+   "start": 31.018,
+   "end": 37.382,
    "line": "Così chiunque in azienda, dal magazzino al commerciale in giro dai clienti, sa in un attimo cosa c'è e cosa manca, direttamente dal telefono.",
-   "action": "Tre tessere 3D: MAGAZZINO, COMMERCIALE (auto), poi su «sa in un attimo» la linea le collega e su «telefono» arriva DAL TELEFONO.",
+   "action": "Quattro tessere 3D: CHIUNQUE su «chiunque», MAGAZZINO, COMMERCIALE (auto), poi su «sa in un attimo» la linea le collega e su «telefono» arriva TELEFONO.",
    "graphic": {
     "type": "icon3d",
     "props": {
      "items": [
       {
+       "icon": "family",
+       "label": "CHIUNQUE",
+       "at": 31.3
+      },
+      {
        "icon": "house",
        "label": "MAGAZZINO",
-       "at": 35.61
+       "at": 32.373
       },
       {
        "icon": "car",
        "label": "COMMERCIALE",
-       "at": 36.37
+       "at": 33.064
       },
       {
        "icon": "phone",
-       "label": "DAL TELEFONO",
-       "at": 40.61
+       "label": "TELEFONO",
+       "at": 36.918
       }
      ],
-     "linkAt": 37.73
+     "linkAt": 34.3
     },
     "y": 0.26
    },
    "payoff": {
     "word": "telefono",
-    "t": 40.61
+    "t": 36.918
    },
    "sfx": [
     {
-     "t": 35.61,
+     "t": 31.3,
+     "name": "tessera-chiunque"
+    },
+    {
+     "t": 32.373,
      "name": "tessera-magazzino"
     },
     {
-     "t": 36.37,
+     "t": 33.064,
      "name": "tessera-commerciale"
     },
     {
-     "t": 37.73,
+     "t": 34.3,
      "name": "collega-2"
     },
     {
-     "t": 40.61,
+     "t": 36.918,
      "name": "tessera-telefono"
     }
    ]
   },
   {
    "id": "s11",
-   "start": 41.14,
-   "end": 44.21,
+   "start": 37.4,
+   "end": 40.191,
    "line": "Se hai una piccola azienda è tempo che recuperi ogni singolo giorno.",
    "action": "Scheda: pillola PICCOLA AZIENDA, orologio, «Ogni singolo giorno», «Tempo perso» che su «recuperi» diventa «Tempo recuperato» (pillola d'accento), barra piena.",
    "graphic": {
@@ -621,32 +629,32 @@
      "kicker": "Ogni singolo giorno",
      "title": "Tempo perso",
      "title2": "Tempo recuperato",
-     "swapAt": 42.74,
+     "swapAt": 38.855,
      "bar": 1.0,
-     "barAt": 42.74
+     "barAt": 38.855
     },
     "y": 0.265,
     "scale": 0.95
    },
    "payoff": {
     "word": "recuperi",
-    "t": 42.74
+    "t": 38.855
    },
    "sfx": [
     {
-     "t": 41.14,
+     "t": 37.4,
      "name": "scheda-entra-3"
     },
     {
-     "t": 42.74,
+     "t": 38.855,
      "name": "tempo-recuperato"
     }
    ]
   },
   {
    "id": "s12",
-   "start": 44.24,
-   "end": 50.333,
+   "start": 40.218,
+   "end": 46.542,
    "line": "Qual è il lavoro che ti fa perdere più tempo in azienda? Scrivilo nei commenti, magari si può automatizzare.",
    "action": "Box commenti: su «Scrivilo» si scrive «L'INVENTARIO», parte su «commenti», su «automatizzare» arriva la risposta «Si può automatizzare ✓»; fermo finale.",
    "graphic": {
@@ -656,9 +664,9 @@
      "name": "Commenti",
      "placeholder": "Aggiungi un commento…",
      "sentLabel": "Pubblicato",
-     "typeAt": 46.58,
-     "sendAt": 47.36,
-     "replyAt": 48.26,
+     "typeAt": 42.345,
+     "sendAt": 43.055,
+     "replyAt": 43.873,
      "reply": "Si può automatizzare ✓"
     },
     "y": 0.265,
@@ -666,23 +674,23 @@
    },
    "payoff": {
     "word": "automatizzare",
-    "t": 48.26
+    "t": 43.873
    },
    "sfx": [
     {
-     "t": 44.24,
+     "t": 40.218,
      "name": "commenti-apre"
     },
     {
-     "t": 46.58,
+     "t": 42.345,
      "name": "digita-guida"
     },
     {
-     "t": 47.36,
+     "t": 43.055,
      "name": "pubblica"
     },
     {
-     "t": 48.26,
+     "t": 43.873,
      "name": "risposta-dm"
     }
    ]
@@ -692,38 +700,44 @@
  "camera": [
   {
    "type": "punch",
-   "t": 3.99,
+   "t": 3.627,
    "strength": 0.7
   },
   {
    "type": "punch",
-   "t": 10.41,
+   "t": 9.464,
    "strength": 0.8
   },
   {
    "type": "punch",
-   "t": 15.95,
+   "t": 14.5,
    "strength": 0.6
   },
   {
    "type": "punch",
-   "t": 23.27,
+   "t": 21.155,
    "strength": 0.8
   },
   {
    "type": "punch",
-   "t": 29.87,
+   "t": 27.155,
    "strength": 0.6
   },
   {
    "type": "punch",
-   "t": 40.61,
+   "t": 36.918,
    "strength": 0.7
   },
   {
    "type": "punch",
-   "t": 48.26,
+   "t": 43.873,
    "strength": 0.9
   }
- ]
+ ],
+ "music": {
+  "file": "editor/assets/music/tech-pulse-video4.wav",
+  "gap": 9,
+  "note": "composta in locale: python .claude/skills/motion-hyperframes/scripts/music.py -o editor/assets/music/tech-pulse-video4.wav --duration 46.133 --bpm 120 --end 44.6"
+ },
+ "speed": 1.1
 }

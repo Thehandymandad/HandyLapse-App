@@ -64,8 +64,14 @@ def main() -> None:
     hold = float(plan.get("hold", 0))
     if "duration" in plan:
         plan["duration"] = round((plan["duration"] - hold) / k + hold, 3)
+    talk = float(json.loads((edit / "words_out_1x.json").read_text())["duration"])
+
+    def scale_t(x: float) -> float:
+        # il fermo finale (oltre la fine del parlato) non si accelera: resta lungo uguale
+        return round(x / k, 3) if x <= talk else round(talk / k + (x - talk), 3)
+
     for sc in plan.get("scenes", []):
-        sc["start"], sc["end"] = round(sc["start"] / k, 3), round(sc["end"] / k, 3)
+        sc["start"], sc["end"] = scale_t(sc["start"]), scale_t(sc["end"])
         if sc.get("payoff"):
             sc["payoff"]["t"] = round(sc["payoff"]["t"] / k, 3)
         for e in sc.get("sfx", []):

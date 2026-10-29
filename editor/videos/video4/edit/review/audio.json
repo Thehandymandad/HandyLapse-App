@@ -1,0 +1,202 @@
+{
+ "integrated_lufs": -14.1,
+ "true_peak_dbtp": -2.9,
+ "sfx": [
+  {
+   "t": 0.091,
+   "name": "bolla-1",
+   "rel_db": -7.0
+  },
+  {
+   "t": 0.727,
+   "name": "bolla-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 1.436,
+   "name": "bolla-3",
+   "rel_db": -7.0
+  },
+  {
+   "t": 2.127,
+   "name": "bolla-4",
+   "rel_db": -7.0
+  },
+  {
+   "t": 3.182,
+   "name": "foglio-entra",
+   "rel_db": -7.0
+  },
+  {
+   "t": 5.409,
+   "name": "righe-scorrono",
+   "rel_db": -7.0
+  },
+  {
+   "t": 7.009,
+   "name": "colonna-misura",
+   "rel_db": -7.0
+  },
+  {
+   "t": 7.464,
+   "name": "tessera-telefono-chiama",
+   "rel_db": -6.6
+  },
+  {
+   "t": 7.782,
+   "name": "squillo",
+   "rel_db": -7.2
+  },
+  {
+   "t": 8.591,
+   "name": "scheda-entra-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 9.464,
+   "name": "orologio",
+   "rel_db": -8.8
+  },
+  {
+   "t": 10.027,
+   "name": "chat-entra",
+   "rel_db": -5.8
+  },
+  {
+   "t": 10.782,
+   "name": "digita-messaggio",
+   "rel_db": -7.0
+  },
+  {
+   "t": 14.164,
+   "name": "invio-messaggio",
+   "rel_db": -7.0
+  },
+  {
+   "t": 15.373,
+   "name": "risposta-messaggio",
+   "rel_db": -7.0
+  },
+  {
+   "t": 16.064,
+   "name": "evidenzia-pezzi",
+   "rel_db": -7.0
+  },
+  {
+   "t": 16.936,
+   "name": "evidenzia-scaffale",
+   "rel_db": -7.0
+  },
+  {
+   "t": 18.409,
+   "name": "tessera-excel",
+   "rel_db": -7.0
+  },
+  {
+   "t": 19.536,
+   "name": "tessera-whatsapp",
+   "rel_db": -4.5
+  },
+  {
+   "t": 19.764,
+   "name": "collega-ping",
+   "rel_db": -6.0
+  },
+  {
+   "t": 20.027,
+   "name": "timbro-1",
+   "rel_db": -6.9
+  },
+  {
+   "t": 21.155,
+   "name": "timbro-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 22.027,
+   "name": "chat-entra-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 24.473,
+   "name": "digita-nuovo",
+   "rel_db": -7.3
+  },
+  {
+   "t": 26.236,
+   "name": "invio-nuovo",
+   "rel_db": -7.0
+  },
+  {
+   "t": 26.609,
+   "name": "foglio-entra-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 27.155,
+   "name": "riga-aggiunta",
+   "rel_db": -7.0
+  },
+  {
+   "t": 30.564,
+   "name": "quantita-sale",
+   "rel_db": -7.0
+  },
+  {
+   "t": 31.3,
+   "name": "tessera-chiunque",
+   "rel_db": -7.0
+  },
+  {
+   "t": 32.373,
+   "name": "tessera-magazzino",
+   "rel_db": -7.0
+  },
+  {
+   "t": 33.064,
+   "name": "tessera-commerciale",
+   "rel_db": -7.0
+  },
+  {
+   "t": 34.3,
+   "name": "collega-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 36.918,
+   "name": "tessera-telefono",
+   "rel_db": -7.0
+  },
+  {
+   "t": 37.4,
+   "name": "scheda-entra-3",
+   "rel_db": -7.0
+  },
+  {
+   "t": 38.855,
+   "name": "tempo-recuperato",
+   "rel_db": -7.5
+  },
+  {
+   "t": 40.218,
+   "name": "commenti-apre",
+   "rel_db": -7.0
+  },
+  {
+   "t": 42.345,
+   "name": "digita-guida",
+   "rel_db": -7.0
+  },
+  {
+   "t": 43.055,
+   "name": "pubblica",
+   "rel_db": -7.0
+  },
+  {
+   "t": 43.873,
+   "name": "risposta-dm",
+   "rel_db": -6.9
+  }
+ ],
+ "voice_lufs": -15.3
+}

@@ -6,7 +6,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "duration": 49.033
+  "duration": 44.575
  },
  "styleId": "pulse",
  "styleOverrides": {
@@ -15,8 +15,9 @@
   },
   "captions": {
    "positionY": 0.432,
-   "fontSize": 88,
-   "uppercase": false
+   "fontSize": 84,
+   "uppercase": false,
+   "maxCharsPerLine": 10
   },
   "grade": {
    "brightness": 1,
@@ -40,893 +41,893 @@
   "faceAt": 0.4
  },
  "joins": [
-  3.467,
-  8.133,
-  11.0,
-  12.933,
-  15.767,
-  19.167,
-  21.967,
-  24.2,
-  29.033,
-  30.7,
-  34.067,
-  37.667,
-  39.667,
-  41.1,
-  44.2
+  3.152,
+  7.394,
+  10.0,
+  11.757,
+  14.334,
+  17.425,
+  19.97,
+  22.0,
+  26.394,
+  27.909,
+  30.97,
+  34.243,
+  36.061,
+  37.364,
+  40.182
  ],
  "hold": 1.3,
  "words": [
   {
    "text": "Quante",
-   "start": 0.08,
-   "end": 0.32
+   "start": 0.073,
+   "end": 0.291
   },
   {
    "text": "volte",
-   "start": 0.38,
-   "end": 0.66
+   "start": 0.345,
+   "end": 0.6
   },
   {
    "text": "al",
-   "start": 0.68,
-   "end": 0.76
+   "start": 0.618,
+   "end": 0.691
   },
   {
    "text": "giorno",
-   "start": 0.8,
-   "end": 1.08
+   "start": 0.727,
+   "end": 0.982
   },
   {
    "text": "in",
-   "start": 1.1,
-   "end": 1.18
+   "start": 1.0,
+   "end": 1.073
   },
   {
    "text": "azienda",
-   "start": 1.22,
-   "end": 1.54
+   "start": 1.109,
+   "end": 1.4
   },
   {
    "text": "qualcuno",
-   "start": 1.58,
-   "end": 1.86
+   "start": 1.436,
+   "end": 1.691
   },
   {
    "text": "chiede:",
-   "start": 1.94,
-   "end": 2.18
+   "start": 1.764,
+   "end": 1.982
   },
   {
    "text": "\"Ce",
-   "start": 2.34,
-   "end": 2.44
+   "start": 2.127,
+   "end": 2.218
   },
   {
    "text": "l'abbiamo",
-   "start": 2.46,
-   "end": 2.76
+   "start": 2.236,
+   "end": 2.509
   },
   {
    "text": "questo",
-   "start": 2.8,
-   "end": 2.98
+   "start": 2.545,
+   "end": 2.709
   },
   {
    "text": "pezzo?\"",
-   "start": 3.04,
-   "end": 3.36
+   "start": 2.764,
+   "end": 3.055
   },
   {
    "text": "E",
-   "start": 3.527,
-   "end": 3.547
+   "start": 3.206,
+   "end": 3.225
   },
   {
    "text": "parte",
-   "start": 3.647,
-   "end": 3.847
+   "start": 3.315,
+   "end": 3.497
   },
   {
    "text": "la",
-   "start": 3.867,
-   "end": 3.927
+   "start": 3.515,
+   "end": 3.57
   },
   {
    "text": "caccia.",
-   "start": 3.987,
-   "end": 4.307
+   "start": 3.625,
+   "end": 3.915
   },
   {
    "text": "Apri",
-   "start": 4.607,
-   "end": 4.767
+   "start": 4.188,
+   "end": 4.334
   },
   {
    "text": "l'Excel",
-   "start": 4.767,
-   "end": 5.067
+   "start": 4.334,
+   "end": 4.606
   },
   {
    "text": "del",
-   "start": 5.107,
-   "end": 5.167
+   "start": 4.643,
+   "end": 4.697
   },
   {
    "text": "magazzino,",
-   "start": 5.187,
-   "end": 5.627
+   "start": 4.715,
+   "end": 5.115
   },
   {
    "text": "scorri",
-   "start": 5.947,
-   "end": 6.207
+   "start": 5.406,
+   "end": 5.643
   },
   {
    "text": "centinaia",
-   "start": 6.267,
-   "end": 6.687
+   "start": 5.697,
+   "end": 6.079
   },
   {
    "text": "di",
-   "start": 6.727,
-   "end": 6.787
+   "start": 6.115,
+   "end": 6.17
   },
   {
    "text": "righe,",
-   "start": 6.827,
-   "end": 7.047
+   "start": 6.206,
+   "end": 6.406
   },
   {
    "text": "controlli",
-   "start": 7.267,
-   "end": 7.587
+   "start": 6.606,
+   "end": 6.897
   },
   {
    "text": "la",
-   "start": 7.607,
-   "end": 7.667
+   "start": 6.915,
+   "end": 6.97
   },
   {
    "text": "misura,",
-   "start": 7.707,
-   "end": 8.027
+   "start": 7.006,
+   "end": 7.297
   },
   {
    "text": "chiami",
-   "start": 8.213,
-   "end": 8.453
+   "start": 7.466,
+   "end": 7.685
   },
   {
    "text": "chi",
-   "start": 8.473,
-   "end": 8.553
+   "start": 7.703,
+   "end": 7.775
   },
   {
    "text": "sta",
-   "start": 8.613,
-   "end": 8.693
+   "start": 7.83,
+   "end": 7.903
   },
   {
    "text": "in",
-   "start": 8.713,
-   "end": 8.753
+   "start": 7.921,
+   "end": 7.957
   },
   {
    "text": "magazzino",
-   "start": 8.773,
-   "end": 9.273
+   "start": 7.975,
+   "end": 8.43
   },
   {
    "text": "e",
-   "start": 9.453,
-   "end": 9.473
+   "start": 8.594,
+   "end": 8.612
   },
   {
    "text": "intanto",
-   "start": 9.493,
-   "end": 9.933
+   "start": 8.63,
+   "end": 9.03
   },
   {
    "text": "è",
-   "start": 9.993,
-   "end": 10.033
+   "start": 9.085,
+   "end": 9.121
   },
   {
    "text": "passato",
-   "start": 10.073,
-   "end": 10.293
+   "start": 9.157,
+   "end": 9.357
   },
   {
    "text": "un",
-   "start": 10.333,
-   "end": 10.373
+   "start": 9.394,
+   "end": 9.43
   },
   {
    "text": "quarto",
-   "start": 10.413,
-   "end": 10.613
+   "start": 9.466,
+   "end": 9.648
   },
   {
    "text": "d'ora.",
-   "start": 10.673,
-   "end": 10.873
+   "start": 9.703,
+   "end": 9.885
   },
   {
    "text": "Ora",
-   "start": 11.06,
-   "end": 11.18
+   "start": 10.055,
+   "end": 10.164
   },
   {
    "text": "immagina",
-   "start": 11.22,
-   "end": 11.72
+   "start": 10.2,
+   "end": 10.655
   },
   {
    "text": "di",
-   "start": 11.76,
-   "end": 11.82
+   "start": 10.691,
+   "end": 10.745
   },
   {
    "text": "scrivere",
-   "start": 11.86,
-   "end": 12.18
+   "start": 10.782,
+   "end": 11.073
   },
   {
    "text": "su",
-   "start": 12.219,
-   "end": 12.3
+   "start": 11.108,
+   "end": 11.182
   },
   {
    "text": "WhatsApp:",
-   "start": 12.34,
-   "end": 12.82
+   "start": 11.218,
+   "end": 11.655
   },
   {
    "text": "\"Lastre",
-   "start": 12.933,
-   "end": 13.513
+   "start": 11.757,
+   "end": 12.285
   },
   {
    "text": "3",
-   "start": 13.833,
-   "end": 13.853
+   "start": 12.575,
+   "end": 12.594
   },
   {
    "text": "millimetri",
-   "start": 13.873,
-   "end": 14.253
+   "start": 12.612,
+   "end": 12.957
   },
   {
    "text": "trasparente,",
-   "start": 14.293,
-   "end": 14.873
+   "start": 12.994,
+   "end": 13.521
   },
   {
    "text": "quanti",
-   "start": 15.033,
-   "end": 15.233
+   "start": 13.666,
+   "end": 13.848
   },
   {
    "text": "ne",
-   "start": 15.273,
-   "end": 15.293
+   "start": 13.885,
+   "end": 13.903
   },
   {
    "text": "abbiamo?\"",
-   "start": 15.333,
-   "end": 15.673
+   "start": 13.939,
+   "end": 14.248
   },
   {
    "text": "E",
-   "start": 15.827,
-   "end": 15.847
+   "start": 14.388,
+   "end": 14.406
   },
   {
    "text": "in",
-   "start": 15.867,
-   "end": 15.907
+   "start": 14.425,
+   "end": 14.461
   },
   {
    "text": "due",
-   "start": 15.947,
-   "end": 16.027
+   "start": 14.497,
+   "end": 14.57
   },
   {
    "text": "secondi",
-   "start": 16.067,
-   "end": 16.427
+   "start": 14.606,
+   "end": 14.934
   },
   {
    "text": "ti",
-   "start": 16.487,
-   "end": 16.547
+   "start": 14.988,
+   "end": 15.043
   },
   {
    "text": "arriva",
-   "start": 16.587,
-   "end": 16.787
+   "start": 15.079,
+   "end": 15.261
   },
   {
    "text": "la",
-   "start": 16.807,
-   "end": 16.867
+   "start": 15.279,
+   "end": 15.334
   },
   {
    "text": "risposta,",
-   "start": 16.907,
-   "end": 17.407
+   "start": 15.37,
+   "end": 15.825
   },
   {
    "text": "quanti",
-   "start": 17.667,
-   "end": 17.907
+   "start": 16.061,
+   "end": 16.279
   },
   {
    "text": "pezzi",
-   "start": 17.947,
-   "end": 18.227
+   "start": 16.315,
+   "end": 16.57
   },
   {
    "text": "hai",
-   "start": 18.227,
-   "end": 18.427
+   "start": 16.57,
+   "end": 16.752
   },
   {
    "text": "e",
-   "start": 18.567,
-   "end": 18.587
+   "start": 16.879,
+   "end": 16.897
   },
   {
    "text": "dove",
-   "start": 18.627,
-   "end": 18.767
+   "start": 16.934,
+   "end": 17.061
   },
   {
    "text": "sono.",
-   "start": 18.847,
-   "end": 19.067
+   "start": 17.134,
+   "end": 17.334
   },
   {
    "text": "Si",
-   "start": 19.227,
-   "end": 19.327
+   "start": 17.479,
+   "end": 17.57
   },
   {
    "text": "può",
-   "start": 19.347,
-   "end": 19.447
+   "start": 17.588,
+   "end": 17.679
   },
   {
    "text": "fare,",
-   "start": 19.487,
-   "end": 19.707
+   "start": 17.715,
+   "end": 17.915
   },
   {
    "text": "si",
-   "start": 19.827,
-   "end": 19.927
+   "start": 18.025,
+   "end": 18.115
   },
   {
    "text": "collega",
-   "start": 19.967,
-   "end": 20.227
+   "start": 18.152,
+   "end": 18.388
   },
   {
    "text": "l'Excel",
-   "start": 20.247,
-   "end": 20.687
+   "start": 18.406,
+   "end": 18.806
   },
   {
    "text": "che",
-   "start": 20.707,
-   "end": 20.787
+   "start": 18.825,
+   "end": 18.897
   },
   {
    "text": "usi",
-   "start": 20.887,
-   "end": 21.047
+   "start": 18.988,
+   "end": 19.134
   },
   {
    "text": "già",
-   "start": 21.087,
-   "end": 21.347
+   "start": 19.17,
+   "end": 19.406
   },
   {
    "text": "a",
-   "start": 21.387,
-   "end": 21.447
+   "start": 19.443,
+   "end": 19.497
   },
   {
    "text": "WhatsApp.",
-   "start": 21.487,
-   "end": 21.887
+   "start": 19.534,
+   "end": 19.897
   },
   {
    "text": "niente",
-   "start": 22.027,
-   "end": 22.267
+   "start": 20.025,
+   "end": 20.243
   },
   {
    "text": "programmi",
-   "start": 22.307,
-   "end": 22.567
+   "start": 20.279,
+   "end": 20.515
   },
   {
    "text": "nuovi,",
-   "start": 22.607,
-   "end": 22.867
+   "start": 20.552,
+   "end": 20.788
   },
   {
    "text": "niente",
-   "start": 23.027,
-   "end": 23.247
+   "start": 20.934,
+   "end": 21.134
   },
   {
    "text": "gestionali",
-   "start": 23.267,
-   "end": 23.627
+   "start": 21.152,
+   "end": 21.479
   },
   {
    "text": "da",
-   "start": 23.647,
-   "end": 23.687
+   "start": 21.497,
+   "end": 21.534
   },
   {
    "text": "imparare.",
-   "start": 23.727,
-   "end": 24.107
+   "start": 21.57,
+   "end": 21.915
   },
   {
    "text": "E",
-   "start": 24.26,
-   "end": 24.28
+   "start": 22.055,
+   "end": 22.073
   },
   {
    "text": "non",
-   "start": 24.32,
-   "end": 24.44
+   "start": 22.109,
+   "end": 22.218
   },
   {
    "text": "serve",
-   "start": 24.48,
-   "end": 24.72
+   "start": 22.255,
+   "end": 22.473
   },
   {
    "text": "solo",
-   "start": 24.76,
-   "end": 24.88
+   "start": 22.509,
+   "end": 22.618
   },
   {
    "text": "a",
-   "start": 24.9,
-   "end": 24.92
+   "start": 22.636,
+   "end": 22.655
   },
   {
    "text": "cercare.",
-   "start": 24.96,
-   "end": 25.36
+   "start": 22.691,
+   "end": 23.055
   },
   {
    "text": "Arriva",
-   "start": 25.68,
-   "end": 25.88
+   "start": 23.345,
+   "end": 23.527
   },
   {
    "text": "un",
-   "start": 25.92,
-   "end": 25.98
+   "start": 23.564,
+   "end": 23.618
   },
   {
    "text": "pezzo",
-   "start": 26.0,
-   "end": 26.24
+   "start": 23.636,
+   "end": 23.855
   },
   {
    "text": "nuovo,",
-   "start": 26.28,
-   "end": 26.54
+   "start": 23.891,
+   "end": 24.127
   },
   {
    "text": "lo",
-   "start": 26.8,
-   "end": 26.9
+   "start": 24.364,
+   "end": 24.455
   },
   {
    "text": "scrivi",
-   "start": 26.92,
-   "end": 27.12
+   "start": 24.473,
+   "end": 24.655
   },
   {
    "text": "in",
-   "start": 27.16,
-   "end": 27.22
+   "start": 24.691,
+   "end": 24.745
   },
   {
    "text": "chat,",
-   "start": 27.26,
-   "end": 27.5
+   "start": 24.782,
+   "end": 25.0
   },
   {
    "text": "nome,",
-   "start": 27.74,
-   "end": 27.98
+   "start": 25.218,
+   "end": 25.436
   },
   {
    "text": "misura,",
-   "start": 28.12,
-   "end": 28.44
+   "start": 25.564,
+   "end": 25.855
   },
   {
    "text": "quantità,",
-   "start": 28.56,
-   "end": 28.94
+   "start": 25.964,
+   "end": 26.309
   },
   {
    "text": "e",
-   "start": 29.093,
-   "end": 29.133
+   "start": 26.448,
+   "end": 26.485
   },
   {
    "text": "viene",
-   "start": 29.173,
-   "end": 29.293
+   "start": 26.521,
+   "end": 26.63
   },
   {
    "text": "aggiunto",
-   "start": 29.333,
-   "end": 29.693
+   "start": 26.666,
+   "end": 26.994
   },
   {
    "text": "da",
-   "start": 29.733,
-   "end": 29.813
+   "start": 27.03,
+   "end": 27.103
   },
   {
    "text": "solo",
-   "start": 29.873,
-   "end": 30.033
+   "start": 27.157,
+   "end": 27.303
   },
   {
    "text": "nell'Excel.",
-   "start": 30.073,
-   "end": 30.613
+   "start": 27.339,
+   "end": 27.83
   },
   {
    "text": "Hai",
-   "start": 30.76,
-   "end": 30.88
+   "start": 27.964,
+   "end": 28.073
   },
   {
    "text": "preso",
-   "start": 30.92,
-   "end": 31.4
+   "start": 28.109,
+   "end": 28.545
   },
   {
    "text": "delle",
-   "start": 31.44,
-   "end": 31.56
+   "start": 28.582,
+   "end": 28.691
   },
   {
    "text": "lastre",
-   "start": 31.6,
-   "end": 31.86
+   "start": 28.727,
+   "end": 28.964
   },
   {
    "text": "nuove?",
-   "start": 31.9,
-   "end": 32.18
+   "start": 29.0,
+   "end": 29.255
   },
   {
    "text": "Lo",
-   "start": 32.44,
-   "end": 32.5
+   "start": 29.491,
+   "end": 29.545
   },
   {
    "text": "scrivi",
-   "start": 32.54,
-   "end": 32.98
+   "start": 29.582,
+   "end": 29.982
   },
   {
    "text": "e",
-   "start": 33.02,
-   "end": 33.06
+   "start": 30.018,
+   "end": 30.055
   },
   {
    "text": "la",
-   "start": 33.1,
-   "end": 33.16
+   "start": 30.091,
+   "end": 30.145
   },
   {
    "text": "quantità",
-   "start": 33.18,
-   "end": 33.48
+   "start": 30.164,
+   "end": 30.436
   },
   {
    "text": "si",
-   "start": 33.52,
-   "end": 33.58
+   "start": 30.473,
+   "end": 30.527
   },
   {
    "text": "aggiorna.",
-   "start": 33.62,
-   "end": 33.98
+   "start": 30.564,
+   "end": 30.891
   },
   {
    "text": "Così",
-   "start": 34.127,
-   "end": 34.407
+   "start": 31.025,
+   "end": 31.279
   },
   {
    "text": "chiunque",
-   "start": 34.427,
-   "end": 34.707
+   "start": 31.297,
+   "end": 31.552
   },
   {
    "text": "in",
-   "start": 34.747,
-   "end": 34.807
+   "start": 31.588,
+   "end": 31.643
   },
   {
    "text": "azienda,",
-   "start": 34.867,
-   "end": 35.267
+   "start": 31.697,
+   "end": 32.061
   },
   {
    "text": "dal",
-   "start": 35.467,
-   "end": 35.567
+   "start": 32.243,
+   "end": 32.334
   },
   {
    "text": "magazzino",
-   "start": 35.607,
-   "end": 36.187
+   "start": 32.37,
+   "end": 32.897
   },
   {
    "text": "al",
-   "start": 36.247,
-   "end": 36.327
+   "start": 32.952,
+   "end": 33.025
   },
   {
    "text": "commerciale",
-   "start": 36.367,
-   "end": 36.767
+   "start": 33.061,
+   "end": 33.425
   },
   {
    "text": "in",
-   "start": 36.807,
-   "end": 36.867
+   "start": 33.461,
+   "end": 33.515
   },
   {
    "text": "giro",
-   "start": 36.907,
-   "end": 37.047
+   "start": 33.552,
+   "end": 33.679
   },
   {
    "text": "dai",
-   "start": 37.087,
-   "end": 37.167
+   "start": 33.715,
+   "end": 33.788
   },
   {
    "text": "clienti,",
-   "start": 37.207,
-   "end": 37.587
+   "start": 33.825,
+   "end": 34.17
   },
   {
    "text": "sa",
-   "start": 37.727,
-   "end": 37.907
+   "start": 34.297,
+   "end": 34.461
   },
   {
    "text": "in",
-   "start": 37.947,
-   "end": 38.007
+   "start": 34.497,
+   "end": 34.552
   },
   {
    "text": "un",
-   "start": 38.047,
-   "end": 38.107
+   "start": 34.588,
+   "end": 34.643
   },
   {
    "text": "attimo",
-   "start": 38.167,
-   "end": 38.427
+   "start": 34.697,
+   "end": 34.934
   },
   {
    "text": "cosa",
-   "start": 38.467,
-   "end": 38.647
+   "start": 34.97,
+   "end": 35.134
   },
   {
    "text": "c'è",
-   "start": 38.707,
-   "end": 38.927
+   "start": 35.188,
+   "end": 35.388
   },
   {
    "text": "e",
-   "start": 38.967,
-   "end": 39.027
+   "start": 35.425,
+   "end": 35.479
   },
   {
    "text": "cosa",
-   "start": 39.087,
-   "end": 39.247
+   "start": 35.534,
+   "end": 35.679
   },
   {
    "text": "manca,",
-   "start": 39.287,
-   "end": 39.587
+   "start": 35.715,
+   "end": 35.988
   },
   {
    "text": "direttamente",
-   "start": 39.727,
-   "end": 40.407
+   "start": 36.115,
+   "end": 36.734
   },
   {
    "text": "dal",
-   "start": 40.447,
-   "end": 40.567
+   "start": 36.77,
+   "end": 36.879
   },
   {
    "text": "telefono.",
-   "start": 40.607,
-   "end": 41.007
+   "start": 36.915,
+   "end": 37.279
   },
   {
    "text": "Se",
-   "start": 41.16,
-   "end": 41.2
+   "start": 37.418,
+   "end": 37.455
   },
   {
    "text": "hai",
-   "start": 41.24,
-   "end": 41.32
+   "start": 37.491,
+   "end": 37.564
   },
   {
    "text": "una",
-   "start": 41.32,
-   "end": 41.44
+   "start": 37.564,
+   "end": 37.673
   },
   {
    "text": "piccola",
-   "start": 41.46,
-   "end": 41.7
+   "start": 37.691,
+   "end": 37.909
   },
   {
    "text": "azienda",
-   "start": 41.74,
-   "end": 42.2
+   "start": 37.945,
+   "end": 38.364
   },
   {
    "text": "è",
-   "start": 42.28,
-   "end": 42.32
+   "start": 38.436,
+   "end": 38.473
   },
   {
    "text": "tempo",
-   "start": 42.36,
-   "end": 42.6
+   "start": 38.509,
+   "end": 38.727
   },
   {
    "text": "che",
-   "start": 42.62,
-   "end": 42.7
+   "start": 38.745,
+   "end": 38.818
   },
   {
    "text": "recuperi",
-   "start": 42.74,
-   "end": 43.2
+   "start": 38.855,
+   "end": 39.273
   },
   {
    "text": "ogni",
-   "start": 43.28,
-   "end": 43.42
+   "start": 39.345,
+   "end": 39.473
   },
   {
    "text": "singolo",
-   "start": 43.48,
-   "end": 43.78
+   "start": 39.527,
+   "end": 39.8
   },
   {
    "text": "giorno.",
-   "start": 43.82,
-   "end": 44.12
+   "start": 39.836,
+   "end": 40.109
   },
   {
    "text": "Qual",
-   "start": 44.26,
-   "end": 44.36
+   "start": 40.236,
+   "end": 40.327
   },
   {
    "text": "è",
-   "start": 44.4,
-   "end": 44.42
+   "start": 40.364,
+   "end": 40.382
   },
   {
    "text": "il",
-   "start": 44.44,
-   "end": 44.46
+   "start": 40.4,
+   "end": 40.418
   },
   {
    "text": "lavoro",
-   "start": 44.5,
-   "end": 44.74
+   "start": 40.455,
+   "end": 40.673
   },
   {
    "text": "che",
-   "start": 44.78,
-   "end": 44.84
+   "start": 40.709,
+   "end": 40.764
   },
   {
    "text": "ti",
-   "start": 44.88,
-   "end": 44.96
+   "start": 40.8,
+   "end": 40.873
   },
   {
    "text": "fa",
-   "start": 45.0,
-   "end": 45.1
+   "start": 40.909,
+   "end": 41.0
   },
   {
    "text": "perdere",
-   "start": 45.14,
-   "end": 45.44
+   "start": 41.036,
+   "end": 41.309
   },
   {
    "text": "più",
-   "start": 45.46,
-   "end": 45.54
+   "start": 41.327,
+   "end": 41.4
   },
   {
    "text": "tempo",
-   "start": 45.58,
-   "end": 45.8
+   "start": 41.436,
+   "end": 41.636
   },
   {
    "text": "in",
-   "start": 45.82,
-   "end": 45.88
+   "start": 41.655,
+   "end": 41.709
   },
   {
    "text": "azienda?",
-   "start": 45.92,
-   "end": 46.32
+   "start": 41.745,
+   "end": 42.109
   },
   {
    "text": "Scrivilo",
-   "start": 46.58,
-   "end": 46.9
+   "start": 42.345,
+   "end": 42.636
   },
   {
    "text": "nei",
-   "start": 46.92,
-   "end": 47.02
+   "start": 42.655,
+   "end": 42.745
   },
   {
    "text": "commenti,",
-   "start": 47.06,
-   "end": 47.48
+   "start": 42.782,
+   "end": 43.164
   },
   {
    "text": "magari",
-   "start": 47.6,
-   "end": 47.98
+   "start": 43.273,
+   "end": 43.618
   },
   {
    "text": "si",
-   "start": 48.04,
-   "end": 48.14
+   "start": 43.673,
+   "end": 43.764
   },
   {
    "text": "può",
-   "start": 48.16,
-   "end": 48.22
+   "start": 43.782,
+   "end": 43.836
   },
   {
    "text": "automatizzare.",
-   "start": 48.26,
-   "end": 48.88
+   "start": 43.873,
+   "end": 44.436
   }
  ],
  "emphasis": [
@@ -945,37 +946,37 @@
  "hook": null,
  "zooms": [
   {
-   "at": 3.99,
+   "at": 3.627,
    "kind": "punch",
    "strength": 0.7
   },
   {
-   "at": 10.41,
+   "at": 9.464,
    "kind": "punch",
    "strength": 0.8
   },
   {
-   "at": 15.95,
+   "at": 14.5,
    "kind": "punch",
    "strength": 0.6
   },
   {
-   "at": 23.27,
+   "at": 21.155,
    "kind": "punch",
    "strength": 0.8
   },
   {
-   "at": 29.87,
+   "at": 27.155,
    "kind": "punch",
    "strength": 0.6
   },
   {
-   "at": 40.61,
+   "at": 36.918,
    "kind": "punch",
    "strength": 0.7
   },
   {
-   "at": 48.26,
+   "at": 43.873,
    "kind": "punch",
    "strength": 0.9
   }
@@ -984,10 +985,9 @@
   {
    "type": "bubbles",
    "at": 0.0,
-   "duration": 3.45,
-   "y": 0.265,
+   "duration": 3.136,
+   "y": 0.29,
    "props": {
-    "counter": "× {n}",
     "items": [
      {
       "at": 3,
@@ -995,17 +995,17 @@
       "text": "Avete la lastra da 3 mm?"
      },
      {
-      "at": 24,
+      "at": 22,
       "name": "Cliente",
       "text": "Quante ne restano?"
      },
      {
-      "at": 47,
+      "at": 43,
       "name": "Ufficio",
       "text": "È arrivato il profilo?"
      },
      {
-      "at": 70,
+      "at": 64,
       "name": "Collega",
       "text": "Ce l'abbiamo questo pezzo?"
      }
@@ -1014,10 +1014,10 @@
   },
   {
    "type": "sheet",
-   "at": 3.5,
-   "duration": 4.65,
-   "y": 0.27,
-   "scale": 0.95,
+   "at": 3.182,
+   "duration": 4.227,
+   "y": 0.265,
+   "scale": 0.92,
    "props": {
     "title": "Magazzino.xlsx",
     "rows": [
@@ -1065,17 +1065,17 @@
      ]
     ],
     "scrollAt": [
-     74,
-     110
+     67,
+     100
     ],
-    "highlightAt": 126,
+    "highlightAt": 115,
     "highlightCol": 1
    }
   },
   {
    "type": "icon3d",
-   "at": 8.18,
-   "duration": 1.24,
+   "at": 7.436,
+   "duration": 1.128,
    "y": 0.26,
    "props": {
     "items": [
@@ -1089,8 +1089,8 @@
   },
   {
    "type": "idcard",
-   "at": 9.45,
-   "duration": 1.55,
+   "at": 8.591,
+   "duration": 1.409,
    "y": 0.265,
    "scale": 0.95,
    "props": {
@@ -1104,8 +1104,8 @@
   },
   {
    "type": "whatsapp",
-   "at": 11.03,
-   "duration": 8.15,
+   "at": 10.027,
+   "duration": 7.409,
    "y": 0.27,
    "scale": 0.94,
    "props": {
@@ -1115,22 +1115,22 @@
      {
       "from": "me",
       "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
-      "typeFrom": 25,
-      "at": 137
+      "typeFrom": 23,
+      "at": 124
      },
      {
       "from": "bot",
       "text": "**Lastra PMMA trasparente 3 mm**\n24 pezzi · scaffale B3",
-      "at": 176
+      "at": 160
      }
     ],
     "highlights": [
      {
-      "at": 199,
+      "at": 181,
       "text": "24 pezzi"
      },
      {
-      "at": 228,
+      "at": 207,
       "text": "scaffale B3"
      }
     ]
@@ -1138,31 +1138,31 @@
   },
   {
    "type": "icon3d",
-   "at": 19.2,
-   "duration": 2.77,
+   "at": 17.455,
+   "duration": 2.518,
    "y": 0.26,
    "props": {
     "items": [
      {
       "icon": "sheet",
       "label": "EXCEL",
-      "at": 32,
+      "at": 29,
       "color": "#1F7A4C"
      },
      {
       "icon": "chat",
       "label": "WHATSAPP",
-      "at": 69,
+      "at": 62,
       "color": "#22B35E"
      }
     ],
-    "linkAt": 76
+    "linkAt": 69
    }
   },
   {
    "type": "zero",
-   "at": 22.0,
-   "duration": 2.2,
+   "at": 20.0,
+   "duration": 2.0,
    "y": 0.27,
    "scale": 0.95,
    "props": {
@@ -1172,16 +1172,16 @@
       "text": "0 programmi nuovi"
      },
      {
-      "at": 38,
-      "text": "0 gestionali da imparare"
+      "at": 35,
+      "text": "0 gestionali"
      }
     ]
    }
   },
   {
    "type": "whatsapp",
-   "at": 24.23,
-   "duration": 5.02,
+   "at": 22.027,
+   "duration": 4.564,
    "y": 0.27,
    "scale": 0.94,
    "props": {
@@ -1191,18 +1191,18 @@
      {
       "from": "me",
       "text": "Nuovo: Lastra PMMA opale · 5 mm · 10 pz",
-      "typeFrom": 81,
-      "at": 139
+      "typeFrom": 73,
+      "at": 126
      }
     ]
    }
   },
   {
    "type": "sheet",
-   "at": 29.27,
-   "duration": 4.82,
-   "y": 0.27,
-   "scale": 0.95,
+   "at": 26.609,
+   "duration": 4.382,
+   "y": 0.265,
+   "scale": 0.92,
    "props": {
     "title": "Magazzino.xlsx",
     "rows": [
@@ -1249,14 +1249,14 @@
       "E2"
      ]
     ],
-    "addAt": 18,
+    "addAt": 16,
     "addRow": [
      "Lastra PMMA opale",
      "5 mm",
      "10",
      "B4"
     ],
-    "updateAt": 130,
+    "updateAt": 119,
     "updateRow": 0,
     "updateCol": 2,
     "updateTo": 34
@@ -1264,34 +1264,39 @@
   },
   {
    "type": "icon3d",
-   "at": 34.12,
-   "duration": 7.0,
+   "at": 31.018,
+   "duration": 6.364,
    "y": 0.26,
    "props": {
     "items": [
      {
+      "icon": "family",
+      "label": "CHIUNQUE",
+      "at": 8
+     },
+     {
       "icon": "house",
       "label": "MAGAZZINO",
-      "at": 45
+      "at": 41
      },
      {
       "icon": "car",
       "label": "COMMERCIALE",
-      "at": 68
+      "at": 61
      },
      {
       "icon": "phone",
-      "label": "DAL TELEFONO",
-      "at": 195
+      "label": "TELEFONO",
+      "at": 177
      }
     ],
-    "linkAt": 108
+    "linkAt": 98
    }
   },
   {
    "type": "idcard",
-   "at": 41.14,
-   "duration": 3.07,
+   "at": 37.4,
+   "duration": 2.791,
    "y": 0.265,
    "scale": 0.95,
    "props": {
@@ -1301,15 +1306,15 @@
     "kicker": "Ogni singolo giorno",
     "title": "Tempo perso",
     "title2": "Tempo recuperato",
-    "swapAt": 48,
+    "swapAt": 44,
     "bar": 1.0,
-    "barAt": 48
+    "barAt": 44
    }
   },
   {
    "type": "dm",
-   "at": 44.24,
-   "duration": 6.093,
+   "at": 40.218,
+   "duration": 6.324,
    "text": "L'inventario",
    "y": 0.265,
    "scale": 0.9,
@@ -1317,9 +1322,9 @@
     "name": "Commenti",
     "placeholder": "Aggiungi un commento…",
     "sentLabel": "Pubblicato",
-    "typeAt": 70,
-    "sendAt": 94,
-    "replyAt": 121,
+    "typeAt": 64,
+    "sendAt": 85,
+    "replyAt": 110,
     "reply": "Si può automatizzare ✓"
    }
   }

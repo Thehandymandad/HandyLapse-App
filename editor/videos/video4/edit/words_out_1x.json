@@ -1,0 +1,1179 @@
+{
+ "duration": 49.033,
+ "segments": [
+  {
+   "source": "video4",
+   "start": 0.96,
+   "end": 4.4,
+   "out_start": 0.0,
+   "out_end": 3.467,
+   "beat": "HOOK"
+  },
+  {
+   "source": "video4",
+   "start": 5.46,
+   "end": 10.1,
+   "out_start": 3.467,
+   "out_end": 8.133,
+   "beat": "PROBLEMA"
+  },
+  {
+   "source": "video4",
+   "start": 10.4,
+   "end": 13.24,
+   "out_start": 8.133,
+   "out_end": 11.0,
+   "beat": "PROBLEMA"
+  },
+  {
+   "source": "video4",
+   "start": 14.86,
+   "end": 16.78,
+   "out_start": 11.0,
+   "out_end": 12.933,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video4",
+   "start": 17.5,
+   "end": 20.32,
+   "out_start": 12.933,
+   "out_end": 15.767,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video4",
+   "start": 20.72,
+   "end": 24.1,
+   "out_start": 15.767,
+   "out_end": 19.167,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video4",
+   "start": 24.78,
+   "end": 27.58,
+   "out_start": 19.167,
+   "out_end": 21.967,
+   "beat": "COME"
+  },
+  {
+   "source": "video4",
+   "start": 29.94,
+   "end": 32.16,
+   "out_start": 21.967,
+   "out_end": 24.2,
+   "beat": "COME"
+  },
+  {
+   "source": "video4",
+   "start": 32.9,
+   "end": 37.72,
+   "out_start": 24.2,
+   "out_end": 29.033,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 38.16,
+   "end": 39.82,
+   "out_start": 29.033,
+   "out_end": 30.7,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 41.1,
+   "end": 44.46,
+   "out_start": 30.7,
+   "out_end": 34.067,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 45.0,
+   "end": 48.6,
+   "out_start": 34.067,
+   "out_end": 37.667,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 48.96,
+   "end": 50.96,
+   "out_start": 37.667,
+   "out_end": 39.667,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 51.56,
+   "end": 52.98,
+   "out_start": 39.667,
+   "out_end": 41.1,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 54.16,
+   "end": 57.26,
+   "out_start": 41.1,
+   "out_end": 44.2,
+   "beat": "CHIUSURA"
+  },
+  {
+   "source": "video4",
+   "start": 57.68,
+   "end": 62.5,
+   "out_start": 44.2,
+   "out_end": 49.033,
+   "beat": "CTA"
+  }
+ ],
+ "words": [
+  {
+   "text": "Quante",
+   "start": 0.08,
+   "end": 0.32,
+   "source": "video4"
+  },
+  {
+   "text": "volte",
+   "start": 0.38,
+   "end": 0.66,
+   "source": "video4"
+  },
+  {
+   "text": "al",
+   "start": 0.68,
+   "end": 0.76,
+   "source": "video4"
+  },
+  {
+   "text": "giorno",
+   "start": 0.8,
+   "end": 1.08,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 1.1,
+   "end": 1.18,
+   "source": "video4"
+  },
+  {
+   "text": "azienda",
+   "start": 1.22,
+   "end": 1.54,
+   "source": "video4"
+  },
+  {
+   "text": "qualcuno",
+   "start": 1.58,
+   "end": 1.86,
+   "source": "video4"
+  },
+  {
+   "text": "chiede:",
+   "start": 1.94,
+   "end": 2.18,
+   "source": "video4"
+  },
+  {
+   "text": "\"Ce",
+   "start": 2.34,
+   "end": 2.44,
+   "source": "video4"
+  },
+  {
+   "text": "l'abbiamo",
+   "start": 2.46,
+   "end": 2.76,
+   "source": "video4"
+  },
+  {
+   "text": "questo",
+   "start": 2.8,
+   "end": 2.98,
+   "source": "video4"
+  },
+  {
+   "text": "pezzo?\"",
+   "start": 3.04,
+   "end": 3.36,
+   "source": "video4"
+  },
+  {
+   "text": "E",
+   "start": 3.527,
+   "end": 3.547,
+   "source": "video4"
+  },
+  {
+   "text": "parte",
+   "start": 3.647,
+   "end": 3.847,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 3.867,
+   "end": 3.927,
+   "source": "video4"
+  },
+  {
+   "text": "caccia.",
+   "start": 3.987,
+   "end": 4.307,
+   "source": "video4"
+  },
+  {
+   "text": "Apri",
+   "start": 4.607,
+   "end": 4.767,
+   "source": "video4"
+  },
+  {
+   "text": "l'Excel",
+   "start": 4.767,
+   "end": 5.067,
+   "source": "video4"
+  },
+  {
+   "text": "del",
+   "start": 5.107,
+   "end": 5.167,
+   "source": "video4"
+  },
+  {
+   "text": "magazzino,",
+   "start": 5.187,
+   "end": 5.627,
+   "source": "video4"
+  },
+  {
+   "text": "scorri",
+   "start": 5.947,
+   "end": 6.207,
+   "source": "video4"
+  },
+  {
+   "text": "centinaia",
+   "start": 6.267,
+   "end": 6.687,
+   "source": "video4"
+  },
+  {
+   "text": "di",
+   "start": 6.727,
+   "end": 6.787,
+   "source": "video4"
+  },
+  {
+   "text": "righe,",
+   "start": 6.827,
+   "end": 7.047,
+   "source": "video4"
+  },
+  {
+   "text": "controlli",
+   "start": 7.267,
+   "end": 7.587,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 7.607,
+   "end": 7.667,
+   "source": "video4"
+  },
+  {
+   "text": "misura,",
+   "start": 7.707,
+   "end": 8.027,
+   "source": "video4"
+  },
+  {
+   "text": "chiami",
+   "start": 8.213,
+   "end": 8.453,
+   "source": "video4"
+  },
+  {
+   "text": "chi",
+   "start": 8.473,
+   "end": 8.553,
+   "source": "video4"
+  },
+  {
+   "text": "sta",
+   "start": 8.613,
+   "end": 8.693,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 8.713,
+   "end": 8.753,
+   "source": "video4"
+  },
+  {
+   "text": "magazzino",
+   "start": 8.773,
+   "end": 9.273,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 9.453,
+   "end": 9.473,
+   "source": "video4"
+  },
+  {
+   "text": "intanto",
+   "start": 9.493,
+   "end": 9.933,
+   "source": "video4"
+  },
+  {
+   "text": "è",
+   "start": 9.993,
+   "end": 10.033,
+   "source": "video4"
+  },
+  {
+   "text": "passato",
+   "start": 10.073,
+   "end": 10.293,
+   "source": "video4"
+  },
+  {
+   "text": "un",
+   "start": 10.333,
+   "end": 10.373,
+   "source": "video4"
+  },
+  {
+   "text": "quarto",
+   "start": 10.413,
+   "end": 10.613,
+   "source": "video4"
+  },
+  {
+   "text": "d'ora.",
+   "start": 10.673,
+   "end": 10.873,
+   "source": "video4"
+  },
+  {
+   "text": "Ora",
+   "start": 11.06,
+   "end": 11.18,
+   "source": "video4"
+  },
+  {
+   "text": "immagina",
+   "start": 11.22,
+   "end": 11.72,
+   "source": "video4"
+  },
+  {
+   "text": "di",
+   "start": 11.76,
+   "end": 11.82,
+   "source": "video4"
+  },
+  {
+   "text": "scrivere",
+   "start": 11.86,
+   "end": 12.18,
+   "source": "video4"
+  },
+  {
+   "text": "su",
+   "start": 12.219,
+   "end": 12.3,
+   "source": "video4"
+  },
+  {
+   "text": "WhatsApp:",
+   "start": 12.34,
+   "end": 12.82,
+   "source": "video4"
+  },
+  {
+   "text": "\"Lastre",
+   "start": 12.933,
+   "end": 13.513,
+   "source": "video4"
+  },
+  {
+   "text": "3",
+   "start": 13.833,
+   "end": 13.853,
+   "source": "video4"
+  },
+  {
+   "text": "millimetri",
+   "start": 13.873,
+   "end": 14.253,
+   "source": "video4"
+  },
+  {
+   "text": "trasparente,",
+   "start": 14.293,
+   "end": 14.873,
+   "source": "video4"
+  },
+  {
+   "text": "quanti",
+   "start": 15.033,
+   "end": 15.233,
+   "source": "video4"
+  },
+  {
+   "text": "ne",
+   "start": 15.273,
+   "end": 15.293,
+   "source": "video4"
+  },
+  {
+   "text": "abbiamo?\"",
+   "start": 15.333,
+   "end": 15.673,
+   "source": "video4"
+  },
+  {
+   "text": "E",
+   "start": 15.827,
+   "end": 15.847,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 15.867,
+   "end": 15.907,
+   "source": "video4"
+  },
+  {
+   "text": "due",
+   "start": 15.947,
+   "end": 16.027,
+   "source": "video4"
+  },
+  {
+   "text": "secondi",
+   "start": 16.067,
+   "end": 16.427,
+   "source": "video4"
+  },
+  {
+   "text": "ti",
+   "start": 16.487,
+   "end": 16.547,
+   "source": "video4"
+  },
+  {
+   "text": "arriva",
+   "start": 16.587,
+   "end": 16.787,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 16.807,
+   "end": 16.867,
+   "source": "video4"
+  },
+  {
+   "text": "risposta,",
+   "start": 16.907,
+   "end": 17.407,
+   "source": "video4"
+  },
+  {
+   "text": "quanti",
+   "start": 17.667,
+   "end": 17.907,
+   "source": "video4"
+  },
+  {
+   "text": "pezzi",
+   "start": 17.947,
+   "end": 18.227,
+   "source": "video4"
+  },
+  {
+   "text": "hai",
+   "start": 18.227,
+   "end": 18.427,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 18.567,
+   "end": 18.587,
+   "source": "video4"
+  },
+  {
+   "text": "dove",
+   "start": 18.627,
+   "end": 18.767,
+   "source": "video4"
+  },
+  {
+   "text": "sono.",
+   "start": 18.847,
+   "end": 19.067,
+   "source": "video4"
+  },
+  {
+   "text": "Si",
+   "start": 19.227,
+   "end": 19.327,
+   "source": "video4"
+  },
+  {
+   "text": "può",
+   "start": 19.347,
+   "end": 19.447,
+   "source": "video4"
+  },
+  {
+   "text": "fare,",
+   "start": 19.487,
+   "end": 19.707,
+   "source": "video4"
+  },
+  {
+   "text": "si",
+   "start": 19.827,
+   "end": 19.927,
+   "source": "video4"
+  },
+  {
+   "text": "collega",
+   "start": 19.967,
+   "end": 20.227,
+   "source": "video4"
+  },
+  {
+   "text": "l'Excel",
+   "start": 20.247,
+   "end": 20.687,
+   "source": "video4"
+  },
+  {
+   "text": "che",
+   "start": 20.707,
+   "end": 20.787,
+   "source": "video4"
+  },
+  {
+   "text": "usi",
+   "start": 20.887,
+   "end": 21.047,
+   "source": "video4"
+  },
+  {
+   "text": "già",
+   "start": 21.087,
+   "end": 21.347,
+   "source": "video4"
+  },
+  {
+   "text": "a",
+   "start": 21.387,
+   "end": 21.447,
+   "source": "video4"
+  },
+  {
+   "text": "WhatsApp.",
+   "start": 21.487,
+   "end": 21.887,
+   "source": "video4"
+  },
+  {
+   "text": "niente",
+   "start": 22.027,
+   "end": 22.267,
+   "source": "video4"
+  },
+  {
+   "text": "programmi",
+   "start": 22.307,
+   "end": 22.567,
+   "source": "video4"
+  },
+  {
+   "text": "nuovi,",
+   "start": 22.607,
+   "end": 22.867,
+   "source": "video4"
+  },
+  {
+   "text": "niente",
+   "start": 23.027,
+   "end": 23.247,
+   "source": "video4"
+  },
+  {
+   "text": "gestionali",
+   "start": 23.267,
+   "end": 23.627,
+   "source": "video4"
+  },
+  {
+   "text": "da",
+   "start": 23.647,
+   "end": 23.687,
+   "source": "video4"
+  },
+  {
+   "text": "imparare.",
+   "start": 23.727,
+   "end": 24.107,
+   "source": "video4"
+  },
+  {
+   "text": "E",
+   "start": 24.26,
+   "end": 24.28,
+   "source": "video4"
+  },
+  {
+   "text": "non",
+   "start": 24.32,
+   "end": 24.44,
+   "source": "video4"
+  },
+  {
+   "text": "serve",
+   "start": 24.48,
+   "end": 24.72,
+   "source": "video4"
+  },
+  {
+   "text": "solo",
+   "start": 24.76,
+   "end": 24.88,
+   "source": "video4"
+  },
+  {
+   "text": "a",
+   "start": 24.9,
+   "end": 24.92,
+   "source": "video4"
+  },
+  {
+   "text": "cercare.",
+   "start": 24.96,
+   "end": 25.36,
+   "source": "video4"
+  },
+  {
+   "text": "Arriva",
+   "start": 25.68,
+   "end": 25.88,
+   "source": "video4"
+  },
+  {
+   "text": "un",
+   "start": 25.92,
+   "end": 25.98,
+   "source": "video4"
+  },
+  {
+   "text": "pezzo",
+   "start": 26.0,
+   "end": 26.24,
+   "source": "video4"
+  },
+  {
+   "text": "nuovo,",
+   "start": 26.28,
+   "end": 26.54,
+   "source": "video4"
+  },
+  {
+   "text": "lo",
+   "start": 26.8,
+   "end": 26.9,
+   "source": "video4"
+  },
+  {
+   "text": "scrivi",
+   "start": 26.92,
+   "end": 27.12,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 27.16,
+   "end": 27.22,
+   "source": "video4"
+  },
+  {
+   "text": "chat,",
+   "start": 27.26,
+   "end": 27.5,
+   "source": "video4"
+  },
+  {
+   "text": "nome,",
+   "start": 27.74,
+   "end": 27.98,
+   "source": "video4"
+  },
+  {
+   "text": "misura,",
+   "start": 28.12,
+   "end": 28.44,
+   "source": "video4"
+  },
+  {
+   "text": "quantità,",
+   "start": 28.56,
+   "end": 28.94,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 29.093,
+   "end": 29.133,
+   "source": "video4"
+  },
+  {
+   "text": "viene",
+   "start": 29.173,
+   "end": 29.293,
+   "source": "video4"
+  },
+  {
+   "text": "aggiunto",
+   "start": 29.333,
+   "end": 29.693,
+   "source": "video4"
+  },
+  {
+   "text": "da",
+   "start": 29.733,
+   "end": 29.813,
+   "source": "video4"
+  },
+  {
+   "text": "solo",
+   "start": 29.873,
+   "end": 30.033,
+   "source": "video4"
+  },
+  {
+   "text": "nell'Excel.",
+   "start": 30.073,
+   "end": 30.613,
+   "source": "video4"
+  },
+  {
+   "text": "Hai",
+   "start": 30.76,
+   "end": 30.88,
+   "source": "video4"
+  },
+  {
+   "text": "preso",
+   "start": 30.92,
+   "end": 31.4,
+   "source": "video4"
+  },
+  {
+   "text": "delle",
+   "start": 31.44,
+   "end": 31.56,
+   "source": "video4"
+  },
+  {
+   "text": "lastre",
+   "start": 31.6,
+   "end": 31.86,
+   "source": "video4"
+  },
+  {
+   "text": "nuove?",
+   "start": 31.9,
+   "end": 32.18,
+   "source": "video4"
+  },
+  {
+   "text": "Lo",
+   "start": 32.44,
+   "end": 32.5,
+   "source": "video4"
+  },
+  {
+   "text": "scrivi",
+   "start": 32.54,
+   "end": 32.98,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 33.02,
+   "end": 33.06,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 33.1,
+   "end": 33.16,
+   "source": "video4"
+  },
+  {
+   "text": "quantità",
+   "start": 33.18,
+   "end": 33.48,
+   "source": "video4"
+  },
+  {
+   "text": "si",
+   "start": 33.52,
+   "end": 33.58,
+   "source": "video4"
+  },
+  {
+   "text": "aggiorna.",
+   "start": 33.62,
+   "end": 33.98,
+   "source": "video4"
+  },
+  {
+   "text": "Così",
+   "start": 34.127,
+   "end": 34.407,
+   "source": "video4"
+  },
+  {
+   "text": "chiunque",
+   "start": 34.427,
+   "end": 34.707,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 34.747,
+   "end": 34.807,
+   "source": "video4"
+  },
+  {
+   "text": "azienda,",
+   "start": 34.867,
+   "end": 35.267,
+   "source": "video4"
+  },
+  {
+   "text": "dal",
+   "start": 35.467,
+   "end": 35.567,
+   "source": "video4"
+  },
+  {
+   "text": "magazzino",
+   "start": 35.607,
+   "end": 36.187,
+   "source": "video4"
+  },
+  {
+   "text": "al",
+   "start": 36.247,
+   "end": 36.327,
+   "source": "video4"
+  },
+  {
+   "text": "commerciale",
+   "start": 36.367,
+   "end": 36.767,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 36.807,
+   "end": 36.867,
+   "source": "video4"
+  },
+  {
+   "text": "giro",
+   "start": 36.907,
+   "end": 37.047,
+   "source": "video4"
+  },
+  {
+   "text": "dai",
+   "start": 37.087,
+   "end": 37.167,
+   "source": "video4"
+  },
+  {
+   "text": "clienti,",
+   "start": 37.207,
+   "end": 37.587,
+   "source": "video4"
+  },
+  {
+   "text": "sa",
+   "start": 37.727,
+   "end": 37.907,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 37.947,
+   "end": 38.007,
+   "source": "video4"
+  },
+  {
+   "text": "un",
+   "start": 38.047,
+   "end": 38.107,
+   "source": "video4"
+  },
+  {
+   "text": "attimo",
+   "start": 38.167,
+   "end": 38.427,
+   "source": "video4"
+  },
+  {
+   "text": "cosa",
+   "start": 38.467,
+   "end": 38.647,
+   "source": "video4"
+  },
+  {
+   "text": "c'è",
+   "start": 38.707,
+   "end": 38.927,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 38.967,
+   "end": 39.027,
+   "source": "video4"
+  },
+  {
+   "text": "cosa",
+   "start": 39.087,
+   "end": 39.247,
+   "source": "video4"
+  },
+  {
+   "text": "manca,",
+   "start": 39.287,
+   "end": 39.587,
+   "source": "video4"
+  },
+  {
+   "text": "direttamente",
+   "start": 39.727,
+   "end": 40.407,
+   "source": "video4"
+  },
+  {
+   "text": "dal",
+   "start": 40.447,
+   "end": 40.567,
+   "source": "video4"
+  },
+  {
+   "text": "telefono.",
+   "start": 40.607,
+   "end": 41.007,
+   "source": "video4"
+  },
+  {
+   "text": "Se",
+   "start": 41.16,
+   "end": 41.2,
+   "source": "video4"
+  },
+  {
+   "text": "hai",
+   "start": 41.24,
+   "end": 41.32,
+   "source": "video4"
+  },
+  {
+   "text": "una",
+   "start": 41.32,
+   "end": 41.44,
+   "source": "video4"
+  },
+  {
+   "text": "piccola",
+   "start": 41.46,
+   "end": 41.7,
+   "source": "video4"
+  },
+  {
+   "text": "azienda",
+   "start": 41.74,
+   "end": 42.2,
+   "source": "video4"
+  },
+  {
+   "text": "è",
+   "start": 42.28,
+   "end": 42.32,
+   "source": "video4"
+  },
+  {
+   "text": "tempo",
+   "start": 42.36,
+   "end": 42.6,
+   "source": "video4"
+  },
+  {
+   "text": "che",
+   "start": 42.62,
+   "end": 42.7,
+   "source": "video4"
+  },
+  {
+   "text": "recuperi",
+   "start": 42.74,
+   "end": 43.2,
+   "source": "video4"
+  },
+  {
+   "text": "ogni",
+   "start": 43.28,
+   "end": 43.42,
+   "source": "video4"
+  },
+  {
+   "text": "singolo",
+   "start": 43.48,
+   "end": 43.78,
+   "source": "video4"
+  },
+  {
+   "text": "giorno.",
+   "start": 43.82,
+   "end": 44.12,
+   "source": "video4"
+  },
+  {
+   "text": "Qual",
+   "start": 44.26,
+   "end": 44.36,
+   "source": "video4"
+  },
+  {
+   "text": "è",
+   "start": 44.4,
+   "end": 44.42,
+   "source": "video4"
+  },
+  {
+   "text": "il",
+   "start": 44.44,
+   "end": 44.46,
+   "source": "video4"
+  },
+  {
+   "text": "lavoro",
+   "start": 44.5,
+   "end": 44.74,
+   "source": "video4"
+  },
+  {
+   "text": "che",
+   "start": 44.78,
+   "end": 44.84,
+   "source": "video4"
+  },
+  {
+   "text": "ti",
+   "start": 44.88,
+   "end": 44.96,
+   "source": "video4"
+  },
+  {
+   "text": "fa",
+   "start": 45.0,
+   "end": 45.1,
+   "source": "video4"
+  },
+  {
+   "text": "perdere",
+   "start": 45.14,
+   "end": 45.44,
+   "source": "video4"
+  },
+  {
+   "text": "più",
+   "start": 45.46,
+   "end": 45.54,
+   "source": "video4"
+  },
+  {
+   "text": "tempo",
+   "start": 45.58,
+   "end": 45.8,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 45.82,
+   "end": 45.88,
+   "source": "video4"
+  },
+  {
+   "text": "azienda?",
+   "start": 45.92,
+   "end": 46.32,
+   "source": "video4"
+  },
+  {
+   "text": "Scrivilo",
+   "start": 46.58,
+   "end": 46.9,
+   "source": "video4"
+  },
+  {
+   "text": "nei",
+   "start": 46.92,
+   "end": 47.02,
+   "source": "video4"
+  },
+  {
+   "text": "commenti,",
+   "start": 47.06,
+   "end": 47.48,
+   "source": "video4"
+  },
+  {
+   "text": "magari",
+   "start": 47.6,
+   "end": 47.98,
+   "source": "video4"
+  },
+  {
+   "text": "si",
+   "start": 48.04,
+   "end": 48.14,
+   "source": "video4"
+  },
+  {
+   "text": "può",
+   "start": 48.16,
+   "end": 48.22,
+   "source": "video4"
+  },
+  {
+   "text": "automatizzare.",
+   "start": 48.26,
+   "end": 48.88,
+   "source": "video4"
+  }
+ ]
+}

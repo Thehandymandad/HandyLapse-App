@@ -1,0 +1,742 @@
+{
+ "video": "video4",
+ "engine": "hyperframes",
+ "style": "pulse",
+ "canvas": {
+  "width": 1080,
+  "height": 1920,
+  "fps": 30
+ },
+ "duration": 50.333,
+ "hold": 1.3,
+ "face": {
+  "x": 0.5,
+  "y": 0.42,
+  "note": "iPhone: cornice x 80–1000, y 900–1700; grafiche y 250–760; sottotitoli y≈830; sfondo sostituito con uno studio da programmatore (background.py)"
+ },
+ "styleOverrides": {
+  "grade": {
+   "brightness": 1,
+   "contrast": 1.04,
+   "saturation": 1.04,
+   "warmth": 0,
+   "vignette": 0.15
+  },
+  "captions": {
+   "positionY": 0.432,
+   "fontSize": 84,
+   "uppercase": false,
+   "maxCharsPerLine": 10
+  },
+  "motion": {
+   "theme": "light"
+  }
+ },
+ "frame": {
+  "x": 80,
+  "y": 900,
+  "w": 920,
+  "h": 800,
+  "radius": 56,
+  "border": 7,
+  "zoom": 1.0,
+  "faceY": 0.42,
+  "faceAt": 0.4
+ },
+ "captions": {
+  "style": "pulse",
+  "emphasis": [
+   15,
+   37,
+   44,
+   55,
+   71,
+   81,
+   105,
+   118,
+   142,
+   151,
+   173
+  ],
+  "words": "edit/words_out.json"
+ },
+ "scenes": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.45,
+   "line": "Quante volte al giorno in azienda qualcuno chiede: «Ce l'abbiamo questo pezzo?»",
+   "action": "Le domande arrivano in chat una dopo l'altra, alternate, le vecchie salgono; l'ultima è proprio «Ce l'abbiamo questo pezzo?». ",
+   "graphic": {
+    "type": "bubbles",
+    "props": {
+     "items": [
+      {
+       "at": 0.1,
+       "name": "Commerciale",
+       "text": "Avete la lastra da 3 mm?"
+      },
+      {
+       "at": 0.8,
+       "name": "Cliente",
+       "text": "Quante ne restano?"
+      },
+      {
+       "at": 1.58,
+       "name": "Ufficio",
+       "text": "È arrivato il profilo?"
+      },
+      {
+       "at": 2.34,
+       "name": "Collega",
+       "text": "Ce l'abbiamo questo pezzo?"
+      }
+     ]
+    },
+    "y": 0.29
+   },
+   "payoff": {
+    "word": "pezzo",
+    "t": 2.34
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "bolla-1"
+    },
+    {
+     "t": 0.8,
+     "name": "bolla-2"
+    },
+    {
+     "t": 1.58,
+     "name": "bolla-3"
+    },
+    {
+     "t": 2.34,
+     "name": "bolla-4"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.5,
+   "end": 8.15,
+   "line": "E parte la caccia. Apri l'Excel del magazzino, scorri centinaia di righe, controlli la misura,",
+   "action": "Il foglio Excel del magazzino entra; su «scorri» le righe volano (centinaia) e frenano; su «misura» si illumina la colonna Misura.",
+   "graphic": {
+    "type": "sheet",
+    "props": {
+     "title": "Magazzino.xlsx",
+     "rows": [
+      [
+       "Lastra PMMA trasparente",
+       "3 mm",
+       "24",
+       "B3"
+      ],
+      [
+       "Lastra PMMA opale",
+       "5 mm",
+       "12",
+       "B4"
+      ],
+      [
+       "Lastra policarbonato",
+       "4 mm",
+       "8",
+       "C1"
+      ],
+      [
+       "Profilo alluminio",
+       "20×20",
+       "140",
+       "D2"
+      ],
+      [
+       "Viti inox M8",
+       "40 mm",
+       "350",
+       "A1"
+      ],
+      [
+       "Pannello forex bianco",
+       "10 mm",
+       "16",
+       "C3"
+      ],
+      [
+       "Tubo PVC",
+       "Ø 32",
+       "60",
+       "E2"
+      ]
+     ],
+     "scrollAt": [
+      5.95,
+      7.15
+     ],
+     "highlightAt": 7.71,
+     "highlightCol": 1
+    },
+    "y": 0.265,
+    "scale": 0.92
+   },
+   "payoff": {
+    "word": "misura",
+    "t": 7.71
+   },
+   "sfx": [
+    {
+     "t": 3.5,
+     "name": "foglio-entra"
+    },
+    {
+     "t": 5.95,
+     "name": "righe-scorrono"
+    },
+    {
+     "t": 7.71,
+     "name": "colonna-misura"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 8.18,
+   "end": 9.42,
+   "line": "chiami chi sta in magazzino",
+   "action": "Tessera 3D col telefono che atterra girando: CHIAMI IL MAGAZZINO.",
+   "graphic": {
+    "type": "icon3d",
+    "props": {
+     "items": [
+      {
+       "icon": "phone",
+       "label": "CHIAMI IL MAGAZZINO",
+       "at": 8.21
+      }
+     ]
+    },
+    "y": 0.26
+   },
+   "payoff": {
+    "word": "chiami",
+    "t": 8.21
+   },
+   "sfx": [
+    {
+     "t": 8.21,
+     "name": "tessera-telefono-chiama"
+    },
+    {
+     "t": 8.56,
+     "name": "squillo"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 9.45,
+   "end": 11.0,
+   "line": "e intanto è passato un quarto d'ora.",
+   "action": "Scheda stile referenza (pillola INTANTO, orologio, «Per una sola domanda», 15 minuti), barra che si riempie fino a «quarto».",
+   "graphic": {
+    "type": "idcard",
+    "props": {
+     "tag": "INTANTO",
+     "icon": "clock",
+     "kicker": "Per una sola domanda",
+     "title": "15 minuti",
+     "bar": 0.95,
+     "barAt": 9.49
+    },
+    "y": 0.265,
+    "scale": 0.95
+   },
+   "payoff": {
+    "word": "quarto",
+    "t": 10.41
+   },
+   "sfx": [
+    {
+     "t": 9.45,
+     "name": "scheda-entra-2"
+    },
+    {
+     "t": 10.41,
+     "name": "orologio"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 11.03,
+   "end": 19.18,
+   "line": "Ora immagina di scrivere su WhatsApp: «Lastre 3 millimetri trasparente, quanti ne abbiamo?» E in due secondi ti arriva la risposta, quanti pezzi hai e dove sono.",
+   "action": "Chat WhatsApp col Magazzino: il messaggio si scrive mentre lo dici e parte su «abbiamo»; il bot «sta scrivendo» e su «risposta» arriva: 24 pezzi, scaffale B3; «24 pezzi» si evidenzia su «quanti pezzi», «scaffale B3» su «dove sono».",
+   "graphic": {
+    "type": "whatsapp",
+    "props": {
+     "name": "Magazzino",
+     "status": "online",
+     "messages": [
+      {
+       "from": "me",
+       "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
+       "typeFrom": 11.86,
+       "at": 15.58
+      },
+      {
+       "from": "bot",
+       "text": "**Lastra PMMA trasparente 3 mm**\n24 pezzi · scaffale B3",
+       "at": 16.91
+      }
+     ],
+     "highlights": [
+      {
+       "at": 17.67,
+       "text": "24 pezzi"
+      },
+      {
+       "at": 18.63,
+       "text": "scaffale B3"
+      }
+     ]
+    },
+    "y": 0.27,
+    "scale": 0.94
+   },
+   "payoff": {
+    "word": "risposta",
+    "t": 16.91
+   },
+   "sfx": [
+    {
+     "t": 11.03,
+     "name": "chat-entra"
+    },
+    {
+     "t": 11.86,
+     "name": "digita-messaggio"
+    },
+    {
+     "t": 15.58,
+     "name": "invio-messaggio"
+    },
+    {
+     "t": 16.91,
+     "name": "risposta-messaggio"
+    },
+    {
+     "t": 17.67,
+     "name": "evidenzia-pezzi"
+    },
+    {
+     "t": 18.63,
+     "name": "evidenzia-scaffale"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 19.2,
+   "end": 21.97,
+   "line": "Si può fare, si collega l'Excel che usi già a WhatsApp.",
+   "action": "Due tessere 3D: EXCEL (verde foglio) su «l'Excel», WHATSAPP (verde chat) su «WhatsApp», poi una linea d'accento le collega con impulsi che corrono.",
+   "graphic": {
+    "type": "icon3d",
+    "props": {
+     "items": [
+      {
+       "icon": "sheet",
+       "label": "EXCEL",
+       "at": 20.25,
+       "color": "#1F7A4C"
+      },
+      {
+       "icon": "chat",
+       "label": "WHATSAPP",
+       "at": 21.49,
+       "color": "#22B35E"
+      }
+     ],
+     "linkAt": 21.74
+    },
+    "y": 0.26
+   },
+   "payoff": {
+    "word": "WhatsApp",
+    "t": 21.49
+   },
+   "sfx": [
+    {
+     "t": 20.25,
+     "name": "tessera-excel"
+    },
+    {
+     "t": 21.49,
+     "name": "tessera-whatsapp"
+    },
+    {
+     "t": 21.74,
+     "name": "collega-ping"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 22.0,
+   "end": 24.2,
+   "line": "niente programmi nuovi, niente gestionali da imparare.",
+   "action": "Due timbri rossi uno sotto l'altro: 0 PROGRAMMI NUOVI su «niente», 0 GESTIONALI su «gestionali».",
+   "graphic": {
+    "type": "zero",
+    "props": {
+     "items": [
+      {
+       "at": 22.03,
+       "text": "0 programmi nuovi"
+      },
+      {
+       "at": 23.27,
+       "text": "0 gestionali"
+      }
+     ]
+    },
+    "y": 0.27,
+    "scale": 0.95
+   },
+   "payoff": {
+    "word": "gestionali",
+    "t": 23.27
+   },
+   "sfx": [
+    {
+     "t": 22.03,
+     "name": "timbro-1"
+    },
+    {
+     "t": 23.27,
+     "name": "timbro-2"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 24.23,
+   "end": 29.25,
+   "line": "E non serve solo a cercare. Arriva un pezzo nuovo, lo scrivi in chat, nome, misura, quantità,",
+   "action": "La chat torna: su «lo scrivi» si scrive il pezzo nuovo, il nome, la misura e la quantità compaiono mentre li dici, poi il messaggio parte.",
+   "graphic": {
+    "type": "whatsapp",
+    "props": {
+     "name": "Magazzino",
+     "status": "online",
+     "messages": [
+      {
+       "from": "me",
+       "text": "Nuovo: Lastra PMMA opale · 5 mm · 10 pz",
+       "typeFrom": 26.92,
+       "at": 28.86
+      }
+     ]
+    },
+    "y": 0.27,
+    "scale": 0.94
+   },
+   "payoff": {
+    "word": "quantità",
+    "t": 28.56
+   },
+   "sfx": [
+    {
+     "t": 24.23,
+     "name": "chat-entra-2"
+    },
+    {
+     "t": 26.92,
+     "name": "digita-nuovo"
+    },
+    {
+     "t": 28.86,
+     "name": "invio-nuovo"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 29.27,
+   "end": 34.09,
+   "line": "e viene aggiunto da solo nell'Excel. Hai preso delle lastre nuove? Lo scrivi e la quantità si aggiorna.",
+   "action": "Il foglio: su «da solo» entra in cima la riga NUOVO (Lastra PMMA opale, 5 mm, 10); su «aggiorna» la quantità della lastra trasparente lampeggia e sale da 24 a 34.",
+   "graphic": {
+    "type": "sheet",
+    "props": {
+     "title": "Magazzino.xlsx",
+     "rows": [
+      [
+       "Lastra PMMA trasparente",
+       "3 mm",
+       "24",
+       "B3"
+      ],
+      [
+       "Lastra PMMA opale",
+       "5 mm",
+       "12",
+       "B4"
+      ],
+      [
+       "Lastra policarbonato",
+       "4 mm",
+       "8",
+       "C1"
+      ],
+      [
+       "Profilo alluminio",
+       "20×20",
+       "140",
+       "D2"
+      ],
+      [
+       "Viti inox M8",
+       "40 mm",
+       "350",
+       "A1"
+      ],
+      [
+       "Pannello forex bianco",
+       "10 mm",
+       "16",
+       "C3"
+      ],
+      [
+       "Tubo PVC",
+       "Ø 32",
+       "60",
+       "E2"
+      ]
+     ],
+     "addAt": 29.87,
+     "addRow": [
+      "Lastra PMMA opale",
+      "5 mm",
+      "10",
+      "B4"
+     ],
+     "updateAt": 33.62,
+     "updateRow": 0,
+     "updateCol": 2,
+     "updateTo": 34
+    },
+    "y": 0.265,
+    "scale": 0.92
+   },
+   "payoff": {
+    "word": "aggiorna",
+    "t": 33.62
+   },
+   "sfx": [
+    {
+     "t": 29.27,
+     "name": "foglio-entra-2"
+    },
+    {
+     "t": 29.87,
+     "name": "riga-aggiunta"
+    },
+    {
+     "t": 33.62,
+     "name": "quantita-sale"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 34.12,
+   "end": 41.12,
+   "line": "Così chiunque in azienda, dal magazzino al commerciale in giro dai clienti, sa in un attimo cosa c'è e cosa manca, direttamente dal telefono.",
+   "action": "Quattro tessere 3D: CHIUNQUE su «chiunque», MAGAZZINO, COMMERCIALE (auto), poi su «sa in un attimo» la linea le collega e su «telefono» arriva TELEFONO.",
+   "graphic": {
+    "type": "icon3d",
+    "props": {
+     "items": [
+      {
+       "icon": "family",
+       "label": "CHIUNQUE",
+       "at": 34.43
+      },
+      {
+       "icon": "house",
+       "label": "MAGAZZINO",
+       "at": 35.61
+      },
+      {
+       "icon": "car",
+       "label": "COMMERCIALE",
+       "at": 36.37
+      },
+      {
+       "icon": "phone",
+       "label": "TELEFONO",
+       "at": 40.61
+      }
+     ],
+     "linkAt": 37.73
+    },
+    "y": 0.26
+   },
+   "payoff": {
+    "word": "telefono",
+    "t": 40.61
+   },
+   "sfx": [
+    {
+     "t": 34.43,
+     "name": "tessera-chiunque"
+    },
+    {
+     "t": 35.61,
+     "name": "tessera-magazzino"
+    },
+    {
+     "t": 36.37,
+     "name": "tessera-commerciale"
+    },
+    {
+     "t": 37.73,
+     "name": "collega-2"
+    },
+    {
+     "t": 40.61,
+     "name": "tessera-telefono"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 41.14,
+   "end": 44.21,
+   "line": "Se hai una piccola azienda è tempo che recuperi ogni singolo giorno.",
+   "action": "Scheda: pillola PICCOLA AZIENDA, orologio, «Ogni singolo giorno», «Tempo perso» che su «recuperi» diventa «Tempo recuperato» (pillola d'accento), barra piena.",
+   "graphic": {
+    "type": "idcard",
+    "props": {
+     "tag": "PICCOLA AZIENDA",
+     "tag2": "RECUPERATO",
+     "icon": "clock",
+     "kicker": "Ogni singolo giorno",
+     "title": "Tempo perso",
+     "title2": "Tempo recuperato",
+     "swapAt": 42.74,
+     "bar": 1.0,
+     "barAt": 42.74
+    },
+    "y": 0.265,
+    "scale": 0.95
+   },
+   "payoff": {
+    "word": "recuperi",
+    "t": 42.74
+   },
+   "sfx": [
+    {
+     "t": 41.14,
+     "name": "scheda-entra-3"
+    },
+    {
+     "t": 42.74,
+     "name": "tempo-recuperato"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 44.24,
+   "end": 51.0,
+   "line": "Qual è il lavoro che ti fa perdere più tempo in azienda? Scrivilo nei commenti, magari si può automatizzare.",
+   "action": "Box commenti: su «Scrivilo» si scrive «L'INVENTARIO», parte su «commenti», su «automatizzare» arriva la risposta «Si può automatizzare ✓»; fermo finale.",
+   "graphic": {
+    "type": "dm",
+    "text": "L'inventario",
+    "props": {
+     "name": "Commenti",
+     "placeholder": "Aggiungi un commento…",
+     "sentLabel": "Pubblicato",
+     "typeAt": 46.58,
+     "sendAt": 47.36,
+     "replyAt": 48.26,
+     "reply": "Si può automatizzare ✓"
+    },
+    "y": 0.265,
+    "scale": 0.9
+   },
+   "payoff": {
+    "word": "automatizzare",
+    "t": 48.26
+   },
+   "sfx": [
+    {
+     "t": 44.24,
+     "name": "commenti-apre"
+    },
+    {
+     "t": 46.58,
+     "name": "digita-guida"
+    },
+    {
+     "t": 47.36,
+     "name": "pubblica"
+    },
+    {
+     "t": 48.26,
+     "name": "risposta-dm"
+    }
+   ]
+  }
+ ],
+ "objects": [],
+ "camera": [
+  {
+   "type": "punch",
+   "t": 3.99,
+   "strength": 0.7
+  },
+  {
+   "type": "punch",
+   "t": 10.41,
+   "strength": 0.8
+  },
+  {
+   "type": "punch",
+   "t": 15.95,
+   "strength": 0.6
+  },
+  {
+   "type": "punch",
+   "t": 23.27,
+   "strength": 0.8
+  },
+  {
+   "type": "punch",
+   "t": 29.87,
+   "strength": 0.6
+  },
+  {
+   "type": "punch",
+   "t": 40.61,
+   "strength": 0.7
+  },
+  {
+   "type": "punch",
+   "t": 48.26,
+   "strength": 0.9
+  }
+ ],
+ "music": {
+  "file": "editor/assets/music/tech-pulse-video4.wav",
+  "gap": 9,
+  "note": "composta in locale: python .claude/skills/motion-hyperframes/scripts/music.py -o editor/assets/music/tech-pulse-video4.wav --duration 46.133 --bpm 120 --end 44.6"
+ }
+}

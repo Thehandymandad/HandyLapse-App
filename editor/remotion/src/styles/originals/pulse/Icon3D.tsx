@@ -49,8 +49,8 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const items = ((Array.isArray(g.props?.items) ? g.props!.items : [{ icon: g.icon ?? "spark", label: g.text, at: 6 }]) as Item[]).slice(0, 4);
   const n = items.length;
   // con 4 tessere più strette e più piccole, così stanno tutte nella fascia
-  const gap = n >= 4 ? 1.38 : 2.25;
-  const tile = n >= 4 ? 0.7 : 1;
+  const gap = n >= 4 ? 1.38 : n === 3 ? 1.72 : 2.25;
+  const tile = n >= 4 ? 0.7 : n === 3 ? 0.85 : 1;
   const out = interpolate(f, [g.frames - 7, g.frames], [0, 1], clamp);
   const ref = useThreeStage(
     f,
@@ -110,7 +110,7 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           const k = interpolate(f, [at, at + 6], [0, 1], clamp);
           const x = W / 2 + (i - (n - 1) / 2) * gap * PX;
           return it.label ? (
-            <div key={i} style={{ position: "absolute", left: x, top: H - (n >= 4 ? 70 : 4), transform: `translate(-50%, ${(1 - k) * 20}px)`, opacity: k, fontFamily: INTER, fontWeight: 900, fontSize: n >= 4 ? 28 : 34, letterSpacing: n >= 4 ? 1 : 2, color: P.fg, whiteSpace: "nowrap", textShadow: P.theme === "light" ? "none" : "0 3px 12px rgba(0,0,0,0.6)" }}>
+            <div key={i} style={{ position: "absolute", left: x, top: H - (n >= 4 ? 70 : n === 3 ? 40 : 4), transform: `translate(-50%, ${(1 - k) * 20}px)`, opacity: k, fontFamily: INTER, fontWeight: 900, fontSize: n >= 4 ? 24 : n === 3 ? 28 : 34, letterSpacing: n >= 3 ? 0.5 : 2, color: P.fg, whiteSpace: "nowrap", textShadow: P.theme === "light" ? "none" : "0 3px 12px rgba(0,0,0,0.6)" }}>
               {it.label}
             </div>
           ) : null;
