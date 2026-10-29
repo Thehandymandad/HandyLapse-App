@@ -4,7 +4,7 @@ import type { GraphicEvent } from "../../../lib/timeline";
 import { clamp, INTER, P } from "./shared";
 
 /**
- * "...gliel'ho mandato": un aeroplanino di carta attraversa lo schermo in curva lasciando una scia lime tratteggiata,
+ * "...gliel'ho mandato": un aeroplanino di carta attraversa lo schermo in curva lasciando una scia accento tratteggiata,
  * sotto compare "INVIATO". props.flyFrames = durata del volo, props.label.
  */
 const bez = (t: number, a: number, b: number, c: number, d: number) => (1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t * t * c + t ** 3 * d;
@@ -28,7 +28,7 @@ export const PaperPlane: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   return (
     <AbsoluteFill style={{ opacity: fade }}>
       <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
-        <path d={d} fill="none" stroke={P.lime} strokeWidth={9} strokeDasharray="22 18" strokeLinecap="round" opacity={0.9} style={{ filter: `drop-shadow(0 0 10px ${P.lime})` }} />
+        <path d={d} fill="none" stroke={P.accent} strokeWidth={9} strokeDasharray="22 18" strokeLinecap="round" opacity={0.9} style={{ filter: `drop-shadow(0 0 10px ${P.accent})` }} />
       </svg>
       {t < 1 && (
         <div style={{ position: "absolute", left: x - 90, top: y - 90, transform: `rotate(${angle + 45}deg) scale(${1 + Math.sin(t * Math.PI) * 0.35})`, filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))" }}>
@@ -47,7 +47,7 @@ export const PaperPlane: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           display: "flex",
           alignItems: "center",
           gap: 16,
-          background: P.lime,
+          background: P.accent,
           color: P.ink,
           fontFamily: INTER,
           fontWeight: 900,

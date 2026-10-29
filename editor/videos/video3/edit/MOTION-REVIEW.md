@@ -1,4 +1,4 @@
-# Motion review — video3 (HyperFrames + camera.py, stile Pulse)
+# Motion review — video3 (HyperFrames + camera.py, stile Pulse con cornice, accento arancione)
 
 Video: `final.mp4` — 33,93 s (32,63 s di montato + 1,3 s di fermo). Fogli: `review/sheet_01.jpg` … `sheet_09.jpg`,
 still prima del render in `review/stills/sheet.jpg`.
@@ -23,6 +23,7 @@ Master −14,0 LUFS, true peak −1,5 dBFS. Voce −15,7 LUFS; 27 effetti, tutti
 | 4,9–5,2 | I pezzi della pila attraversano il viso mentre cadono (0,3 s) | è il movimento dello stile Pulse: lasciato | accettato |
 | tutto | Footage un fotogramma avanti rispetto alla voce (setpts azzerava i 21 ms di ritardo del video) | camera.py legge con i tempi assoluti (`fps=30:start_time=0`) | corretto |
 | 6,0 · 13,1 · 14,8 · 25,5 · 29,5 | Fondo nero ai lati durante i whip sui tagli | `camera.py`: bordi del video allungati e sfocati in orizzontale (scia), il fondo Pulse resta solo dietro il telefono | corretto |
+| tutto | Richiesta dell'utente: accento arancione Claude elettrico al posto del lime, parlato dentro una cornice con bordo arancione sfocato, grafiche solo fuori | palette `P.accent` #FF6633, `frame` nel piano, maschera `OutsideFrame`, `result` al posto del telefono | fatto |
 | 28,9 | Copertina della guida con «CLAUDE CODE · REMOTION» | `footer` del componente, default «CLAUDE CODE · HYPERFRAMES» | corretto |
 
 ## Checklist prima di pubblicare

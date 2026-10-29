@@ -6,7 +6,7 @@ import { ANTON, clamp, INTER, P } from "./shared";
 /**
  * "Tre strumenti: uno trascrive, uno taglia, uno anima… il segreto è come li fai lavorare insieme":
  * tre tessere coperte ("?") che si girano una alla volta (props.reveal: frame relativi) senza dire quali strumenti sono,
- * poi un lucchetto "SEGRETO" (props.secretAt) e la scia lime che le collega (props.connectAt).
+ * poi un lucchetto "SEGRETO" (props.secretAt) e la scia accento che le collega (props.connectAt).
  */
 const TILE = 250;
 const GAP = 320;
@@ -51,11 +51,11 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const unlocked = connectAt !== null && f >= connectAt;
   return (
     <AbsoluteFill style={{ opacity: 1 - out, transform: `scale(${1 + out * 0.1})` }}>
-      {/* collegamento: scia lime con impulsi che corrono tra le tessere */}
+      {/* collegamento: scia accento con impulsi che corrono tra le tessere */}
       <svg width={width} height={height} style={{ position: "absolute", inset: 0 }}>
         {link > 0 && (
           <>
-            <line x1={xs[0]} y1={cy} x2={xs[0] + (xs[2] - xs[0]) * link} y2={cy} stroke={P.lime} strokeWidth={14} strokeLinecap="round" style={{ filter: `drop-shadow(0 0 18px ${P.lime})` }} />
+            <line x1={xs[0]} y1={cy} x2={xs[0] + (xs[2] - xs[0]) * link} y2={cy} stroke={P.accent} strokeWidth={14} strokeLinecap="round" style={{ filter: `drop-shadow(0 0 18px ${P.accent})` }} />
             {[0, 1, 2].map((k) => {
               const p = ((f - (connectAt ?? 0)) / 14 + k / 3) % 1;
               return <circle key={k} cx={xs[0] + (xs[2] - xs[0]) * p * link} cy={cy} r={16} fill={P.white} opacity={link} />;
@@ -87,9 +87,9 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 width: "100%",
                 height: "100%",
                 borderRadius: 44,
-                background: showFront ? P.lime : P.glass,
-                border: `3px solid ${showFront ? P.lime : "rgba(255,255,255,0.18)"}`,
-                boxShadow: `0 30px 70px rgba(0,0,0,0.55)${glow ? `, 0 0 70px ${P.lime}` : ""}`,
+                background: showFront ? P.accent : P.glass,
+                border: `3px solid ${showFront ? P.accent : "rgba(255,255,255,0.18)"}`,
+                boxShadow: `0 30px 70px rgba(0,0,0,0.55)${glow ? `, 0 0 70px ${P.accent}` : ""}`,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -123,9 +123,9 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             display: "flex",
             alignItems: "center",
             gap: 14,
-            background: unlocked ? P.lime : P.ink,
-            color: unlocked ? P.ink : P.lime,
-            border: `3px solid ${P.lime}`,
+            background: unlocked ? P.accent : P.ink,
+            color: unlocked ? P.ink : P.accent,
+            border: `3px solid ${P.accent}`,
             fontFamily: INTER,
             fontWeight: 900,
             fontSize: 34,
@@ -136,8 +136,8 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           }}
         >
           <svg width={40} height={40} viewBox="0 0 24 24">
-            <rect x={4} y={10.5} width={16} height={11} rx={2.5} fill={unlocked ? P.ink : P.lime} />
-            <path d={unlocked ? "M8 10.5V7a4 4 0 0 1 7.6-1.7" : "M8 10.5V7a4 4 0 0 1 8 0v3.5"} fill="none" stroke={unlocked ? P.ink : P.lime} strokeWidth={2.4} strokeLinecap="round" />
+            <rect x={4} y={10.5} width={16} height={11} rx={2.5} fill={unlocked ? P.ink : P.accent} />
+            <path d={unlocked ? "M8 10.5V7a4 4 0 0 1 7.6-1.7" : "M8 10.5V7a4 4 0 0 1 8 0v3.5"} fill="none" stroke={unlocked ? P.ink : P.accent} strokeWidth={2.4} strokeLinecap="round" />
           </svg>
           {(g.props?.secretLabel as string) ?? "IL SEGRETO"}
         </div>

@@ -1,6 +1,6 @@
 # Accenti (linee, segni, luci, particelle)
 
-Piccoli gesti che sottolineano. Sempre in lime o bianco, tratto 8–12 px con estremità arrotondate.
+Piccoli gesti che sottolineano. Sempre in d'accento o bianco, tratto 8–12 px con estremità arrotondate.
 
 ### accenti/spunta-disegnata
 - **Verbi**: sì, fatto, giusto, risolto.
@@ -29,7 +29,7 @@ Piccoli gesti che sottolineano. Sempre in lime o bianco, tratto 8–12 px con es
 
 ### accenti/linea-che-collega
 - **Verbi**: unire, collegare, insieme, sistema.
-- **Come**: linea lime spessa che si disegna tra due o più elementi; poi 2–3 impulsi (cerchi bianchi) la percorrono in
+- **Come**: linea d'accento spessa che si disegna tra due o più elementi; poi 2–3 impulsi (cerchi bianchi) la percorrono in
   loop finito; gli elementi collegati si illuminano.
 - **Suono**: riser elettrico + tocco a ogni nodo.
 - **Difetti**: linea che passa sopra il testo degli elementi.
@@ -37,7 +37,7 @@ Piccoli gesti che sottolineano. Sempre in lime o bianco, tratto 8–12 px con es
 ### accenti/aeroplanino-scia
 - **Verbi**: inviare, mandare, partire.
 - **Come**: aeroplanino di carta su curva di Bézier (dal basso a sinistra a fuori in alto a destra) in 0,8 s
-  `power2.inOut`, ruotato lungo la tangente; scia lime tratteggiata che si disegna dietro; chip "INVIATO" che compare.
+  `power2.inOut`, ruotato lungo la tangente; scia d'accento tratteggiata che si disegna dietro; chip "INVIATO" che compare.
 - **Suono**: swoosh di carta.
 - **Difetti**: aeroplanino che vola all'indietro (orientamento sbagliato rispetto alla tangente).
 
@@ -47,7 +47,7 @@ Piccoli gesti che sottolineano. Sempre in lime o bianco, tratto 8–12 px con es
 - **Suono**: whoosh rapido.
 - **Difetti**: linee sopra il viso troppo a lungo.
 
-### accenti/burst-lime
+### accenti/burst-accento
 - **Verbi**: fatto!, boom, successo.
 - **Come**: 8–12 tratti radiali corti che partono dal centro dell'evento (`scaleX 0→1→0`, 0,35 s) + cerchio che si
   allarga e svanisce.

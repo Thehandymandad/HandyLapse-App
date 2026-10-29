@@ -52,13 +52,13 @@ l'oggetto si alza. La "rotazione 3D" di un PNG si finge: `rotationY` ±25° con 
 ### oggetto/incastro
 - **Verbi**: unire, collegare, insieme, funziona.
 - **Come**: due pezzi (puzzle, mattoncini) entrano dai lati opposti, si fermano a 40 px, pausa 0,15 s, poi si
-  incastrano in 0,12 s `power4.in`; impatto `scale 1.06→1`, burst lime dal punto di contatto.
+  incastrano in 0,12 s `power4.in`; impatto `scale 1.06→1`, burst d'accento dal punto di contatto.
 - **Suono**: click di plastica pieno.
 - **Difetti**: incastro senza la pausa prima (manca la tensione).
 
 ### oggetto/taglio-netto
 - **Verbi**: tagliare, eliminare, separare.
-- **Come**: l'oggetto è diviso da un `clip-path` lungo una diagonale; una lama/linea lime attraversa in 0,12 s; le due
+- **Come**: l'oggetto è diviso da un `clip-path` lungo una diagonale; una lama/linea d'accento attraversa in 0,12 s; le due
   metà scivolano ±40 px e ruotano ±6° in 0,35 s `power3.out`.
 - **Suono**: taglio metallico (swish + tick).
 - **Difetti**: linea di taglio che non coincide con la separazione.
@@ -72,7 +72,7 @@ l'oggetto si alza. La "rotazione 3D" di un PNG si finge: `rotationY` ±25° con 
 ### oggetto/scatola-si-apre
 - **Verbi**: rivelare, regalo, scoprire, dentro c'è.
 - **Come**: scatola chiusa trema (±3° per 0,4 s, 3 scatti), coperchio salta `y -220` e ruota 25° `power3.out`, da dentro
-  luce lime (cono, gradiente) e l'oggetto rivelato sale con `back.out`.
+  luce d'accento (cono, gradiente) e l'oggetto rivelato sale con `back.out`.
 - **Suono**: tremolio + pop del coperchio + scintilla.
 - **Difetti**: rivelare prima che venga detta la parola.
 

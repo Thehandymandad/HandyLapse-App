@@ -38,20 +38,20 @@ Solo numeri detti nel parlato o forniti dall'utente: mai inventati. Le cifre usa
 ### dati/barra-che-sale
 - **Verbi**: crescere, confronto tra quantità.
 - **Come**: barre verticali che crescono dal basso (`scaleY 0→1`, origine in basso) sfalsate di 0,12 s, la barra
-  protagonista lime e le altre grigie; etichette mono sotto.
+  protagonista d'accento e le altre grigie; etichette mono sotto.
 - **Suono**: riser per barra.
 - **Difetti**: assi e griglie inutili (togli tutto ciò che non serve).
 
 ### dati/prima-dopo
 - **Verbi**: prima/dopo, confrontare, differenza.
-- **Come**: due colonne o due card; "prima" desaturata e piccola, "dopo" lime e più grande che entra 0,3 s dopo;
+- **Come**: due colonne o due card; "prima" desaturata e piccola, "dopo" d'accento e più grande che entra 0,3 s dopo;
   freccia o linea che le collega.
 - **Suono**: due toni (basso → alto).
 - **Difetti**: dare lo stesso peso visivo a prima e dopo.
 
 ### dati/griglia-icone
 - **Verbi**: tanti, quanti, uno su dieci.
-- **Come**: griglia di icone uguali che compaiono a ondata (diagonale); quelle che contano si accendono di lime.
+- **Come**: griglia di icone uguali che compaiono a ondata (diagonale); quelle che contano si accendono di accento.
 - **Suono**: raffica di tick leggeri.
 - **Difetti**: più di 30 icone (illeggibile su telefono).
 
@@ -64,13 +64,13 @@ Solo numeri detti nel parlato o forniti dall'utente: mai inventati. Le cifre usa
 
 ### dati/timeline-tagli
 - **Verbi**: montare, tagliare, editing.
-- **Come**: timeline orizzontale con forma d'onda; le pause (blocchi grigi) vengono tagliate e i blocchi lime si
+- **Come**: timeline orizzontale con forma d'onda; le pause (blocchi grigi) vengono tagliate e i blocchi d'accento si
   ricompattano verso sinistra (`x` sfalsato), la durata totale si accorcia (contatore).
 - **Suono**: forbici/tagli in raffica.
 - **Difetti**: forma d'onda finta che non somiglia al parlato (usa l'inviluppo audio reale se puoi).
 
 ### dati/classifica
 - **Verbi**: il migliore, primo, top.
-- **Come**: righe che entrano dal basso in ordine inverso (dal 3° al 1°), il primo arriva per ultimo più grande e lime.
+- **Come**: righe che entrano dal basso in ordine inverso (dal 3° al 1°), il primo arriva per ultimo più grande e accento.
 - **Suono**: tick per riga, colpo per il primo.
 - **Difetti**: classifiche inventate.

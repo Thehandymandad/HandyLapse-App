@@ -24,9 +24,9 @@ grafica rispetto al viso), i materiali, cosa NON fare. Se l'utente ha un riferim
 
 ```ts
 const P = {
-  lime: "#D4FF3A",                 // l'UNICA tinta d'accento
-  limeDim: "rgba(212,255,58,0.35)", // bagliori
-  ink: "#0A0B0E",                  // inchiostro: testo su lime, fondi
+  accent: "#FF6633",               // l'UNICA tinta d'accento: l'arancione del logo di Claude (#D97757) reso elettrico
+  accentDim: "rgba(255,102,51,0.35)", // bagliori
+  ink: "#0A0B0E",                  // inchiostro: testo su accento, fondi
   red: "#FF2E4D",                  // solo per un "no" esplicito (errore, divieto, timbro)
   white: "#FFFFFF",
   grey: "#8A8F98",                 // etichette secondarie
@@ -37,14 +37,33 @@ const P = {
 // Font (fontsource, locali): Anton 400 maiuscolo per sottotitoli, titoli e numeri; Inter 700–900 per UI ed etichette.
 ```
 
-- Sottotitoli Pulse: Anton 98 px maiuscolo, centro a y≈1123 (0,585), 2–3 parole, parola detta in lime, parole chiave
-  su etichetta lime con testo ink.
+Un altro accento per un solo video: `styleOverrides.motion.accentColor` nel piano (tutti i componenti lo seguono).
+
+### Layout della casa: la cornice
+
+```
+ y 0 ─────────────────────────────  (sopra y=280 lo copre Instagram)
+      fascia alta: le grafiche
+ y 580 ┌───────────────────────┐    cornice: x 150–930 (~1 cm per lato), y 580–1340,
+       │   il parlato (viso)   │    angoli 56 px, bordo 7 px arancione elettrico con alone sfocato
+       │                       │    (respira piano); il footage con la camera sta solo qui dentro
+ y 1340└───────────────────────┘
+      sottotitoli (centro y≈1405, Anton 86)
+ y 1560 ──────────────────────────  (sotto lo copre Instagram)
+```
+
+- Le grafiche si vedono **solo fuori dalla cornice** (maschera): fascia alta, margini laterali per accenti piccoli
+  (cuori, scintille), mai dentro. Una grafica che attraversa (aeroplanino, pezzi che cadono) sparisce dietro la cornice.
+- Fuori dalla cornice il fondo è inchiostro con un bagliore d'accento attorno alla cornice.
+- Schermo pieno solo se l'utente lo chiede (`"frame": null` nel piano).
+- Sottotitoli Pulse: Anton maiuscolo, 2–3 parole, parola detta in arancione, parole chiave su etichetta arancione
+  con testo ink. Con la cornice: 86 px, centro y≈1405 (`captions.positionY` 0,732), sotto la cornice.
 - Un altro stile (riferimento dell'utente, "fai qualcosa di diverso") = un nuovo style pack con i suoi token misurati.
   Instrument Serif (corsivo, OFL) è in `editor/assets/fonts/` se serve un serif per le parole chiave.
 
 ## Regole dure
 
-- **Una sola tinta d'accento**: lime `#D4FF3A` su inchiostro e bianco. Niente blu, niente arcobaleni, niente gradienti
+- **Una sola tinta d'accento**: arancione elettrico `#FF6633` su inchiostro e bianco. Niente blu, niente arcobaleni, niente gradienti
   colorati. Il rosso esiste solo per un "no" esplicito (errore, divieto), mai decorativo.
 - **Parole chiave con parsimonia**: una ogni 2–3 s (`captions.emphasis`), mai frasi intere evidenziate.
 - **Zone sicure di Instagram** su 1080×1920: niente di importante sopra **y=280**, sotto **y=1560**, né a destra di
@@ -61,16 +80,16 @@ const P = {
 
 - Griglia 8 px. Raggi: card 36–44 px, pillole 999 px, tag 10 px.
 - ~40% di spazio vuoto per scena; massimo 3 elementi di testo visibili insieme.
-- Gerarchia: 1 titolo (Anton) → 1 parola chiave (pillola lime con testo ink) → etichette Inter 800–900 maiuscolo.
+- Gerarchia: 1 titolo (Anton) → 1 parola chiave (pillola accento con testo ink) → etichette Inter 800–900 maiuscolo.
 
 ## Materiali
 
 - **Vetro scuro** (componente `Glass`): `background: P.glass; backdropFilter: blur(22px) saturate(1.4); border: 2px solid P.line`,
-  raggio 40, ombra `0 40px 90px rgba(0,0,0,.55)`; quando "si accende" bordo e bagliore lime.
+  raggio 40, ombra `0 40px 90px rgba(0,0,0,.55)`; quando "si accende" bordo e bagliore accento.
 - **Card carta**: `#F4F4EF`, testo ink, ombra morbida `0 30px 70px rgba(0,0,0,.35)`.
-- **Pillola lime**: fondo `P.lime`, testo `P.ink` Inter 900.
+- **Pillola accento**: fondo `P.accento`, testo `P.ink` Inter 900.
 - **Timbro rosso**: bordo e testo `P.red` Anton, ruotato −5°/+4°, sbatte da scala 2,5.
-- **Luce**: riflessi che passano (gradiente bianco 12% a 110°), bagliori lime al 25–35% dietro gli oggetti protagonisti.
+- **Luce**: riflessi che passano (gradiente bianco 12% a 110°), bagliori accento al 25–35% dietro gli oggetti protagonisti.
 
 ## Movimento (il carattere, i dettagli sono in motion-library)
 

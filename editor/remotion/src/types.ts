@@ -180,6 +180,12 @@ export type EditProject = {
   graphics: Graphic[];
   cta?: { text: string; icon?: IconName } | null;
   music?: { file: string; volume?: number } | null;
+  /**
+   * Cornice: il footage sta dentro un rettangolo con angoli arrotondati (px sul canvas 1080×1920), bordo nel colore
+   * d'accento con alone; le grafiche si vedono SOLO fuori dalla cornice. zoom > 1 stringe sul viso, faceY = dove sta il
+   * viso nel footage (0..1), faceAt = dove metterlo dentro la cornice (0..1).
+   */
+  frame?: FrameLayout | null;
   /** Punti di taglio già fatti nel sorgente (secondi), es. le giunte del montato di video-use: la camera li tratta come jump cut. */
   joins?: number[];
   /** Secondi di fermo sull'ultimo fotogramma alla fine (le grafiche continuano), per far leggere la CTA. */
@@ -189,6 +195,8 @@ export type EditProject = {
   /** Reinquadratura di base (es. da piano largo a mezzo busto): zoom attorno a (originX, originY) + spostamento verticale in px. */
   framing?: { scale: number; originX?: number; originY?: number; offsetY?: number };
 };
+
+export type FrameLayout = { x: number; y: number; w: number; h: number; radius: number; border: number; zoom?: number; faceY?: number; faceAt?: number };
 
 export type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };
 

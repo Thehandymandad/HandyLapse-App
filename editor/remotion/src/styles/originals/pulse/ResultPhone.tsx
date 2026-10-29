@@ -3,7 +3,7 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { useFonts } from "../../../lib/fonts";
 import { seeded, type Timeline } from "../../../lib/timeline";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { ANTON, clamp, INTER, P, phoneState } from "./shared";
+import { ANTON, clamp, INTER, P, phoneState, rgba } from "./shared";
 
 /**
  * "Questo che vedete è il risultato": il video si rimpicciolisce dentro uno smartphone che ondeggia in 3D
@@ -12,12 +12,12 @@ import { ANTON, clamp, INTER, P, phoneState } from "./shared";
  */
 const BEZEL = 26;
 
-const Heart: React.FC<{ size: number; color: string }> = ({ size, color }) => (
+export const Heart: React.FC<{ size: number; color: string }> = ({ size, color }) => (
   <svg width={size} height={size} viewBox="0 0 24 24">
     <path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z" fill={color} />
   </svg>
 );
-const Flame: React.FC<{ size: number }> = ({ size }) => (
+export const Flame: React.FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24">
     <path d="M12 2c1.2 4.5 6 6.2 6 11.5A6 6 0 0 1 6 13.5c0-3 1.8-4.2 2.4-6 1.2 1.8 1.8 2.4 3 2.4 0-3-.6-5.4.6-7.9z" fill="#FF8A1F" />
     <path d="M12 12c.5 2 3 2.8 3 5a3 3 0 0 1-6 0c0-1.4.8-2 1.1-2.8.6.8.9 1.1 1.5 1.1 0-1.3-.2-2.3.4-3.3z" fill="#FFE14D" />
@@ -63,7 +63,7 @@ export const ResultPhone: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               inset: -BEZEL / s,
               border: `${BEZEL / s}px solid #111216`,
               borderRadius: (ph.radius + BEZEL) / s,
-              boxShadow: `0 0 0 ${3 / s}px #3A3D45, 0 ${60 / s}px ${140 / s}px rgba(0,0,0,0.7), 0 0 ${120 / s}px rgba(212,255,58,${0.25 * ph.k})`,
+              boxShadow: `0 0 0 ${3 / s}px #3A3D45, 0 ${60 / s}px ${140 / s}px rgba(0,0,0,0.7), 0 0 ${120 / s}px ${rgba(P.accent, 0.25 * ph.k)}`,
             }}
           />
           <div style={{ position: "absolute", top: 34 / s, left: "50%", width: 230 / s, height: 64 / s, marginLeft: -115 / s, borderRadius: 40 / s, background: "#000" }} />
@@ -91,7 +91,7 @@ export const ResultPhone: React.FC<{ g: GraphicEvent }> = ({ g }) => {
         const pop = spring({ frame: age, fps, config: { damping: 9, stiffness: 260 } });
         return (
           <div key={i} style={{ position: "absolute", left: x - size / 2, top: y - size / 2, opacity: op, transform: `scale(${pop}) rotate(${(seeded(i) - 0.5) * 40}deg)`, filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.45))" }}>
-            {i % 3 === 2 ? <Flame size={size} /> : <Heart size={size} color={i % 3 === 0 ? "#FF2E63" : P.lime} />}
+            {i % 3 === 2 ? <Flame size={size} /> : <Heart size={size} color={i % 3 === 0 ? "#FF2E63" : P.accent} />}
           </div>
         );
       })}
@@ -114,7 +114,7 @@ export const ResultPhone: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               display: "flex",
               alignItems: "center",
               gap: 14,
-              background: P.lime,
+              background: P.accent,
               color: P.ink,
               padding: "14px 30px 14px 20px",
               borderRadius: 999,
@@ -132,7 +132,7 @@ export const ResultPhone: React.FC<{ g: GraphicEvent }> = ({ g }) => {
 };
 
 /**
- * Sfondo dietro al video (si vede quando il video è nel telefono o si sposta): nero con bagliore lime che pulsa
+ * Sfondo dietro al video (si vede quando il video è nel telefono o si sposta): nero con bagliore accento che pulsa
  * e una griglia in prospettiva che scorre. Carica anche i pesi dei font usati dalle grafiche.
  */
 export const PulseBackdrop: React.FC<{ tl: Timeline }> = () => {
@@ -146,7 +146,7 @@ export const PulseBackdrop: React.FC<{ tl: Timeline }> = () => {
   const pulse = 0.5 + 0.5 * Math.sin(f / 9);
   return (
     <AbsoluteFill style={{ background: P.ink, overflow: "hidden" }}>
-      <AbsoluteFill style={{ background: `radial-gradient(circle at 50% 42%, rgba(212,255,58,${0.16 + 0.1 * pulse}) 0%, rgba(212,255,58,0) 55%)` }} />
+      <AbsoluteFill style={{ background: `radial-gradient(circle at 50% 42%, ${rgba(P.accent, 0.16 + 0.1 * pulse)} 0%, ${rgba(P.accent, 0)} 55%)` }} />
       <AbsoluteFill style={{ perspective: 700 }}>
         <div
           style={{
@@ -157,7 +157,7 @@ export const PulseBackdrop: React.FC<{ tl: Timeline }> = () => {
             height: 1800,
             transform: "rotateX(72deg)",
             transformOrigin: "50% 0%",
-            backgroundImage: `linear-gradient(rgba(212,255,58,0.35) 3px, transparent 3px), linear-gradient(90deg, rgba(212,255,58,0.35) 3px, transparent 3px)`,
+            backgroundImage: `linear-gradient(${rgba(P.accent, 0.35)} 3px, transparent 3px), linear-gradient(90deg, ${rgba(P.accent, 0.35)} 3px, transparent 3px)`,
             backgroundSize: "120px 120px",
             backgroundPosition: `0 ${(f * 6) % 120}px`,
             maskImage: "linear-gradient(to bottom, black, transparent 80%)",

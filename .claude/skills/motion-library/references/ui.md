@@ -38,7 +38,7 @@ Vetro scuro o carta, raggi 36–44 px, testo ≥ 30 px.
 
 ### ui/pulsante-premuto
 - **Verbi**: fatto, clicca, conferma, via.
-- **Come**: un cursore arriva (curva, non retta) sul pulsante, `scale 0.9→1` del pulsante, onda circolare lime che si
+- **Come**: un cursore arriva (curva, non retta) sul pulsante, `scale 0.9→1` del pulsante, onda circolare d'accento che si
   allarga e svanisce.
 - **Suono**: click.
 - **Difetti**: cursore che si muove in linea retta a velocità costante.
@@ -65,6 +65,6 @@ Vetro scuro o carta, raggi 36–44 px, testo ≥ 30 px.
 
 ### ui/toggle
 - **Verbi**: attivare, accendere, da così a così.
-- **Come**: interruttore grande; il pallino scorre (0,25 s `power3.inOut`) e il binario passa da grigio a lime.
+- **Come**: interruttore grande; il pallino scorre (0,25 s `power3.inOut`) e il binario passa da grigio a accento.
 - **Suono**: click di interruttore.
 - **Difetti**: toggle troppo piccolo (min 200 px di larghezza).

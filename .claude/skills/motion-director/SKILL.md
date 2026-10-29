@@ -42,6 +42,10 @@ suo tempo, il suo suono e il suo oggetto.
 - **Il primo secondo ferma lo scroll.** Dal fotogramma 0 c'è già qualcosa in movimento sullo schermo.
 - **Zone sicure di Instagram** (1080×1920): niente di importante sopra y=280, sotto y=1560, né a destra di x=900 nella
   metà bassa. Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
+- **Cornice della casa** (motion-design): il parlato sta in un rettangolo arrotondato al centro (x 150–930, y 580–1340);
+  le grafiche vivono **fuori**: fascia alta (y 280–570, il centro di una card a y≈0,22 con `scale` 0,6–0,8) e margini
+  laterali per accenti piccoli. Sotto la cornice ci sono i sottotitoli. Il telefono 3D (`phone`) non si usa con la
+  cornice: per "il risultato" c'è `result`.
 - **Oggetti 3D solo dove servono**: cose concrete nominate o metafore fisiche forti. Per ognuno scrivi il prompt per
   Nano Banana Pro (Google Flow): `render 3D iper-realistico di <oggetto>, <materiale e luce>, su fondo bianco, nient'altro nel frame`.
   Prima controlla se esiste già in `editor/assets/objects/` (la libreria cresce video dopo video). In alternativa
@@ -95,7 +99,7 @@ ricette da motion-library (cerca per verbo) o inventane di nuove: se ne inventi 
     }
   ],
   "objects": [
-    { "id": "ciak", "prompt": "render 3D iper-realistico di un ciak cinematografico nero con strisce lime, luce da studio morbida, su fondo bianco, nient'altro nel frame", "file": "editor/assets/objects/ciak.png" }
+    { "id": "ciak", "prompt": "render 3D iper-realistico di un ciak cinematografico nero con strisce arancione elettrico, luce da studio morbida, su fondo bianco, nient'altro nel frame", "file": "editor/assets/objects/ciak.png" }
   ],
   "camera": [{ "type": "punch", "t": 2.39, "strength": 0.6, "note": "punch-in su «difficile»" }]
 }

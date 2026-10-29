@@ -4,6 +4,7 @@ import type { StylePack } from "./pack";
 import * as presets from "./presets";
 import * as originals from "./originals/index";
 import * as references from "./references/index";
+import { setAccent } from "./originals/pulse/shared";
 
 /**
  * Registro degli style pack. I preset sono solo parametri; le reference (./references/<nome>/)
@@ -24,3 +25,8 @@ export function resolveStyle(id: string, overrides?: DeepPartial<ReelStyle>): Re
 }
 
 export const getPack = (id: string): StylePack => PACKS[id] ?? { style: PACKS.hormozi.style };
+
+/** Prima del render: il colore d'accento dello stile entra nella palette del pack (lo legge ogni componente). */
+export function applyTheme(style: ReelStyle) {
+  if (style.id === "pulse") setAccent(style.motion.accentColor);
+}

@@ -39,7 +39,7 @@ ricetta giusta, con i parametri. Le ricette sono in `references/`, una categoria
 | separare, dividere, tagliare | `oggetto/taglio-netto`, `transizioni/split`, `testo/parola-spezzata` |
 | crescere, aumentare, scalare | `dati/barra-che-sale`, `dati/contatore-che-sale`, `oggetto/crescita-scala` |
 | sbagliare, no, rifiutare | `testo/timbro`, `accenti/croce-disegnata`, `camera/shake-colpo`, `camera/desaturazione` |
-| sì, fatto, risolto | `accenti/spunta-disegnata`, `ui/pulsante-premuto`, `accenti/burst-lime` |
+| sì, fatto, risolto | `accenti/spunta-disegnata`, `ui/pulsante-premuto`, `accenti/burst-accento` |
 | rivelare, segreto, scoprire | `oggetto/scatola-si-apre`, `testo/tessere-che-si-girano`, `transizioni/maschera-cerchio`, `accenti/luce-che-passa` |
 | scegliere, confrontare | `dati/prima-dopo`, `transizioni/split`, `testo/lista-che-si-spunta` |
 | inviare, mandare, condividere | `accenti/aeroplanino-scia`, `ui/messaggio-inviato`, `ui/commento-scritto` |

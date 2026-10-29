@@ -4,7 +4,7 @@ import type { GraphicEvent } from "../../../lib/timeline";
 import { ANTON, At, clamp, easeInOut, flipIn, Glass, INTER, P } from "./shared";
 
 /**
- * "Sto guidando… sto andando al lavoro": mini navigatore. Il percorso si disegna in lime, l'auto lo segue
+ * "Sto guidando… sto andando al lavoro": mini navigatore. Il percorso si disegna in accento, l'auto lo segue
  * e arriva al pin di destinazione quando lo si nomina (props.arriveAt, frame relativo). props.to = etichetta del pin.
  */
 const W = 860;
@@ -64,12 +64,12 @@ export const RouteMap: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   <path key={i} d={d} stroke="rgba(255,255,255,0.07)" strokeWidth={i < 3 ? 16 : 10} fill="none" />
                 ))}
                 <path d={path} stroke="rgba(255,255,255,0.18)" strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" />
-                <path d={path} stroke={P.lime} strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" strokeDasharray={LEN} strokeDashoffset={LEN * (1 - p)} style={{ filter: `drop-shadow(0 0 10px ${P.lime})` }} />
+                <path d={path} stroke={P.accent} strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" strokeDasharray={LEN} strokeDashoffset={LEN * (1 - p)} style={{ filter: `drop-shadow(0 0 10px ${P.accent})` }} />
                 <circle cx={ROUTE[0][0]} cy={ROUTE[0][1]} r={14} fill={P.white} stroke={P.ink} strokeWidth={5} />
-                {ring > 0 && <circle cx={end[0]} cy={end[1]} r={20 + ring * 70} fill="none" stroke={P.lime} strokeWidth={5} opacity={1 - ring} />}
+                {ring > 0 && <circle cx={end[0]} cy={end[1]} r={20 + ring * 70} fill="none" stroke={P.accent} strokeWidth={5} opacity={1 - ring} />}
                 {/* auto vista dall'alto */}
                 <g transform={`translate(${car.x} ${car.y}) rotate(${angle})`}>
-                  <rect x={-30} y={-17} width={60} height={34} rx={11} fill={P.lime} style={{ filter: `drop-shadow(0 0 14px ${P.lime})` }} />
+                  <rect x={-30} y={-17} width={60} height={34} rx={11} fill={P.accent} style={{ filter: `drop-shadow(0 0 14px ${P.accent})` }} />
                   <rect x={4} y={-12} width={14} height={24} rx={4} fill={P.ink} opacity={0.85} />
                   <rect x={-22} y={-12} width={10} height={24} rx={3} fill={P.ink} opacity={0.6} />
                 </g>
@@ -87,11 +87,11 @@ export const RouteMap: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   alignItems: "center",
                 }}
               >
-                <div style={{ fontFamily: INTER, fontWeight: 900, fontSize: 26, letterSpacing: 2, color: f >= arriveAt ? P.ink : P.white, background: f >= arriveAt ? P.lime : P.ink, padding: "6px 14px", borderRadius: 10, marginBottom: 6, border: `2px solid ${P.lime}` }}>
+                <div style={{ fontFamily: INTER, fontWeight: 900, fontSize: 26, letterSpacing: 2, color: f >= arriveAt ? P.ink : P.white, background: f >= arriveAt ? P.accent : P.ink, padding: "6px 14px", borderRadius: 10, marginBottom: 6, border: `2px solid ${P.accent}` }}>
                   {((g.props?.to as string) ?? "LAVORO").toUpperCase()}
                 </div>
                 <svg width={46} height={56} viewBox="0 0 24 30">
-                  <path d="M12 29s10-10 10-17A10 10 0 0 0 2 12c0 7 10 17 10 17z" fill={P.lime} stroke={P.ink} strokeWidth={1.5} />
+                  <path d="M12 29s10-10 10-17A10 10 0 0 0 2 12c0 7 10 17 10 17z" fill={P.accent} stroke={P.ink} strokeWidth={1.5} />
                   <circle cx={12} cy={12} r={4} fill={P.ink} />
                 </svg>
               </div>

@@ -8,7 +8,7 @@ import { cameraContext, defaultCamera } from "./lib/camera";
 import { useFonts } from "./lib/fonts";
 import { buildTimeline } from "./lib/timeline";
 import { personFxAt } from "./lib/vanish";
-import { getPack } from "./styles";
+import { applyTheme, getPack } from "./styles";
 import type { ReelProps } from "./types";
 
 export const Reel: React.FC<ReelProps> = ({ project, style }) => {
@@ -16,6 +16,7 @@ export const Reel: React.FC<ReelProps> = ({ project, style }) => {
   const tl = useMemo(() => buildTimeline(project, style), [project, style]);
   // i componenti dello style pack (camera, sottotitoli, grafiche…) si prendono dall'id dello stile
   const pack = getPack(style.id);
+  applyTheme(style);
   useFonts([
     { family: style.captions.fontFamily, weight: style.captions.fontWeight },
     { family: style.motion.fontFamily, weight: 900 },

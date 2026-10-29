@@ -1,6 +1,6 @@
 # Testo (tipografia cinetica)
 
-Display Inter 900 (tracking −0.045em), parole chiave in Instrument Serif corsivo lime, etichette JetBrains Mono.
+Display Inter 900 (tracking −0.045em), parole chiave in Instrument Serif corsivo accento, etichette JetBrains Mono.
 Il testo da leggere sta fermo ≥ 0,6 s. Tutto il resto si muove.
 
 ### testo/entrata-sfocata
@@ -19,8 +19,8 @@ Il testo da leggere sta fermo ≥ 0,6 s. Tutto il resto si muove.
 
 ### testo/parola-chiave-serif
 - **Verbi**: la parola che conta in una frase.
-- **Come**: la frase entra in display bianco, la parola chiave arriva 0,1 s dopo in serif corsivo lime con
-  `y 30→0` + `rotation -4→0`; sotto, una sottolineatura lime che si disegna (`scaleX 0→1`, origine sinistra, 0,25 s).
+- **Come**: la frase entra in display bianco, la parola chiave arriva 0,1 s dopo in serif corsivo d'accento con
+  `y 30→0` + `rotation -4→0`; sotto, una sottolineatura d'accento che si disegna (`scaleX 0→1`, origine sinistra, 0,25 s).
 - **Suono**: tocco morbido (pluck).
 - **Difetti**: più di una parola serif per riga.
 
@@ -40,7 +40,7 @@ Il testo da leggere sta fermo ≥ 0,6 s. Tutto il resto si muove.
 
 ### testo/cancellatura
 - **Verbi**: sbagliato, non serve, eliminare, togliere.
-- **Come**: una linea (lime o rossa per un "no") attraversa la parola in 0,2 s `power2.inOut`; la parola sotto scende
+- **Come**: una linea (accento o rossa per un "no") attraversa la parola in 0,2 s `power2.inOut`; la parola sotto scende
   a `opacity 0.35`; opzionale: la parola corretta arriva sopra in serif.
 - **Suono**: tratto di pennarello.
 - **Difetti**: linea che non copre tutta la parola.
@@ -62,7 +62,7 @@ Il testo da leggere sta fermo ≥ 0,6 s. Tutto il resto si muove.
 
 ### testo/parola-spezzata
 - **Verbi**: rompere, dividere, tagliare.
-- **Come**: la parola è duplicata in due livelli con `clip-path` sopra/sotto una diagonale; il taglio arriva (linea lime)
+- **Come**: la parola è duplicata in due livelli con `clip-path` sopra/sotto una diagonale; il taglio arriva (linea accento)
   e le metà scivolano ±24 px.
 - **Suono**: taglio.
 - **Difetti**: metà disallineate prima del taglio.
@@ -76,7 +76,7 @@ Il testo da leggere sta fermo ≥ 0,6 s. Tutto il resto si muove.
 
 ### testo/lista-che-si-spunta
 - **Verbi**: elencare, passaggi, fatto uno dopo l'altro.
-- **Come**: righe con quadratino; ogni riga si spunta (spunta che si disegna, quadratino che diventa lime) sulla parola
+- **Come**: righe con quadratino; ogni riga si spunta (spunta che si disegna, quadratino che diventa accento) sulla parola
   che la nomina; le righe già fatte scendono a `opacity 0.7`.
 - **Suono**: click/tick diverso per riga.
 - **Difetti**: righe spuntate tutte alla fine invece che sulle parole.

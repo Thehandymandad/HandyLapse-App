@@ -16,7 +16,7 @@ fondo dietro il footage rimpicciolito (`inset`) e per dare leggibilità.
 - **Suono**: il suono della transizione.
 - **Difetti**: tenerlo più di 2,5 s in un reel parlato (si perde la persona).
 
-### sfondi/bagliore-lime
+### sfondi/bagliore-accento
 - **Verbi**: protagonista, importante, energia.
 - **Come**: cerchio sfocato `radial-gradient(#D4FF3A 0%, transparent 65%)` al 25–35% dietro l'oggetto
   protagonista; respira (`scale 0.95↔1.05`, 2 s).
@@ -25,7 +25,7 @@ fondo dietro il footage rimpicciolito (`inset`) e per dare leggibilità.
 
 ### sfondi/griglia-prospettiva
 - **Verbi**: tecnologia, sistema, mondo digitale.
-- **Come**: piano con linee lime al 30% ruotato `rotationX 72°`, sfumato verso l'orizzonte con `mask-image`; scorre
+- **Come**: piano con linee d'accento al 30% ruotato `rotationX 72°`, sfumato verso l'orizzonte con `mask-image`; scorre
   verso la camera (`backgroundPosition` in funzione del tempo).
 - **Suono**: drone leggero.
 - **Difetti**: righe troppo fitte (sfarfallio/moire): passo ≥ 100 px.
@@ -44,7 +44,7 @@ fondo dietro il footage rimpicciolito (`inset`) e per dare leggibilità.
 - **Difetti**: grana sopra le grafiche (sporca il testo).
 
 ### sfondi/desaturazione-con-velo
-- **Verbi**: no, fallimento, il prima.
+- **Verbi**: no, falaccentonto, il prima.
 - **Come**: insieme a `camera/desaturazione` sul footage, la grafica mette un velo `radial-gradient` rosso al 25% ai
   bordi per la durata dell'evento.
 - **Suono**: colpo cupo.

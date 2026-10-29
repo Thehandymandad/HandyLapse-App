@@ -38,7 +38,7 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   <div style={{ fontWeight: 900, fontSize: 44, lineHeight: 1.05 }}>Claude</div>
                   <div style={{ fontWeight: 700, fontSize: 28, color: P.grey }}>{done ? "Montaggio completato" : "sta montando il tuo reel…"}</div>
                 </div>
-                <div style={{ fontFamily: ANTON, fontSize: 92, lineHeight: 1, color: done ? P.lime : P.white, fontVariantNumeric: "tabular-nums", width: 230, textAlign: "right" }}>
+                <div style={{ fontFamily: ANTON, fontSize: 92, lineHeight: 1, color: done ? P.accent : P.white, fontVariantNumeric: "tabular-nums", width: 230, textAlign: "right" }}>
                   {Math.round(p * 100)}%
                 </div>
               </div>
@@ -48,9 +48,9 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                     width: `${p * 100}%`,
                     height: "100%",
                     borderRadius: 13,
-                    background: `repeating-linear-gradient(115deg, ${P.lime} 0 22px, #B8EA14 22px 44px)`,
+                    background: `repeating-linear-gradient(115deg, ${P.accent} 0 22px, #B8EA14 22px 44px)`,
                     backgroundPosition: `${f * 4}px 0`,
-                    boxShadow: `0 0 24px ${P.limeDim}`,
+                    boxShadow: `0 0 24px ${P.accentDim}`,
                   }}
                 />
               </div>
@@ -61,7 +61,7 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   const ck = interpolate(f, [at - 3, at + 4], [0, 1], clamp);
                   return (
                     <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, fontWeight: 800, fontSize: 30, color: on ? P.white : "rgba(255,255,255,0.4)" }}>
-                      <div style={{ width: 42, height: 42, borderRadius: 12, background: on ? P.lime : "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.2 * Math.sin(ck * Math.PI)})` }}>
+                      <div style={{ width: 42, height: 42, borderRadius: 12, background: on ? P.accent : "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.2 * Math.sin(ck * Math.PI)})` }}>
                         <Check size={34} p={ck} />
                       </div>
                       {t}

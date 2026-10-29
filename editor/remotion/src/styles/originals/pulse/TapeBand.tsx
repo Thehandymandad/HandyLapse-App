@@ -5,7 +5,7 @@ import { ANTON, clamp, easeOut, P } from "./shared";
 
 /**
  * Due nastri incrociati che scorrono in direzioni opposte con la parola detta (es. "EDITING"):
- * uno lime pieno, uno nero con la scritta solo contornata. Entrano tagliando lo schermo, escono tirati via di lato.
+ * uno accento pieno, uno nero con la scritta solo contornata. Entrano tagliando lo schermo, escono tirati via di lato.
  */
 export const TapeBand: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
@@ -21,13 +21,13 @@ export const TapeBand: React.FC<{ g: GraphicEvent }> = ({ g }) => {
         <span
           style={{
             color: solid ? P.ink : "transparent",
-            WebkitTextStroke: solid ? undefined : `3px ${P.lime}`,
+            WebkitTextStroke: solid ? undefined : `3px ${P.accent}`,
           }}
         >
           {word}
         </span>
         <svg width={44} height={44} viewBox="0 0 24 24">
-          <path d="M12 1l2.8 8.2L23 12l-8.2 2.8L12 23l-2.8-8.2L1 12l8.2-2.8z" fill={solid ? P.ink : P.lime} />
+          <path d="M12 1l2.8 8.2L23 12l-8.2 2.8L12 23l-2.8-8.2L1 12l8.2-2.8z" fill={solid ? P.ink : P.accent} />
         </svg>
       </span>
     ));
@@ -41,13 +41,13 @@ export const TapeBand: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           height: 150,
           marginTop: -75,
           transform: `rotate(${rot}deg) translateX(${shift}px)`,
-          background: solid ? P.lime : P.ink,
-          boxShadow: solid ? `0 20px 50px rgba(0,0,0,0.45), 0 0 60px ${P.limeDim}` : "0 20px 50px rgba(0,0,0,0.6)",
+          background: solid ? P.accent : P.ink,
+          boxShadow: solid ? `0 20px 50px rgba(0,0,0,0.45), 0 0 60px ${P.accentDim}` : "0 20px 50px rgba(0,0,0,0.6)",
           overflow: "hidden",
           display: "flex",
           alignItems: "center",
-          borderTop: solid ? undefined : `3px solid ${P.lime}`,
-          borderBottom: solid ? undefined : `3px solid ${P.lime}`,
+          borderTop: solid ? undefined : `3px solid ${P.accent}`,
+          borderBottom: solid ? undefined : `3px solid ${P.accent}`,
         }}
       >
         <div style={{ whiteSpace: "nowrap", transform: `translateX(${scroll}px)`, fontFamily: ANTON, fontSize: 104, lineHeight: 1, letterSpacing: 2 }}>{items}</div>

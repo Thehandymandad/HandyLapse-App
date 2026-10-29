@@ -49,14 +49,14 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           <Glass width={840} style={{ padding: 28 }}>
             {/* intestazione */}
             <div style={{ display: "flex", alignItems: "center", gap: 18, paddingBottom: 18, borderBottom: `2px solid ${P.line}` }}>
-              <div style={{ width: 64, height: 64, borderRadius: 32, background: `conic-gradient(from 200deg, ${P.lime}, #FF2E63, #FF8A1F, ${P.lime})`, padding: 4, boxSizing: "border-box" }}>
+              <div style={{ width: 64, height: 64, borderRadius: 32, background: `conic-gradient(from 200deg, ${P.accent}, #FF2E63, #FF8A1F, ${P.accent})`, padding: 4, boxSizing: "border-box" }}>
                 <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: P.ink, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Plane size={30} color={P.lime} />
+                  <Plane size={30} color={P.accent} />
                 </div>
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 900, fontSize: 32 }}>{name}</div>
-                <div style={{ fontWeight: 700, fontSize: 24, color: typing ? P.lime : P.grey }}>{typing ? "sta scrivendo…" : "attivo ora"}</div>
+                <div style={{ fontWeight: 700, fontSize: 24, color: typing ? P.accent : P.grey }}>{typing ? "sta scrivendo…" : "attivo ora"}</div>
               </div>
               <div style={{ width: 16, height: 16, borderRadius: 8, background: "#35E07A", boxShadow: "0 0 14px #35E07A" }} />
             </div>
@@ -64,7 +64,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             <div style={{ position: "relative", height: 190, display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 12, paddingTop: 14 }}>
               {sent && (
                 <div style={{ alignSelf: "flex-end", transform: `translateY(${(1 - bubble) * 120}px) scale(${0.6 + 0.4 * bubble})`, transformOrigin: "100% 100%", opacity: Math.min(1, bubble * 2) }}>
-                  <div style={{ background: P.lime, color: P.ink, fontWeight: 900, fontSize: 44, letterSpacing: 2, padding: "12px 30px", borderRadius: "30px 30px 8px 30px" }}>{word}</div>
+                  <div style={{ background: P.accent, color: P.ink, fontWeight: 900, fontSize: 44, letterSpacing: 2, padding: "12px 30px", borderRadius: "30px 30px 8px 30px" }}>{word}</div>
                   <div style={{ textAlign: "right", fontWeight: 700, fontSize: 20, color: P.grey, marginTop: 4 }}>{sentLabel}</div>
                 </div>
               )}
@@ -89,7 +89,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                     borderRadius: "30px 30px 30px 8px",
                   }}
                 >
-                  <div style={{ width: 52, height: 52, borderRadius: 14, background: P.lime, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: 52, height: 52, borderRadius: 14, background: P.accent, display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <svg width={32} height={32} viewBox="0 0 24 24">
                       <path d="M6 2.5h8l5 5v14H6z" fill="none" stroke={P.ink} strokeWidth={2.4} strokeLinejoin="round" />
                       <path d="M14 2.5v5h5M9 13h7M9 17h5" stroke={P.ink} strokeWidth={2.4} strokeLinecap="round" />
@@ -101,11 +101,11 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             </div>
             {/* campo di testo */}
             <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ flex: 1, height: 84, borderRadius: 42, border: `3px solid ${!sent && typed > 0 ? P.lime : P.line}`, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", padding: "0 30px", fontWeight: 900, fontSize: 40, letterSpacing: 2 }}>
+              <div style={{ flex: 1, height: 84, borderRadius: 42, border: `3px solid ${!sent && typed > 0 ? P.accent : P.line}`, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", padding: "0 30px", fontWeight: 900, fontSize: 40, letterSpacing: 2 }}>
                 {!sent && typed > 0 ? (
                   <>
                     {word.slice(0, typed)}
-                    <span style={{ width: 4, height: 46, background: P.lime, marginLeft: 6, opacity: caret ? 1 : 0 }} />
+                    <span style={{ width: 4, height: 46, background: P.accent, marginLeft: 6, opacity: caret ? 1 : 0 }} />
                   </>
                 ) : (
                   <span style={{ color: P.grey, fontWeight: 700, fontSize: 32, letterSpacing: 0 }}>{placeholder}</span>
@@ -116,12 +116,12 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   width: 84,
                   height: 84,
                   borderRadius: 42,
-                  background: P.lime,
+                  background: P.accent,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   transform: `scale(${f >= sendAt - 3 && f < sendAt + 10 ? 0.8 + 0.2 * sendPress : 1})`,
-                  boxShadow: typed === word.length && !sent ? `0 0 ${30 + 20 * Math.sin(f / 2)}px ${P.lime}` : undefined,
+                  boxShadow: typed === word.length && !sent ? `0 0 ${30 + 20 * Math.sin(f / 2)}px ${P.accent}` : undefined,
                 }}
               >
                 <div style={{ transform: `translate(${fly * 700}px, ${-fly * 900}px) rotate(${-fly * 20}deg) scale(${1 + fly * 1.5})`, opacity: f >= sendAt + 14 ? 0 : 1 }}>

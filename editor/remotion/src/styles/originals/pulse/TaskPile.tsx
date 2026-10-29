@@ -62,7 +62,7 @@ export const TaskPile: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               letterSpacing: 1,
               padding: "12px 28px 10px",
               borderRadius: 18,
-              background: isLast ? P.red : i % 3 === 1 ? P.white : P.lime,
+              background: isLast ? P.red : i % 3 === 1 ? P.white : P.accent,
               color: isLast ? P.white : P.ink,
               boxShadow: "0 18px 40px rgba(0,0,0,0.5)",
               whiteSpace: "nowrap",

@@ -10,9 +10,10 @@ lo stesso codice di Remotion) e la applica come fa il browser:
   (cv2.warpPerspective, sub-pixel: niente scalini come con scale/crop di ffmpeg);
 - riquadro-telefono: secondo livello di prospettiva, angoli arrotondati;
 - filtri del footage (luminosità, contrasto, saturazione, seppia, sfocatura), vignetta, lampo;
-- dove il footage non copre: nel riquadro-telefono il fondo dello style pack (pulse: inchiostro, bagliore lime e
+- dove il footage non copre: nel riquadro-telefono il fondo dello style pack (pulse: inchiostro, bagliore d'accento e
   pavimento a griglia); nei whip e nelle oscillazioni la scia del video stesso (bordi allungati e sfocati), mai il nero;
-- fermo finale: dopo l'ultimo fotogramma del montato resta quello.
+- fermo finale: dopo l'ultimo fotogramma del montato resta quello;
+- cornice (`frame` nel progetto): tutto questo dentro il rettangolo arrotondato, su fondo scuro con bagliore d'accento.
 Scrive il video MUTO (<edit_dir>/video.mp4); il suono lo mette compose.py --video.
 """
 from __future__ import annotations
@@ -32,7 +33,7 @@ import numpy as np
 
 W, H = 1080, 1920
 INK = np.array([0x0A, 0x0B, 0x0E], np.float32)
-LIME = np.array([0xD4, 0xFF, 0x3A], np.float32)
+LIME = np.array([0xFF, 0x66, 0x33], np.float32)  # accento di default (arancione Claude elettrico)
 
 
 # ---------- trasformazioni CSS ----------
@@ -134,15 +135,16 @@ def rounded_mask(r: float) -> np.ndarray:
 # ---------- fondo dello style pack "pulse" (PulseBackdrop) ----------
 
 class PulseBackdrop:
-    """Inchiostro + bagliore lime che pulsa + pavimento a griglia in prospettiva che scorre (come in ResultPhone.tsx)."""
+    """Inchiostro + bagliore d'accento che pulsa + pavimento a griglia in prospettiva che scorre (come in ResultPhone.tsx)."""
 
     PERIOD = 20  # la griglia scorre di 6 px a fotogramma su un passo di 120 px: si ripete ogni 20 fotogrammi
 
-    def __init__(self):
+    def __init__(self, accent: np.ndarray = LIME):
+        self.accent = accent
         yy, xx = np.mgrid[0:H, 0:W].astype(np.float64) + 0.5
         cx, cy = W / 2, 0.42 * H
         rad = math.hypot(max(cx, W - cx), max(cy, H - cy))  # circle farthest-corner
-        self.glow = (np.clip(1 - np.hypot(xx - cx, yy - cy) / (0.55 * rad), 0, 1)[..., None] * (LIME - INK)).astype(np.float32)
+        self.glow = (np.clip(1 - np.hypot(xx - cx, yy - cy) / (0.55 * rad), 0, 1)[..., None] * (accent - INK)).astype(np.float32)
         # pavimento: piano largo 3240 da y=58%, rotateX(72°) attorno al bordo alto, perspective 700 al centro
         top, a, d = 0.58 * H, math.radians(72), 700.0
         c, s = math.cos(a), math.sin(a)
@@ -170,7 +172,7 @@ class PulseBackdrop:
         pulse = 0.5 + 0.5 * math.sin(f / 9)
         out = INK + self.glow * np.float32(0.16 + 0.1 * pulse)
         floor = out[self.y0:]
-        floor += (LIME - floor) * self.grid[f % self.PERIOD]
+        floor += (self.accent - floor) * self.grid[f % self.PERIOD]
         return out
 
 
@@ -182,6 +184,48 @@ def covers_frame(h: np.ndarray) -> bool:
         return False
     q = p[:, :2] / p[:, 2:]
     return bool(np.all((q[:, 0] >= 0) & (q[:, 0] <= W) & (q[:, 1] >= 0) & (q[:, 1] <= H)))
+
+
+def hex_rgb(h: str) -> np.ndarray:
+    n = int(h.lstrip("#"), 16)
+    return np.array([(n >> 16) & 255, (n >> 8) & 255, n & 255], np.float32)
+
+
+_FRAME_CACHE: dict = {}
+
+
+def in_frame(full: np.ndarray, cam: dict, n: int) -> np.ndarray:
+    """Cornice: il footage (già con la camera) ritagliato attorno al viso dentro il rettangolo arrotondato, su fondo
+    inchiostro con un bagliore del colore d'accento che respira. Il bordo con l'alone lo disegna HyperFrames."""
+    fr = cam["frame"]
+    x, y, w, h = int(fr["x"]), int(fr["y"]), int(fr["w"]), int(fr["h"])
+    key = (x, y, w, h, fr.get("radius"), fr.get("zoom"), fr.get("faceY"), fr.get("faceAt"), cam.get("accent"))
+    if key not in _FRAME_CACHE:
+        z = float(fr.get("zoom") or 1)
+        cw = W / z
+        ch = cw * h / w
+        if ch > H:
+            ch, cw = H, H * w / h
+        top = min(max(0.0, float(fr.get("faceY", 0.42)) * H - float(fr.get("faceAt", 0.46)) * ch), H - ch)
+        crop = (int(round((W - cw) / 2)), int(round(top)), int(round(cw)), int(round(ch)))
+        mask = np.zeros((h * 4, w * 4), np.uint8)  # maschera arrotondata a 4x, poi ridotta: bordo liscio
+        r = int(fr.get("radius", 48)) * 4
+        cv2.rectangle(mask, (r, 0), (w * 4 - r, h * 4), 255, -1)
+        cv2.rectangle(mask, (0, r), (w * 4, h * 4 - r), 255, -1)
+        for cx, cy in ((r, r), (w * 4 - r, r), (r, h * 4 - r), (w * 4 - r, h * 4 - r)):
+            cv2.circle(mask, (cx, cy), r, 255, -1)
+        m = cv2.resize(mask, (w, h), interpolation=cv2.INTER_AREA).astype(np.float32) / 255
+        yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+        d = np.hypot(xx - (x + w / 2), (yy - (y + h / 2)) * 0.8) / 1100
+        glow = (np.clip(1 - d, 0, 1) ** 1.6)[..., None] * (hex_rgb(cam.get("accent", "#FF6633")) - INK)
+        _FRAME_CACHE.clear()
+        _FRAME_CACHE[key] = (crop, cv2.merge([m, m, m]), glow.astype(np.float32))
+    (cx, cy, cw, ch), m3, glow = _FRAME_CACHE[key]
+    win = cv2.resize(full[cy:cy + ch, cx:cx + cw], (w, h), interpolation=cv2.INTER_AREA).astype(np.float32)
+    bg = INK + glow * np.float32(0.16 + 0.05 * math.sin(n / 18))
+    region = bg[y:y + h, x:x + w]
+    bg[y:y + h, x:x + w] = win * m3 + region * (1 - m3)
+    return np.clip(bg + 0.5, 0, 255).astype(np.uint8)
 
 
 def render_frame(cam: dict, n: int, src: np.ndarray, ov: np.ndarray | None, vign, backdrop, round_cache: dict) -> np.ndarray:
@@ -237,6 +281,8 @@ def render_frame(cam: dict, n: int, src: np.ndarray, ov: np.ndarray | None, vign
     if (c.get("flash") or 0) > 0.01:
         frame += (255 - frame) * c["flash"]
     out = np.clip(frame + 0.5, 0, 255).astype(np.uint8)
+    if cam.get("frame"):
+        out = in_frame(out, cam, n)
     if ov is not None:
         x, y, w, h = cv2.boundingRect(ov[..., 3])
         if w and h:
@@ -314,7 +360,7 @@ def main() -> None:
     f1 = min(f1, len(frames) - 1)
 
     vign = vignette_mask(cam["grade"].get("vignette", 0))
-    backdrop = PulseBackdrop() if cam.get("backdrop") == "pulse" else None
+    backdrop = PulseBackdrop(hex_rgb(cam.get("accent", "#FF6633"))) if cam.get("backdrop") == "pulse" else None
     if a.stills:
         stills(a, edit, cam, base, vign, backdrop)
         return

@@ -2,10 +2,14 @@ import React from "react";
 import { interpolate, spring } from "remotion";
 import { fontStack } from "../../../lib/fonts";
 
-/** Palette "Pulse": lime elettrico su nero vetro, rosso per gli errori. */
+/**
+ * Palette "Pulse": un solo colore d'accento elettrico su nero vetro, rosso per gli errori.
+ * L'accento di default è l'arancione del logo di Claude reso elettrico (stessa tinta, 15°, saturazione piena);
+ * si cambia con `motion.accentColor` dello stile (`styleOverrides` nel progetto) → `setAccent` prima del render.
+ */
 export const P = {
-  lime: "#D4FF3A",
-  limeDim: "rgba(212,255,58,0.35)",
+  accent: "#FF6633",
+  accentDim: "rgba(255,102,51,0.35)",
   ink: "#0A0B0E",
   red: "#FF2E4D",
   white: "#FFFFFF",
@@ -14,6 +18,18 @@ export const P = {
   line: "rgba(255,255,255,0.12)",
   claude: "#D97757",
 };
+
+/** "#RRGGBB" + alfa → "rgba(r,g,b,a)". */
+export function rgba(hex: string, a: number) {
+  const n = parseInt(hex.replace("#", ""), 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${+a.toFixed(3)})`;
+}
+
+export function setAccent(hex: string | undefined) {
+  if (!hex || !/^#[0-9a-f]{6}$/i.test(hex)) return;
+  P.accent = hex;
+  P.accentDim = rgba(hex, 0.35);
+}
 
 export const ANTON = fontStack("Anton");
 export const INTER = fontStack("Inter");
@@ -45,8 +61,8 @@ export const Glass: React.FC<{ width: number; children: React.ReactNode; style?:
       width,
       borderRadius: 40,
       background: P.glass,
-      border: `2px solid ${glow > 0 ? `rgba(212,255,58,${0.25 + glow * 0.75})` : P.line}`,
-      boxShadow: `0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)${glow > 0 ? `, 0 0 ${60 * glow}px rgba(212,255,58,${0.55 * glow})` : ""}`,
+      border: `2px solid ${glow > 0 ? rgba(P.accent, 0.25 + glow * 0.75) : P.line}`,
+      boxShadow: `0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)${glow > 0 ? `, 0 0 ${60 * glow}px ${rgba(P.accent, 0.55 * glow)}` : ""}`,
       backdropFilter: "blur(22px) saturate(1.4)",
       padding: 34,
       boxSizing: "border-box",

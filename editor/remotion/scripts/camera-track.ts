@@ -55,6 +55,8 @@ const out = {
   framingX: project.framingX ?? 0.5,
   grade: style.grade,
   backdrop: style.id === "pulse" ? "pulse" : "black",
+  accent: style.motion.accentColor,
+  frame: project.frame ?? null,
   frames,
 };
 fs.writeFileSync(path.join(edit, "camera.json"), JSON.stringify(out));

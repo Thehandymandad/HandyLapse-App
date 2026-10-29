@@ -8,6 +8,10 @@
    "contrast": 1.04,
    "saturation": 1.04,
    "warmth": 0
+  },
+  "captions": {
+   "positionY": 0.732,
+   "fontSize": 86
   }
  },
  "canvas": {
@@ -20,7 +24,7 @@
  "face": {
   "x": 0.5,
   "y": 0.42,
-  "note": "viso tra y 560 e 1075: sottotitoli a y 1150, grafiche tra y 1230 e 1550, x 112–900"
+  "note": "cornice x 150–930, y 580–1340: viso dentro; grafiche nella fascia alta (y 280–570) e nei margini; sottotitoli sotto la cornice (y≈1405)"
  },
  "captions": {
   "style": "pulse",
@@ -97,7 +101,8 @@
      ],
      "last": "ORE PERSE"
     },
-    "y": 0.8
+    "y": 0.29,
+    "scale": 0.62
    },
    "payoff": {
     "word": "dopo",
@@ -136,8 +141,8 @@
       12.6
      ]
     },
-    "y": 0.72,
-    "scale": 0.85
+    "y": 0.225,
+    "scale": 0.8
    },
    "payoff": {
     "word": "grafiche",
@@ -198,8 +203,8 @@
       }
      ]
     },
-    "y": 0.728,
-    "scale": 0.9
+    "y": 0.225,
+    "scale": 0.72
    },
    "payoff": {
     "word": "zero",
@@ -226,7 +231,8 @@
     "type": "send",
     "props": {
      "flyFrames": 26
-    }
+    },
+    "y": 0.24
    },
    "payoff": {
     "word": "mandato",
@@ -248,11 +254,13 @@
    "start": 19.66,
    "end": 21.88,
    "line": "E me l'ha restituito così.",
-   "action": "Il video si rimpicciolisce dentro uno smartphone che ondeggia in 3D, cuori che salgono di lato; su «così» punch.",
+   "action": "Nella fascia alta scatta la pillola PRONTO con un'onda di luce su «così», lungo i margini salgono cuori e fiamme; il bordo della cornice brilla.",
    "graphic": {
-    "type": "phone",
+    "type": "result",
+    "y": 0.225,
     "props": {
-     "stats": []
+     "label": "PRONTO",
+     "burstAt": 20.64
     }
    },
    "payoff": {
@@ -287,8 +295,8 @@
      "secretAt": 25.73,
      "connectAt": 27.11
     },
-    "y": 0.745,
-    "scale": 0.82
+    "y": 0.215,
+    "scale": 0.66
    },
    "payoff": {
     "word": "insieme",
@@ -332,8 +340,8 @@
     "props": {
      "freeAt": 28.89
     },
-    "y": 0.72,
-    "scale": 0.72
+    "y": 0.212,
+    "scale": 0.52
    },
    "payoff": {
     "word": "gratuita",
@@ -368,8 +376,8 @@
      "replyAt": 32.06,
      "reply": "Guida inviata in DM"
     },
-    "y": 0.716,
-    "scale": 0.85
+    "y": 0.215,
+    "scale": 0.62
    },
    "payoff": {
     "word": "DM",
@@ -422,5 +430,16 @@
    "strength": 0.8,
    "type": "punch"
   }
- ]
+ ],
+ "frame": {
+  "x": 150,
+  "y": 580,
+  "w": 780,
+  "h": 760,
+  "radius": 56,
+  "border": 7,
+  "zoom": 1.0,
+  "faceY": 0.42,
+  "faceAt": 0.46
+ }
 }

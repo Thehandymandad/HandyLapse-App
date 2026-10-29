@@ -7,7 +7,7 @@ assoluti della timeline di uscita (`plan_to_reel.py` li converte in frame relati
 
 ## Style pack `pulse` (default) — `src/styles/originals/pulse/`
 
-Lime `#D4FF3A` su vetro nero, Anton + Inter. Camera: tagli alternati punch sfocato / whip 3D, oscillazione a mano.
+Accento arancione elettrico `#FF6633` (o `motion.accentColor`) su vetro nero, Anton + Inter. Camera: tagli alternati punch sfocato / whip 3D, oscillazione a mano.
 
 | type | Verbi | Cosa fa | Props (tempi in secondi assoluti) | Suono |
 | --- | --- | --- | --- | --- |
@@ -20,7 +20,8 @@ Lime `#D4FF3A` su vetro nero, Anton + Inter. Camera: tagli alternati punch sfoca
 | `tape` | attenzione, vietato, cantiere | nastri incrociati con testo che scorre | `text` | strappo nastro |
 | `route` | arrivare, strada, obiettivo | navigatore con percorso e arrivo | `arriveAt`, `to` | ping d'arrivo |
 | `send` | mandare, inviare | aeroplanino in curva con scia tratteggiata + pillola INVIATO | `flyFrames` (frame), `label` | whoosh + notifica |
-| `phone` | risultato, ecco, così, questo video | il video entra in uno smartphone 3D che ondeggia, cuori che salgono, statistiche | `statsAt`, `stats[]` | whoosh + scintilla |
+| `result` | risultato, ecco, così, pronto (con la cornice) | pillola PRONTO che scatta nella fascia alta con un'onda di luce, cuori e fiamme che salgono nei margini laterali | `burstAt`, `label`, `sides[2]` | scintilla + colpo |
+| `phone` | risultato, ecco, così, questo video (solo schermo pieno) | il video entra in uno smartphone 3D che ondeggia, cuori che salgono, statistiche | `statsAt`, `stats[]` | whoosh + scintilla |
 | `trio` | tre cose, segreto, insieme | tre tessere «?» che si girano una per parola, lucchetto IL SEGRETO, scia che le collega | `reveal[3]`, `labels[3]`, `secretAt`, `connectAt`, `secretLabel` | comparsa + tre flip + lucchetto + ping |
 | `guidebook` | guida, gratis, regalo | copertina della guida in 3D che cade e fluttua, bollino GRATIS | `freeAt`, `tag`, `title` (`\n`), `subtitle`, `footer` | atterraggio libro + timbro |
 | `dm` | commenta, scrivi, DM | chat/commenti: la parola si scrive da sola, parte, arriva la risposta | `text`, `typeAt`, `sendAt`, `replyAt`, `reply`, `name`, `placeholder`, `sentLabel` | apertura + digitazione + invio + risposta |

@@ -53,7 +53,7 @@ export const RecHud: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const lock = spring({ frame: f - 3, fps, config: { damping: 11, stiffness: 260 } });
   const fsize = 440 * (1.5 - 0.5 * lock);
   const fOpacity = interpolate(f, [0, 3, 34, 44], [0, 1, 1, 0], clamp);
-  const fColor = f > 8 && f < 26 && Math.floor(f / 4) % 2 === 0 ? P.lime : "rgba(255,255,255,0.9)";
+  const fColor = f > 8 && f < 26 && Math.floor(f / 4) % 2 === 0 ? P.accent : "rgba(255,255,255,0.9)";
   const ui = 1 - close;
   return (
     <AbsoluteFill style={{ fontFamily: INTER, color: P.white }}>
@@ -68,7 +68,7 @@ export const RecHud: React.FC<{ g: GraphicEvent }> = ({ g }) => {
       <div style={{ position: "absolute", right: width - right + 44, top: top + 44, display: "flex", alignItems: "center", gap: 14, opacity: ui * open, fontWeight: 800, fontSize: 34, textShadow: "0 3px 12px rgba(0,0,0,0.6)" }}>
         4K · 30
         <div style={{ width: 62, height: 30, border: "4px solid white", borderRadius: 7, padding: 3, boxSizing: "border-box", position: "relative" }}>
-          <div style={{ width: "72%", height: "100%", background: P.lime, borderRadius: 2 }} />
+          <div style={{ width: "72%", height: "100%", background: P.accent, borderRadius: 2 }} />
         </div>
       </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: bottom - 96, textAlign: "center", opacity: ui * open, fontWeight: 800, fontSize: 40, letterSpacing: 4, fontVariantNumeric: "tabular-nums", textShadow: "0 3px 12px rgba(0,0,0,0.6)" }}>
@@ -85,7 +85,7 @@ export const RecHud: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             opacity: fOpacity,
             border: `4px solid ${fColor}`,
             borderRadius: 18,
-            boxShadow: fColor === P.lime ? `0 0 30px ${P.limeDim}` : undefined,
+            boxShadow: fColor === P.accent ? `0 0 30px ${P.accentDim}` : undefined,
           }}
         />
       )}

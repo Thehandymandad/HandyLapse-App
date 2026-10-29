@@ -38,7 +38,7 @@ export const GuideBook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 inset: 0,
                 borderRadius: "10px 26px 26px 10px",
                 background: `linear-gradient(160deg, #15171d 0%, ${P.ink} 60%)`,
-                border: `3px solid ${P.lime}`,
+                border: `3px solid ${P.accent}`,
                 overflow: "hidden",
                 padding: 36,
                 boxSizing: "border-box",
@@ -47,13 +47,13 @@ export const GuideBook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 color: P.white,
               }}
             >
-              <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 18, background: P.lime }} />
-              <div style={{ alignSelf: "flex-start", fontFamily: INTER, fontWeight: 900, fontSize: 24, letterSpacing: 3, color: P.ink, background: P.lime, padding: "6px 14px", borderRadius: 8, marginLeft: 10 }}>
+              <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 18, background: P.accent }} />
+              <div style={{ alignSelf: "flex-start", fontFamily: INTER, fontWeight: 900, fontSize: 24, letterSpacing: 3, color: P.ink, background: P.accent, padding: "6px 14px", borderRadius: 8, marginLeft: 10 }}>
                 {(g.props?.tag as string) ?? "GUIDA GRATUITA"}
               </div>
               <div style={{ marginTop: 34, marginLeft: 10, fontFamily: ANTON, fontSize: 82, lineHeight: 0.98 }}>
                 {title.map((l, i) => (
-                  <div key={i} style={{ color: i === title.length - 1 ? P.lime : P.white }}>{l}</div>
+                  <div key={i} style={{ color: i === title.length - 1 ? P.accent : P.white }}>{l}</div>
                 ))}
               </div>
               <div style={{ marginTop: 18, marginLeft: 10, fontFamily: INTER, fontWeight: 700, fontSize: 26, color: "rgba(255,255,255,0.7)" }}>

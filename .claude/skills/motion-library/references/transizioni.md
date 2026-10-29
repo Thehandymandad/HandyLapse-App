@@ -12,9 +12,9 @@ fotogramma vuoto in mezzo, a meno che sia voluto.
 - **Suono**: swish morbido.
 - **Difetti**: contenuti vecchio e nuovo visibili insieme a piena opacità.
 
-### transizioni/wipe-lime
+### transizioni/wipe-accento
 - **Verbi**: nuovo capitolo, "e poi".
-- **Come**: una banda lime diagonale attraversa lo schermo in 0,35 s `power3.inOut` e lascia dietro la nuova scena
+- **Come**: una banda d'accento diagonale attraversa lo schermo in 0,35 s `power3.inOut` e lascia dietro la nuova scena
   (maschera che segue la banda).
 - **Suono**: whoosh con coda.
 - **Difetti**: banda che copre il viso per più di 4 frame.

@@ -11,12 +11,15 @@ Nel piano tutti i tempi sono in secondi della timeline di uscita (quella di word
 - `captions.emphasis` (indici delle parole di words_out.json) → parole chiave dei sottotitoli.
 - le giunte di video-use (segments[].out_start) → `joins`: la camera le tratta come jump cut (punch / whip 3D).
 - `hold` → fermo finale (secondi).
+- `frame` → la cornice attorno al parlato (default: quella della casa, `HOUSE_FRAME`; `"frame": null` = schermo pieno).
 """
 import argparse
 import json
 from pathlib import Path
 
 FPS = 30
+# cornice della casa: ~1 cm (150 px) ai lati, fascia alta (y < 580) e bassa (y > 1340) libere per grafiche e sottotitoli
+HOUSE_FRAME = {"x": 150, "y": 580, "w": 780, "h": 760, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.46}
 
 
 def rel_frames(v, start: float):
@@ -75,6 +78,7 @@ def main() -> None:
         **({"styleOverrides": plan["styleOverrides"]} if plan.get("styleOverrides") else {}),
         "keep": [],
         "cuts": [],
+        "frame": plan["frame"] if "frame" in plan else HOUSE_FRAME,
         "joins": [round(s["out_start"], 3) for s in wo.get("segments", [])[1:]],
         "hold": float(plan.get("hold", 0)),
         "words": [{"text": w["text"], "start": w["start"], "end": w["end"]} for w in wo["words"]],

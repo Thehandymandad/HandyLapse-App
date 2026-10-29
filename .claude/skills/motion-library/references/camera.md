@@ -45,7 +45,7 @@ Due tipi di camera:
 - **Difetti**: cornice non allineata al rettangolo del footage (calcola: w = 1080·scale, h = 1920·scale, centrato).
 
 ### camera/desaturazione
-- **Verbi**: fallimento, prima, passato, triste.
+- **Verbi**: falaccentonto, prima, passato, triste.
 - **Come**: `{"type": "desat", "start": a, "end": b, "amount": 1}` — il footage perde colore in 0,1 s; con un velo
   rosso nella grafica per un "no".
 - **Suono**: il colpo dell'evento.

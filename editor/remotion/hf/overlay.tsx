@@ -8,22 +8,29 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { flushSync } from "react-dom";
 import { Captions } from "../src/components/Captions";
+import { FrameBorder, OutsideFrame } from "../src/components/Frame";
 import { GraphicsLayer } from "../src/components/Graphics";
 import { buildTimeline } from "../src/lib/timeline";
-import { getPack } from "../src/styles";
+import { applyTheme, getPack } from "../src/styles";
 import type { ReelProps } from "../src/types";
+import { rgba } from "../src/styles/originals/pulse/shared";
 import { AbsoluteFill, ConfigContext, FrameContext } from "./remotion-shim";
 
 const data = JSON.parse(document.getElementById("reel-data")!.textContent!) as ReelProps;
 const { project, style } = data;
 const tl = buildTimeline(project, style);
 const pack = getPack(style.id);
+applyTheme(style);
 const CaptionsC = pack.Captions ?? Captions;
 const config = { fps: tl.fps, width: 1080, height: 1920, durationInFrames: tl.durationInFrames, id: "reel" };
 
 const Overlay: React.FC = () => (
   <AbsoluteFill>
-    <GraphicsLayer tl={tl} style={style} pack={pack} />
+    {/* con la cornice le grafiche si vedono solo fuori; il bordo sta sopra */}
+    <OutsideFrame frame={project.frame}>
+      <GraphicsLayer tl={tl} style={style} pack={pack} />
+    </OutsideFrame>
+    <FrameBorder frame={project.frame} color={style.motion.accentColor} glow={rgba(style.motion.accentColor, 0.45)} />
     <CaptionsC tl={tl} style={style} />
     {pack.Overlay && <pack.Overlay tl={tl} style={style} />}
   </AbsoluteFill>

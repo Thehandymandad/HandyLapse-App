@@ -6,7 +6,7 @@ import { ANTON, P } from "./shared";
 
 /**
  * Sottotitoli cinetici: blocchi di 2–3 parole in Anton, ogni parola sale dal basso a fuoco nel momento in cui è detta,
- * la parola attiva è lime con un piccolo "colpo" di scala, le parole chiave (emphasis) diventano un'etichetta lime inclinata.
+ * la parola attiva è accento con un piccolo "colpo" di scala, le parole chiave (emphasis) diventano un'etichetta accento inclinata.
  * Una grafica con props.hideCaptions li nasconde.
  */
 export const PulseCaptions: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl, style }) => {
@@ -55,12 +55,12 @@ export const PulseCaptions: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl
                 transform: `translateY(${(1 - s) * 46}px) scale(${(0.8 + 0.2 * s) * kick}) rotate(${boxed ? -3 : 0}deg)`,
                 opacity: Math.min(1, 0.25 + age / 2),
                 filter: blur > 0.3 ? `blur(${blur.toFixed(1)}px)` : undefined,
-                color: boxed ? P.ink : isActive ? P.lime : P.white,
-                background: boxed ? P.lime : undefined,
+                color: boxed ? P.ink : isActive ? P.accent : P.white,
+                background: boxed ? P.accent : undefined,
                 padding: boxed ? `0 ${c.fontSize * 0.16}px` : undefined,
                 borderRadius: c.fontSize * 0.12,
                 textShadow: boxed ? "none" : "0 4px 0 rgba(0,0,0,0.35), 0 10px 28px rgba(0,0,0,0.65)",
-                boxShadow: boxed ? `0 10px 30px rgba(0,0,0,0.45), 0 0 40px ${P.limeDim}` : undefined,
+                boxShadow: boxed ? `0 10px 30px rgba(0,0,0,0.45), 0 0 40px ${P.accentDim}` : undefined,
               }}
             >
               {w.text.replace(/[.,!?;:]+$/, "")}
