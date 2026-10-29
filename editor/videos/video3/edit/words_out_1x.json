@@ -1,0 +1,781 @@
+{
+ "duration": 31.567,
+ "segments": [
+  {
+   "source": "video3",
+   "start": 1.93,
+   "end": 6.48,
+   "out_start": 0.0,
+   "out_end": 4.567,
+   "beat": "HOOK"
+  },
+  {
+   "source": "video3",
+   "start": 10.59,
+   "end": 12.04,
+   "out_start": 4.567,
+   "out_end": 6.033,
+   "beat": "PROBLEMA"
+  },
+  {
+   "source": "video3",
+   "start": 17.23,
+   "end": 19.46,
+   "out_start": 6.033,
+   "out_end": 8.267,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video3",
+   "start": 23.13,
+   "end": 27.98,
+   "out_start": 8.267,
+   "out_end": 13.133,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video3",
+   "start": 28.57,
+   "end": 29.36,
+   "out_start": 13.133,
+   "out_end": 13.933,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 30.37,
+   "end": 31.18,
+   "out_start": 13.933,
+   "out_end": 14.767,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 34.87,
+   "end": 36.84,
+   "out_start": 14.767,
+   "out_end": 16.767,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 40.65,
+   "end": 42.38,
+   "out_start": 16.767,
+   "out_end": 18.5,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 43.32,
+   "end": 44.86,
+   "out_start": 18.5,
+   "out_end": 20.067,
+   "beat": "PROVA"
+  },
+  {
+   "source": "video3",
+   "start": 46.31,
+   "end": 48.04,
+   "out_start": 20.067,
+   "out_end": 21.8,
+   "beat": "COME"
+  },
+  {
+   "source": "video3",
+   "start": 49.13,
+   "end": 51.88,
+   "out_start": 21.8,
+   "out_end": 24.567,
+   "beat": "COME"
+  },
+  {
+   "source": "video3",
+   "start": 53.49,
+   "end": 55.56,
+   "out_start": 24.567,
+   "out_end": 26.667,
+   "beat": "COME"
+  },
+  {
+   "source": "video3",
+   "start": 57.31,
+   "end": 59.18,
+   "out_start": 26.667,
+   "out_end": 28.567,
+   "beat": "CTA"
+  },
+  {
+   "source": "video3",
+   "start": 59.57,
+   "end": 60.58,
+   "out_start": 28.567,
+   "out_end": 29.6,
+   "beat": "CTA"
+  },
+  {
+   "source": "video3",
+   "start": 65.85,
+   "end": 67.8,
+   "out_start": 29.6,
+   "out_end": 31.567,
+   "beat": "CTA"
+  }
+ ],
+ "words": [
+  {
+   "text": "Questo",
+   "start": 0.05,
+   "end": 0.27,
+   "source": "video3"
+  },
+  {
+   "text": "video",
+   "start": 0.33,
+   "end": 0.57,
+   "source": "video3"
+  },
+  {
+   "text": "non",
+   "start": 0.71,
+   "end": 0.85,
+   "source": "video3"
+  },
+  {
+   "text": "l'ho",
+   "start": 0.87,
+   "end": 0.95,
+   "source": "video3"
+  },
+  {
+   "text": "montato",
+   "start": 1.01,
+   "end": 1.33,
+   "source": "video3"
+  },
+  {
+   "text": "io.",
+   "start": 1.39,
+   "end": 1.49,
+   "source": "video3"
+  },
+  {
+   "text": "La",
+   "start": 1.87,
+   "end": 1.93,
+   "source": "video3"
+  },
+  {
+   "text": "parte",
+   "start": 1.99,
+   "end": 2.21,
+   "source": "video3"
+  },
+  {
+   "text": "più",
+   "start": 2.29,
+   "end": 2.37,
+   "source": "video3"
+  },
+  {
+   "text": "difficile",
+   "start": 2.39,
+   "end": 2.73,
+   "source": "video3"
+  },
+  {
+   "text": "di",
+   "start": 2.77,
+   "end": 2.87,
+   "source": "video3"
+  },
+  {
+   "text": "fare",
+   "start": 2.91,
+   "end": 3.09,
+   "source": "video3"
+  },
+  {
+   "text": "reel",
+   "start": 3.13,
+   "end": 3.51,
+   "source": "video3"
+  },
+  {
+   "text": "non",
+   "start": 3.55,
+   "end": 3.67,
+   "source": "video3"
+  },
+  {
+   "text": "è",
+   "start": 3.73,
+   "end": 3.83,
+   "source": "video3"
+  },
+  {
+   "text": "registrare.",
+   "start": 3.87,
+   "end": 4.47,
+   "source": "video3"
+  },
+  {
+   "text": "È",
+   "start": 4.617,
+   "end": 4.677,
+   "source": "video3"
+  },
+  {
+   "text": "tutto",
+   "start": 4.717,
+   "end": 4.957,
+   "source": "video3"
+  },
+  {
+   "text": "quello",
+   "start": 5.017,
+   "end": 5.237,
+   "source": "video3"
+  },
+  {
+   "text": "che",
+   "start": 5.357,
+   "end": 5.437,
+   "source": "video3"
+  },
+  {
+   "text": "viene",
+   "start": 5.477,
+   "end": 5.657,
+   "source": "video3"
+  },
+  {
+   "text": "dopo.",
+   "start": 5.697,
+   "end": 5.937,
+   "source": "video3"
+  },
+  {
+   "text": "così",
+   "start": 6.083,
+   "end": 6.423,
+   "source": "video3"
+  },
+  {
+   "text": "ho",
+   "start": 6.443,
+   "end": 6.503,
+   "source": "video3"
+  },
+  {
+   "text": "costruito",
+   "start": 6.543,
+   "end": 6.923,
+   "source": "video3"
+  },
+  {
+   "text": "un",
+   "start": 6.943,
+   "end": 7.023,
+   "source": "video3"
+  },
+  {
+   "text": "editor",
+   "start": 7.063,
+   "end": 7.363,
+   "source": "video3"
+  },
+  {
+   "text": "con",
+   "start": 7.403,
+   "end": 7.583,
+   "source": "video3"
+  },
+  {
+   "text": "Claude",
+   "start": 7.623,
+   "end": 7.803,
+   "source": "video3"
+  },
+  {
+   "text": "Code.",
+   "start": 7.903,
+   "end": 8.183,
+   "source": "video3"
+  },
+  {
+   "text": "Gli",
+   "start": 8.317,
+   "end": 8.397,
+   "source": "video3"
+  },
+  {
+   "text": "do",
+   "start": 8.417,
+   "end": 8.477,
+   "source": "video3"
+  },
+  {
+   "text": "il",
+   "start": 8.497,
+   "end": 8.557,
+   "source": "video3"
+  },
+  {
+   "text": "video",
+   "start": 8.577,
+   "end": 8.797,
+   "source": "video3"
+  },
+  {
+   "text": "grezzo",
+   "start": 8.837,
+   "end": 9.237,
+   "source": "video3"
+  },
+  {
+   "text": "e",
+   "start": 9.277,
+   "end": 9.317,
+   "source": "video3"
+  },
+  {
+   "text": "lui",
+   "start": 9.337,
+   "end": 9.457,
+   "source": "video3"
+  },
+  {
+   "text": "taglia",
+   "start": 9.497,
+   "end": 9.677,
+   "source": "video3"
+  },
+  {
+   "text": "le",
+   "start": 9.697,
+   "end": 9.797,
+   "source": "video3"
+  },
+  {
+   "text": "pause,",
+   "start": 9.837,
+   "end": 10.137,
+   "source": "video3"
+  },
+  {
+   "text": "scrive",
+   "start": 10.577,
+   "end": 10.837,
+   "source": "video3"
+  },
+  {
+   "text": "i",
+   "start": 10.857,
+   "end": 10.897,
+   "source": "video3"
+  },
+  {
+   "text": "sottotitoli,",
+   "start": 10.937,
+   "end": 11.477,
+   "source": "video3"
+  },
+  {
+   "text": "mette",
+   "start": 11.837,
+   "end": 12.097,
+   "source": "video3"
+  },
+  {
+   "text": "zoom",
+   "start": 12.177,
+   "end": 12.337,
+   "source": "video3"
+  },
+  {
+   "text": "e",
+   "start": 12.517,
+   "end": 12.577,
+   "source": "video3"
+  },
+  {
+   "text": "grafiche.",
+   "start": 12.597,
+   "end": 13.037,
+   "source": "video3"
+  },
+  {
+   "text": "E",
+   "start": 13.183,
+   "end": 13.243,
+   "source": "video3"
+  },
+  {
+   "text": "questo",
+   "start": 13.283,
+   "end": 13.543,
+   "source": "video3"
+  },
+  {
+   "text": "video",
+   "start": 13.563,
+   "end": 13.843,
+   "source": "video3"
+  },
+  {
+   "text": "non",
+   "start": 13.983,
+   "end": 14.083,
+   "source": "video3"
+  },
+  {
+   "text": "l'ho",
+   "start": 14.103,
+   "end": 14.203,
+   "source": "video3"
+  },
+  {
+   "text": "toccato.",
+   "start": 14.243,
+   "end": 14.663,
+   "source": "video3"
+  },
+  {
+   "text": "Zero",
+   "start": 14.817,
+   "end": 15.017,
+   "source": "video3"
+  },
+  {
+   "text": "tagli",
+   "start": 15.057,
+   "end": 15.197,
+   "source": "video3"
+  },
+  {
+   "text": "a",
+   "start": 15.237,
+   "end": 15.277,
+   "source": "video3"
+  },
+  {
+   "text": "mano,",
+   "start": 15.317,
+   "end": 15.537,
+   "source": "video3"
+  },
+  {
+   "text": "zero",
+   "start": 15.937,
+   "end": 16.097,
+   "source": "video3"
+  },
+  {
+   "text": "app",
+   "start": 16.137,
+   "end": 16.217,
+   "source": "video3"
+  },
+  {
+   "text": "aperte.",
+   "start": 16.257,
+   "end": 16.657,
+   "source": "video3"
+  },
+  {
+   "text": "l'ho",
+   "start": 16.817,
+   "end": 16.897,
+   "source": "video3"
+  },
+  {
+   "text": "registrato",
+   "start": 16.937,
+   "end": 17.377,
+   "source": "video3"
+  },
+  {
+   "text": "io",
+   "start": 17.437,
+   "end": 17.537,
+   "source": "video3"
+  },
+  {
+   "text": "e",
+   "start": 17.677,
+   "end": 17.717,
+   "source": "video3"
+  },
+  {
+   "text": "gliel'ho",
+   "start": 17.757,
+   "end": 17.977,
+   "source": "video3"
+  },
+  {
+   "text": "mandato.",
+   "start": 18.017,
+   "end": 18.417,
+   "source": "video3"
+  },
+  {
+   "text": "E",
+   "start": 18.56,
+   "end": 18.62,
+   "source": "video3"
+  },
+  {
+   "text": "me",
+   "start": 18.64,
+   "end": 18.7,
+   "source": "video3"
+  },
+  {
+   "text": "l'ha",
+   "start": 18.72,
+   "end": 18.82,
+   "source": "video3"
+  },
+  {
+   "text": "restituito",
+   "start": 18.86,
+   "end": 19.44,
+   "source": "video3"
+  },
+  {
+   "text": "così.",
+   "start": 19.7,
+   "end": 19.96,
+   "source": "video3"
+  },
+  {
+   "text": "Dentro",
+   "start": 20.117,
+   "end": 20.457,
+   "source": "video3"
+  },
+  {
+   "text": "ci",
+   "start": 20.497,
+   "end": 20.577,
+   "source": "video3"
+  },
+  {
+   "text": "sono",
+   "start": 20.637,
+   "end": 20.817,
+   "source": "video3"
+  },
+  {
+   "text": "tre",
+   "start": 20.977,
+   "end": 21.097,
+   "source": "video3"
+  },
+  {
+   "text": "strumenti:",
+   "start": 21.177,
+   "end": 21.717,
+   "source": "video3"
+  },
+  {
+   "text": "uno",
+   "start": 21.85,
+   "end": 22.07,
+   "source": "video3"
+  },
+  {
+   "text": "trascrive,",
+   "start": 22.11,
+   "end": 22.59,
+   "source": "video3"
+  },
+  {
+   "text": "uno",
+   "start": 22.91,
+   "end": 23.09,
+   "source": "video3"
+  },
+  {
+   "text": "taglia,",
+   "start": 23.13,
+   "end": 23.45,
+   "source": "video3"
+  },
+  {
+   "text": "uno",
+   "start": 23.83,
+   "end": 24.09,
+   "source": "video3"
+  },
+  {
+   "text": "anima.",
+   "start": 24.19,
+   "end": 24.47,
+   "source": "video3"
+  },
+  {
+   "text": "Ma",
+   "start": 24.617,
+   "end": 24.657,
+   "source": "video3"
+  },
+  {
+   "text": "il",
+   "start": 24.677,
+   "end": 24.717,
+   "source": "video3"
+  },
+  {
+   "text": "segreto",
+   "start": 24.797,
+   "end": 25.257,
+   "source": "video3"
+  },
+  {
+   "text": "è",
+   "start": 25.317,
+   "end": 25.377,
+   "source": "video3"
+  },
+  {
+   "text": "come",
+   "start": 25.417,
+   "end": 25.557,
+   "source": "video3"
+  },
+  {
+   "text": "li",
+   "start": 25.597,
+   "end": 25.677,
+   "source": "video3"
+  },
+  {
+   "text": "fai",
+   "start": 25.717,
+   "end": 25.837,
+   "source": "video3"
+  },
+  {
+   "text": "lavorare",
+   "start": 25.877,
+   "end": 26.137,
+   "source": "video3"
+  },
+  {
+   "text": "insieme.",
+   "start": 26.177,
+   "end": 26.557,
+   "source": "video3"
+  },
+  {
+   "text": "Ti",
+   "start": 26.717,
+   "end": 26.757,
+   "source": "video3"
+  },
+  {
+   "text": "ho",
+   "start": 26.777,
+   "end": 26.817,
+   "source": "video3"
+  },
+  {
+   "text": "scritto",
+   "start": 26.857,
+   "end": 27.317,
+   "source": "video3"
+  },
+  {
+   "text": "una",
+   "start": 27.397,
+   "end": 27.577,
+   "source": "video3"
+  },
+  {
+   "text": "guida",
+   "start": 27.677,
+   "end": 27.937,
+   "source": "video3"
+  },
+  {
+   "text": "gratuita",
+   "start": 27.957,
+   "end": 28.457,
+   "source": "video3"
+  },
+  {
+   "text": "su",
+   "start": 28.617,
+   "end": 28.697,
+   "source": "video3"
+  },
+  {
+   "text": "come",
+   "start": 28.877,
+   "end": 29.037,
+   "source": "video3"
+  },
+  {
+   "text": "l'ho",
+   "start": 29.057,
+   "end": 29.157,
+   "source": "video3"
+  },
+  {
+   "text": "fatto.",
+   "start": 29.197,
+   "end": 29.497,
+   "source": "video3"
+  },
+  {
+   "text": "Commenta",
+   "start": 29.65,
+   "end": 30.05,
+   "source": "video3"
+  },
+  {
+   "text": "guida",
+   "start": 30.11,
+   "end": 30.47,
+   "source": "video3"
+  },
+  {
+   "text": "e",
+   "start": 30.49,
+   "end": 30.53,
+   "source": "video3"
+  },
+  {
+   "text": "te",
+   "start": 30.59,
+   "end": 30.65,
+   "source": "video3"
+  },
+  {
+   "text": "la",
+   "start": 30.69,
+   "end": 30.75,
+   "source": "video3"
+  },
+  {
+   "text": "mando",
+   "start": 30.79,
+   "end": 31.01,
+   "source": "video3"
+  },
+  {
+   "text": "in",
+   "start": 31.03,
+   "end": 31.09,
+   "source": "video3"
+  },
+  {
+   "text": "DM.",
+   "start": 31.13,
+   "end": 31.47,
+   "source": "video3"
+  }
+ ]
+}

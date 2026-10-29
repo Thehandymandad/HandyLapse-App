@@ -24,7 +24,7 @@
   "height": 1920,
   "fps": 30
  },
- "duration": 32.988,
+ "duration": 30.107,
  "hold": 1.3,
  "face": {
   "x": 0.5,
@@ -50,13 +50,13 @@
   {
    "id": "s01",
    "start": 0.0,
-   "end": 1.7,
+   "end": 1.545,
    "line": "Questo video non l'ho montato io.",
    "action": "Mirino REC che si chiude sul viso, timecode che corre, il fuoco aggancia la faccia; su «io» scatta l'otturatore (lampo) e gli angoli volano fuori.",
    "graphic": {
     "type": "rec",
     "props": {
-     "shutterAt": 1.39,
+     "shutterAt": 1.264,
      "focusX": 0.5,
      "focusY": 0.723,
      "box": [
@@ -70,7 +70,7 @@
    },
    "payoff": {
     "word": "io",
-    "t": 1.39
+    "t": 1.264
    },
    "sfx": [
     {
@@ -78,15 +78,15 @@
      "name": "rec-pop"
     },
     {
-     "t": 1.39,
+     "t": 1.264,
      "name": "scatto"
     }
    ]
   },
   {
    "id": "s01b",
-   "start": 1.75,
-   "end": 4.55,
+   "start": 1.591,
+   "end": 4.136,
    "line": "La parte più difficile di fare reel non è registrare.",
    "action": "Un bottone 3D nero con «● REC» entra girando; il cursore arriva e lo preme su «registrare»: il tasto affonda, onda di luce, sopra scatta la pillola LA PARTE FACILE.",
    "graphic": {
@@ -97,28 +97,28 @@
      "dot": "#FF2E4D",
      "color": "#22232A",
      "tag": "LA PARTE FACILE",
-     "pressAt": 3.87
+     "pressAt": 3.518
     }
    },
    "payoff": {
     "word": "registrare",
-    "t": 3.87
+    "t": 3.518
    },
    "sfx": [
     {
-     "t": 1.75,
+     "t": 1.591,
      "name": "bottone-entra"
     },
     {
-     "t": 3.87,
+     "t": 3.518,
      "name": "tasto-rec"
     }
    ]
   },
   {
    "id": "s03",
-   "start": 4.62,
-   "end": 6.2,
+   "start": 4.2,
+   "end": 5.636,
    "line": "È tutto quello che viene dopo.",
    "action": "I lavori del montaggio (TAGLI, SOTTOTITOLI, ZOOM, GRAFICHE…) cadono dall'alto e si accumulano, ogni impatto fa tremare la camera; l'ultimo è rosso ORE PERSE; alla fine la pila crolla.",
    "graphic": {
@@ -139,23 +139,23 @@
    },
    "payoff": {
     "word": "dopo",
-    "t": 5.7
+    "t": 5.182
    },
    "sfx": [
     {
-     "t": 4.92,
+     "t": 4.473,
      "name": "pila-tonfi"
     },
     {
-     "t": 5.95,
+     "t": 5.409,
      "name": "pila-crollo"
     }
    ]
   },
   {
    "id": "s03b",
-   "start": 6.2,
-   "end": 7.56,
+   "start": 5.636,
+   "end": 6.873,
    "line": "Così ho costruito un editor…",
    "action": "Una tessera 3D arancione col martello atterra girando su «costruito», sotto: IL MIO EDITOR.",
    "graphic": {
@@ -166,26 +166,26 @@
       {
        "icon": "hammer",
        "label": "IL MIO EDITOR",
-       "at": 6.54
+       "at": 5.945
       }
      ]
     }
    },
    "payoff": {
     "word": "costruito",
-    "t": 6.54
+    "t": 5.945
    },
    "sfx": [
     {
-     "t": 6.54,
+     "t": 5.945,
      "name": "tessera-3d"
     }
    ]
   },
   {
    "id": "s04",
-   "start": 7.62,
-   "end": 9.45,
+   "start": 6.927,
+   "end": 8.591,
    "line": "…con Claude Code. Gli do il video grezzo…",
    "action": "Come nel primo editor (video2): la card di Claude entra a ribalta, la barra corre liscia da 0 a 100% in 1,4 s con le spunte che scattano quando la barra le supera, a 100% la card si accende (Montaggio completato).",
    "graphic": {
@@ -199,28 +199,28 @@
       "Zoom & camera",
       "Grafiche"
      ],
-     "doneAt": 9.02
+     "doneAt": 8.2
     }
    },
    "payoff": {
     "word": "grezzo",
-    "t": 9.02
+    "t": 8.2
    },
    "sfx": [
     {
-     "t": 7.62,
+     "t": 6.927,
      "name": "barra-carica"
     },
     {
-     "t": 9.02,
+     "t": 8.2,
      "name": "ding-100"
     }
    ]
   },
   {
    "id": "s04b",
-   "start": 9.47,
-   "end": 13.12,
+   "start": 8.609,
+   "end": 11.927,
    "line": "…e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
    "action": "Quattro tessere 3D (forbici, sottotitoli, lente, scintille) atterrano girando una per parola: PAUSE, SOTTOTITOLI, ZOOM, GRAFICHE.",
    "graphic": {
@@ -231,53 +231,53 @@
       {
        "icon": "scissors",
        "label": "PAUSE",
-       "at": 9.84
+       "at": 8.945
       },
       {
        "icon": "captions",
        "label": "SOTTOTITOLI",
-       "at": 10.94
+       "at": 9.945
       },
       {
        "icon": "zoom",
        "label": "ZOOM",
-       "at": 12.18
+       "at": 11.073
       },
       {
        "icon": "spark",
        "label": "GRAFICHE",
-       "at": 12.6
+       "at": 11.455
       }
      ]
     }
    },
    "payoff": {
     "word": "grafiche",
-    "t": 12.6
+    "t": 11.455
    },
    "sfx": [
     {
-     "t": 9.84,
+     "t": 8.945,
      "name": "check-1"
     },
     {
-     "t": 10.94,
+     "t": 9.945,
      "name": "check-2"
     },
     {
-     "t": 12.18,
+     "t": 11.073,
      "name": "check-3"
     },
     {
-     "t": 12.6,
+     "t": 11.455,
      "name": "check-completo"
     }
    ]
   },
   {
    "id": "s05b",
-   "start": 13.18,
-   "end": 14.76,
+   "start": 11.982,
+   "end": 13.418,
    "line": "E questo video non l'ho toccato.",
    "action": "Scheda stile referenza (pillola QUESTO VIDEO, cerchio con occhio, MONTAGGIO A MANO, «Toccato da me»): su «toccato» il titolo viene barrato in rosso.",
    "graphic": {
@@ -289,29 +289,29 @@
      "kicker": "Montaggio a mano",
      "title": "Toccato da me",
      "bar": 0.12,
-     "barAt": 13.4,
-     "strikeAt": 14.24
+     "barAt": 12.182,
+     "strikeAt": 12.945
     }
    },
    "payoff": {
     "word": "toccato",
-    "t": 14.24
+    "t": 12.945
    },
    "sfx": [
     {
-     "t": 13.18,
+     "t": 11.982,
      "name": "scheda-entra"
     },
     {
-     "t": 14.24,
+     "t": 12.945,
      "name": "barra-rossa"
     }
    ]
   },
   {
    "id": "s06",
-   "start": 14.82,
-   "end": 16.8,
+   "start": 13.473,
+   "end": 15.273,
    "line": "Zero tagli a mano, zero app aperte.",
    "action": "Due timbri rossi sbattono uno sotto l'altro, ognuno sul suo «zero»; la camera trema a ogni colpo.",
    "graphic": {
@@ -319,11 +319,11 @@
     "props": {
      "items": [
       {
-       "at": 14.82,
+       "at": 13.473,
        "text": "0 tagli a mano"
       },
       {
-       "at": 15.94,
+       "at": 14.491,
        "text": "0 app aperte"
       }
      ]
@@ -333,23 +333,23 @@
    },
    "payoff": {
     "word": "zero",
-    "t": 15.94
+    "t": 14.491
    },
    "sfx": [
     {
-     "t": 14.82,
+     "t": 13.473,
      "name": "timbro-1"
     },
     {
-     "t": 15.94,
+     "t": 14.491,
      "name": "timbro-2"
     }
    ]
   },
   {
    "id": "s06b",
-   "start": 16.82,
-   "end": 17.72,
+   "start": 15.291,
+   "end": 16.109,
    "line": "L'ho registrato io…",
    "action": "Una tessera 3D con la videocamera atterra su «registrato»: REGISTRATO DA ME.",
    "graphic": {
@@ -360,26 +360,26 @@
       {
        "icon": "camera",
        "label": "REGISTRATO DA ME",
-       "at": 16.94
+       "at": 15.4
       }
      ]
     }
    },
    "payoff": {
     "word": "registrato",
-    "t": 16.94
+    "t": 15.4
    },
    "sfx": [
     {
-     "t": 16.94,
+     "t": 15.4,
      "name": "camera-3d"
     }
    ]
   },
   {
    "id": "s07",
-   "start": 17.76,
-   "end": 18.54,
+   "start": 16.145,
+   "end": 16.855,
    "line": "…e gliel'ho mandato…",
    "action": "Aeroplanino di carta in curva con scia lime tratteggiata, sotto la pillola INVIATO.",
    "graphic": {
@@ -391,19 +391,19 @@
    },
    "payoff": {
     "word": "mandato",
-    "t": 18.02
+    "t": 16.382
    },
    "sfx": [
     {
-     "t": 17.76,
+     "t": 16.145,
      "name": "aereo-parte"
     }
    ]
   },
   {
    "id": "s08",
-   "start": 18.56,
-   "end": 20.95,
+   "start": 16.873,
+   "end": 19.045,
    "line": "…e me l'ha restituito così (editato).",
    "action": "L'aeroplanino TORNA indietro in curva con la scia e su «così» consegna la pillola EDITATO (onda di luce); cuori e fiamme salgono ai lati. Si capisce che il video è tornato montato.",
    "graphic": {
@@ -411,7 +411,7 @@
     "y": 0.3,
     "props": {
      "label": "EDITATO",
-     "burstAt": 19.7,
+     "burstAt": 17.909,
      "plane": true,
      "sides": [
       0.13,
@@ -425,103 +425,103 @@
    },
    "payoff": {
     "word": "così",
-    "t": 19.7
+    "t": 17.909
    },
    "sfx": [
     {
-     "t": 18.56,
+     "t": 16.873,
      "name": "aereo-torna"
     },
     {
-     "t": 19.7,
+     "t": 17.909,
      "name": "cosi-scintilla"
     }
    ]
   },
   {
    "id": "s09",
-   "start": 20.977,
-   "end": 26.827,
+   "start": 19.07,
+   "end": 24.388,
    "line": "Dentro ci sono tre strumenti: uno trascrive, uno taglia, uno anima. Ma il segreto è come li fai lavorare insieme.",
    "action": "Tre tessere coperte «?» che si girano una per verbo (TRASCRIVE, TAGLIA, ANIMA), poi il lucchetto IL SEGRETO, a «insieme» la scia lime le collega.",
    "graphic": {
     "type": "trio",
     "props": {
      "reveal": [
-      22.107,
-      23.127,
-      24.187
+      20.097,
+      21.025,
+      21.988
      ],
-     "secretAt": 24.797,
-     "connectAt": 26.177
+     "secretAt": 22.543,
+     "connectAt": 23.797
     },
     "y": 0.3,
     "scale": 0.9
    },
    "payoff": {
     "word": "insieme",
-    "t": 26.177
+    "t": 23.797
    },
    "sfx": [
     {
-     "t": 20.977,
+     "t": 19.07,
      "name": "tessere-appaiono"
     },
     {
-     "t": 22.107,
+     "t": 20.097,
      "name": "flip-1"
     },
     {
-     "t": 23.127,
+     "t": 21.025,
      "name": "flip-2"
     },
     {
-     "t": 24.187,
+     "t": 21.988,
      "name": "flip-3"
     },
     {
-     "t": 24.797,
+     "t": 22.543,
      "name": "lucchetto"
     },
     {
-     "t": 26.177,
+     "t": 23.797,
      "name": "insieme-ping"
     }
    ]
   },
   {
    "id": "s10",
-   "start": 26.857,
-   "end": 29.567,
+   "start": 24.415,
+   "end": 26.879,
    "line": "Ti ho scritto una guida gratuita su come l'ho fatto.",
    "action": "La copertina della guida cade inclinata in 3D e fluttua con un riflesso; su «gratuita» sbatte il bollino GRATIS.",
    "graphic": {
     "type": "guidebook",
     "props": {
-     "freeAt": 27.957
+     "freeAt": 25.415
     },
     "y": 0.29,
     "scale": 0.8
    },
    "payoff": {
     "word": "gratuita",
-    "t": 27.957
+    "t": 25.415
    },
    "sfx": [
     {
-     "t": 27.017,
+     "t": 24.561,
      "name": "libro-atterra"
     },
     {
-     "t": 27.957,
+     "t": 25.415,
      "name": "gratis-timbro"
     }
    ]
   },
   {
    "id": "s11",
-   "start": 29.597,
-   "end": 32.867,
+   "start": 26.906,
+   "end": 29.879,
    "line": "Commenta guida e te la mando in DM.",
    "action": "Box commenti: GUIDA si scrive da solo su «guida», parte su «mando», arriva la risposta «Guida inviata in DM» su «DM»; fermo finale per leggerla.",
    "graphic": {
@@ -531,9 +531,9 @@
      "name": "Commenti",
      "placeholder": "Aggiungi un commento…",
      "sentLabel": "Pubblicato",
-     "typeAt": 30.107,
-     "sendAt": 30.787,
-     "replyAt": 31.127,
+     "typeAt": 27.37,
+     "sendAt": 27.988,
+     "replyAt": 28.297,
      "reply": "Guida inviata in DM"
     },
     "y": 0.3,
@@ -541,23 +541,23 @@
    },
    "payoff": {
     "word": "DM",
-    "t": 31.127
+    "t": 28.297
    },
    "sfx": [
     {
-     "t": 29.597,
+     "t": 26.906,
      "name": "commenti-apre"
     },
     {
-     "t": 30.107,
+     "t": 27.37,
      "name": "digita-guida"
     },
     {
-     "t": 30.787,
+     "t": 27.988,
      "name": "pubblica"
     },
     {
-     "t": 31.127,
+     "t": 28.297,
      "name": "risposta-dm"
     }
    ]
@@ -566,27 +566,27 @@
  "objects": [],
  "camera": [
   {
-   "t": 1.01,
+   "t": 0.918,
    "strength": 0.7,
    "type": "punch"
   },
   {
-   "t": 2.39,
+   "t": 2.173,
    "strength": 0.6,
    "type": "punch"
   },
   {
-   "t": 14.24,
+   "t": 12.945,
    "strength": 0.9,
    "type": "punch"
   },
   {
-   "t": 19.703,
+   "t": 17.912,
    "strength": 1.0,
    "type": "punch"
   },
   {
-   "t": 24.797,
+   "t": 22.543,
    "strength": 0.8,
    "type": "punch"
   }
@@ -601,5 +601,6 @@
   "zoom": 1.0,
   "faceY": 0.42,
   "faceAt": 0.4
- }
+ },
+ "speed": 1.1
 }

@@ -6,7 +6,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "duration": 31.567
+  "duration": 28.697
  },
  "styleId": "pulse",
  "styleOverrides": {
@@ -40,567 +40,567 @@
   "faceAt": 0.4
  },
  "joins": [
-  4.567,
-  6.033,
-  8.267,
-  13.133,
-  13.933,
-  14.767,
-  16.767,
-  18.5,
-  20.067,
-  21.8,
-  24.567,
-  26.667,
-  28.567,
-  29.6
+  4.152,
+  5.485,
+  7.515,
+  11.939,
+  12.666,
+  13.425,
+  15.243,
+  16.818,
+  18.243,
+  19.818,
+  22.334,
+  24.243,
+  25.97,
+  26.909
  ],
  "hold": 1.3,
  "words": [
   {
    "text": "Questo",
-   "start": 0.05,
-   "end": 0.27
+   "start": 0.045,
+   "end": 0.245
   },
   {
    "text": "video",
-   "start": 0.33,
-   "end": 0.57
+   "start": 0.3,
+   "end": 0.518
   },
   {
    "text": "non",
-   "start": 0.71,
-   "end": 0.85
+   "start": 0.645,
+   "end": 0.773
   },
   {
    "text": "l'ho",
-   "start": 0.87,
-   "end": 0.95
+   "start": 0.791,
+   "end": 0.864
   },
   {
    "text": "montato",
-   "start": 1.01,
-   "end": 1.33
+   "start": 0.918,
+   "end": 1.209
   },
   {
    "text": "io.",
-   "start": 1.39,
-   "end": 1.49
+   "start": 1.264,
+   "end": 1.355
   },
   {
    "text": "La",
-   "start": 1.87,
-   "end": 1.93
+   "start": 1.7,
+   "end": 1.755
   },
   {
    "text": "parte",
-   "start": 1.99,
-   "end": 2.21
+   "start": 1.809,
+   "end": 2.009
   },
   {
    "text": "più",
-   "start": 2.29,
-   "end": 2.37
+   "start": 2.082,
+   "end": 2.155
   },
   {
    "text": "difficile",
-   "start": 2.39,
-   "end": 2.73
+   "start": 2.173,
+   "end": 2.482
   },
   {
    "text": "di",
-   "start": 2.77,
-   "end": 2.87
+   "start": 2.518,
+   "end": 2.609
   },
   {
    "text": "fare",
-   "start": 2.91,
-   "end": 3.09
+   "start": 2.645,
+   "end": 2.809
   },
   {
    "text": "reel",
-   "start": 3.13,
-   "end": 3.51
+   "start": 2.845,
+   "end": 3.191
   },
   {
    "text": "non",
-   "start": 3.55,
-   "end": 3.67
+   "start": 3.227,
+   "end": 3.336
   },
   {
    "text": "è",
-   "start": 3.73,
-   "end": 3.83
+   "start": 3.391,
+   "end": 3.482
   },
   {
    "text": "registrare.",
-   "start": 3.87,
-   "end": 4.47
+   "start": 3.518,
+   "end": 4.064
   },
   {
    "text": "È",
-   "start": 4.617,
-   "end": 4.677
+   "start": 4.197,
+   "end": 4.252
   },
   {
    "text": "tutto",
-   "start": 4.717,
-   "end": 4.957
+   "start": 4.288,
+   "end": 4.506
   },
   {
    "text": "quello",
-   "start": 5.017,
-   "end": 5.237
+   "start": 4.561,
+   "end": 4.761
   },
   {
    "text": "che",
-   "start": 5.357,
-   "end": 5.437
+   "start": 4.87,
+   "end": 4.943
   },
   {
    "text": "viene",
-   "start": 5.477,
-   "end": 5.657
+   "start": 4.979,
+   "end": 5.143
   },
   {
    "text": "dopo.",
-   "start": 5.697,
-   "end": 5.937
+   "start": 5.179,
+   "end": 5.397
   },
   {
    "text": "così",
-   "start": 6.083,
-   "end": 6.423
+   "start": 5.53,
+   "end": 5.839
   },
   {
    "text": "ho",
-   "start": 6.443,
-   "end": 6.503
+   "start": 5.857,
+   "end": 5.912
   },
   {
    "text": "costruito",
-   "start": 6.543,
-   "end": 6.923
+   "start": 5.948,
+   "end": 6.294
   },
   {
    "text": "un",
-   "start": 6.943,
-   "end": 7.023
+   "start": 6.312,
+   "end": 6.385
   },
   {
    "text": "editor",
-   "start": 7.063,
-   "end": 7.363
+   "start": 6.421,
+   "end": 6.694
   },
   {
    "text": "con",
-   "start": 7.403,
-   "end": 7.583
+   "start": 6.73,
+   "end": 6.894
   },
   {
    "text": "Claude",
-   "start": 7.623,
-   "end": 7.803
+   "start": 6.93,
+   "end": 7.094
   },
   {
    "text": "Code.",
-   "start": 7.903,
-   "end": 8.183
+   "start": 7.185,
+   "end": 7.439
   },
   {
    "text": "Gli",
-   "start": 8.317,
-   "end": 8.397
+   "start": 7.561,
+   "end": 7.634
   },
   {
    "text": "do",
-   "start": 8.417,
-   "end": 8.477
+   "start": 7.652,
+   "end": 7.706
   },
   {
    "text": "il",
-   "start": 8.497,
-   "end": 8.557
+   "start": 7.725,
+   "end": 7.779
   },
   {
    "text": "video",
-   "start": 8.577,
-   "end": 8.797
+   "start": 7.797,
+   "end": 7.997
   },
   {
    "text": "grezzo",
-   "start": 8.837,
-   "end": 9.237
+   "start": 8.034,
+   "end": 8.397
   },
   {
    "text": "e",
-   "start": 9.277,
-   "end": 9.317
+   "start": 8.434,
+   "end": 8.47
   },
   {
    "text": "lui",
-   "start": 9.337,
-   "end": 9.457
+   "start": 8.488,
+   "end": 8.597
   },
   {
    "text": "taglia",
-   "start": 9.497,
-   "end": 9.677
+   "start": 8.634,
+   "end": 8.797
   },
   {
    "text": "le",
-   "start": 9.697,
-   "end": 9.797
+   "start": 8.815,
+   "end": 8.906
   },
   {
    "text": "pause,",
-   "start": 9.837,
-   "end": 10.137
+   "start": 8.943,
+   "end": 9.215
   },
   {
    "text": "scrive",
-   "start": 10.577,
-   "end": 10.837
+   "start": 9.615,
+   "end": 9.852
   },
   {
    "text": "i",
-   "start": 10.857,
-   "end": 10.897
+   "start": 9.87,
+   "end": 9.906
   },
   {
    "text": "sottotitoli,",
-   "start": 10.937,
-   "end": 11.477
+   "start": 9.943,
+   "end": 10.434
   },
   {
    "text": "mette",
-   "start": 11.837,
-   "end": 12.097
+   "start": 10.761,
+   "end": 10.997
   },
   {
    "text": "zoom",
-   "start": 12.177,
-   "end": 12.337
+   "start": 11.07,
+   "end": 11.215
   },
   {
    "text": "e",
-   "start": 12.517,
-   "end": 12.577
+   "start": 11.379,
+   "end": 11.434
   },
   {
    "text": "grafiche.",
-   "start": 12.597,
-   "end": 13.037
+   "start": 11.452,
+   "end": 11.852
   },
   {
    "text": "E",
-   "start": 13.183,
-   "end": 13.243
+   "start": 11.985,
+   "end": 12.039
   },
   {
    "text": "questo",
-   "start": 13.283,
-   "end": 13.543
+   "start": 12.075,
+   "end": 12.312
   },
   {
    "text": "video",
-   "start": 13.563,
-   "end": 13.843
+   "start": 12.33,
+   "end": 12.585
   },
   {
    "text": "non",
-   "start": 13.983,
-   "end": 14.083
+   "start": 12.712,
+   "end": 12.803
   },
   {
    "text": "l'ho",
-   "start": 14.103,
-   "end": 14.203
+   "start": 12.821,
+   "end": 12.912
   },
   {
    "text": "toccato.",
-   "start": 14.243,
-   "end": 14.663
+   "start": 12.948,
+   "end": 13.33
   },
   {
    "text": "Zero",
-   "start": 14.817,
-   "end": 15.017
+   "start": 13.47,
+   "end": 13.652
   },
   {
    "text": "tagli",
-   "start": 15.057,
-   "end": 15.197
+   "start": 13.688,
+   "end": 13.815
   },
   {
    "text": "a",
-   "start": 15.237,
-   "end": 15.277
+   "start": 13.852,
+   "end": 13.888
   },
   {
    "text": "mano,",
-   "start": 15.317,
-   "end": 15.537
+   "start": 13.925,
+   "end": 14.125
   },
   {
    "text": "zero",
-   "start": 15.937,
-   "end": 16.097
+   "start": 14.488,
+   "end": 14.634
   },
   {
    "text": "app",
-   "start": 16.137,
-   "end": 16.217
+   "start": 14.67,
+   "end": 14.743
   },
   {
    "text": "aperte.",
-   "start": 16.257,
-   "end": 16.657
+   "start": 14.779,
+   "end": 15.143
   },
   {
    "text": "l'ho",
-   "start": 16.817,
-   "end": 16.897
+   "start": 15.288,
+   "end": 15.361
   },
   {
    "text": "registrato",
-   "start": 16.937,
-   "end": 17.377
+   "start": 15.397,
+   "end": 15.797
   },
   {
    "text": "io",
-   "start": 17.437,
-   "end": 17.537
+   "start": 15.852,
+   "end": 15.943
   },
   {
    "text": "e",
-   "start": 17.677,
-   "end": 17.717
+   "start": 16.07,
+   "end": 16.106
   },
   {
    "text": "gliel'ho",
-   "start": 17.757,
-   "end": 17.977
+   "start": 16.143,
+   "end": 16.343
   },
   {
    "text": "mandato.",
-   "start": 18.017,
-   "end": 18.417
+   "start": 16.379,
+   "end": 16.743
   },
   {
    "text": "E",
-   "start": 18.56,
-   "end": 18.62
+   "start": 16.873,
+   "end": 16.927
   },
   {
    "text": "me",
-   "start": 18.64,
-   "end": 18.7
+   "start": 16.945,
+   "end": 17.0
   },
   {
    "text": "l'ha",
-   "start": 18.72,
-   "end": 18.82
+   "start": 17.018,
+   "end": 17.109
   },
   {
    "text": "restituito",
-   "start": 18.86,
-   "end": 19.44
+   "start": 17.145,
+   "end": 17.673
   },
   {
    "text": "così.",
-   "start": 19.7,
-   "end": 19.96
+   "start": 17.909,
+   "end": 18.145
   },
   {
    "text": "Dentro",
-   "start": 20.117,
-   "end": 20.457
+   "start": 18.288,
+   "end": 18.597
   },
   {
    "text": "ci",
-   "start": 20.497,
-   "end": 20.577
+   "start": 18.634,
+   "end": 18.706
   },
   {
    "text": "sono",
-   "start": 20.637,
-   "end": 20.817
+   "start": 18.761,
+   "end": 18.925
   },
   {
    "text": "tre",
-   "start": 20.977,
-   "end": 21.097
+   "start": 19.07,
+   "end": 19.179
   },
   {
    "text": "strumenti:",
-   "start": 21.177,
-   "end": 21.717
+   "start": 19.252,
+   "end": 19.743
   },
   {
    "text": "uno",
-   "start": 21.85,
-   "end": 22.07
+   "start": 19.864,
+   "end": 20.064
   },
   {
    "text": "trascrive,",
-   "start": 22.11,
-   "end": 22.59
+   "start": 20.1,
+   "end": 20.536
   },
   {
    "text": "uno",
-   "start": 22.91,
-   "end": 23.09
+   "start": 20.827,
+   "end": 20.991
   },
   {
    "text": "taglia,",
-   "start": 23.13,
-   "end": 23.45
+   "start": 21.027,
+   "end": 21.318
   },
   {
    "text": "uno",
-   "start": 23.83,
-   "end": 24.09
+   "start": 21.664,
+   "end": 21.9
   },
   {
    "text": "anima.",
-   "start": 24.19,
-   "end": 24.47
+   "start": 21.991,
+   "end": 22.245
   },
   {
    "text": "Ma",
-   "start": 24.617,
-   "end": 24.657
+   "start": 22.379,
+   "end": 22.415
   },
   {
    "text": "il",
-   "start": 24.677,
-   "end": 24.717
+   "start": 22.434,
+   "end": 22.47
   },
   {
    "text": "segreto",
-   "start": 24.797,
-   "end": 25.257
+   "start": 22.543,
+   "end": 22.961
   },
   {
    "text": "è",
-   "start": 25.317,
-   "end": 25.377
+   "start": 23.015,
+   "end": 23.07
   },
   {
    "text": "come",
-   "start": 25.417,
-   "end": 25.557
+   "start": 23.106,
+   "end": 23.234
   },
   {
    "text": "li",
-   "start": 25.597,
-   "end": 25.677
+   "start": 23.27,
+   "end": 23.343
   },
   {
    "text": "fai",
-   "start": 25.717,
-   "end": 25.837
+   "start": 23.379,
+   "end": 23.488
   },
   {
    "text": "lavorare",
-   "start": 25.877,
-   "end": 26.137
+   "start": 23.525,
+   "end": 23.761
   },
   {
    "text": "insieme.",
-   "start": 26.177,
-   "end": 26.557
+   "start": 23.797,
+   "end": 24.143
   },
   {
    "text": "Ti",
-   "start": 26.717,
-   "end": 26.757
+   "start": 24.288,
+   "end": 24.325
   },
   {
    "text": "ho",
-   "start": 26.777,
-   "end": 26.817
+   "start": 24.343,
+   "end": 24.379
   },
   {
    "text": "scritto",
-   "start": 26.857,
-   "end": 27.317
+   "start": 24.415,
+   "end": 24.834
   },
   {
    "text": "una",
-   "start": 27.397,
-   "end": 27.577
+   "start": 24.906,
+   "end": 25.07
   },
   {
    "text": "guida",
-   "start": 27.677,
-   "end": 27.937
+   "start": 25.161,
+   "end": 25.397
   },
   {
    "text": "gratuita",
-   "start": 27.957,
-   "end": 28.457
+   "start": 25.415,
+   "end": 25.87
   },
   {
    "text": "su",
-   "start": 28.617,
-   "end": 28.697
+   "start": 26.015,
+   "end": 26.088
   },
   {
    "text": "come",
-   "start": 28.877,
-   "end": 29.037
+   "start": 26.252,
+   "end": 26.397
   },
   {
    "text": "l'ho",
-   "start": 29.057,
-   "end": 29.157
+   "start": 26.415,
+   "end": 26.506
   },
   {
    "text": "fatto.",
-   "start": 29.197,
-   "end": 29.497
+   "start": 26.543,
+   "end": 26.815
   },
   {
    "text": "Commenta",
-   "start": 29.65,
-   "end": 30.05
+   "start": 26.955,
+   "end": 27.318
   },
   {
    "text": "guida",
-   "start": 30.11,
-   "end": 30.47
+   "start": 27.373,
+   "end": 27.7
   },
   {
    "text": "e",
-   "start": 30.49,
-   "end": 30.53
+   "start": 27.718,
+   "end": 27.755
   },
   {
    "text": "te",
-   "start": 30.59,
-   "end": 30.65
+   "start": 27.809,
+   "end": 27.864
   },
   {
    "text": "la",
-   "start": 30.69,
-   "end": 30.75
+   "start": 27.9,
+   "end": 27.955
   },
   {
    "text": "mando",
-   "start": 30.79,
-   "end": 31.01
+   "start": 27.991,
+   "end": 28.191
   },
   {
    "text": "in",
-   "start": 31.03,
-   "end": 31.09
+   "start": 28.209,
+   "end": 28.264
   },
   {
    "text": "DM.",
-   "start": 31.13,
-   "end": 31.47
+   "start": 28.3,
+   "end": 28.609
   }
  ],
  "emphasis": [
@@ -617,27 +617,27 @@
  "hook": null,
  "zooms": [
   {
-   "at": 1.01,
+   "at": 0.918,
    "kind": "punch",
    "strength": 0.7
   },
   {
-   "at": 2.39,
+   "at": 2.173,
    "kind": "punch",
    "strength": 0.6
   },
   {
-   "at": 14.24,
+   "at": 12.945,
    "kind": "punch",
    "strength": 0.9
   },
   {
-   "at": 19.703,
+   "at": 17.912,
    "kind": "punch",
    "strength": 1.0
   },
   {
-   "at": 24.797,
+   "at": 22.543,
    "kind": "punch",
    "strength": 0.8
   }
@@ -646,9 +646,9 @@
   {
    "type": "rec",
    "at": 0.0,
-   "duration": 1.7,
+   "duration": 1.545,
    "props": {
-    "shutterAt": 42,
+    "shutterAt": 38,
     "focusX": 0.5,
     "focusY": 0.723,
     "box": [
@@ -662,21 +662,21 @@
   },
   {
    "type": "button3d",
-   "at": 1.75,
-   "duration": 2.8,
+   "at": 1.591,
+   "duration": 2.545,
    "y": 0.29,
    "props": {
     "label": "REC",
     "dot": "#FF2E4D",
     "color": "#22232A",
     "tag": "LA PARTE FACILE",
-    "pressAt": 64
+    "pressAt": 58
    }
   },
   {
    "type": "pile",
-   "at": 4.62,
-   "duration": 1.58,
+   "at": 4.2,
+   "duration": 1.436,
    "y": 0.302,
    "scale": 1.15,
    "props": {
@@ -693,23 +693,23 @@
   },
   {
    "type": "icon3d",
-   "at": 6.2,
-   "duration": 1.36,
+   "at": 5.636,
+   "duration": 1.237,
    "y": 0.3,
    "props": {
     "items": [
      {
       "icon": "hammer",
       "label": "IL MIO EDITOR",
-      "at": 10
+      "at": 9
      }
     ]
    }
   },
   {
    "type": "claude",
-   "at": 7.62,
-   "duration": 1.83,
+   "at": 6.927,
+   "duration": 1.664,
    "y": 0.31,
    "scale": 1.0,
    "props": {
@@ -719,43 +719,43 @@
      "Zoom & camera",
      "Grafiche"
     ],
-    "doneAt": 42
+    "doneAt": 38
    }
   },
   {
    "type": "icon3d",
-   "at": 9.47,
-   "duration": 3.65,
+   "at": 8.609,
+   "duration": 3.318,
    "y": 0.3,
    "props": {
     "items": [
      {
       "icon": "scissors",
       "label": "PAUSE",
-      "at": 11
+      "at": 10
      },
      {
       "icon": "captions",
       "label": "SOTTOTITOLI",
-      "at": 44
+      "at": 40
      },
      {
       "icon": "zoom",
       "label": "ZOOM",
-      "at": 81
+      "at": 74
      },
      {
       "icon": "spark",
       "label": "GRAFICHE",
-      "at": 94
+      "at": 85
      }
     ]
    }
   },
   {
    "type": "idcard",
-   "at": 13.18,
-   "duration": 1.58,
+   "at": 11.982,
+   "duration": 1.436,
    "y": 0.3,
    "props": {
     "tag": "QUESTO VIDEO",
@@ -763,14 +763,14 @@
     "kicker": "Montaggio a mano",
     "title": "Toccato da me",
     "bar": 0.12,
-    "barAt": 7,
-    "strikeAt": 32
+    "barAt": 6,
+    "strikeAt": 29
    }
   },
   {
    "type": "zero",
-   "at": 14.82,
-   "duration": 1.98,
+   "at": 13.473,
+   "duration": 1.8,
    "y": 0.31,
    "scale": 0.95,
    "props": {
@@ -780,7 +780,7 @@
       "text": "0 tagli a mano"
      },
      {
-      "at": 34,
+      "at": 31,
       "text": "0 app aperte"
      }
     ]
@@ -788,23 +788,23 @@
   },
   {
    "type": "icon3d",
-   "at": 16.82,
-   "duration": 0.9,
+   "at": 15.291,
+   "duration": 0.818,
    "y": 0.3,
    "props": {
     "items": [
      {
       "icon": "camera",
       "label": "REGISTRATO DA ME",
-      "at": 4
+      "at": 3
      }
     ]
    }
   },
   {
    "type": "send",
-   "at": 17.76,
-   "duration": 0.78,
+   "at": 16.145,
+   "duration": 0.71,
    "y": 0.4,
    "props": {
     "flyFrames": 22
@@ -812,12 +812,12 @@
   },
   {
    "type": "result",
-   "at": 18.56,
-   "duration": 2.39,
+   "at": 16.873,
+   "duration": 2.172,
    "y": 0.3,
    "props": {
     "label": "EDITATO",
-    "burstAt": 34,
+    "burstAt": 31,
     "plane": true,
     "sides": [
      0.13,
@@ -831,34 +831,34 @@
   },
   {
    "type": "trio",
-   "at": 20.977,
-   "duration": 5.85,
+   "at": 19.07,
+   "duration": 5.318,
    "y": 0.3,
    "scale": 0.9,
    "props": {
     "reveal": [
-     34,
-     64,
-     96
+     31,
+     59,
+     88
     ],
-    "secretAt": 115,
-    "connectAt": 156
+    "secretAt": 104,
+    "connectAt": 142
    }
   },
   {
    "type": "guidebook",
-   "at": 26.857,
-   "duration": 2.71,
+   "at": 24.415,
+   "duration": 2.464,
    "y": 0.29,
    "scale": 0.8,
    "props": {
-    "freeAt": 33
+    "freeAt": 30
    }
   },
   {
    "type": "dm",
-   "at": 29.597,
-   "duration": 3.27,
+   "at": 26.906,
+   "duration": 2.973,
    "text": "GUIDA",
    "y": 0.3,
    "scale": 0.9,
@@ -866,9 +866,9 @@
     "name": "Commenti",
     "placeholder": "Aggiungi un commento…",
     "sentLabel": "Pubblicato",
-    "typeAt": 15,
-    "sendAt": 36,
-    "replyAt": 46,
+    "typeAt": 14,
+    "sendAt": 32,
+    "replyAt": 42,
     "reply": "Guida inviata in DM"
    }
   }

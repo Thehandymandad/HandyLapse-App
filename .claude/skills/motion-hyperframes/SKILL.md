@@ -67,6 +67,9 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    media-use (`sfx_library.py variant <nome> --from <suono> --pitch/--trim/--reverse/--layer/--seq`) o sintetizzati in
    locale (`sfx_library.py synth <nome> --kind riser|ding --duration <s>`: le ricette del primo editor, barra che si carica e 100%); a pagamento:
    `sfx_library.py generate` (ElevenLabs, chiedi prima). I WAV non vanno nel repo: `sfx_library.py rebuild`.
+2b. **Ritmo** (se l'utente lo vuole più veloce): `python $S/speed.py $E --factor 1.1` → `base.mp4` accelerato senza
+   cambiare il tono della voce, parole e piano riallineati (gli originali restano in `*_1x.*`: per cambiare il piano
+   dopo, si modifica `motion-plan_1x.json` e si rilancia `speed.py`). 1,1x è "un po' più veloce".
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",
    "text"}`; i tempi nelle props — chiavi in `At`, `reveal`, `items[].at` — sono secondi assoluti).
    Poi `cd $R && npx tsx scripts/hf-project.ts ../videos/<nome>/edit && npx tsx scripts/camera-track.ts ../videos/<nome>/edit`.

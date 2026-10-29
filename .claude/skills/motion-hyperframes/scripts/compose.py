@@ -239,8 +239,8 @@ def build_audio(base: Path, plan: dict, sfx_dir: Path, gap: float, lufs: float, 
         f"loudnorm=I={lufs}:TP=-1.5:LRA=11:measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:"
         f"measured_LRA={meas['input_lra']}:measured_thresh={meas['input_thresh']}:offset={meas['target_offset']}:linear=true"
     )
-    # limitatore dopo il loudnorm: il true peak deve restare sotto −1 dBTP
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(pre), "-af", ln + ",alimiter=limit=0.79:attack=1:release=50:level=false", "-ar", "48000", str(master)])
+    # limitatore dopo il loudnorm a −3 dBFS: la codifica AAC aggiunge fino a ~1 dB, il true peak finale resta sotto −1 dBTP
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(pre), "-af", ln + ",alimiter=limit=0.7:attack=1:release=50:level=false", "-ar", "48000", str(master)])
     print(f"voce {lv:.1f} LUFS, {len(events)} effetti a {lv - gap:.1f} LUFS ({gap} dB sotto), master {lufs} LUFS")
     return master
 
