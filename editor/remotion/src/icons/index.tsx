@@ -8,6 +8,9 @@ import type { IconName } from "../types";
 type El = string | { c: [number, number, number] };
 
 export const ICONS: Record<IconName, El[]> = {
+  scissors: [{ c: [6, 6, 3] }, { c: [6, 18, 3] }, "M8.6 7.6L20 18", "M8.6 16.4L20 6"],
+  captions: ["M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z", "M7 12h4", "M13 12h4", "M7 15.5h10"],
+  zoom: [{ c: [10.5, 10.5, 6.5] }, "M15.5 15.5L21 21", "M10.5 8v5", "M8 10.5h5"],
   money: ["M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z", { c: [12, 12, 3] }, "M6 12h.01", "M18 12h.01"],
   euro: ["M17.5 7a7 7 0 1 0 0 10", "M4 10h10", "M4 14h10"],
   bulb: ["M9 18h6", "M10 21h4", "M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1v.5h5v-.5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"],

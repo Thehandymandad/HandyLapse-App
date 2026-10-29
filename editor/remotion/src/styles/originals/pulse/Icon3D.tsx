@@ -11,10 +11,10 @@ import { clamp, INTER, P } from "./shared";
 /**
  * Icone 3D (three.js): tessere lucide del colore d'accento con l'icona in rilievo chiaro sulla faccia, che entrano
  * girando su sé stesse una alla volta, poi ondeggiano piano; sotto ogni tessera un'etichetta.
- * props.items: [{ icon, label, at }] (at = frame relativo in cui la tessera atterra; 1–3 tessere).
+ * props.items: [{ icon, label, at }] (at = frame relativo in cui la tessera atterra; 1–4 tessere).
  */
 type Item = { icon: IconName; label?: string; at?: number };
-const W = 1000;
+const W = 1080;
 const H = 470;
 const FOV = 26;
 const CAMZ = 6.2;
@@ -45,9 +45,11 @@ function iconTexture(name: IconName, color: string) {
 export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps, height } = useVideoConfig();
-  const items = ((Array.isArray(g.props?.items) ? g.props!.items : [{ icon: g.icon ?? "spark", label: g.text, at: 6 }]) as Item[]).slice(0, 3);
+  const items = ((Array.isArray(g.props?.items) ? g.props!.items : [{ icon: g.icon ?? "spark", label: g.text, at: 6 }]) as Item[]).slice(0, 4);
   const n = items.length;
-  const gap = 2.25;
+  // con 4 tessere più strette e più piccole, così stanno tutte nella fascia
+  const gap = n >= 4 ? 1.55 : 2.25;
+  const tile = n >= 4 ? 0.7 : 1;
   const out = interpolate(f, [g.frames - 7, g.frames], [0, 1], clamp);
   const ref = useThreeStage(
     f,
@@ -73,7 +75,7 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
         const at = items[i].at ?? 6 + i * 6;
         const e = springAt(f - at + 10, fps, 11, 150, 0.9); // l'entrata dura ~10 fotogrammi prima di "at"
         const kick = springAt(f - at, fps, 8, 320);
-        const s = Math.max(0.0001, e) * (f >= at ? 1 + 0.12 * Math.sin(Math.min(1, kick) * Math.PI) : 1) * (1 - out * 0.4);
+        const s = tile * Math.max(0.0001, e) * (f >= at ? 1 + 0.12 * Math.sin(Math.min(1, kick) * Math.PI) : 1) * (1 - out * 0.4);
         group.scale.setScalar(s);
         group.rotation.y = (1 - e) * -Math.PI * 1.5 + Math.sin(f / 22 + i) * 0.22;
         group.rotation.x = 0.18 + Math.sin(f / 31 + i * 2) * 0.06;
@@ -91,7 +93,7 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           const k = interpolate(f, [at, at + 6], [0, 1], clamp);
           const x = W / 2 + (i - (n - 1) / 2) * gap * PX;
           return it.label ? (
-            <div key={i} style={{ position: "absolute", left: x, top: H - 4, transform: `translate(-50%, ${(1 - k) * 20}px)`, opacity: k, fontFamily: INTER, fontWeight: 900, fontSize: 34, letterSpacing: 2, color: P.fg, whiteSpace: "nowrap", textShadow: P.theme === "light" ? "none" : "0 3px 12px rgba(0,0,0,0.6)" }}>
+            <div key={i} style={{ position: "absolute", left: x, top: H - (n >= 4 ? 70 : 4), transform: `translate(-50%, ${(1 - k) * 20}px)`, opacity: k, fontFamily: INTER, fontWeight: 900, fontSize: n >= 4 ? 28 : 34, letterSpacing: n >= 4 ? 1 : 2, color: P.fg, whiteSpace: "nowrap", textShadow: P.theme === "light" ? "none" : "0 3px 12px rgba(0,0,0,0.6)" }}>
               {it.label}
             </div>
           ) : null;

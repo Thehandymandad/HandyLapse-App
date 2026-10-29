@@ -23,7 +23,7 @@
  "barra-carica": {
   "file": "barra-carica.wav",
   "synth": "riser",
-  "duration": 4.98,
+  "duration": 1.2,
   "f0": 180.0,
   "f1": 804.0
  },

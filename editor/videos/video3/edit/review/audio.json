@@ -40,17 +40,37 @@
   {
    "t": 7.62,
    "name": "barra-carica",
-   "rel_db": -13.7
+   "rel_db": -7.0
   },
   {
-   "t": 12.6,
+   "t": 9.02,
    "name": "ding-100",
    "rel_db": -7.1
   },
   {
+   "t": 9.84,
+   "name": "check-1",
+   "rel_db": -7.0
+  },
+  {
+   "t": 10.94,
+   "name": "check-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 12.18,
+   "name": "check-3",
+   "rel_db": -7.0
+  },
+  {
+   "t": 12.6,
+   "name": "check-completo",
+   "rel_db": -7.5
+  },
+  {
    "t": 13.18,
    "name": "scheda-entra",
-   "rel_db": -7.0
+   "rel_db": -5.6
   },
   {
    "t": 14.24,

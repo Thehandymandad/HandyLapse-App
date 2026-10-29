@@ -185,31 +185,26 @@
   {
    "id": "s04",
    "start": 7.62,
-   "end": 13.12,
-   "line": "…con Claude Code. Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
-   "action": "Card in vetro di Claude con il logo che gira e la barra che corre; ogni lavorazione si spunta quando viene nominata, a «grafiche» 100% e la card si accende. Suono come nel primo editor (video2): riser che sale per tutta la carica, ding a tre note sul 100%, niente clic sulle spunte.",
+   "end": 9.45,
+   "line": "…con Claude Code. Gli do il video grezzo…",
+   "action": "Come nel primo editor (video2): la card di Claude entra a ribalta, la barra corre liscia da 0 a 100% in 1,4 s con le spunte che scattano quando la barra le supera, a 100% la card si accende (Montaggio completato).",
    "graphic": {
     "type": "claude",
+    "y": 0.31,
+    "scale": 1.0,
     "props": {
      "tasks": [
       "Taglio pause",
       "Sottotitoli",
-      "Zoom",
+      "Zoom & camera",
       "Grafiche"
      ],
-     "checkAt": [
-      9.84,
-      10.94,
-      12.18,
-      12.6
-     ]
-    },
-    "y": 0.31,
-    "scale": 1.0
+     "doneAt": 9.02
+    }
    },
    "payoff": {
-    "word": "grafiche",
-    "t": 12.6
+    "word": "grezzo",
+    "t": 9.02
    },
    "sfx": [
     {
@@ -217,8 +212,65 @@
      "name": "barra-carica"
     },
     {
-     "t": 12.6,
+     "t": 9.02,
      "name": "ding-100"
+    }
+   ]
+  },
+  {
+   "id": "s04b",
+   "start": 9.47,
+   "end": 13.12,
+   "line": "…e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
+   "action": "Quattro tessere 3D (forbici, sottotitoli, lente, scintille) atterrano girando una per parola: PAUSE, SOTTOTITOLI, ZOOM, GRAFICHE.",
+   "graphic": {
+    "type": "icon3d",
+    "y": 0.3,
+    "props": {
+     "items": [
+      {
+       "icon": "scissors",
+       "label": "PAUSE",
+       "at": 9.84
+      },
+      {
+       "icon": "captions",
+       "label": "SOTTOTITOLI",
+       "at": 10.94
+      },
+      {
+       "icon": "zoom",
+       "label": "ZOOM",
+       "at": 12.18
+      },
+      {
+       "icon": "spark",
+       "label": "GRAFICHE",
+       "at": 12.6
+      }
+     ]
+    }
+   },
+   "payoff": {
+    "word": "grafiche",
+    "t": 12.6
+   },
+   "sfx": [
+    {
+     "t": 9.84,
+     "name": "check-1"
+    },
+    {
+     "t": 10.94,
+     "name": "check-2"
+    },
+    {
+     "t": 12.18,
+     "name": "check-3"
+    },
+    {
+     "t": 12.6,
+     "name": "check-completo"
     }
    ]
   },
