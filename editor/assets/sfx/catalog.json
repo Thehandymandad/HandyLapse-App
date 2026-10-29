@@ -22,10 +22,10 @@
  },
  "barra-carica": {
   "file": "barra-carica.wav",
-  "synth": "charge",
-  "duration": 4.85,
-  "f0": 240.0,
-  "f1": 760.0
+  "synth": "riser",
+  "duration": 4.98,
+  "f0": 180.0,
+  "f1": 804.0
  },
  "barra-rossa": {
   "file": "barra-rossa.wav",
@@ -191,6 +191,13 @@
   "reverse": false,
   "layer": null,
   "seq": null
+ },
+ "ding-100": {
+  "file": "ding-100.wav",
+  "synth": "ding",
+  "duration": 0.9,
+  "f0": 180.0,
+  "f1": 804.0
  },
  "file-entra": {
   "file": "file-entra.wav",

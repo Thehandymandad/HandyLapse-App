@@ -4,7 +4,8 @@
     python sfx_library.py missing <edit_dir>                     # effetti del motion-plan che non sono in libreria
     python sfx_library.py generate <nome> "<prompt in inglese>" [--duration 1.2] [--influence 0.6]
     python sfx_library.py rebuild                                # ricrea le varianti dal catalogo (i WAV non sono nel repo)
-    python sfx_library.py synth <nome> --kind charge --duration 4.8 [--f0 260 --f1 780]   # barra che si carica
+    python sfx_library.py synth <nome> --kind riser --duration 4.8 [--f0 180 --f1 804]    # barra che si carica
+    python sfx_library.py synth <nome> --kind ding                                         # il 100%
     python sfx_library.py variant <nome> --from <file o nome bundled di media-use> [--pitch 1.2] [--trim-start 0]
                                   [--trim 0.6] [--reverse] [--layer <altro file/nome>] [--layer-gain -6] [--seq 0,0.13,0.26]
 
@@ -112,21 +113,33 @@ def variant(name, src, pitch, trim_start, trim, reverse, layer, layer_gain, seq)
 
 
 def synth(name: str, kind: str, duration: float, f0: float, f1: float) -> None:
-    """Suoni sintetizzati in locale (gratis, senza licenze). kind "charge": il suono di una barra che si carica, un tono
-    morbido che sale da f0 a f1 Hz per `duration` secondi (glissando esponenziale + ottava, leggero luccichio, piccolo
-    riverbero), cresce un po' di volume e si chiude pulito sul 100%."""
-    if kind != "charge":
+    """Suoni sintetizzati in locale (gratis, senza licenze), con le ricette del primo editor (Remotion, video2):
+    - "riser": la barra che si carica — tono che sale da f0 a f1 Hz (glissando lineare) con un fruscio, tutti e due
+      in crescendo per `duration` secondi, dissolvenza nell'ultimo 15% (da far finire sul 100%);
+    - "ding": il 100% — tre note 1320/1980/2640 Hz che si spengono (0,9 s);
+    - "charge": tono morbido che sale con ottava e riverbero (alternativa più "UI")."""
+    T = duration
+    if kind == "riser":
+        k = (f1 - f0) / (2 * T)
+        expr = f"(sin(2*PI*({f0}*t+{k:.4f}*t*t))*0.35+(random(0)-0.5)*0.35)*t/{T}"
+        graph = f"aevalsrc='{expr}':s=48000:d={T},highpass=f=150,afade=t=out:st={T * 0.85:.3f}:d={T * 0.15:.3f},aformat=channel_layouts=stereo"
+    elif kind == "ding":
+        T = 0.9
+        expr = "(sin(2*PI*1320*t)*exp(-5*t)*0.5+sin(2*PI*1980*t)*exp(-7*t)*0.25+sin(2*PI*2640*t)*exp(-9*t)*0.12)"
+        graph = f"aevalsrc='{expr}':s=48000:d={T},afade=t=out:st={T * 0.85:.3f}:d={T * 0.15:.3f},aformat=channel_layouts=stereo"
+    elif kind == "charge":
+        r = f1 / f0
+        ph = f"2*PI*{f0}*{T}/log({r})*(pow({r},t/{T})-1)"
+        expr = f"0.32*(sin({ph})+0.28*sin(2*({ph}))+0.08*sin(3*({ph})))*(0.55+0.45*t/{T})*(1+0.12*sin(2*PI*13*t))"
+        # dissolvenze sul tono, PRIMA del riverbero: la coda si spegne da sola, niente clic alla fine
+        graph = (f"aevalsrc='{expr}|{expr}':s=48000:d={T},afade=t=in:d=0.25,afade=t=out:st={T - 0.14:.3f}:d=0.14,"
+                 f"lowpass=f=5200,apad=pad_dur=0.25,aecho=0.8:0.5:60|110:0.22|0.12")
+    else:
         sys.exit(f"tipo di sintesi sconosciuto: {kind}")
-    T, r = duration, f1 / f0
-    ph = f"2*PI*{f0}*{T}/log({r})*(pow({r},t/{T})-1)"
-    expr = f"0.32*(sin({ph})+0.28*sin(2*({ph}))+0.08*sin(3*({ph})))*(0.55+0.45*t/{T})*(1+0.12*sin(2*PI*13*t))"
-    # dissolvenze sul tono, PRIMA del riverbero: la coda si spegne da sola, niente clic alla fine
-    graph = (f"aevalsrc='{expr}|{expr}':s=48000:d={T},afade=t=in:d=0.25,afade=t=out:st={T - 0.14:.3f}:d=0.14,"
-             f"lowpass=f=5200,apad=pad_dur=0.25,aecho=0.8:0.5:60|110:0.22|0.12")
     out = LIB / f"{name}.wav"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", graph, "-ar", "48000", str(out)], check=True)
     cat = load()
-    cat[name] = {"file": out.name, "synth": kind, "duration": duration, "f0": f0, "f1": f1}
+    cat[name] = {"file": out.name, "synth": kind, "duration": T, "f0": f0, "f1": f1}
     save(cat)
     print(out)
 
@@ -178,10 +191,10 @@ def main() -> None:
     v.add_argument("--seq")
     y = sub.add_parser("synth")
     y.add_argument("name")
-    y.add_argument("--kind", default="charge")
+    y.add_argument("--kind", default="riser", choices=["riser", "ding", "charge"])
     y.add_argument("--duration", type=float, default=2.0)
-    y.add_argument("--f0", type=float, default=260.0)
-    y.add_argument("--f1", type=float, default=780.0)
+    y.add_argument("--f0", type=float, default=180.0)
+    y.add_argument("--f1", type=float, default=804.0)
     a = ap.parse_args()
     if a.cmd == "list":
         for k, v in load().items():

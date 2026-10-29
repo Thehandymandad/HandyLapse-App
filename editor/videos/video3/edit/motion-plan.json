@@ -187,7 +187,7 @@
    "start": 7.62,
    "end": 13.12,
    "line": "…con Claude Code. Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
-   "action": "Card in vetro di Claude con il logo che gira e la barra che corre; ogni lavorazione si spunta quando viene nominata, a «grafiche» 100% e la card si accende. Mentre la barra si carica sale un tono di carica (da grave ad acuto) che arriva al 100% insieme alla barra.",
+   "action": "Card in vetro di Claude con il logo che gira e la barra che corre; ogni lavorazione si spunta quando viene nominata, a «grafiche» 100% e la card si accende. Suono come nel primo editor (video2): riser che sale per tutta la carica, ding a tre note sul 100%, niente clic sulle spunte.",
    "graphic": {
     "type": "claude",
     "props": {
@@ -214,27 +214,11 @@
    "sfx": [
     {
      "t": 7.62,
-     "name": "tag-claude"
-    },
-    {
-     "t": 7.75,
      "name": "barra-carica"
     },
     {
-     "t": 9.84,
-     "name": "check-1"
-    },
-    {
-     "t": 10.94,
-     "name": "check-2"
-    },
-    {
-     "t": 12.18,
-     "name": "check-3"
-    },
-    {
      "t": 12.6,
-     "name": "check-completo"
+     "name": "ding-100"
     }
    ]
   },

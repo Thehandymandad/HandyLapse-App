@@ -65,7 +65,7 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
 1. **Tempi**: `python $S/timeline.py $E` → `words_out.json`.
 2. **Effetti sonori**: `python $S/sfx_library.py missing $E`. Quelli che mancano, gratis: varianti dei 21 suoni di
    media-use (`sfx_library.py variant <nome> --from <suono> --pitch/--trim/--reverse/--layer/--seq`) o sintetizzati in
-   locale (`sfx_library.py synth <nome> --kind charge --duration <s>`: tono di carica per le barre); a pagamento:
+   locale (`sfx_library.py synth <nome> --kind riser|ding --duration <s>`: le ricette del primo editor, barra che si carica e 100%); a pagamento:
    `sfx_library.py generate` (ElevenLabs, chiedi prima). I WAV non vanno nel repo: `sfx_library.py rebuild`.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",
    "text"}`; i tempi nelle props — chiavi in `At`, `reveal`, `items[].at` — sono secondi assoluti).

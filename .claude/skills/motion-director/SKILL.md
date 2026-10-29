@@ -36,8 +36,9 @@ suo tempo, il suo suono e il suo oggetto.
 - **Una scena per passaggio del discorso.** Quando cambia l'idea cambia la scena; dentro la scena gli elementi si
   trasformano invece di sparire e ricomparire.
 - **Ogni evento visivo ha il suo suono**, anche quelli che durano (una barra che si carica, un contatore che corre:
-  un suono continuo che le somiglia per tutta la durata, es. un tono che sale con la barra — `sfx_library.py synth
-  --kind charge` —, non solo il colpo finale; il ticchettio per una barra non funziona), e sono tutti diversi tra loro (campo `sfx`, nome descrittivo dell'evento:
+  un suono continuo per tutta la durata, non solo il colpo finale. Barra che si carica = come nel primo editor:
+  riser per tutta la carica (`sfx_library.py synth <nome> --kind riser --duration <durata della barra>`) + ding sul
+  100% (`--kind ding`), niente clic sulle spunte; il ticchettio e il tono «charge» l'utente li ha bocciati), e sono tutti diversi tra loro (campo `sfx`, nome descrittivo dell'evento:
   "lapide-impatto-pietra", non "boom"). Niente suoni senza un evento visibile.
 - **Discorso fluido**: se tra due frasi collegate ("gliel'ho mandato e me l'ha restituito") resta una pausa nel
   montato, si taglia (si divide il range dell'EDL e si rifà il montato) prima di fare il piano.
