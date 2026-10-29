@@ -84,16 +84,36 @@
    ]
   },
   {
-   "id": "s02",
+   "id": "s01b",
    "start": 1.75,
    "end": 4.55,
    "line": "La parte più difficile di fare reel non è registrare.",
-   "action": "Niente grafica: punch-in secco su «difficile», «difficile» in lime nei sottotitoli. Respiro prima della pila.",
-   "payoff": {
-    "word": "difficile",
-    "t": 2.39
+   "action": "Un bottone 3D nero con «● REC» entra girando; il cursore arriva e lo preme su «registrare»: il tasto affonda, onda di luce, sopra scatta la pillola LA PARTE FACILE.",
+   "graphic": {
+    "type": "button3d",
+    "y": 0.29,
+    "props": {
+     "label": "REC",
+     "dot": "#FF2E4D",
+     "color": "#22232A",
+     "tag": "LA PARTE FACILE",
+     "pressAt": 3.87
+    }
    },
-   "sfx": []
+   "payoff": {
+    "word": "registrare",
+    "t": 3.87
+   },
+   "sfx": [
+    {
+     "t": 1.75,
+     "name": "bottone-entra"
+    },
+    {
+     "t": 3.87,
+     "name": "tasto-rec"
+    }
+   ]
   },
   {
    "id": "s03",
@@ -128,6 +148,36 @@
     {
      "t": 5.95,
      "name": "pila-crollo"
+    }
+   ]
+  },
+  {
+   "id": "s03b",
+   "start": 6.2,
+   "end": 7.56,
+   "line": "Così ho costruito un editor…",
+   "action": "Una tessera 3D arancione col martello atterra girando su «costruito», sotto: IL MIO EDITOR.",
+   "graphic": {
+    "type": "icon3d",
+    "y": 0.3,
+    "props": {
+     "items": [
+      {
+       "icon": "hammer",
+       "label": "IL MIO EDITOR",
+       "at": 6.54
+      }
+     ]
+    }
+   },
+   "payoff": {
+    "word": "costruito",
+    "t": 6.54
+   },
+   "sfx": [
+    {
+     "t": 6.54,
+     "name": "tessera-3d"
     }
    ]
   },
@@ -184,16 +234,38 @@
    ]
   },
   {
-   "id": "s05",
+   "id": "s05b",
    "start": 13.18,
-   "end": 14.75,
+   "end": 14.76,
    "line": "E questo video non l'ho toccato.",
-   "action": "Punch-in su «toccato» (parola chiave lime).",
+   "action": "Scheda stile referenza (pillola QUESTO VIDEO, cerchio con occhio, MONTAGGIO A MANO, «Toccato da me»): su «toccato» il titolo viene barrato in rosso.",
+   "graphic": {
+    "type": "idcard",
+    "y": 0.3,
+    "props": {
+     "tag": "QUESTO VIDEO",
+     "icon": "eye",
+     "kicker": "Montaggio a mano",
+     "title": "Toccato da me",
+     "bar": 0.12,
+     "barAt": 13.4,
+     "strikeAt": 14.24
+    }
+   },
    "payoff": {
     "word": "toccato",
     "t": 14.24
    },
-   "sfx": []
+   "sfx": [
+    {
+     "t": 13.18,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 14.24,
+     "name": "barra-rossa"
+    }
+   ]
   },
   {
    "id": "s06",
@@ -230,6 +302,36 @@
     {
      "t": 15.94,
      "name": "timbro-2"
+    }
+   ]
+  },
+  {
+   "id": "s06b",
+   "start": 16.82,
+   "end": 17.72,
+   "line": "L'ho registrato io…",
+   "action": "Una tessera 3D con la videocamera atterra su «registrato»: REGISTRATO DA ME.",
+   "graphic": {
+    "type": "icon3d",
+    "y": 0.3,
+    "props": {
+     "items": [
+      {
+       "icon": "camera",
+       "label": "REGISTRATO DA ME",
+       "at": 16.94
+      }
+     ]
+    }
+   },
+   "payoff": {
+    "word": "registrato",
+    "t": 16.94
+   },
+   "sfx": [
+    {
+     "t": 16.94,
+     "name": "camera-3d"
     }
    ]
   },

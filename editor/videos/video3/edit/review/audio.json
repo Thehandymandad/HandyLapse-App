@@ -1,6 +1,6 @@
 {
  "integrated_lufs": -14.0,
- "true_peak_dbtp": -1.5,
+ "true_peak_dbtp": -2.0,
  "sfx": [
   {
    "t": 0.0,
@@ -10,6 +10,16 @@
   {
    "t": 1.39,
    "name": "scatto",
+   "rel_db": -9.7
+  },
+  {
+   "t": 1.75,
+   "name": "bottone-entra",
+   "rel_db": -4.6
+  },
+  {
+   "t": 3.87,
+   "name": "tasto-rec",
    "rel_db": -6.9
   },
   {
@@ -21,6 +31,11 @@
    "t": 5.95,
    "name": "pila-crollo",
    "rel_db": -5.8
+  },
+  {
+   "t": 6.54,
+   "name": "tessera-3d",
+   "rel_db": -6.3
   },
   {
    "t": 7.62,
@@ -48,6 +63,16 @@
    "rel_db": -7.5
   },
   {
+   "t": 13.18,
+   "name": "scheda-entra",
+   "rel_db": -5.6
+  },
+  {
+   "t": 14.24,
+   "name": "barra-rossa",
+   "rel_db": -7.4
+  },
+  {
    "t": 14.82,
    "name": "timbro-1",
    "rel_db": -7.0
@@ -55,6 +80,11 @@
   {
    "t": 15.94,
    "name": "timbro-2",
+   "rel_db": -7.0
+  },
+  {
+   "t": 16.94,
+   "name": "camera-3d",
    "rel_db": -7.0
   },
   {

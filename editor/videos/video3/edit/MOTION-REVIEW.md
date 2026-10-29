@@ -25,6 +25,7 @@ Master −14,0 LUFS, true peak −1,5 dBFS. Voce −15,7 LUFS; 27 effetti, tutti
 | 6,0 · 13,1 · 14,8 · 25,5 · 29,5 | Fondo nero ai lati durante i whip sui tagli | `camera.py`: bordi del video allungati e sfocati in orizzontale (scia), il fondo Pulse resta solo dietro il telefono | corretto |
 | tutto | Richiesta dell'utente: accento arancione Claude elettrico al posto del lime, parlato dentro una cornice con bordo arancione sfocato, grafiche solo fuori | palette `P.accent` #FF6633, `frame` nel piano, maschera `OutsideFrame`, `result` al posto del telefono | fatto |
 | tutto | Richiesta dell'utente: come la referenza, cornice in basso, grafiche e sottotitoli sopra, fondo chiaro sfumato arancione | tema chiaro del pack (card bianche, testo nero), sottotitoli Inter + serif corsivo, fondo chiaro in camera.py, mirino REC attorno alla cornice | fatto |
+| 1,7–4,6 · 6,2–7,6 · 13,1–14,8 · 16,8–17,8 | Richiesta dell'utente: fascia sopra la cornice vuota troppo a lungo, e alcune animazioni in 3D | bottone 3D REC premuto su «registrare», tessere 3D (martello, videocamera), scheda «Toccato da me» barrata: niente più vuoti | fatto |
 | 28,9 | Copertina della guida con «CLAUDE CODE · REMOTION» | `footer` del componente, default «CLAUDE CODE · HYPERFRAMES» | corretto |
 
 ## Checklist prima di pubblicare

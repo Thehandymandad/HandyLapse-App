@@ -40,8 +40,9 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
 - **Timeline = timeline di uscita.** Ogni grafica parte e finisce come la scena del piano; il colpo cade sul `payoff.t`.
 - **Si cambia `reel.json` o il piano, mai `edit/hf/index.html`**: lo rigenera `hf-project.ts`.
 - **Componenti deterministici**: tutto da `useCurrentFrame()`; niente `Math.random()` (usa `seeded()`), niente
-  `useState`/`useEffect` per animare, niente timer né transizioni CSS. Gli oggetti three.js (`@remotion/three`) in
-  HyperFrames non si vedono: vanno fatti con il protocollo `hf-seek` (`/hyperframes`, `references/types/3d.md`) o come PNG.
+  `useState`/`useEffect` per animare, niente timer né transizioni CSS. Il 3D si fa con `useThreeStage`
+  (`src/three/stage.ts`: three.js disegnato in modo sincrono a ogni fotogramma, `preserveDrawingBuffer`), non con
+  `@remotion/three`, che in HyperFrames non si vede. Canvas grandi solo quanto l'oggetto: il WebGL è in software.
 - **Cornice** (default della casa, `frame` in `reel.json` da `plan_to_reel.py`): `camera.py` mette il footage con la
   camera dentro il rettangolo arrotondato su fondo chiaro sfumato (tema chiaro) o scuro con bagliore d'accento; in HyperFrames il bordo al neon arancione (`FrameBorder`: tubo netto,
   anima chiara, alone stretto) e la maschera che tiene le grafiche **fuori** dalla cornice (`OutsideFrame`). Il render

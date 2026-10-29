@@ -660,6 +660,19 @@
    }
   },
   {
+   "type": "button3d",
+   "at": 1.75,
+   "duration": 2.8,
+   "y": 0.29,
+   "props": {
+    "label": "REC",
+    "dot": "#FF2E4D",
+    "color": "#22232A",
+    "tag": "LA PARTE FACILE",
+    "pressAt": 64
+   }
+  },
+  {
    "type": "pile",
    "at": 4.62,
    "duration": 1.58,
@@ -674,6 +687,21 @@
      "GRAFICHE"
     ],
     "last": "ORE PERSE"
+   }
+  },
+  {
+   "type": "icon3d",
+   "at": 6.2,
+   "duration": 1.36,
+   "y": 0.3,
+   "props": {
+    "items": [
+     {
+      "icon": "hammer",
+      "label": "IL MIO EDITOR",
+      "at": 10
+     }
+    ]
    }
   },
   {
@@ -698,6 +726,21 @@
    }
   },
   {
+   "type": "idcard",
+   "at": 13.18,
+   "duration": 1.58,
+   "y": 0.3,
+   "props": {
+    "tag": "QUESTO VIDEO",
+    "icon": "eye",
+    "kicker": "Montaggio a mano",
+    "title": "Toccato da me",
+    "bar": 0.12,
+    "barAt": 7,
+    "strikeAt": 32
+   }
+  },
+  {
    "type": "zero",
    "at": 14.82,
    "duration": 1.98,
@@ -712,6 +755,21 @@
      {
       "at": 34,
       "text": "0 app aperte"
+     }
+    ]
+   }
+  },
+  {
+   "type": "icon3d",
+   "at": 16.82,
+   "duration": 0.9,
+   "y": 0.3,
+   "props": {
+    "items": [
+     {
+      "icon": "camera",
+      "label": "REGISTRATO DA ME",
+      "at": 4
      }
     ]
    }

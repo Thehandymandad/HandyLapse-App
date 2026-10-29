@@ -40,6 +40,10 @@ suo tempo, il suo suono e il suo oggetto.
 - **Niente di inventato.** Nessun dato, numero, logo, nome o citazione che non sia nel parlato o fornito dall'utente.
   Le statistiche "finte" non si usano.
 - **Il primo secondo ferma lo scroll.** Dal fotogramma 0 c'è già qualcosa in movimento sullo schermo.
+- **Sopra la cornice non resta vuoto**: una grafica per frase, mai più di ~0,5 s senza niente nella fascia delle
+  grafiche (il punch della camera da solo non basta). Per le frasi senza un oggetto loro: `idcard`.
+- **Alcune grafiche in 3D** (three.js): icone e bottoni (`icon3d`, `button3d`) per le azioni e gli oggetti concreti,
+  almeno 2–3 per video, alternate alle card 2D.
 - **Zone sicure di Instagram** (1080×1920): niente di importante sopra y=280, sotto y=1560, né a destra di x=900 nella
   metà bassa. Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
 - **Layout della casa** (motion-design): il parlato sta in una cornice in basso (x 36–1044, y 1060–1880); le grafiche

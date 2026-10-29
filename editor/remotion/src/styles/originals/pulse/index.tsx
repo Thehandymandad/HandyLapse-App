@@ -14,6 +14,9 @@ import { PulseCaptions } from "./Captions";
 import { DmSend } from "./DmSend";
 import { HoursBurn } from "./HoursBurn";
 import { NopeStamp } from "./NopeStamp";
+import { Button3D } from "./Button3D";
+import { Icon3D } from "./Icon3D";
+import { IdCard } from "./IdCard";
 import { RecHud } from "./RecHud";
 import { ResultBurst } from "./ResultBurst";
 import { PulseBackdrop, ResultPhone } from "./ResultPhone";
@@ -126,6 +129,9 @@ export const pack = definePack({
     claude: ClaudeWorking,
     phone: ResultPhone,
     result: ResultBurst,
+    idcard: IdCard,
+    icon3d: Icon3D,
+    button3d: Button3D,
     dm: DmSend,
     pile: TaskPile,
     zero: ZeroStamps,

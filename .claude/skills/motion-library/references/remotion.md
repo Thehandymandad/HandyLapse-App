@@ -23,6 +23,9 @@ nero, testo bianco, Anton. Nei componenti si usano `P.fg`/`fg(a)` per testo e de
 | `tape` | attenzione, vietato, cantiere | nastri incrociati con testo che scorre | `text` | strappo nastro |
 | `route` | arrivare, strada, obiettivo | navigatore con percorso e arrivo | `arriveAt`, `to` | ping d'arrivo |
 | `send` | mandare, inviare | aeroplanino in curva con scia tratteggiata + pillola INVIATO | `flyFrames` (frame), `label` | whoosh + notifica |
+| `idcard` | chi, cosa, quanto, "questo", "non l'ho…" | scheda della referenza: pillola grigia sopra (tipo PRIMA), cerchio d'accento con icona che si disegna, etichetta spaziata, titolo grande, barra a segmenti; il titolo si può barrare o cambiare | `tag`, `icon`, `kicker`, `title`, `bar` + `barAt`, `strikeAt`, `title2` + `swapAt`, `tag2` | entrata scheda + barra / cambio |
+| `icon3d` | costruire, oggetto, strumento, "ho fatto…" | **3D three.js**: 1–3 tessere lucide d'accento con l'icona in chiaro, entrano girando una per parola e ondeggiano; etichetta sotto | `items[{icon, label, at}]` | un pop 3D per tessera |
+| `button3d` | premere, avviare, facile, "basta un click" | **3D three.js**: tasto lucido su base vista dall'alto con la scritta, il cursore arriva e lo preme (affonda e risale), onda di luce, pillola sopra | `label`, `dot` (pallino colorato), `color`, `pressAt`, `tag` | entrata + clic del tasto |
 | `result` | risultato, ecco, così, pronto (con la cornice) | pillola PRONTO che scatta nella fascia alta con un'onda di luce, cuori e fiamme che salgono nei margini laterali | `burstAt`, `label`, `sides[2]` | scintilla + colpo |
 | `phone` | risultato, ecco, così, questo video (solo schermo pieno) | il video entra in uno smartphone 3D che ondeggia, cuori che salgono, statistiche | `statsAt`, `stats[]` | whoosh + scintilla |
 | `trio` | tre cose, segreto, insieme | tre tessere «?» che si girano una per parola, lucchetto IL SEGRETO, scia che le collega | `reveal[3]`, `labels[3]`, `secretAt`, `connectAt`, `secretLabel` | comparsa + tre flip + lucchetto + ping |
@@ -41,8 +44,10 @@ era `reel-studio/scripts/matte.ts` (nella cronologia di git), da riportare se se
 
 `keyword` (card testo + icona), `stat` (numero che conta), `list`, `icon` (icona SVG che si disegna, `src/icons/`),
 `object3d` (three.js: coin, star, heart, house, gem, bolt, arrow, gift — `src/three/objects.tsx`), `arrow`, `cta`.
-`object3d`, `logo3d` e `carousel3d` usano `@remotion/three`: in HyperFrames non si vedono (solo nel render Remotion);
-per un oggetto 3D nel video usa il protocollo `hf-seek` di HyperFrames o un PNG scontornato.
+`object3d`, `logo3d` e `carousel3d` usano `@remotion/three`: in HyperFrames non si vedono (solo nel render Remotion).
+Per il 3D nel video si usa `useThreeStage` (`src/three/stage.ts`): three.js puro disegnato a ogni fotogramma, funziona
+sia in HyperFrames sia in Remotion (`icon3d` e `button3d` sono l'esempio: geometrie `RoundedBoxGeometry`, materiale
+fisico lucido col colore d'accento, luce d'ambiente `RoomEnvironment`, scritte e icone come texture da canvas).
 
 ## Tradurre una ricetta GSAP in Remotion
 
