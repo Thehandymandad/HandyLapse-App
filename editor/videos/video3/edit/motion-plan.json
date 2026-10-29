@@ -218,8 +218,7 @@
     },
     {
      "t": 7.75,
-     "name": "barra-carica",
-     "gain": -2
+     "name": "barra-carica"
     },
     {
      "t": 9.84,

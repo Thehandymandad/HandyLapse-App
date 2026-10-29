@@ -40,27 +40,27 @@
   {
    "t": 7.62,
    "name": "tag-claude",
-   "rel_db": -6.8
+   "rel_db": -6.7
   },
   {
    "t": 7.75,
    "name": "barra-carica",
-   "rel_db": -12.0
+   "rel_db": -10.0
   },
   {
    "t": 9.84,
    "name": "check-1",
-   "rel_db": -5.8
+   "rel_db": -5.2
   },
   {
    "t": 10.94,
    "name": "check-2",
-   "rel_db": -5.3
+   "rel_db": -4.5
   },
   {
    "t": 12.18,
    "name": "check-3",
-   "rel_db": -5.1
+   "rel_db": -4.2
   },
   {
    "t": 12.6,
