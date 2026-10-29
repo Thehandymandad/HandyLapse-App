@@ -1,6 +1,6 @@
 {
  "video": "video3",
- "engine": "remotion",
+ "engine": "hyperframes",
  "style": "pulse",
  "styleOverrides": {
   "grade": {

@@ -1,7 +1,7 @@
 # Oggetti (PNG 3D scontornati)
 
 Gli oggetti sono render foto-realistici (Nano Banana Pro su Google Flow, fondo bianco) scontornati in PNG con
-`motion-remotion/scripts/cutout.py`. Ogni oggetto ha sempre: un wrapper che si muove, l'immagine dentro, un'ombra di
+`motion-hyperframes/scripts/cutout.py`. Ogni oggetto ha sempre: un wrapper che si muove, l'immagine dentro, un'ombra di
 contatto (ellisse nera sfocata, `blur(18px)`, opacità 0.35–0.5) che segue il wrapper sull'asse X e si stringe quando
 l'oggetto si alza. La "rotazione 3D" di un PNG si finge: `rotationY` ±25° con `transformPerspective: 900`, più un leggero
 `scaleX` e un riflesso che scorre.

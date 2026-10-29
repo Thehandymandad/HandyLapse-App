@@ -1,6 +1,7 @@
-# Remotion: componenti pronti e traduzione delle ricette
+# Componenti pronti (React, disegnati da HyperFrames) e traduzione delle ricette
 
-Il motore è `editor/remotion/` (React). Prima di scrivere una ricetta da zero guarda se c'è già un componente: si usa
+I componenti stanno in `editor/remotion/` (React, API di Remotion); HyperFrames li disegna fotogramma per fotogramma
+(motion-hyperframes), quindi si scrivono come componenti Remotion. Prima di scrivere una ricetta da zero guarda se c'è già un componente: si usa
 dal piano con `"graphic": {"type": …, "props": …, "y": …, "scale": …}`. Nel piano i tempi delle props sono secondi
 assoluti della timeline di uscita (`plan_to_reel.py` li converte in frame relativi).
 
@@ -21,7 +22,7 @@ Lime `#D4FF3A` su vetro nero, Anton + Inter. Camera: tagli alternati punch sfoca
 | `send` | mandare, inviare | aeroplanino in curva con scia tratteggiata + pillola INVIATO | `flyFrames` (frame), `label` | whoosh + notifica |
 | `phone` | risultato, ecco, così, questo video | il video entra in uno smartphone 3D che ondeggia, cuori che salgono, statistiche | `statsAt`, `stats[]` | whoosh + scintilla |
 | `trio` | tre cose, segreto, insieme | tre tessere «?» che si girano una per parola, lucchetto IL SEGRETO, scia che le collega | `reveal[3]`, `labels[3]`, `secretAt`, `connectAt`, `secretLabel` | comparsa + tre flip + lucchetto + ping |
-| `guidebook` | guida, gratis, regalo | copertina della guida in 3D che cade e fluttua, bollino GRATIS | `freeAt`, `tag`, `title` (`\n`), `subtitle` | atterraggio libro + timbro |
+| `guidebook` | guida, gratis, regalo | copertina della guida in 3D che cade e fluttua, bollino GRATIS | `freeAt`, `tag`, `title` (`\n`), `subtitle`, `footer` | atterraggio libro + timbro |
 | `dm` | commenta, scrivi, DM | chat/commenti: la parola si scrive da sola, parte, arriva la risposta | `text`, `typeAt`, `sendAt`, `replyAt`, `reply`, `name`, `placeholder`, `sentLabel` | apertura + digitazione + invio + risposta |
 
 ## Style pack `claude-reel` (copiato da una reference) — `src/styles/references/claude-reel/`
@@ -36,6 +37,8 @@ era `reel-studio/scripts/matte.ts` (nella cronologia di git), da riportare se se
 
 `keyword` (card testo + icona), `stat` (numero che conta), `list`, `icon` (icona SVG che si disegna, `src/icons/`),
 `object3d` (three.js: coin, star, heart, house, gem, bolt, arrow, gift — `src/three/objects.tsx`), `arrow`, `cta`.
+`object3d`, `logo3d` e `carousel3d` usano `@remotion/three`: in HyperFrames non si vedono (solo nel render Remotion);
+per un oggetto 3D nel video usa il protocollo `hf-seek` di HyperFrames o un PNG scontornato.
 
 ## Tradurre una ricetta GSAP in Remotion
 

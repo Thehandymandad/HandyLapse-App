@@ -1,6 +1,6 @@
 ---
 name: motion-design
-description: Il direttore artistico. Definisce palette, tipografia, materiali, spazi e leggibilità di un video motion o di un reel prima di scrivere una riga di codice, partendo dal brief e dal piano di motion-director. Usare dopo motion-director e prima di motion-remotion; anche quando l'utente chiede di cambiare lo stile o di copiare quello di un riferimento.
+description: Il direttore artistico. Definisce palette, tipografia, materiali, spazi e leggibilità di un video motion o di un reel prima di scrivere una riga di codice, partendo dal brief e dal piano di motion-director. Usare dopo motion-director e prima di motion-hyperframes; anche quando l'utente chiede di cambiare lo stile o di copiare quello di un riferimento.
 ---
 
 # Motion Design
@@ -19,7 +19,8 @@ grafica rispetto al viso), i materiali, cosa NON fare. Se l'utente ha un riferim
 
 ## Lo stile della casa (default): Pulse
 
-È lo style pack `pulse` del motore Remotion (`editor/remotion/src/styles/originals/pulse/`, palette `P` in `shared.tsx`).
+È lo style pack `pulse` (componenti React in `editor/remotion/src/styles/originals/pulse/`, palette `P` in
+`shared.tsx`), disegnato da HyperFrames.
 
 ```ts
 const P = {

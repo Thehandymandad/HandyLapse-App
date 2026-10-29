@@ -4,7 +4,7 @@ SaaS AI-driven per la generazione di video pubblicitari. Stack: Next.js 14, Type
 
 ## Editor video
 
-Cartella [`editor/`](editor/README.md): monta i reel con Claude Code e le skill (video-use per trascrizione e tagli, Remotion per le grafiche animate, 5 skill custom `motion-*` per regia, design, ricette di movimento, esecuzione e revisione).
+Cartella [`editor/`](editor/README.md): monta i reel con Claude Code e le skill (video-use per trascrizione e tagli, HyperFrames per le grafiche animate (componenti React dello stile Pulse), 5 skill custom `motion-*` per regia, design, ricette di movimento, esecuzione e revisione).
 
 ## Setup
 

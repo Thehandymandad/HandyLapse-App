@@ -1,12 +1,12 @@
 ---
 name: motion-director
-description: Il regista. Inventa le scene e scrive il piano visivo di un reel o di un video motion a partire da un argomento, uno script, una trascrizione con tempi o un video di riferimento. Usare dopo i tagli di video-use e prima di progettare (motion-design) o animare (motion-remotion) qualsiasi grafica.
+description: Il regista. Inventa le scene e scrive il piano visivo di un reel o di un video motion a partire da un argomento, uno script, una trascrizione con tempi o un video di riferimento. Usare dopo i tagli di video-use e prima di progettare (motion-design) o animare (motion-hyperframes) qualsiasi grafica.
 ---
 
 # Motion Director
 
 Decidi **cosa succede sullo schermo** in ogni momento del video. Non scrivi codice e non scegli colori: quello è di
-motion-design e motion-remotion. Il tuo lavoro finisce quando ogni frase del parlato ha la sua azione visiva, con il
+motion-design e motion-hyperframes. Il tuo lavoro finisce quando ogni frase del parlato ha la sua azione visiva, con il
 suo tempo, il suo suono e il suo oggetto.
 
 ## Cosa ricevi
@@ -15,7 +15,7 @@ suo tempo, il suo suono e il suo oggetto.
 - La trascrizione parola per parola **già tagliata**: `edit/takes_packed.md` + `edit/edl.json` di video-use.
   I tempi del piano sono sulla **timeline di uscita** (dopo i tagli):
   `t_uscita = parola.start − range.start + offset_del_range`, dove l'offset è la somma delle durate dei range precedenti.
-  Lo script `.claude/skills/motion-remotion/scripts/timeline.py` lo fa per te (`words` → `edit/words_out.json`).
+  Lo script `.claude/skills/motion-hyperframes/scripts/timeline.py` lo fa per te (`words` → `edit/words_out.json`).
 - I riferimenti visivi, se ci sono (video o immagini che piacciono all'utente). **Guardali davvero**: estrai fotogrammi
   (`ffmpeg -i ref.mp4 -vf fps=4,scale=360:-2,tile=6x5 ref-%02d.jpg`) e annota ritmo, entrate, densità, tipo di oggetti.
 
@@ -45,14 +45,14 @@ suo tempo, il suo suono e il suo oggetto.
 - **Oggetti 3D solo dove servono**: cose concrete nominate o metafore fisiche forti. Per ognuno scrivi il prompt per
   Nano Banana Pro (Google Flow): `render 3D iper-realistico di <oggetto>, <materiale e luce>, su fondo bianco, nient'altro nel frame`.
   Prima controlla se esiste già in `editor/assets/objects/` (la libreria cresce video dopo video). In alternativa
-  (o se l'utente lo chiede) l'oggetto si costruisce in **three.js** dentro Remotion (`editor/remotion/src/three/`):
+  (o se l'utente lo chiede) l'oggetto si costruisce in **three.js** dentro HyperFrames (protocollo `hf-seek`):
   `{"id": …, "engine": "three.js"}`, forme semplici e riconoscibili (ciak, cubo, libro, moneta…) con materiali lucidi
   e ombra di contatto.
 
 ## Libertà
 
 Scegli tu metafora, inquadratura delle grafiche, ritmo, quante scene, se il footage si rimpicciolisce, se una scena va a
-tutto schermo. Prima guarda i **componenti già pronti** del motore Remotion (motion-library `references/remotion.md`:
+tutto schermo. Prima guarda i **componenti già pronti** dello style pack (motion-library `references/remotion.md`:
 rec, pile, hours, claude, zero, send, phone, trio, guidebook, dm…): sono quelli con le animazioni migliori. Poi le
 ricette da motion-library (cerca per verbo) o inventane di nuove: se ne inventi una che funziona, aggiungila alla libreria. Chiedi all'utente solo ciò che manca davvero (es. il nome giusto di un prodotto, un riferimento).
 
@@ -70,7 +70,7 @@ ricette da motion-library (cerca per verbo) o inventane di nuove: se ne inventi 
 ```json
 {
   "video": "nome",
-  "engine": "remotion",
+  "engine": "hyperframes",
   "style": "pulse",
   "canvas": { "width": 1080, "height": 1920, "fps": 30 },
   "duration": 33.8,
@@ -103,7 +103,7 @@ ricette da motion-library (cerca per verbo) o inventane di nuove: se ne inventi 
 
 - Tutti i tempi sono secondi della timeline di uscita (`words_out.json`), anche dentro `graphic.props` (le chiavi che
   finiscono in `At`, `reveal`, `items[].at`): la conversione in frame la fa `plan_to_reel.py`.
-- `graphic.type` è un componente dello style pack (o uno nuovo da far scrivere a motion-remotion: descrivilo bene in
+- `graphic.type` è un componente dello style pack (o uno nuovo da far scrivere a motion-hyperframes: descrivilo bene in
   `action`). `y` = centro verticale (0..1), `scale` per farlo stare nello spazio libero.
 - `captions.emphasis`: indici delle parole chiave in `words_out.json` (una ogni 2–3 s: numeri, verbi forti, il messaggio).
 - `camera`: `punch` (secco, `strength` 0–1) e `push` (lento, con `dur`); i tagli, i tremori e il telefono li fa il pack.

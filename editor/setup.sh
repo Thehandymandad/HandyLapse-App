@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Installa le skill pubbliche usate dall'editor (guida "Come edito i miei video con l'AI"):
 #   - Video Use (github.com/browser-use/video-use): trascrizione Scribe, tagli sulle parole, render del montato
-#   - media-use (con le skill di HyperFrames, hyperframes.heygen.com): i suoni gratuiti di base per gli effetti
-# e installa le dipendenze del motore delle animazioni (Remotion, editor/remotion).
+#   - HyperFrames (hyperframes.heygen.com): render delle grafiche, + media-use (suoni gratuiti di base)
+# e installa i componenti delle grafiche (React, editor/remotion) e le librerie Python della camera.
 # Idempotente: se è già tutto installato non fa nulla. Le 5 skill custom (motion-*) sono già nel repo.
 #
 # Uso:  bash editor/setup.sh
@@ -34,15 +34,22 @@ if [ ! -f "$VIDEO_USE/.deps-ok" ]; then
   touch "$VIDEO_USE/.deps-ok"
 fi
 
-# 2. media-use (arriva con le skill di HyperFrames; l'installer le mette in ~/.claude/skills, globali per l'utente)
+# 2. HyperFrames: skill core (/hyperframes, /hyperframes-cli, /hyperframes-registry, /media-use)
+# (l'installer le mette in ~/.claude/skills, globali per l'utente)
 if [ ! -f "$SKILLS/hyperframes/SKILL.md" ] && [ ! -f "$HOME/.claude/skills/hyperframes/SKILL.md" ]; then
   (cd "$ROOT" && npx --yes "hyperframes@$HYPERFRAMES_VERSION" skills update)
 fi
 
-# 3. Remotion (motore delle animazioni): dipendenze npm con le versioni fissate in package-lock.json
+# 3. Componenti delle grafiche (React, style pack Pulse) disegnati da HyperFrames: dipendenze npm fissate nel lock
 if [ ! -d "$ROOT/editor/remotion/node_modules/remotion" ]; then
   (cd "$ROOT/editor/remotion" && npm ci --no-audit --no-fund)
 fi
+
+# 4. remotion-to-hyperframes (porta i componenti React dentro HyperFrames) e le librerie Python di camera.py
+if [ ! -f "$HOME/.claude/skills/remotion-to-hyperframes/SKILL.md" ]; then
+  (cd "$ROOT" && npx --yes "hyperframes@$HYPERFRAMES_VERSION" skills update remotion-to-hyperframes)
+fi
+python3 -c 'import cv2, numpy' 2>/dev/null || python3 -m pip install -q opencv-python-headless numpy
 
 echo "Editor pronto. Skill del progetto ($SKILLS):"
 ls "$SKILLS"

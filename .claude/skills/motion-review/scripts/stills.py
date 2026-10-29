@@ -1,7 +1,7 @@
-"""Foglio di controllo degli still di Remotion, prima del render completo.
+"""Foglio di controllo degli still, prima del render completo.
 
-    cd editor/remotion && npx tsx scripts/render.ts <edit_dir> --still 0.3,1.4,5.2
-    python stills.py <edit_dir>/review/remotion [-o <dir>/sheet.jpg]
+    python .claude/skills/motion-hyperframes/scripts/camera.py --edit <edit_dir> --stills 0.3,1.4 --snap-dir <snapshot>
+    python stills.py <edit_dir>/review/stills [-o <dir>/sheet.jpg]
 
 Legge i `t_XX.XX.png` della cartella e salva fogli 4×2 con le zone coperte da Instagram in rosso
 (sopra y=280, sotto y=1560, a destra di x=900 nella metà bassa) e il tempo su ogni fotogramma.

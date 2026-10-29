@@ -10,11 +10,14 @@ Pubbliche (installate da `bash editor/setup.sh` in `.claude/skills/`, non sono n
 | Skill | Cosa fa |
 | --- | --- |
 | `video-use` ([browser-use/video-use](https://github.com/browser-use/video-use)) | il montatore: trascrive con ElevenLabs Scribe, taglia sulle parole (tiene l'ultima ripresa buona, fade audio di 30 ms), rende il montato |
-| `media-use` (arriva con le skill di [HyperFrames](https://hyperframes.heygen.com)) | i suoni gratuiti di base per gli effetti, e asset: musica, immagini, voce, rimozione sfondo |
+| `hyperframes` + `hyperframes-cli` + `remotion-to-hyperframes` ([hyperframes.heygen.com](https://hyperframes.heygen.com)) | il motore di render delle grafiche (HTML → video trasparente) |
+| `media-use` (incluso con HyperFrames) | i suoni gratuiti di base per gli effetti, e asset: musica, immagini, voce, rimozione sfondo |
 
-Il motore delle animazioni è **Remotion** (`editor/remotion/`, React → MP4): camera 3D sul footage, sottotitoli
-cinetici, grafiche dello style pack **Pulse** (REC, pila di lavori, card di Claude, timbri, aeroplanino, telefono 3D,
-tessere, guida 3D, DM…) e oggetti three.js.
+Le grafiche sono lo style pack **Pulse** (REC, pila di lavori, card di Claude, timbri, aeroplanino, telefono 3D,
+tessere, guida 3D, DM…) e i sottotitoli cinetici: componenti React in `editor/remotion/src/` che **HyperFrames disegna
+fotogramma per fotogramma** (stesse molle e stessi tempi di Remotion, render ~2 min per 34 s). La camera sul footage
+(punch e whip 3D sui tagli, zoom, telefono) la calcola lo stesso codice e la applica `camera.py` con prospettiva vera e
+movimenti sub-pixel.
 
 Le 5 custom, con il gusto della casa (in `.claude/skills/`, nel repo):
 
@@ -23,19 +26,19 @@ Le 5 custom, con il gusto della casa (in `.claude/skills/`, nel repo):
 | `motion-director` | idea, script, riferimenti, trascrizione → `MOTION-BRIEF.md` + `motion-plan.json` |
 | `motion-design` | brief + piano → `DESIGN.md` |
 | `motion-library` | un verbo ("perdere", "unire") → il componente Remotion pronto o la ricetta di movimento giusta (92 ricette) |
-| `motion-remotion` | piano + design → progetto Remotion (`reel.json`) → `final.mp4` (con camera, suono e master) |
+| `motion-hyperframes` | piano + design → `reel.json` → grafiche HyperFrames + camera → `final.mp4` (con suono e master) |
 | `motion-review` | il render → `MOTION-REVIEW.md` + correzioni |
 
-`idea → director → design → library → remotion → review → video`
+`idea → director → design → library → hyperframes → review → video`
 
 ## I sei passi
 
 1. **Trascrizione** — ogni parola col suo tempo (ElevenLabs Scribe, video-use).
 2. **Tagli** — via le riprese sbagliate (si tiene l'ultima buona), via ogni pausa sopra ~0,25 s, piccolo margine ai bordi, 30 ms di dissolvenza audio.
-3. **Grafiche animate** — Remotion sopra il montato: ogni frase diventa un'azione visiva (componente Pulse o ricetta nuova), con camera 3D e sottotitoli cinetici.
-4. **Oggetti 3D** — three.js dentro Remotion, oppure generati su Google Flow con Nano Banana Pro ("render 3D iper-realistico di … su fondo bianco, nient'altro nel frame", 2K), scontornati e animati (caduta, rotazione, ombre, scintille).
+3. **Grafiche animate** — renderizzate da HyperFrames come video trasparente sopra il montato: ogni frase diventa un'azione visiva (componente Pulse o ricetta nuova), con camera 3D sul footage e sottotitoli cinetici.
+4. **Oggetti 3D** — three.js dentro HyperFrames, oppure generati su Google Flow con Nano Banana Pro ("render 3D iper-realistico di … su fondo bianco, nient'altro nel frame", 2K), scontornati e animati (caduta, rotazione, ombre, scintille).
 5. **Suono** — voce con più corpo (EQ + compressione), un effetto diverso per ogni evento visivo, tutti allo stesso livello ~7 dB sotto la voce, master −14 LUFS.
-6. **Composizione e verifica** — video di Remotion + voce + effetti + master, poi si guardano i fotogrammi chiave: testo, sovrapposizioni, zone sicure di Instagram.
+6. **Composizione e verifica** — footage con la camera + grafiche + voce + effetti + master, poi si guardano i fotogrammi chiave: testo, sovrapposizioni, zone sicure di Instagram.
 
 ## Come si usa
 
@@ -51,8 +54,7 @@ Le 5 custom, con il gusto della casa (in `.claude/skills/`, nel repo):
 3. Il trucco: allega sempre **riferimenti visivi** (video che ti piacciono) invece di descrivere l'effetto a parole.
 
 Tutti i file di lavoro finiscono in `editor/videos/<nome>/edit/` (piano, `reel.json`, design, review, render). Nel repo
-restano solo i testi (piani, progetti, review); i video no. Per vedere e ritoccare un progetto dal vivo:
-`cd editor/remotion && npm run studio`.
+restano solo i testi (piani, progetti, review); i video e il progetto HyperFrames generato (`edit/hf/`) no.
 
 ## Librerie che crescono
 
@@ -63,6 +65,6 @@ restano solo i testi (piani, progetti, review); i video no. Per vedere e ritocca
 ## Installazione
 
 `bash editor/setup.sh` — servono ffmpeg, Node.js 22+, Python 3 e git. Scarica ed esegue codice di terze parti
-(video-use da GitHub, le skill di HyperFrames/media-use e Remotion da npm). Licenza Remotion: gratuita per singoli e
-aziende fino a 3 persone. La chiave ElevenLabs va in `ELEVENLABS_API_KEY`. In questo cloud la chiave vera la mette il proxy di rete
+(video-use da GitHub, le skill di HyperFrames e i componenti React da npm). Servono anche numpy e OpenCV per
+`camera.py`. La chiave ElevenLabs va in `ELEVENLABS_API_KEY`. In questo cloud la chiave vera la mette il proxy di rete
 (secret dell'ambiente): basta `export ELEVENLABS_API_KEY=proxy`, il proxy sostituisce il valore.

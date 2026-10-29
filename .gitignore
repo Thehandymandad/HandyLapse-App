@@ -61,4 +61,9 @@ __pycache__/
 /editor/videos/**/edit/stems/
 /editor/videos/**/edit/review/frames/
 /editor/videos/**/edit/review/remotion/*.png
+/editor/videos/**/edit/review/stills/
+/editor/videos/**/edit/review/snap/
+# progetto HyperFrames e camera: si rigenerano da reel.json (hf-project.ts, camera-track.ts)
+/editor/videos/**/edit/hf/
+/editor/videos/**/edit/camera.json
 /editor/videos/**/edit/work-*/

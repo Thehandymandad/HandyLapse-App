@@ -10,9 +10,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition } from "@remotion/renderer";
-import { arg, log, positional, probe, ROOT } from "./lib/sh";
-import { resolveStyle } from "../src/styles";
-import type { EditProject, ReelProps } from "../src/types";
+import { loadReel } from "./lib/reel";
+import { arg, log, positional, ROOT } from "./lib/sh";
+import type { ReelProps } from "../src/types";
 
 const chromium = {
   browserExecutable: process.env.REMOTION_BROWSER_EXECUTABLE || null,
@@ -34,24 +34,14 @@ function publish(file: string, name: string): string {
 }
 
 export async function render(editDir: string, opts: { out?: string; frames?: string; stills?: number[] } = {}) {
-  const edit = path.resolve(process.env.INIT_CWD ?? process.cwd(), editDir);
-  const project = JSON.parse(fs.readFileSync(path.join(edit, "reel.json"), "utf8")) as EditProject;
+  const { project, style, edit, src } = await loadReel(editDir);
   const name = path.basename(path.dirname(edit)) || project.name;
-  const src = path.resolve(edit, project.source.file);
-  const info = await probe(src);
   project.source = {
     ...project.source,
     file: publish(src, name),
-    width: info.width,
-    height: info.height,
-    fps: project.source.fps || 30,
-    duration: info.duration,
     matte: project.source.matte ? publish(path.resolve(edit, project.source.matte), name) : undefined,
     plate: project.source.plate ? publish(path.resolve(edit, project.source.plate), name) : undefined,
   };
-  if (!project.keep?.length) project.keep = [{ start: 0, end: info.duration }];
-  project.cuts ??= [];
-  const style = resolveStyle(project.styleId, project.styleOverrides);
   const inputProps: ReelProps = { project, style };
 
   log("Bundle Remotion…");

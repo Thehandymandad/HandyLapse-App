@@ -6,7 +6,7 @@ import { ANTON, At, clamp, INTER, P } from "./shared";
 /**
  * "Ti ho scritto una guida gratuita": la copertina della guida (PDF) cade inclinata in 3D e fluttua,
  * con un riflesso che la attraversa e il bollino "GRATIS" che sbatte sopra (props.freeAt).
- * props.tag, props.title (\n per andare a capo), props.subtitle.
+ * props.tag, props.title (\n per andare a capo), props.subtitle, props.footer.
  */
 export const GuideBook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
@@ -61,7 +61,7 @@ export const GuideBook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               </div>
               <div style={{ marginTop: "auto", marginLeft: 10, display: "flex", alignItems: "center", gap: 12, fontFamily: INTER, fontWeight: 900, fontSize: 24, color: P.grey }}>
                 <span style={{ border: `2px solid ${P.grey}`, borderRadius: 6, padding: "2px 8px" }}>PDF</span>
-                CLAUDE CODE · REMOTION
+                {(g.props?.footer as string) ?? "CLAUDE CODE · HYPERFRAMES"}
               </div>
               <div style={{ position: "absolute", top: -100, bottom: -100, left: shine, width: 80, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)", transform: "rotate(18deg)" }} />
             </div>
