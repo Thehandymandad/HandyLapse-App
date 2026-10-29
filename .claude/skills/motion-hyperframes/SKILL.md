@@ -68,6 +68,12 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    media-use (`sfx_library.py variant <nome> --from <suono> --pitch/--trim/--reverse/--layer/--seq`) o sintetizzati in
    locale (`sfx_library.py synth <nome> --kind riser|ding --duration <s>`: le ricette del primo editor, barra che si carica e 100%); a pagamento:
    `sfx_library.py generate` (ElevenLabs, chiedi prima). I WAV non vanno nel repo: `sfx_library.py rebuild`.
+2a. **Sfondo nuovo** (se l'utente vuole un'altra stanza dietro di sé): un'immagine verticale della stanza vuota (generata
+   con Higgsfield `generate_image`, modello `gpt_image_2_5`, 9:16, ~0,25 crediti: si chiede o si dice il costo), poi
+   `python $S/background.py --edit $E --image <stanza.png>`: scontorno video stabile con RobustVideoMatting
+   (`editor/assets/models/rvm_mobilenetv3_fp32.onnx`, da scaricare dalle release di GitHub se manca), colori dei
+   capelli ripuliti, luce dello sfondo avvicinata al girato, leggero light wrap; l'originale resta in `base_wall.mp4`,
+   lo scontorno in `matte.mp4`. ~1 fotogramma al secondo in questo cloud: va lanciato in background. Prima di speed.py.
 2b. **Ritmo** (se l'utente lo vuole più veloce): `python $S/speed.py $E --factor 1.1` → `base.mp4` accelerato senza
    cambiare il tono della voce, parole e piano riallineati (gli originali restano in `*_1x.*`: per cambiare il piano
    dopo, si modifica `motion-plan_1x.json` e si rilancia `speed.py`). 1,1x è "un po' più veloce".

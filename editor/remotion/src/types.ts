@@ -112,7 +112,7 @@ export type IconName =
   | "money" | "euro" | "bulb" | "clock" | "house" | "fire" | "wrench" | "hammer" | "drill" | "warning"
   | "heart" | "check" | "cross" | "star" | "trophy" | "brain" | "rocket" | "chart" | "phone" | "camera"
   | "thumbs-up" | "eye" | "gift" | "lock" | "calendar" | "bell" | "spark" | "arrow-right" | "lightning"
-  | "ruler" | "paint" | "screw" | "family" | "leaf" | "drop" | "plug" | "scissors" | "captions" | "zoom";
+  | "ruler" | "paint" | "screw" | "family" | "leaf" | "drop" | "plug" | "scissors" | "captions" | "zoom" | "sheet" | "chat" | "box" | "car";
 
 export type Object3DName = "coin" | "star" | "heart" | "house" | "gem" | "bolt" | "arrow" | "gift";
 

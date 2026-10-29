@@ -11,9 +11,10 @@ import { clamp, INTER, P } from "./shared";
 /**
  * Icone 3D (three.js): tessere lucide del colore d'accento con l'icona in rilievo chiaro sulla faccia, che entrano
  * girando su sé stesse una alla volta, poi ondeggiano piano; sotto ogni tessera un'etichetta.
- * props.items: [{ icon, label, at }] (at = frame relativo in cui la tessera atterra; 1–4 tessere).
+ * props.items: [{ icon, label, at, color }] (at = frame relativo in cui la tessera atterra; 1–4 tessere; color opzionale).
+ * props.link: una linea d'accento che collega le tessere, disegnata da props.linkAt.
  */
-type Item = { icon: IconName; label?: string; at?: number };
+type Item = { icon: IconName; label?: string; at?: number; color?: string };
 const W = 1080;
 const H = 470;
 const FOV = 26;
@@ -58,7 +59,7 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
       const geo = new RoundedBoxGeometry(1.7, 1.7, 0.55, 6, 0.32);
       return items.map((it, i) => {
         const group = new THREE.Group();
-        const body = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ color: new THREE.Color(P.accent), roughness: 0.32, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08 }));
+        const body = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ color: new THREE.Color(it.color ?? P.accent), roughness: 0.32, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08 }));
         const face = new THREE.Mesh(
           new THREE.PlaneGeometry(1.25, 1.25),
           new THREE.MeshPhysicalMaterial({ map: iconTexture(it.icon, "#ffffff"), transparent: true, roughness: 0.3, clearcoat: 0.6, emissive: new THREE.Color("#ffffff"), emissiveIntensity: 0.25, emissiveMap: iconTexture(it.icon, "#ffffff") }),
@@ -87,7 +88,23 @@ export const Icon3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   return (
     <AbsoluteFill style={{ opacity: 1 - out }}>
       <div style={{ position: "absolute", left: "50%", top: (g.y ?? 0.3) * height, transform: "translate(-50%, -50%)", width: W, height: H + 70 }}>
-        <canvas ref={ref} width={W} height={H} style={{ width: W, height: H, filter: "drop-shadow(0 26px 30px rgba(40,25,15,0.28))" }} />
+        {typeof g.props?.linkAt === "number" && n > 1 && (() => {
+          const la = g.props!.linkAt as number;
+          const k = interpolate(f, [la, la + 10], [0, 1], { ...clamp, easing: (x) => 1 - (1 - x) ** 3 });
+          const x0 = W / 2 - ((n - 1) / 2) * gap * PX;
+          const x1 = W / 2 + ((n - 1) / 2) * gap * PX;
+          const y = H / 2 + 8;
+          return k > 0 ? (
+            <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
+              <line x1={x0} y1={y} x2={x0 + (x1 - x0) * k} y2={y} stroke={P.accent} strokeWidth={12} strokeLinecap="round" style={{ filter: `drop-shadow(0 0 12px ${P.accent})` }} />
+              {[0, 1, 2].map((d) => {
+                const t = ((f - la) / 18 + d / 3) % 1;
+                return <circle key={d} cx={x0 + (x1 - x0) * t * k} cy={y} r={11} fill="#fff" opacity={k} />;
+              })}
+            </svg>
+          ) : null;
+        })()}
+        <canvas ref={ref} width={W} height={H} style={{ position: "relative", width: W, height: H, filter: "drop-shadow(0 26px 30px rgba(40,25,15,0.28))" }} />
         {items.map((it, i) => {
           const at = it.at ?? 6 + i * 6;
           const k = interpolate(f, [at, at + 6], [0, 1], clamp);

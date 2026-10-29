@@ -8,6 +8,10 @@ import type { IconName } from "../types";
 type El = string | { c: [number, number, number] };
 
 export const ICONS: Record<IconName, El[]> = {
+  sheet: ["M4 4h16v16H4z", "M4 9.5h16", "M4 15h16", "M10 4v16"],
+  chat: ["M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z", "M7.5 9.5h9", "M7.5 12.5h6"],
+  box: ["M3 8l9-5 9 5v8l-9 5-9-5z", "M3 8l9 5 9-5", "M12 13v8"],
+  car: ["M5 16V11l2-5h10l2 5v5", "M3 16h18v2H3z", { c: [7.5, 18.5, 1.5] }, { c: [16.5, 18.5, 1.5] }, "M5 11h14"],
   scissors: [{ c: [6, 6, 3] }, { c: [6, 18, 3] }, "M8.6 7.6L20 18", "M8.6 16.4L20 6"],
   captions: ["M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z", "M7 12h4", "M13 12h4", "M7 15.5h10"],
   zoom: [{ c: [10.5, 10.5, 6.5] }, "M15.5 15.5L21 21", "M10.5 8v5", "M8 10.5h5"],

@@ -17,13 +17,17 @@ from pathlib import Path
 
 
 def scale_props(props: dict, k: float) -> None:
+    """Divide per k i tempi delle props (chiavi in `At`, `at`, `typeFrom`, `reveal`), anche dentro liste di oggetti."""
     for key, v in list(props.items()):
-        if key.endswith("At") or key == "reveal":
-            props[key] = [round(x / k, 3) for x in v] if isinstance(v, list) else round(v / k, 3)
-        elif key == "items" and isinstance(v, list):
+        if key.endswith("At") or key in ("at", "typeFrom", "reveal"):
+            if isinstance(v, list) and all(isinstance(x, (int, float)) for x in v):
+                props[key] = [round(x / k, 3) for x in v]
+            elif isinstance(v, (int, float)):
+                props[key] = round(v / k, 3)
+        elif isinstance(v, list):
             for it in v:
-                if isinstance(it, dict) and "at" in it:
-                    it["at"] = round(it["at"] / k, 3)
+                if isinstance(it, dict):
+                    scale_props(it, k)
 
 
 def main() -> None:

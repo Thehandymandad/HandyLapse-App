@@ -1,0 +1,1328 @@
+{
+ "version": 1,
+ "name": "video4",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 49.033
+ },
+ "styleId": "pulse",
+ "styleOverrides": {
+  "motion": {
+   "theme": "light"
+  },
+  "captions": {
+   "positionY": 0.432,
+   "fontSize": 88,
+   "uppercase": false
+  },
+  "grade": {
+   "brightness": 1,
+   "contrast": 1.04,
+   "saturation": 1.04,
+   "warmth": 0,
+   "vignette": 0.15
+  }
+ },
+ "keep": [],
+ "cuts": [],
+ "frame": {
+  "x": 80,
+  "y": 900,
+  "w": 920,
+  "h": 800,
+  "radius": 56,
+  "border": 7,
+  "zoom": 1.0,
+  "faceY": 0.42,
+  "faceAt": 0.4
+ },
+ "joins": [
+  3.467,
+  8.133,
+  11.0,
+  12.933,
+  15.767,
+  19.167,
+  21.967,
+  24.2,
+  29.033,
+  30.7,
+  34.067,
+  37.667,
+  39.667,
+  41.1,
+  44.2
+ ],
+ "hold": 1.3,
+ "words": [
+  {
+   "text": "Quante",
+   "start": 0.08,
+   "end": 0.32
+  },
+  {
+   "text": "volte",
+   "start": 0.38,
+   "end": 0.66
+  },
+  {
+   "text": "al",
+   "start": 0.68,
+   "end": 0.76
+  },
+  {
+   "text": "giorno",
+   "start": 0.8,
+   "end": 1.08
+  },
+  {
+   "text": "in",
+   "start": 1.1,
+   "end": 1.18
+  },
+  {
+   "text": "azienda",
+   "start": 1.22,
+   "end": 1.54
+  },
+  {
+   "text": "qualcuno",
+   "start": 1.58,
+   "end": 1.86
+  },
+  {
+   "text": "chiede:",
+   "start": 1.94,
+   "end": 2.18
+  },
+  {
+   "text": "\"Ce",
+   "start": 2.34,
+   "end": 2.44
+  },
+  {
+   "text": "l'abbiamo",
+   "start": 2.46,
+   "end": 2.76
+  },
+  {
+   "text": "questo",
+   "start": 2.8,
+   "end": 2.98
+  },
+  {
+   "text": "pezzo?\"",
+   "start": 3.04,
+   "end": 3.36
+  },
+  {
+   "text": "E",
+   "start": 3.527,
+   "end": 3.547
+  },
+  {
+   "text": "parte",
+   "start": 3.647,
+   "end": 3.847
+  },
+  {
+   "text": "la",
+   "start": 3.867,
+   "end": 3.927
+  },
+  {
+   "text": "caccia.",
+   "start": 3.987,
+   "end": 4.307
+  },
+  {
+   "text": "Apri",
+   "start": 4.607,
+   "end": 4.767
+  },
+  {
+   "text": "l'Excel",
+   "start": 4.767,
+   "end": 5.067
+  },
+  {
+   "text": "del",
+   "start": 5.107,
+   "end": 5.167
+  },
+  {
+   "text": "magazzino,",
+   "start": 5.187,
+   "end": 5.627
+  },
+  {
+   "text": "scorri",
+   "start": 5.947,
+   "end": 6.207
+  },
+  {
+   "text": "centinaia",
+   "start": 6.267,
+   "end": 6.687
+  },
+  {
+   "text": "di",
+   "start": 6.727,
+   "end": 6.787
+  },
+  {
+   "text": "righe,",
+   "start": 6.827,
+   "end": 7.047
+  },
+  {
+   "text": "controlli",
+   "start": 7.267,
+   "end": 7.587
+  },
+  {
+   "text": "la",
+   "start": 7.607,
+   "end": 7.667
+  },
+  {
+   "text": "misura,",
+   "start": 7.707,
+   "end": 8.027
+  },
+  {
+   "text": "chiami",
+   "start": 8.213,
+   "end": 8.453
+  },
+  {
+   "text": "chi",
+   "start": 8.473,
+   "end": 8.553
+  },
+  {
+   "text": "sta",
+   "start": 8.613,
+   "end": 8.693
+  },
+  {
+   "text": "in",
+   "start": 8.713,
+   "end": 8.753
+  },
+  {
+   "text": "magazzino",
+   "start": 8.773,
+   "end": 9.273
+  },
+  {
+   "text": "e",
+   "start": 9.453,
+   "end": 9.473
+  },
+  {
+   "text": "intanto",
+   "start": 9.493,
+   "end": 9.933
+  },
+  {
+   "text": "è",
+   "start": 9.993,
+   "end": 10.033
+  },
+  {
+   "text": "passato",
+   "start": 10.073,
+   "end": 10.293
+  },
+  {
+   "text": "un",
+   "start": 10.333,
+   "end": 10.373
+  },
+  {
+   "text": "quarto",
+   "start": 10.413,
+   "end": 10.613
+  },
+  {
+   "text": "d'ora.",
+   "start": 10.673,
+   "end": 10.873
+  },
+  {
+   "text": "Ora",
+   "start": 11.06,
+   "end": 11.18
+  },
+  {
+   "text": "immagina",
+   "start": 11.22,
+   "end": 11.72
+  },
+  {
+   "text": "di",
+   "start": 11.76,
+   "end": 11.82
+  },
+  {
+   "text": "scrivere",
+   "start": 11.86,
+   "end": 12.18
+  },
+  {
+   "text": "su",
+   "start": 12.219,
+   "end": 12.3
+  },
+  {
+   "text": "WhatsApp:",
+   "start": 12.34,
+   "end": 12.82
+  },
+  {
+   "text": "\"Lastre",
+   "start": 12.933,
+   "end": 13.513
+  },
+  {
+   "text": "3",
+   "start": 13.833,
+   "end": 13.853
+  },
+  {
+   "text": "millimetri",
+   "start": 13.873,
+   "end": 14.253
+  },
+  {
+   "text": "trasparente,",
+   "start": 14.293,
+   "end": 14.873
+  },
+  {
+   "text": "quanti",
+   "start": 15.033,
+   "end": 15.233
+  },
+  {
+   "text": "ne",
+   "start": 15.273,
+   "end": 15.293
+  },
+  {
+   "text": "abbiamo?\"",
+   "start": 15.333,
+   "end": 15.673
+  },
+  {
+   "text": "E",
+   "start": 15.827,
+   "end": 15.847
+  },
+  {
+   "text": "in",
+   "start": 15.867,
+   "end": 15.907
+  },
+  {
+   "text": "due",
+   "start": 15.947,
+   "end": 16.027
+  },
+  {
+   "text": "secondi",
+   "start": 16.067,
+   "end": 16.427
+  },
+  {
+   "text": "ti",
+   "start": 16.487,
+   "end": 16.547
+  },
+  {
+   "text": "arriva",
+   "start": 16.587,
+   "end": 16.787
+  },
+  {
+   "text": "la",
+   "start": 16.807,
+   "end": 16.867
+  },
+  {
+   "text": "risposta,",
+   "start": 16.907,
+   "end": 17.407
+  },
+  {
+   "text": "quanti",
+   "start": 17.667,
+   "end": 17.907
+  },
+  {
+   "text": "pezzi",
+   "start": 17.947,
+   "end": 18.227
+  },
+  {
+   "text": "hai",
+   "start": 18.227,
+   "end": 18.427
+  },
+  {
+   "text": "e",
+   "start": 18.567,
+   "end": 18.587
+  },
+  {
+   "text": "dove",
+   "start": 18.627,
+   "end": 18.767
+  },
+  {
+   "text": "sono.",
+   "start": 18.847,
+   "end": 19.067
+  },
+  {
+   "text": "Si",
+   "start": 19.227,
+   "end": 19.327
+  },
+  {
+   "text": "può",
+   "start": 19.347,
+   "end": 19.447
+  },
+  {
+   "text": "fare,",
+   "start": 19.487,
+   "end": 19.707
+  },
+  {
+   "text": "si",
+   "start": 19.827,
+   "end": 19.927
+  },
+  {
+   "text": "collega",
+   "start": 19.967,
+   "end": 20.227
+  },
+  {
+   "text": "l'Excel",
+   "start": 20.247,
+   "end": 20.687
+  },
+  {
+   "text": "che",
+   "start": 20.707,
+   "end": 20.787
+  },
+  {
+   "text": "usi",
+   "start": 20.887,
+   "end": 21.047
+  },
+  {
+   "text": "già",
+   "start": 21.087,
+   "end": 21.347
+  },
+  {
+   "text": "a",
+   "start": 21.387,
+   "end": 21.447
+  },
+  {
+   "text": "WhatsApp.",
+   "start": 21.487,
+   "end": 21.887
+  },
+  {
+   "text": "niente",
+   "start": 22.027,
+   "end": 22.267
+  },
+  {
+   "text": "programmi",
+   "start": 22.307,
+   "end": 22.567
+  },
+  {
+   "text": "nuovi,",
+   "start": 22.607,
+   "end": 22.867
+  },
+  {
+   "text": "niente",
+   "start": 23.027,
+   "end": 23.247
+  },
+  {
+   "text": "gestionali",
+   "start": 23.267,
+   "end": 23.627
+  },
+  {
+   "text": "da",
+   "start": 23.647,
+   "end": 23.687
+  },
+  {
+   "text": "imparare.",
+   "start": 23.727,
+   "end": 24.107
+  },
+  {
+   "text": "E",
+   "start": 24.26,
+   "end": 24.28
+  },
+  {
+   "text": "non",
+   "start": 24.32,
+   "end": 24.44
+  },
+  {
+   "text": "serve",
+   "start": 24.48,
+   "end": 24.72
+  },
+  {
+   "text": "solo",
+   "start": 24.76,
+   "end": 24.88
+  },
+  {
+   "text": "a",
+   "start": 24.9,
+   "end": 24.92
+  },
+  {
+   "text": "cercare.",
+   "start": 24.96,
+   "end": 25.36
+  },
+  {
+   "text": "Arriva",
+   "start": 25.68,
+   "end": 25.88
+  },
+  {
+   "text": "un",
+   "start": 25.92,
+   "end": 25.98
+  },
+  {
+   "text": "pezzo",
+   "start": 26.0,
+   "end": 26.24
+  },
+  {
+   "text": "nuovo,",
+   "start": 26.28,
+   "end": 26.54
+  },
+  {
+   "text": "lo",
+   "start": 26.8,
+   "end": 26.9
+  },
+  {
+   "text": "scrivi",
+   "start": 26.92,
+   "end": 27.12
+  },
+  {
+   "text": "in",
+   "start": 27.16,
+   "end": 27.22
+  },
+  {
+   "text": "chat,",
+   "start": 27.26,
+   "end": 27.5
+  },
+  {
+   "text": "nome,",
+   "start": 27.74,
+   "end": 27.98
+  },
+  {
+   "text": "misura,",
+   "start": 28.12,
+   "end": 28.44
+  },
+  {
+   "text": "quantità,",
+   "start": 28.56,
+   "end": 28.94
+  },
+  {
+   "text": "e",
+   "start": 29.093,
+   "end": 29.133
+  },
+  {
+   "text": "viene",
+   "start": 29.173,
+   "end": 29.293
+  },
+  {
+   "text": "aggiunto",
+   "start": 29.333,
+   "end": 29.693
+  },
+  {
+   "text": "da",
+   "start": 29.733,
+   "end": 29.813
+  },
+  {
+   "text": "solo",
+   "start": 29.873,
+   "end": 30.033
+  },
+  {
+   "text": "nell'Excel.",
+   "start": 30.073,
+   "end": 30.613
+  },
+  {
+   "text": "Hai",
+   "start": 30.76,
+   "end": 30.88
+  },
+  {
+   "text": "preso",
+   "start": 30.92,
+   "end": 31.4
+  },
+  {
+   "text": "delle",
+   "start": 31.44,
+   "end": 31.56
+  },
+  {
+   "text": "lastre",
+   "start": 31.6,
+   "end": 31.86
+  },
+  {
+   "text": "nuove?",
+   "start": 31.9,
+   "end": 32.18
+  },
+  {
+   "text": "Lo",
+   "start": 32.44,
+   "end": 32.5
+  },
+  {
+   "text": "scrivi",
+   "start": 32.54,
+   "end": 32.98
+  },
+  {
+   "text": "e",
+   "start": 33.02,
+   "end": 33.06
+  },
+  {
+   "text": "la",
+   "start": 33.1,
+   "end": 33.16
+  },
+  {
+   "text": "quantità",
+   "start": 33.18,
+   "end": 33.48
+  },
+  {
+   "text": "si",
+   "start": 33.52,
+   "end": 33.58
+  },
+  {
+   "text": "aggiorna.",
+   "start": 33.62,
+   "end": 33.98
+  },
+  {
+   "text": "Così",
+   "start": 34.127,
+   "end": 34.407
+  },
+  {
+   "text": "chiunque",
+   "start": 34.427,
+   "end": 34.707
+  },
+  {
+   "text": "in",
+   "start": 34.747,
+   "end": 34.807
+  },
+  {
+   "text": "azienda,",
+   "start": 34.867,
+   "end": 35.267
+  },
+  {
+   "text": "dal",
+   "start": 35.467,
+   "end": 35.567
+  },
+  {
+   "text": "magazzino",
+   "start": 35.607,
+   "end": 36.187
+  },
+  {
+   "text": "al",
+   "start": 36.247,
+   "end": 36.327
+  },
+  {
+   "text": "commerciale",
+   "start": 36.367,
+   "end": 36.767
+  },
+  {
+   "text": "in",
+   "start": 36.807,
+   "end": 36.867
+  },
+  {
+   "text": "giro",
+   "start": 36.907,
+   "end": 37.047
+  },
+  {
+   "text": "dai",
+   "start": 37.087,
+   "end": 37.167
+  },
+  {
+   "text": "clienti,",
+   "start": 37.207,
+   "end": 37.587
+  },
+  {
+   "text": "sa",
+   "start": 37.727,
+   "end": 37.907
+  },
+  {
+   "text": "in",
+   "start": 37.947,
+   "end": 38.007
+  },
+  {
+   "text": "un",
+   "start": 38.047,
+   "end": 38.107
+  },
+  {
+   "text": "attimo",
+   "start": 38.167,
+   "end": 38.427
+  },
+  {
+   "text": "cosa",
+   "start": 38.467,
+   "end": 38.647
+  },
+  {
+   "text": "c'è",
+   "start": 38.707,
+   "end": 38.927
+  },
+  {
+   "text": "e",
+   "start": 38.967,
+   "end": 39.027
+  },
+  {
+   "text": "cosa",
+   "start": 39.087,
+   "end": 39.247
+  },
+  {
+   "text": "manca,",
+   "start": 39.287,
+   "end": 39.587
+  },
+  {
+   "text": "direttamente",
+   "start": 39.727,
+   "end": 40.407
+  },
+  {
+   "text": "dal",
+   "start": 40.447,
+   "end": 40.567
+  },
+  {
+   "text": "telefono.",
+   "start": 40.607,
+   "end": 41.007
+  },
+  {
+   "text": "Se",
+   "start": 41.16,
+   "end": 41.2
+  },
+  {
+   "text": "hai",
+   "start": 41.24,
+   "end": 41.32
+  },
+  {
+   "text": "una",
+   "start": 41.32,
+   "end": 41.44
+  },
+  {
+   "text": "piccola",
+   "start": 41.46,
+   "end": 41.7
+  },
+  {
+   "text": "azienda",
+   "start": 41.74,
+   "end": 42.2
+  },
+  {
+   "text": "è",
+   "start": 42.28,
+   "end": 42.32
+  },
+  {
+   "text": "tempo",
+   "start": 42.36,
+   "end": 42.6
+  },
+  {
+   "text": "che",
+   "start": 42.62,
+   "end": 42.7
+  },
+  {
+   "text": "recuperi",
+   "start": 42.74,
+   "end": 43.2
+  },
+  {
+   "text": "ogni",
+   "start": 43.28,
+   "end": 43.42
+  },
+  {
+   "text": "singolo",
+   "start": 43.48,
+   "end": 43.78
+  },
+  {
+   "text": "giorno.",
+   "start": 43.82,
+   "end": 44.12
+  },
+  {
+   "text": "Qual",
+   "start": 44.26,
+   "end": 44.36
+  },
+  {
+   "text": "è",
+   "start": 44.4,
+   "end": 44.42
+  },
+  {
+   "text": "il",
+   "start": 44.44,
+   "end": 44.46
+  },
+  {
+   "text": "lavoro",
+   "start": 44.5,
+   "end": 44.74
+  },
+  {
+   "text": "che",
+   "start": 44.78,
+   "end": 44.84
+  },
+  {
+   "text": "ti",
+   "start": 44.88,
+   "end": 44.96
+  },
+  {
+   "text": "fa",
+   "start": 45.0,
+   "end": 45.1
+  },
+  {
+   "text": "perdere",
+   "start": 45.14,
+   "end": 45.44
+  },
+  {
+   "text": "più",
+   "start": 45.46,
+   "end": 45.54
+  },
+  {
+   "text": "tempo",
+   "start": 45.58,
+   "end": 45.8
+  },
+  {
+   "text": "in",
+   "start": 45.82,
+   "end": 45.88
+  },
+  {
+   "text": "azienda?",
+   "start": 45.92,
+   "end": 46.32
+  },
+  {
+   "text": "Scrivilo",
+   "start": 46.58,
+   "end": 46.9
+  },
+  {
+   "text": "nei",
+   "start": 46.92,
+   "end": 47.02
+  },
+  {
+   "text": "commenti,",
+   "start": 47.06,
+   "end": 47.48
+  },
+  {
+   "text": "magari",
+   "start": 47.6,
+   "end": 47.98
+  },
+  {
+   "text": "si",
+   "start": 48.04,
+   "end": 48.14
+  },
+  {
+   "text": "può",
+   "start": 48.16,
+   "end": 48.22
+  },
+  {
+   "text": "automatizzare.",
+   "start": 48.26,
+   "end": 48.88
+  }
+ ],
+ "emphasis": [
+  15,
+  37,
+  44,
+  55,
+  71,
+  81,
+  105,
+  118,
+  142,
+  151,
+  173
+ ],
+ "hook": null,
+ "zooms": [
+  {
+   "at": 3.99,
+   "kind": "punch",
+   "strength": 0.7
+  },
+  {
+   "at": 10.41,
+   "kind": "punch",
+   "strength": 0.8
+  },
+  {
+   "at": 15.95,
+   "kind": "punch",
+   "strength": 0.6
+  },
+  {
+   "at": 23.27,
+   "kind": "punch",
+   "strength": 0.8
+  },
+  {
+   "at": 29.87,
+   "kind": "punch",
+   "strength": 0.6
+  },
+  {
+   "at": 40.61,
+   "kind": "punch",
+   "strength": 0.7
+  },
+  {
+   "at": 48.26,
+   "kind": "punch",
+   "strength": 0.9
+  }
+ ],
+ "graphics": [
+  {
+   "type": "bubbles",
+   "at": 0.0,
+   "duration": 3.45,
+   "y": 0.265,
+   "props": {
+    "counter": "× {n}",
+    "items": [
+     {
+      "at": 3,
+      "name": "Commerciale",
+      "text": "Avete la lastra da 3 mm?"
+     },
+     {
+      "at": 24,
+      "name": "Cliente",
+      "text": "Quante ne restano?"
+     },
+     {
+      "at": 47,
+      "name": "Ufficio",
+      "text": "È arrivato il profilo?"
+     },
+     {
+      "at": 70,
+      "name": "Collega",
+      "text": "Ce l'abbiamo questo pezzo?"
+     }
+    ]
+   }
+  },
+  {
+   "type": "sheet",
+   "at": 3.5,
+   "duration": 4.65,
+   "y": 0.27,
+   "scale": 0.95,
+   "props": {
+    "title": "Magazzino.xlsx",
+    "rows": [
+     [
+      "Lastra PMMA trasparente",
+      "3 mm",
+      "24",
+      "B3"
+     ],
+     [
+      "Lastra PMMA opale",
+      "5 mm",
+      "12",
+      "B4"
+     ],
+     [
+      "Lastra policarbonato",
+      "4 mm",
+      "8",
+      "C1"
+     ],
+     [
+      "Profilo alluminio",
+      "20×20",
+      "140",
+      "D2"
+     ],
+     [
+      "Viti inox M8",
+      "40 mm",
+      "350",
+      "A1"
+     ],
+     [
+      "Pannello forex bianco",
+      "10 mm",
+      "16",
+      "C3"
+     ],
+     [
+      "Tubo PVC",
+      "Ø 32",
+      "60",
+      "E2"
+     ]
+    ],
+    "scrollAt": [
+     74,
+     110
+    ],
+    "highlightAt": 126,
+    "highlightCol": 1
+   }
+  },
+  {
+   "type": "icon3d",
+   "at": 8.18,
+   "duration": 1.24,
+   "y": 0.26,
+   "props": {
+    "items": [
+     {
+      "icon": "phone",
+      "label": "CHIAMI IL MAGAZZINO",
+      "at": 1
+     }
+    ]
+   }
+  },
+  {
+   "type": "idcard",
+   "at": 9.45,
+   "duration": 1.55,
+   "y": 0.265,
+   "scale": 0.95,
+   "props": {
+    "tag": "INTANTO",
+    "icon": "clock",
+    "kicker": "Per una sola domanda",
+    "title": "15 minuti",
+    "bar": 0.95,
+    "barAt": 1
+   }
+  },
+  {
+   "type": "whatsapp",
+   "at": 11.03,
+   "duration": 8.15,
+   "y": 0.27,
+   "scale": 0.94,
+   "props": {
+    "name": "Magazzino",
+    "status": "online",
+    "messages": [
+     {
+      "from": "me",
+      "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
+      "typeFrom": 25,
+      "at": 137
+     },
+     {
+      "from": "bot",
+      "text": "**Lastra PMMA trasparente 3 mm**\n24 pezzi · scaffale B3",
+      "at": 176
+     }
+    ],
+    "highlights": [
+     {
+      "at": 199,
+      "text": "24 pezzi"
+     },
+     {
+      "at": 228,
+      "text": "scaffale B3"
+     }
+    ]
+   }
+  },
+  {
+   "type": "icon3d",
+   "at": 19.2,
+   "duration": 2.77,
+   "y": 0.26,
+   "props": {
+    "items": [
+     {
+      "icon": "sheet",
+      "label": "EXCEL",
+      "at": 32,
+      "color": "#1F7A4C"
+     },
+     {
+      "icon": "chat",
+      "label": "WHATSAPP",
+      "at": 69,
+      "color": "#22B35E"
+     }
+    ],
+    "linkAt": 76
+   }
+  },
+  {
+   "type": "zero",
+   "at": 22.0,
+   "duration": 2.2,
+   "y": 0.27,
+   "scale": 0.95,
+   "props": {
+    "items": [
+     {
+      "at": 1,
+      "text": "0 programmi nuovi"
+     },
+     {
+      "at": 38,
+      "text": "0 gestionali da imparare"
+     }
+    ]
+   }
+  },
+  {
+   "type": "whatsapp",
+   "at": 24.23,
+   "duration": 5.02,
+   "y": 0.27,
+   "scale": 0.94,
+   "props": {
+    "name": "Magazzino",
+    "status": "online",
+    "messages": [
+     {
+      "from": "me",
+      "text": "Nuovo: Lastra PMMA opale · 5 mm · 10 pz",
+      "typeFrom": 81,
+      "at": 139
+     }
+    ]
+   }
+  },
+  {
+   "type": "sheet",
+   "at": 29.27,
+   "duration": 4.82,
+   "y": 0.27,
+   "scale": 0.95,
+   "props": {
+    "title": "Magazzino.xlsx",
+    "rows": [
+     [
+      "Lastra PMMA trasparente",
+      "3 mm",
+      "24",
+      "B3"
+     ],
+     [
+      "Lastra PMMA opale",
+      "5 mm",
+      "12",
+      "B4"
+     ],
+     [
+      "Lastra policarbonato",
+      "4 mm",
+      "8",
+      "C1"
+     ],
+     [
+      "Profilo alluminio",
+      "20×20",
+      "140",
+      "D2"
+     ],
+     [
+      "Viti inox M8",
+      "40 mm",
+      "350",
+      "A1"
+     ],
+     [
+      "Pannello forex bianco",
+      "10 mm",
+      "16",
+      "C3"
+     ],
+     [
+      "Tubo PVC",
+      "Ø 32",
+      "60",
+      "E2"
+     ]
+    ],
+    "addAt": 18,
+    "addRow": [
+     "Lastra PMMA opale",
+     "5 mm",
+     "10",
+     "B4"
+    ],
+    "updateAt": 130,
+    "updateRow": 0,
+    "updateCol": 2,
+    "updateTo": 34
+   }
+  },
+  {
+   "type": "icon3d",
+   "at": 34.12,
+   "duration": 7.0,
+   "y": 0.26,
+   "props": {
+    "items": [
+     {
+      "icon": "house",
+      "label": "MAGAZZINO",
+      "at": 45
+     },
+     {
+      "icon": "car",
+      "label": "COMMERCIALE",
+      "at": 68
+     },
+     {
+      "icon": "phone",
+      "label": "DAL TELEFONO",
+      "at": 195
+     }
+    ],
+    "linkAt": 108
+   }
+  },
+  {
+   "type": "idcard",
+   "at": 41.14,
+   "duration": 3.07,
+   "y": 0.265,
+   "scale": 0.95,
+   "props": {
+    "tag": "PICCOLA AZIENDA",
+    "tag2": "RECUPERATO",
+    "icon": "clock",
+    "kicker": "Ogni singolo giorno",
+    "title": "Tempo perso",
+    "title2": "Tempo recuperato",
+    "swapAt": 48,
+    "bar": 1.0,
+    "barAt": 48
+   }
+  },
+  {
+   "type": "dm",
+   "at": 44.24,
+   "duration": 6.093,
+   "text": "L'inventario",
+   "y": 0.265,
+   "scale": 0.9,
+   "props": {
+    "name": "Commenti",
+    "placeholder": "Aggiungi un commento…",
+    "sentLabel": "Pubblicato",
+    "typeAt": 70,
+    "sendAt": 94,
+    "replyAt": 121,
+    "reply": "Si può automatizzare ✓"
+   }
+  }
+ ],
+ "cta": null
+}

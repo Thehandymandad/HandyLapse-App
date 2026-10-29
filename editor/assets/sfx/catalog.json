@@ -38,6 +38,50 @@
   "layer_gain": -6.0,
   "seq": null
  },
+ "bolla-1": {
+  "file": "bolla-1.wav",
+  "from": "pop.mp3",
+  "pitch": 0.9,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "bolla-2": {
+  "file": "bolla-2.wav",
+  "from": "pop.mp3",
+  "pitch": 1.05,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "bolla-3": {
+  "file": "bolla-3.wav",
+  "from": "pop.mp3",
+  "pitch": 1.2,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "bolla-4": {
+  "file": "bolla-4.wav",
+  "from": "pop.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "click-soft",
+  "layer_gain": -6.0,
+  "seq": null
+ },
  "bottone-entra": {
   "file": "bottone-entra.wav",
   "from": "whoosh-short.mp3",
@@ -58,6 +102,28 @@
   "reverse": false,
   "layer": null,
   "layer_gain": -6.0,
+  "seq": null
+ },
+ "chat-entra": {
+  "file": "chat-entra.wav",
+  "from": "pop.mp3",
+  "pitch": 0.75,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -10.0,
+  "seq": null
+ },
+ "chat-entra-2": {
+  "file": "chat-entra-2.wav",
+  "from": "pop.mp3",
+  "pitch": 0.7,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
   "seq": null
  },
  "check-1": {
@@ -121,12 +187,45 @@
   "layer": null,
   "seq": null
  },
+ "collega-2": {
+  "file": "collega-2.wav",
+  "from": "ping.mp3",
+  "pitch": 0.9,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "collega-ping": {
+  "file": "collega-ping.wav",
+  "from": "ping.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
  "collegamento": {
   "file": "collegamento.wav",
   "from": "riser.mp3",
   "pitch": 1.0,
   "trim_start": 2.0,
   "trim": 2.3,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "colonna-misura": {
+  "file": "colonna-misura.wav",
+  "from": "ping.mp3",
+  "pitch": 1.3,
+  "trim_start": 0.0,
+  "trim": 0.6,
   "reverse": false,
   "layer": null,
   "layer_gain": -6.0,
@@ -192,12 +291,56 @@
   "layer": null,
   "seq": null
  },
+ "digita-messaggio": {
+  "file": "digita-messaggio.wav",
+  "from": "typing.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.5,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": "0,1.45"
+ },
+ "digita-nuovo": {
+  "file": "digita-nuovo.wav",
+  "from": "typing.mp3",
+  "pitch": 1.05,
+  "trim_start": 0.0,
+  "trim": 1.3,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
  "ding-100": {
   "file": "ding-100.wav",
   "synth": "ding",
   "duration": 0.9,
   "f0": 180.0,
   "f1": 804.0
+ },
+ "evidenzia-pezzi": {
+  "file": "evidenzia-pezzi.wav",
+  "from": "click.mp3",
+  "pitch": 1.5,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "evidenzia-scaffale": {
+  "file": "evidenzia-scaffale.wav",
+  "from": "click.mp3",
+  "pitch": 1.75,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
  },
  "file-entra": {
   "file": "file-entra.wav",
@@ -241,6 +384,28 @@
   "layer": null,
   "seq": null
  },
+ "foglio-entra": {
+  "file": "foglio-entra.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 1.15,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "click-soft",
+  "layer_gain": -8.0,
+  "seq": null
+ },
+ "foglio-entra-2": {
+  "file": "foglio-entra-2.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 1.05,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "click-soft",
+  "layer_gain": -8.0,
+  "seq": null
+ },
  "gratis-timbro": {
   "file": "gratis-timbro.wav",
   "from": "impact-bass-1.mp3",
@@ -272,6 +437,28 @@
   "layer": null,
   "seq": null
  },
+ "invio-messaggio": {
+  "file": "invio-messaggio.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 1.4,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "invio-nuovo": {
+  "file": "invio-nuovo.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 1.55,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
  "libro-atterra": {
   "file": "libro-atterra.wav",
   "from": "impact-bass-2.mp3",
@@ -291,6 +478,17 @@
   "reverse": false,
   "layer": null,
   "seq": null
+ },
+ "orologio": {
+  "file": "orologio.wav",
+  "from": "key-press.mp3",
+  "pitch": 1.9,
+  "trim_start": 0.0,
+  "trim": 0.1,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": "0,0.22,0.44,0.66"
  },
  "pila-crollo": {
   "file": "pila-crollo.wav",
@@ -323,6 +521,17 @@
   "layer": null,
   "seq": null
  },
+ "quantita-sale": {
+  "file": "quantita-sale.wav",
+  "from": "ping.mp3",
+  "pitch": 1.5,
+  "trim_start": 0.0,
+  "trim": 0.6,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": "0,0.08,0.16"
+ },
  "rec-pop": {
   "file": "rec-pop.wav",
   "from": "pop.mp3",
@@ -333,6 +542,28 @@
   "layer": null,
   "seq": null
  },
+ "riga-aggiunta": {
+  "file": "riga-aggiunta.wav",
+  "from": "chime.mp3",
+  "pitch": 1.2,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "righe-scorrono": {
+  "file": "righe-scorrono.wav",
+  "from": "key-press.mp3",
+  "pitch": 1.5,
+  "trim_start": 0.0,
+  "trim": 0.08,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": "0.000,0.055,0.110,0.165,0.220,0.275,0.330,0.385,0.440,0.495,0.550,0.605,0.660,0.715,0.770,0.825,0.880,0.935,0.990,1.045"
+ },
  "risposta-dm": {
   "file": "risposta-dm.wav",
   "from": "notification.mp3",
@@ -341,6 +572,17 @@
   "trim": 0.0,
   "reverse": false,
   "layer": null,
+  "seq": null
+ },
+ "risposta-messaggio": {
+  "file": "risposta-messaggio.wav",
+  "from": "notification.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
   "seq": null
  },
  "scatto": {
@@ -365,6 +607,28 @@
   "layer_gain": -10.0,
   "seq": null
  },
+ "scheda-entra-2": {
+  "file": "scheda-entra-2.wav",
+  "from": "click-soft.mp3",
+  "pitch": 1.25,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -10.0,
+  "seq": null
+ },
+ "scheda-entra-3": {
+  "file": "scheda-entra-3.wav",
+  "from": "click-soft.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -10.0,
+  "seq": null
+ },
  "spunta-facile": {
   "file": "spunta-facile.wav",
   "from": "ping.mp3",
@@ -373,6 +637,17 @@
   "trim": 0.8,
   "reverse": false,
   "layer": null,
+  "seq": null
+ },
+ "squillo": {
+  "file": "squillo.wav",
+  "from": "notification.mp3",
+  "pitch": 0.85,
+  "trim_start": 0.0,
+  "trim": 1.2,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
   "seq": null
  },
  "tag-claude": {
@@ -406,10 +681,87 @@
   "layer": null,
   "seq": null
  },
+ "tempo-recuperato": {
+  "file": "tempo-recuperato.wav",
+  "from": "chime.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.2,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
  "tessera-3d": {
   "file": "tessera-3d.wav",
   "from": "pop.mp3",
   "pitch": 0.85,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-commerciale": {
+  "file": "tessera-commerciale.wav",
+  "from": "pop.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-excel": {
+  "file": "tessera-excel.wav",
+  "from": "pop.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-magazzino": {
+  "file": "tessera-magazzino.wav",
+  "from": "pop.mp3",
+  "pitch": 0.85,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-telefono": {
+  "file": "tessera-telefono.wav",
+  "from": "pop.mp3",
+  "pitch": 1.15,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-telefono-chiama": {
+  "file": "tessera-telefono-chiama.wav",
+  "from": "pop.mp3",
+  "pitch": 0.9,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "layer_gain": -12.0,
+  "seq": null
+ },
+ "tessera-whatsapp": {
+  "file": "tessera-whatsapp.wav",
+  "from": "pop.mp3",
+  "pitch": 0.95,
   "trim_start": 0.0,
   "trim": 0.0,
   "reverse": false,

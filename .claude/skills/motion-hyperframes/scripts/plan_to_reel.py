@@ -4,8 +4,8 @@
 
 Nel piano tutti i tempi sono in secondi della timeline di uscita (quella di words_out.json). Qui diventano:
 - `scenes[].graphic` ({"type", "props", "y", "text", "behind"}) → una grafica dello style pack, da scene.start a scene.end;
-  nelle props le chiavi che finiscono in `At` (numero o lista), `reveal` e `items[].at` sono secondi ASSOLUTI e
-  vengono convertite in frame relativi all'inizio della grafica (come le vogliono i componenti Remotion).
+  nelle props le chiavi che finiscono in `At` (numero o lista), `at`, `typeFrom` e `reveal`, anche dentro liste di
+  oggetti (`items[].at`, `messages[].at`…), sono secondi ASSOLUTI e diventano frame relativi all'inizio della grafica.
 - `camera[]` con op `punch` / `push` → zoom (`punch` secco, `push` lento); whip sui tagli, tremori sui timbri e
   riquadro-telefono li fa già la camera dello style pack.
 - `captions.emphasis` (indici delle parole di words_out.json) → parole chiave dei sottotitoli.
@@ -24,7 +24,7 @@ FPS = 30
 # schermo alto tagliando ~55 px per lato e copre il fondo con nome e descrizione, quindi la cornice sta in x 80–1000 e
 # finisce a y 1700.
 HOUSE_FRAME = {"x": 80, "y": 900, "w": 920, "h": 800, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.4}
-HOUSE_STYLE = {"motion": {"theme": "light"}, "captions": {"positionY": 0.432, "fontSize": 88, "uppercase": False}}
+HOUSE_STYLE = {"motion": {"theme": "light"}, "captions": {"positionY": 0.432, "fontSize": 84, "uppercase": False, "maxCharsPerLine": 10}}
 
 
 def deep_merge(base: dict, over: dict) -> dict:
@@ -40,13 +40,21 @@ def rel_frames(v, start: float):
     return max(0, round((float(v) - start) * FPS))
 
 
+TIME_KEYS = ("at", "typeFrom", "reveal")
+
+
+def is_time_key(k: str) -> bool:
+    return k.endswith("At") or k in TIME_KEYS
+
+
 def convert_props(props: dict, start: float) -> dict:
+    """Tempi assoluti → frame relativi, anche dentro liste di oggetti (items[].at, messages[].at/typeFrom…)."""
     out = {}
     for k, v in props.items():
-        if k.endswith("At") or k == "reveal":
+        if is_time_key(k) and (isinstance(v, (int, float)) or (isinstance(v, list) and all(isinstance(x, (int, float)) for x in v))):
             out[k] = rel_frames(v, start)
-        elif k == "items" and isinstance(v, list) and v and isinstance(v[0], dict):
-            out[k] = [{**it, "at": rel_frames(it["at"], start)} if "at" in it else it for it in v]
+        elif isinstance(v, list) and v and all(isinstance(x, dict) for x in v):
+            out[k] = [convert_props(x, start) for x in v]
         else:
             out[k] = v
     return out

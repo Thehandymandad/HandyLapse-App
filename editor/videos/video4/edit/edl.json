@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "sources": {
+    "video4": "/home/user/HandyLapse-App/editor/videos/video4/video4.mov"
+  },
+  "ranges": [
+    {
+      "source": "video4",
+      "start": 0.96,
+      "end": 4.4,
+      "beat": "HOOK",
+      "quote": "Quante volte al giorno in azienda qualcuno chiede: «Ce l'abbiamo questo pezzo?»",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 5.46,
+      "end": 10.1,
+      "beat": "PROBLEMA",
+      "quote": "E parte la caccia. Apri l'Excel del magazzino, scorri centinaia di righe, controlli la misura,",
+      "reason": "Tolto 1,1 s di silenzio prima."
+    },
+    {
+      "source": "video4",
+      "start": 10.4,
+      "end": 13.24,
+      "beat": "PROBLEMA",
+      "quote": "chiami chi sta in magazzino e intanto è passato un quarto d'ora.",
+      "reason": "Tolta la pausa prima di «chiami»."
+    },
+    {
+      "source": "video4",
+      "start": 14.86,
+      "end": 16.78,
+      "beat": "SVOLTA",
+      "quote": "Ora immagina di scrivere su WhatsApp:",
+      "reason": "Tolti 1,6 s di silenzio prima; taglio sulla pausa di 0,8 s dopo «WhatsApp:»."
+    },
+    {
+      "source": "video4",
+      "start": 17.5,
+      "end": 20.32,
+      "beat": "SVOLTA",
+      "quote": "«Lastre 3 millimetri trasparente, quanti ne abbiamo?»",
+      "reason": "Attaccato subito dopo «WhatsApp:»."
+    },
+    {
+      "source": "video4",
+      "start": 20.72,
+      "end": 24.1,
+      "beat": "SVOLTA",
+      "quote": "E in due secondi ti arriva la risposta, quanti pezzi hai e dove sono.",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 24.78,
+      "end": 27.58,
+      "beat": "COME",
+      "quote": "Si può fare, si collega l'Excel che usi già a WhatsApp.",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 29.94,
+      "end": 32.16,
+      "beat": "COME",
+      "quote": "niente programmi nuovi, niente gestionali da imparare.",
+      "reason": "Ripresa buona: tolto il primo «Niente programmi nuovi,» (27,90–29,20) che si interrompeva."
+    },
+    {
+      "source": "video4",
+      "start": 32.9,
+      "end": 37.72,
+      "beat": "INSERIMENTO",
+      "quote": "E non serve solo a cercare. Arriva un pezzo nuovo, lo scrivi in chat, nome, misura, quantità,",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 38.16,
+      "end": 39.82,
+      "beat": "INSERIMENTO",
+      "quote": "e viene aggiunto da solo nell'Excel.",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 41.1,
+      "end": 44.46,
+      "beat": "INSERIMENTO",
+      "quote": "Hai preso delle lastre nuove? Lo scrivi e la quantità si aggiorna.",
+      "reason": "Tolto 1,4 s di silenzio prima."
+    },
+    {
+      "source": "video4",
+      "start": 45.0,
+      "end": 48.6,
+      "beat": "BENEFICIO",
+      "quote": "Così chiunque in azienda, dal magazzino al commerciale in giro dai clienti,",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 48.96,
+      "end": 50.96,
+      "beat": "BENEFICIO",
+      "quote": "sa in un attimo cosa c'è e cosa manca,",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 51.56,
+      "end": 52.98,
+      "beat": "BENEFICIO",
+      "quote": "direttamente dal telefono.",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 54.16,
+      "end": 57.26,
+      "beat": "CHIUSURA",
+      "quote": "Se hai una piccola azienda è tempo che recuperi ogni singolo giorno.",
+      "reason": ""
+    },
+    {
+      "source": "video4",
+      "start": 57.68,
+      "end": 62.5,
+      "beat": "CTA",
+      "quote": "Qual è il lavoro che ti fa perdere più tempo in azienda? Scrivilo nei commenti, magari si può automatizzare.",
+      "reason": ""
+    }
+  ],
+  "grade": "neutral_punch",
+  "overlays": [],
+  "total_duration_s": 48.84
+}

@@ -69,3 +69,5 @@ __pycache__/
 /editor/videos/**/edit/work-*/
 /editor/videos/ref2/
 /editor/assets/music/*.wav
+/editor/assets/models/
+/editor/videos/**/bg/

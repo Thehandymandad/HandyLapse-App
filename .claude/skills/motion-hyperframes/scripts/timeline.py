@@ -57,7 +57,12 @@ def main(edit_dir: str) -> None:
         segments.append({"source": src, "start": start, "end": end, "out_start": round(offset, 3), "out_end": round(offset + length, 3), "beat": r.get("beat")})
         for w in cache[src]:
             mid = (w["start"] + w["end"]) / 2
-            if start <= mid < end:
+            # una parola il cui centro cade in una pausa tagliata (es. un'esitazione trascritta dentro la parola) resta
+            # se una parte vera sta in questo pezzo
+            # (va nel pezzo dove ne cade la parte più lunga)
+            ov = [min(float(x["end"]), w["end"]) - max(float(x["start"]), w["start"]) if x["source"] == src else -1 for x in edl["ranges"]]
+            orphan = not any(float(x["start"]) <= mid < float(x["end"]) for x in edl["ranges"] if x["source"] == src)
+            if start <= mid < end or (orphan and ov[k] >= 0.08 and ov[k] == max(ov)):
                 words_out.append({
                     "text": w["text"],
                     "start": round(max(0.0, w["start"] - start) + offset, 3),

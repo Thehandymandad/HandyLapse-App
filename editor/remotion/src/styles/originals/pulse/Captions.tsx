@@ -72,7 +72,7 @@ export const PulseCaptions: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl
                 boxShadow: boxed ? (light ? `0 8px 24px ${rgba(P.accent, 0.35)}` : `0 10px 30px rgba(0,0,0,0.45), 0 0 40px ${P.accentDim}`) : undefined,
               }}
             >
-              {w.text.replace(/[.,!?;:]+$/, "")}
+              {w.text.replace(/^["«“„]+/, "").replace(/[.,!?;:"»”]+$/, "")}
             </span>
           );
         })}

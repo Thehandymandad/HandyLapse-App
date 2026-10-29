@@ -15,6 +15,9 @@ import { DmSend } from "./DmSend";
 import { HoursBurn } from "./HoursBurn";
 import { NopeStamp } from "./NopeStamp";
 import { Button3D } from "./Button3D";
+import { ChatBubbles } from "./ChatBubbles";
+import { SheetCard } from "./SheetCard";
+import { WhatsAppChat } from "./WhatsAppChat";
 import { Icon3D } from "./Icon3D";
 import { IdCard } from "./IdCard";
 import { RecHud } from "./RecHud";
@@ -132,6 +135,9 @@ export const pack = definePack({
     idcard: IdCard,
     icon3d: Icon3D,
     button3d: Button3D,
+    bubbles: ChatBubbles,
+    sheet: SheetCard,
+    whatsapp: WhatsAppChat,
     dm: DmSend,
     pile: TaskPile,
     zero: ZeroStamps,
