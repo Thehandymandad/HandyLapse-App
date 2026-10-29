@@ -68,3 +68,4 @@ __pycache__/
 /editor/videos/**/edit/camera.json
 /editor/videos/**/edit/work-*/
 /editor/videos/ref2/
+/editor/assets/music/*.wav

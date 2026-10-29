@@ -15,6 +15,8 @@
   400 ms, quello che si sente) `--gap` dB sotto la loudness integrata della voce,
   anticipato del suo attacco così il transiente cade sul fotogramma; poi master a `--lufs` LUFS (true peak −1 dBTP).
 - `hold` nel piano (o --hold): l'ultimo fotogramma resta fermo quei secondi, così la CTA finale si legge.
+- `music` nel piano ({"file": "editor/assets/music/x.wav", "gap": 12}): musica di sottofondo `gap` dB sotto la voce,
+  abbassata in automatico quando la voce parla (sidechain), dentro lo stesso master.
 - salva gli stem in <edit_dir>/stems/ (voice.wav, sfx.wav) per motion-review.
 """
 from __future__ import annotations
@@ -229,9 +231,31 @@ def build_audio(base: Path, plan: dict, sfx_dir: Path, gap: float, lufs: float, 
     else:
         run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=stereo:d={dur:.3f}", str(sfx)])
 
-    # master: voce + effetti, loudnorm in due passate
+    # musica di sottofondo (`music` nel piano): `gap` dB sotto la voce, e si abbassa da sola quando la voce parla
+    # (sidechain: la voce comanda il compressore della musica), poi risale nelle pause
+    mus = plan.get("music") or {}
+    music = None
+    if mus.get("file"):
+        src = Path(mus["file"])
+        if not src.is_absolute():
+            src = Path(__file__).resolve().parents[4] / src
+        if not src.exists():
+            sys.exit(f"Musica mancante: {src}")
+        music = stems / "music.wav"
+        mgain = (lv - float(mus.get("gap", 12))) - loudness(src)
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-i", str(voice), "-filter_complex",
+             f"[0:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={mgain:.2f}dB,apad,atrim=0:{dur:.3f}[m];"
+             f"[1:a]aformat=sample_rates=48000:channel_layouts=stereo[k];"
+             f"[m][k]sidechaincompress=threshold=0.08:ratio=3:attack=20:release=400:makeup=1[out]",
+             "-map", "[out]", "-ar", "48000", str(music)])
+
+    # master: voce + effetti (+ musica), loudnorm in due passate
     pre = stems / "mix.wav"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(voice), "-i", str(sfx), "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0:duration=first[m]", "-map", "[m]", str(pre)])
+    if music:
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(voice), "-i", str(sfx), "-i", str(music), "-filter_complex",
+             "[0:a][1:a][2:a]amix=inputs=3:normalize=0:duration=first[m]", "-map", "[m]", str(pre)])
+    else:
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(voice), "-i", str(sfx), "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0:duration=first[m]", "-map", "[m]", str(pre)])
     out = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(pre), "-af", f"loudnorm=I={lufs}:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture=True)
     meas = json.loads(out[out.rindex("{"): out.rindex("}") + 1])
     master = stems / "master.wav"

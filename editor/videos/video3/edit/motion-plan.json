@@ -602,5 +602,10 @@
   "faceY": 0.42,
   "faceAt": 0.4
  },
- "speed": 1.1
+ "speed": 1.1,
+ "music": {
+  "file": "editor/assets/music/tech-pulse-video3.wav",
+  "gap": 9,
+  "note": "composta in locale: python .claude/skills/motion-hyperframes/scripts/music.py -o editor/assets/music/tech-pulse-video3.wav --duration 30.233 --bpm 120 --end 28.75 (elettronica tech 120 BPM, la–fa–do–sol)"
+ }
 }

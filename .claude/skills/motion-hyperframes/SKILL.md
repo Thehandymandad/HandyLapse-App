@@ -70,6 +70,11 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
 2b. **Ritmo** (se l'utente lo vuole più veloce): `python $S/speed.py $E --factor 1.1` → `base.mp4` accelerato senza
    cambiare il tono della voce, parole e piano riallineati (gli originali restano in `*_1x.*`: per cambiare il piano
    dopo, si modifica `motion-plan_1x.json` e si rilancia `speed.py`). 1,1x è "un po' più veloce".
+2c. **Musica di sottofondo** (di default, a meno che l'utente non la voglia aggiungere su Instagram): un brano
+   originale composto in locale, gratis e senza licenze: `python $S/music.py -o editor/assets/music/<nome>.wav
+   --duration <durata finale> --bpm 120 --end <fine del parlato>` (elettronica tech allegra; si ferma dopo l'ultima
+   parola), poi nel piano `"music": {"file": "editor/assets/music/<nome>.wav", "gap": 9}`: `compose.py` la mette 9 dB
+   sotto la voce e la abbassa da sola quando parli (sidechain), circa 15 dB sotto durante il parlato.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",
    "text"}`; i tempi nelle props — chiavi in `At`, `reveal`, `items[].at` — sono secondi assoluti).
    Poi `cd $R && npx tsx scripts/hf-project.ts ../videos/<nome>/edit && npx tsx scripts/camera-track.ts ../videos/<nome>/edit`.
