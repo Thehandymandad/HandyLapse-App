@@ -12,9 +12,11 @@ import { loadReel } from "./lib/reel";
 import { log, positional, ROOT } from "./lib/sh";
 import { buildTimeline } from "../src/lib/timeline";
 
-const FONTS: [string, number, string][] = [
-  ["Anton", 400, "@fontsource/anton/files/anton-latin-400-normal.woff2"],
-  ...[500, 700, 800, 900].map((w) => ["Inter", w, `@fontsource/inter/files/inter-latin-${w}-normal.woff2`] as [string, number, string]),
+// [famiglia, peso, stile, file in node_modules (o percorso relativo a editor/)]
+const FONTS: [string, number, "normal" | "italic", string][] = [
+  ["Anton", 400, "normal", "node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2"],
+  ...[500, 700, 800, 900].map((w) => ["Inter", w, "normal", `node_modules/@fontsource/inter/files/inter-latin-${w}-normal.woff2`] as [string, number, "normal", string]),
+  ["Instrument Serif", 400, "italic", "../assets/fonts/instrument-serif-400-italic.woff2"],
 ];
 
 const [editDir] = positional();
@@ -31,12 +33,12 @@ fs.mkdirSync(path.join(hf, "assets/lib"), { recursive: true });
 
 execFileSync("npx", ["tsx", path.join(ROOT, "scripts/build-hf.ts"), path.join(hf, "assets/pulse.js")], { cwd: ROOT, stdio: "inherit" });
 fs.copyFileSync(path.join(ROOT, "node_modules/gsap/dist/gsap.min.js"), path.join(hf, "assets/lib/gsap.min.js"));
-const faces = FONTS.map(([family, weight, file]) => {
+const faces = FONTS.map(([family, weight, fstyle, file]) => {
   const name = path.basename(file);
-  fs.copyFileSync(path.join(ROOT, "node_modules", file), path.join(hf, "assets/fonts", name));
-  return `      @font-face { font-family: "${family}"; font-style: normal; font-weight: ${weight}; src: url("assets/fonts/${name}") format("woff2"); }`;
+  fs.copyFileSync(path.join(ROOT, file), path.join(hf, "assets/fonts", name));
+  return `      @font-face { font-family: "${family}"; font-style: ${fstyle}; font-weight: ${weight}; src: url("assets/fonts/${name}") format("woff2"); }`;
 }).join("\n");
-const fontLoads = FONTS.map(([family, weight]) => `document.fonts.load('${weight} 64px "${family}"')`).join(", ");
+const fontLoads = FONTS.map(([family, weight, fstyle]) => `document.fonts.load('${fstyle} ${weight} 64px "${family}"')`).join(", ");
 // il JSON va dentro <script>: niente "</" che chiuderebbe il tag
 const data = JSON.stringify({ project, style }).replace(/<\//g, "<\\/");
 

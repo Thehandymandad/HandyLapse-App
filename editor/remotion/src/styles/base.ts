@@ -40,6 +40,7 @@ export const BASE_STYLE: ReelStyle = {
     flashOnCut: false,
     density: 6,
     iconStyle: "solid",
+    theme: "dark",
   },
   grade: { brightness: 1.02, contrast: 1.08, saturation: 1.1, warmth: 0.05, vignette: 0.25 },
   audio: { sfx: true, sfxVolume: 0.5, musicVolume: 0.12, targetLufs: -14 },

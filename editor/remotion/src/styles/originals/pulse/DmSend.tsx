@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { At, clamp, flipIn, Glass, INTER, P } from "./shared";
+import { At, clamp, flipIn, Glass, INTER, P, fg } from "./shared";
 
 /**
  * CTA "scrivetemi EDITING in DM": una chat in cui la parola si scrive da sola (props.typeAt), parte con l'aeroplanino
@@ -17,7 +17,7 @@ const Plane: React.FC<{ size: number; color: string }> = ({ size, color }) => (
 const Dots: React.FC<{ f: number }> = ({ f }) => (
   <div style={{ display: "flex", gap: 10, padding: "6px 4px" }}>
     {[0, 1, 2].map((i) => (
-      <div key={i} style={{ width: 16, height: 16, borderRadius: 8, background: P.white, opacity: 0.35 + 0.65 * Math.max(0, Math.sin((f - i * 4) / 3)) }} />
+      <div key={i} style={{ width: 16, height: 16, borderRadius: 8, background: P.fg, opacity: 0.35 + 0.65 * Math.max(0, Math.sin((f - i * 4) / 3)) }} />
     ))}
   </div>
 );
@@ -69,7 +69,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 </div>
               )}
               {typing && (
-                <div style={{ alignSelf: "flex-start", background: "rgba(255,255,255,0.12)", padding: "12px 22px", borderRadius: "30px 30px 30px 8px" }}>
+                <div style={{ alignSelf: "flex-start", background: fg(0.12), padding: "12px 22px", borderRadius: "30px 30px 30px 8px" }}>
                   <Dots f={f} />
                 </div>
               )}
@@ -82,7 +82,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                     display: "flex",
                     alignItems: "center",
                     gap: 14,
-                    background: "rgba(255,255,255,0.14)",
+                    background: fg(0.14),
                     fontWeight: 800,
                     fontSize: 32,
                     padding: "14px 26px 14px 16px",
@@ -101,7 +101,7 @@ export const DmSend: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             </div>
             {/* campo di testo */}
             <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ flex: 1, height: 84, borderRadius: 42, border: `3px solid ${!sent && typed > 0 ? P.accent : P.line}`, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", padding: "0 30px", fontWeight: 900, fontSize: 40, letterSpacing: 2 }}>
+              <div style={{ flex: 1, height: 84, borderRadius: 42, border: `3px solid ${!sent && typed > 0 ? P.accent : P.line}`, background: fg(0.06), display: "flex", alignItems: "center", padding: "0 30px", fontWeight: 900, fontSize: 40, letterSpacing: 2 }}>
                 {!sent && typed > 0 ? (
                   <>
                     {word.slice(0, typed)}

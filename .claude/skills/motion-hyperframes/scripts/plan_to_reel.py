@@ -11,15 +11,25 @@ Nel piano tutti i tempi sono in secondi della timeline di uscita (quella di word
 - `captions.emphasis` (indici delle parole di words_out.json) → parole chiave dei sottotitoli.
 - le giunte di video-use (segments[].out_start) → `joins`: la camera le tratta come jump cut (punch / whip 3D).
 - `hold` → fermo finale (secondi).
-- `frame` → la cornice attorno al parlato (default: quella della casa, `HOUSE_FRAME`; `"frame": null` = schermo pieno).
+- `frame` → la cornice attorno al parlato (default: quella della casa, `HOUSE_FRAME`, con `HOUSE_STYLE`: tema chiaro e
+  sottotitoli sopra la cornice; `"frame": null` = schermo pieno, tema scuro).
 """
 import argparse
 import json
 from pathlib import Path
 
 FPS = 30
-# cornice della casa: ~1 cm (150 px) ai lati, fascia alta (y < 580) e bassa (y > 1340) libere per grafiche e sottotitoli
-HOUSE_FRAME = {"x": 150, "y": 580, "w": 780, "h": 760, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.46}
+# layout della casa (come la referenza dell'utente): parlato in una cornice in basso quasi a tutta larghezza, con bordo
+# al neon; sopra, su fondo chiaro sfumato, le grafiche (y 280–880) e i sottotitoli (centro y≈946) tra grafiche e cornice
+HOUSE_FRAME = {"x": 36, "y": 1060, "w": 1008, "h": 820, "radius": 56, "border": 7, "zoom": 1.0, "faceY": 0.42, "faceAt": 0.4}
+HOUSE_STYLE = {"motion": {"theme": "light"}, "captions": {"positionY": 0.493, "fontSize": 88, "uppercase": False}}
+
+
+def deep_merge(base: dict, over: dict) -> dict:
+    out = dict(base)
+    for k, v in over.items():
+        out[k] = deep_merge(out[k], v) if isinstance(v, dict) and isinstance(out.get(k), dict) else v
+    return out
 
 
 def rel_frames(v, start: float):
@@ -75,7 +85,8 @@ def main() -> None:
         "name": plan.get("video", edit.parent.name),
         "source": {"file": a.base, "width": 1080, "height": 1920, "fps": FPS, "duration": wo["duration"]},
         "styleId": plan.get("style", "pulse"),
-        **({"styleOverrides": plan["styleOverrides"]} if plan.get("styleOverrides") else {}),
+        # con la cornice della casa vale anche lo stile della casa (tema chiaro, sottotitoli sopra la cornice)
+        "styleOverrides": deep_merge(HOUSE_STYLE if plan.get("frame", HOUSE_FRAME) == HOUSE_FRAME else {}, plan.get("styleOverrides") or {}),
         "keep": [],
         "cuts": [],
         "frame": plan["frame"] if "frame" in plan else HOUSE_FRAME,

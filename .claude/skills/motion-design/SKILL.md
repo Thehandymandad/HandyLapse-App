@@ -39,27 +39,24 @@ const P = {
 
 Un altro accento per un solo video: `styleOverrides.motion.accentColor` nel piano (tutti i componenti lo seguono).
 
-### Layout della casa: la cornice
+### Layout della casa (dalla referenza dell'utente)
 
 ```
- y 0 ─────────────────────────────  (sopra y=280 lo copre Instagram)
-      fascia alta: le grafiche
- y 580 ┌───────────────────────┐    cornice: x 150–930 (~1 cm per lato), y 580–1340,
-       │   il parlato (viso)   │    angoli 56 px, bordo 7 px al neon arancione elettrico (tubo netto, anima chiara, alone stretto)
-       │                       │    (respira appena); il footage con la camera sta solo qui dentro
- y 1340└───────────────────────┘
-      sottotitoli (centro y≈1405, Anton 86)
- y 1560 ──────────────────────────  (sotto lo copre Instagram)
+ y 0 ───────────────────────────────  fondo chiaro sfumato: in alto velatura d'accento → carta #F4F2EE
+      (sopra y=280 lo copre Instagram)
+ y 280–880  le grafiche: card bianche con ombra morbida, testo nero, dettagli in accento (centro y≈0,30, scala 0,8–1)
+ y ≈946     i sottotitoli: Inter 900 nero, minuscolo, 88 px; la parola chiave in Instrument Serif corsivo
+            dentro una pillola d'accento con testo ink
+ y 1060 ┌─────────────────────────────┐  cornice: x 36–1044, y 1060–1880, angoli 56 px,
+        │      il parlato (viso)       │  bordo 7 px al neon arancione elettrico (tubo netto, anima chiara,
+        │                              │  alone stretto); footage con la camera solo qui dentro
+ y 1880 └─────────────────────────────┘
 ```
 
-- Le grafiche si vedono **solo fuori dalla cornice** (maschera): fascia alta, margini laterali per accenti piccoli
-  (cuori, scintille), mai dentro. Una grafica che attraversa (aeroplanino, pezzi che cadono) sparisce dietro la cornice.
-- Fuori dalla cornice il fondo è inchiostro con un bagliore d'accento attorno alla cornice.
+- Tema chiaro (`motion.theme: "light"`): card bianche (`P.glass`), testo `P.fg` nero, ombre calde morbide; il resto
+  della palette uguale. Il tema scuro (vetro nero, testo bianco, Anton maiuscolo) resta per lo schermo pieno.
+- Le grafiche si vedono **solo fuori dalla cornice** (maschera); il mirino REC abbraccia la cornice (`props.box`).
 - Schermo pieno solo se l'utente lo chiede (`"frame": null` nel piano).
-- Sottotitoli Pulse: Anton maiuscolo, 2–3 parole, parola detta in arancione, parole chiave su etichetta arancione
-  con testo ink. Con la cornice: 86 px, centro y≈1405 (`captions.positionY` 0,732), sotto la cornice.
-- Un altro stile (riferimento dell'utente, "fai qualcosa di diverso") = un nuovo style pack con i suoi token misurati.
-  Instrument Serif (corsivo, OFL) è in `editor/assets/fonts/` se serve un serif per le parole chiave.
 
 ## Regole dure
 

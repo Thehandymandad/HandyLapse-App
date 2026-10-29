@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { ANTON, At, clamp, INTER, P } from "./shared";
+import { ANTON, At, clamp, INTER, P, fg } from "./shared";
 
 /**
  * "...il risultato non è quello che volete": il video perde colore (backdrop in scala di grigi con velo rosso)
@@ -29,7 +29,7 @@ export const NopeStamp: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             borderRadius: 26,
             padding: "10px 46px 22px",
             background: "rgba(255,46,77,0.12)",
-            boxShadow: `0 0 0 6px rgba(255,255,255,0.12) inset, 0 30px 80px rgba(0,0,0,0.5)`,
+            boxShadow: `0 0 0 6px ${fg(0.12)} inset, 0 30px 80px rgba(0,0,0,0.5)`,
             textAlign: "center",
             color: P.red,
           }}

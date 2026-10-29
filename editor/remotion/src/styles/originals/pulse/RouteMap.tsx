@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { ANTON, At, clamp, easeInOut, flipIn, Glass, INTER, P } from "./shared";
+import { ANTON, At, clamp, easeInOut, flipIn, Glass, INTER, P, fg } from "./shared";
 
 /**
  * "Sto guidando… sto andando al lavoro": mini navigatore. Il percorso si disegna in accento, l'auto lo segue
@@ -61,11 +61,11 @@ export const RouteMap: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             <div style={{ position: "relative", width: W, height: H, borderRadius: 26, overflow: "hidden", background: "#121419" }}>
               <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
                 {STREETS.map((d, i) => (
-                  <path key={i} d={d} stroke="rgba(255,255,255,0.07)" strokeWidth={i < 3 ? 16 : 10} fill="none" />
+                  <path key={i} d={d} stroke={fg(0.07)} strokeWidth={i < 3 ? 16 : 10} fill="none" />
                 ))}
-                <path d={path} stroke="rgba(255,255,255,0.18)" strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+                <path d={path} stroke={fg(0.18)} strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" />
                 <path d={path} stroke={P.accent} strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" strokeDasharray={LEN} strokeDashoffset={LEN * (1 - p)} style={{ filter: `drop-shadow(0 0 10px ${P.accent})` }} />
-                <circle cx={ROUTE[0][0]} cy={ROUTE[0][1]} r={14} fill={P.white} stroke={P.ink} strokeWidth={5} />
+                <circle cx={ROUTE[0][0]} cy={ROUTE[0][1]} r={14} fill={P.fg} stroke={P.ink} strokeWidth={5} />
                 {ring > 0 && <circle cx={end[0]} cy={end[1]} r={20 + ring * 70} fill="none" stroke={P.accent} strokeWidth={5} opacity={1 - ring} />}
                 {/* auto vista dall'alto */}
                 <g transform={`translate(${car.x} ${car.y}) rotate(${angle})`}>
@@ -97,7 +97,7 @@ export const RouteMap: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               </div>
               {/* HUD del navigatore */}
               <div style={{ position: "absolute", left: 22, top: 18, display: "flex", gap: 12, alignItems: "baseline", fontFamily: INTER, fontWeight: 800 }}>
-                <span style={{ fontFamily: ANTON, fontSize: 64, color: P.white, lineHeight: 1 }}>{eta}</span>
+                <span style={{ fontFamily: ANTON, fontSize: 64, color: P.fg, lineHeight: 1 }}>{eta}</span>
                 <span style={{ fontSize: 26, color: P.grey }}>MIN</span>
               </div>
               <div style={{ position: "absolute", right: 22, bottom: 18, fontFamily: INTER, fontWeight: 900, fontSize: 26, color: P.ink, background: P.white, padding: "6px 14px", borderRadius: 12, fontVariantNumeric: "tabular-nums" }}>

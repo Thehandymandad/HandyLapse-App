@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { ANTON, At, clamp, flipIn, INTER, P } from "./shared";
+import { ANTON, At, clamp, flipIn, INTER, P, fg } from "./shared";
 
 /**
  * "...ci perdete ORE": orologio con le lancette che girano all'impazzata e un contatore di ore/minuti che vola,
@@ -32,18 +32,18 @@ export const HoursBurn: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             <circle r={R} fill={P.glass} stroke={P.accent} strokeWidth={8} />
             {Array.from({ length: 12 }, (_, i) => {
               const an = (i / 12) * Math.PI * 2;
-              return <line key={i} x1={Math.sin(an) * (R - 18)} y1={-Math.cos(an) * (R - 18)} x2={Math.sin(an) * (R - (i % 3 ? 30 : 42))} y2={-Math.cos(an) * (R - (i % 3 ? 30 : 42))} stroke="white" strokeWidth={i % 3 ? 4 : 7} strokeLinecap="round" />;
+              return <line key={i} x1={Math.sin(an) * (R - 18)} y1={-Math.cos(an) * (R - 18)} x2={Math.sin(an) * (R - (i % 3 ? 30 : 42))} y2={-Math.cos(an) * (R - (i % 3 ? 30 : 42))} stroke={P.fg} strokeWidth={i % 3 ? 4 : 7} strokeLinecap="round" />;
             })}
             {/* scia della lancetta dei minuti */}
             {[0.6, 0.35, 0.15].map((o, k) => (
               <line key={k} x1={0} y1={0} x2={0} y2={-(R - 30)} stroke={P.accent} strokeWidth={9} strokeLinecap="round" opacity={o * 0.6} transform={`rotate(${minuteAngle - (k + 1) * 14 * t})`} />
             ))}
-            <line x1={0} y1={0} x2={0} y2={-(R - 62)} stroke="white" strokeWidth={14} strokeLinecap="round" transform={`rotate(${hourAngle})`} />
+            <line x1={0} y1={0} x2={0} y2={-(R - 62)} stroke={P.fg} strokeWidth={14} strokeLinecap="round" transform={`rotate(${hourAngle})`} />
             <line x1={0} y1={0} x2={0} y2={-(R - 30)} stroke={P.accent} strokeWidth={9} strokeLinecap="round" transform={`rotate(${minuteAngle})`} />
             <circle r={13} fill={P.accent} />
           </svg>
           <div style={{ transform: `scale(${kick})`, transformOrigin: "left center" }}>
-            <div style={{ whiteSpace: "nowrap", fontFamily: ANTON, fontSize: 160, lineHeight: 0.95, color: P.white, fontVariantNumeric: "tabular-nums", textShadow: "0 10px 40px rgba(0,0,0,0.6)" }}>
+            <div style={{ whiteSpace: "nowrap", fontFamily: ANTON, fontSize: 160, lineHeight: 0.95, color: P.fg, fontVariantNumeric: "tabular-nums", textShadow: "0 10px 40px rgba(0,0,0,0.6)" }}>
               {h}
               <span style={{ color: P.accent }}>H</span> {String(m).padStart(2, "0")}
               <span style={{ color: P.accent }}>M</span>

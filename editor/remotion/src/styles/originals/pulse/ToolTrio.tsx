@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
-import { ANTON, clamp, INTER, P } from "./shared";
+import { ANTON, clamp, INTER, P, fg } from "./shared";
 
 /**
  * "Tre strumenti: uno trascrive, uno taglia, uno anima… il segreto è come li fai lavorare insieme":
@@ -58,7 +58,7 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
             <line x1={xs[0]} y1={cy} x2={xs[0] + (xs[2] - xs[0]) * link} y2={cy} stroke={P.accent} strokeWidth={14} strokeLinecap="round" style={{ filter: `drop-shadow(0 0 18px ${P.accent})` }} />
             {[0, 1, 2].map((k) => {
               const p = ((f - (connectAt ?? 0)) / 14 + k / 3) % 1;
-              return <circle key={k} cx={xs[0] + (xs[2] - xs[0]) * p * link} cy={cy} r={16} fill={P.white} opacity={link} />;
+              return <circle key={k} cx={xs[0] + (xs[2] - xs[0]) * p * link} cy={cy} r={16} fill={P.fg} opacity={link} />;
             })}
           </>
         )}
@@ -88,8 +88,8 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 height: "100%",
                 borderRadius: 44,
                 background: showFront ? P.accent : P.glass,
-                border: `3px solid ${showFront ? P.accent : "rgba(255,255,255,0.18)"}`,
-                boxShadow: `0 30px 70px rgba(0,0,0,0.55)${glow ? `, 0 0 70px ${P.accent}` : ""}`,
+                border: `3px solid ${showFront ? P.accent : fg(0.18)}`,
+                boxShadow: `${P.theme === "light" ? "0 24px 50px rgba(40,30,20,0.18)" : "0 30px 70px rgba(0,0,0,0.55)"}${glow ? `, 0 0 70px ${P.accent}` : ""}`,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -107,7 +107,7 @@ export const ToolTrio: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   <div style={{ fontFamily: INTER, fontWeight: 900, fontSize: 30, letterSpacing: 2, color: P.ink }}>{labels[i]}</div>
                 </>
               ) : (
-                <div style={{ fontFamily: ANTON, fontSize: 150, color: "rgba(255,255,255,0.35)", lineHeight: 1 }}>?</div>
+                <div style={{ fontFamily: ANTON, fontSize: 150, color: fg(0.35), lineHeight: 1 }}>?</div>
               )}
             </div>
           </div>

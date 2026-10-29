@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
 import { logoSvgPath } from "../../references/claude-reel/logo";
-import { ANTON, At, Check, clamp, easeInOut, flipIn, Glass, INTER, P, darken } from "./shared";
+import { ANTON, At, Check, clamp, easeInOut, flipIn, Glass, INTER, P, darken, fg } from "./shared";
 
 const LOGO = logoSvgPath();
 
@@ -38,11 +38,11 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   <div style={{ fontWeight: 900, fontSize: 44, lineHeight: 1.05 }}>Claude</div>
                   <div style={{ fontWeight: 700, fontSize: 28, color: P.grey }}>{done ? "Montaggio completato" : "sta montando il tuo reel…"}</div>
                 </div>
-                <div style={{ fontFamily: ANTON, fontSize: 92, lineHeight: 1, color: done ? P.accent : P.white, fontVariantNumeric: "tabular-nums", width: 230, textAlign: "right" }}>
+                <div style={{ fontFamily: ANTON, fontSize: 92, lineHeight: 1, color: done ? P.accent : P.fg, fontVariantNumeric: "tabular-nums", width: 230, textAlign: "right" }}>
                   {Math.round(p * 100)}%
                 </div>
               </div>
-              <div style={{ marginTop: 24, height: 26, borderRadius: 13, background: "rgba(255,255,255,0.1)", overflow: "hidden" }}>
+              <div style={{ marginTop: 24, height: 26, borderRadius: 13, background: fg(0.1), overflow: "hidden" }}>
                 <div
                   style={{
                     width: `${p * 100}%`,
@@ -60,8 +60,8 @@ export const ClaudeWorking: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                   const on = f >= at - 1;
                   const ck = interpolate(f, [at - 3, at + 4], [0, 1], clamp);
                   return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, fontWeight: 800, fontSize: 30, color: on ? P.white : "rgba(255,255,255,0.4)" }}>
-                      <div style={{ width: 42, height: 42, borderRadius: 12, background: on ? P.accent : "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.2 * Math.sin(ck * Math.PI)})` }}>
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, fontWeight: 800, fontSize: 30, color: on ? P.fg : fg(0.4) }}>
+                      <div style={{ width: 42, height: 42, borderRadius: 12, background: on ? P.accent : fg(0.08), display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.2 * Math.sin(ck * Math.PI)})` }}>
                         <Check size={34} p={ck} />
                       </div>
                       {t}

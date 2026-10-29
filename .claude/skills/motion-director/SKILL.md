@@ -42,10 +42,10 @@ suo tempo, il suo suono e il suo oggetto.
 - **Il primo secondo ferma lo scroll.** Dal fotogramma 0 c'è già qualcosa in movimento sullo schermo.
 - **Zone sicure di Instagram** (1080×1920): niente di importante sopra y=280, sotto y=1560, né a destra di x=900 nella
   metà bassa. Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
-- **Cornice della casa** (motion-design): il parlato sta in un rettangolo arrotondato al centro (x 150–930, y 580–1340);
-  le grafiche vivono **fuori**: fascia alta (y 280–570, il centro di una card a y≈0,22 con `scale` 0,6–0,8) e margini
-  laterali per accenti piccoli. Sotto la cornice ci sono i sottotitoli. Il telefono 3D (`phone`) non si usa con la
-  cornice: per "il risultato" c'è `result`.
+- **Layout della casa** (motion-design): il parlato sta in una cornice in basso (x 36–1044, y 1060–1880); le grafiche
+  vivono **sopra**, su fondo chiaro (y 280–880: centro di una card a y≈0,30, `scale` 0,8–1), i sottotitoli tra le
+  grafiche e la cornice (y≈946). Niente grafiche dentro la cornice. Il telefono 3D (`phone`) non si usa con la cornice:
+  per "il risultato" c'è `result`; il mirino `rec` abbraccia la cornice con `props.box` e le scritte a `props.labelY`.
 - **Oggetti 3D solo dove servono**: cose concrete nominate o metafore fisiche forti. Per ognuno scrivi il prompt per
   Nano Banana Pro (Google Flow): `render 3D iper-realistico di <oggetto>, <materiale e luce>, su fondo bianco, nient'altro nel frame`.
   Prima controlla se esiste già in `editor/assets/objects/` (la libreria cresce video dopo video). In alternativa

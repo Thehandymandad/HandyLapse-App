@@ -7,11 +7,14 @@ assoluti della timeline di uscita (`plan_to_reel.py` li converte in frame relati
 
 ## Style pack `pulse` (default) — `src/styles/originals/pulse/`
 
-Accento arancione elettrico `#FF6633` (o `motion.accentColor`) su vetro nero, Anton + Inter. Camera: tagli alternati punch sfocato / whip 3D, oscillazione a mano.
+Accento arancione elettrico `#FF6633` (o `motion.accentColor`). Tema chiaro (`motion.theme: "light"`, default con la
+cornice): card bianche e testo nero su fondo chiaro sfumato, sottotitoli Inter + Instrument Serif. Tema scuro: vetro
+nero, testo bianco, Anton. Nei componenti si usano `P.fg`/`fg(a)` per testo e dettagli e `P.glass`, `P.cardShadow`,
+`P.textShadow` per le card: così vanno bene in tutti e due i temi. Camera: tagli alternati punch sfocato / whip 3D, oscillazione a mano.
 
 | type | Verbi | Cosa fa | Props (tempi in secondi assoluti) | Suono |
 | --- | --- | --- | --- | --- |
-| `rec` | registrare, girare, inizio | mirino REC che si chiude sul viso, timecode, fuoco che aggancia, scatto finale con lampo | `shutterAt`, `focusX`, `focusY` | bip REC + scatto |
+| `rec` | registrare, girare, inizio | mirino REC che si chiude sul viso, timecode, fuoco che aggancia, scatto finale con lampo | `shutterAt`, `focusX`, `focusY`, `box` [l,t,r,b] (attorno alla cornice), `labelY` | bip REC + scatto |
 | `pile` | accumulare, troppo, tutto quello che… | lavori che cadono e si impilano (la camera trema a ogni impatto), l'ultimo rosso, poi crollano | `items[]`, `last`, `every` (frame tra i pezzi) | tonfi in sequenza + crollo |
 | `hours` | tempo, ore, perdere | orologio con lancette impazzite e contatore ore che vola, colpo sulla parola | `hitAt`, `hours`, `label` | ticchettio + colpo |
 | `claude` | fare, lavorare, montare | card di Claude con logo che gira, barra a 100%, lavorazioni che si spuntano quando sono nominate | `tasks[]`, `checkAt[]` (o `doneAt`) | pop + clic per spunta + completato |

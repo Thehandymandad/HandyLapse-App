@@ -10,29 +10,34 @@
  },
  "styleId": "pulse",
  "styleOverrides": {
+  "motion": {
+   "theme": "light"
+  },
+  "captions": {
+   "positionY": 0.493,
+   "fontSize": 88,
+   "uppercase": false
+  },
   "grade": {
    "brightness": 1,
    "contrast": 1.04,
    "saturation": 1.04,
-   "warmth": 0
-  },
-  "captions": {
-   "positionY": 0.732,
-   "fontSize": 86
+   "warmth": 0,
+   "vignette": 0.15
   }
  },
  "keep": [],
  "cuts": [],
  "frame": {
-  "x": 150,
-  "y": 580,
-  "w": 780,
-  "h": 760,
+  "x": 36,
+  "y": 1060,
+  "w": 1008,
+  "h": 820,
   "radius": 56,
   "border": 7,
   "zoom": 1.0,
   "faceY": 0.42,
-  "faceAt": 0.46
+  "faceAt": 0.4
  },
  "joins": [
   4.567,
@@ -644,15 +649,22 @@
    "props": {
     "shutterAt": 42,
     "focusX": 0.5,
-    "focusY": 0.42
+    "focusY": 0.723,
+    "box": [
+     22,
+     1046,
+     1058,
+     1894
+    ],
+    "labelY": 800
    }
   },
   {
    "type": "pile",
    "at": 4.62,
    "duration": 1.58,
-   "y": 0.29,
-   "scale": 0.62,
+   "y": 0.44,
+   "scale": 0.85,
    "props": {
     "every": 4,
     "items": [
@@ -668,8 +680,8 @@
    "type": "claude",
    "at": 7.62,
    "duration": 5.5,
-   "y": 0.225,
-   "scale": 0.8,
+   "y": 0.31,
+   "scale": 1.0,
    "props": {
     "tasks": [
      "Taglio pause",
@@ -689,8 +701,8 @@
    "type": "zero",
    "at": 14.82,
    "duration": 1.98,
-   "y": 0.225,
-   "scale": 0.72,
+   "y": 0.31,
+   "scale": 0.95,
    "props": {
     "items": [
      {
@@ -708,7 +720,7 @@
    "type": "send",
    "at": 17.76,
    "duration": 1.83,
-   "y": 0.24,
+   "y": 0.4,
    "props": {
     "flyFrames": 26
    }
@@ -717,7 +729,7 @@
    "type": "result",
    "at": 19.66,
    "duration": 2.22,
-   "y": 0.225,
+   "y": 0.3,
    "props": {
     "label": "PRONTO",
     "burstAt": 29
@@ -727,8 +739,8 @@
    "type": "trio",
    "at": 21.91,
    "duration": 5.85,
-   "y": 0.215,
-   "scale": 0.66,
+   "y": 0.3,
+   "scale": 0.9,
    "props": {
     "reveal": [
      34,
@@ -743,8 +755,8 @@
    "type": "guidebook",
    "at": 27.79,
    "duration": 2.71,
-   "y": 0.212,
-   "scale": 0.52,
+   "y": 0.29,
+   "scale": 0.8,
    "props": {
     "freeAt": 33
    }
@@ -754,8 +766,8 @@
    "at": 30.53,
    "duration": 3.27,
    "text": "GUIDA",
-   "y": 0.215,
-   "scale": 0.62,
+   "y": 0.3,
+   "scale": 0.9,
    "props": {
     "name": "Commenti",
     "placeholder": "Aggiungi un commento…",

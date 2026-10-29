@@ -88,6 +88,8 @@ export type ReelStyle = {
     density: number;
     /** Stile icone: linea o piene. */
     iconStyle: "line" | "solid";
+    /** Fondo e card: "dark" (vetro nero, testo bianco) o "light" (fondo chiaro sfumato, card bianche, testo nero). */
+    theme: "dark" | "light";
   };
   grade: {
     brightness: number;

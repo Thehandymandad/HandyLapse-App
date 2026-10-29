@@ -17,7 +17,26 @@ export const P = {
   glass: "rgba(12,13,17,0.80)",
   line: "rgba(255,255,255,0.12)",
   claude: "#D97757",
+  /** Tema: colore del testo e dei dettagli sulle card, ombre. Cambiano con setTheme. */
+  fg: "#FFFFFF",
+  cardShadow: "0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)",
+  textShadow: "0 3px 12px rgba(0,0,0,0.6)",
+  theme: "dark" as "dark" | "light",
 };
+
+/** Il colore del testo del tema con alfa (dettagli, divisori, caselle vuote sulle card). */
+export const fg = (a: number) => rgba(P.fg, a);
+
+/** "light": card bianche con ombra morbida e testo nero, per il fondo chiaro sfumato; "dark": vetro nero e testo bianco. */
+export function setTheme(theme: "dark" | "light" | undefined) {
+  const light = theme === "light";
+  P.theme = light ? "light" : "dark";
+  P.fg = light ? "#111216" : "#FFFFFF";
+  P.glass = light ? "rgba(255,255,255,0.97)" : "rgba(12,13,17,0.80)";
+  P.line = light ? "rgba(17,18,22,0.10)" : "rgba(255,255,255,0.12)";
+  P.cardShadow = light ? "0 28px 60px rgba(40,30,20,0.16), 0 4px 14px rgba(40,30,20,0.08)" : "0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)";
+  P.textShadow = light ? "none" : "0 3px 12px rgba(0,0,0,0.6)";
+}
 
 /** "#RRGGBB" + alfa → "rgba(r,g,b,a)". */
 export function rgba(hex: string, a: number) {
@@ -40,6 +59,8 @@ export function setAccent(hex: string | undefined) {
 
 export const ANTON = fontStack("Anton");
 export const INTER = fontStack("Inter");
+/** Serif corsivo delle parole chiave nel tema chiaro (editor/assets/fonts, licenza OFL). */
+export const SERIF = '"Instrument Serif", Georgia, serif';
 
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 export const easeOut = (t: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, t)), 3);
@@ -69,11 +90,11 @@ export const Glass: React.FC<{ width: number; children: React.ReactNode; style?:
       borderRadius: 40,
       background: P.glass,
       border: `2px solid ${glow > 0 ? rgba(P.accent, 0.25 + glow * 0.75) : P.line}`,
-      boxShadow: `0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)${glow > 0 ? `, 0 0 ${60 * glow}px ${rgba(P.accent, 0.55 * glow)}` : ""}`,
+      boxShadow: `${P.cardShadow}${glow > 0 ? `, 0 0 ${60 * glow}px ${rgba(P.accent, 0.55 * glow)}` : ""}`,
       backdropFilter: "blur(22px) saturate(1.4)",
       padding: 34,
       boxSizing: "border-box",
-      color: P.white,
+      color: P.fg,
       fontFamily: INTER,
       ...style,
     }}

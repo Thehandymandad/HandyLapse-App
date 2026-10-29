@@ -33,6 +33,7 @@ import numpy as np
 
 W, H = 1080, 1920
 INK = np.array([0x0A, 0x0B, 0x0E], np.float32)
+PAPER = np.array([0xF4, 0xF2, 0xEE], np.float32)  # fondo del tema chiaro
 LIME = np.array([0xFF, 0x66, 0x33], np.float32)  # accento di default (arancione Claude elettrico)
 
 
@@ -199,7 +200,7 @@ def in_frame(full: np.ndarray, cam: dict, n: int) -> np.ndarray:
     inchiostro con un bagliore del colore d'accento che respira. Il bordo con l'alone lo disegna HyperFrames."""
     fr = cam["frame"]
     x, y, w, h = int(fr["x"]), int(fr["y"]), int(fr["w"]), int(fr["h"])
-    key = (x, y, w, h, fr.get("radius"), fr.get("zoom"), fr.get("faceY"), fr.get("faceAt"), cam.get("accent"))
+    key = (x, y, w, h, fr.get("radius"), fr.get("zoom"), fr.get("faceY"), fr.get("faceAt"), cam.get("accent"), cam.get("theme"))
     if key not in _FRAME_CACHE:
         z = float(fr.get("zoom") or 1)
         cw = W / z
@@ -216,13 +217,23 @@ def in_frame(full: np.ndarray, cam: dict, n: int) -> np.ndarray:
             cv2.circle(mask, (cx, cy), r, 255, -1)
         m = cv2.resize(mask, (w, h), interpolation=cv2.INTER_AREA).astype(np.float32) / 255
         yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-        d = np.hypot(xx - (x + w / 2), (yy - (y + h / 2)) * 0.8) / 1100
-        glow = (np.clip(1 - d, 0, 1) ** 1.6)[..., None] * (hex_rgb(cam.get("accent", "#FF6633")) - INK)
+        acc = hex_rgb(cam.get("accent", "#FF6633"))
+        if cam.get("theme") == "light":
+            # fondo chiaro sfumato: carta calda, in alto una velatura del colore d'accento che sfuma verso il centro
+            t = np.clip(1 - yy / (0.62 * H), 0, 1) ** 1.35 * 0.34
+            t += np.clip(1 - np.hypot(xx - W / 2, yy - 0.1 * H) / (0.9 * W), 0, 1) ** 2 * 0.08
+            base = PAPER + (acc - PAPER) * t[..., None]
+            glow = (base - INK).astype(np.float32)  # fondo fisso: INK + glow * 1
+            breathe = False
+        else:
+            d = np.hypot(xx - (x + w / 2), (yy - (y + h / 2)) * 0.8) / 1100
+            glow = ((np.clip(1 - d, 0, 1) ** 1.6)[..., None] * (acc - INK)).astype(np.float32)
+            breathe = True
         _FRAME_CACHE.clear()
-        _FRAME_CACHE[key] = (crop, cv2.merge([m, m, m]), glow.astype(np.float32))
-    (cx, cy, cw, ch), m3, glow = _FRAME_CACHE[key]
+        _FRAME_CACHE[key] = (crop, cv2.merge([m, m, m]), glow, breathe)
+    (cx, cy, cw, ch), m3, glow, breathe = _FRAME_CACHE[key]
     win = cv2.resize(full[cy:cy + ch, cx:cx + cw], (w, h), interpolation=cv2.INTER_AREA).astype(np.float32)
-    bg = INK + glow * np.float32(0.16 + 0.05 * math.sin(n / 18))
+    bg = INK + glow * np.float32(0.16 + 0.05 * math.sin(n / 18) if breathe else 1.0)
     region = bg[y:y + h, x:x + w]
     bg[y:y + h, x:x + w] = win * m3 + region * (1 - m3)
     return np.clip(bg + 0.5, 0, 255).astype(np.uint8)

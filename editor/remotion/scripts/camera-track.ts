@@ -56,6 +56,7 @@ const out = {
   grade: style.grade,
   backdrop: style.id === "pulse" ? "pulse" : "black",
   accent: style.motion.accentColor,
+  theme: style.motion.theme,
   frame: project.frame ?? null,
   frames,
 };
