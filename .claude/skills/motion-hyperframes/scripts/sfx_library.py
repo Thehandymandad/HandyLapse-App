@@ -3,6 +3,15 @@
     python sfx_library.py list
     python sfx_library.py missing <edit_dir>                     # effetti del motion-plan che non sono in libreria
     python sfx_library.py generate <nome> "<prompt in inglese>" [--duration 1.2] [--influence 0.6]
+    python sfx_library.py rebuild                                # ricrea le varianti dal catalogo (i WAV non sono nel repo)
+    python sfx_library.py variant <nome> --from <file o nome bundled di media-use> [--pitch 1.2] [--trim-start 0]
+                                  [--trim 0.6] [--reverse] [--layer <altro file/nome>] [--layer-gain -6] [--seq 0,0.13,0.26]
+
+`variant` crea un effetto nuovo da uno esistente (gratis, offline): intonazione/velocità, taglio, inversione, strato
+con un secondo suono, o una sequenza dello stesso suono ripetuto agli istanti dati (es. una pila di tonfi).
+I suoni gratuiti di base: i 21 inclusi in media-use (~/.claude/skills/media-use/audio/assets/sfx/) e Openverse
+(`npx hyperframes media-use resolve --type sfx --intent "<suono concreto>" --project editor`, con
+NODE_USE_ENV_PROXY=1 e NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt; serve api.openverse.org nella rete dell'ambiente).
 
 `generate` usa ElevenLabs Sound Effects (stessa chiave di Scribe: ELEVENLABS_API_KEY nell'ambiente; in questo cloud
 la chiave la aggiunge il proxy di rete). Ogni chiamata consuma crediti ElevenLabs: genera solo ciò che manca.
@@ -50,6 +59,66 @@ def generate(name: str, prompt: str, duration: float, influence: float) -> None:
     print(f"{out} ({len(mp3) // 1024} KB)")
 
 
+BUNDLED = Path.home() / ".claude/skills/media-use/audio/assets/sfx"
+
+
+def resolve_src(ref: str) -> Path:
+    p = Path(ref)
+    if p.exists():
+        return p
+    for base in (LIB, BUNDLED):
+        for ext in ("", ".wav", ".mp3", ".ogg", ".flac"):
+            q = base / f"{ref}{ext}"
+            if q.exists() and q.is_file():
+                return q
+    man = BUNDLED / "manifest.json"
+    if man.exists():
+        m = json.loads(man.read_text())
+        if ref in m:
+            return BUNDLED / m[ref]["file"]
+    sys.exit(f"suono non trovato: {ref}")
+
+
+def variant(name, src, pitch, trim_start, trim, reverse, layer, layer_gain, seq) -> None:
+    LIB.mkdir(parents=True, exist_ok=True)
+    base = resolve_src(src)
+    chain = [f"aformat=sample_rates=48000:channel_layouts=stereo", f"asetrate={48000 * pitch:.0f}", "aresample=48000"]
+    if trim_start or trim:
+        chain.append(f"atrim=start={trim_start}" + (f":duration={trim}" if trim else ""))
+        chain.append("asetpts=PTS-STARTPTS")
+    if reverse:
+        chain.append("areverse")
+    inputs = ["-i", str(base)]
+    graph = f"[0:a]{','.join(chain)}[a]"
+    last = "a"
+    if seq:
+        times = [float(x) for x in seq.split(",")]
+        graph += f";[a]asplit={len(times)}" + "".join(f"[r{i}]" for i in range(len(times)))
+        graph += "".join(f";[r{i}]adelay={int(t * 1000)}|{int(t * 1000)}[d{i}]" for i, t in enumerate(times))
+        graph += ";" + "".join(f"[d{i}]" for i in range(len(times))) + f"amix=inputs={len(times)}:normalize=0[s]"
+        last = "s"
+    if layer:
+        inputs += ["-i", str(resolve_src(layer))]
+        graph += f";[1:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={layer_gain}dB[l];[{last}][l]amix=inputs=2:normalize=0:duration=longest[m]"
+        last = "m"
+    graph += f";[{last}]areverse,afade=t=in:d=0.04,areverse[out]"  # dissolvenza finale di 40 ms
+    out = LIB / f"{name}.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", graph, "-map", "[out]", "-ar", "48000", str(out)], check=True)
+    cat = load()
+    cat[name] = {"file": out.name, "from": base.name, "pitch": pitch, "trim_start": trim_start, "trim": trim, "reverse": reverse, "layer": layer, "layer_gain": layer_gain, "seq": seq}
+    save(cat)
+    print(out)
+
+
+def rebuild() -> None:
+    """Le varianti derivano da suoni Pixabay (licenza: uso nei video sì, ridistribuzione come libreria no): nel repo
+    c'è solo catalog.json con le ricette, i WAV si rigenerano qui."""
+    for name, v in load().items():
+        if "from" in v and not (LIB / v["file"]).exists():
+            variant(name, Path(v["from"]).stem, v.get("pitch", 1.0), v.get("trim_start", 0.0), v.get("trim", 0.0),
+                    v.get("reverse", False), v.get("layer"), v.get("layer_gain", -6.0), v.get("seq"))
+
+
 def missing(edit_dir: str) -> None:
     plan = json.loads((Path(edit_dir) / "motion-plan.json").read_text())
     names = {e["name"] for e in plan.get("sfx", []) if "name" in e}
@@ -66,6 +135,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("list")
+    sub.add_parser("rebuild")
     m = sub.add_parser("missing")
     m.add_argument("edit_dir")
     g = sub.add_parser("generate")
@@ -73,10 +143,24 @@ def main() -> None:
     g.add_argument("prompt")
     g.add_argument("--duration", type=float, default=1.0)
     g.add_argument("--influence", type=float, default=0.6)
+    v = sub.add_parser("variant")
+    v.add_argument("name")
+    v.add_argument("--from", dest="src", required=True)
+    v.add_argument("--pitch", type=float, default=1.0)
+    v.add_argument("--trim-start", type=float, default=0.0)
+    v.add_argument("--trim", type=float, default=0.0)
+    v.add_argument("--reverse", action="store_true")
+    v.add_argument("--layer")
+    v.add_argument("--layer-gain", type=float, default=-6.0)
+    v.add_argument("--seq")
     a = ap.parse_args()
     if a.cmd == "list":
         for k, v in load().items():
-            print(f"{k:32s} {v['duration']:.1f}s  {v['prompt']}")
+            print(f"{k:28s} {v.get('prompt') or 'da ' + str(v.get('from'))}")
+    elif a.cmd == "rebuild":
+        rebuild()
+    elif a.cmd == "variant":
+        variant(a.name, a.src, a.pitch, a.trim_start, a.trim, a.reverse, a.layer, a.layer_gain, a.seq)
     elif a.cmd == "missing":
         missing(a.edit_dir)
     else:

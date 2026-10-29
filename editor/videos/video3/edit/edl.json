@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "sources": {
+    "video3": "/home/user/HandyLapse-App/editor/videos/video3/video3.mov"
+  },
+  "ranges": [
+    {
+      "source": "video3",
+      "start": 1.93,
+      "end": 6.48,
+      "beat": "HOOK",
+      "quote": "Questo video non l'ho montato io. La parte più difficile di fare reel non è registrare.",
+      "reason": "Unica ripresa, gancio."
+    },
+    {
+      "source": "video3",
+      "start": 10.59,
+      "end": 12.04,
+      "beat": "PROBLEMA",
+      "quote": "È tutto quello che viene dopo.",
+      "reason": "Tolti 4 s di silenzio prima."
+    },
+    {
+      "source": "video3",
+      "start": 17.23,
+      "end": 19.46,
+      "beat": "SVOLTA",
+      "quote": "così ho costruito un editor con Claude Code.",
+      "reason": "Seconda ripresa: la prima si interrompe su 'Claude--'."
+    },
+    {
+      "source": "video3",
+      "start": 23.13,
+      "end": 27.98,
+      "beat": "SVOLTA",
+      "quote": "Gli do il video grezzo e lui taglia le pause, scrive i sottotitoli, mette zoom e grafiche.",
+      "reason": "Seconda ripresa, quella completa."
+    },
+    {
+      "source": "video3",
+      "start": 28.57,
+      "end": 29.36,
+      "beat": "PROVA",
+      "quote": "E questo video",
+      "reason": ""
+    },
+    {
+      "source": "video3",
+      "start": 30.37,
+      "end": 31.18,
+      "beat": "PROVA",
+      "quote": "non l'ho toccato.",
+      "reason": "Tolta la pausa di 1,1 s dopo 'video'."
+    },
+    {
+      "source": "video3",
+      "start": 34.87,
+      "end": 36.84,
+      "beat": "PROVA",
+      "quote": "Zero tagli a mano, zero app aperte.",
+      "reason": "Il primo 'Zero tagli.' (31,7) era una falsa partenza."
+    },
+    {
+      "source": "video3",
+      "start": 40.65,
+      "end": 44.86,
+      "beat": "PROVA",
+      "quote": "l'ho registrato io e gliel'ho mandato… e me l'ha restituito così.",
+      "reason": "Ultima ripresa di 'l'ho registrato io'; tenuto apposta il secondo di silenzio prima di 'e me l'ha restituito così' (pausa del copione)."
+    },
+    {
+      "source": "video3",
+      "start": 46.31,
+      "end": 48.04,
+      "beat": "COME",
+      "quote": "Dentro ci sono tre strumenti:",
+      "reason": ""
+    },
+    {
+      "source": "video3",
+      "start": 49.13,
+      "end": 51.88,
+      "beat": "COME",
+      "quote": "uno trascrive, uno taglia, uno anima.",
+      "reason": ""
+    },
+    {
+      "source": "video3",
+      "start": 53.49,
+      "end": 55.56,
+      "beat": "COME",
+      "quote": "Ma il segreto è come li fai lavorare insieme.",
+      "reason": ""
+    },
+    {
+      "source": "video3",
+      "start": 57.31,
+      "end": 59.18,
+      "beat": "CTA",
+      "quote": "Ti ho scritto una guida gratuita",
+      "reason": ""
+    },
+    {
+      "source": "video3",
+      "start": 59.57,
+      "end": 60.58,
+      "beat": "CTA",
+      "quote": "su come l'ho fatto.",
+      "reason": "Tolta la pausa di 0,5 s."
+    },
+    {
+      "source": "video3",
+      "start": 65.85,
+      "end": 67.8,
+      "beat": "CTA",
+      "quote": "Commenta guida e te la mando in DM.",
+      "reason": "Si chiude prima del rumore di fogli (67,74)."
+    }
+  ],
+  "grade": "neutral_punch",
+  "overlays": [],
+  "total_duration_s": 32.24
+}

@@ -20,6 +20,9 @@ checklist spuntata. Poi le correzioni fatte (piano, HTML o composizione) e un nu
 
 ## Processo
 
+0. Prima del render, sulle istantanee di HyperFrames: `python .claude/skills/motion-review/scripts/over.py <dir_snapshot>
+   --base edit/base.mp4` le sovrappone ai fotogrammi veri del montato con le zone di Instagram segnate.
+
 1. `python .claude/skills/motion-review/scripts/review.py --edit edit` → fotogrammi in `edit/review/frames/`, fogli
    di contatto `edit/review/sheet_NN.jpg` con le zone coperte da Instagram in rosso, `edit/review/audio.json`.
    Per i movimenti veloci aggiungi `--every 0.5` o estrai una sequenza ravvicinata attorno al momento

@@ -1,0 +1,80 @@
+<template>
+  <!-- s11 · "Ti ho scritto una guida gratuita su come l'ho fatto." — libro 3D che cade e si posa su «guida» (0,99); bollino GRATIS su «gratuita» (1,27) -->
+  <script src="assets/lib/three.min.js"></script>
+  <script src="assets/lib/hf3d.js"></script>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s11-wrap { position: absolute; left: 156px; top: 1150px; width: 700px; height: 480px; }
+    #s11-cv { position: absolute; inset: 0; width: 700px; height: 480px; }
+    #s11-gratis { position: absolute; left: 610px; top: 1225px; width: 190px; height: 190px; }
+    #s11-gratis div { position: absolute; inset: 0; border-radius: 50%; background: var(--no); color: #fff; border: 6px dashed rgba(255,255,255,0.65);
+      display: flex; align-items: center; justify-content: center; font: 900 46px var(--font-display); letter-spacing: -0.02em; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  </style>
+  <div id="root" data-composition-id="s11" data-width="1080" data-height="1920">
+    <div id="s11-wrap" class="clip" data-start="0.55" data-duration="2.33">
+      <canvas id="s11-cv" width="700" height="480"></canvas>
+    </div>
+    <div id="s11-gratis" class="clip" data-start="1.24" data-duration="1.64"><div id="s11-gratis-in">GRATIS</div></div>
+  </div>
+  <script>
+    (function () {
+      const { E, mount, roundedBox, contactShadow, canvasTexture } = window.HF3D;
+      const tl = gsap.timeline({ paused: true });
+      const LAND = 0.99, FREE = 1.27;
+      tl.fromTo("#s11-gratis-in", { scale: 2.3, rotation: 30, opacity: 0 }, { scale: 1, rotation: 14, opacity: 1, duration: 0.1, ease: "power4.in" }, FREE - 0.03);
+      tl.to("#s11-gratis-in", { scale: 1.08, duration: 0.08, ease: "power2.out" }, FREE + 0.07);
+      tl.to("#s11-gratis-in", { scale: 1, duration: 0.25, ease: "back.out(3)" }, FREE + 0.15);
+      tl.to("#s11-gratis-in", { opacity: 0, scale: 0.6, duration: 0.18, ease: "power2.in" }, 2.7);
+      window.__timelines["s11"] = tl;
+
+      const canvas = document.getElementById("s11-cv");
+      mount({
+        key: "s11-libro", tl, canvas, w: 700, h: 480, fov: 30, camZ: 6.6,
+        build: async (scene) => {
+          await Promise.all([document.fonts.load('900 80px "Inter"'), document.fonts.load('italic 400 90px "Instrument Serif"'), document.fonts.load('700 30px "JetBrains Mono"')]);
+          const cover = canvasTexture(600, 800, (c, w, h) => {
+            c.fillStyle = "#0B0B0C"; c.fillRect(0, 0, w, h);
+            const g = c.createRadialGradient(420, 260, 10, 420, 260, 360);
+            g.addColorStop(0, "rgba(212,255,58,0.28)"); g.addColorStop(1, "rgba(212,255,58,0)");
+            c.fillStyle = g; c.fillRect(0, 0, w, h);
+            c.fillStyle = "#D4FF3A"; c.fillRect(0, 0, 30, h);
+            c.fillStyle = "#D4FF3A"; c.beginPath(); c.roundRect(70, 70, 290, 56, 12); c.fill();
+            c.fillStyle = "#0B0B0C"; c.font = '700 26px "JetBrains Mono"'; c.textBaseline = "middle"; c.fillText("GUIDA GRATUITA", 88, 99);
+            c.fillStyle = "#FFFFFF"; c.font = '900 92px "Inter"'; c.textBaseline = "alphabetic";
+            c.fillText("IL MIO", 66, 300); c.fillText("EDITOR", 66, 395);
+            c.fillStyle = "#D4FF3A"; c.font = 'italic 400 104px "Instrument Serif"'; c.fillText("con l'AI.", 66, 500);
+            c.fillStyle = "rgba(255,255,255,0.6)"; c.font = '700 22px "JetBrains Mono"';
+            c.fillText("COME L'HO COSTRUITO,", 66, 650); c.fillText("PASSO PER PASSO", 66, 684);
+          });
+          const pages = canvasTexture(64, 512, (c, w, h) => {
+            c.fillStyle = "#F4F4EF"; c.fillRect(0, 0, w, h);
+            c.strokeStyle = "rgba(0,0,0,0.12)"; for (let x = 4; x < w; x += 6) { c.beginPath(); c.moveTo(x, 0); c.lineTo(x, h); c.stroke(); }
+          });
+          const ink = new THREE.MeshStandardMaterial({ color: 0x0b0b0c, roughness: 0.5 });
+          const paper = new THREE.MeshStandardMaterial({ map: pages, roughness: 0.9 });
+          // box: +x, -x, +y, -y, +z (copertina), -z
+          const book = new THREE.Mesh(new THREE.BoxGeometry(2.4, 3.2, 0.36), [paper, ink, paper, paper, new THREE.MeshStandardMaterial({ map: cover, roughness: 0.42 }), ink]);
+          const group = new THREE.Group();
+          group.add(book);
+          const shadow = contactShadow(3.8);
+          shadow.position.set(0, -1.85, -1);
+          scene.add(shadow);
+          scene.add(group);
+          return { group, shadow };
+        },
+        draw: (t, { group, shadow }) => {
+          let y = t < 0.6 ? 2.6 : t < LAND ? E.lerp(2.6, 0, E.inQuad((t - 0.6) / (LAND - 0.6))) : -0.1 * E.bounce(t - LAND, 10, 6) + 0.07 * Math.sin((t - LAND) * 2.6);
+          const exit = E.u(t, 2.7, 2.88);
+          y += 1.2 * E.inQuad(exit);
+          const k = E.outCubic(E.u(t, 0.6, LAND + 0.3));
+          group.position.set(-0.3, y, 0);
+          group.rotation.set(E.lerp(0.4, 0.1, k), E.lerp(-1.3, -0.42, k) + 0.05 * Math.sin(t * 1.6), E.lerp(0.4, 0.05, k));
+          const s = 1 - 0.35 * exit;
+          group.scale.set(s, s, s);
+          shadow.update(y + 0.2);
+          canvas.style.opacity = String(t < 0.6 ? 0 : 1 - exit);
+        },
+      });
+    })();
+  </script>
+</template>

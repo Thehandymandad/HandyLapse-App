@@ -1,0 +1,33 @@
+<template>
+  <!-- s06 · "E questo video non l'ho toccato." — un cursore scivola verso il video; su «toccato» (1,09) un divieto rosso lo blocca -->
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s06-cur { position: absolute; left: 0; top: 0; width: 110px; height: 110px; }
+    #s06-no { position: absolute; left: 446px; top: 1290px; width: 230px; height: 230px; }
+  </style>
+  <div id="root" data-composition-id="s06" data-width="1080" data-height="1920">
+    <svg id="s06-cur" class="clip" data-start="0" data-duration="1.6" viewBox="0 0 24 24">
+      <path d="M5 3l14 8.2-6.3 1.4 3.8 6.6-2.6 1.5-3.8-6.6L5 18z" fill="#FFFFFF" stroke="#0B0B0C" stroke-width="1.4" stroke-linejoin="round"/>
+    </svg>
+    <svg id="s06-no" class="clip" data-start="1.05" data-duration="0.55" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9.6" fill="rgba(255,59,78,0.12)" stroke="#FF3B4E" stroke-width="2.2"/>
+      <path id="s06-slash" d="M5.3 18.7L18.7 5.3" stroke="#FF3B4E" stroke-width="2.4" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" opacity="0"/>
+    </svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const HIT = 1.09;
+      // il cursore arriva in curva (x e y con easing diversi) dal basso a destra verso il centro della fascia
+      tl.fromTo("#s06-cur", { x: 800, opacity: 0 }, { x: 520, opacity: 1, duration: 0.9, ease: "power3.inOut" }, 0.1);
+      tl.fromTo("#s06-cur", { y: 1500 }, { y: 1350, duration: 0.9, ease: "power2.out" }, 0.1);
+      // il divieto sbatte sul cursore, il cursore viene respinto
+      tl.fromTo("#s06-no", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.1, ease: "power4.in" }, HIT - 0.04);
+      tl.set("#s06-slash", { opacity: 1 }, HIT);
+      tl.to("#s06-slash", { strokeDashoffset: 0, duration: 0.16, ease: "power2.out" }, HIT);
+      tl.to("#s06-cur", { x: 600, y: 1420, rotation: 18, duration: 0.25, ease: "back.out(2)" }, HIT);
+      tl.to(["#s06-cur", "#s06-no"], { opacity: 0, scale: 0.9, filter: "blur(10px)", duration: 0.15, ease: "power2.in" }, 1.45);
+      window.__timelines["s06"] = tl;
+    })();
+  </script>
+</template>

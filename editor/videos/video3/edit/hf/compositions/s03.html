@@ -1,0 +1,50 @@
+<template>
+  <!-- s03 · "È tutto quello che viene dopo." — i lavori del montaggio cadono uno sull'altro; «ORE E ORE» atterra su «dopo» (1,13); poi la pila crolla -->
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s03-pile { position: absolute; inset: 0; }
+    .s03-chip { position: absolute; left: 0; top: 0; padding: 14px 30px 12px; border-radius: 16px; font: 900 50px var(--font-display);
+      letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+    .s03-l { background: var(--accent); color: var(--ink); }
+    .s03-w { background: var(--white); color: var(--ink); }
+    .s03-k { background: var(--ink); color: var(--white); border: 2px solid rgba(255,255,255,0.18); }
+    #s03-last { padding: 10px 40px 18px; background: var(--ink); color: var(--white); border: 3px solid var(--accent); font: 900 64px var(--font-display); }
+    #s03-last em { font: italic 400 86px var(--font-key); color: var(--accent); letter-spacing: 0; }
+  </style>
+  <div id="root" data-composition-id="s03" data-width="1080" data-height="1920">
+    <div id="s03-pile" class="clip" data-start="0" data-duration="1.63" data-layout-allow-overlap>
+      <div class="s03-chip s03-l" id="s03-c0">TAGLI</div>
+      <div class="s03-chip s03-w" id="s03-c1">SOTTOTITOLI</div>
+      <div class="s03-chip s03-k" id="s03-c2">ZOOM</div>
+      <div class="s03-chip s03-l" id="s03-c3">GRAFICHE</div>
+      <div class="s03-chip s03-w" id="s03-c4">AUDIO</div>
+      <div class="s03-chip s03-k" id="s03-c5">COLORE</div>
+      <div class="s03-chip s03-l" id="s03-c6">MUSICA</div>
+      <div class="s03-chip" id="s03-last"><em>ore</em> E <em>ore</em></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // [x del centro, y del centro, rotazione, inizio caduta]: pila nella fascia x 112–900, y 1230–1550
+      const slots = [[330, 1495, -4, 0.05], [690, 1495, 5, 0.18], [460, 1418, 3, 0.31], [260, 1410, -6, 0.44], [730, 1415, -3, 0.57],
+        [380, 1338, -5, 0.70], [640, 1340, 4, 0.83], [506, 1262, -2, 0.95]];
+      const ids = ["#s03-c0", "#s03-c1", "#s03-c2", "#s03-c3", "#s03-c4", "#s03-c5", "#s03-c6", "#s03-last"];
+      const FALL = 0.18;
+      ids.forEach((id, i) => {
+        const [x, y, r, t0] = slots[i];
+        // xPercent/yPercent centrano il pezzo sul suo posto
+        // parte poco sopra la pila (mai sopra il viso), cade accelerando, si schiaccia all'impatto
+        tl.fromTo(id, { xPercent: -50, yPercent: -50, x, y: y - 280, rotation: r + (i % 2 ? 24 : -24) },
+          { y, rotation: r, duration: FALL, ease: "power2.in" }, t0);
+        tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, t0);
+        tl.fromTo(id, { scaleY: 0.78, scaleX: 1.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, t0 + FALL);
+      });
+      // crollo: tutto cade giù ruotando, i pezzi più alti per ultimi
+      ids.forEach((id, i) => {
+        tl.to(id, { y: "+=700", rotation: (i % 2 ? 40 : -40), opacity: 0, duration: 0.15 + i * 0.008, ease: "power2.in" }, 1.45);
+      });
+      window.__timelines["s03"] = tl;
+    })();
+  </script>
+</template>

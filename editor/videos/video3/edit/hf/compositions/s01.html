@@ -1,0 +1,89 @@
+<template>
+  <script src="assets/lib/three.min.js"></script>
+  <script src="assets/lib/hf3d.js"></script>
+  <!-- s01 · "Questo video non l'ho montato io." — ciak 3D che cade (già in movimento al frame 0) e si chiude su «io» (1,39 s) -->
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s01-wrap { position: absolute; left: 156px; top: 1150px; width: 700px; height: 480px; }
+    #s01-cv { position: absolute; inset: 0; width: 700px; height: 480px; }
+    #s01-burst { position: absolute; left: 640px; top: 1235px; width: 0; height: 0; }
+    .s01-ray { position: absolute; left: -6px; top: -70px; width: 12px; height: 46px; border-radius: 6px; background: var(--accent); transform-origin: 6px 70px; }
+  </style>
+  <div id="root" data-composition-id="s01" data-width="1080" data-height="1920">
+    <div id="s01-wrap" class="clip" data-start="0" data-duration="1.8">
+      <canvas id="s01-cv" width="700" height="480"></canvas>
+    </div>
+    <div id="s01-burst" class="clip" data-start="1.36" data-duration="0.44" data-layout-ignore>
+      <div class="s01-ray" style="rotate: -60deg"></div>
+      <div class="s01-ray" style="rotate: -30deg"></div>
+      <div class="s01-ray" style="rotate: 0deg"></div>
+      <div class="s01-ray" style="rotate: 30deg"></div>
+      <div class="s01-ray" style="rotate: 60deg"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const { E, mount, roundedBox, contactShadow, canvasTexture, stripes } = window.HF3D;
+      const tl = gsap.timeline({ paused: true });
+      const SNAP = 1.39;
+      // scintilla lime sull'impatto del braccio
+      tl.fromTo("#s01-burst .s01-ray", { scaleY: 0, opacity: 1 }, { scaleY: 1, duration: 0.12, ease: "power3.out" }, 1.36);
+      tl.to("#s01-burst .s01-ray", { opacity: 0, y: -18, duration: 0.25, ease: "power2.in" }, 1.5);
+      window.__timelines["s01"] = tl;
+
+      const canvas = document.getElementById("s01-cv");
+      mount({
+        key: "s01-ciak", tl, canvas, w: 700, h: 480, fov: 30, camZ: 8.2,
+        build: async (scene) => {
+          await Promise.all([document.fonts.load('900 60px "Inter"'), document.fonts.load('700 40px "JetBrains Mono"')]);
+          const dark = new THREE.MeshStandardMaterial({ color: 0x18191c, roughness: 0.45, metalness: 0.15 });
+          const slate = canvasTexture(840, 520, (c, w, h) => {
+            c.fillStyle = "#1b1c20"; c.fillRect(0, 0, w, h);
+            c.strokeStyle = "rgba(255,255,255,0.75)"; c.lineWidth = 5;
+            [[0, 175, w, 175], [0, 345, w, 345], [w / 2, 175, w / 2, 345]].forEach(([a, b, x, y]) => { c.beginPath(); c.moveTo(a, b); c.lineTo(x, y); c.stroke(); });
+            c.fillStyle = "#ffffff"; c.font = '900 120px "Inter"'; c.textBaseline = "middle"; c.fillText("REEL", 40, 92);
+            c.fillStyle = "#D4FF3A"; c.font = '900 60px "Inter"'; c.fillText("RAW", w - 200, 92);
+            c.fillStyle = "rgba(255,255,255,0.9)"; c.font = '700 40px "JetBrains Mono"';
+            c.fillText("SCENA 01", 40, 262); c.fillText("TAKE 01", w / 2 + 40, 262);
+            c.fillText("NON MONTATO", 40, 432);
+          });
+          const stripeTex = (shift) => canvasTexture(840, 100, (c, w, h) => { c.translate(shift, 0); stripes(c, w + 200, h, "#0f0f11", "#D4FF3A", 7); });
+          const root = new THREE.Group();
+          const board = new THREE.Mesh(roundedBox(4.2, 2.6, 0.22, 0.06, 4), [dark, dark, dark, dark, new THREE.MeshStandardMaterial({ map: slate, roughness: 0.6 }), dark]);
+          root.add(board);
+          const barMat = new THREE.MeshStandardMaterial({ map: stripeTex(0), roughness: 0.4 });
+          const bar = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.5, 0.24), [dark, dark, dark, dark, barMat, dark]);
+          bar.position.set(0, 1.55, 0);
+          root.add(bar);
+          const pivot = new THREE.Group();
+          pivot.position.set(-2.1, 1.82, 0.02);
+          const arm = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.5, 0.24), [dark, dark, dark, dark, new THREE.MeshStandardMaterial({ map: stripeTex(60), roughness: 0.4 }), dark]);
+          arm.position.set(2.1, 0.25, 0);
+          pivot.add(arm);
+          root.add(pivot);
+          const shadow = contactShadow(4.8);
+          shadow.position.set(0, -1.75, -0.5);
+          scene.add(shadow);
+          scene.add(root);
+          return { root, pivot, shadow };
+        },
+        draw: (t, { root, pivot, shadow }) => {
+          const land = 0.4;
+          // caduta: al fotogramma 0 è già in volo, atterra a 0,4 s e rimbalza
+          let y = t < land ? E.lerp(2.3, 0, E.inQuad(t / land)) : -0.12 * E.bounce(t - land, 11, 6);
+          const exit = E.u(t, 1.6, 1.8);
+          y += 1.2 * E.inQuad(exit);
+          root.position.set(-0.25, y, 0);
+          root.rotation.set(0.1, E.lerp(-0.95, -0.3, E.outCubic(E.u(t, 0, 0.9))) + 0.04 * Math.sin(t * 2.2), E.lerp(0.32, 0.03, E.outCubic(E.u(t, 0, 0.6))));
+          // braccio aperto che vibra, poi si chiude di scatto sulla parola
+          const open = 0.55 + 0.03 * Math.sin(t * 9);
+          pivot.rotation.z = t < SNAP - 0.09 ? open : t < SNAP ? E.lerp(open, 0, E.inQuart((t - (SNAP - 0.09)) / 0.09)) : 0.05 * Math.abs(E.bounce(t - SNAP, 30, 14));
+          const s = (1 + 0.05 * E.bounce(t - SNAP, 25, 9)) * (1 - 0.35 * exit);
+          root.scale.set(s, s, s);
+          shadow.update(y + 0.3);
+          canvas.style.opacity = String(1 - exit);
+        },
+      });
+    })();
+  </script>
+</template>

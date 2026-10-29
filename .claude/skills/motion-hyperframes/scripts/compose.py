@@ -10,6 +10,7 @@
 - suono: la voce passa per EQ (+corpo, −fango, +presenza) e compressione; ogni effetto di `scenes[].sfx` / `sfx`
   ({"t": s, "name": "..."} o {"t": s, "file": "..."}) viene normalizzato allo stesso livello, `--gap` dB sotto la voce,
   anticipato del suo attacco così il transiente cade sul fotogramma; poi master a `--lufs` LUFS (true peak −1 dBTP).
+- `hold` nel piano (o --hold): l'ultimo fotogramma resta fermo quei secondi, così la CTA finale si legge.
 - salva gli stem in <edit_dir>/stems/ (voice.wav, sfx.wav) per motion-review.
 """
 from __future__ import annotations
@@ -135,10 +136,11 @@ def camera_exprs(ops: list[dict]) -> dict[str, str]:
     }
 
 
-def video_graph(cam: dict, n_overlays: int, cx: float, cy: float, dur: float) -> str:
+def video_graph(cam: dict, n_overlays: int, cx: float, cy: float, dur: float, hold: float = 0.0) -> str:
     z = cam["zoom"]
+    pad = f"tpad=stop_mode=clone:stop_duration={hold:.3f}," if hold > 0 else ""
     g = [
-        f"[0:v]fps={FPS},scale=w='2*trunc({W}*({z})/2)':h='2*trunc({H}*({z})/2)':eval=frame,"
+        f"[0:v]fps={FPS},{pad}scale=w='2*trunc({W}*({z})/2)':h='2*trunc({H}*({z})/2)':eval=frame,"
         f"crop={W}:{H}:x='clip((iw-{W})*{cx}+({cam['sx']}),0,iw-{W})':y='clip((ih-{H})*{cy}+({cam['sy']}),0,ih-{H})'"
     ]
     for a, b in cam["blur"]:
@@ -183,7 +185,8 @@ def resolve_sfx(e: dict, sfx_dir: Path) -> Path | None:
 def build_audio(base: Path, plan: dict, sfx_dir: Path, gap: float, lufs: float, dur: float, stems: Path, voice_fx: bool) -> Path:
     stems.mkdir(parents=True, exist_ok=True)
     voice = stems / "voice.wav"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(base), "-vn", "-af", VOICE_CHAIN if voice_fx else "anull", "-ar", "48000", "-ac", "2", str(voice)])
+    chain = (VOICE_CHAIN if voice_fx else "anull") + f",apad,atrim=0:{dur:.3f}"  # dur comprende il fermo finale
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(base), "-vn", "-af", chain, "-ar", "48000", "-ac", "2", str(voice)])
     lv = loudness(voice)
 
     events = sfx_events(plan)
@@ -236,6 +239,7 @@ def main() -> None:
     ap.add_argument("--gap", type=float, default=7.0)
     ap.add_argument("--lufs", type=float, default=-14.0)
     ap.add_argument("--no-voice-fx", action="store_true")
+    ap.add_argument("--hold", type=float, help="secondi di fermo sull'ultimo fotogramma (default: `hold` del piano)")
     ap.add_argument("--preview", action="store_true", help="720p veloce")
     ap.add_argument("-o", "--out")
     a = ap.parse_args()
@@ -244,14 +248,15 @@ def main() -> None:
     base = Path(a.base)
     plan_path = edit / "motion-plan.json"
     plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
-    dur = probe_duration(base)
+    hold = a.hold if a.hold is not None else float(plan.get("hold", 0))
+    dur = probe_duration(base) + hold
     face = plan.get("face", {})
     cam = camera_exprs(plan.get("camera", []))
 
     master = build_audio(base, plan, Path(a.sfx_dir), a.gap, a.lufs, dur, edit / "stems", not a.no_voice_fx)
 
     out = Path(a.out or edit / ("preview.mp4" if a.preview else "final.mp4"))
-    graph = video_graph(cam, len(a.overlay), face.get("x", 0.5), face.get("y", 0.42), dur)
+    graph = video_graph(cam, len(a.overlay), face.get("x", 0.5), face.get("y", 0.42), dur, hold)
     if a.preview:
         graph = graph.replace("format=yuv420p[vout]", "scale=720:1280,format=yuv420p[vout]")
     with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:

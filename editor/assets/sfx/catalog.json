@@ -1,0 +1,369 @@
+{
+ "aereo-parte": {
+  "file": "aereo-parte.wav",
+  "from": "whoosh.mp3",
+  "pitch": 0.85,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "check-1": {
+  "file": "check-1.wav",
+  "from": "click.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "check-2": {
+  "file": "check-2.wav",
+  "from": "click.mp3",
+  "pitch": 1.12,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "check-3": {
+  "file": "check-3.wav",
+  "from": "click.mp3",
+  "pitch": 1.26,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "check-completo": {
+  "file": "check-completo.wav",
+  "from": "chime.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.4,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "ciak-chiusura": {
+  "file": "ciak-chiusura.wav",
+  "from": "click.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "impact-bass-1",
+  "seq": null,
+  "layer_gain": -8
+ },
+ "ciak-entra": {
+  "file": "ciak-entra.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 0.9,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "collegamento": {
+  "file": "collegamento.wav",
+  "from": "riser.mp3",
+  "pitch": 1.0,
+  "trim_start": 8.83,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "commenti-apre": {
+  "file": "commenti-apre.wav",
+  "from": "pop.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "cosi-scintilla": {
+  "file": "cosi-scintilla.wav",
+  "from": "sparkle.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "cubo-atterra": {
+  "file": "cubo-atterra.wav",
+  "from": "impact-bass-1.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.2,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "cubo-cade": {
+  "file": "cubo-cade.wav",
+  "from": "whoosh.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "cursore-scivola": {
+  "file": "cursore-scivola.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 1.3,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "digita-guida": {
+  "file": "digita-guida.wav",
+  "from": "typing.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.45,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "file-entra": {
+  "file": "file-entra.wav",
+  "from": "click-soft.mp3",
+  "pitch": 0.9,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "whoosh-short",
+  "seq": null,
+  "layer_gain": -12
+ },
+ "flip-1": {
+  "file": "flip-1.wav",
+  "from": "key-press.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "flip-2": {
+  "file": "flip-2.wav",
+  "from": "key-press.mp3",
+  "pitch": 1.2,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "layer_gain": -6.0,
+  "seq": null
+ },
+ "flip-3": {
+  "file": "flip-3.wav",
+  "from": "key-press.mp3",
+  "pitch": 1.45,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "gratis-timbro": {
+  "file": "gratis-timbro.wav",
+  "from": "impact-bass-1.mp3",
+  "pitch": 1.35,
+  "trim_start": 0.0,
+  "trim": 0.7,
+  "reverse": false,
+  "layer": "click",
+  "seq": null,
+  "layer_gain": -6
+ },
+ "insieme-ping": {
+  "file": "insieme-ping.wav",
+  "from": "ping.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "inviato": {
+  "file": "inviato.wav",
+  "from": "notification.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 1.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "libro-atterra": {
+  "file": "libro-atterra.wav",
+  "from": "impact-bass-2.mp3",
+  "pitch": 1.2,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "lucchetto": {
+  "file": "lucchetto.wav",
+  "from": "click-soft.mp3",
+  "pitch": 0.8,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "pila-crollo": {
+  "file": "pila-crollo.wav",
+  "from": "glitch-3.mp3",
+  "pitch": 0.7,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "pila-tonfi": {
+  "file": "pila-tonfi.wav",
+  "from": "key-press.mp3",
+  "pitch": 0.55,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": "impact-bass-2",
+  "seq": "0,0.13,0.26,0.39,0.52,0.65,0.78",
+  "layer_gain": -10
+ },
+ "pubblica": {
+  "file": "pubblica.wav",
+  "from": "click-soft.mp3",
+  "pitch": 1.3,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "rec-pop": {
+  "file": "rec-pop.wav",
+  "from": "pop.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "risposta-dm": {
+  "file": "risposta-dm.wav",
+  "from": "notification.mp3",
+  "pitch": 1.06,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "spunta-facile": {
+  "file": "spunta-facile.wav",
+  "from": "ping.mp3",
+  "pitch": 1.2,
+  "trim_start": 0.0,
+  "trim": 0.8,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "tag-claude": {
+  "file": "tag-claude.wav",
+  "from": "pop.mp3",
+  "pitch": 1.3,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "telefono-entra": {
+  "file": "telefono-entra.wav",
+  "from": "whoosh-short.mp3",
+  "pitch": 0.75,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "tessere-appaiono": {
+  "file": "tessere-appaiono.wav",
+  "from": "glitch-3.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.6,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ },
+ "timbro-1": {
+  "file": "timbro-1.wav",
+  "from": "impact-bass-1.mp3",
+  "pitch": 1.15,
+  "trim_start": 0.0,
+  "trim": 0.8,
+  "reverse": false,
+  "layer": "click-soft",
+  "seq": null,
+  "layer_gain": -4
+ },
+ "timbro-2": {
+  "file": "timbro-2.wav",
+  "from": "impact-bass-1.mp3",
+  "pitch": 0.95,
+  "trim_start": 0.0,
+  "trim": 0.8,
+  "reverse": false,
+  "layer": "click-soft",
+  "seq": null,
+  "layer_gain": -4
+ },
+ "whip-cta": {
+  "file": "whip-cta.wav",
+  "from": "whoosh.mp3",
+  "pitch": 1.1,
+  "trim_start": 0.0,
+  "trim": 0.0,
+  "reverse": true,
+  "layer": null,
+  "seq": null
+ },
+ "x-negato": {
+  "file": "x-negato.wav",
+  "from": "error.mp3",
+  "pitch": 1.0,
+  "trim_start": 0.0,
+  "trim": 0.9,
+  "reverse": false,
+  "layer": null,
+  "seq": null
+ }
+}

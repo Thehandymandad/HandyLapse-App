@@ -44,7 +44,9 @@ suo tempo, il suo suono e il suo oggetto.
   metà bassa. Il viso non si copre: guarda dove sta nei fotogrammi e metti le grafiche nello spazio libero.
 - **Oggetti 3D solo dove servono**: cose concrete nominate o metafore fisiche forti. Per ognuno scrivi il prompt per
   Nano Banana Pro (Google Flow): `render 3D iper-realistico di <oggetto>, <materiale e luce>, su fondo bianco, nient'altro nel frame`.
-  Prima controlla se esiste già in `editor/assets/objects/` (la libreria cresce video dopo video).
+  Prima controlla se esiste già in `editor/assets/objects/` (la libreria cresce video dopo video). In alternativa
+  (o se l'utente lo chiede) l'oggetto si costruisce in **three.js** dentro HyperFrames: `{"id": …, "engine": "three.js"}`,
+  forme semplici e riconoscibili (ciak, cubo, libro, moneta…) con materiali lucidi e ombra di contatto.
 
 ## Libertà
 

@@ -59,5 +59,5 @@ i testi (piani, HTML, review); i video no.
 ## Installazione
 
 `bash editor/setup.sh` — servono ffmpeg, Node.js 22+, Python 3 e git. Scarica ed esegue codice di terze parti
-(video-use da GitHub, HyperFrames da npm). La chiave ElevenLabs va in `ELEVENLABS_API_KEY` (in questo cloud la aggiunge
-il proxy di rete).
+(video-use da GitHub, HyperFrames da npm). La chiave ElevenLabs va in `ELEVENLABS_API_KEY`. In questo cloud la chiave vera la mette il proxy di rete
+(secret dell'ambiente): basta `export ELEVENLABS_API_KEY=proxy`, il proxy sostituisce il valore.

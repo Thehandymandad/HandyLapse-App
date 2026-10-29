@@ -18,7 +18,7 @@ mkdir -p "$SKILLS"
 for bin in ffmpeg ffprobe node npx python3 git; do
   command -v "$bin" >/dev/null || { echo "Manca $bin: installalo prima di continuare." >&2; exit 1; }
 done
-node -e 'process.exit(+process.versions.node.split(".")[0] < 22)' || { echo "HyperFrames richiede Node.js 22+." >&2; exit 1; }
+node -e 'process.exit(Number(process.versions.node.split(".")[0]) < 22 ? 1 : 0)' || { echo "HyperFrames richiede Node.js 22+." >&2; exit 1; }
 
 # 1. Video Use: la cartella intera dentro .claude/skills (SKILL.md e helpers/ devono stare insieme)
 if [ ! -f "$VIDEO_USE/SKILL.md" ]; then
@@ -34,9 +34,12 @@ if [ ! -f "$VIDEO_USE/.deps-ok" ]; then
 fi
 
 # 2. HyperFrames: skill core (/hyperframes, /hyperframes-cli, /hyperframes-registry, /media-use) nel progetto
-if [ ! -f "$SKILLS/hyperframes/SKILL.md" ]; then
+# (l'installer di HyperFrames le mette in ~/.claude/skills, globali per l'utente)
+if [ ! -f "$SKILLS/hyperframes/SKILL.md" ] && [ ! -f "$HOME/.claude/skills/hyperframes/SKILL.md" ]; then
   (cd "$ROOT" && npx --yes "hyperframes@$HYPERFRAMES_VERSION" skills update)
 fi
 
-echo "Editor pronto: skill in $SKILLS"
+echo "Editor pronto. Skill del progetto ($SKILLS):"
 ls "$SKILLS"
+echo "Skill globali (~/.claude/skills):"
+ls "$HOME/.claude/skills" 2>/dev/null || true
