@@ -1,324 +1,158 @@
 {
  "aereo-parte": {
   "file": "aereo-parte.wav",
-  "from": "whoosh.mp3",
-  "pitch": 0.85,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "paper airplane launched, light airy swoosh flying away, clean UI sound",
+  "duration": 0.68
  },
  "aereo-torna": {
   "file": "aereo-torna.wav",
-  "from": "whoosh.mp3",
-  "pitch": 1.25,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": true,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "paper airplane swooshing back in quickly, short airy whoosh",
+  "duration": 0.5
  },
  "barra-carica": {
   "file": "barra-carica.wav",
-  "synth": "riser",
-  "duration": 1.2,
-  "f0": 180.0,
-  "f1": 804.0
+  "prompt": "UI loading bar charging up to full, smooth rising digital synth riser, clean and modern, builds tension and stops at the peak",
+  "duration": 1.2
  },
  "barra-rossa": {
   "file": "barra-rossa.wav",
-  "from": "glitch-2.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.45,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "short digital error glitch, red warning bar, buzzy glitch stutter",
+  "duration": 0.5
  },
  "bolla-1": {
   "file": "bolla-1.wav",
-  "from": "pop.mp3",
-  "pitch": 0.9,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "chat message bubble pops in, soft bubbly pop, friendly UI sound",
+  "duration": 0.8
  },
  "bolla-2": {
   "file": "bolla-2.wav",
-  "from": "pop.mp3",
-  "pitch": 1.05,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "second chat bubble appears, soft pop slightly higher pitch, friendly UI",
+  "duration": 0.69
  },
  "bolla-3": {
   "file": "bolla-3.wav",
-  "from": "pop.mp3",
-  "pitch": 1.2,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "chat bubble pop, quick and bright, higher pitch, UI notification",
+  "duration": 0.6
  },
  "bolla-4": {
   "file": "bolla-4.wav",
-  "from": "pop.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "click-soft",
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "chat bubble pop, rounder and lower pitch, soft UI",
+  "duration": 0.9
  },
  "bottone-entra": {
   "file": "bottone-entra.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.1,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "3D button slides into view, short quick whoosh",
+  "duration": 0.52
  },
  "camera-3d": {
   "file": "camera-3d.wav",
-  "from": "pop.mp3",
-  "pitch": 0.7,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "playful pop as a glossy 3D icon appears, bouncy UI pop",
+  "duration": 1.03
  },
  "chat-entra": {
   "file": "chat-entra.wav",
-  "from": "pop.mp3",
-  "pitch": 0.75,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -10.0,
-  "seq": null
+  "prompt": "chat window pops open, soft rounded UI pop",
+  "duration": 0.96
  },
  "chat-entra-2": {
   "file": "chat-entra-2.wav",
-  "from": "pop.mp3",
-  "pitch": 0.7,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "messaging app window opens, soft pop with gentle whoosh",
+  "duration": 1.03
  },
  "check-1": {
   "file": "check-1.wav",
-  "from": "click.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "crisp checkbox tick, short clean UI click",
+  "duration": 0.5
  },
  "check-2": {
   "file": "check-2.wav",
-  "from": "click.mp3",
-  "pitch": 1.12,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "checkbox ticked, crisp click slightly higher, UI",
+  "duration": 0.5
  },
  "check-3": {
   "file": "check-3.wav",
-  "from": "click.mp3",
-  "pitch": 1.26,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "checkbox ticked, crisp bright click, UI",
+  "duration": 0.5
  },
  "check-completo": {
   "file": "check-completo.wav",
-  "from": "chime.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.4,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "task completed, bright positive success chime, modern UI",
+  "duration": 1.4
  },
  "ciak-chiusura": {
   "file": "ciak-chiusura.wav",
-  "from": "click.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "impact-bass-1",
-  "seq": null,
-  "layer_gain": -8
+  "prompt": "film clapperboard snapping shut, sharp wooden clap",
+  "duration": 2.12
  },
  "ciak-entra": {
   "file": "ciak-entra.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 0.9,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "quick whoosh as a clapperboard flies into frame",
+  "duration": 0.64
  },
  "collega-2": {
   "file": "collega-2.wav",
-  "from": "ping.mp3",
-  "pitch": 0.9,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "digital connection established, bright short ping",
+  "duration": 0.9
  },
  "collega-ping": {
   "file": "collega-ping.wav",
-  "from": "ping.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "two icons linked together, clean bright digital ping",
+  "duration": 0.9
  },
  "collegamento": {
   "file": "collegamento.wav",
-  "from": "riser.mp3",
-  "pitch": 1.0,
-  "trim_start": 2.0,
-  "trim": 2.3,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "rising digital whoosh as a glowing line connects two icons, ends with a soft lock in",
+  "duration": 2.3
  },
  "colonna-misura": {
   "file": "colonna-misura.wav",
-  "from": "ping.mp3",
-  "pitch": 1.3,
-  "trim_start": 0.0,
-  "trim": 0.6,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "spreadsheet column highlighted, short soft digital blip",
+  "duration": 0.6
  },
  "commenti-apre": {
   "file": "commenti-apre.wav",
-  "from": "pop.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "comment section opens, soft UI pop",
+  "duration": 0.9
  },
  "cosi-scintilla": {
   "file": "cosi-scintilla.wav",
-  "from": "sparkle.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "magical sparkle shimmer reveal, bright glittering",
+  "duration": 1.8
  },
  "cubo-atterra": {
   "file": "cubo-atterra.wav",
-  "from": "impact-bass-1.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.2,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "heavy 3D cube lands on the floor, deep thud impact",
+  "duration": 1.2
  },
  "cubo-cade": {
   "file": "cubo-cade.wav",
-  "from": "whoosh.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "object falling fast through the air, downward whoosh",
+  "duration": 0.72
  },
  "cursore-scivola": {
   "file": "cursore-scivola.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.3,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "mouse cursor gliding across the screen, tiny soft swipe",
+  "duration": 0.5
  },
  "digita-guida": {
   "file": "digita-guida.wav",
-  "from": "typing.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.45,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "short burst of keyboard typing, a few quick keystrokes",
+  "duration": 0.5
  },
  "digita-messaggio": {
   "file": "digita-messaggio.wav",
-  "from": "typing.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.5,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": "0,1.45"
+  "prompt": "typing a message on a smartphone keyboard, soft taps, continuous",
+  "duration": 2.95
  },
  "digita-nuovo": {
   "file": "digita-nuovo.wav",
-  "from": "typing.mp3",
-  "pitch": 1.05,
-  "trim_start": 0.0,
-  "trim": 1.3,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "typing on a smartphone keyboard, soft quick taps",
+  "duration": 1.3
  },
  "ding-100": {
   "file": "ding-100.wav",
-  "synth": "ding",
-  "duration": 0.9,
-  "f0": 180.0,
-  "f1": 804.0
+  "prompt": "bright clean completion ding, progress reaches one hundred percent, modern bell",
+  "duration": 0.9
  },
  "esplosione-card": {
   "file": "esplosione-card.wav",
@@ -332,162 +166,78 @@
  },
  "evidenzia-pezzi": {
   "file": "evidenzia-pezzi.wav",
-  "from": "click.mp3",
-  "pitch": 1.5,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "UI highlight marker, quick soft click with a tiny swipe",
+  "duration": 0.5
  },
  "evidenzia-scaffale": {
   "file": "evidenzia-scaffale.wav",
-  "from": "click.mp3",
-  "pitch": 1.75,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "row highlighted in an app, short soft click",
+  "duration": 0.5
  },
  "file-entra": {
   "file": "file-entra.wav",
-  "from": "click-soft.mp3",
-  "pitch": 0.9,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "seq": null,
-  "layer_gain": -12
+  "prompt": "file icon drops into place, soft muted click",
+  "duration": 0.57
  },
  "flip-1": {
   "file": "flip-1.wav",
-  "from": "key-press.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "card flipping over quickly, short paper flip",
+  "duration": 0.5
  },
  "flip-2": {
   "file": "flip-2.wav",
-  "from": "key-press.mp3",
-  "pitch": 1.2,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "card flip, quick paper flick, slightly higher",
+  "duration": 0.5
  },
  "flip-3": {
   "file": "flip-3.wav",
-  "from": "key-press.mp3",
-  "pitch": 1.45,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "card flip, crisp quick flick",
+  "duration": 0.5
  },
  "foglio-entra": {
   "file": "foglio-entra.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.15,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "click-soft",
-  "layer_gain": -8.0,
-  "seq": null
+  "prompt": "spreadsheet window slides in, quick smooth whoosh",
+  "duration": 0.5
  },
  "foglio-entra-2": {
   "file": "foglio-entra-2.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.05,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "click-soft",
-  "layer_gain": -8.0,
-  "seq": null
+  "prompt": "app window slides into view, short whoosh",
+  "duration": 0.55
  },
  "gratis-timbro": {
   "file": "gratis-timbro.wav",
-  "from": "impact-bass-1.mp3",
-  "pitch": 1.35,
-  "trim_start": 0.0,
-  "trim": 0.7,
-  "reverse": false,
-  "layer": "click",
-  "seq": null,
-  "layer_gain": -6
+  "prompt": "rubber stamp slammed on paper, punchy thump",
+  "duration": 0.7
  },
  "insieme-ping": {
   "file": "insieme-ping.wav",
-  "from": "ping.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "two elements join together, harmonious bright ping",
+  "duration": 1.32
  },
  "inviato": {
   "file": "inviato.wav",
-  "from": "notification.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "message sent, quick swoosh followed by a soft confirmation ding",
+  "duration": 1.0
  },
  "invio-messaggio": {
   "file": "invio-messaggio.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.4,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "chat message sent, short quick swoosh",
+  "duration": 0.5
  },
  "invio-nuovo": {
   "file": "invio-nuovo.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 1.55,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "message sent, very short swoosh",
+  "duration": 0.5
  },
  "libro-atterra": {
   "file": "libro-atterra.wav",
-  "from": "impact-bass-2.mp3",
-  "pitch": 1.2,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "hardcover book lands on a table, solid thud",
+  "duration": 0.9
  },
  "lucchetto": {
   "file": "lucchetto.wav",
-  "from": "click-soft.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "small padlock clicks shut",
+  "duration": 0.5
  },
  "orologio": {
   "file": "orologio.wav",
