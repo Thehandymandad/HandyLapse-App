@@ -320,6 +320,16 @@
   "f0": 180.0,
   "f1": 804.0
  },
+ "esplosione-card": {
+  "file": "esplosione-card.wav",
+  "prompt": "close punchy explosion of a small panel shattering into plastic pieces, deep bass thump, crackling breaking debris, cinematic sound design, no glass, no music",
+  "duration": 2.0
+ },
+ "esplosione-carica": {
+  "file": "esplosione-carica.wav",
+  "prompt": "short cinematic tension build-up, reverse suction whoosh rising fast and cutting off abruptly, UI sound design",
+  "duration": 0.7
+ },
  "evidenzia-pezzi": {
   "file": "evidenzia-pezzi.wav",
   "from": "click.mp3",
@@ -489,6 +499,11 @@
   "layer": null,
   "layer_gain": -6.0,
   "seq": "0,0.22,0.44,0.66"
+ },
+ "pezzi-volano": {
+  "file": "pezzi-volano.wav",
+  "prompt": "several broken debris pieces flying fast past the camera, short airy whooshes, cinematic",
+  "duration": 1.2
  },
  "pila-crollo": {
   "file": "pila-crollo.wav",
