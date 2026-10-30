@@ -74,15 +74,6 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    (`editor/assets/models/rvm_mobilenetv3_fp32.onnx`, da scaricare dalle release di GitHub se manca), colori dei
    capelli ripuliti, luce dello sfondo avvicinata al girato, leggero light wrap; l'originale resta in `base_wall.mp4`,
    lo scontorno in `matte.mp4`. ~1 fotogramma al secondo in questo cloud: va lanciato in background. Prima di speed.py.
-2a-bis. **Color da una referenza** (se l'utente manda uno screen di un video con una color che gli piace):
-   `python $S/color_match.py --edit $E --ref <screen.png> --crop x,y,w,h` (il crop toglie l'interfaccia dell'app;
-   prima `--stills 3,12,30` per la prova in `review/color/`). Persona e sfondo separati con lo scontorno (`matte.mp4`, o
-   RVM veloce se manca): temperatura della luce dalla referenza, luce della pelle verso quella della referenza (la
-   tinta della pelle no: è della persona), sfondo scurito fino al rapporto sfondo/viso della referenza (`--relight`,
-   stop massimi) con la tinta della referenza alla stessa luminosità, alone di luce dietro la testa e corpo in ombra
-   (`--light`). Due LUT 3D applicate da ffmpeg: niente sfarfallio. Copia la color e l'atmosfera, non la direzione
-   della luce: si dice così all'utente. Rende di più quando la stanza ha già luci (es. dopo background.py). L'originale
-   resta in `base_nocolor.mp4`. Dopo background.py, prima di speed.py.
 2b. **Ritmo** (se l'utente lo vuole più veloce): `python $S/speed.py $E --factor 1.1` → `base.mp4` accelerato senza
    cambiare il tono della voce, parole e piano riallineati (gli originali restano in `*_1x.*`: per cambiare il piano
    dopo, si modifica `motion-plan_1x.json` e si rilancia `speed.py`). 1,1x è "un po' più veloce".
