@@ -11,8 +11,9 @@
  },
  "barra-carica": {
   "file": "barra-carica.wav",
-  "prompt": "UI loading bar charging up to full, smooth rising digital synth riser, clean and modern, builds tension and stops at the peak",
-  "duration": 1.2
+  "prompt": "progress bar loading sound: a smooth synth tone whose pitch rises steadily from low to high over the whole duration, getting slightly louder, clean digital UI riser, starts quiet and ends at the top",
+  "duration": 1.2,
+  "post": "atrim 0.92 s, atempo 0.78, fade-in 0.15 s"
  },
  "barra-rossa": {
   "file": "barra-rossa.wav",
@@ -241,14 +242,8 @@
  },
  "orologio": {
   "file": "orologio.wav",
-  "from": "key-press.mp3",
-  "pitch": 1.9,
-  "trim_start": 0.0,
-  "trim": 0.1,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": "0,0.22,0.44,0.66"
+  "prompt": "clock ticking fast, sped up ticks",
+  "duration": 0.76
  },
  "pezzi-volano": {
   "file": "pezzi-volano.wav",
@@ -257,344 +252,162 @@
  },
  "pila-crollo": {
   "file": "pila-crollo.wav",
-  "from": "glitch-3.mp3",
-  "pitch": 0.7,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "stack of objects collapsing and tumbling down, short crash",
+  "duration": 0.9
  },
  "pila-tonfi": {
   "file": "pila-tonfi.wav",
-  "from": "key-press.mp3",
-  "pitch": 0.55,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "impact-bass-2",
-  "seq": "0,0.13,0.26,0.39,0.52,0.65,0.78",
-  "layer_gain": -10
+  "prompt": "several objects falling one after another onto a pile, a sequence of soft thuds",
+  "duration": 2.59
  },
  "pubblica": {
   "file": "pubblica.wav",
-  "from": "click-soft.mp3",
-  "pitch": 1.3,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "publish button pressed, short soft click",
+  "duration": 0.5
  },
  "quantita-sale": {
   "file": "quantita-sale.wav",
-  "from": "ping.mp3",
-  "pitch": 1.5,
-  "trim_start": 0.0,
-  "trim": 0.6,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": "0,0.08,0.16"
+  "prompt": "number counter rising quickly, fast ascending digital blips",
+  "duration": 0.76
  },
  "rec-pop": {
   "file": "rec-pop.wav",
-  "from": "pop.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "recording indicator appears, short pop with a tiny beep",
+  "duration": 0.72
  },
  "riga-aggiunta": {
   "file": "riga-aggiunta.wav",
-  "from": "chime.mp3",
-  "pitch": 1.2,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "new row added to a spreadsheet, soft positive chime",
+  "duration": 0.9
  },
  "righe-scorrono": {
   "file": "righe-scorrono.wav",
-  "from": "key-press.mp3",
-  "pitch": 1.5,
-  "trim_start": 0.0,
-  "trim": 0.08,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": "0.000,0.055,0.110,0.165,0.220,0.275,0.330,0.385,0.440,0.495,0.550,0.605,0.660,0.715,0.770,0.825,0.880,0.935,0.990,1.045"
+  "prompt": "rows scrolling fast in an app, rapid soft ticking scroll",
+  "duration": 1.12
  },
  "risposta-dm": {
   "file": "risposta-dm.wav",
-  "from": "notification.mp3",
-  "pitch": 1.06,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "incoming direct message notification, friendly two-note chime",
+  "duration": 2.32
  },
  "risposta-messaggio": {
   "file": "risposta-messaggio.wav",
-  "from": "notification.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.0,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "incoming chat reply notification, soft chime",
+  "duration": 1.0
  },
  "scatto": {
   "file": "scatto.wav",
-  "from": "click.mp3",
-  "pitch": 0.7,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "glitch-1",
-  "layer_gain": -10.0,
-  "seq": null
+  "prompt": "camera shutter click",
+  "duration": 2.64
  },
  "scheda-entra": {
   "file": "scheda-entra.wav",
-  "from": "click-soft.mp3",
-  "pitch": 1.15,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -10.0,
-  "seq": null
+  "prompt": "UI card appears, soft whoosh pop",
+  "duration": 0.57
  },
  "scheda-entra-2": {
   "file": "scheda-entra-2.wav",
-  "from": "click-soft.mp3",
-  "pitch": 1.25,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -10.0,
-  "seq": null
+  "prompt": "UI card slides in, soft whoosh pop slightly higher",
+  "duration": 0.57
  },
  "scheda-entra-3": {
   "file": "scheda-entra-3.wav",
-  "from": "click-soft.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -10.0,
-  "seq": null
+  "prompt": "info card pops into view, soft rounded whoosh",
+  "duration": 0.57
  },
  "spunta-facile": {
   "file": "spunta-facile.wav",
-  "from": "ping.mp3",
-  "pitch": 1.2,
-  "trim_start": 0.0,
-  "trim": 0.8,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "easy checkmark, light bright ping",
+  "duration": 0.8
  },
  "squillo": {
   "file": "squillo.wav",
-  "from": "notification.mp3",
-  "pitch": 0.85,
-  "trim_start": 0.0,
-  "trim": 1.2,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "smartphone ringing, short modern ringtone",
+  "duration": 1.2
  },
  "tag-claude": {
   "file": "tag-claude.wav",
-  "from": "pop.mp3",
-  "pitch": 1.3,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "small label tag pops in, light pop",
+  "duration": 0.55
  },
  "tasto-rec": {
   "file": "tasto-rec.wav",
-  "from": "key-press.mp3",
-  "pitch": 0.7,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "click-soft",
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "pressing a record button, click with short beep",
+  "duration": 0.57
  },
  "telefono-entra": {
   "file": "telefono-entra.wav",
-  "from": "whoosh-short.mp3",
-  "pitch": 0.75,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "smartphone slides into frame, smooth whoosh",
+  "duration": 0.77
  },
  "tempo-recuperato": {
   "file": "tempo-recuperato.wav",
-  "from": "chime.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 1.2,
-  "reverse": false,
-  "layer": null,
-  "layer_gain": -6.0,
-  "seq": null
+  "prompt": "positive success chime, time saved, uplifting",
+  "duration": 1.2
  },
  "tessera-3d": {
   "file": "tessera-3d.wav",
-  "from": "pop.mp3",
-  "pitch": 0.85,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile spins in and pops, bouncy UI",
+  "duration": 0.85
  },
  "tessera-chiunque": {
   "file": "tessera-chiunque.wav",
-  "from": "pop.mp3",
-  "pitch": 0.78,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile pops in, bouncy, mid pitch",
+  "duration": 0.92
  },
  "tessera-commerciale": {
   "file": "tessera-commerciale.wav",
-  "from": "pop.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile pops in, bouncy, bright",
+  "duration": 0.72
  },
  "tessera-excel": {
   "file": "tessera-excel.wav",
-  "from": "pop.mp3",
-  "pitch": 0.8,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile spins in and pops, bouncy, low pitch",
+  "duration": 0.9
  },
  "tessera-magazzino": {
   "file": "tessera-magazzino.wav",
-  "from": "pop.mp3",
-  "pitch": 0.85,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile pops in, bouncy, warm",
+  "duration": 0.85
  },
  "tessera-telefono": {
   "file": "tessera-telefono.wav",
-  "from": "pop.mp3",
-  "pitch": 1.15,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile pops in, bouncy, high pitch",
+  "duration": 0.63
  },
  "tessera-telefono-chiama": {
   "file": "tessera-telefono-chiama.wav",
-  "from": "pop.mp3",
-  "pitch": 0.9,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile pops in with a tiny ring",
+  "duration": 0.8
  },
  "tessera-whatsapp": {
   "file": "tessera-whatsapp.wav",
-  "from": "pop.mp3",
-  "pitch": 0.95,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": false,
-  "layer": "whoosh-short",
-  "layer_gain": -12.0,
-  "seq": null
+  "prompt": "glossy 3D tile spins in and pops, bouncy, bright",
+  "duration": 0.76
  },
  "tessere-appaiono": {
   "file": "tessere-appaiono.wav",
-  "from": "glitch-3.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.6,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "tiles appear with a short digital glitch shimmer",
+  "duration": 0.6
  },
  "timbro-1": {
   "file": "timbro-1.wav",
-  "from": "impact-bass-1.mp3",
-  "pitch": 1.15,
-  "trim_start": 0.0,
-  "trim": 0.8,
-  "reverse": false,
-  "layer": "click-soft",
-  "seq": null,
-  "layer_gain": -4
+  "prompt": "rubber stamp slammed on paper, punchy thump",
+  "duration": 0.8
  },
  "timbro-2": {
   "file": "timbro-2.wav",
-  "from": "impact-bass-1.mp3",
-  "pitch": 0.95,
-  "trim_start": 0.0,
-  "trim": 0.8,
-  "reverse": false,
-  "layer": "click-soft",
-  "seq": null,
-  "layer_gain": -4
+  "prompt": "rubber stamp slammed on a desk, heavy punchy thump",
+  "duration": 0.8
  },
  "whip-cta": {
   "file": "whip-cta.wav",
-  "from": "whoosh.mp3",
-  "pitch": 1.1,
-  "trim_start": 0.0,
-  "trim": 0.0,
-  "reverse": true,
-  "layer": null,
-  "seq": null
+  "prompt": "fast whip pan whoosh",
+  "duration": 0.52
  },
  "x-negato": {
   "file": "x-negato.wav",
-  "from": "error.mp3",
-  "pitch": 1.0,
-  "trim_start": 0.0,
-  "trim": 0.9,
-  "reverse": false,
-  "layer": null,
-  "seq": null
+  "prompt": "error, access denied, short negative buzz",
+  "duration": 0.9
  }
 }
