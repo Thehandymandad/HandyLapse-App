@@ -64,11 +64,11 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
 `R=editor/remotion`, `S=.claude/skills/motion-hyperframes/scripts`, `E=editor/videos/<nome>/edit`.
 
 1. **Tempi**: `python $S/timeline.py $E` → `words_out.json`.
-2. **Effetti sonori** (scelta dell'utente: tutti da ElevenLabs): `python $S/sfx_library.py missing $E`, poi per ognuno
-   che manca `sfx_library.py generate <nome> "<suono concreto in inglese>" --duration <s>` (un prompt per evento, ≥ 0,5 s;
-   consuma crediti ElevenLabs; la chiave deve avere il permesso Sound Effects). Ripiego gratis solo se ElevenLabs non
-   risponde: varianti dei suoni di media-use (`variant`) o sintesi locale (`synth`). I WAV non vanno nel repo: il
-   catalogo tiene i prompt, `sfx_library.py rebuild` ricrea solo varianti e sintesi.
+2. **Effetti sonori**: `python $S/sfx_library.py missing $E`. Quelli che mancano, gratis: varianti dei 21 suoni di
+   media-use (`sfx_library.py variant <nome> --from <suono> --pitch/--trim/--reverse/--layer/--seq`) o sintetizzati in
+   locale (`sfx_library.py synth <nome> --kind riser|ding --duration <s>`: le ricette del primo editor, barra che si carica e 100%).
+   Effetti e musica si fanno solo così, in locale con ffmpeg/numpy: ElevenLabs si usa solo per le trascrizioni (scelta
+   dell'utente; `sfx_library.py generate` resta ma non si usa). I WAV non vanno nel repo: `sfx_library.py rebuild`.
 2a. **Sfondo nuovo** (se l'utente vuole un'altra stanza dietro di sé): un'immagine verticale della stanza vuota (generata
    con Higgsfield `generate_image`, modello `gpt_image_2_5`, 9:16, ~0,25 crediti: si chiede o si dice il costo), poi
    `python $S/background.py --edit $E --image <stanza.png>`: scontorno video stabile con RobustVideoMatting
@@ -79,10 +79,9 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    cambiare il tono della voce, parole e piano riallineati (gli originali restano in `*_1x.*`: per cambiare il piano
    dopo, si modifica `motion-plan_1x.json` e si rilancia `speed.py`). 1,1x è "un po' più veloce".
 2c. **Musica di sottofondo** (di default, a meno che l'utente non la voglia aggiungere su Instagram): un brano
-   strumentale di ElevenLabs Music (scelta dell'utente): `python $S/music.py -o editor/assets/music/<nome>.wav
-   --duration <durata finale> --end <fine del parlato> [--prompt "..."]` (elettronica tech allegra di default; sfuma
-   dopo l'ultima parola; serve un piano ElevenLabs a pagamento, altrimenti risponde 402 e si usa `--local`, il brano
-   composto qui, gratis), poi nel piano `"music": {"file": "editor/assets/music/<nome>.wav", "gap": 9}`: `compose.py` la mette 9 dB
+   originale composto in locale, gratis e senza licenze: `python $S/music.py -o editor/assets/music/<nome>.wav
+   --duration <durata finale> --bpm 120 --end <fine del parlato>` (elettronica tech allegra; si ferma dopo l'ultima
+   parola), poi nel piano `"music": {"file": "editor/assets/music/<nome>.wav", "gap": 9}`: `compose.py` la mette 9 dB
    sotto la voce e la abbassa da sola quando parli (sidechain), circa 15 dB sotto durante il parlato.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",
    "text"}`; i tempi nelle props — chiavi in `At`, `reveal`, `items[].at` — sono secondi assoluti).

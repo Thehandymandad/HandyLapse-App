@@ -1,14 +1,7 @@
-"""Musica di sottofondo originale per i reel. Di default la genera ElevenLabs Music (strumentale, su descrizione);
-con --local la compone e sintetizza qui (gratis, niente licenze, niente download).
+"""Musica di sottofondo originale, composta e sintetizzata in locale (gratis, niente licenze, niente download).
 
-    python music.py -o editor/assets/music/<nome>.wav --duration 30.2 --end 28.7 [--prompt "..."]   # ElevenLabs
-    python music.py -o editor/assets/music/tech-pulse.wav --duration 30.2 [--bpm 120] [--end 28.7] --local
+    python music.py -o editor/assets/music/tech-pulse.wav --duration 30.2 [--bpm 120] [--end 28.7] [--seed 3]
 
-ElevenLabs: stessa chiave degli effetti (ELEVENLABS_API_KEY, in questo cloud la aggiunge il proxy; serve il permesso
-"Music" sulla chiave) e consuma crediti. Il brano dura --duration; da --end (fine del parlato) sfuma in 1,5 s.
-Il prompt di default è quello della casa (elettronica tech allegra, 120 BPM); per un reel con un altro tono si cambia.
-
-Versione locale:
 Stile "tech pulse": elettronica allegra e pulita per reel di tecnologia/AI. Giro di accordi la–fa–do–sol (vi–IV–I–V),
 pad di seghe leggermente stonate con pompa a tempo di cassa, arpeggio pluck a sedicesimi con eco, basso sub, cassa in
 quattro, clap su 2 e 4, charleston in levare. Prima battuta solo pad e arpeggio (filtro che si apre), poi entra la
@@ -60,40 +53,6 @@ def add(buf: np.ndarray, x: np.ndarray, at: int) -> None:
     buf[at:at + n] += x[:n]
 
 
-HOUSE_PROMPT = (
-    "Upbeat modern electronic tech background music for a short social media video about AI and automation, "
-    "120 BPM, clean punchy kick, bright plucky synth arpeggio, warm pads, light claps, positive and energetic, "
-    "steady groove from start to finish, instrumental, no vocals"
-)
-
-
-def eleven(a) -> None:
-    """Brano strumentale da ElevenLabs Music, lungo --duration, sfumato da --end."""
-    import json
-    import os
-    import subprocess
-    import urllib.request
-
-    ms = int(max(10.0, a.duration + 1.0) * 1000)
-    body = json.dumps({"prompt": a.prompt, "music_length_ms": ms, "model_id": "music_v1", "force_instrumental": True}).encode()
-    headers = {"Content-Type": "application/json", "Accept": "audio/mpeg"}
-    if os.environ.get("ELEVENLABS_API_KEY"):
-        headers["xi-api-key"] = os.environ["ELEVENLABS_API_KEY"]
-    req = urllib.request.Request("https://api.elevenlabs.io/v1/music", data=body, headers=headers, method="POST")
-    with urllib.request.urlopen(req, timeout=600) as r:
-        mp3 = r.read()
-    out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    tmp = out.with_suffix(".mp3")
-    tmp.write_bytes(mp3)
-    end = a.end if a.end else a.duration
-    fade = f"afade=t=out:st={max(0.0, end):.3f}:d=1.5," if end < a.duration else f"afade=t=out:st={a.duration - 1.0:.3f}:d=1.0,"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(tmp), "-af", f"atrim=0:{a.duration:.3f},{fade}afade=t=in:d=0.03",
-                    "-ar", "48000", "-ac", "2", str(out)], check=True)
-    tmp.unlink()
-    print(f"{out}: {a.duration:.2f} s da ElevenLabs Music, sfuma da {end:.2f} s")
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("-o", "--out", required=True)
@@ -101,12 +60,7 @@ def main() -> None:
     ap.add_argument("--bpm", type=float, default=120)
     ap.add_argument("--end", type=float, help="secondi: da qui la ritmica si ferma e l'ultimo accordo sfuma")
     ap.add_argument("--seed", type=int, default=3)
-    ap.add_argument("--local", action="store_true", help="composta qui invece che da ElevenLabs (gratis)")
-    ap.add_argument("--prompt", default=HOUSE_PROMPT, help="descrizione del brano per ElevenLabs")
     a = ap.parse_args()
-    if not a.local:
-        eleven(a)
-        return
     rng = np.random.default_rng(a.seed)
     N = int(a.duration * SR)
     beat = 60 / a.bpm
