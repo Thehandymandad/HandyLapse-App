@@ -36,7 +36,8 @@ for (let frame = 0; frame < tl.durationInFrames; frame++) {
   let gray = 0;
   for (const g of tl.graphics) {
     const f = frame - g.from;
-    if (g.type === "nope" && f >= 0 && f < g.frames) gray = Math.max(gray, interpolate(f, [0, 3, g.frames - 5, g.frames], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+    // girato in bianco e nero: il timbro "nope", o qualsiasi grafica con props.grayFootage (stile zane: B/N + accento)
+    if ((g.type === "nope" || g.props?.grayFootage) && f >= 0 && f < g.frames) gray = Math.max(gray, interpolate(f, [0, 3, g.frames - 5, g.frames], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
   }
   frames.push({
     gray: r(gray, 3),

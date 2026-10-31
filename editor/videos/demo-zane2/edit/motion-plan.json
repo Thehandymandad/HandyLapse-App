@@ -1,0 +1,440 @@
+{
+ "video": "demo-zane2",
+ "style": "zane",
+ "frame": null,
+ "duration": 25.85,
+ "hold": 0,
+ "captions": {
+  "emphasis": [
+   19,
+   24,
+   29,
+   87,
+   90
+  ]
+ },
+ "camera": [
+  {
+   "t": 5.2,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 21.38,
+   "op": "punch",
+   "strength": 0.8
+  },
+  {
+   "t": 25.5,
+   "op": "punch",
+   "strength": 0.6
+  }
+ ],
+ "scenes": [
+  {
+   "id": "p1",
+   "start": 0.03,
+   "end": 3.1,
+   "line": "In due secondi ti arriva la risposta: quanti pezzi hai e dove sono",
+   "graphic": {
+    "type": "phoneclip",
+    "y": 0.53,
+    "props": {
+     "clip": [
+      3.3,
+      6.4
+     ],
+     "bg": "blur",
+     "title": "• LIVE *risposte*",
+     "notifications": [
+      {
+       "at": 1.04,
+       "title": "Risposta arrivata",
+       "sub": "Lastre 3 mm trasparenti"
+      },
+      {
+       "at": 1.99,
+       "title": "34 pezzi",
+       "sub": "Scaffale B2 · magazzino"
+      },
+      {
+       "at": 2.6,
+       "title": "Excel letto",
+       "sub": "Inventario aggiornato alle 09:41"
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 0.05,
+     "name": "telefono-entra"
+    },
+    {
+     "t": 1.04,
+     "name": "risposta-messaggio"
+    },
+    {
+     "t": 1.99,
+     "name": "bolla-2"
+    },
+    {
+     "t": 2.6,
+     "name": "bolla-3"
+    }
+   ]
+  },
+  {
+   "id": "t1",
+   "start": 3.1,
+   "end": 5.64,
+   "line": "Si collega l'Excel che usi già a WhatsApp",
+   "graphic": {
+    "type": "toggles",
+    "y": 0.66,
+    "props": {
+     "title": "Automazione",
+     "icon": "A",
+     "items": [
+      {
+       "label": "Collega Excel",
+       "at": 4.07
+      },
+      {
+       "label": "Collega WhatsApp",
+       "at": 5.2
+      },
+      {
+       "label": "Risposte automatiche",
+       "at": 5.35
+      }
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 3.12,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 4.07,
+     "name": "check-1"
+    },
+    {
+     "t": 5.2,
+     "name": "check-2"
+    },
+    {
+     "t": 5.35,
+     "name": "check-3"
+    }
+   ]
+  },
+  {
+   "id": "w1",
+   "start": 5.64,
+   "end": 7.67,
+   "line": "niente programmi nuovi, niente gestionali",
+   "graphic": {
+    "type": "scribble",
+    "x": 0.3,
+    "y": 0.45,
+    "props": {
+     "text": "ZERO\nPROGRAMMI",
+     "arrow": "up",
+     "angle": -10,
+     "writeAt": 5.95,
+     "grayFootage": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 5.66,
+     "name": "cursore-scivola"
+    },
+    {
+     "t": 5.95,
+     "name": "evidenzia-pezzi"
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "start": 7.67,
+   "end": 12.06,
+   "line": "Arriva un pezzo nuovo, lo scrivi in chat: nome, misura, quantità",
+   "graphic": {
+    "type": "cards3d",
+    "y": 0.41,
+    "props": {
+     "bg": "blur",
+     "gray": true,
+     "pill": "NUOVO PEZZO",
+     "cards": [
+      {
+       "clip": [
+        16.7,
+        18.6
+       ],
+       "at": 9.01,
+       "label": "B-ROLL 01 · CHAT"
+      },
+      {
+       "clip": [
+        19.6,
+        21.4
+       ],
+       "at": 10.14,
+       "label": "B-ROLL 02 · MISURA"
+      },
+      {
+       "clip": [
+        21.8,
+        23.6
+       ],
+       "at": 10.89,
+       "label": "B-ROLL 03 · EXCEL"
+      }
+     ],
+     "title": "Nome, misura,\n*quantità*",
+     "titleAt": 10.95
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.01,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 10.14,
+     "name": "foglio-entra"
+    },
+    {
+     "t": 10.89,
+     "name": "foglio-entra-2"
+    },
+    {
+     "t": 10.95,
+     "name": "cubo-atterra"
+    }
+   ]
+  },
+  {
+   "id": "n1",
+   "start": 12.06,
+   "end": 13.58,
+   "line": "e viene aggiunto da solo nell'Excel",
+   "graphic": {
+    "type": "counter",
+    "y": 0.2,
+    "props": {
+     "from": 24,
+     "to": 34,
+     "suffix": " pz",
+     "icon": "+",
+     "rollAt": 12.3,
+     "rollDur": 24
+    }
+   },
+   "sfx": [
+    {
+     "t": 12.08,
+     "name": "scheda-entra-2"
+    },
+    {
+     "t": 12.3,
+     "name": "quantita-sale"
+    }
+   ]
+  },
+  {
+   "id": "r0",
+   "start": 13.58,
+   "end": 16.64,
+   "line": "Hai preso delle lastre nuove? Lo scrivi e la quantità si aggiorna",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "clip": [
+      13.6,
+      16.6
+     ],
+     "glowY": 0.42
+    }
+   },
+   "sfx": [
+    {
+     "t": 13.58,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "start": 13.6,
+   "end": 16.64,
+   "line": "la quantità si aggiorna",
+   "graphic": {
+    "type": "ring",
+    "y": 0.44,
+    "props": {
+     "label": "Magazzino · lastre",
+     "values": [
+      {
+       "at": 15.25,
+       "v": 62
+      },
+      {
+       "at": 15.83,
+       "v": 98
+      }
+     ],
+     "sub": "pezzi disponibili",
+     "button": "Aggiorna Excel",
+     "done": "Excel aggiornato",
+     "clickAt": 16.14
+    }
+   },
+   "sfx": [
+    {
+     "t": 13.62,
+     "name": "scheda-entra-3"
+    },
+    {
+     "t": 15.25,
+     "name": "colonna-misura"
+    },
+    {
+     "t": 15.83,
+     "name": "quantita-sale"
+    },
+    {
+     "t": 16.14,
+     "name": "scatto"
+    },
+    {
+     "t": 16.2,
+     "name": "check-completo"
+    }
+   ]
+  },
+  {
+   "id": "k1",
+   "start": 16.69,
+   "end": 18.5,
+   "line": "Così chiunque in azienda",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.68,
+    "props": {
+     "text": "*Chiunque*\nin azienda",
+     "entry": "roll",
+     "size": 140,
+     "wordAt": [
+      16.97,
+      17.26,
+      17.37
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 16.97,
+     "name": "flip-1"
+    }
+   ]
+  },
+  {
+   "id": "g0",
+   "start": 23.09,
+   "end": 25.85,
+   "line": "è tempo che recuperi ogni singolo giorno",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "clip": [
+      23.1,
+      25.8
+     ],
+     "glowY": 0.5
+    }
+   },
+   "sfx": [
+    {
+     "t": 23.09,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "g1",
+   "start": 23.11,
+   "end": 25.85,
+   "line": "tempo recuperato",
+   "graphic": {
+    "type": "chart",
+    "y": 0.4,
+    "props": {
+     "values": [
+      12,
+      20,
+      28,
+      45,
+      62,
+      100
+     ],
+     "from": 0,
+     "to": 15,
+     "suffix": " min/giorno",
+     "rollAt": 23.4
+    }
+   },
+   "sfx": [
+    {
+     "t": 23.3,
+     "name": "riga-aggiunta"
+    },
+    {
+     "t": 24.5,
+     "name": "tempo-recuperato"
+    }
+   ]
+  },
+  {
+   "id": "ch2",
+   "start": 0.0,
+   "end": 12.06,
+   "line": "capitolo 2",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 2,
+     "title": "La soluzione",
+     "total": 3
+    }
+   }
+  },
+  {
+   "id": "ch3",
+   "start": 12.06,
+   "end": 25.85,
+   "line": "capitolo 3",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 3,
+     "title": "Il risultato",
+     "total": 3
+    }
+   },
+   "sfx": [
+    {
+     "t": 12.1,
+     "name": "scheda-entra"
+    }
+   ]
+  }
+ ]
+}

@@ -15,7 +15,8 @@ export const ZaneCaptions: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl,
   const { fps, width } = useVideoConfig();
   const g = tl.captions.find((c) => frame >= c.from && frame < c.to);
   if (!g) return null;
-  if (tl.graphics.some((x) => (x.type === "scene" || x.props?.hideCaptions) && frame >= x.from && frame < x.from + x.frames)) return null;
+  // nascosti sulle scene a schermo intero (scene, o grafiche con il girato sfocato dietro) e con props.hideCaptions
+  if (tl.graphics.some((x) => (x.type === "scene" || x.props?.bg === "blur" || x.props?.hideCaptions) && frame >= x.from && frame < x.from + x.frames)) return null;
   const c = style.captions;
   const size = c.fontSize;
   return (

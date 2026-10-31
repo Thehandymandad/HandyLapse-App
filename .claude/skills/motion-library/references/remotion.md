@@ -46,7 +46,17 @@ grafiche di Pulse (nel tema `neon`) più queste:
 | --- | --- | --- | --- | --- |
 | `ktext` | frasi chiave, titoli, "finally", numeri detti | testo cinetico: sans bianco pesante + `*corsivo*` d'accento, per lettera/parola, uscita con rincorsa | `text` (`*accento*`, `\n`), `entry` pop/drop/sticker/wipe/type/led/flap/roll (se manca ruota), `size`, `wordAt[]` (inizio di ogni parola), `giant` (parola gigante sfocata dietro), `curve` (curva di easing sotto), `cursor`, `hideCaptions` | uno per stile: timbro (sticker), atterraggio (drop), digitazione (type), scorrimento (flap) |
 | `chapter` | capitoli, "parte 1/2/3" | barra fissa in alto: numero mono + titolo + tacche di avanzamento | `n`, `title`, `total` (per tutta la durata del capitolo; sta sopra tutto) | entrata scheda |
-| `scene` | momenti forti, cambi di capitolo | scena a schermo intero: nero-verde con vignetta d'accento che respira, parola gigante sfocata (sta sotto tutto, nasconde i sottotitoli) | `word`, `glowY` | whip |
+| `scene` | momenti forti, cambi di capitolo | scena a schermo intero: nero-verde con vignetta d'accento che respira, parola gigante sfocata, o il girato sfocato dietro (sta sotto tutto, nasconde i sottotitoli) | `word`, `glowY`, `clip` | whip |
+| `phoneclip` | "in questo video", risposte, notifiche, live | telefono inclinato in 3D con il girato dentro che ondeggia; notifiche iOS che arrivano a molla e spingono giù le precedenti; titolo sopra, corsivo sotto | `clip` [da, a], `bg` "blur", `header` (mono), `title` ("• LIVE *updates*"), `caption` + `captionAt`, `notifications[{at, title, sub}]`, `tilt`, `gray` | telefono entra + un suono per notifica |
+| `cards3d` | B-roll, esempi, "arriva…", elenco di momenti | 2–3 schede di girato inclinate in 3D che cadono una dopo l'altra (le precedenti spinte), etichette mono, pillola, titolo sans + *corsivo* | `cards[{clip, at, label}]`, `bg` "blur", `gray`, `pill`, `title` + `titleAt` | una caduta per scheda + atterraggio |
+| `counter` | soldi, pezzi, numeri che crescono | pillola d'accento con numero a rullo (cifre che girano come un contachilometri) e colpo all'arrivo | `from`, `to`, `prefix`, `suffix`, `icon`, `rollAt`, `rollDur` (frame), `x`, `y` | quantità che sale |
+| `ring` | punteggi, percentuali, "aggiornato", offerta | card con anello che conta tra più valori, pulsante che il cursore clicca e diventa "✓" | `label`, `values[{at, v}]`, `sub`, `button`, `done`, `clickAt` | misura per valore + scatto + completato |
+| `toggles` | attivare, collegare, automatizzare | card iOS chiara con interruttori che si accendono uno alla volta (la card riceve una spinta a ogni scatto) | `title`, `icon`, `items[{label, at}]` | un clic per interruttore |
+| `chart` | crescita, risultati, tempo recuperato | barre che salgono a molla, l'ultima d'accento, linea che le collega, numero a rullo | `values[]`, `from`, `to`, `prefix`, `suffix`, `rollAt` | riga aggiunta + successo |
+| `scribble` | "niente", "zero", sottolineare una cosa detta | freccia disegnata a mano + scritta a mano (Permanent Marker) d'accento attaccata al soggetto; con `grayFootage` il girato va in bianco e nero | `text` (`\n`), `x`, `y`, `arrow` up/down/left/right, `angle`, `writeAt`, `grayFootage` | scivolata + evidenziatore |
+
+`clip: [da, a]` (secondi del montato, anche dentro `cards[]`): hf-project ne fa un foglio di fotogrammi 360×640 e lo
+precarica; `src/lib/media.tsx` (`Clip`) lo disegna su canvas, in bianco e nero o sfocato. Tenere i clip a 1–3 s.
 
 ## Style pack `claude-reel` (copiato da una reference) — `src/styles/references/claude-reel/`
 

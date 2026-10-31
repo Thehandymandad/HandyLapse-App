@@ -1,0 +1,801 @@
+{
+ "version": 1,
+ "name": "demo-zane2",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 25.85
+ },
+ "styleId": "zane",
+ "styleOverrides": {},
+ "keep": [],
+ "cuts": [],
+ "frame": null,
+ "joins": [
+  3.092,
+  5.637,
+  7.667,
+  12.061,
+  13.576,
+  16.637,
+  19.91,
+  21.728,
+  23.031,
+  25.849
+ ],
+ "hold": 0.0,
+ "words": [
+  {
+   "text": "E",
+   "start": 0.055,
+   "end": 0.073
+  },
+  {
+   "text": "in",
+   "start": 0.092,
+   "end": 0.128
+  },
+  {
+   "text": "due",
+   "start": 0.164,
+   "end": 0.237
+  },
+  {
+   "text": "secondi",
+   "start": 0.273,
+   "end": 0.601
+  },
+  {
+   "text": "ti",
+   "start": 0.655,
+   "end": 0.71
+  },
+  {
+   "text": "arriva",
+   "start": 0.746,
+   "end": 0.928
+  },
+  {
+   "text": "la",
+   "start": 0.946,
+   "end": 1.001
+  },
+  {
+   "text": "risposta,",
+   "start": 1.037,
+   "end": 1.492
+  },
+  {
+   "text": "quanti",
+   "start": 1.728,
+   "end": 1.946
+  },
+  {
+   "text": "pezzi",
+   "start": 1.982,
+   "end": 2.237
+  },
+  {
+   "text": "hai",
+   "start": 2.237,
+   "end": 2.419
+  },
+  {
+   "text": "e",
+   "start": 2.546,
+   "end": 2.564
+  },
+  {
+   "text": "dove",
+   "start": 2.601,
+   "end": 2.728
+  },
+  {
+   "text": "sono.",
+   "start": 2.801,
+   "end": 3.001
+  },
+  {
+   "text": "Si",
+   "start": 3.146,
+   "end": 3.237
+  },
+  {
+   "text": "può",
+   "start": 3.255,
+   "end": 3.346
+  },
+  {
+   "text": "fare,",
+   "start": 3.382,
+   "end": 3.582
+  },
+  {
+   "text": "si",
+   "start": 3.692,
+   "end": 3.782
+  },
+  {
+   "text": "collega",
+   "start": 3.819,
+   "end": 4.055
+  },
+  {
+   "text": "l'Excel",
+   "start": 4.073,
+   "end": 4.473
+  },
+  {
+   "text": "che",
+   "start": 4.492,
+   "end": 4.564
+  },
+  {
+   "text": "usi",
+   "start": 4.655,
+   "end": 4.801
+  },
+  {
+   "text": "già",
+   "start": 4.837,
+   "end": 5.073
+  },
+  {
+   "text": "a",
+   "start": 5.11,
+   "end": 5.164
+  },
+  {
+   "text": "WhatsApp.",
+   "start": 5.201,
+   "end": 5.564
+  },
+  {
+   "text": "niente",
+   "start": 5.692,
+   "end": 5.91
+  },
+  {
+   "text": "programmi",
+   "start": 5.946,
+   "end": 6.182
+  },
+  {
+   "text": "nuovi,",
+   "start": 6.219,
+   "end": 6.455
+  },
+  {
+   "text": "niente",
+   "start": 6.601,
+   "end": 6.801
+  },
+  {
+   "text": "gestionali",
+   "start": 6.819,
+   "end": 7.146
+  },
+  {
+   "text": "da",
+   "start": 7.164,
+   "end": 7.201
+  },
+  {
+   "text": "imparare.",
+   "start": 7.237,
+   "end": 7.582
+  },
+  {
+   "text": "E",
+   "start": 7.722,
+   "end": 7.74
+  },
+  {
+   "text": "non",
+   "start": 7.776,
+   "end": 7.885
+  },
+  {
+   "text": "serve",
+   "start": 7.922,
+   "end": 8.14
+  },
+  {
+   "text": "solo",
+   "start": 8.176,
+   "end": 8.285
+  },
+  {
+   "text": "a",
+   "start": 8.303,
+   "end": 8.322
+  },
+  {
+   "text": "cercare.",
+   "start": 8.358,
+   "end": 8.722
+  },
+  {
+   "text": "Arriva",
+   "start": 9.012,
+   "end": 9.194
+  },
+  {
+   "text": "un",
+   "start": 9.231,
+   "end": 9.285
+  },
+  {
+   "text": "pezzo",
+   "start": 9.303,
+   "end": 9.522
+  },
+  {
+   "text": "nuovo,",
+   "start": 9.558,
+   "end": 9.794
+  },
+  {
+   "text": "lo",
+   "start": 10.031,
+   "end": 10.122
+  },
+  {
+   "text": "scrivi",
+   "start": 10.14,
+   "end": 10.322
+  },
+  {
+   "text": "in",
+   "start": 10.358,
+   "end": 10.412
+  },
+  {
+   "text": "chat,",
+   "start": 10.449,
+   "end": 10.667
+  },
+  {
+   "text": "nome,",
+   "start": 10.885,
+   "end": 11.103
+  },
+  {
+   "text": "misura,",
+   "start": 11.231,
+   "end": 11.522
+  },
+  {
+   "text": "quantità,",
+   "start": 11.631,
+   "end": 11.976
+  },
+  {
+   "text": "e",
+   "start": 12.115,
+   "end": 12.152
+  },
+  {
+   "text": "viene",
+   "start": 12.188,
+   "end": 12.297
+  },
+  {
+   "text": "aggiunto",
+   "start": 12.333,
+   "end": 12.661
+  },
+  {
+   "text": "da",
+   "start": 12.697,
+   "end": 12.77
+  },
+  {
+   "text": "solo",
+   "start": 12.824,
+   "end": 12.97
+  },
+  {
+   "text": "nell'Excel.",
+   "start": 13.006,
+   "end": 13.497
+  },
+  {
+   "text": "Hai",
+   "start": 13.631,
+   "end": 13.74
+  },
+  {
+   "text": "preso",
+   "start": 13.776,
+   "end": 14.212
+  },
+  {
+   "text": "delle",
+   "start": 14.249,
+   "end": 14.358
+  },
+  {
+   "text": "lastre",
+   "start": 14.394,
+   "end": 14.631
+  },
+  {
+   "text": "nuove?",
+   "start": 14.667,
+   "end": 14.922
+  },
+  {
+   "text": "Lo",
+   "start": 15.158,
+   "end": 15.212
+  },
+  {
+   "text": "scrivi",
+   "start": 15.249,
+   "end": 15.649
+  },
+  {
+   "text": "e",
+   "start": 15.685,
+   "end": 15.722
+  },
+  {
+   "text": "la",
+   "start": 15.758,
+   "end": 15.812
+  },
+  {
+   "text": "quantità",
+   "start": 15.831,
+   "end": 16.103
+  },
+  {
+   "text": "si",
+   "start": 16.14,
+   "end": 16.194
+  },
+  {
+   "text": "aggiorna.",
+   "start": 16.231,
+   "end": 16.558
+  },
+  {
+   "text": "Così",
+   "start": 16.692,
+   "end": 16.946
+  },
+  {
+   "text": "chiunque",
+   "start": 16.964,
+   "end": 17.219
+  },
+  {
+   "text": "in",
+   "start": 17.255,
+   "end": 17.31
+  },
+  {
+   "text": "azienda,",
+   "start": 17.364,
+   "end": 17.728
+  },
+  {
+   "text": "dal",
+   "start": 17.91,
+   "end": 18.001
+  },
+  {
+   "text": "magazzino",
+   "start": 18.037,
+   "end": 18.564
+  },
+  {
+   "text": "al",
+   "start": 18.619,
+   "end": 18.692
+  },
+  {
+   "text": "commerciale",
+   "start": 18.728,
+   "end": 19.092
+  },
+  {
+   "text": "in",
+   "start": 19.128,
+   "end": 19.182
+  },
+  {
+   "text": "giro",
+   "start": 19.219,
+   "end": 19.346
+  },
+  {
+   "text": "dai",
+   "start": 19.382,
+   "end": 19.455
+  },
+  {
+   "text": "clienti,",
+   "start": 19.492,
+   "end": 19.837
+  },
+  {
+   "text": "sa",
+   "start": 19.964,
+   "end": 20.128
+  },
+  {
+   "text": "in",
+   "start": 20.164,
+   "end": 20.219
+  },
+  {
+   "text": "un",
+   "start": 20.255,
+   "end": 20.31
+  },
+  {
+   "text": "attimo",
+   "start": 20.364,
+   "end": 20.601
+  },
+  {
+   "text": "cosa",
+   "start": 20.637,
+   "end": 20.801
+  },
+  {
+   "text": "c'è",
+   "start": 20.855,
+   "end": 21.055
+  },
+  {
+   "text": "e",
+   "start": 21.092,
+   "end": 21.146
+  },
+  {
+   "text": "cosa",
+   "start": 21.201,
+   "end": 21.346
+  },
+  {
+   "text": "manca,",
+   "start": 21.382,
+   "end": 21.655
+  },
+  {
+   "text": "direttamente",
+   "start": 21.782,
+   "end": 22.401
+  },
+  {
+   "text": "dal",
+   "start": 22.437,
+   "end": 22.546
+  },
+  {
+   "text": "telefono.",
+   "start": 22.582,
+   "end": 22.946
+  },
+  {
+   "text": "Se",
+   "start": 23.085,
+   "end": 23.122
+  },
+  {
+   "text": "hai",
+   "start": 23.158,
+   "end": 23.231
+  },
+  {
+   "text": "una",
+   "start": 23.231,
+   "end": 23.34
+  },
+  {
+   "text": "piccola",
+   "start": 23.358,
+   "end": 23.576
+  },
+  {
+   "text": "azienda",
+   "start": 23.612,
+   "end": 24.031
+  },
+  {
+   "text": "è",
+   "start": 24.103,
+   "end": 24.14
+  },
+  {
+   "text": "tempo",
+   "start": 24.176,
+   "end": 24.394
+  },
+  {
+   "text": "che",
+   "start": 24.412,
+   "end": 24.485
+  },
+  {
+   "text": "recuperi",
+   "start": 24.522,
+   "end": 24.94
+  },
+  {
+   "text": "ogni",
+   "start": 25.012,
+   "end": 25.14
+  },
+  {
+   "text": "singolo",
+   "start": 25.194,
+   "end": 25.467
+  },
+  {
+   "text": "giorno.",
+   "start": 25.503,
+   "end": 25.776
+  }
+ ],
+ "emphasis": [
+  19,
+  24,
+  29,
+  87,
+  90
+ ],
+ "hook": null,
+ "zooms": [
+  {
+   "at": 5.2,
+   "kind": "punch",
+   "strength": 0.7
+  },
+  {
+   "at": 21.38,
+   "kind": "punch",
+   "strength": 0.8
+  },
+  {
+   "at": 25.5,
+   "kind": "punch",
+   "strength": 0.6
+  }
+ ],
+ "graphics": [
+  {
+   "type": "phoneclip",
+   "at": 0.03,
+   "duration": 3.07,
+   "y": 0.53,
+   "props": {
+    "clip": [
+     3.3,
+     6.4
+    ],
+    "bg": "blur",
+    "title": "• LIVE *risposte*",
+    "notifications": [
+     {
+      "at": 30,
+      "title": "Risposta arrivata",
+      "sub": "Lastre 3 mm trasparenti"
+     },
+     {
+      "at": 59,
+      "title": "34 pezzi",
+      "sub": "Scaffale B2 · magazzino"
+     },
+     {
+      "at": 77,
+      "title": "Excel letto",
+      "sub": "Inventario aggiornato alle 09:41"
+     }
+    ]
+   }
+  },
+  {
+   "type": "toggles",
+   "at": 3.1,
+   "duration": 2.54,
+   "y": 0.66,
+   "props": {
+    "title": "Automazione",
+    "icon": "A",
+    "items": [
+     {
+      "label": "Collega Excel",
+      "at": 29
+     },
+     {
+      "label": "Collega WhatsApp",
+      "at": 63
+     },
+     {
+      "label": "Risposte automatiche",
+      "at": 67
+     }
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "scribble",
+   "at": 5.64,
+   "duration": 2.03,
+   "y": 0.45,
+   "x": 0.3,
+   "props": {
+    "text": "ZERO\nPROGRAMMI",
+    "arrow": "up",
+    "angle": -10,
+    "writeAt": 9,
+    "grayFootage": true
+   }
+  },
+  {
+   "type": "cards3d",
+   "at": 7.67,
+   "duration": 4.39,
+   "y": 0.41,
+   "props": {
+    "bg": "blur",
+    "gray": true,
+    "pill": "NUOVO PEZZO",
+    "cards": [
+     {
+      "clip": [
+       16.7,
+       18.6
+      ],
+      "at": 40,
+      "label": "B-ROLL 01 · CHAT"
+     },
+     {
+      "clip": [
+       19.6,
+       21.4
+      ],
+      "at": 74,
+      "label": "B-ROLL 02 · MISURA"
+     },
+     {
+      "clip": [
+       21.8,
+       23.6
+      ],
+      "at": 97,
+      "label": "B-ROLL 03 · EXCEL"
+     }
+    ],
+    "title": "Nome, misura,\n*quantità*",
+    "titleAt": 98
+   }
+  },
+  {
+   "type": "counter",
+   "at": 12.06,
+   "duration": 1.52,
+   "y": 0.2,
+   "props": {
+    "from": 24,
+    "to": 34,
+    "suffix": " pz",
+    "icon": "+",
+    "rollAt": 7,
+    "rollDur": 24
+   }
+  },
+  {
+   "type": "scene",
+   "at": 13.58,
+   "duration": 3.06,
+   "props": {
+    "clip": [
+     13.6,
+     16.6
+    ],
+    "glowY": 0.42
+   }
+  },
+  {
+   "type": "ring",
+   "at": 13.6,
+   "duration": 3.04,
+   "y": 0.44,
+   "props": {
+    "label": "Magazzino · lastre",
+    "values": [
+     {
+      "at": 50,
+      "v": 62
+     },
+     {
+      "at": 67,
+      "v": 98
+     }
+    ],
+    "sub": "pezzi disponibili",
+    "button": "Aggiorna Excel",
+    "done": "Excel aggiornato",
+    "clickAt": 76
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 16.69,
+   "duration": 1.81,
+   "y": 0.68,
+   "props": {
+    "text": "*Chiunque*\nin azienda",
+    "entry": "roll",
+    "size": 140,
+    "wordAt": [
+     8,
+     17,
+     20
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "scene",
+   "at": 23.09,
+   "duration": 2.76,
+   "props": {
+    "clip": [
+     23.1,
+     25.8
+    ],
+    "glowY": 0.5
+   }
+  },
+  {
+   "type": "chart",
+   "at": 23.11,
+   "duration": 2.74,
+   "y": 0.4,
+   "props": {
+    "values": [
+     12,
+     20,
+     28,
+     45,
+     62,
+     100
+    ],
+    "from": 0,
+    "to": 15,
+    "suffix": " min/giorno",
+    "rollAt": 9
+   }
+  },
+  {
+   "type": "chapter",
+   "at": 0.0,
+   "duration": 12.06,
+   "props": {
+    "n": 2,
+    "title": "La soluzione",
+    "total": 3
+   }
+  },
+  {
+   "type": "chapter",
+   "at": 12.06,
+   "duration": 13.79,
+   "props": {
+    "n": 3,
+    "title": "Il risultato",
+    "total": 3
+   }
+  }
+ ],
+ "cta": null
+}

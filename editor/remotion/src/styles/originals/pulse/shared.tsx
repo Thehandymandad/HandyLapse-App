@@ -86,7 +86,8 @@ export const easeInOut = (t: number) => {
 
 /** Entrata "a ribalta" 3D + uscita sfocata: comune a tutte le card. */
 export function flipIn(f: number, frames: number, fps: number, outF = 7) {
-  const e = spring({ frame: f, fps, config: { damping: 13, stiffness: 190, mass: 0.8 } });
+  // tema neon (stile zane): la molla del README di movimento, 20% di overshoot
+  const e = spring({ frame: f, fps, config: P.theme === "neon" ? { damping: 11.9, stiffness: 170 } : { damping: 13, stiffness: 190, mass: 0.8 } });
   const o = interpolate(f, [frames - outF, frames], [0, 1], clamp);
   return {
     opacity: Math.min(1, e * 1.6) * (1 - o),

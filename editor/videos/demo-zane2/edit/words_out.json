@@ -1,0 +1,714 @@
+{
+ "duration": 25.85,
+ "segments": [
+  {
+   "source": "video4",
+   "start": 20.72,
+   "end": 24.1,
+   "out_start": 0.001,
+   "out_end": 3.092,
+   "beat": "SVOLTA"
+  },
+  {
+   "source": "video4",
+   "start": 24.78,
+   "end": 27.58,
+   "out_start": 3.092,
+   "out_end": 5.637,
+   "beat": "COME"
+  },
+  {
+   "source": "video4",
+   "start": 29.94,
+   "end": 32.16,
+   "out_start": 5.637,
+   "out_end": 7.667,
+   "beat": "COME"
+  },
+  {
+   "source": "video4",
+   "start": 32.9,
+   "end": 37.72,
+   "out_start": 7.667,
+   "out_end": 12.061,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 38.16,
+   "end": 39.82,
+   "out_start": 12.061,
+   "out_end": 13.576,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 41.1,
+   "end": 44.46,
+   "out_start": 13.576,
+   "out_end": 16.637,
+   "beat": "INSERIMENTO"
+  },
+  {
+   "source": "video4",
+   "start": 45.0,
+   "end": 48.6,
+   "out_start": 16.637,
+   "out_end": 19.91,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 48.96,
+   "end": 50.96,
+   "out_start": 19.91,
+   "out_end": 21.728,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 51.56,
+   "end": 52.98,
+   "out_start": 21.728,
+   "out_end": 23.031,
+   "beat": "BENEFICIO"
+  },
+  {
+   "source": "video4",
+   "start": 54.16,
+   "end": 57.26,
+   "out_start": 23.031,
+   "out_end": 25.849,
+   "beat": "CHIUSURA"
+  },
+  {
+   "source": "video4",
+   "start": 57.68,
+   "end": 62.5,
+   "out_start": 25.849,
+   "out_end": 25.85,
+   "beat": "CTA"
+  }
+ ],
+ "words": [
+  {
+   "text": "E",
+   "start": 0.055,
+   "end": 0.073,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 0.092,
+   "end": 0.128,
+   "source": "video4"
+  },
+  {
+   "text": "due",
+   "start": 0.164,
+   "end": 0.237,
+   "source": "video4"
+  },
+  {
+   "text": "secondi",
+   "start": 0.273,
+   "end": 0.601,
+   "source": "video4"
+  },
+  {
+   "text": "ti",
+   "start": 0.655,
+   "end": 0.71,
+   "source": "video4"
+  },
+  {
+   "text": "arriva",
+   "start": 0.746,
+   "end": 0.928,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 0.946,
+   "end": 1.001,
+   "source": "video4"
+  },
+  {
+   "text": "risposta,",
+   "start": 1.037,
+   "end": 1.492,
+   "source": "video4"
+  },
+  {
+   "text": "quanti",
+   "start": 1.728,
+   "end": 1.946,
+   "source": "video4"
+  },
+  {
+   "text": "pezzi",
+   "start": 1.982,
+   "end": 2.237,
+   "source": "video4"
+  },
+  {
+   "text": "hai",
+   "start": 2.237,
+   "end": 2.419,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 2.546,
+   "end": 2.564,
+   "source": "video4"
+  },
+  {
+   "text": "dove",
+   "start": 2.601,
+   "end": 2.728,
+   "source": "video4"
+  },
+  {
+   "text": "sono.",
+   "start": 2.801,
+   "end": 3.001,
+   "source": "video4"
+  },
+  {
+   "text": "Si",
+   "start": 3.146,
+   "end": 3.237,
+   "source": "video4"
+  },
+  {
+   "text": "può",
+   "start": 3.255,
+   "end": 3.346,
+   "source": "video4"
+  },
+  {
+   "text": "fare,",
+   "start": 3.382,
+   "end": 3.582,
+   "source": "video4"
+  },
+  {
+   "text": "si",
+   "start": 3.692,
+   "end": 3.782,
+   "source": "video4"
+  },
+  {
+   "text": "collega",
+   "start": 3.819,
+   "end": 4.055,
+   "source": "video4"
+  },
+  {
+   "text": "l'Excel",
+   "start": 4.073,
+   "end": 4.473,
+   "source": "video4"
+  },
+  {
+   "text": "che",
+   "start": 4.492,
+   "end": 4.564,
+   "source": "video4"
+  },
+  {
+   "text": "usi",
+   "start": 4.655,
+   "end": 4.801,
+   "source": "video4"
+  },
+  {
+   "text": "già",
+   "start": 4.837,
+   "end": 5.073,
+   "source": "video4"
+  },
+  {
+   "text": "a",
+   "start": 5.11,
+   "end": 5.164,
+   "source": "video4"
+  },
+  {
+   "text": "WhatsApp.",
+   "start": 5.201,
+   "end": 5.564,
+   "source": "video4"
+  },
+  {
+   "text": "niente",
+   "start": 5.692,
+   "end": 5.91,
+   "source": "video4"
+  },
+  {
+   "text": "programmi",
+   "start": 5.946,
+   "end": 6.182,
+   "source": "video4"
+  },
+  {
+   "text": "nuovi,",
+   "start": 6.219,
+   "end": 6.455,
+   "source": "video4"
+  },
+  {
+   "text": "niente",
+   "start": 6.601,
+   "end": 6.801,
+   "source": "video4"
+  },
+  {
+   "text": "gestionali",
+   "start": 6.819,
+   "end": 7.146,
+   "source": "video4"
+  },
+  {
+   "text": "da",
+   "start": 7.164,
+   "end": 7.201,
+   "source": "video4"
+  },
+  {
+   "text": "imparare.",
+   "start": 7.237,
+   "end": 7.582,
+   "source": "video4"
+  },
+  {
+   "text": "E",
+   "start": 7.722,
+   "end": 7.74,
+   "source": "video4"
+  },
+  {
+   "text": "non",
+   "start": 7.776,
+   "end": 7.885,
+   "source": "video4"
+  },
+  {
+   "text": "serve",
+   "start": 7.922,
+   "end": 8.14,
+   "source": "video4"
+  },
+  {
+   "text": "solo",
+   "start": 8.176,
+   "end": 8.285,
+   "source": "video4"
+  },
+  {
+   "text": "a",
+   "start": 8.303,
+   "end": 8.322,
+   "source": "video4"
+  },
+  {
+   "text": "cercare.",
+   "start": 8.358,
+   "end": 8.722,
+   "source": "video4"
+  },
+  {
+   "text": "Arriva",
+   "start": 9.012,
+   "end": 9.194,
+   "source": "video4"
+  },
+  {
+   "text": "un",
+   "start": 9.231,
+   "end": 9.285,
+   "source": "video4"
+  },
+  {
+   "text": "pezzo",
+   "start": 9.303,
+   "end": 9.522,
+   "source": "video4"
+  },
+  {
+   "text": "nuovo,",
+   "start": 9.558,
+   "end": 9.794,
+   "source": "video4"
+  },
+  {
+   "text": "lo",
+   "start": 10.031,
+   "end": 10.122,
+   "source": "video4"
+  },
+  {
+   "text": "scrivi",
+   "start": 10.14,
+   "end": 10.322,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 10.358,
+   "end": 10.412,
+   "source": "video4"
+  },
+  {
+   "text": "chat,",
+   "start": 10.449,
+   "end": 10.667,
+   "source": "video4"
+  },
+  {
+   "text": "nome,",
+   "start": 10.885,
+   "end": 11.103,
+   "source": "video4"
+  },
+  {
+   "text": "misura,",
+   "start": 11.231,
+   "end": 11.522,
+   "source": "video4"
+  },
+  {
+   "text": "quantità,",
+   "start": 11.631,
+   "end": 11.976,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 12.115,
+   "end": 12.152,
+   "source": "video4"
+  },
+  {
+   "text": "viene",
+   "start": 12.188,
+   "end": 12.297,
+   "source": "video4"
+  },
+  {
+   "text": "aggiunto",
+   "start": 12.333,
+   "end": 12.661,
+   "source": "video4"
+  },
+  {
+   "text": "da",
+   "start": 12.697,
+   "end": 12.77,
+   "source": "video4"
+  },
+  {
+   "text": "solo",
+   "start": 12.824,
+   "end": 12.97,
+   "source": "video4"
+  },
+  {
+   "text": "nell'Excel.",
+   "start": 13.006,
+   "end": 13.497,
+   "source": "video4"
+  },
+  {
+   "text": "Hai",
+   "start": 13.631,
+   "end": 13.74,
+   "source": "video4"
+  },
+  {
+   "text": "preso",
+   "start": 13.776,
+   "end": 14.212,
+   "source": "video4"
+  },
+  {
+   "text": "delle",
+   "start": 14.249,
+   "end": 14.358,
+   "source": "video4"
+  },
+  {
+   "text": "lastre",
+   "start": 14.394,
+   "end": 14.631,
+   "source": "video4"
+  },
+  {
+   "text": "nuove?",
+   "start": 14.667,
+   "end": 14.922,
+   "source": "video4"
+  },
+  {
+   "text": "Lo",
+   "start": 15.158,
+   "end": 15.212,
+   "source": "video4"
+  },
+  {
+   "text": "scrivi",
+   "start": 15.249,
+   "end": 15.649,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 15.685,
+   "end": 15.722,
+   "source": "video4"
+  },
+  {
+   "text": "la",
+   "start": 15.758,
+   "end": 15.812,
+   "source": "video4"
+  },
+  {
+   "text": "quantità",
+   "start": 15.831,
+   "end": 16.103,
+   "source": "video4"
+  },
+  {
+   "text": "si",
+   "start": 16.14,
+   "end": 16.194,
+   "source": "video4"
+  },
+  {
+   "text": "aggiorna.",
+   "start": 16.231,
+   "end": 16.558,
+   "source": "video4"
+  },
+  {
+   "text": "Così",
+   "start": 16.692,
+   "end": 16.946,
+   "source": "video4"
+  },
+  {
+   "text": "chiunque",
+   "start": 16.964,
+   "end": 17.219,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 17.255,
+   "end": 17.31,
+   "source": "video4"
+  },
+  {
+   "text": "azienda,",
+   "start": 17.364,
+   "end": 17.728,
+   "source": "video4"
+  },
+  {
+   "text": "dal",
+   "start": 17.91,
+   "end": 18.001,
+   "source": "video4"
+  },
+  {
+   "text": "magazzino",
+   "start": 18.037,
+   "end": 18.564,
+   "source": "video4"
+  },
+  {
+   "text": "al",
+   "start": 18.619,
+   "end": 18.692,
+   "source": "video4"
+  },
+  {
+   "text": "commerciale",
+   "start": 18.728,
+   "end": 19.092,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 19.128,
+   "end": 19.182,
+   "source": "video4"
+  },
+  {
+   "text": "giro",
+   "start": 19.219,
+   "end": 19.346,
+   "source": "video4"
+  },
+  {
+   "text": "dai",
+   "start": 19.382,
+   "end": 19.455,
+   "source": "video4"
+  },
+  {
+   "text": "clienti,",
+   "start": 19.492,
+   "end": 19.837,
+   "source": "video4"
+  },
+  {
+   "text": "sa",
+   "start": 19.964,
+   "end": 20.128,
+   "source": "video4"
+  },
+  {
+   "text": "in",
+   "start": 20.164,
+   "end": 20.219,
+   "source": "video4"
+  },
+  {
+   "text": "un",
+   "start": 20.255,
+   "end": 20.31,
+   "source": "video4"
+  },
+  {
+   "text": "attimo",
+   "start": 20.364,
+   "end": 20.601,
+   "source": "video4"
+  },
+  {
+   "text": "cosa",
+   "start": 20.637,
+   "end": 20.801,
+   "source": "video4"
+  },
+  {
+   "text": "c'è",
+   "start": 20.855,
+   "end": 21.055,
+   "source": "video4"
+  },
+  {
+   "text": "e",
+   "start": 21.092,
+   "end": 21.146,
+   "source": "video4"
+  },
+  {
+   "text": "cosa",
+   "start": 21.201,
+   "end": 21.346,
+   "source": "video4"
+  },
+  {
+   "text": "manca,",
+   "start": 21.382,
+   "end": 21.655,
+   "source": "video4"
+  },
+  {
+   "text": "direttamente",
+   "start": 21.782,
+   "end": 22.401,
+   "source": "video4"
+  },
+  {
+   "text": "dal",
+   "start": 22.437,
+   "end": 22.546,
+   "source": "video4"
+  },
+  {
+   "text": "telefono.",
+   "start": 22.582,
+   "end": 22.946,
+   "source": "video4"
+  },
+  {
+   "text": "Se",
+   "start": 23.085,
+   "end": 23.122,
+   "source": "video4"
+  },
+  {
+   "text": "hai",
+   "start": 23.158,
+   "end": 23.231,
+   "source": "video4"
+  },
+  {
+   "text": "una",
+   "start": 23.231,
+   "end": 23.34,
+   "source": "video4"
+  },
+  {
+   "text": "piccola",
+   "start": 23.358,
+   "end": 23.576,
+   "source": "video4"
+  },
+  {
+   "text": "azienda",
+   "start": 23.612,
+   "end": 24.031,
+   "source": "video4"
+  },
+  {
+   "text": "è",
+   "start": 24.103,
+   "end": 24.14,
+   "source": "video4"
+  },
+  {
+   "text": "tempo",
+   "start": 24.176,
+   "end": 24.394,
+   "source": "video4"
+  },
+  {
+   "text": "che",
+   "start": 24.412,
+   "end": 24.485,
+   "source": "video4"
+  },
+  {
+   "text": "recuperi",
+   "start": 24.522,
+   "end": 24.94,
+   "source": "video4"
+  },
+  {
+   "text": "ogni",
+   "start": 25.012,
+   "end": 25.14,
+   "source": "video4"
+  },
+  {
+   "text": "singolo",
+   "start": 25.194,
+   "end": 25.467,
+   "source": "video4"
+  },
+  {
+   "text": "giorno.",
+   "start": 25.503,
+   "end": 25.776,
+   "source": "video4"
+  }
+ ],
+ "speed": 1.1
+}

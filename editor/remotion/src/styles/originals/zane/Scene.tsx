@@ -1,14 +1,16 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import type { GraphicEvent } from "../../../lib/timeline";
+import { isSprite } from "../../../lib/media";
 import { breathe } from "../../../motion/bouncy";
 import { clamp, INTER, P, rgba } from "../pulse/shared";
+import { BlurBackdrop } from "./Footage";
 
 /**
  * "scene": scena grafica a schermo intero (il parlato sparisce): fondo quasi nero con una vignetta verde d'accento al
  * centro che respira, parola gigante sfocata come texture (props.word) e un filo di grana. Le grafiche che stanno
  * sopra (ktext, card…) si mettono nello stesso intervallo, dopo questa nel piano. Taglio netto in entrata e in uscita
- * (come nella referenza), con un lampo di 2 fotogrammi.
+ * (come nella referenza), con un lampo di 2 fotogrammi. props.clip: [da, a] → dietro c'è il girato sfocato e scurito.
  */
 export const Scene: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const f = useCurrentFrame();
@@ -19,6 +21,7 @@ export const Scene: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const b = breathe(f, 0.06, 90);
   return (
     <AbsoluteFill style={{ background: "#050805" }}>
+      {isSprite(pr.clip) && <BlurBackdrop sprite={pr.clip} f={f} dark={0.6} />}
       <AbsoluteFill
         style={{
           background: `radial-gradient(ellipse ${(62 * b).toFixed(1)}% ${(38 * b).toFixed(1)}% at 50% ${glowY * 100}%, ${rgba(P.accent, 0.16)} 0%, ${rgba(P.accent, 0.05)} 45%, rgba(0,0,0,0) 75%)`,

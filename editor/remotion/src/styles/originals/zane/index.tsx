@@ -5,7 +5,8 @@
  * Parlato a schermo pieno (niente cornice), con scene grafiche a schermo intero in mezzo.
  *
  * Grafiche proprie: ktext (testo cinetico con stili d'entrata a rotazione), chapter (barra del capitolo), scene
- * (scena a schermo intero). Tutte le grafiche di Pulse restano disponibili, nel tema neon.
+ * (scena a schermo intero), phoneclip / cards3d (il girato dentro le grafiche), counter, ring, toggles, chart (UI finte),
+ * scribble (freccia e scritta a mano). Tutte le grafiche di Pulse restano disponibili, nel tema neon.
  */
 import { defineStyle } from "../../base";
 import { definePack } from "../../pack";
@@ -13,7 +14,9 @@ import { pack as pulse } from "../pulse";
 import { ZaneCaptions } from "./Captions";
 import { ChapterBar } from "./ChapterBar";
 import { KineticText } from "./KineticText";
+import { Cards3D, PhoneClip } from "./Footage";
 import { Scene } from "./Scene";
+import { Chart, Counter, Ring, Scribble, Toggles } from "./Widgets";
 
 export const ZANE_ACCENT = "#CCFF00";
 
@@ -51,5 +54,12 @@ export const pack = definePack({
     ktext: KineticText,
     chapter: ChapterBar,
     scene: Scene,
+    phoneclip: PhoneClip,
+    cards3d: Cards3D,
+    counter: Counter,
+    ring: Ring,
+    toggles: Toggles,
+    chart: Chart,
+    scribble: Scribble,
   },
 });
