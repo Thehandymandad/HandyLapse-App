@@ -785,13 +785,14 @@
     ],
     "chipsAt": 69,
     "stars": 10000,
-    "starsAt": 110
+    "starsAt": 73,
+    "starsDur": 42
    }
   },
   {
    "type": "stage",
    "at": 9.72,
-   "duration": 5.36
+   "duration": 18.23
   },
   {
    "type": "chip",
@@ -807,11 +808,6 @@
     "fromSub": "NVIDIA Tegra X1",
     "to": "A17 Pro"
    }
-  },
-  {
-   "type": "stage",
-   "at": 15.08,
-   "duration": 5.72
   },
   {
    "type": "title",
@@ -844,13 +840,9 @@
       "from": 105.0,
       "to": 109.8
      }
-    }
+    },
+    "topAt": 2
    }
-  },
-  {
-   "type": "stage",
-   "at": 20.8,
-   "duration": 3.92
   },
   {
    "type": "title",
@@ -882,8 +874,8 @@
       "media": {
        "clip": {
         "file": "../trailers/totk_v3.mp4",
-        "from": 99.0,
-        "to": 101.2
+        "from": 64.0,
+        "to": 66.2
        }
       }
      },
@@ -907,8 +899,8 @@
       "media": {
        "clip": {
         "file": "../trailers/silksong.mp4",
-        "from": 15.0,
-        "to": 16.4
+        "from": 52.6,
+        "to": 53.8
        }
       }
      },
@@ -925,11 +917,6 @@
      }
     ]
    }
-  },
-  {
-   "type": "stage",
-   "at": 24.72,
-   "duration": 3.23
   },
   {
    "type": "grid",

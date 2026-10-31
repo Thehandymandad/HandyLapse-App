@@ -153,11 +153,12 @@ export const Repo: React.FC<G> = ({ g }) => {
   const p = g.props ?? {};
   const s = smooth(f, fps);
   const starsAt = num(p.starsAt, 30);
-  const stars = rollValue(f, 0, num(p.stars, 10000), starsAt, 26);
-  const landed = f >= starsAt + 26;
+  const starsDur = num(p.starsDur, 26);
+  const stars = rollValue(f, 0, num(p.stars, 10000), starsAt, starsDur);
+  const landed = f >= starsAt + starsDur;
   const chips = Array.isArray(p.chips) ? (p.chips as string[]) : [];
   const chipsAt = num(p.chipsAt, 20);
-  const pulse = landed ? 1 + 0.08 * Math.max(0, Math.sin((f - starsAt - 26) / 3)) * Math.max(0, 1 - (f - starsAt - 26) / 18) : 1;
+  const pulse = landed ? 1 + 0.08 * Math.max(0, Math.sin((f - starsAt - starsDur) / 3)) * Math.max(0, 1 - (f - starsAt - starsDur) / 18) : 1;
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames) }}>
       <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.25) * 100}%`, width: 900, transform: `translate(-50%,-50%) translateY(${((1 - s) * 80).toFixed(1)}px) scale(${(0.94 + 0.06 * s).toFixed(3)})`, opacity: Math.min(1, f / 5) }}>
@@ -306,13 +307,13 @@ export const FpsCompare: React.FC<G> = ({ g }) => {
   const thirtyAt = num(p.thirtyAt, 60);
   const w = 760;
   const h = w * (9 / 19.5);
-  const row = (y: number, at: number, label: string, n: number, blue: boolean, hold: number) => {
-    const s = smooth(f, fps, at - 4);
+  const row = (y: number, at: number, label: string, n: number, blue: boolean, hold: number, appear = at - 4) => {
+    const s = smooth(f, fps, appear);
     const roll = rollValue(f, 0, n, at, 16);
     const landed = f >= at + 16;
     const beat = blue && landed ? 1 + 0.07 * (0.5 + 0.5 * Math.sin((f - at - 16) / 2.6)) : 1;
     return (
-      <div style={{ position: "absolute", left: "50%", top: `${y * 100}%`, transform: `translate(-50%,-50%) translateY(${((1 - s) * 90).toFixed(1)}px)`, opacity: Math.min(1, Math.max(0, (f - at + 4) / 5)) }}>
+      <div style={{ position: "absolute", left: "50%", top: `${y * 100}%`, transform: `translate(-50%,-50%) translateY(${((1 - s) * 90).toFixed(1)}px)`, opacity: Math.min(1, Math.max(0, (f - appear) / 5)) }}>
         <IPhone w={w}>
           <MediaView m={m} f={f} w={w} h={h} hold={hold} />
           {!blue && <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.08)", filter: "grayscale(0.4)" }} />}
@@ -327,7 +328,7 @@ export const FpsCompare: React.FC<G> = ({ g }) => {
   };
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames) }}>
-      {row(num(p.topY, 0.3), sixtyAt, "iPhone", 60, true, 1)}
+      {row(num(p.topY, 0.3), sixtyAt, "iPhone", 60, true, 1, num(p.topAt, 0))}
       {row(num(p.botY, 0.54), thirtyAt, "Primo Switch", 30, false, 2)}
     </AbsoluteFill>
   );
@@ -486,8 +487,10 @@ export const Cta: React.FC<G> = ({ g }) => {
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames, 5) }}>
       <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.24) * 100}%`, width: 900, transform: `translate(-50%,-50%) translateY(${((1 - s) * 80).toFixed(1)}px)`, opacity: Math.min(1, f / 5) }}>
-        <div style={{ textAlign: "center", fontFamily: SANS, fontWeight: 900, fontSize: 72, letterSpacing: "-0.04em", color: "#FFFFFF", textShadow: "0 6px 26px rgba(0,0,0,0.45)", marginBottom: 26 }}>
-          <Rich text={str(p.title, "Commenta *SWITCH*")} />
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 22 }}>
+          <Glass radius={999} pad="12px 36px" style={{ fontFamily: SANS, fontWeight: 900, fontSize: 64, letterSpacing: "-0.04em", color: A.ink }}>
+            <Rich text={str(p.title, "Commenta *SWITCH*")} />
+          </Glass>
         </div>
         <Glass radius={999} pad="18px 18px 18px 30px" style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <div style={{ width: 70, height: 70, borderRadius: 35, background: "linear-gradient(135deg,#C7D2FE,#1F6BFF)" }} />

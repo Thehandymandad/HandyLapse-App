@@ -180,7 +180,8 @@
      ],
      "chipsAt": 7.46,
      "stars": 10000,
-     "starsAt": 8.84
+     "starsAt": 7.6,
+     "starsDur": 42
     }
    },
    "sfx": [
@@ -205,7 +206,7 @@
   {
    "id": "c0",
    "start": 9.72,
-   "end": 15.08,
+   "end": 27.95,
    "line": "scena chip",
    "graphic": {
     "type": "stage"
@@ -251,15 +252,6 @@
      "name": "tessera-3d"
     }
    ]
-  },
-  {
-   "id": "f0",
-   "start": 15.08,
-   "end": 20.8,
-   "line": "scena fps",
-   "graphic": {
-    "type": "stage"
-   }
   },
   {
    "id": "f1",
@@ -309,7 +301,8 @@
        "from": 105.0,
        "to": 109.8
       }
-     }
+     },
+     "topAt": 16.2
     }
    },
    "sfx": [
@@ -326,15 +319,6 @@
      "name": "scheda-entra-2"
     }
    ]
-  },
-  {
-   "id": "b0",
-   "start": 20.8,
-   "end": 24.72,
-   "line": "scena giochi",
-   "graphic": {
-    "type": "stage"
-   }
   },
   {
    "id": "b1",
@@ -379,8 +363,8 @@
        "media": {
         "clip": {
          "file": "../trailers/totk_v3.mp4",
-         "from": 99.0,
-         "to": 101.2
+         "from": 64.0,
+         "to": 66.2
         }
        }
       },
@@ -404,8 +388,8 @@
        "media": {
         "clip": {
          "file": "../trailers/silksong.mp4",
-         "from": 15.0,
-         "to": 16.4
+         "from": 52.6,
+         "to": 53.8
         }
        }
       },
@@ -445,15 +429,6 @@
      "name": "flip-2"
     }
    ]
-  },
-  {
-   "id": "g0",
-   "start": 24.72,
-   "end": 27.95,
-   "line": "scena griglia",
-   "graphic": {
-    "type": "stage"
-   }
   },
   {
    "id": "g1",
