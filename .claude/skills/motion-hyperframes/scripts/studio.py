@@ -1,7 +1,7 @@
-"""Chi parla su fondo da studio (bianco di default), più piccolo e più in basso: lascia libera la parte alta per le
+"""Chi parla su fondo da studio (bianco di default), più in basso (e volendo più piccolo): lascia libera la parte alta per le
 grafiche e permette il testo DIETRO la persona.
 
-    python studio.py --edit <edit_dir> [--scale 0.85] [--color "#FFFFFF"] [--edge "#E8E9E5"]
+    python studio.py --edit <edit_dir> [--shift 230] [--scale 1.0] [--color "#FFFFFF"] [--edge "#E8E9E5"]
 
 - scontorno RVM come background.py (stabile, niente aloni); la persona viene scalata con il bordo basso ancorato al
   fondo dell'inquadratura (il busto resta attaccato al bordo) e i bordi laterali/alti del girato originale sfumano
@@ -31,7 +31,8 @@ def hex_rgb(h: str) -> np.ndarray:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--edit", required=True)
-    ap.add_argument("--scale", type=float, default=0.85)
+    ap.add_argument("--scale", type=float, default=1.0)
+    ap.add_argument("--shift", type=int, default=230, help="px di cui abbassare la persona (il fondo del girato si perde)")
     ap.add_argument("--color", default="#FFFFFF")
     ap.add_argument("--edge", default="#E8E9E5")
     ap.add_argument("--ratio", type=float, default=0.25)
@@ -48,13 +49,14 @@ def main() -> None:
 
     s = a.scale
     nw, nh = int(round(W * s)), int(round(H * s))
-    ox, oy = (W - nw) // 2, H - nh
+    ox, oy = (W - nw) // 2, H - nh + a.shift
     # sfuma i bordi sinistro/destro/alto del girato originale (le braccia tagliate non finiscono di netto)
     edge = np.ones((nh, nw), np.float32)
     fe = 70
     ramp = np.linspace(0, 1, fe, dtype=np.float32)
-    edge[:, :fe] *= ramp[None, :]
-    edge[:, -fe:] *= ramp[::-1][None, :]
+    if s < 0.999:
+        edge[:, :fe] *= ramp[None, :]
+        edge[:, -fe:] *= ramp[::-1][None, :]
     edge[:fe, :] *= ramp[:, None]
 
     sess = ort.InferenceSession(str(MODEL), providers=["CPUExecutionProvider"])
@@ -70,8 +72,9 @@ def main() -> None:
         al = cv2.resize(pha[0, 0], (nw, nh), interpolation=cv2.INTER_AREA) * edge
         A = np.zeros((H, W), np.float32)
         F = np.zeros((H, W, 3), np.float32)
-        A[oy:, ox:ox + nw] = al
-        F[oy:, ox:ox + nw] = fg
+        vis = H - oy
+        A[oy:, ox:ox + nw] = al[:vis]
+        F[oy:, ox:ox + nw] = fg[:vis]
         # ombra morbida dietro la persona (spostata in basso a destra)
         sh = cv2.GaussianBlur(A, (0, 0), 38)
         sh2 = np.zeros_like(sh)

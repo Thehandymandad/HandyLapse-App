@@ -74,8 +74,8 @@
       }
      },
      "shrinkAt": 0.85,
-     "px": 0.82,
-     "py": 0.5,
+     "px": 0.83,
+     "py": 0.6,
      "pw": 230,
      "rot": 8
     }
@@ -126,7 +126,7 @@
    "line": "NINTENDO\n*non vuole*",
    "graphic": {
     "type": "ktext",
-    "y": 0.34,
+    "y": 0.3,
     "behind": true,
     "props": {
      "text": "NINTENDO\n*non vuole*",
@@ -375,9 +375,9 @@
       }
      },
      "leftAt": 16.2,
-     "rollLeftAt": 17.94,
+     "rollLeftAt": 16.6,
      "rightAt": 19.24,
-     "rollRightAt": 20.44
+     "rollRightAt": 19.5
     }
    },
    "sfx": [
