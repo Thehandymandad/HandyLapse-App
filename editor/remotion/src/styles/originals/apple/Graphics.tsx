@@ -26,6 +26,7 @@ export const Title: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
   const size = num(p.size, 120);
   const light = !!p.light;
   const wordAt = Array.isArray(p.wordAt) ? (p.wordAt as number[]) : [];
@@ -50,7 +51,7 @@ export const Title: React.FC<G> = ({ g }) => {
                     fontWeight: 900,
                     fontSize: size,
                     letterSpacing: "-0.045em",
-                    color: blue ? A.blue : light ? "#FFFFFF" : A.ink,
+                    color: blue ? AC : light ? "#FFFFFF" : A.ink,
                     textShadow: light ? "0 6px 24px rgba(0,0,0,0.45)" : undefined,
                     ...(at < 0 ? {} : blurIn(f, fps, at, size * 0.35)),
                   }}
@@ -103,15 +104,16 @@ export const Promise_: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
   const s = pop(f, fps);
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames) }}>
       <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.2) * 100}%`, transform: `translate(-50%,-50%) scale(${(0.6 + 0.4 * s).toFixed(3)})`, opacity: Math.min(1, f / 4) }}>
         <Glass radius={999} pad="20px 36px 20px 24px" style={{ display: "flex", alignItems: "center", gap: 18, whiteSpace: "nowrap" }}>
-          <div style={{ width: 64, height: 64, borderRadius: 32, background: A.blue, display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${(easeOut(lin(f, 10, 26)) * 180).toFixed(1)}deg)` }}>
+          <div style={{ width: 64, height: 64, borderRadius: 32, background: AC, display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${(easeOut(lin(f, 10, 26)) * 180).toFixed(1)}deg)` }}>
             <Glyph name="hourglass" size={38} color="#FFFFFF" stroke={2.2} />
           </div>
-          <Rich text={str(p.text, "Alla fine: *cosa ti serve*")} style={{ fontFamily: SANS, fontWeight: 800, fontSize: 46, color: A.ink, letterSpacing: "-0.025em" }} />
+          <Rich accent={AC} text={str(p.text, "Alla fine: *cosa ti serve*")} style={{ fontFamily: SANS, fontWeight: 800, fontSize: 46, color: A.ink, letterSpacing: "-0.025em" }} />
         </Glass>
       </div>
     </AbsoluteFill>
@@ -123,6 +125,7 @@ export const Progress: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
   const doneAt = num(p.doneAt, g.frames - 1);
   const t = Math.min(1, f / Math.max(1, doneAt));
   const s = smooth(f, fps);
@@ -132,10 +135,10 @@ export const Progress: React.FC<G> = ({ g }) => {
     <AbsoluteFill style={{ opacity: Math.min(lin(f, 0, 6), outro(f, g.frames, 4)) }}>
       <div style={{ position: "absolute", left: 90, right: 90, top: `${(g.y ?? 0.135) * 100}%`, transform: `translateY(${((1 - s) * -30).toFixed(1)}px)`, display: "flex", alignItems: "center", gap: 18 }}>
         <div style={{ flex: 1, height: 14, borderRadius: 7, background: "rgba(255,255,255,0.75)", boxShadow: A.shadowSoft, overflow: "hidden", border: "1px solid rgba(255,255,255,0.9)" }}>
-          <div style={{ width: `${(t * 100).toFixed(2)}%`, height: "100%", borderRadius: 7, background: `linear-gradient(90deg, #6FA0FF, ${A.blue})` }} />
+          <div style={{ width: `${(t * 100).toFixed(2)}%`, height: "100%", borderRadius: 7, background: `linear-gradient(90deg, #6FA0FF, ${AC})` }} />
         </div>
-        <div style={{ padding: done ? "12px 26px" : "8px 18px", borderRadius: 999, background: done ? A.blue : "rgba(255,255,255,0.92)", boxShadow: A.shadowSoft, fontFamily: SANS, fontWeight: 800, fontSize: done ? 26 + 14 * Math.min(1, dp) : 26, transform: done ? `scale(${(0.9 + 0.1 * dp).toFixed(3)})` : undefined, color: done ? "#FFFFFF" : A.ink, whiteSpace: "nowrap", display: "flex", gap: 8, alignItems: "center" }}>
-          <Glyph name={done ? "check" : "hourglass"} size={24} color={done ? "#FFFFFF" : A.blue} stroke={2.4} />
+        <div style={{ padding: done ? "12px 26px" : "8px 18px", borderRadius: 999, background: done ? AC : "rgba(255,255,255,0.92)", boxShadow: A.shadowSoft, fontFamily: SANS, fontWeight: 800, fontSize: done ? 26 + 14 * Math.min(1, dp) : 26, transform: done ? `scale(${(0.9 + 0.1 * dp).toFixed(3)})` : undefined, color: done ? "#FFFFFF" : A.ink, whiteSpace: "nowrap", display: "flex", gap: 8, alignItems: "center" }}>
+          <Glyph name={done ? "check" : "hourglass"} size={24} color={done ? "#FFFFFF" : AC} stroke={2.4} />
           {str(p.label, "Cosa ti serve")}
         </div>
       </div>
@@ -151,6 +154,7 @@ export const Repo: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
   const s = smooth(f, fps);
   const starsAt = num(p.starsAt, 30);
   const starsDur = num(p.starsDur, 26);
@@ -169,18 +173,18 @@ export const Repo: React.FC<G> = ({ g }) => {
           </div>
           <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 64, letterSpacing: "-0.035em", color: A.ink, marginTop: 12 }}>
             <span style={{ color: A.sub, fontWeight: 600 }}>{str(p.owner, "seedds")} / </span>
-            <span style={{ color: A.blue }}>{str(p.name, "nxnative")}</span>
+            <span style={{ color: AC }}>{str(p.name, "nxnative")}</span>
           </div>
           <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 31, lineHeight: 1.3, color: "#3A3A3F", marginTop: 10 }}>{str(p.desc)}</div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 26 }}>
             <div style={{ display: "flex", gap: 12 }}>
               {chips.map((c, i) => (
-                <span key={i} style={{ padding: "8px 18px", borderRadius: 999, background: "rgba(31,107,255,0.10)", color: A.blue, fontFamily: SANS, fontWeight: 700, fontSize: 26, ...blurIn(f, fps, chipsAt + i * 4, 14) }}>
+                <span key={i} style={{ padding: "8px 18px", borderRadius: 999, background: "rgba(31,107,255,0.10)", color: AC, fontFamily: SANS, fontWeight: 700, fontSize: 26, ...blurIn(f, fps, chipsAt + i * 4, 14) }}>
                   {c}
                 </span>
               ))}
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 22px", borderRadius: 22, background: landed ? A.blue : "rgba(11,11,15,0.05)", transform: `scale(${pulse.toFixed(3)})` }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 22px", borderRadius: 22, background: landed ? AC : "rgba(11,11,15,0.05)", transform: `scale(${pulse.toFixed(3)})` }}>
               <Glyph name="star" size={40} color={landed ? "#FFD60A" : A.sub} />
               <Odometer value={stars} size={48} color={landed ? "#FFFFFF" : A.ink} />
               {p.plus !== false && <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 44, color: landed ? "#FFFFFF" : A.ink, opacity: landed ? 1 : 0 }}>+</span>}
@@ -267,7 +271,7 @@ export const Chip: React.FC<G> = ({ g }) => {
         </div>
       </div>
       {/* il chip */}
-      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.42) * 100}%`, transform: `translate(-50%,-50%) scale(${(0.86 + 0.14 * s).toFixed(3)})`, perspective: 1600 }}>
+      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.42) * 100}%`, transform: `translate(-50%,-50%) scale(${((0.86 + 0.14 * s) * num(p.chipScale, 1)).toFixed(3)})`, perspective: 1600 }}>
         <div style={{ position: "relative", width: size, height: size, transformStyle: "preserve-3d", transform: `rotateX(${(48 - f * 0.05).toFixed(2)}deg) rotateZ(${(-28 + f * 0.12).toFixed(2)}deg)` }}>
           {[0, 1, 2, 3].map((side) => pins(side))}
           {/* chip Apple (sotto) */}
@@ -284,7 +288,7 @@ export const Chip: React.FC<G> = ({ g }) => {
         </div>
       </div>
       {/* etichetta Metal */}
-      <div style={{ position: "absolute", left: "50%", top: `${((g.y ?? 0.42) + 0.2) * 100}%`, transform: `translate(-50%,-50%) scale(${Math.max(0, metal).toFixed(3)})`, opacity: f >= metalAt ? 1 : 0 }}>
+      <div style={{ position: "absolute", left: "50%", top: `${((g.y ?? 0.42) + num(p.metalGap, 0.2)) * 100}%`, transform: `translate(-50%,-50%) scale(${Math.max(0, metal).toFixed(3)})`, opacity: f >= metalAt ? 1 : 0 }}>
         <Glass radius={999} pad="14px 34px" style={{ display: "flex", alignItems: "center", gap: 14, whiteSpace: "nowrap", ...dk }}>
           <Glyph name="bolt" size={38} color={AC} stroke={2.2} />
           <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, color: p.dark ? "#FFFFFF" : A.ink }}>
@@ -391,9 +395,9 @@ export const Grid: React.FC<G> = ({ g }) => {
   const dk = dark ? { background: "linear-gradient(160deg, #141A12, #0A0D09)", border: `1.5px solid ${AC}40`, boxShadow: "0 24px 60px rgba(0,0,0,0.5)" } : {};
   const items = (Array.isArray(p.items) ? p.items : []) as Media[];
   const cols = num(p.cols, 3);
-  const tw = 300;
-  const th = 170;
-  const gap = 22;
+  const tw = num(p.tw, 300);
+  const th = num(p.th, 170);
+  const gap = num(p.gap, 22);
   const rows = Math.ceil(items.length / cols);
   const W = cols * tw + (cols - 1) * gap;
   const H = rows * th + (rows - 1) * gap;

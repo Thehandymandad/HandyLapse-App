@@ -22,15 +22,19 @@ const tl = buildTimeline(project, style);
 const pack = getPack(style.id);
 applyTheme(style);
 const CaptionsC = pack.Captions ?? Captions;
+const tlIn = { ...tl, graphics: tl.graphics.filter((g) => !g.props?.overFrame) };
+const tlOver = { ...tl, graphics: tl.graphics.filter((g) => g.props?.overFrame), hook: null, cta: null };
 const config = { fps: tl.fps, width: 1080, height: 1920, durationInFrames: tl.durationInFrames, id: "reel" };
 
 const Overlay: React.FC = () => (
   <AbsoluteFill>
     {/* con la cornice le grafiche si vedono solo fuori; il bordo sta sopra */}
     <OutsideFrame frame={project.frame}>
-      <GraphicsLayer tl={tl} style={style} pack={pack} />
+      <GraphicsLayer tl={tlIn} style={style} pack={pack} />
     </OutsideFrame>
     <FrameBorder frame={project.frame} color={style.motion.accentColor} glow={rgba(style.motion.accentColor, 0.45)} />
+    {/* props.overFrame: grafiche a schermo intero sopra la cornice (l'hook col gameplay) */}
+    <GraphicsLayer tl={tlOver} style={style} pack={pack} />
     <CaptionsC tl={tl} style={style} />
     {pack.Overlay && <pack.Overlay tl={tl} style={style} />}
   </AbsoluteFill>

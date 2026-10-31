@@ -7,6 +7,9 @@
  * - Grafiche (type in edit.json): rec, tape, hours, nope, route, claude, phone, dm, pile, zero, send, trio, guidebook. Vedi i singoli file.
  */
 import { seeded } from "../../../lib/timeline";
+import { FpsDuo, GameIntro, GameStack } from "../zane/Games";
+import { Censored } from "./Censored";
+import { Chip, Grid, Needs, Progress, Promise_, Repo, Title } from "../apple/Graphics";
 import { defineStyle } from "../../base";
 import { definePack } from "../../pack";
 import { ClaudeWorking } from "./ClaudeWorking";
@@ -144,5 +147,16 @@ export const pack = definePack({
     send: PaperPlane,
     trio: ToolTrio,
     guidebook: GuideBook,
+    gameintro: GameIntro,
+    fpsduo: FpsDuo,
+    gamestack: GameStack,
+    repo: Repo,
+    chip: Chip,
+    grid: Grid,
+    needs: Needs,
+    promise: Promise_,
+    progress: Progress,
+    title: Title,
+    censored: Censored,
   },
 });

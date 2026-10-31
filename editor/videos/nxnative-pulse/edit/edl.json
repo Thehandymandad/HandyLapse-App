@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "sources": {
+    "nxnative": "/home/user/HandyLapse-App/editor/videos/nxnative/nxnative.mp4"
+  },
+  "ranges": [
+    {
+      "source": "nxnative",
+      "start": 1.55,
+      "end": 3.65,
+      "beat": "",
+      "quote": "Nintendo non vuole che tu veda questo video.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 3.83,
+      "end": 6.83,
+      "beat": "",
+      "quote": "Resta fino alla fine, ti dico esattamente cosa ti serve per provarlo.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 8.03,
+      "end": 9.37,
+      "beat": "",
+      "quote": "Si chiama Next Native,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 9.73,
+      "end": 12.91,
+      "beat": "",
+      "quote": "è su GitHub da meno di un mese e ha già più di diecimila stelle.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 13.69,
+      "end": 15.91,
+      "beat": "",
+      "quote": "Un emulatore finge di essere uno Switch,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 16.11,
+      "end": 16.67,
+      "beat": "",
+      "quote": "questo no.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 16.83,
+      "end": 19.43,
+      "beat": "",
+      "quote": "Il gioco gira direttamente sul tuo chip Apple.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 19.81,
+      "end": 20.87,
+      "beat": "",
+      "quote": "E il dato pazzesco?",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 21.35,
+      "end": 22.47,
+      "beat": "",
+      "quote": "Tears of the Kingdom",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 22.59,
+      "end": 23.19,
+      "beat": "",
+      "quote": "fino a",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 23.29,
+      "end": 24.57,
+      "beat": "",
+      "quote": "60 fotogrammi al secondo.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 24.91,
+      "end": 26.49,
+      "beat": "",
+      "quote": "Sul primo Switch va a 30.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 26.87,
+      "end": 27.51,
+      "beat": "",
+      "quote": "E non solo:",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 27.61,
+      "end": 28.09,
+      "beat": "",
+      "quote": "Zelda,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 28.39,
+      "end": 28.95,
+      "beat": "",
+      "quote": "Mario Kart",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 29.19,
+      "end": 29.37,
+      "beat": "",
+      "quote": "8,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 29.57,
+      "end": 30.43,
+      "beat": "",
+      "quote": "Mario Odyssey,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 30.75,
+      "end": 31.37,
+      "beat": "",
+      "quote": "Silksong,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 31.55,
+      "end": 32.01,
+      "beat": "",
+      "quote": "Hades.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 32.369,
+      "end": 35.61,
+      "beat": "",
+      "quote": "Oltre 100 giochi testati, per ora soprattutto su Mac.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 35.95,
+      "end": 37.09,
+      "beat": "",
+      "quote": "Allora cosa ti serve?",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 37.31,
+      "end": 37.79,
+      "beat": "",
+      "quote": "Un Mac,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 37.91,
+      "end": 39.03,
+      "beat": "",
+      "quote": "un iPhone 15 Pro",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 39.29,
+      "end": 40.07,
+      "beat": "",
+      "quote": "o più recente",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 40.23,
+      "end": 40.95,
+      "beat": "",
+      "quote": "e i tuoi giochi,",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 41.11,
+      "end": 42.29,
+      "beat": "",
+      "quote": "quelli che possiedi davvero.",
+      "reason": ""
+    },
+    {
+      "source": "nxnative",
+      "start": 42.63,
+      "end": 45.03,
+      "beat": "",
+      "quote": "Scrivi Switch nei commenti e ti mando il link.",
+      "reason": ""
+    }
+  ]
+}

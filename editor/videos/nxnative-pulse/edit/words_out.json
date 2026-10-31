@@ -1,0 +1,973 @@
+{
+ "duration": 35.867,
+ "segments": [
+  {
+   "source": "nxnative",
+   "start": 1.55,
+   "end": 3.65,
+   "out_start": 0.0,
+   "out_end": 2.1,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 3.83,
+   "end": 6.83,
+   "out_start": 2.1,
+   "out_end": 5.1,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 8.03,
+   "end": 9.37,
+   "out_start": 5.1,
+   "out_end": 6.467,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 9.73,
+   "end": 12.91,
+   "out_start": 6.467,
+   "out_end": 9.667,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 13.69,
+   "end": 15.91,
+   "out_start": 9.667,
+   "out_end": 11.9,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 16.11,
+   "end": 16.67,
+   "out_start": 11.9,
+   "out_end": 12.467,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 16.83,
+   "end": 19.43,
+   "out_start": 12.467,
+   "out_end": 15.067,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 19.81,
+   "end": 20.87,
+   "out_start": 15.067,
+   "out_end": 16.133,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 21.35,
+   "end": 22.47,
+   "out_start": 16.133,
+   "out_end": 17.267,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 22.59,
+   "end": 23.19,
+   "out_start": 17.267,
+   "out_end": 17.867,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 23.29,
+   "end": 24.57,
+   "out_start": 17.867,
+   "out_end": 19.167,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 24.91,
+   "end": 26.49,
+   "out_start": 19.167,
+   "out_end": 20.767,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 26.87,
+   "end": 27.51,
+   "out_start": 20.767,
+   "out_end": 21.433,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 27.61,
+   "end": 28.09,
+   "out_start": 21.433,
+   "out_end": 21.933,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 28.39,
+   "end": 28.95,
+   "out_start": 21.933,
+   "out_end": 22.5,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 29.19,
+   "end": 29.37,
+   "out_start": 22.5,
+   "out_end": 22.7,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 29.57,
+   "end": 30.43,
+   "out_start": 22.7,
+   "out_end": 23.567,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 30.75,
+   "end": 31.37,
+   "out_start": 23.567,
+   "out_end": 24.2,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 31.55,
+   "end": 32.01,
+   "out_start": 24.2,
+   "out_end": 24.667,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 32.369,
+   "end": 35.61,
+   "out_start": 24.667,
+   "out_end": 27.933,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 35.95,
+   "end": 37.09,
+   "out_start": 27.933,
+   "out_end": 29.1,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 37.31,
+   "end": 37.79,
+   "out_start": 29.1,
+   "out_end": 29.6,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 37.91,
+   "end": 39.03,
+   "out_start": 29.6,
+   "out_end": 30.733,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 39.29,
+   "end": 40.07,
+   "out_start": 30.733,
+   "out_end": 31.533,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 40.23,
+   "end": 40.95,
+   "out_start": 31.533,
+   "out_end": 32.267,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 41.11,
+   "end": 42.29,
+   "out_start": 32.267,
+   "out_end": 33.467,
+   "beat": ""
+  },
+  {
+   "source": "nxnative",
+   "start": 42.63,
+   "end": 45.03,
+   "out_start": 33.467,
+   "out_end": 35.867,
+   "beat": ""
+  }
+ ],
+ "words": [
+  {
+   "text": "Nintendo",
+   "start": 0.07,
+   "end": 0.65,
+   "source": "nxnative"
+  },
+  {
+   "text": "non",
+   "start": 0.71,
+   "end": 0.83,
+   "source": "nxnative"
+  },
+  {
+   "text": "vuole",
+   "start": 0.85,
+   "end": 1.05,
+   "source": "nxnative"
+  },
+  {
+   "text": "che",
+   "start": 1.09,
+   "end": 1.15,
+   "source": "nxnative"
+  },
+  {
+   "text": "tu",
+   "start": 1.19,
+   "end": 1.27,
+   "source": "nxnative"
+  },
+  {
+   "text": "veda",
+   "start": 1.29,
+   "end": 1.45,
+   "source": "nxnative"
+  },
+  {
+   "text": "questo",
+   "start": 1.49,
+   "end": 1.73,
+   "source": "nxnative"
+  },
+  {
+   "text": "video.",
+   "start": 1.77,
+   "end": 2.01,
+   "source": "nxnative"
+  },
+  {
+   "text": "Resta",
+   "start": 2.17,
+   "end": 2.37,
+   "source": "nxnative"
+  },
+  {
+   "text": "fino",
+   "start": 2.47,
+   "end": 2.59,
+   "source": "nxnative"
+  },
+  {
+   "text": "alla",
+   "start": 2.61,
+   "end": 2.73,
+   "source": "nxnative"
+  },
+  {
+   "text": "fine,",
+   "start": 2.77,
+   "end": 2.97,
+   "source": "nxnative"
+  },
+  {
+   "text": "ti",
+   "start": 3.17,
+   "end": 3.23,
+   "source": "nxnative"
+  },
+  {
+   "text": "dico",
+   "start": 3.27,
+   "end": 3.41,
+   "source": "nxnative"
+  },
+  {
+   "text": "esattamente",
+   "start": 3.43,
+   "end": 3.93,
+   "source": "nxnative"
+  },
+  {
+   "text": "cosa",
+   "start": 3.95,
+   "end": 4.09,
+   "source": "nxnative"
+  },
+  {
+   "text": "ti",
+   "start": 4.11,
+   "end": 4.19,
+   "source": "nxnative"
+  },
+  {
+   "text": "serve",
+   "start": 4.23,
+   "end": 4.45,
+   "source": "nxnative"
+  },
+  {
+   "text": "per",
+   "start": 4.49,
+   "end": 4.61,
+   "source": "nxnative"
+  },
+  {
+   "text": "provarlo.",
+   "start": 4.63,
+   "end": 5.01,
+   "source": "nxnative"
+  },
+  {
+   "text": "Si",
+   "start": 5.17,
+   "end": 5.27,
+   "source": "nxnative"
+  },
+  {
+   "text": "chiama",
+   "start": 5.29,
+   "end": 5.55,
+   "source": "nxnative"
+  },
+  {
+   "text": "nxnative,",
+   "start": 5.69,
+   "end": 6.35,
+   "source": "nxnative"
+  },
+  {
+   "text": "è",
+   "start": 6.537,
+   "end": 6.557,
+   "source": "nxnative"
+  },
+  {
+   "text": "su",
+   "start": 6.637,
+   "end": 6.737,
+   "source": "nxnative"
+  },
+  {
+   "text": "GitHub",
+   "start": 6.757,
+   "end": 7.157,
+   "source": "nxnative"
+  },
+  {
+   "text": "da",
+   "start": 7.297,
+   "end": 7.377,
+   "source": "nxnative"
+  },
+  {
+   "text": "meno",
+   "start": 7.457,
+   "end": 7.677,
+   "source": "nxnative"
+  },
+  {
+   "text": "di",
+   "start": 7.697,
+   "end": 7.757,
+   "source": "nxnative"
+  },
+  {
+   "text": "un",
+   "start": 7.777,
+   "end": 7.837,
+   "source": "nxnative"
+  },
+  {
+   "text": "mese",
+   "start": 7.877,
+   "end": 8.117,
+   "source": "nxnative"
+  },
+  {
+   "text": "e",
+   "start": 8.337,
+   "end": 8.377,
+   "source": "nxnative"
+  },
+  {
+   "text": "ha",
+   "start": 8.397,
+   "end": 8.437,
+   "source": "nxnative"
+  },
+  {
+   "text": "già",
+   "start": 8.497,
+   "end": 8.597,
+   "source": "nxnative"
+  },
+  {
+   "text": "più",
+   "start": 8.637,
+   "end": 8.697,
+   "source": "nxnative"
+  },
+  {
+   "text": "di",
+   "start": 8.737,
+   "end": 8.797,
+   "source": "nxnative"
+  },
+  {
+   "text": "diecimila",
+   "start": 8.837,
+   "end": 9.217,
+   "source": "nxnative"
+  },
+  {
+   "text": "stelle.",
+   "start": 9.237,
+   "end": 9.557,
+   "source": "nxnative"
+  },
+  {
+   "text": "Un",
+   "start": 9.737,
+   "end": 9.797,
+   "source": "nxnative"
+  },
+  {
+   "text": "emulatore",
+   "start": 9.837,
+   "end": 10.277,
+   "source": "nxnative"
+  },
+  {
+   "text": "finge",
+   "start": 10.497,
+   "end": 10.797,
+   "source": "nxnative"
+  },
+  {
+   "text": "di",
+   "start": 10.837,
+   "end": 10.917,
+   "source": "nxnative"
+  },
+  {
+   "text": "essere",
+   "start": 10.977,
+   "end": 11.317,
+   "source": "nxnative"
+  },
+  {
+   "text": "uno",
+   "start": 11.397,
+   "end": 11.497,
+   "source": "nxnative"
+  },
+  {
+   "text": "Switch,",
+   "start": 11.557,
+   "end": 11.797,
+   "source": "nxnative"
+  },
+  {
+   "text": "questo",
+   "start": 11.97,
+   "end": 12.23,
+   "source": "nxnative"
+  },
+  {
+   "text": "no.",
+   "start": 12.27,
+   "end": 12.37,
+   "source": "nxnative"
+  },
+  {
+   "text": "Il",
+   "start": 12.537,
+   "end": 12.577,
+   "source": "nxnative"
+  },
+  {
+   "text": "gioco",
+   "start": 12.637,
+   "end": 12.897,
+   "source": "nxnative"
+  },
+  {
+   "text": "gira",
+   "start": 13.057,
+   "end": 13.337,
+   "source": "nxnative"
+  },
+  {
+   "text": "direttamente",
+   "start": 13.377,
+   "end": 13.957,
+   "source": "nxnative"
+  },
+  {
+   "text": "sul",
+   "start": 14.077,
+   "end": 14.217,
+   "source": "nxnative"
+  },
+  {
+   "text": "tuo",
+   "start": 14.237,
+   "end": 14.337,
+   "source": "nxnative"
+  },
+  {
+   "text": "chip",
+   "start": 14.357,
+   "end": 14.597,
+   "source": "nxnative"
+  },
+  {
+   "text": "Apple.",
+   "start": 14.657,
+   "end": 14.977,
+   "source": "nxnative"
+  },
+  {
+   "text": "E",
+   "start": 15.137,
+   "end": 15.157,
+   "source": "nxnative"
+  },
+  {
+   "text": "il",
+   "start": 15.177,
+   "end": 15.237,
+   "source": "nxnative"
+  },
+  {
+   "text": "dato",
+   "start": 15.277,
+   "end": 15.497,
+   "source": "nxnative"
+  },
+  {
+   "text": "pazzesco?",
+   "start": 15.517,
+   "end": 16.037,
+   "source": "nxnative"
+  },
+  {
+   "text": "Tears",
+   "start": 16.203,
+   "end": 16.523,
+   "source": "nxnative"
+  },
+  {
+   "text": "of",
+   "start": 16.603,
+   "end": 16.683,
+   "source": "nxnative"
+  },
+  {
+   "text": "the",
+   "start": 16.723,
+   "end": 16.823,
+   "source": "nxnative"
+  },
+  {
+   "text": "Kingdom",
+   "start": 16.843,
+   "end": 17.163,
+   "source": "nxnative"
+  },
+  {
+   "text": "fino",
+   "start": 17.337,
+   "end": 17.677,
+   "source": "nxnative"
+  },
+  {
+   "text": "a",
+   "start": 17.717,
+   "end": 17.777,
+   "source": "nxnative"
+  },
+  {
+   "text": "60",
+   "start": 17.937,
+   "end": 18.097,
+   "source": "nxnative"
+  },
+  {
+   "text": "fotogrammi",
+   "start": 18.137,
+   "end": 18.517,
+   "source": "nxnative"
+  },
+  {
+   "text": "al",
+   "start": 18.537,
+   "end": 18.597,
+   "source": "nxnative"
+  },
+  {
+   "text": "secondo.",
+   "start": 18.657,
+   "end": 19.057,
+   "source": "nxnative"
+  },
+  {
+   "text": "Sul",
+   "start": 19.237,
+   "end": 19.377,
+   "source": "nxnative"
+  },
+  {
+   "text": "primo",
+   "start": 19.417,
+   "end": 19.617,
+   "source": "nxnative"
+  },
+  {
+   "text": "Switch",
+   "start": 19.657,
+   "end": 19.897,
+   "source": "nxnative"
+  },
+  {
+   "text": "va",
+   "start": 20.097,
+   "end": 20.177,
+   "source": "nxnative"
+  },
+  {
+   "text": "a",
+   "start": 20.217,
+   "end": 20.237,
+   "source": "nxnative"
+  },
+  {
+   "text": "30.",
+   "start": 20.437,
+   "end": 20.657,
+   "source": "nxnative"
+  },
+  {
+   "text": "E",
+   "start": 20.837,
+   "end": 20.877,
+   "source": "nxnative"
+  },
+  {
+   "text": "non",
+   "start": 20.917,
+   "end": 21.037,
+   "source": "nxnative"
+  },
+  {
+   "text": "solo:",
+   "start": 21.097,
+   "end": 21.317,
+   "source": "nxnative"
+  },
+  {
+   "text": "Zelda,",
+   "start": 21.503,
+   "end": 21.823,
+   "source": "nxnative"
+  },
+  {
+   "text": "Mario",
+   "start": 22.003,
+   "end": 22.203,
+   "source": "nxnative"
+  },
+  {
+   "text": "Kart",
+   "start": 22.243,
+   "end": 22.403,
+   "source": "nxnative"
+  },
+  {
+   "text": "8,",
+   "start": 22.57,
+   "end": 22.59,
+   "source": "nxnative"
+  },
+  {
+   "text": "Mario",
+   "start": 22.77,
+   "end": 23.01,
+   "source": "nxnative"
+  },
+  {
+   "text": "Odyssey,",
+   "start": 23.13,
+   "end": 23.47,
+   "source": "nxnative"
+  },
+  {
+   "text": "Silksong,",
+   "start": 23.637,
+   "end": 24.097,
+   "source": "nxnative"
+  },
+  {
+   "text": "Hades.",
+   "start": 24.27,
+   "end": 24.57,
+   "source": "nxnative"
+  },
+  {
+   "text": "Oltre",
+   "start": 24.737,
+   "end": 25.138,
+   "source": "nxnative"
+  },
+  {
+   "text": "100",
+   "start": 25.278,
+   "end": 25.498,
+   "source": "nxnative"
+  },
+  {
+   "text": "giochi",
+   "start": 25.538,
+   "end": 25.738,
+   "source": "nxnative"
+  },
+  {
+   "text": "testati,",
+   "start": 25.778,
+   "end": 26.238,
+   "source": "nxnative"
+  },
+  {
+   "text": "per",
+   "start": 26.438,
+   "end": 26.518,
+   "source": "nxnative"
+  },
+  {
+   "text": "ora",
+   "start": 26.578,
+   "end": 26.698,
+   "source": "nxnative"
+  },
+  {
+   "text": "soprattutto",
+   "start": 26.918,
+   "end": 27.478,
+   "source": "nxnative"
+  },
+  {
+   "text": "su",
+   "start": 27.518,
+   "end": 27.598,
+   "source": "nxnative"
+  },
+  {
+   "text": "Mac.",
+   "start": 27.638,
+   "end": 27.818,
+   "source": "nxnative"
+  },
+  {
+   "text": "Allora",
+   "start": 28.003,
+   "end": 28.323,
+   "source": "nxnative"
+  },
+  {
+   "text": "cosa",
+   "start": 28.363,
+   "end": 28.503,
+   "source": "nxnative"
+  },
+  {
+   "text": "ti",
+   "start": 28.563,
+   "end": 28.623,
+   "source": "nxnative"
+  },
+  {
+   "text": "serve?",
+   "start": 28.663,
+   "end": 28.983,
+   "source": "nxnative"
+  },
+  {
+   "text": "Un",
+   "start": 29.17,
+   "end": 29.25,
+   "source": "nxnative"
+  },
+  {
+   "text": "Mac,",
+   "start": 29.29,
+   "end": 29.49,
+   "source": "nxnative"
+  },
+  {
+   "text": "un",
+   "start": 29.67,
+   "end": 29.73,
+   "source": "nxnative"
+  },
+  {
+   "text": "iPhone",
+   "start": 29.85,
+   "end": 30.07,
+   "source": "nxnative"
+  },
+  {
+   "text": "15",
+   "start": 30.11,
+   "end": 30.45,
+   "source": "nxnative"
+  },
+  {
+   "text": "Pro",
+   "start": 30.47,
+   "end": 30.63,
+   "source": "nxnative"
+  },
+  {
+   "text": "o",
+   "start": 30.803,
+   "end": 30.883,
+   "source": "nxnative"
+  },
+  {
+   "text": "più",
+   "start": 30.903,
+   "end": 30.983,
+   "source": "nxnative"
+  },
+  {
+   "text": "recente",
+   "start": 31.003,
+   "end": 31.423,
+   "source": "nxnative"
+  },
+  {
+   "text": "e",
+   "start": 31.603,
+   "end": 31.643,
+   "source": "nxnative"
+  },
+  {
+   "text": "i",
+   "start": 31.663,
+   "end": 31.703,
+   "source": "nxnative"
+  },
+  {
+   "text": "tuoi",
+   "start": 31.723,
+   "end": 31.823,
+   "source": "nxnative"
+  },
+  {
+   "text": "giochi,",
+   "start": 31.863,
+   "end": 32.163,
+   "source": "nxnative"
+  },
+  {
+   "text": "quelli",
+   "start": 32.337,
+   "end": 32.517,
+   "source": "nxnative"
+  },
+  {
+   "text": "che",
+   "start": 32.557,
+   "end": 32.657,
+   "source": "nxnative"
+  },
+  {
+   "text": "possiedi",
+   "start": 32.677,
+   "end": 32.997,
+   "source": "nxnative"
+  },
+  {
+   "text": "davvero.",
+   "start": 33.037,
+   "end": 33.357,
+   "source": "nxnative"
+  },
+  {
+   "text": "Scrivi",
+   "start": 33.537,
+   "end": 33.797,
+   "source": "nxnative"
+  },
+  {
+   "text": "Switch",
+   "start": 33.857,
+   "end": 34.357,
+   "source": "nxnative"
+  },
+  {
+   "text": "nei",
+   "start": 34.397,
+   "end": 34.497,
+   "source": "nxnative"
+  },
+  {
+   "text": "commenti",
+   "start": 34.537,
+   "end": 35.037,
+   "source": "nxnative"
+  },
+  {
+   "text": "e",
+   "start": 35.077,
+   "end": 35.117,
+   "source": "nxnative"
+  },
+  {
+   "text": "ti",
+   "start": 35.177,
+   "end": 35.237,
+   "source": "nxnative"
+  },
+  {
+   "text": "mando",
+   "start": 35.277,
+   "end": 35.457,
+   "source": "nxnative"
+  },
+  {
+   "text": "il",
+   "start": 35.477,
+   "end": 35.537,
+   "source": "nxnative"
+  },
+  {
+   "text": "link.",
+   "start": 35.557,
+   "end": 35.777,
+   "source": "nxnative"
+  }
+ ]
+}
