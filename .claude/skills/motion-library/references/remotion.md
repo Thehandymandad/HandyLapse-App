@@ -35,6 +35,19 @@ nero, testo bianco, Anton. Nei componenti si usano `P.fg`/`fg(a)` per testo e de
 | `guidebook` | guida, gratis, regalo | copertina della guida in 3D che cade e fluttua, bollino GRATIS | `freeAt`, `tag`, `title` (`\n`), `subtitle`, `footer` | atterraggio libro + timbro |
 | `dm` | commenta, scrivi, DM | chat/commenti: la parola si scrive da sola, parte, arriva la risposta | `text`, `typeAt`, `sendAt`, `replyAt`, `reply`, `name`, `placeholder`, `sentLabel` | apertura + digitazione + invio + risposta |
 
+## Style pack `zane` (metodo Zane Hoyer) — `src/styles/originals/zane/`
+
+Estetica e regole in `editor/styles/zane/` (brand kit + README di movimento, da leggere prima). Nero-verde + lime
+`#CCFF00` con bagliore, Inter 900 + Instrument Serif corsivo d'accento, mono per le etichette; tutte le molle da
+`src/motion/bouncy.ts` (20% di overshoot, squash, wobble, uscite con rincorsa). Parlato a schermo pieno. Ha tutte le
+grafiche di Pulse (nel tema `neon`) più queste:
+
+| type | Verbi | Cosa fa | Props (tempi in secondi assoluti) | Suono |
+| --- | --- | --- | --- | --- |
+| `ktext` | frasi chiave, titoli, "finally", numeri detti | testo cinetico: sans bianco pesante + `*corsivo*` d'accento, per lettera/parola, uscita con rincorsa | `text` (`*accento*`, `\n`), `entry` pop/drop/sticker/wipe/type/led/flap/roll (se manca ruota), `size`, `wordAt[]` (inizio di ogni parola), `giant` (parola gigante sfocata dietro), `curve` (curva di easing sotto), `cursor`, `hideCaptions` | uno per stile: timbro (sticker), atterraggio (drop), digitazione (type), scorrimento (flap) |
+| `chapter` | capitoli, "parte 1/2/3" | barra fissa in alto: numero mono + titolo + tacche di avanzamento | `n`, `title`, `total` (per tutta la durata del capitolo; sta sopra tutto) | entrata scheda |
+| `scene` | momenti forti, cambi di capitolo | scena a schermo intero: nero-verde con vignetta d'accento che respira, parola gigante sfocata (sta sotto tutto, nasconde i sottotitoli) | `word`, `glowY` | whip |
+
 ## Style pack `claude-reel` (copiato da una reference) — `src/styles/references/claude-reel/`
 
 `badge`, `timeline` (card timeline di montaggio), `chat` (prompt a Claude che si scrive e si invia), `logo3d`

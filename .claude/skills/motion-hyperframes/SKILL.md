@@ -83,6 +83,8 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    --duration <durata finale> --bpm 120 --end <fine del parlato>` (elettronica tech allegra; si ferma dopo l'ultima
    parola), poi nel piano `"music": {"file": "editor/assets/music/<nome>.wav", "gap": 9}`: `compose.py` la mette 9 dB
    sotto la voce e la abbassa da sola quando parli (sidechain), circa 15 dB sotto durante il parlato.
+2d. **Beat** (stile zane, prima del piano): `python $S/beats.py $E [--music <brano>]` → `beats.json` con pause del
+   parlato, parole accentate e transienti della musica: i colpi del movimento cadono lì.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",
    "text"}`; i tempi nelle props — chiavi in `At`, `reveal`, `items[].at` — sono secondi assoluti).
    Poi `cd $R && npx tsx scripts/hf-project.ts ../videos/<nome>/edit && npx tsx scripts/camera-track.ts ../videos/<nome>/edit`.

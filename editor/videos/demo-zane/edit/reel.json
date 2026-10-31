@@ -1,0 +1,431 @@
+{
+ "version": 1,
+ "name": "demo-zane",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 14.333
+ },
+ "styleId": "zane",
+ "styleOverrides": {},
+ "keep": [],
+ "cuts": [],
+ "frame": null,
+ "joins": [
+  3.152,
+  7.394,
+  10.0,
+  11.757
+ ],
+ "hold": 0.0,
+ "words": [
+  {
+   "text": "Quante",
+   "start": 0.073,
+   "end": 0.291
+  },
+  {
+   "text": "volte",
+   "start": 0.345,
+   "end": 0.6
+  },
+  {
+   "text": "al",
+   "start": 0.618,
+   "end": 0.691
+  },
+  {
+   "text": "giorno",
+   "start": 0.727,
+   "end": 0.982
+  },
+  {
+   "text": "in",
+   "start": 1.0,
+   "end": 1.073
+  },
+  {
+   "text": "azienda",
+   "start": 1.109,
+   "end": 1.4
+  },
+  {
+   "text": "qualcuno",
+   "start": 1.436,
+   "end": 1.691
+  },
+  {
+   "text": "chiede:",
+   "start": 1.764,
+   "end": 1.982
+  },
+  {
+   "text": "\"Ce",
+   "start": 2.127,
+   "end": 2.218
+  },
+  {
+   "text": "l'abbiamo",
+   "start": 2.236,
+   "end": 2.509
+  },
+  {
+   "text": "questo",
+   "start": 2.545,
+   "end": 2.709
+  },
+  {
+   "text": "pezzo?\"",
+   "start": 2.764,
+   "end": 3.055
+  },
+  {
+   "text": "E",
+   "start": 3.206,
+   "end": 3.225
+  },
+  {
+   "text": "parte",
+   "start": 3.315,
+   "end": 3.497
+  },
+  {
+   "text": "la",
+   "start": 3.515,
+   "end": 3.57
+  },
+  {
+   "text": "caccia.",
+   "start": 3.625,
+   "end": 3.915
+  },
+  {
+   "text": "Apri",
+   "start": 4.188,
+   "end": 4.334
+  },
+  {
+   "text": "l'Excel",
+   "start": 4.334,
+   "end": 4.606
+  },
+  {
+   "text": "del",
+   "start": 4.643,
+   "end": 4.697
+  },
+  {
+   "text": "magazzino,",
+   "start": 4.715,
+   "end": 5.115
+  },
+  {
+   "text": "scorri",
+   "start": 5.406,
+   "end": 5.643
+  },
+  {
+   "text": "centinaia",
+   "start": 5.697,
+   "end": 6.079
+  },
+  {
+   "text": "di",
+   "start": 6.115,
+   "end": 6.17
+  },
+  {
+   "text": "righe,",
+   "start": 6.206,
+   "end": 6.406
+  },
+  {
+   "text": "controlli",
+   "start": 6.606,
+   "end": 6.897
+  },
+  {
+   "text": "la",
+   "start": 6.915,
+   "end": 6.97
+  },
+  {
+   "text": "misura,",
+   "start": 7.006,
+   "end": 7.297
+  },
+  {
+   "text": "chiami",
+   "start": 7.466,
+   "end": 7.685
+  },
+  {
+   "text": "chi",
+   "start": 7.703,
+   "end": 7.775
+  },
+  {
+   "text": "sta",
+   "start": 7.83,
+   "end": 7.903
+  },
+  {
+   "text": "in",
+   "start": 7.921,
+   "end": 7.957
+  },
+  {
+   "text": "magazzino",
+   "start": 7.975,
+   "end": 8.43
+  },
+  {
+   "text": "e",
+   "start": 8.594,
+   "end": 8.612
+  },
+  {
+   "text": "intanto",
+   "start": 8.63,
+   "end": 9.03
+  },
+  {
+   "text": "è",
+   "start": 9.085,
+   "end": 9.121
+  },
+  {
+   "text": "passato",
+   "start": 9.157,
+   "end": 9.357
+  },
+  {
+   "text": "un",
+   "start": 9.394,
+   "end": 9.43
+  },
+  {
+   "text": "quarto",
+   "start": 9.466,
+   "end": 9.648
+  },
+  {
+   "text": "d'ora.",
+   "start": 9.703,
+   "end": 9.885
+  },
+  {
+   "text": "Ora",
+   "start": 10.055,
+   "end": 10.164
+  },
+  {
+   "text": "immagina",
+   "start": 10.2,
+   "end": 10.655
+  },
+  {
+   "text": "di",
+   "start": 10.691,
+   "end": 10.745
+  },
+  {
+   "text": "scrivere",
+   "start": 10.782,
+   "end": 11.073
+  },
+  {
+   "text": "su",
+   "start": 11.108,
+   "end": 11.182
+  },
+  {
+   "text": "WhatsApp:",
+   "start": 11.218,
+   "end": 11.655
+  },
+  {
+   "text": "\"Lastre",
+   "start": 11.757,
+   "end": 12.285
+  },
+  {
+   "text": "3",
+   "start": 12.575,
+   "end": 12.594
+  },
+  {
+   "text": "millimetri",
+   "start": 12.612,
+   "end": 12.957
+  },
+  {
+   "text": "trasparente,",
+   "start": 12.994,
+   "end": 13.521
+  },
+  {
+   "text": "quanti",
+   "start": 13.666,
+   "end": 13.848
+  },
+  {
+   "text": "ne",
+   "start": 13.885,
+   "end": 13.903
+  },
+  {
+   "text": "abbiamo?\"",
+   "start": 13.939,
+   "end": 14.248
+  }
+ ],
+ "emphasis": [
+  17,
+  21,
+  48
+ ],
+ "hook": null,
+ "zooms": [
+  {
+   "at": 2.76,
+   "kind": "punch",
+   "strength": 0.8
+  },
+  {
+   "at": 9.7,
+   "kind": "punch",
+   "strength": 0.9
+  },
+  {
+   "at": 13.94,
+   "kind": "punch",
+   "strength": 0.6
+  }
+ ],
+ "graphics": [
+  {
+   "type": "ktext",
+   "at": 2.05,
+   "duration": 1.1,
+   "y": 0.68,
+   "props": {
+    "text": "Ce l'abbiamo\n*questo pezzo?*",
+    "entry": "sticker",
+    "size": 120,
+    "wordAt": [
+     2,
+     6,
+     15,
+     21
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "scene",
+   "at": 3.15,
+   "duration": 1.0,
+   "props": {
+    "word": "CACCIA"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 3.17,
+   "duration": 0.98,
+   "y": 0.45,
+   "props": {
+    "text": "E parte la\n*caccia.*",
+    "entry": "drop",
+    "size": 150,
+    "wordAt": [
+     1,
+     4,
+     11,
+     14
+    ]
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 9.05,
+   "duration": 0.95,
+   "y": 0.68,
+   "props": {
+    "text": "15 *minuti*",
+    "entry": "flap",
+    "size": 170,
+    "wordAt": [
+     3,
+     17
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "scene",
+   "at": 10.0,
+   "duration": 1.74,
+   "props": {
+    "word": "IMMAGINA",
+    "glowY": 0.42
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 10.02,
+   "duration": 1.72,
+   "y": 0.42,
+   "props": {
+    "text": "Ora *immagina*",
+    "entry": "type",
+    "size": 150,
+    "curve": true,
+    "wordAt": [
+     1,
+     5
+    ]
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 12.5,
+   "duration": 1.833,
+   "y": 0.225,
+   "props": {
+    "text": "LASTRE 3 MM",
+    "entry": "led",
+    "size": 120,
+    "wordAt": [
+     2,
+     4,
+     8
+    ]
+   }
+  },
+  {
+   "type": "chapter",
+   "at": 0.0,
+   "duration": 10.0,
+   "props": {
+    "n": 1,
+    "title": "Il problema",
+    "total": 3
+   }
+  },
+  {
+   "type": "chapter",
+   "at": 10.0,
+   "duration": 4.333,
+   "props": {
+    "n": 2,
+    "title": "La soluzione",
+    "total": 3
+   }
+  }
+ ],
+ "cta": null
+}

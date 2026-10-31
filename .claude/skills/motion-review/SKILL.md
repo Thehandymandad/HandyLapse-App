@@ -60,6 +60,9 @@ checklist spuntata. Poi le correzioni fatte (piano, HTML o composizione) e un nu
 - [ ] Sottotitoli corretti (nomi propri!)
 - [ ] Ogni effetto si sente, ma la voce domina
 - [ ] Primo secondo che ferma lo scroll
+- [ ] Stile zane (README di movimento): nessun fotogramma statico; nessuna curva lineare né dissolvenza sul testo;
+      overshoot visibile ma assestato entro 0,7 s; stili d'entrata del testo che cambiano; un solo protagonista alla
+      volta; colpi sulle parole e sui beat; volto leggibile
 
 ## Quando trovi un errore che si ripete
 

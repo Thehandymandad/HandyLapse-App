@@ -23,6 +23,13 @@ suo tempo, il suo suono e il suo oggetto.
 
 1. `edit/MOTION-BRIEF.md`: il film in parole. Una riga di intento, il tono, poi una tabella
    `tempo | frase detta | cosa succede sullo schermo | ricetta | suono`. Chiudi con l'elenco degli oggetti 3D.
+   **Stile zane** (o quando l'utente lo chiede): il **piano delle inquadrature a 5 colonne** del README di movimento
+   (`editor/styles/zane/README-movimento.md`, da leggere tutto prima): `timecode | cosa si dice/vede | trattamento
+   grafico | girato integrato | beat del movimento`, con i beat di `beats.py`. Si mostra all'utente e si costruisce solo
+   dopo il suo ok. Regole di scelta: numeri → contatore o anello; liste → card a cascata; app/servizi → UI finta di quel
+   servizio; frasi chiave → `ktext` (sans + *corsivo*, stile d'entrata diverso ogni volta); gesti o sguardi in camera →
+   grafica vicino alla mano; capitoli → `chapter` fisso in alto; momenti forti → `scene` a schermo intero. Un solo
+   protagonista alla volta.
 2. `edit/motion-plan.json`: lo stesso piano in forma eseguibile (schema sotto). È l'unica fonte dei tempi per chi anima.
 
 ## Regole dure

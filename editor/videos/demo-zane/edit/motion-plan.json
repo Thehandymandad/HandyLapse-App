@@ -1,0 +1,42 @@
+{
+ "video": "demo-zane",
+ "style": "zane",
+ "frame": null,
+ "duration": 14.333,
+ "hold": 0,
+ "captions": {"emphasis": [17, 21, 48]},
+ "camera": [
+  {"t": 2.76, "op": "punch", "strength": 0.8},
+  {"t": 9.70, "op": "punch", "strength": 0.9},
+  {"t": 13.94, "op": "punch", "strength": 0.6}
+ ],
+ "scenes": [
+  {"id": "s01", "start": 2.05, "end": 3.15, "line": "Ce l'abbiamo questo pezzo?",
+   "graphic": {"type": "ktext", "y": 0.68, "props": {"text": "Ce l'abbiamo\n*questo pezzo?*", "entry": "sticker", "size": 120, "wordAt": [2.13, 2.24, 2.54, 2.76], "hideCaptions": true}},
+   "sfx": [{"t": 2.13, "name": "timbro-1"}, {"t": 2.54, "name": "bolla-2"}]},
+  {"id": "s02", "start": 3.15, "end": 4.15, "line": "E parte la caccia.",
+   "graphic": {"type": "scene", "props": {"word": "CACCIA"}},
+   "sfx": [{"t": 3.15, "name": "whip-cta"}]},
+  {"id": "s02b", "start": 3.17, "end": 4.15, "line": "E parte la caccia.",
+   "graphic": {"type": "ktext", "y": 0.45, "props": {"text": "E parte la\n*caccia.*", "entry": "drop", "size": 150, "wordAt": [3.21, 3.31, 3.52, 3.62]}},
+   "sfx": [{"t": 3.62, "name": "cubo-atterra"}]},
+  {"id": "s03", "start": 9.05, "end": 10.0, "line": "è passato un quarto d'ora",
+   "graphic": {"type": "ktext", "y": 0.68, "props": {"text": "15 *minuti*", "entry": "flap", "size": 170, "wordAt": [9.16, 9.62], "hideCaptions": true}},
+   "sfx": [{"t": 9.16, "name": "righe-scorrono"}]},
+  {"id": "s04", "start": 10.0, "end": 11.74, "line": "Ora immagina di scrivere su WhatsApp",
+   "graphic": {"type": "scene", "props": {"word": "IMMAGINA", "glowY": 0.42}},
+   "sfx": [{"t": 10.0, "name": "whip-cta"}]},
+  {"id": "s04b", "start": 10.02, "end": 11.74, "line": "Ora immagina",
+   "graphic": {"type": "ktext", "y": 0.42, "props": {"text": "Ora *immagina*", "entry": "type", "size": 150, "curve": true, "wordAt": [10.05, 10.2]}},
+   "sfx": [{"t": 10.05, "name": "digita-guida"}]},
+  {"id": "s05", "start": 12.5, "end": 14.333, "line": "Lastre 3 millimetri",
+   "graphic": {"type": "ktext", "y": 0.225, "props": {"text": "LASTRE 3 MM", "entry": "led", "size": 120, "wordAt": [12.55, 12.62, 12.75]}},
+   "sfx": [{"t": 12.55, "name": "rec-pop"}]},
+  {"id": "c01", "start": 0.0, "end": 10.0, "line": "capitolo 1",
+   "graphic": {"type": "chapter", "props": {"n": 1, "title": "Il problema", "total": 3}},
+   "sfx": [{"t": 0.05, "name": "scheda-entra"}]},
+  {"id": "c02", "start": 10.0, "end": 14.333, "line": "capitolo 2",
+   "graphic": {"type": "chapter", "props": {"n": 2, "title": "La soluzione", "total": 3}},
+   "sfx": [{"t": 10.1, "name": "scheda-entra-2"}]}
+ ]
+}

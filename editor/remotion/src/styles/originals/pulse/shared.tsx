@@ -21,16 +21,29 @@ export const P = {
   fg: "#FFFFFF",
   cardShadow: "0 40px 90px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12)",
   textShadow: "0 3px 12px rgba(0,0,0,0.6)",
-  theme: "dark" as "dark" | "light",
+  theme: "dark" as "dark" | "light" | "neon",
+  /** Bagliore attorno agli elementi accesi (tema neon). */
+  glow: "none",
 };
 
 /** Il colore del testo del tema con alfa (dettagli, divisori, caselle vuote sulle card). */
 export const fg = (a: number) => rgba(P.fg, a);
 
 /** "light": card bianche con ombra morbida e testo nero, per il fondo chiaro sfumato; "dark": vetro nero e testo bianco. */
-export function setTheme(theme: "dark" | "light" | undefined) {
+export function setTheme(theme: "dark" | "light" | "neon" | undefined) {
   const light = theme === "light";
-  P.theme = light ? "light" : "dark";
+  P.theme = light ? "light" : theme === "neon" ? "neon" : "dark";
+  if (theme === "neon") {
+    // stile zane: quasi nero con una punta di verde, vetro scuro verdastro, bagliore dell'accento
+    P.fg = "#FFFFFF";
+    P.glass = "rgba(10,16,9,0.86)";
+    P.line = rgba(P.accent, 0.22);
+    P.cardShadow = `0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px ${rgba(P.accent, 0.12)}, inset 0 1px 0 rgba(255,255,255,0.08)`;
+    P.textShadow = "0 3px 14px rgba(0,0,0,0.65)";
+    P.glow = `0 0 28px ${rgba(P.accent, 0.55)}, 0 0 70px ${rgba(P.accent, 0.25)}`;
+    return;
+  }
+  P.glow = "none";
   P.fg = light ? "#111216" : "#FFFFFF";
   P.glass = light ? "rgba(255,255,255,0.97)" : "rgba(12,13,17,0.80)";
   P.line = light ? "rgba(17,18,22,0.10)" : "rgba(255,255,255,0.12)";
@@ -61,6 +74,8 @@ export const ANTON = fontStack("Anton");
 export const INTER = fontStack("Inter");
 /** Serif corsivo delle parole chiave nel tema chiaro (editor/assets/fonts, licenza OFL). */
 export const SERIF = '"Instrument Serif", Georgia, serif';
+/** Mono per le etichette tecniche (header di capitolo, "B-ROLL 02 · EYES"). */
+export const MONO = '"DejaVu Sans Mono", "Liberation Mono", monospace';
 
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 export const easeOut = (t: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, t)), 3);

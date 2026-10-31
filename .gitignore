@@ -71,3 +71,4 @@ __pycache__/
 /editor/assets/music/*.wav
 /editor/assets/models/
 /editor/videos/**/bg/
+/editor/styles/*/motion-graphic-style-references/

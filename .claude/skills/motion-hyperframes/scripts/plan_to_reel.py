@@ -11,8 +11,9 @@ Nel piano tutti i tempi sono in secondi della timeline di uscita (quella di word
 - `captions.emphasis` (indici delle parole di words_out.json) → parole chiave dei sottotitoli.
 - le giunte di video-use (segments[].out_start) → `joins`: la camera le tratta come jump cut (punch / whip 3D).
 - `hold` → fermo finale (secondi).
-- `frame` → la cornice attorno al parlato (default: quella della casa, `HOUSE_FRAME`, con `HOUSE_STYLE`: tema chiaro e
-  sottotitoli sopra la cornice; `"frame": null` = schermo pieno, tema scuro).
+- `frame` → la cornice attorno al parlato (default con lo stile pulse: quella della casa, `HOUSE_FRAME`, con
+  `HOUSE_STYLE`: tema chiaro e sottotitoli sopra la cornice; `"frame": null` = schermo pieno, tema scuro). Lo stile
+  zane è a schermo pieno di default (niente cornice).
 """
 import argparse
 import json
@@ -90,16 +91,18 @@ def main() -> None:
         if (c.get("op") or c.get("type")) in ("punch", "push")
     ]
 
+    style_id = plan.get("style", "pulse")
+    frame = plan["frame"] if "frame" in plan else (HOUSE_FRAME if style_id == "pulse" else None)
     reel = {
         "version": 1,
         "name": plan.get("video", edit.parent.name),
         "source": {"file": a.base, "width": 1080, "height": 1920, "fps": FPS, "duration": wo["duration"]},
-        "styleId": plan.get("style", "pulse"),
+        "styleId": style_id,
         # con la cornice della casa vale anche lo stile della casa (tema chiaro, sottotitoli sopra la cornice)
-        "styleOverrides": deep_merge(HOUSE_STYLE if plan.get("frame", HOUSE_FRAME) == HOUSE_FRAME else {}, plan.get("styleOverrides") or {}),
+        "styleOverrides": deep_merge(HOUSE_STYLE if frame == HOUSE_FRAME else {}, plan.get("styleOverrides") or {}),
         "keep": [],
         "cuts": [],
-        "frame": plan["frame"] if "frame" in plan else HOUSE_FRAME,
+        "frame": frame,
         "joins": [round(s["out_start"], 3) for s in wo.get("segments", [])[1:]],
         "hold": float(plan.get("hold", 0)),
         "words": [{"text": w["text"], "start": w["start"], "end": w["end"]} for w in wo["words"]],

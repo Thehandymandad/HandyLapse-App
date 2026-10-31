@@ -289,6 +289,8 @@ export const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelSt
   arrow: ArrowGraphic,
 };
 
+const LAYER: Record<string, number> = { scene: 0, chapter: 2 };
+
 /** Grafiche: `layer="behind"` disegna solo quelle con behind=true (dietro la persona), `front` tutte le altre + hook e CTA. */
 export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: StylePack; layer?: "front" | "behind" }> = ({ tl, style, pack, layer = "front" }) => {
   const renderers = { ...RENDERERS, ...pack.graphics };
@@ -304,6 +306,8 @@ export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: Sty
       )}
       {tl.graphics
         .filter((g) => (front ? !g.behind : g.behind))
+        // le scene a schermo intero stanno sotto tutto, le barre fisse (capitolo) sopra tutto
+        .sort((a, b) => (LAYER[a.type] ?? 1) - (LAYER[b.type] ?? 1))
         .map((g) => {
           const C = renderers[g.type];
           if (!C) return null;
