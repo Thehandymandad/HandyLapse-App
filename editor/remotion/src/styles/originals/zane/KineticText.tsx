@@ -67,7 +67,7 @@ export const KineticText: React.FC<{ g: GraphicEvent }> = ({ g }) => {
               const k = wi++;
               const start = wordAt?.[k] ?? k * STAGGER.word * (entry === "type" ? 3 : 1);
               const last = li === lines.length - 1 && ri === line.length - 1;
-              return <KWord key={ri} run={run} f={f} start={start} fps={fps} entry={entry} size={size} seed={g.from + k} cursor={last && pr.cursor !== false} />;
+              return <KWord key={ri} run={run} f={f} start={start} fps={fps} entry={entry} size={size} seed={g.from + k} cursor={last && pr.cursor !== false} ink={pr.ink === "dark" ? "dark" : undefined} />;
             })}
           </div>
         ))}

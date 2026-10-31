@@ -41,14 +41,19 @@ export const KWord: React.FC<{
   size: number;
   seed?: number;
   cursor?: boolean;
-}> = ({ run, f, start, fps, entry, size, seed = 0, cursor }) => {
+  /** "dark": nero su fondo chiaro, l'accento in corsivo nero su evidenziatore d'accento */
+  ink?: "dark";
+}> = ({ run, f, start, fps, entry, size, seed = 0, cursor, ink }) => {
   const accent = run.accent;
   const led = entry === "led";
+  const dark = ink === "dark";
   const base: React.CSSProperties = accent
-    ? { fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: size * 0.95, color: P.accent, textShadow: P.glow !== "none" ? P.glow : undefined, letterSpacing: "-0.01em" }
+    ? dark
+      ? { fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: size * 0.95, color: "#0B0B0B", background: P.accent, padding: `0 ${size * 0.12}px`, borderRadius: size * 0.14, letterSpacing: "-0.01em", boxDecorationBreak: "clone" }
+      : { fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: size * 0.95, color: P.accent, textShadow: P.glow !== "none" ? P.glow : undefined, letterSpacing: "-0.01em" }
     : led
-      ? { fontFamily: MONO, fontWeight: 700, fontSize: size * 0.72, color: P.accent, textShadow: `0 0 18px ${rgba(P.accent, 0.8)}, 0 0 40px ${rgba(P.accent, 0.35)}`, textTransform: "uppercase" }
-      : { fontFamily: INTER, fontWeight: 900, fontSize: size, color: "#FFFFFF", letterSpacing: "-0.045em", textShadow: P.textShadow };
+      ? { fontFamily: MONO, fontWeight: 700, fontSize: size * 0.72, color: dark ? "#0B0B0B" : P.accent, textShadow: dark ? undefined : `0 0 18px ${rgba(P.accent, 0.8)}, 0 0 40px ${rgba(P.accent, 0.35)}`, textTransform: "uppercase" }
+      : { fontFamily: INTER, fontWeight: 900, fontSize: size, color: dark ? "#0B0B0B" : "#FFFFFF", letterSpacing: "-0.045em", textShadow: dark ? undefined : P.textShadow };
   const chars = Array.from(run.text);
   const wordAge = f - start;
 

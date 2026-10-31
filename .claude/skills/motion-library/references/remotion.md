@@ -55,6 +55,12 @@ grafiche di Pulse (nel tema `neon`) più queste:
 | `chart` | crescita, risultati, tempo recuperato | barre che salgono a molla, l'ultima d'accento, linea che le collega, numero a rullo | `values[]`, `from`, `to`, `prefix`, `suffix`, `rollAt` | riga aggiunta + successo |
 | `scribble` | "niente", "zero", sottolineare una cosa detta | freccia disegnata a mano + scritta a mano (Permanent Marker) d'accento attaccata al soggetto; con `grayFootage` il girato va in bianco e nero | `text` (`\n`), `x`, `y`, `arrow` up/down/left/right, `angle`, `writeAt`, `grayFootage` | scivolata + evidenziatore |
 
+Aggiunte per i reel di prodotto/gaming: `gameintro` (gameplay a schermo intero che a `shrinkAt` entra in un iPhone e
+vola a `px`,`py`; `media`), `fpsduo` (due iPhone affiancati, fluido contro a scatti, `leftAt`/`rightAt`/`rollLeftAt`/
+`rollRightAt`), `gamestack` (un iPhone per nome che cade dall'alto, `items[{label, media, at}]`), e da apple con
+`dark: true` e `accent`: `chip`, `grid`, `needs`. `ktext` ha `ink: "dark"` (nero, accento corsivo su evidenziatore
+lime) per i fondi chiari.
+
 Dentro `phoneclip` e `cards3d` va `screen` (`src/styles/originals/zane/screens.tsx`), inerente alla frase:
 `{kind: "chat", title, messages[{from: me|bot, text (*grassetto*), at}]}` (WhatsApp, con "sta scrivendo"),
 `{kind: "sheet", title, columns, rows, highlightRow, addAt + addRow, updateAt + updateRow/updateCol/updateTo}` (Excel),

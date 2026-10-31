@@ -97,6 +97,12 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    Le clip in `$E/broll/`; nel piano `"broll": [{"file": "broll/b1.mp4", "start", "end", "from"}]`, poi
    `python $S/broll.py $E` (l'originale resta in `base_nobroll.mp4`). Prima di camera-track. Dentro telefoni e schede
    invece va `screen` (chat, foglio, immagine).
+2f. **Sfondo da studio e testo dietro la persona**: `python $S/studio.py --edit $E [--scale 0.85]` (scontorno RVM,
+   persona più piccola con il bordo basso ancorato, fondo bianco con ombra; scrive base.mp4, base_studio.mp4 e
+   matte.mp4). Le grafiche con `"behind": true` nel piano: `python $S/behind.py prep $E`, poi hf-project + render di
+   `$E/behind` → `$E/behind.webm`, poi `python $S/behind.py merge $E` (le incolla nel fondo, bucate dove c'è la
+   persona). Il render principale le esclude da solo. Sul bianco: `ktext` con `"ink": "dark"`, e niente whip sui
+   tagli (`reel.json` `joins: []`) che sfocano tutto il girato.
 2d. **Beat** (stile zane, prima del piano): `python $S/beats.py $E [--music <brano>]` → `beats.json` con pause del
    parlato, parole accentate e transienti della musica: i colpi del movimento cadono lì.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",

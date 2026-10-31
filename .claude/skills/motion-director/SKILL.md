@@ -34,6 +34,12 @@ suo tempo, il suo suono e il suo oggetto.
    che cambia, un'immagine o un B-roll dell'oggetto), MAI il soggetto che parla, salvo quando parla di sé. Se serve un
    oggetto fisico che non c'è nel girato (un pezzo, un magazzino), si propone un'immagine o un B-roll generato
    (Higgsfield, a crediti: chiedere prima).
+   **Regia (richiesta dell'utente, dopo il reel nxnative rifiutato)**: MAI grafiche sulla testa o sul viso. Prima si
+   decide l'inquadratura: con lo sfondo da studio (`studio.py`) la persona è più piccola e in basso e la parte alta
+   (y 250–760 px) è libera; le grafiche stanno lì, oppure DIETRO la persona (`"behind": true`, testo grande che la
+   testa copre in parte), mai sopra. Sottotitoli sul petto. L'hook dei primi 0,5 s mostra subito la cosa di cui si
+   parla a schermo intero (gameplay, prodotto, risultato), poi la persona entra. Il piano si fa approvare SEMPRE
+   prima di costruire, anche quando l'utente ha scritto lui lo script.
 2. `edit/motion-plan.json`: lo stesso piano in forma eseguibile (schema sotto). È l'unica fonte dei tempi per chi anima.
 
 ## Regole dure

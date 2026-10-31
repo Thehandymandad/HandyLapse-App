@@ -17,6 +17,8 @@ import { KineticText } from "./KineticText";
 import { Cards3D, PhoneClip } from "./Footage";
 import { Scene } from "./Scene";
 import { Chart, Counter, Ring, Scribble, Toggles } from "./Widgets";
+import { FpsDuo, GameIntro, GameStack } from "./Games";
+import { Chip, Grid, Needs } from "../apple/Graphics";
 
 export const ZANE_ACCENT = "#CCFF00";
 
@@ -61,5 +63,11 @@ export const pack = definePack({
     toggles: Toggles,
     chart: Chart,
     scribble: Scribble,
+    gameintro: GameIntro,
+    fpsduo: FpsDuo,
+    gamestack: GameStack,
+    chip: Chip,
+    grid: Grid,
+    needs: Needs,
   },
 });

@@ -201,6 +201,8 @@ export const Chip: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
+  const dk = p.dark ? { background: "linear-gradient(160deg, #141A12, #0A0D09)", border: `1.5px solid ${AC}40`, boxShadow: "0 20px 50px rgba(0,0,0,0.5)" } : {};
   const emuAt = num(p.emuAt, 0);
   const noAt = num(p.noAt, 40);
   const appleAt = num(p.appleAt, 70);
@@ -258,8 +260,8 @@ export const Chip: React.FC<G> = ({ g }) => {
       {/* pillola dell'emulatore */}
       <div style={{ position: "absolute", left: "50%", top: `${((g.y ?? 0.42) - num(p.emuGap, 0.2)) * 100}%`, transform: `translate(-50%,-50%) translateY(${(fall * 260).toFixed(1)}px) rotate(${(fall * 14).toFixed(1)}deg)`, opacity: 1 - fall, ...{} }}>
         <div style={{ ...emu, display: "flex", alignItems: "center", gap: 16, whiteSpace: "nowrap" }}>
-          <Glass radius={999} pad="16px 30px" style={{ position: "relative", fontFamily: SANS, fontWeight: 800, fontSize: 44, color: A.ink }}>
-            Emulatore <span style={{ color: A.sub, fontWeight: 600 }}>= finge di essere uno Switch</span>
+          <Glass radius={999} pad="16px 30px" style={{ position: "relative", fontFamily: SANS, fontWeight: 800, fontSize: 44, color: p.dark ? "#FFFFFF" : A.ink, ...dk }}>
+            Emulatore <span style={{ color: p.dark ? "rgba(255,255,255,0.6)" : A.sub, fontWeight: 600 }}>= finge di essere uno Switch</span>
             <div style={{ position: "absolute", left: 24, right: 24, top: "50%", height: 7, borderRadius: 4, background: "#FF3B30", transformOrigin: "0 50%", transform: `scaleX(${no.toFixed(3)})` }} />
           </Glass>
         </div>
@@ -269,9 +271,9 @@ export const Chip: React.FC<G> = ({ g }) => {
         <div style={{ position: "relative", width: size, height: size, transformStyle: "preserve-3d", transform: `rotateX(${(48 - f * 0.05).toFixed(2)}deg) rotateZ(${(-28 + f * 0.12).toFixed(2)}deg)` }}>
           {[0, 1, 2, 3].map((side) => pins(side))}
           {/* chip Apple (sotto) */}
-          <div style={{ position: "absolute", inset: 0, borderRadius: 36, background: "linear-gradient(135deg,#FDFDFE,#D5D7DD 55%,#F4F5F8)", boxShadow: `0 40px 80px rgba(20,30,60,${(0.25 + 0.15 * apple).toFixed(2)}), 0 0 ${(apple * 90).toFixed(0)}px rgba(31,107,255,${(apple * 0.55).toFixed(2)})`, border: `3px solid rgba(31,107,255,${(apple * 0.8).toFixed(2)})`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ position: "absolute", inset: 0, borderRadius: 36, background: "linear-gradient(135deg,#FDFDFE,#D5D7DD 55%,#F4F5F8)", boxShadow: `0 40px 80px rgba(20,30,60,${(0.25 + 0.15 * apple).toFixed(2)}), 0 0 ${(apple * 90).toFixed(0)}px ${AC}${Math.round(apple * 140).toString(16).padStart(2, "0")}`, border: `3px solid ${AC}${Math.round(apple * 200).toString(16).padStart(2, "0")}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <div style={{ opacity: apple, fontFamily: SANS, fontWeight: 900, fontSize: 92, letterSpacing: "-0.05em", color: A.ink }}>{str(p.to, "A17 Pro")}</div>
-            <div style={{ opacity: apple, fontFamily: SANS, fontWeight: 700, fontSize: 32, color: A.blue, marginTop: 4 }}>chip Apple</div>
+            <div style={{ opacity: apple, fontFamily: SANS, fontWeight: 700, fontSize: 32, color: AC, marginTop: 4 }}>chip Apple</div>
           </div>
           {/* chip Switch (sopra, a tessere che si dissolvono) */}
           <div style={{ position: "absolute", inset: 0, borderRadius: 36, overflow: "hidden", transformStyle: "preserve-3d" }}>{tiles}</div>
@@ -283,10 +285,10 @@ export const Chip: React.FC<G> = ({ g }) => {
       </div>
       {/* etichetta Metal */}
       <div style={{ position: "absolute", left: "50%", top: `${((g.y ?? 0.42) + 0.2) * 100}%`, transform: `translate(-50%,-50%) scale(${Math.max(0, metal).toFixed(3)})`, opacity: f >= metalAt ? 1 : 0 }}>
-        <Glass radius={999} pad="14px 34px" style={{ display: "flex", alignItems: "center", gap: 14, whiteSpace: "nowrap" }}>
-          <Glyph name="bolt" size={38} color={A.blue} stroke={2.2} />
-          <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, color: A.ink }}>
-            Grafica su <span style={{ color: A.blue }}>Metal</span>
+        <Glass radius={999} pad="14px 34px" style={{ display: "flex", alignItems: "center", gap: 14, whiteSpace: "nowrap", ...dk }}>
+          <Glyph name="bolt" size={38} color={AC} stroke={2.2} />
+          <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, color: p.dark ? "#FFFFFF" : A.ink }}>
+            Grafica su <span style={{ color: AC }}>Metal</span>
           </span>
         </Glass>
       </div>
@@ -384,6 +386,9 @@ export const Grid: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const AC = str(p.accent, A.blue);
+  const dark = !!p.dark;
+  const dk = dark ? { background: "linear-gradient(160deg, #141A12, #0A0D09)", border: `1.5px solid ${AC}40`, boxShadow: "0 24px 60px rgba(0,0,0,0.5)" } : {};
   const items = (Array.isArray(p.items) ? p.items : []) as Media[];
   const cols = num(p.cols, 3);
   const tw = 300;
@@ -413,19 +418,19 @@ export const Grid: React.FC<G> = ({ g }) => {
         })}
       </div>
       <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.38) * 100}%`, transform: `translate(-50%,-50%) scale(${Math.max(0, cs).toFixed(3)})`, opacity: f >= countAt ? 1 : 0 }}>
-        <Glass radius={48} pad="22px 48px" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <Glass radius={48} pad="22px 48px" style={{ display: "flex", flexDirection: "column", alignItems: "center", ...dk }}>
           <div style={{ display: "flex", alignItems: "flex-end", gap: 6 }}>
-            <Odometer value={roll} size={150} color={A.blue} />
-            <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 120, color: A.blue, lineHeight: 1.05 }}>+</span>
+            <Odometer value={roll} size={150} color={AC} />
+            <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 120, color: AC, lineHeight: 1.05 }}>+</span>
           </div>
-          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 44, color: A.ink, marginTop: -6 }}>{str(p.unit, "giochi testati")}</div>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 44, color: dark ? "#FFFFFF" : A.ink, marginTop: -6 }}>{str(p.unit, "giochi testati")}</div>
         </Glass>
       </div>
       {typeof p.note === "string" && (
         <div style={{ position: "absolute", left: 0, right: 0, top: `${((g.y ?? 0.38) + H / 1920 / 2 + 0.05) * 100}%`, display: "flex", justifyContent: "center", whiteSpace: "nowrap", ...blurIn(f, fps, noteAt, 20) }}>
-          <Glass radius={999} pad="14px 30px" style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: SANS, fontWeight: 700, fontSize: 38, color: A.ink }}>
-            <Glyph name="mac" size={40} color={A.blue} />
-            <Rich text={p.note} />
+          <Glass radius={999} pad="14px 30px" style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: SANS, fontWeight: 700, fontSize: 38, color: dark ? "#FFFFFF" : A.ink, ...dk }}>
+            <Glyph name="mac" size={40} color={AC} />
+            <Rich text={p.note} accent={AC} />
           </Glass>
         </div>
       )}
@@ -440,6 +445,8 @@ export const Needs: React.FC<G> = ({ g }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = g.props ?? {};
+  const dark = !!p.dark;
+  const AC = str(p.accent, A.blue);
   const items = (Array.isArray(p.items) ? p.items : []) as { icon: "mac" | "iphone" | "gamepad"; label: string; sub?: string; at: number; subAt?: number }[];
   const tw = 296;
   return (
@@ -455,12 +462,12 @@ export const Needs: React.FC<G> = ({ g }) => {
           const on = f >= it.at;
           return (
             <div key={i} style={{ width: tw, transform: `translateY(${((1 - Math.min(1, s)) * 60).toFixed(1)}px) scale(${(0.7 + 0.3 * Math.max(0, s)).toFixed(3)})`, opacity: on ? Math.min(1, (f - it.at) / 4) : 0 }}>
-              <Glass radius={40} pad="30px 18px 26px" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, textAlign: "center" }}>
-                <div style={{ width: 120, height: 120, borderRadius: 32, background: "rgba(31,107,255,0.10)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Glyph name={it.icon} size={84} color={A.blue} stroke={1.7} />
+              <Glass radius={40} pad="30px 18px 26px" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, textAlign: "center", ...(dark ? { background: "linear-gradient(160deg, #141A12, #0A0D09)", border: `1.5px solid ${AC}33`, boxShadow: "0 30px 60px rgba(0,0,0,0.28)" } : {}) }}>
+                <div style={{ width: 120, height: 120, borderRadius: 32, background: dark ? `${AC}22` : "rgba(31,107,255,0.10)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Glyph name={it.icon} size={84} color={AC} stroke={1.7} />
                 </div>
-                <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, letterSpacing: "-0.03em", color: A.ink, lineHeight: 1.05 }}>{it.label}</div>
-                {it.sub && <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 26, color: A.sub, lineHeight: 1.15, ...blurIn(f, fps, it.subAt ?? it.at + 6, 10) }}>{it.sub}</div>}
+                <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, letterSpacing: "-0.03em", color: dark ? "#FFFFFF" : A.ink, lineHeight: 1.05 }}>{it.label}</div>
+                {it.sub && <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 26, color: dark ? "rgba(255,255,255,0.6)" : A.sub, lineHeight: 1.15, ...blurIn(f, fps, it.subAt ?? it.at + 6, 10) }}>{it.sub}</div>}
               </Glass>
             </div>
           );

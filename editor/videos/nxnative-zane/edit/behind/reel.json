@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "name": "nxnative-zane",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 35.867
+ },
+ "styleId": "zane",
+ "styleOverrides": {
+  "captions": {
+   "positionY": 0.8
+  }
+ },
+ "keep": [],
+ "cuts": [],
+ "frame": null,
+ "joins": [],
+ "hold": 0.6,
+ "words": [],
+ "emphasis": [],
+ "hook": null,
+ "zooms": [],
+ "graphics": [
+  {
+   "type": "ktext",
+   "at": 0.9,
+   "duration": 1.2,
+   "y": 0.34,
+   "behind": false,
+   "props": {
+    "text": "NINTENDO\n*non vuole*",
+    "entry": "drop",
+    "size": 190,
+    "wordAt": [
+     0,
+     3,
+     3
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 2.17,
+   "duration": 1.73,
+   "y": 0.34,
+   "behind": false,
+   "props": {
+    "text": "Resta fino\nalla *fine*",
+    "entry": "sticker",
+    "size": 170,
+    "wordAt": [
+     0,
+     9,
+     13,
+     18
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 15.12,
+   "duration": 1.03,
+   "y": 0.34,
+   "behind": false,
+   "props": {
+    "text": "Il dato\n*pazzesco*",
+    "entry": "drop",
+    "size": 180,
+    "wordAt": [
+     2,
+     5,
+     12
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 20.84,
+   "duration": 0.64,
+   "y": 0.34,
+   "behind": false,
+   "props": {
+    "text": "E non\n*solo*",
+    "entry": "roll",
+    "size": 190,
+    "wordAt": [
+     1,
+     3,
+     8
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 28.0,
+   "duration": 1.1,
+   "y": 0.34,
+   "behind": false,
+   "props": {
+    "text": "Cosa ti\n*serve?*",
+    "entry": "pop",
+    "size": 190,
+    "wordAt": [
+     11,
+     17,
+     20
+    ],
+    "ink": "dark"
+   }
+  }
+ ],
+ "cta": null
+}

@@ -9,38 +9,15 @@
   "duration": 35.867
  },
  "styleId": "zane",
- "styleOverrides": {},
+ "styleOverrides": {
+  "captions": {
+   "positionY": 0.8
+  }
+ },
  "keep": [],
  "cuts": [],
  "frame": null,
- "joins": [
-  2.1,
-  5.1,
-  6.467,
-  9.667,
-  11.9,
-  12.467,
-  15.067,
-  16.133,
-  17.267,
-  17.867,
-  19.167,
-  20.767,
-  21.433,
-  21.933,
-  22.5,
-  22.7,
-  23.567,
-  24.2,
-  24.667,
-  27.933,
-  29.1,
-  29.6,
-  30.733,
-  31.533,
-  32.267,
-  33.467
- ],
+ "joins": [],
  "hold": 0.6,
  "words": [
   {
@@ -687,126 +664,154 @@
   {
    "at": 2.17,
    "kind": "punch",
-   "strength": 0.7
+   "strength": 0.6
   },
   {
    "at": 5.69,
    "kind": "punch",
-   "strength": 0.6
-  },
-  {
-   "at": 8.84,
-   "kind": "punch",
-   "strength": 0.8
+   "strength": 0.5
   },
   {
    "at": 15.52,
    "kind": "punch",
-   "strength": 0.8
-  },
-  {
-   "at": 25.28,
-   "kind": "punch",
-   "strength": 0.7
+   "strength": 0.6
   },
   {
    "at": 28.36,
    "kind": "punch",
-   "strength": 0.7
+   "strength": 0.6
   },
   {
    "at": 33.86,
    "kind": "punch",
-   "strength": 0.6
+   "strength": 0.5
   }
  ],
  "graphics": [
   {
-   "type": "phoneclip",
+   "type": "gameintro",
    "at": 0.0,
    "duration": 2.1,
-   "y": 0.57,
    "props": {
-    "clip": [
-     0.0,
-     2.1
-    ],
-    "bg": "blur",
-    "header": "NXNATIVE · TEARS OF THE KINGDOM",
-    "title": "ZELDA *su iPhone*",
-    "screen": {
-     "kind": "clip",
+    "media": {
      "clip": {
       "file": "../trailers/totk_v3.mp4",
       "from": 77.2,
-      "to": 79.4
+      "to": 79.4,
+      "w": 540,
+      "h": 960
      }
-    }
+    },
+    "shrinkAt": 26,
+    "px": 0.82,
+    "py": 0.5,
+    "pw": 230,
+    "rot": 8
    }
   },
   {
    "type": "ktext",
-   "at": 2.17,
-   "duration": 1.0,
-   "y": 0.64,
+   "at": 0.0,
+   "duration": 0.9,
+   "y": 0.2,
+   "behind": false,
    "props": {
-    "text": "Resta fino\nalla *fine*",
+    "text": "ZELDA.\nSU *IPHONE*",
     "entry": "sticker",
-    "size": 120,
+    "size": 150,
     "wordAt": [
      0,
-     9,
-     13,
-     18
+     6,
+     10
     ],
     "hideCaptions": true
    }
   },
   {
    "type": "ktext",
-   "at": 3.17,
-   "duration": 1.88,
-   "y": 0.24,
+   "at": 0.9,
+   "duration": 1.2,
+   "y": 0.34,
+   "behind": true,
+   "props": {
+    "text": "NINTENDO\n*non vuole*",
+    "entry": "drop",
+    "size": 190,
+    "wordAt": [
+     0,
+     3,
+     3
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 2.17,
+   "duration": 1.73,
+   "y": 0.34,
+   "behind": true,
+   "props": {
+    "text": "Resta fino\nalla *fine*",
+    "entry": "sticker",
+    "size": 170,
+    "wordAt": [
+     0,
+     9,
+     13,
+     18
+    ],
+    "ink": "dark"
+   }
+  },
+  {
+   "type": "ktext",
+   "at": 3.92,
+   "duration": 1.18,
+   "y": 0.27,
+   "behind": false,
    "props": {
     "text": "cosa ti *serve*",
     "entry": "type",
-    "size": 96,
+    "size": 110,
     "wordAt": [
-     23,
-     28,
-     32
+     1,
+     6,
+     9
     ],
-    "cursor": true
+    "cursor": true,
+    "ink": "dark"
    }
   },
   {
    "type": "ktext",
    "at": 5.17,
    "duration": 2.03,
-   "y": 0.24,
+   "y": 0.28,
+   "behind": false,
    "props": {
     "text": "*nxnative*",
     "entry": "pop",
-    "size": 130,
+    "size": 170,
     "wordAt": [
      16
     ],
-    "giant": false
+    "ink": "dark"
    }
   },
   {
    "type": "counter",
    "at": 7.2,
    "duration": 2.5,
-   "y": 0.22,
+   "y": 0.28,
    "props": {
     "from": 0,
     "to": 10000,
     "prefix": "",
     "suffix": "+",
     "icon": "★",
-    "rollAt": 49,
-    "rollDur": 20
+    "rollAt": 12,
+    "rollDur": 36
    }
   },
   {
@@ -819,154 +824,89 @@
    }
   },
   {
-   "type": "ktext",
-   "at": 9.74,
-   "duration": 2.21,
-   "y": 0.42,
+   "type": "chip",
+   "at": 9.72,
+   "duration": 5.36,
+   "y": 0.44,
    "props": {
-    "text": "Emulatore\n= *finge*",
-    "entry": "led",
-    "size": 130,
-    "wordAt": [
-     3,
-     23,
-     23
-    ]
-   }
-  },
-  {
-   "type": "ktext",
-   "at": 11.97,
-   "duration": 0.55,
-   "y": 0.42,
-   "props": {
-    "text": "Questo *no.*",
-    "entry": "sticker",
-    "size": 150,
-    "wordAt": [
-     0,
-     9
-    ]
-   }
-  },
-  {
-   "type": "toggles",
-   "at": 12.54,
-   "duration": 2.54,
-   "y": 0.42,
-   "props": {
-    "title": "nxnative",
-    "icon": "N",
-    "items": [
-     {
-      "label": "Codice del gioco",
-      "at": 3
-     },
-     {
-      "label": "Dritto sul chip Apple",
-      "at": 55
-     },
-     {
-      "label": "Grafica su Metal",
-      "at": 64
-     }
-    ]
+    "dark": true,
+    "accent": "#CCFF00",
+    "emuAt": 4,
+    "noAt": 68,
+    "appleAt": 100,
+    "metalAt": 148,
+    "from": "SWITCH",
+    "fromSub": "NVIDIA Tegra X1",
+    "to": "A17 Pro"
    }
   },
   {
    "type": "ktext",
    "at": 15.12,
    "duration": 1.03,
-   "y": 0.62,
+   "y": 0.34,
+   "behind": true,
    "props": {
     "text": "Il dato\n*pazzesco*",
     "entry": "drop",
-    "size": 130,
+    "size": 180,
     "wordAt": [
      2,
      5,
      12
     ],
-    "hideCaptions": true
+    "ink": "dark"
    }
   },
   {
-   "type": "cards3d",
+   "type": "fpsduo",
    "at": 16.18,
    "duration": 4.62,
-   "y": 0.42,
+   "y": 0.31,
    "props": {
-    "bg": "blur",
-    "clip": [
-     16.2,
-     20.7
-    ],
-    "pill": "TEARS OF THE KINGDOM",
-    "cards": [
-     {
-      "at": 2,
-      "label": "IPHONE · 60 FPS",
-      "screen": {
-       "kind": "clip",
-       "clip": {
-        "file": "../trailers/totk_v3.mp4",
-        "from": 105.0,
-        "to": 109.6
-       }
-      }
-     },
-     {
-      "at": 94,
-      "label": "PRIMO SWITCH · 30 FPS",
-      "screen": {
-       "kind": "clip",
-       "clip": {
-        "file": "../trailers/totk_v3.mp4",
-        "from": 105.0,
-        "to": 106.6
-       }
-      }
+    "media": {
+     "clip": {
+      "file": "../trailers/totk_v3.mp4",
+      "from": 105.0,
+      "to": 109.8
      }
-    ],
-    "title": "60 fps vs *30*",
-    "titleAt": 53
+    },
+    "leftAt": 1,
+    "rollLeftAt": 53,
+    "rightAt": 92,
+    "rollRightAt": 128
    }
   },
   {
    "type": "ktext",
    "at": 20.84,
    "duration": 0.64,
-   "y": 0.62,
+   "y": 0.34,
+   "behind": true,
    "props": {
-    "text": "E non *solo*",
+    "text": "E non\n*solo*",
     "entry": "roll",
-    "size": 140,
+    "size": 190,
     "wordAt": [
      1,
      3,
      8
     ],
-    "hideCaptions": true
+    "ink": "dark"
    }
   },
   {
-   "type": "cards3d",
+   "type": "gamestack",
    "at": 21.48,
-   "duration": 2.12,
-   "y": 0.42,
+   "duration": 3.26,
+   "y": 0.27,
    "props": {
-    "bg": "blur",
-    "clip": [
-     21.5,
-     23.5
-    ],
-    "pill": "GIÀ TESTATI",
-    "cards": [
+    "w": 620,
+    "items": [
      {
-      "at": 1,
       "label": "ZELDA",
-      "screen": {
-       "kind": "clip",
+      "at": 1,
+      "media": {
        "clip": {
         "file": "../trailers/totk_v3.mp4",
         "from": 64.0,
@@ -975,42 +915,23 @@
       }
      },
      {
-      "at": 16,
       "label": "MARIO KART 8",
-      "screen": {
-       "kind": "image",
+      "at": 16,
+      "media": {
        "src": "../trailers/mariokart_i4.png"
       }
      },
      {
-      "at": 39,
       "label": "MARIO ODYSSEY",
-      "screen": {
-       "kind": "image",
+      "at": 39,
+      "media": {
        "src": "../trailers/odyssey_i2.png"
       }
-     }
-    ]
-   }
-  },
-  {
-   "type": "cards3d",
-   "at": 23.6,
-   "duration": 1.14,
-   "y": 0.42,
-   "props": {
-    "bg": "blur",
-    "clip": [
-     23.6,
-     24.7
-    ],
-    "pill": "GIÀ TESTATI",
-    "cards": [
+     },
      {
-      "at": 1,
       "label": "SILKSONG",
-      "screen": {
-       "kind": "clip",
+      "at": 65,
+      "media": {
        "clip": {
         "file": "../trailers/silksong.mp4",
         "from": 52.6,
@@ -1019,10 +940,9 @@
       }
      },
      {
-      "at": 20,
       "label": "HADES",
-      "screen": {
-       "kind": "clip",
+      "at": 84,
+      "media": {
        "clip": {
         "file": "../trailers/hades.mp4",
         "from": 2.6,
@@ -1034,70 +954,114 @@
    }
   },
   {
-   "type": "counter",
+   "type": "scene",
    "at": 24.76,
    "duration": 3.19,
-   "y": 0.22,
    "props": {
-    "from": 0,
-    "to": 100,
-    "prefix": "",
-    "suffix": "+ giochi",
-    "icon": "▶",
-    "rollAt": 16,
-    "rollDur": 18
+    "word": "100+",
+    "glowY": 0.4
    }
   },
   {
-   "type": "scribble",
-   "at": 26.44,
-   "duration": 1.51,
-   "y": 0.34,
-   "x": 0.64,
+   "type": "grid",
+   "at": 24.76,
+   "duration": 3.19,
+   "y": 0.4,
    "props": {
-    "text": "soprattutto\nsu Mac",
-    "arrow": "up",
-    "angle": -6,
-    "writeAt": 14
+    "dark": true,
+    "accent": "#CCFF00",
+    "cols": 3,
+    "count": 100,
+    "countAt": 16,
+    "unit": "giochi testati",
+    "note": "Per ora *soprattutto su Mac*",
+    "noteAt": 65,
+    "items": [
+     {
+      "src": "../trailers/botw_i1.png"
+     },
+     {
+      "src": "../trailers/animalcrossing_i1.png"
+     },
+     {
+      "src": "../trailers/metroid_i1.png"
+     },
+     {
+      "src": "../trailers/wonder_i1.png"
+     },
+     {
+      "src": "../trailers/totk_i2.png"
+     },
+     {
+      "src": "../trailers/fireemblem_i1.png"
+     },
+     {
+      "src": "../trailers/smash_i1.png"
+     },
+     {
+      "src": "../trailers/mariokart_i5.png"
+     },
+     {
+      "src": "../trailers/odyssey_i6.png"
+     },
+     {
+      "src": "../trailers/botw_i3.png"
+     },
+     {
+      "src": "../trailers/wonder_i3.png"
+     },
+     {
+      "src": "../trailers/animalcrossing_i3.png"
+     }
+    ]
    }
   },
   {
    "type": "ktext",
    "at": 28.0,
    "duration": 1.1,
-   "y": 0.62,
+   "y": 0.34,
+   "behind": true,
    "props": {
     "text": "Cosa ti\n*serve?*",
     "entry": "pop",
-    "size": 140,
+    "size": 190,
     "wordAt": [
      11,
      17,
      20
     ],
-    "hideCaptions": true
+    "ink": "dark"
    }
   },
   {
-   "type": "toggles",
+   "type": "needs",
    "at": 29.12,
    "duration": 4.33,
-   "y": 0.28,
+   "y": 0.27,
    "props": {
-    "title": "Ti serve",
-    "icon": "✓",
+    "dark": true,
+    "accent": "#CCFF00",
     "items": [
      {
-      "label": "Un Mac (chip Apple)",
+      "icon": "mac",
+      "label": "Mac",
+      "sub": "con chip Apple",
       "at": 2
      },
      {
-      "label": "iPhone 15 Pro o più recente",
-      "at": 17
+      "icon": "iphone",
+      "label": "iPhone 15 Pro+",
+      "sub": "o più recente",
+      "at": 17,
+      "subAt": 50
      },
      {
-      "label": "I tuoi giochi, originali",
-      "at": 74
+      "icon": "gamepad",
+      "label": "I tuoi giochi",
+      "sub": "quelli che possiedi",
+      "at": 74,
+      "subAt": 97
      }
     ]
    }
@@ -1107,7 +1071,7 @@
    "at": 33.5,
    "duration": 2.8,
    "text": "SWITCH",
-   "y": 0.755,
+   "y": 0.27,
    "props": {
     "name": "Commenti",
     "placeholder": "Aggiungi un commento…",
@@ -1115,8 +1079,7 @@
     "sendAt": 33,
     "reply": "Ti mando il link ✓",
     "replyAt": 54,
-    "sentLabel": "Inviato",
-    "hideCaptions": true
+    "sentLabel": "Inviato"
    }
   },
   {
@@ -1152,7 +1115,7 @@
   {
    "type": "chapter",
    "at": 28.0,
-   "duration": 1.1,
+   "duration": 5.45,
    "props": {
     "n": 4,
     "title": "Cosa serve",
