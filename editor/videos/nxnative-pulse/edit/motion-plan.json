@@ -87,7 +87,8 @@
     "props": {
      "text": "Alla fine: *cosa ti serve*",
      "accent": "#FF6633"
-    }
+    },
+    "scale": 1.45
    },
    "sfx": [
     {
