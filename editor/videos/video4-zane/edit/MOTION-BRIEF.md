@@ -2,8 +2,9 @@
 
 Intento: far sentire al titolare di una PMI la perdita di tempo della "caccia al pezzo" e mostrargli che con un
 messaggio WhatsApp la risposta arriva da sola. Tono: diretto, energico, concreto. Stile `zane` (nero-verde + lime),
-movimento bouncy del README. Tutto ciò che appare è inerente alla frase; il B-roll (Kling 3.0 via Higgsfield, 6 clip
-da 3 s, 22,5 crediti) mostra le cose fisiche di cui parla.
+movimento bouncy del README. Tutto ciò che appare è inerente alla frase; il B-roll (Higgsfield: immagine ferma gpt_image_2_5, poi
+Kling 4.0 image-to-video 1080p, 6 clip da 3 s; prompt in broll/PROMPTS.md) mostra le cose fisiche di cui parla, in
+una PMI italiana di lavorazione plexiglass.
 
 | timecode | cosa si dice / vede | trattamento grafico | girato integrato | beat del movimento |
 |---|---|---|---|---|
