@@ -1,0 +1,805 @@
+{
+ "video": "nxnative-zane",
+ "style": "zane",
+ "frame": null,
+ "duration": 35.94,
+ "hold": 0.6,
+ "music": {
+  "file": "editor/assets/music/tech-pulse-nxnative.wav",
+  "gap": 10
+ },
+ "captions": {
+  "emphasis": [
+   0,
+   22,
+   36,
+   39,
+   54,
+   65,
+   74,
+   87,
+   100,
+   102,
+   117
+  ]
+ },
+ "camera": [
+  {
+   "t": 2.17,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 5.69,
+   "op": "punch",
+   "strength": 0.6
+  },
+  {
+   "t": 8.84,
+   "op": "punch",
+   "strength": 0.8
+  },
+  {
+   "t": 15.52,
+   "op": "punch",
+   "strength": 0.8
+  },
+  {
+   "t": 25.28,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 28.36,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 33.86,
+   "op": "punch",
+   "strength": 0.6
+  }
+ ],
+ "scenes": [
+  {
+   "id": "h1",
+   "start": 0.0,
+   "end": 2.1,
+   "line": "Nintendo non vuole che tu veda questo video.",
+   "graphic": {
+    "type": "phoneclip",
+    "y": 0.57,
+    "props": {
+     "clip": [
+      0.0,
+      2.1
+     ],
+     "bg": "blur",
+     "header": "NXNATIVE · TEARS OF THE KINGDOM",
+     "title": "ZELDA *su iPhone*",
+     "screen": {
+      "kind": "clip",
+      "clip": {
+       "file": "../trailers/totk_v3.mp4",
+       "from": 77.2,
+       "to": 79.4
+      }
+     }
+    }
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "telefono-entra"
+    }
+   ]
+  },
+  {
+   "id": "p1",
+   "start": 2.17,
+   "end": 3.17,
+   "line": "Resta fino alla fine",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.64,
+    "props": {
+     "text": "Resta fino\nalla *fine*",
+     "entry": "sticker",
+     "size": 120,
+     "wordAt": [
+      2.17,
+      2.47,
+      2.61,
+      2.77
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 2.17,
+     "name": "whip-cta"
+    },
+    {
+     "t": 2.77,
+     "name": "timbro-1"
+    }
+   ]
+  },
+  {
+   "id": "p2",
+   "start": 3.17,
+   "end": 5.05,
+   "line": "ti dico esattamente cosa ti serve per provarlo",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.24,
+    "props": {
+     "text": "cosa ti *serve*",
+     "entry": "type",
+     "size": 96,
+     "wordAt": [
+      3.95,
+      4.11,
+      4.23
+     ],
+     "cursor": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 3.95,
+     "name": "digita-guida"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "start": 5.17,
+   "end": 7.2,
+   "line": "Si chiama nxnative, è su GitHub",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.24,
+    "props": {
+     "text": "*nxnative*",
+     "entry": "pop",
+     "size": 130,
+     "wordAt": [
+      5.69
+     ],
+     "giant": false
+    }
+   },
+   "sfx": [
+    {
+     "t": 5.69,
+     "name": "tessera-3d"
+    }
+   ]
+  },
+  {
+   "id": "r2",
+   "start": 7.2,
+   "end": 9.7,
+   "line": "da meno di un mese e ha già più di diecimila stelle",
+   "graphic": {
+    "type": "counter",
+    "y": 0.22,
+    "props": {
+     "from": 0,
+     "to": 10000,
+     "prefix": "",
+     "suffix": "+",
+     "icon": "★",
+     "rollAt": 8.84,
+     "rollDur": 20
+    }
+   },
+   "sfx": [
+    {
+     "t": 7.25,
+     "name": "scheda-entra-2"
+    },
+    {
+     "t": 8.84,
+     "name": "quantita-sale"
+    }
+   ]
+  },
+  {
+   "id": "e0",
+   "start": 9.72,
+   "end": 15.08,
+   "line": "scena emulatore",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "word": "NATIVO",
+     "glowY": 0.42
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.72,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "e1",
+   "start": 9.74,
+   "end": 11.95,
+   "line": "Un emulatore finge di essere uno Switch",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.42,
+    "props": {
+     "text": "Emulatore\n= *finge*",
+     "entry": "led",
+     "size": 130,
+     "wordAt": [
+      9.84,
+      10.5,
+      10.5
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.84,
+     "name": "digita-nuovo"
+    },
+    {
+     "t": 10.5,
+     "name": "bolla-2"
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "start": 11.97,
+   "end": 12.52,
+   "line": "questo no",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.42,
+    "props": {
+     "text": "Questo *no.*",
+     "entry": "sticker",
+     "size": 150,
+     "wordAt": [
+      11.97,
+      12.27
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 11.97,
+     "name": "x-negato"
+    }
+   ]
+  },
+  {
+   "id": "e3",
+   "start": 12.54,
+   "end": 15.08,
+   "line": "Il gioco gira direttamente sul tuo chip Apple",
+   "graphic": {
+    "type": "toggles",
+    "y": 0.42,
+    "props": {
+     "title": "nxnative",
+     "icon": "N",
+     "items": [
+      {
+       "label": "Codice del gioco",
+       "at": 12.64
+      },
+      {
+       "label": "Dritto sul chip Apple",
+       "at": 14.36
+      },
+      {
+       "label": "Grafica su Metal",
+       "at": 14.66
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 12.56,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 12.64,
+     "name": "check-1"
+    },
+    {
+     "t": 14.36,
+     "name": "check-2"
+    },
+    {
+     "t": 14.66,
+     "name": "check-3"
+    }
+   ]
+  },
+  {
+   "id": "d1",
+   "start": 15.12,
+   "end": 16.15,
+   "line": "E il dato pazzesco?",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.62,
+    "props": {
+     "text": "Il dato\n*pazzesco*",
+     "entry": "drop",
+     "size": 130,
+     "wordAt": [
+      15.18,
+      15.28,
+      15.52
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 15.12,
+     "name": "whip-cta"
+    },
+    {
+     "t": 15.52,
+     "name": "cubo-atterra"
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "start": 16.18,
+   "end": 20.8,
+   "line": "Tears of the Kingdom fino a 60 fps. Sul primo Switch va a 30.",
+   "graphic": {
+    "type": "cards3d",
+    "y": 0.42,
+    "props": {
+     "bg": "blur",
+     "clip": [
+      16.2,
+      20.7
+     ],
+     "pill": "TEARS OF THE KINGDOM",
+     "cards": [
+      {
+       "at": 16.24,
+       "label": "IPHONE · 60 FPS",
+       "screen": {
+        "kind": "clip",
+        "clip": {
+         "file": "../trailers/totk_v3.mp4",
+         "from": 105.0,
+         "to": 109.6
+        }
+       }
+      },
+      {
+       "at": 19.3,
+       "label": "PRIMO SWITCH · 30 FPS",
+       "screen": {
+        "kind": "clip",
+        "clip": {
+         "file": "../trailers/totk_v3.mp4",
+         "from": 105.0,
+         "to": 106.6
+        }
+       }
+      }
+     ],
+     "title": "60 fps vs *30*",
+     "titleAt": 17.94
+    }
+   },
+   "sfx": [
+    {
+     "t": 16.24,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 17.94,
+     "name": "ding-100"
+    },
+    {
+     "t": 19.3,
+     "name": "cubo-cade"
+    }
+   ]
+  },
+  {
+   "id": "g0",
+   "start": 20.84,
+   "end": 21.48,
+   "line": "E non solo",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.62,
+    "props": {
+     "text": "E non *solo*",
+     "entry": "roll",
+     "size": 140,
+     "wordAt": [
+      20.86,
+      20.94,
+      21.1
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 20.86,
+     "name": "flip-1"
+    }
+   ]
+  },
+  {
+   "id": "g1",
+   "start": 21.48,
+   "end": 23.6,
+   "line": "Zelda, Mario Kart 8, Mario Odyssey",
+   "graphic": {
+    "type": "cards3d",
+    "y": 0.42,
+    "props": {
+     "bg": "blur",
+     "clip": [
+      21.5,
+      23.5
+     ],
+     "pill": "GIÀ TESTATI",
+     "cards": [
+      {
+       "at": 21.5,
+       "label": "ZELDA",
+       "screen": {
+        "kind": "clip",
+        "clip": {
+         "file": "../trailers/totk_v3.mp4",
+         "from": 64.0,
+         "to": 66.2
+        }
+       }
+      },
+      {
+       "at": 22.0,
+       "label": "MARIO KART 8",
+       "screen": {
+        "kind": "image",
+        "src": "../trailers/mariokart_i4.png"
+       }
+      },
+      {
+       "at": 22.77,
+       "label": "MARIO ODYSSEY",
+       "screen": {
+        "kind": "image",
+        "src": "../trailers/odyssey_i2.png"
+       }
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 21.5,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 22.0,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 22.77,
+     "name": "cubo-cade"
+    }
+   ]
+  },
+  {
+   "id": "g2",
+   "start": 23.6,
+   "end": 24.74,
+   "line": "Silksong, Hades",
+   "graphic": {
+    "type": "cards3d",
+    "y": 0.42,
+    "props": {
+     "bg": "blur",
+     "clip": [
+      23.6,
+      24.7
+     ],
+     "pill": "GIÀ TESTATI",
+     "cards": [
+      {
+       "at": 23.64,
+       "label": "SILKSONG",
+       "screen": {
+        "kind": "clip",
+        "clip": {
+         "file": "../trailers/silksong.mp4",
+         "from": 52.6,
+         "to": 53.8
+        }
+       }
+      },
+      {
+       "at": 24.27,
+       "label": "HADES",
+       "screen": {
+        "kind": "clip",
+        "clip": {
+         "file": "../trailers/hades.mp4",
+         "from": 2.6,
+         "to": 3.4
+        }
+       }
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 23.64,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 24.27,
+     "name": "cubo-cade"
+    }
+   ]
+  },
+  {
+   "id": "g3",
+   "start": 24.76,
+   "end": 27.95,
+   "line": "Oltre 100 giochi testati",
+   "graphic": {
+    "type": "counter",
+    "y": 0.22,
+    "props": {
+     "from": 0,
+     "to": 100,
+     "prefix": "",
+     "suffix": "+ giochi",
+     "icon": "▶",
+     "rollAt": 25.28,
+     "rollDur": 18
+    }
+   },
+   "sfx": [
+    {
+     "t": 24.78,
+     "name": "scheda-entra-3"
+    },
+    {
+     "t": 25.28,
+     "name": "quantita-sale"
+    }
+   ]
+  },
+  {
+   "id": "g4",
+   "start": 26.44,
+   "end": 27.95,
+   "line": "per ora soprattutto su Mac",
+   "graphic": {
+    "type": "scribble",
+    "x": 0.64,
+    "y": 0.34,
+    "props": {
+     "text": "soprattutto\nsu Mac",
+     "arrow": "up",
+     "angle": -6,
+     "writeAt": 26.92
+    }
+   },
+   "sfx": [
+    {
+     "t": 26.5,
+     "name": "cursore-scivola"
+    },
+    {
+     "t": 26.92,
+     "name": "evidenzia-pezzi"
+    }
+   ]
+  },
+  {
+   "id": "n0",
+   "start": 28.0,
+   "end": 29.1,
+   "line": "Allora cosa ti serve?",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.62,
+    "props": {
+     "text": "Cosa ti\n*serve?*",
+     "entry": "pop",
+     "size": 140,
+     "wordAt": [
+      28.36,
+      28.56,
+      28.66
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 28.0,
+     "name": "whip-cta"
+    },
+    {
+     "t": 28.66,
+     "name": "bolla-3"
+    }
+   ]
+  },
+  {
+   "id": "n1",
+   "start": 29.12,
+   "end": 33.45,
+   "line": "Un Mac, un iPhone 15 Pro o più recente e i tuoi giochi, quelli che possiedi davvero.",
+   "graphic": {
+    "type": "toggles",
+    "y": 0.28,
+    "props": {
+     "title": "Ti serve",
+     "icon": "✓",
+     "items": [
+      {
+       "label": "Un Mac (chip Apple)",
+       "at": 29.17
+      },
+      {
+       "label": "iPhone 15 Pro o più recente",
+       "at": 29.67
+      },
+      {
+       "label": "I tuoi giochi, originali",
+       "at": 31.6
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 29.12,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 29.17,
+     "name": "check-1"
+    },
+    {
+     "t": 29.67,
+     "name": "check-2"
+    },
+    {
+     "t": 31.6,
+     "name": "check-3"
+    }
+   ]
+  },
+  {
+   "id": "t1",
+   "start": 33.5,
+   "end": 36.3,
+   "line": "Scrivi SWITCH nei commenti e ti mando il link.",
+   "graphic": {
+    "type": "dm",
+    "y": 0.755,
+    "props": {
+     "name": "Commenti",
+     "placeholder": "Aggiungi un commento…",
+     "typeAt": 33.86,
+     "sendAt": 34.6,
+     "reply": "Ti mando il link ✓",
+     "replyAt": 35.3,
+     "sentLabel": "Inviato",
+     "hideCaptions": true
+    },
+    "text": "SWITCH"
+   },
+   "sfx": [
+    {
+     "t": 33.5,
+     "name": "commenti-apre"
+    },
+    {
+     "t": 33.86,
+     "name": "digita-messaggio"
+    },
+    {
+     "t": 34.6,
+     "name": "invio-nuovo"
+    },
+    {
+     "t": 35.3,
+     "name": "risposta-dm"
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "start": 2.17,
+   "end": 9.72,
+   "line": "capitolo 1",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 1,
+     "title": "Cos'è",
+     "total": 4
+    }
+   }
+  },
+  {
+   "id": "c2",
+   "start": 9.72,
+   "end": 20.8,
+   "line": "capitolo 2",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 2,
+     "title": "Come funziona",
+     "total": 4
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.8,
+     "name": "scheda-entra"
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "start": 20.8,
+   "end": 28.0,
+   "line": "capitolo 3",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 3,
+     "title": "Cosa ci gira",
+     "total": 4
+    }
+   },
+   "sfx": [
+    {
+     "t": 20.82,
+     "name": "scheda-entra-2"
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "start": 28.0,
+   "end": 29.1,
+   "line": "capitolo 4",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 4,
+     "title": "Cosa serve",
+     "total": 4
+    }
+   }
+  }
+ ]
+}
