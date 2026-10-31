@@ -792,7 +792,10 @@
   {
    "type": "stage",
    "at": 9.72,
-   "duration": 18.23
+   "duration": 18.23,
+   "props": {
+    "cut": true
+   }
   },
   {
    "type": "chip",
@@ -863,7 +866,7 @@
   {
    "type": "burst",
    "at": 21.48,
-   "duration": 3.24,
+   "duration": 3.54,
    "y": 0.37,
    "props": {
     "hideCaptions": true,
@@ -920,16 +923,16 @@
   },
   {
    "type": "grid",
-   "at": 24.72,
-   "duration": 3.23,
+   "at": 25.02,
+   "duration": 2.93,
    "y": 0.39,
    "props": {
     "hideCaptions": true,
     "cols": 3,
     "count": 100,
-    "countAt": 17,
+    "countAt": 8,
     "note": "Per ora *soprattutto su Mac*",
-    "noteAt": 66,
+    "noteAt": 57,
     "unit": "giochi testati",
     "items": [
      {

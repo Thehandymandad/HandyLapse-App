@@ -209,7 +209,10 @@
    "end": 27.95,
    "line": "scena chip",
    "graphic": {
-    "type": "stage"
+    "type": "stage",
+    "props": {
+     "cut": true
+    }
    }
   },
   {
@@ -349,7 +352,7 @@
   {
    "id": "b2",
    "start": 21.48,
-   "end": 24.72,
+   "end": 25.02,
    "line": "Zelda, Mario Kart 8, Mario Odyssey, Silksong, Hades.",
    "graphic": {
     "type": "burst",
@@ -432,7 +435,7 @@
   },
   {
    "id": "g1",
-   "start": 24.72,
+   "start": 25.02,
    "end": 27.95,
    "line": "Oltre 100 giochi testati, per ora soprattutto su Mac.",
    "graphic": {
