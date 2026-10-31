@@ -83,6 +83,11 @@ Tre livelli, ognuno fatto dallo strumento che lo fa meglio:
    --duration <durata finale> --bpm 120 --end <fine del parlato>` (elettronica tech allegra; si ferma dopo l'ultima
    parola), poi nel piano `"music": {"file": "editor/assets/music/<nome>.wav", "gap": 9}`: `compose.py` la mette 9 dB
    sotto la voce e la abbassa da sola quando parli (sidechain), circa 15 dB sotto durante il parlato.
+2e. **B-roll a schermo intero** (stile zane, come Zane con Kling): clip inerenti a ciò che si dice (le cose fisiche
+   che il girato non mostra) generate con Higgsfield `generate_video_batch`, modello `kling3_0`, 3 s, `mode` std,
+   `sound` off, 9:16 (3,75 crediti l'una: dire il costo), salvate in `$E/broll/`; nel piano
+   `"broll": [{"file": "broll/b1.mp4", "start", "end", "from"}]`, poi `python $S/broll.py $E` (l'originale resta in
+   `base_nobroll.mp4`). Prima di camera-track. Dentro telefoni e schede invece va `screen` (chat, foglio, immagine).
 2d. **Beat** (stile zane, prima del piano): `python $S/beats.py $E [--music <brano>]` → `beats.json` con pause del
    parlato, parole accentate e transienti della musica: i colpi del movimento cadono lì.
 3. **Progetto**: `python $S/plan_to_reel.py $E` → `reel.json` (nel piano `"graphic": {"type", "props", "y", "scale",

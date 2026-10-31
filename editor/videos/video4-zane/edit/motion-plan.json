@@ -1,0 +1,935 @@
+{
+ "video": "video4-zane",
+ "style": "zane",
+ "frame": null,
+ "duration": 45.875,
+ "hold": 1.3,
+ "music": {
+  "file": "editor/assets/music/tech-pulse-video4.wav",
+  "gap": 9
+ },
+ "captions": {
+  "emphasis": [
+   17,
+   21,
+   44,
+   59,
+   76,
+   81,
+   100,
+   118,
+   139,
+   142,
+   151,
+   173
+  ]
+ },
+ "broll": [
+  {
+   "file": "broll/b1.mp4",
+   "start": 1.1,
+   "end": 2.05,
+   "from": 0.4
+  },
+  {
+   "file": "broll/b2.mp4",
+   "start": 3.15,
+   "end": 4.15,
+   "from": 0.3
+  },
+  {
+   "file": "broll/b3.mp4",
+   "start": 7.42,
+   "end": 9.05,
+   "from": 0.2
+  },
+  {
+   "file": "broll/b5.mp4",
+   "start": 23.3,
+   "end": 24.3,
+   "from": 0.3
+  },
+  {
+   "file": "broll/b4.mp4",
+   "start": 27.93,
+   "end": 29.45,
+   "from": 0.2
+  },
+  {
+   "file": "broll/b6.mp4",
+   "start": 32.9,
+   "end": 34.24,
+   "from": 0.3
+  }
+ ],
+ "camera": [
+  {
+   "t": 0.07,
+   "op": "punch",
+   "strength": 0.6
+  },
+  {
+   "t": 2.76,
+   "op": "punch",
+   "strength": 0.8
+  },
+  {
+   "t": 9.7,
+   "op": "punch",
+   "strength": 0.9
+  },
+  {
+   "t": 19.53,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 35.72,
+   "op": "punch",
+   "strength": 0.7
+  },
+  {
+   "t": 38.85,
+   "op": "punch",
+   "strength": 0.8
+  },
+  {
+   "t": 43.87,
+   "op": "punch",
+   "strength": 0.6
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "start": 1.1,
+   "end": 2.05,
+   "line": "in azienda qualcuno chiede",
+   "graphic": null,
+   "sfx": [
+    {
+     "t": 1.1,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.05,
+   "end": 3.15,
+   "line": "Ce l'abbiamo questo pezzo?",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.66,
+    "props": {
+     "text": "Ce l'abbiamo\n*questo pezzo?*",
+     "entry": "sticker",
+     "size": 118,
+     "wordAt": [
+      2.13,
+      2.24,
+      2.54,
+      2.76
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 2.13,
+     "name": "timbro-1"
+    },
+    {
+     "t": 2.54,
+     "name": "bolla-2"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.17,
+   "end": 4.15,
+   "line": "E parte la caccia.",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.5,
+    "props": {
+     "text": "E parte la\n*caccia.*",
+     "entry": "drop",
+     "size": 140,
+     "wordAt": [
+      3.21,
+      3.31,
+      3.52,
+      3.62
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 3.15,
+     "name": "whip-cta"
+    },
+    {
+     "t": 3.62,
+     "name": "cubo-atterra"
+    }
+   ]
+  },
+  {
+   "id": "s04a",
+   "start": 4.15,
+   "end": 7.39,
+   "line": "Apri l'Excel del magazzino, scorri centinaia di righe, controlli la misura",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "clip": [
+      4.2,
+      7.3
+     ],
+     "glowY": 0.4
+    }
+   },
+   "sfx": [
+    {
+     "t": 4.17,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.17,
+   "end": 7.39,
+   "line": "l'Excel del magazzino",
+   "graphic": {
+    "type": "sheet",
+    "y": 0.42,
+    "props": {
+     "title": "Magazzino.xlsx",
+     "columns": [
+      "Articolo",
+      "Misura",
+      "Qtà"
+     ],
+     "rows": [
+      [
+       "Lastra PMMA 5 mm",
+       "2000×1000",
+       "18"
+      ],
+      [
+       "Profilo alluminio",
+       "3000",
+       "42"
+      ],
+      [
+       "Lastra PMMA 3 mm",
+       "2000×1000",
+       "24"
+      ],
+      [
+       "Policarbonato 4 mm",
+       "2050×1250",
+       "7"
+      ],
+      [
+       "Tubo PVC 40",
+       "2000",
+       "60"
+      ],
+      [
+       "Lastra PET 1 mm",
+       "1000×700",
+       "35"
+      ]
+     ],
+     "scrollAt": [
+      5.41,
+      6.5
+     ],
+     "highlightAt": 6.61,
+     "highlightCol": 1
+    }
+   },
+   "sfx": [
+    {
+     "t": 4.33,
+     "name": "foglio-entra"
+    },
+    {
+     "t": 5.41,
+     "name": "righe-scorrono"
+    },
+    {
+     "t": 6.61,
+     "name": "colonna-misura"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.42,
+   "end": 9.05,
+   "line": "chiami chi sta in magazzino",
+   "graphic": null,
+   "sfx": [
+    {
+     "t": 7.42,
+     "name": "whip-cta"
+    },
+    {
+     "t": 7.5,
+     "name": "squillo"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.05,
+   "end": 10.0,
+   "line": "è passato un quarto d'ora",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.66,
+    "props": {
+     "text": "15 *minuti*",
+     "entry": "flap",
+     "size": 170,
+     "wordAt": [
+      9.16,
+      9.62
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.16,
+     "name": "righe-scorrono"
+    }
+   ]
+  },
+  {
+   "id": "s07a",
+   "start": 10.0,
+   "end": 11.74,
+   "line": "Ora immagina di scrivere su WhatsApp",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "word": "IMMAGINA",
+     "glowY": 0.42
+    }
+   },
+   "sfx": [
+    {
+     "t": 10.0,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.02,
+   "end": 11.74,
+   "line": "Ora immagina",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.42,
+    "props": {
+     "text": "Ora *immagina*",
+     "entry": "type",
+     "size": 150,
+     "curve": true,
+     "wordAt": [
+      10.05,
+      10.2
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 10.05,
+     "name": "digita-guida"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 11.74,
+   "end": 17.43,
+   "line": "\"Lastre 3 mm trasparente, quanti ne abbiamo?\" E in due secondi ti arriva la risposta: quanti pezzi hai e dove sono",
+   "graphic": {
+    "type": "phoneclip",
+    "y": 0.53,
+    "props": {
+     "clip": [
+      11.8,
+      17.4
+     ],
+     "bg": "blur",
+     "title": "• LIVE *risposte*",
+     "screen": {
+      "kind": "chat",
+      "title": "Magazzino",
+      "messages": [
+       {
+        "from": "me",
+        "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
+        "at": 13.94
+       },
+       {
+        "from": "bot",
+        "text": "*34 pezzi*\nScaffale B2 · magazzino nord",
+        "at": 15.37
+       }
+      ]
+     }
+    }
+   },
+   "sfx": [
+    {
+     "t": 11.76,
+     "name": "telefono-entra"
+    },
+    {
+     "t": 13.94,
+     "name": "invio-messaggio"
+    },
+    {
+     "t": 15.37,
+     "name": "risposta-messaggio"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.48,
+   "end": 19.97,
+   "line": "Si può fare, si collega l'Excel che usi già a WhatsApp",
+   "graphic": {
+    "type": "toggles",
+    "y": 0.66,
+    "props": {
+     "title": "Automazione",
+     "icon": "A",
+     "items": [
+      {
+       "label": "Collega Excel",
+       "at": 18.41
+      },
+      {
+       "label": "Collega WhatsApp",
+       "at": 19.53
+      },
+      {
+       "label": "Risposte automatiche",
+       "at": 19.7
+      }
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 17.5,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 18.41,
+     "name": "check-1"
+    },
+    {
+     "t": 19.53,
+     "name": "check-2"
+    },
+    {
+     "t": 19.7,
+     "name": "check-3"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.97,
+   "end": 22.0,
+   "line": "niente programmi nuovi, niente gestionali da imparare",
+   "graphic": {
+    "type": "scribble",
+    "x": 0.3,
+    "y": 0.45,
+    "props": {
+     "text": "ZERO\nPROGRAMMI",
+     "arrow": "up",
+     "angle": -10,
+     "writeAt": 20.28,
+     "grayFootage": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 20.0,
+     "name": "cursore-scivola"
+    },
+    {
+     "t": 20.28,
+     "name": "evidenzia-pezzi"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.02,
+   "end": 23.3,
+   "line": "E non serve solo a cercare.",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.66,
+    "props": {
+     "text": "Non solo\n*cercare.*",
+     "entry": "pop",
+     "size": 130,
+     "wordAt": [
+      22.11,
+      22.51,
+      22.69
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 22.11,
+     "name": "tessera-3d"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 23.3,
+   "end": 24.3,
+   "line": "Arriva un pezzo nuovo",
+   "graphic": null,
+   "sfx": [
+    {
+     "t": 23.3,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 24.3,
+   "end": 27.9,
+   "line": "lo scrivi in chat: nome, misura, quantità, e viene aggiunto da solo nell'Excel",
+   "graphic": {
+    "type": "cards3d",
+    "y": 0.41,
+    "props": {
+     "bg": "blur",
+     "clip": [
+      24.3,
+      27.8
+     ],
+     "pill": "NUOVO PEZZO",
+     "cards": [
+      {
+       "at": 24.36,
+       "label": "WHATSAPP",
+       "screen": {
+        "kind": "chat",
+        "title": "Magazzino",
+        "messages": [
+         {
+          "from": "me",
+          "text": "*Nuovo:* lastra PMMA 3 mm\n2000×1000 · 10 pz",
+          "at": 24.78
+         }
+        ]
+       }
+      },
+      {
+       "at": 25.6,
+       "label": "INVENTARIO.XLSX",
+       "screen": {
+        "kind": "sheet",
+        "columns": [
+         "Nome",
+         "Misura",
+         "Qtà"
+        ],
+        "rows": [
+         [
+          "Lastra PMMA 5 mm",
+          "2000×1000",
+          "18"
+         ],
+         [
+          "Profilo alluminio",
+          "3000",
+          "42"
+         ]
+        ],
+        "addAt": 26.67,
+        "addRow": [
+         "Lastra PMMA 3 mm",
+         "2000×1000",
+         "10"
+        ]
+       }
+      }
+     ],
+     "title": "Nome, misura,\n*quantità*",
+     "titleAt": 25.22
+    }
+   },
+   "sfx": [
+    {
+     "t": 24.36,
+     "name": "cubo-cade"
+    },
+    {
+     "t": 24.78,
+     "name": "invio-messaggio"
+    },
+    {
+     "t": 25.6,
+     "name": "foglio-entra"
+    },
+    {
+     "t": 26.67,
+     "name": "riga-aggiunta"
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 27.93,
+   "end": 29.45,
+   "line": "Hai preso delle lastre nuove?",
+   "graphic": null,
+   "sfx": [
+    {
+     "t": 27.93,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 29.45,
+   "end": 30.97,
+   "line": "Lo scrivi e la quantità si aggiorna",
+   "graphic": {
+    "type": "counter",
+    "y": 0.2,
+    "props": {
+     "from": 24,
+     "to": 34,
+     "suffix": " pz",
+     "icon": "+",
+     "rollAt": 30.16,
+     "rollDur": 18
+    }
+   },
+   "sfx": [
+    {
+     "t": 29.5,
+     "name": "scheda-entra-2"
+    },
+    {
+     "t": 30.16,
+     "name": "quantita-sale"
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 31.0,
+   "end": 32.9,
+   "line": "Così chiunque in azienda",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.66,
+    "props": {
+     "text": "*Chiunque*\nin azienda",
+     "entry": "roll",
+     "size": 140,
+     "wordAt": [
+      31.3,
+      31.59,
+      31.7
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 31.3,
+     "name": "flip-1"
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 32.9,
+   "end": 34.24,
+   "line": "dal magazzino al commerciale in giro dai clienti",
+   "graphic": null,
+   "sfx": [
+    {
+     "t": 32.9,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 34.26,
+   "end": 37.36,
+   "line": "sa in un attimo cosa c'è e cosa manca, direttamente dal telefono",
+   "graphic": {
+    "type": "phoneclip",
+    "y": 0.53,
+    "props": {
+     "clip": [
+      34.3,
+      37.3
+     ],
+     "bg": "blur",
+     "title": "• *direttamente* dal telefono",
+     "screen": {
+      "kind": "chat",
+      "title": "Magazzino",
+      "messages": [
+       {
+        "from": "me",
+        "text": "Cosa manca per il cantiere Rossi?",
+        "at": 34.4
+       },
+       {
+        "from": "bot",
+        "text": "✓ c'è: *lastre 3 mm* (34)\n✗ manca: *profilo 20×20*",
+        "at": 35.53
+       }
+      ]
+     }
+    }
+   },
+   "sfx": [
+    {
+     "t": 34.28,
+     "name": "telefono-entra"
+    },
+    {
+     "t": 34.4,
+     "name": "invio-messaggio"
+    },
+    {
+     "t": 35.53,
+     "name": "risposta-messaggio"
+    }
+   ]
+  },
+  {
+   "id": "s19a",
+   "start": 37.4,
+   "end": 40.18,
+   "line": "Se hai una piccola azienda è tempo che recuperi ogni singolo giorno",
+   "graphic": {
+    "type": "scene",
+    "props": {
+     "clip": [
+      37.4,
+      40.1
+     ],
+     "glowY": 0.5
+    }
+   },
+   "sfx": [
+    {
+     "t": 37.4,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 37.42,
+   "end": 40.18,
+   "line": "tempo recuperato",
+   "graphic": {
+    "type": "chart",
+    "y": 0.42,
+    "props": {
+     "values": [
+      12,
+      20,
+      28,
+      45,
+      62,
+      100
+     ],
+     "from": 0,
+     "to": 15,
+     "suffix": " min/giorno",
+     "rollAt": 38.5
+    }
+   },
+   "sfx": [
+    {
+     "t": 37.6,
+     "name": "riga-aggiunta"
+    },
+    {
+     "t": 38.85,
+     "name": "tempo-recuperato"
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 40.2,
+   "end": 42.3,
+   "line": "Qual è il lavoro che ti fa perdere più tempo in azienda?",
+   "graphic": {
+    "type": "ktext",
+    "y": 0.66,
+    "props": {
+     "text": "Cosa ti fa\n*perdere tempo?*",
+     "entry": "sticker",
+     "size": 120,
+     "wordAt": [
+      40.24,
+      40.45,
+      41.04,
+      41.44
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 40.24,
+     "name": "timbro-2"
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 42.3,
+   "end": 45.875,
+   "line": "Scrivilo nei commenti, magari si può automatizzare.",
+   "graphic": {
+    "type": "dm",
+    "y": 0.755,
+    "props": {
+     "name": "Commenti",
+     "placeholder": "Aggiungi un commento…",
+     "typeAt": 42.5,
+     "sendAt": 43.3,
+     "reply": "Si può automatizzare ✓",
+     "replyAt": 43.9,
+     "sentLabel": "Inviato",
+     "hideCaptions": true
+    },
+    "text": "Fatture a mano"
+   },
+   "sfx": [
+    {
+     "t": 42.3,
+     "name": "commenti-apre"
+    },
+    {
+     "t": 42.5,
+     "name": "digita-messaggio"
+    },
+    {
+     "t": 43.3,
+     "name": "invio-nuovo"
+    },
+    {
+     "t": 43.9,
+     "name": "risposta-dm"
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "start": 0.0,
+   "end": 10.0,
+   "line": "capitolo 1",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 1,
+     "title": "Il problema",
+     "total": 4
+    }
+   }
+  },
+  {
+   "id": "c2",
+   "start": 10.0,
+   "end": 22.0,
+   "line": "capitolo 2",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 2,
+     "title": "La soluzione",
+     "total": 4
+    }
+   },
+   "sfx": [
+    {
+     "t": 10.1,
+     "name": "scheda-entra"
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "start": 22.0,
+   "end": 31.0,
+   "line": "capitolo 3",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 3,
+     "title": "Come funziona",
+     "total": 4
+    }
+   },
+   "sfx": [
+    {
+     "t": 22.05,
+     "name": "scheda-entra-2"
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "start": 31.0,
+   "end": 42.3,
+   "line": "capitolo 4",
+   "graphic": {
+    "type": "chapter",
+    "props": {
+     "n": 4,
+     "title": "Il risultato",
+     "total": 4
+    }
+   },
+   "sfx": [
+    {
+     "t": 31.05,
+     "name": "scheda-entra-3"
+    }
+   ]
+  }
+ ]
+}
