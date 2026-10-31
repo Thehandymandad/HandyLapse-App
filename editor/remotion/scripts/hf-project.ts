@@ -76,6 +76,24 @@ const prepMedia = (v: unknown): unknown => {
       out[k] = { src: rel, cols: SPRITE.cols, rows, fw: SPRITE.fw, fh: SPRITE.fh, n };
       continue;
     }
+    // clip da un altro file (trailer, B-roll): { file, from, to, w?, h?, fps? } → sprite orizzontale di default 480×270
+    if (k === "clip" && x && typeof x === "object" && typeof (x as { file?: unknown }).file === "string") {
+      const c = x as { file: string; from?: number; to?: number; w?: number; h?: number; fps?: number };
+      const a = c.from ?? 0;
+      const b = c.to ?? a + 2;
+      const fw = c.w ?? 480;
+      const fh = c.h ?? 270;
+      const fps = c.fps ?? 30;
+      const n = Math.max(1, Math.round((b - a) * fps));
+      const rows = Math.ceil(n / SPRITE.cols);
+      const rel = `assets/img/clipf_${clipN++}_${path.basename(c.file).replace(/\W+/g, "_")}_${a.toFixed(2)}.jpg`;
+      execFileSync("ffmpeg", ["-y", "-v", "error", "-ss", a.toFixed(3), "-t", (b - a).toFixed(3), "-i", path.resolve(edit, c.file),
+        "-vf", `fps=${fps},scale=${fw}:${fh}:force_original_aspect_ratio=increase,crop=${fw}:${fh},tile=${SPRITE.cols}x${rows}`,
+        "-frames:v", "1", "-q:v", "3", path.join(hf, rel)]);
+      images.push(rel);
+      out[k] = { src: rel, cols: SPRITE.cols, rows, fw, fh, n };
+      continue;
+    }
     out[k] = prepMedia(x);
   }
   return out;

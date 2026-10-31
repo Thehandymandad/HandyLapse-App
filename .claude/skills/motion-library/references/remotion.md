@@ -62,6 +62,31 @@ Dentro `phoneclip` e `cards3d` va `screen` (`src/styles/originals/zane/screens.t
 `clip: [da, a]` (secondi del montato, anche dentro `cards[]`): hf-project ne fa un foglio di fotogrammi 360×640 e lo
 precarica; `src/lib/media.tsx` (`Clip`) lo disegna su canvas, in bianco e nero o sfocato. Tenere i clip a 1–3 s.
 
+## Style pack `apple` (bianco Apple) — `src/styles/originals/apple/`
+
+Bianco Apple, vetro chiaro, un solo accento blu `#1F6BFF`, Inter pesante; movimenti da keynote (molle morbide senza
+rimbalzo, sfocatura che si scioglie). Sottotitoli bianchi con ombra sul girato, quasi neri sulle scene bianche, parola
+chiave blu su pillola di vetro. Nel piano: `"style": "apple"`, `"frame": null`. Primo uso: `editor/videos/nxnative`.
+
+| tipo | props | per dire |
+|---|---|---|
+| `stage` | `cut` | scena bianca a schermo intero (sotto le altre grafiche; i sottotitoli diventano scuri) |
+| `title` | `text` (`\n`, `*blu*`), `size`, `wordAt[]` (negativo = già visibile), `light` | titolo parola per parola |
+| `hero` | `media`, `w`, `landscape`, `zoomFrom`, `push`, `tilt`, `roll`, `instant`, `label` | un iPhone con dentro ciò di cui si parla |
+| `promise` | `text` | la promessa che tiene fino alla fine |
+| `progress` | `label`, `doneAt` | barra in alto che si riempie fino al momento promesso, poi resta come intestazione |
+| `repo` | `owner`, `name`, `desc`, `chips[]`, `chipsAt`, `stars`, `starsAt`, `plus` | un progetto GitHub e le sue stelle |
+| `chip` | `emuAt`, `noAt`, `appleAt`, `metalAt`, `from`, `fromSub`, `to` | una cosa che diventa un'altra (chip che si dissolve) |
+| `fps` | `media`, `sixtyAt`, `thirtyAt`, `topY`, `botY` | confronto fluido contro a scatti |
+| `burst` | `items[{label, media, at}]` | elenco veloce, un telefono per nome |
+| `grid` | `items[media]`, `cols`, `count`, `countAt`, `unit`, `note`, `noteAt` | "tantissimi": griglia con contatore |
+| `needs` | `items[{icon: mac/iphone/gamepad, label, sub, at, subAt}]` | requisiti, una tessera per voce |
+| `cta` | `word`, `typeAt`, `sendAt`, `title` | "scrivi X nei commenti" |
+
+`media` = `{ "clip": {"file": "../trailers/x.mp4", "from": 77.2, "to": 79.4} }` (sprite orizzontale 480×270 fatto da
+hf-project; anche `w`, `h`, `fps`) oppure `{ "src": "../trailers/x.png" }` (immagine con spinta lenta). Trailer e
+screenshot di terzi stanno in `editor/videos/<nome>/trailers/` (fuori dal repo), sempre senza audio.
+
 ## Style pack `claude-reel` (copiato da una reference) — `src/styles/references/claude-reel/`
 
 `badge`, `timeline` (card timeline di montaggio), `chat` (prompt a Claude che si scrive e si invia), `logo3d`

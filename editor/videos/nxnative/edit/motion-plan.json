@@ -1,0 +1,612 @@
+{
+ "video": "nxnative",
+ "style": "apple",
+ "frame": null,
+ "duration": 35.94,
+ "hold": 0.6,
+ "music": {
+  "file": "editor/assets/music/tech-pulse-nxnative.wav",
+  "gap": 10
+ },
+ "captions": {
+  "emphasis": [
+   0,
+   22,
+   36,
+   54,
+   58,
+   65,
+   74,
+   87,
+   94,
+   100,
+   102,
+   117
+  ]
+ },
+ "camera": [
+  {
+   "t": 2.17,
+   "op": "punch",
+   "strength": 0.6
+  },
+  {
+   "t": 5.17,
+   "op": "punch",
+   "strength": 0.5
+  },
+  {
+   "t": 28.0,
+   "op": "punch",
+   "strength": 0.6
+  },
+  {
+   "t": 33.54,
+   "op": "punch",
+   "strength": 0.6
+  }
+ ],
+ "scenes": [
+  {
+   "id": "h0",
+   "start": 0.0,
+   "end": 2.1,
+   "line": "hook",
+   "graphic": {
+    "type": "stage",
+    "props": {
+     "cut": true
+    }
+   }
+  },
+  {
+   "id": "h1",
+   "start": 0.0,
+   "end": 2.1,
+   "line": "Nintendo non vuole che tu veda questo video.",
+   "graphic": {
+    "type": "hero",
+    "y": 0.41,
+    "props": {
+     "w": 800,
+     "zoomFrom": 0.86,
+     "push": 0.003,
+     "tilt": -10,
+     "roll": -4,
+     "media": {
+      "clip": {
+       "file": "../trailers/totk_v3.mp4",
+       "from": 77.2,
+       "to": 79.4
+      }
+     },
+     "instant": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "whip-cta"
+    },
+    {
+     "t": 0.12,
+     "name": "camera-3d"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "start": 0.0,
+   "end": 2.1,
+   "line": "ZELDA. SU IPHONE.",
+   "graphic": {
+    "type": "title",
+    "y": 0.17,
+    "props": {
+     "text": "ZELDA.\n*SU IPHONE.*",
+     "size": 124,
+     "wordAt": [
+      -1,
+      0.25,
+      0.4
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 0.6,
+     "name": "tessera-3d"
+    }
+   ]
+  },
+  {
+   "id": "p1",
+   "start": 2.17,
+   "end": 5.05,
+   "line": "Resta fino alla fine: ti dico esattamente cosa ti serve per provarlo.",
+   "graphic": {
+    "type": "promise",
+    "y": 0.2,
+    "props": {
+     "text": "Alla fine: *cosa ti serve*"
+    }
+   },
+   "sfx": [
+    {
+     "t": 2.2,
+     "name": "bolla-2"
+    },
+    {
+     "t": 2.6,
+     "name": "orologio"
+    }
+   ]
+  },
+  {
+   "id": "p2",
+   "start": 2.3,
+   "end": 33.45,
+   "line": "barra della promessa",
+   "graphic": {
+    "type": "progress",
+    "y": 0.135,
+    "props": {
+     "label": "Cosa ti serve",
+     "doneAt": 28.0
+    }
+   },
+   "sfx": [
+    {
+     "t": 28.0,
+     "name": "check-completo"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "start": 5.17,
+   "end": 9.7,
+   "line": "Si chiama nxnative. È su GitHub da meno di un mese e ha già più di diecimila stelle.",
+   "graphic": {
+    "type": "repo",
+    "y": 0.235,
+    "props": {
+     "owner": "seedds",
+     "name": "nxnative",
+     "desc": "I tuoi giochi Switch, nativi su iPhone e iPad.",
+     "chips": [
+      "Open source",
+      "< 1 mese"
+     ],
+     "chipsAt": 7.46,
+     "stars": 10000,
+     "starsAt": 8.84
+    }
+   },
+   "sfx": [
+    {
+     "t": 5.2,
+     "name": "scheda-entra"
+    },
+    {
+     "t": 7.46,
+     "name": "tessere-appaiono"
+    },
+    {
+     "t": 8.84,
+     "name": "quantita-sale"
+    },
+    {
+     "t": 9.7,
+     "name": "ding-100"
+    }
+   ]
+  },
+  {
+   "id": "c0",
+   "start": 9.72,
+   "end": 15.08,
+   "line": "scena chip",
+   "graphic": {
+    "type": "stage"
+   }
+  },
+  {
+   "id": "c1",
+   "start": 9.72,
+   "end": 15.08,
+   "line": "Un emulatore finge di essere uno Switch. Questo no: il gioco gira direttamente sul chip Apple.",
+   "graphic": {
+    "type": "chip",
+    "y": 0.41,
+    "props": {
+     "emuAt": 9.84,
+     "noAt": 11.97,
+     "appleAt": 13.06,
+     "metalAt": 14.66,
+     "from": "SWITCH",
+     "fromSub": "NVIDIA Tegra X1",
+     "to": "A17 Pro"
+    }
+   },
+   "sfx": [
+    {
+     "t": 9.74,
+     "name": "whip-cta"
+    },
+    {
+     "t": 9.84,
+     "name": "bolla-1"
+    },
+    {
+     "t": 11.97,
+     "name": "x-negato"
+    },
+    {
+     "t": 13.06,
+     "name": "cosi-scintilla"
+    },
+    {
+     "t": 14.66,
+     "name": "tessera-3d"
+    }
+   ]
+  },
+  {
+   "id": "f0",
+   "start": 15.08,
+   "end": 20.8,
+   "line": "scena fps",
+   "graphic": {
+    "type": "stage"
+   }
+  },
+  {
+   "id": "f1",
+   "start": 15.12,
+   "end": 16.15,
+   "line": "E il dato pazzesco?",
+   "graphic": {
+    "type": "title",
+    "y": 0.4,
+    "props": {
+     "text": "Il dato\n*pazzesco*",
+     "size": 130,
+     "wordAt": [
+      15.18,
+      15.28,
+      15.52
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 15.1,
+     "name": "whip-cta"
+    },
+    {
+     "t": 15.52,
+     "name": "timbro-1"
+    }
+   ]
+  },
+  {
+   "id": "f2",
+   "start": 16.15,
+   "end": 20.8,
+   "line": "Tears of the Kingdom fino a 60 fotogrammi al secondo. Sul primo Switch va a 30.",
+   "graphic": {
+    "type": "fps",
+    "props": {
+     "topY": 0.29,
+     "botY": 0.52,
+     "sixtyAt": 17.94,
+     "thirtyAt": 19.66,
+     "media": {
+      "clip": {
+       "file": "../trailers/totk_v3.mp4",
+       "from": 105.0,
+       "to": 109.8
+      }
+     }
+    }
+   },
+   "sfx": [
+    {
+     "t": 16.2,
+     "name": "telefono-entra"
+    },
+    {
+     "t": 17.94,
+     "name": "ding-100"
+    },
+    {
+     "t": 19.66,
+     "name": "scheda-entra-2"
+    }
+   ]
+  },
+  {
+   "id": "b0",
+   "start": 20.8,
+   "end": 24.72,
+   "line": "scena giochi",
+   "graphic": {
+    "type": "stage"
+   }
+  },
+  {
+   "id": "b1",
+   "start": 20.84,
+   "end": 21.48,
+   "line": "E non solo:",
+   "graphic": {
+    "type": "title",
+    "y": 0.4,
+    "props": {
+     "text": "E non *solo*",
+     "size": 130,
+     "wordAt": [
+      20.86,
+      20.94,
+      21.1
+     ],
+     "hideCaptions": true
+    }
+   },
+   "sfx": [
+    {
+     "t": 20.84,
+     "name": "whip-cta"
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "start": 21.48,
+   "end": 24.72,
+   "line": "Zelda, Mario Kart 8, Mario Odyssey, Silksong, Hades.",
+   "graphic": {
+    "type": "burst",
+    "y": 0.37,
+    "props": {
+     "hideCaptions": true,
+     "items": [
+      {
+       "label": "Zelda",
+       "at": 21.5,
+       "media": {
+        "clip": {
+         "file": "../trailers/totk_v3.mp4",
+         "from": 99.0,
+         "to": 101.2
+        }
+       }
+      },
+      {
+       "label": "Mario Kart *8*",
+       "at": 22.0,
+       "media": {
+        "src": "../trailers/mariokart_i4.png"
+       }
+      },
+      {
+       "label": "Mario *Odyssey*",
+       "at": 22.77,
+       "media": {
+        "src": "../trailers/odyssey_i2.png"
+       }
+      },
+      {
+       "label": "Silksong",
+       "at": 23.64,
+       "media": {
+        "clip": {
+         "file": "../trailers/silksong.mp4",
+         "from": 15.0,
+         "to": 16.4
+        }
+       }
+      },
+      {
+       "label": "Hades",
+       "at": 24.27,
+       "media": {
+        "clip": {
+         "file": "../trailers/hades.mp4",
+         "from": 2.6,
+         "to": 3.4
+        }
+       }
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 21.5,
+     "name": "flip-1"
+    },
+    {
+     "t": 22.0,
+     "name": "flip-2"
+    },
+    {
+     "t": 22.77,
+     "name": "flip-3"
+    },
+    {
+     "t": 23.64,
+     "name": "flip-1"
+    },
+    {
+     "t": 24.27,
+     "name": "flip-2"
+    }
+   ]
+  },
+  {
+   "id": "g0",
+   "start": 24.72,
+   "end": 27.95,
+   "line": "scena griglia",
+   "graphic": {
+    "type": "stage"
+   }
+  },
+  {
+   "id": "g1",
+   "start": 24.72,
+   "end": 27.95,
+   "line": "Oltre 100 giochi testati, per ora soprattutto su Mac.",
+   "graphic": {
+    "type": "grid",
+    "y": 0.39,
+    "props": {
+     "hideCaptions": true,
+     "cols": 3,
+     "count": 100,
+     "countAt": 25.28,
+     "note": "Per ora *soprattutto su Mac*",
+     "noteAt": 26.92,
+     "unit": "giochi testati",
+     "items": [
+      {
+       "src": "../trailers/botw_i1.png"
+      },
+      {
+       "src": "../trailers/animalcrossing_i1.png"
+      },
+      {
+       "src": "../trailers/metroid_i1.png"
+      },
+      {
+       "src": "../trailers/wonder_i1.png"
+      },
+      {
+       "src": "../trailers/totk_i2.png"
+      },
+      {
+       "src": "../trailers/fireemblem_i1.png"
+      },
+      {
+       "src": "../trailers/smash_i1.png"
+      },
+      {
+       "src": "../trailers/mariokart_i5.png"
+      },
+      {
+       "src": "../trailers/odyssey_i6.png"
+      },
+      {
+       "src": "../trailers/botw_i3.png"
+      },
+      {
+       "src": "../trailers/wonder_i3.png"
+      },
+      {
+       "src": "../trailers/animalcrossing_i3.png"
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 24.74,
+     "name": "tessere-appaiono"
+    },
+    {
+     "t": 25.28,
+     "name": "quantita-sale"
+    },
+    {
+     "t": 26.92,
+     "name": "bolla-3"
+    }
+   ]
+  },
+  {
+   "id": "n1",
+   "start": 28.0,
+   "end": 33.45,
+   "line": "Allora, cosa ti serve? Un Mac, un iPhone 15 Pro o più recente, e i tuoi giochi: quelli che possiedi davvero.",
+   "graphic": {
+    "type": "needs",
+    "y": 0.25,
+    "props": {
+     "items": [
+      {
+       "icon": "mac",
+       "label": "Mac",
+       "sub": "con chip Apple",
+       "at": 29.17
+      },
+      {
+       "icon": "iphone",
+       "label": "iPhone 15 Pro+",
+       "sub": "o più recente",
+       "at": 29.67,
+       "subAt": 30.8
+      },
+      {
+       "icon": "gamepad",
+       "label": "I tuoi giochi",
+       "sub": "quelli che possiedi",
+       "at": 31.6,
+       "subAt": 32.34
+      }
+     ]
+    }
+   },
+   "sfx": [
+    {
+     "t": 28.02,
+     "name": "scheda-entra-3"
+    },
+    {
+     "t": 29.17,
+     "name": "check-1"
+    },
+    {
+     "t": 29.67,
+     "name": "check-2"
+    },
+    {
+     "t": 31.6,
+     "name": "check-3"
+    }
+   ]
+  },
+  {
+   "id": "t1",
+   "start": 33.5,
+   "end": 35.94,
+   "line": "Scrivi SWITCH nei commenti e ti mando il link.",
+   "graphic": {
+    "type": "cta",
+    "y": 0.245,
+    "props": {
+     "word": "SWITCH",
+     "typeAt": 33.86,
+     "sendAt": 34.6,
+     "title": "Commenta *SWITCH*"
+    }
+   },
+   "sfx": [
+    {
+     "t": 33.52,
+     "name": "commenti-apre"
+    },
+    {
+     "t": 33.86,
+     "name": "digita-messaggio"
+    },
+    {
+     "t": 34.6,
+     "name": "invio-messaggio"
+    }
+   ]
+  }
+ ]
+}

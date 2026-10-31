@@ -28,7 +28,7 @@ export const getPack = (id: string): StylePack => PACKS[id] ?? { style: PACKS.ho
 
 /** Prima del render: il colore d'accento dello stile entra nella palette del pack (lo legge ogni componente). */
 export function applyTheme(style: ReelStyle) {
-  if (style.id === "pulse" || style.id === "zane") {
+  if (style.id === "pulse" || style.id === "zane" || style.id === "apple") {
     setAccent(style.motion.accentColor);
     setTheme(style.motion.theme);
   }

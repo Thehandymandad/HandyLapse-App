@@ -289,7 +289,7 @@ export const RENDERERS: Record<string, React.FC<{ g: GraphicEvent; style: ReelSt
   arrow: ArrowGraphic,
 };
 
-const LAYER: Record<string, number> = { scene: 0, chapter: 2 };
+const LAYER: Record<string, number> = { scene: 0, stage: 0, chapter: 2, progress: 2 };
 
 /** Grafiche: `layer="behind"` disegna solo quelle con behind=true (dietro la persona), `front` tutte le altre + hook e CTA. */
 export const GraphicsLayer: React.FC<{ tl: Timeline; style: ReelStyle; pack: StylePack; layer?: "front" | "behind" }> = ({ tl, style, pack, layer = "front" }) => {

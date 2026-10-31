@@ -1,0 +1,1031 @@
+{
+ "version": 1,
+ "name": "nxnative",
+ "source": {
+  "file": "base.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 35.867
+ },
+ "styleId": "apple",
+ "styleOverrides": {},
+ "keep": [],
+ "cuts": [],
+ "frame": null,
+ "joins": [
+  2.1,
+  5.1,
+  6.467,
+  9.667,
+  11.9,
+  12.467,
+  15.067,
+  16.133,
+  17.267,
+  17.867,
+  19.167,
+  20.767,
+  21.433,
+  21.933,
+  22.5,
+  22.7,
+  23.567,
+  24.2,
+  24.667,
+  27.933,
+  29.1,
+  29.6,
+  30.733,
+  31.533,
+  32.267,
+  33.467
+ ],
+ "hold": 0.6,
+ "words": [
+  {
+   "text": "Nintendo",
+   "start": 0.07,
+   "end": 0.65
+  },
+  {
+   "text": "non",
+   "start": 0.71,
+   "end": 0.83
+  },
+  {
+   "text": "vuole",
+   "start": 0.85,
+   "end": 1.05
+  },
+  {
+   "text": "che",
+   "start": 1.09,
+   "end": 1.15
+  },
+  {
+   "text": "tu",
+   "start": 1.19,
+   "end": 1.27
+  },
+  {
+   "text": "veda",
+   "start": 1.29,
+   "end": 1.45
+  },
+  {
+   "text": "questo",
+   "start": 1.49,
+   "end": 1.73
+  },
+  {
+   "text": "video.",
+   "start": 1.77,
+   "end": 2.01
+  },
+  {
+   "text": "Resta",
+   "start": 2.17,
+   "end": 2.37
+  },
+  {
+   "text": "fino",
+   "start": 2.47,
+   "end": 2.59
+  },
+  {
+   "text": "alla",
+   "start": 2.61,
+   "end": 2.73
+  },
+  {
+   "text": "fine,",
+   "start": 2.77,
+   "end": 2.97
+  },
+  {
+   "text": "ti",
+   "start": 3.17,
+   "end": 3.23
+  },
+  {
+   "text": "dico",
+   "start": 3.27,
+   "end": 3.41
+  },
+  {
+   "text": "esattamente",
+   "start": 3.43,
+   "end": 3.93
+  },
+  {
+   "text": "cosa",
+   "start": 3.95,
+   "end": 4.09
+  },
+  {
+   "text": "ti",
+   "start": 4.11,
+   "end": 4.19
+  },
+  {
+   "text": "serve",
+   "start": 4.23,
+   "end": 4.45
+  },
+  {
+   "text": "per",
+   "start": 4.49,
+   "end": 4.61
+  },
+  {
+   "text": "provarlo.",
+   "start": 4.63,
+   "end": 5.01
+  },
+  {
+   "text": "Si",
+   "start": 5.17,
+   "end": 5.27
+  },
+  {
+   "text": "chiama",
+   "start": 5.29,
+   "end": 5.55
+  },
+  {
+   "text": "nxnative,",
+   "start": 5.69,
+   "end": 6.35
+  },
+  {
+   "text": "è",
+   "start": 6.537,
+   "end": 6.557
+  },
+  {
+   "text": "su",
+   "start": 6.637,
+   "end": 6.737
+  },
+  {
+   "text": "GitHub",
+   "start": 6.757,
+   "end": 7.157
+  },
+  {
+   "text": "da",
+   "start": 7.297,
+   "end": 7.377
+  },
+  {
+   "text": "meno",
+   "start": 7.457,
+   "end": 7.677
+  },
+  {
+   "text": "di",
+   "start": 7.697,
+   "end": 7.757
+  },
+  {
+   "text": "un",
+   "start": 7.777,
+   "end": 7.837
+  },
+  {
+   "text": "mese",
+   "start": 7.877,
+   "end": 8.117
+  },
+  {
+   "text": "e",
+   "start": 8.337,
+   "end": 8.377
+  },
+  {
+   "text": "ha",
+   "start": 8.397,
+   "end": 8.437
+  },
+  {
+   "text": "già",
+   "start": 8.497,
+   "end": 8.597
+  },
+  {
+   "text": "più",
+   "start": 8.637,
+   "end": 8.697
+  },
+  {
+   "text": "di",
+   "start": 8.737,
+   "end": 8.797
+  },
+  {
+   "text": "diecimila",
+   "start": 8.837,
+   "end": 9.217
+  },
+  {
+   "text": "stelle.",
+   "start": 9.237,
+   "end": 9.557
+  },
+  {
+   "text": "Un",
+   "start": 9.737,
+   "end": 9.797
+  },
+  {
+   "text": "emulatore",
+   "start": 9.837,
+   "end": 10.277
+  },
+  {
+   "text": "finge",
+   "start": 10.497,
+   "end": 10.797
+  },
+  {
+   "text": "di",
+   "start": 10.837,
+   "end": 10.917
+  },
+  {
+   "text": "essere",
+   "start": 10.977,
+   "end": 11.317
+  },
+  {
+   "text": "uno",
+   "start": 11.397,
+   "end": 11.497
+  },
+  {
+   "text": "Switch,",
+   "start": 11.557,
+   "end": 11.797
+  },
+  {
+   "text": "questo",
+   "start": 11.97,
+   "end": 12.23
+  },
+  {
+   "text": "no.",
+   "start": 12.27,
+   "end": 12.37
+  },
+  {
+   "text": "Il",
+   "start": 12.537,
+   "end": 12.577
+  },
+  {
+   "text": "gioco",
+   "start": 12.637,
+   "end": 12.897
+  },
+  {
+   "text": "gira",
+   "start": 13.057,
+   "end": 13.337
+  },
+  {
+   "text": "direttamente",
+   "start": 13.377,
+   "end": 13.957
+  },
+  {
+   "text": "sul",
+   "start": 14.077,
+   "end": 14.217
+  },
+  {
+   "text": "tuo",
+   "start": 14.237,
+   "end": 14.337
+  },
+  {
+   "text": "chip",
+   "start": 14.357,
+   "end": 14.597
+  },
+  {
+   "text": "Apple.",
+   "start": 14.657,
+   "end": 14.977
+  },
+  {
+   "text": "E",
+   "start": 15.137,
+   "end": 15.157
+  },
+  {
+   "text": "il",
+   "start": 15.177,
+   "end": 15.237
+  },
+  {
+   "text": "dato",
+   "start": 15.277,
+   "end": 15.497
+  },
+  {
+   "text": "pazzesco?",
+   "start": 15.517,
+   "end": 16.037
+  },
+  {
+   "text": "Tears",
+   "start": 16.203,
+   "end": 16.523
+  },
+  {
+   "text": "of",
+   "start": 16.603,
+   "end": 16.683
+  },
+  {
+   "text": "the",
+   "start": 16.723,
+   "end": 16.823
+  },
+  {
+   "text": "Kingdom",
+   "start": 16.843,
+   "end": 17.163
+  },
+  {
+   "text": "fino",
+   "start": 17.337,
+   "end": 17.677
+  },
+  {
+   "text": "a",
+   "start": 17.717,
+   "end": 17.777
+  },
+  {
+   "text": "60",
+   "start": 17.937,
+   "end": 18.097
+  },
+  {
+   "text": "fotogrammi",
+   "start": 18.137,
+   "end": 18.517
+  },
+  {
+   "text": "al",
+   "start": 18.537,
+   "end": 18.597
+  },
+  {
+   "text": "secondo.",
+   "start": 18.657,
+   "end": 19.057
+  },
+  {
+   "text": "Sul",
+   "start": 19.237,
+   "end": 19.377
+  },
+  {
+   "text": "primo",
+   "start": 19.417,
+   "end": 19.617
+  },
+  {
+   "text": "Switch",
+   "start": 19.657,
+   "end": 19.897
+  },
+  {
+   "text": "va",
+   "start": 20.097,
+   "end": 20.177
+  },
+  {
+   "text": "a",
+   "start": 20.217,
+   "end": 20.237
+  },
+  {
+   "text": "30.",
+   "start": 20.437,
+   "end": 20.657
+  },
+  {
+   "text": "E",
+   "start": 20.837,
+   "end": 20.877
+  },
+  {
+   "text": "non",
+   "start": 20.917,
+   "end": 21.037
+  },
+  {
+   "text": "solo:",
+   "start": 21.097,
+   "end": 21.317
+  },
+  {
+   "text": "Zelda,",
+   "start": 21.503,
+   "end": 21.823
+  },
+  {
+   "text": "Mario",
+   "start": 22.003,
+   "end": 22.203
+  },
+  {
+   "text": "Kart",
+   "start": 22.243,
+   "end": 22.403
+  },
+  {
+   "text": "8,",
+   "start": 22.57,
+   "end": 22.59
+  },
+  {
+   "text": "Mario",
+   "start": 22.77,
+   "end": 23.01
+  },
+  {
+   "text": "Odyssey,",
+   "start": 23.13,
+   "end": 23.47
+  },
+  {
+   "text": "Silksong,",
+   "start": 23.637,
+   "end": 24.097
+  },
+  {
+   "text": "Hades.",
+   "start": 24.27,
+   "end": 24.57
+  },
+  {
+   "text": "Oltre",
+   "start": 24.737,
+   "end": 25.138
+  },
+  {
+   "text": "100",
+   "start": 25.278,
+   "end": 25.498
+  },
+  {
+   "text": "giochi",
+   "start": 25.538,
+   "end": 25.738
+  },
+  {
+   "text": "testati,",
+   "start": 25.778,
+   "end": 26.238
+  },
+  {
+   "text": "per",
+   "start": 26.438,
+   "end": 26.518
+  },
+  {
+   "text": "ora",
+   "start": 26.578,
+   "end": 26.698
+  },
+  {
+   "text": "soprattutto",
+   "start": 26.918,
+   "end": 27.478
+  },
+  {
+   "text": "su",
+   "start": 27.518,
+   "end": 27.598
+  },
+  {
+   "text": "Mac.",
+   "start": 27.638,
+   "end": 27.818
+  },
+  {
+   "text": "Allora",
+   "start": 28.003,
+   "end": 28.323
+  },
+  {
+   "text": "cosa",
+   "start": 28.363,
+   "end": 28.503
+  },
+  {
+   "text": "ti",
+   "start": 28.563,
+   "end": 28.623
+  },
+  {
+   "text": "serve?",
+   "start": 28.663,
+   "end": 28.983
+  },
+  {
+   "text": "Un",
+   "start": 29.17,
+   "end": 29.25
+  },
+  {
+   "text": "Mac,",
+   "start": 29.29,
+   "end": 29.49
+  },
+  {
+   "text": "un",
+   "start": 29.67,
+   "end": 29.73
+  },
+  {
+   "text": "iPhone",
+   "start": 29.85,
+   "end": 30.07
+  },
+  {
+   "text": "15",
+   "start": 30.11,
+   "end": 30.45
+  },
+  {
+   "text": "Pro",
+   "start": 30.47,
+   "end": 30.63
+  },
+  {
+   "text": "o",
+   "start": 30.803,
+   "end": 30.883
+  },
+  {
+   "text": "più",
+   "start": 30.903,
+   "end": 30.983
+  },
+  {
+   "text": "recente",
+   "start": 31.003,
+   "end": 31.423
+  },
+  {
+   "text": "e",
+   "start": 31.603,
+   "end": 31.643
+  },
+  {
+   "text": "i",
+   "start": 31.663,
+   "end": 31.703
+  },
+  {
+   "text": "tuoi",
+   "start": 31.723,
+   "end": 31.823
+  },
+  {
+   "text": "giochi,",
+   "start": 31.863,
+   "end": 32.163
+  },
+  {
+   "text": "quelli",
+   "start": 32.337,
+   "end": 32.517
+  },
+  {
+   "text": "che",
+   "start": 32.557,
+   "end": 32.657
+  },
+  {
+   "text": "possiedi",
+   "start": 32.677,
+   "end": 32.997
+  },
+  {
+   "text": "davvero.",
+   "start": 33.037,
+   "end": 33.357
+  },
+  {
+   "text": "Scrivi",
+   "start": 33.537,
+   "end": 33.797
+  },
+  {
+   "text": "Switch",
+   "start": 33.857,
+   "end": 34.357
+  },
+  {
+   "text": "nei",
+   "start": 34.397,
+   "end": 34.497
+  },
+  {
+   "text": "commenti",
+   "start": 34.537,
+   "end": 35.037
+  },
+  {
+   "text": "e",
+   "start": 35.077,
+   "end": 35.117
+  },
+  {
+   "text": "ti",
+   "start": 35.177,
+   "end": 35.237
+  },
+  {
+   "text": "mando",
+   "start": 35.277,
+   "end": 35.457
+  },
+  {
+   "text": "il",
+   "start": 35.477,
+   "end": 35.537
+  },
+  {
+   "text": "link.",
+   "start": 35.557,
+   "end": 35.777
+  }
+ ],
+ "emphasis": [
+  0,
+  22,
+  36,
+  54,
+  58,
+  65,
+  74,
+  87,
+  94,
+  100,
+  102,
+  117
+ ],
+ "hook": null,
+ "zooms": [
+  {
+   "at": 2.17,
+   "kind": "punch",
+   "strength": 0.6
+  },
+  {
+   "at": 5.17,
+   "kind": "punch",
+   "strength": 0.5
+  },
+  {
+   "at": 28.0,
+   "kind": "punch",
+   "strength": 0.6
+  },
+  {
+   "at": 33.54,
+   "kind": "punch",
+   "strength": 0.6
+  }
+ ],
+ "graphics": [
+  {
+   "type": "stage",
+   "at": 0.0,
+   "duration": 2.1,
+   "props": {
+    "cut": true
+   }
+  },
+  {
+   "type": "hero",
+   "at": 0.0,
+   "duration": 2.1,
+   "y": 0.41,
+   "props": {
+    "w": 800,
+    "zoomFrom": 0.86,
+    "push": 0.003,
+    "tilt": -10,
+    "roll": -4,
+    "media": {
+     "clip": {
+      "file": "../trailers/totk_v3.mp4",
+      "from": 77.2,
+      "to": 79.4
+     }
+    },
+    "instant": true
+   }
+  },
+  {
+   "type": "title",
+   "at": 0.0,
+   "duration": 2.1,
+   "y": 0.17,
+   "props": {
+    "text": "ZELDA.\n*SU IPHONE.*",
+    "size": 124,
+    "wordAt": [
+     0,
+     8,
+     12
+    ]
+   }
+  },
+  {
+   "type": "promise",
+   "at": 2.17,
+   "duration": 2.88,
+   "y": 0.2,
+   "props": {
+    "text": "Alla fine: *cosa ti serve*"
+   }
+  },
+  {
+   "type": "progress",
+   "at": 2.3,
+   "duration": 31.15,
+   "y": 0.135,
+   "props": {
+    "label": "Cosa ti serve",
+    "doneAt": 771
+   }
+  },
+  {
+   "type": "repo",
+   "at": 5.17,
+   "duration": 4.53,
+   "y": 0.235,
+   "props": {
+    "owner": "seedds",
+    "name": "nxnative",
+    "desc": "I tuoi giochi Switch, nativi su iPhone e iPad.",
+    "chips": [
+     "Open source",
+     "< 1 mese"
+    ],
+    "chipsAt": 69,
+    "stars": 10000,
+    "starsAt": 110
+   }
+  },
+  {
+   "type": "stage",
+   "at": 9.72,
+   "duration": 5.36
+  },
+  {
+   "type": "chip",
+   "at": 9.72,
+   "duration": 5.36,
+   "y": 0.41,
+   "props": {
+    "emuAt": 4,
+    "noAt": 68,
+    "appleAt": 100,
+    "metalAt": 148,
+    "from": "SWITCH",
+    "fromSub": "NVIDIA Tegra X1",
+    "to": "A17 Pro"
+   }
+  },
+  {
+   "type": "stage",
+   "at": 15.08,
+   "duration": 5.72
+  },
+  {
+   "type": "title",
+   "at": 15.12,
+   "duration": 1.03,
+   "y": 0.4,
+   "props": {
+    "text": "Il dato\n*pazzesco*",
+    "size": 130,
+    "wordAt": [
+     2,
+     5,
+     12
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "fps",
+   "at": 16.15,
+   "duration": 4.65,
+   "props": {
+    "topY": 0.29,
+    "botY": 0.52,
+    "sixtyAt": 54,
+    "thirtyAt": 105,
+    "media": {
+     "clip": {
+      "file": "../trailers/totk_v3.mp4",
+      "from": 105.0,
+      "to": 109.8
+     }
+    }
+   }
+  },
+  {
+   "type": "stage",
+   "at": 20.8,
+   "duration": 3.92
+  },
+  {
+   "type": "title",
+   "at": 20.84,
+   "duration": 0.64,
+   "y": 0.4,
+   "props": {
+    "text": "E non *solo*",
+    "size": 130,
+    "wordAt": [
+     1,
+     3,
+     8
+    ],
+    "hideCaptions": true
+   }
+  },
+  {
+   "type": "burst",
+   "at": 21.48,
+   "duration": 3.24,
+   "y": 0.37,
+   "props": {
+    "hideCaptions": true,
+    "items": [
+     {
+      "label": "Zelda",
+      "at": 1,
+      "media": {
+       "clip": {
+        "file": "../trailers/totk_v3.mp4",
+        "from": 99.0,
+        "to": 101.2
+       }
+      }
+     },
+     {
+      "label": "Mario Kart *8*",
+      "at": 16,
+      "media": {
+       "src": "../trailers/mariokart_i4.png"
+      }
+     },
+     {
+      "label": "Mario *Odyssey*",
+      "at": 39,
+      "media": {
+       "src": "../trailers/odyssey_i2.png"
+      }
+     },
+     {
+      "label": "Silksong",
+      "at": 65,
+      "media": {
+       "clip": {
+        "file": "../trailers/silksong.mp4",
+        "from": 15.0,
+        "to": 16.4
+       }
+      }
+     },
+     {
+      "label": "Hades",
+      "at": 84,
+      "media": {
+       "clip": {
+        "file": "../trailers/hades.mp4",
+        "from": 2.6,
+        "to": 3.4
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "stage",
+   "at": 24.72,
+   "duration": 3.23
+  },
+  {
+   "type": "grid",
+   "at": 24.72,
+   "duration": 3.23,
+   "y": 0.39,
+   "props": {
+    "hideCaptions": true,
+    "cols": 3,
+    "count": 100,
+    "countAt": 17,
+    "note": "Per ora *soprattutto su Mac*",
+    "noteAt": 66,
+    "unit": "giochi testati",
+    "items": [
+     {
+      "src": "../trailers/botw_i1.png"
+     },
+     {
+      "src": "../trailers/animalcrossing_i1.png"
+     },
+     {
+      "src": "../trailers/metroid_i1.png"
+     },
+     {
+      "src": "../trailers/wonder_i1.png"
+     },
+     {
+      "src": "../trailers/totk_i2.png"
+     },
+     {
+      "src": "../trailers/fireemblem_i1.png"
+     },
+     {
+      "src": "../trailers/smash_i1.png"
+     },
+     {
+      "src": "../trailers/mariokart_i5.png"
+     },
+     {
+      "src": "../trailers/odyssey_i6.png"
+     },
+     {
+      "src": "../trailers/botw_i3.png"
+     },
+     {
+      "src": "../trailers/wonder_i3.png"
+     },
+     {
+      "src": "../trailers/animalcrossing_i3.png"
+     }
+    ]
+   }
+  },
+  {
+   "type": "needs",
+   "at": 28.0,
+   "duration": 5.45,
+   "y": 0.25,
+   "props": {
+    "items": [
+     {
+      "icon": "mac",
+      "label": "Mac",
+      "sub": "con chip Apple",
+      "at": 35
+     },
+     {
+      "icon": "iphone",
+      "label": "iPhone 15 Pro+",
+      "sub": "o più recente",
+      "at": 50,
+      "subAt": 84
+     },
+     {
+      "icon": "gamepad",
+      "label": "I tuoi giochi",
+      "sub": "quelli che possiedi",
+      "at": 108,
+      "subAt": 130
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta",
+   "at": 33.5,
+   "duration": 2.44,
+   "y": 0.245,
+   "props": {
+    "word": "SWITCH",
+    "typeAt": 11,
+    "sendAt": 33,
+    "title": "Commenta *SWITCH*"
+   }
+  }
+ ],
+ "cta": null
+}
