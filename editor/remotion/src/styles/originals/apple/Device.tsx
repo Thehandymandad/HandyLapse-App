@@ -1,5 +1,5 @@
 import React from "react";
-import { Clip, isSprite, type Sprite } from "../../../lib/media";
+import { isSprite, type Sprite } from "../../../lib/media";
 import { A } from "./kit";
 
 /** Cosa va dentro uno schermo: un clip (sprite) o un'immagine con una spinta lenta (Ken Burns). */
@@ -10,7 +10,31 @@ export type Media = { clip?: Sprite; src?: string; pos?: string };
  * un frame rate più basso). `kb`: forza della spinta sulle immagini.
  */
 export const MediaView: React.FC<{ m: Media; f: number; w: number; h: number; hold?: number; kb?: number }> = ({ m, f, w, h, hold = 1, kb = 1 }) => {
-  if (m.clip && isSprite(m.clip)) return <Clip sprite={m.clip} f={Math.floor(f / hold) * hold} w={w} h={h} loop />;
+  if (m.clip && isSprite(m.clip)) {
+    // sprite come sfondo CSS (sincrono: c'è anche nel primo fotogramma del render, a differenza del canvas)
+    const sp = m.clip;
+    const n = sp.n;
+    const i = ((Math.floor(Math.floor(f / hold) * hold) % n) + n) % n;
+    const k = Math.max(w / sp.fw, h / sp.fh);
+    const fw = sp.fw * k;
+    const fh = sp.fh * k;
+    return (
+      <div style={{ position: "relative", width: w, height: h, overflow: "hidden" }}>
+        <div
+          style={{
+            position: "absolute",
+            left: (w - fw) / 2,
+            top: (h - fh) / 2,
+            width: fw,
+            height: fh,
+            backgroundImage: `url(${sp.src})`,
+            backgroundSize: `${sp.cols * fw}px ${sp.rows * fh}px`,
+            backgroundPosition: `${-(i % sp.cols) * fw}px ${-Math.floor(i / sp.cols) * fh}px`,
+          }}
+        />
+      </div>
+    );
+  }
   if (m.src)
     return (
       <div style={{ width: w, height: h, overflow: "hidden" }}>

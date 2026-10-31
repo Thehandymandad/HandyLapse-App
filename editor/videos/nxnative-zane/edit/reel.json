@@ -735,7 +735,7 @@
    "behind": true,
    "props": {
     "text": "NINTENDO\n*non vuole*",
-    "entry": "drop",
+    "entry": "pop",
     "size": 190,
     "wordAt": [
      0,

@@ -23,8 +23,10 @@ export const GameIntro: React.FC<G> = ({ g }) => {
   const ph = pw * (19.5 / 9);
   const s = f < shrinkAt ? 0 : bounce(f - shrinkAt, fps, BOUNCE_SOFT);
   const t = Math.min(1, Math.max(0, s));
-  // da schermo intero (scala 1 rispetto allo schermo) al telefono: la scala va da width/pw a 1
-  const sc = interpolate(t, [0, 1], [width / pw, 1]) * (s > 1 ? 1 + (s - 1) * 0.6 : 1);
+  // da schermo intero al telefono: le misure del riquadro cambiano davvero (il gameplay resta nitido)
+  const k = s > 1 ? 1 + (s - 1) * 0.6 : 1;
+  const bw = interpolate(t, [0, 1], [width, pw]) * k;
+  const bh = interpolate(t, [0, 1], [height, ph]) * k;
   const cx = interpolate(t, [0, 1], [width / 2, num(p.px, 0.8) * width]);
   const cy = interpolate(t, [0, 1], [height / 2, num(p.py, 0.45) * height]);
   const rot = f < shrinkAt ? 0 : interpolate(t, [0, 1], [0, num(p.rot, 8)]) + wobble(f - shrinkAt, 0.6);
@@ -32,13 +34,10 @@ export const GameIntro: React.FC<G> = ({ g }) => {
   const bez = interpolate(t, [0, 0.35], [0, 1], clamp);
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", left: cx, top: cy, transform: `translate(-50%,-50%) translateY(${(pull * 900).toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)})` }}>
-        <div style={{ position: "relative", width: pw, height: ph }}>
-          {/* schermo: a pieno schermo il telefono non ha cornice, poi la cornice compare */}
-          <div style={{ position: "absolute", inset: 0, borderRadius: 34 * bez, overflow: "hidden", background: "#000", boxShadow: bez > 0 ? `0 0 0 ${(7 * bez).toFixed(1)}px #2A2B2F, 0 0 0 ${(9 * bez).toFixed(1)}px #9A9BA0, 0 30px 60px rgba(0,0,0,${(0.35 * bez).toFixed(2)})` : undefined }}>
-            <MediaView m={m} f={f} w={pw} h={ph} />
-            {bez > 0 && <div style={{ position: "absolute", top: 10, left: "50%", width: 74, height: 22, borderRadius: 11, background: "#000", transform: "translateX(-50%)", opacity: bez }} />}
-          </div>
+      <div style={{ position: "absolute", left: cx, top: cy, transform: `translate(-50%,-50%) translateY(${(pull * 900).toFixed(1)}px) rotate(${rot.toFixed(2)}deg)` }}>
+        <div style={{ position: "relative", width: bw, height: bh, borderRadius: 34 * bez, overflow: "hidden", background: "#000", boxShadow: bez > 0 ? `0 0 0 ${(7 * bez).toFixed(1)}px #2A2B2F, 0 0 0 ${(9 * bez).toFixed(1)}px #9A9BA0, 0 30px 60px rgba(0,0,0,${(0.35 * bez).toFixed(2)})` : undefined }}>
+          <MediaView m={m} f={f} w={bw} h={bh} />
+          {bez > 0 && <div style={{ position: "absolute", top: 10, left: "50%", width: 74, height: 22, borderRadius: 11, background: "#000", transform: "translateX(-50%)", opacity: bez }} />}
         </div>
       </div>
     </AbsoluteFill>
