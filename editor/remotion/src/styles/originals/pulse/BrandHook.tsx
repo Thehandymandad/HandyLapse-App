@@ -21,6 +21,9 @@ export const BrandHook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const bandAt = typeof p.bandAt === "number" ? p.bandAt : 20;
   const openAt = typeof p.openAt === "number" ? p.openAt : 34;
   const pillY = typeof p.pillY === "number" ? p.pillY : 0.2;
+  const pillLogo = (p.pill as { src?: string } | undefined)?.src ?? logo;
+  const pillText = typeof p.pillText === "string" ? p.pillText : "non vuole";
+  const pillScale = typeof p.pillScale === "number" ? p.pillScale : 1;
 
   // 1) logo che sbatte (già visibile al fotogramma 0: parte a metà corsa)
   const ls = spring({ frame: f + 3, fps, config: { damping: 9, stiffness: 260, mass: 0.8 } });
@@ -57,7 +60,7 @@ export const BrandHook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
       <AbsoluteFill key={half ?? "full"} style={{ clipPath: clip, transform: `translate(${shakeX.toFixed(1)}px, ${(shakeY + dy).toFixed(1)}px) rotate(${rot.toFixed(2)}deg)` }}>
         <AbsoluteFill style={{ background: `radial-gradient(90% 70% at 50% 45%, ${color} 0%, ${color} 55%, #9E000C 100%)` }} />
         {/* logo */}
-        <div style={{ position: "absolute", left: "50%", top: "45%", width: W * 0.86, transform: `translate(-50%,-50%) scale(${logoScale.toFixed(3)}) rotate(${(-3 * (1 - ls)).toFixed(2)}deg)`, filter: "drop-shadow(0 18px 30px rgba(0,0,0,0.35))" }}>
+        <div style={{ position: "absolute", left: "50%", top: "45%", width: W * 0.86, transform: `translate(-50%,-50%) scale(${logoScale.toFixed(3)}) rotate(${(-3 * (1 - ls)).toFixed(2)}deg)`, filter: "drop-shadow(0 14px 22px rgba(90,0,8,0.45))" }}>
           {logo && <img src={logo} style={{ width: "100%", display: "block" }} />}
           {glitch === 1 && logo && (
             <>
@@ -99,9 +102,9 @@ export const BrandHook: React.FC<{ g: GraphicEvent }> = ({ g }) => {
       )}
       {/* pillola col logo che resta in alto */}
       {f >= openAt + 4 && (
-        <div style={{ position: "absolute", left: "50%", top: `${pillY * 100}%`, transform: `translate(-50%,-50%) scale(${Math.max(0, pillS).toFixed(3)})`, opacity: end, display: "flex", alignItems: "center", gap: 18, padding: "16px 30px", borderRadius: 999, background: color, boxShadow: "0 18px 40px rgba(230,0,18,0.35)" }}>
-          {logo && <img src={logo} style={{ height: 62, display: "block" }} />}
-          <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 40, color: "#FFFFFF", letterSpacing: "-0.02em" }}>non vuole</span>
+        <div style={{ position: "absolute", left: "50%", top: `${pillY * 100}%`, transform: `translate(-50%,-50%) scale(${(Math.max(0, pillS) * pillScale).toFixed(3)})`, opacity: end, whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: 18, padding: "16px 30px", borderRadius: 999, background: color, boxShadow: "0 18px 40px rgba(230,0,18,0.35)" }}>
+          {pillLogo && <img src={pillLogo} style={{ height: 62, display: "block" }} />}
+          <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 40, color: "#FFFFFF", letterSpacing: "-0.02em" }}>{pillText}</span>
         </div>
       )}
     </AbsoluteFill>

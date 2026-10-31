@@ -33,34 +33,7 @@
   "faceY": 0.42,
   "faceAt": 0.4
  },
- "joins": [
-  2.1,
-  5.1,
-  6.467,
-  9.667,
-  11.9,
-  12.467,
-  15.067,
-  16.133,
-  17.267,
-  17.867,
-  19.167,
-  20.767,
-  21.433,
-  21.933,
-  22.5,
-  22.7,
-  23.567,
-  24.2,
-  24.667,
-  27.933,
-  29.1,
-  29.6,
-  30.733,
-  31.533,
-  32.267,
-  33.467
- ],
+ "joins": [],
  "hold": 0.6,
  "words": [
   {
@@ -737,13 +710,18 @@
    "duration": 2.12,
    "props": {
     "overFrame": true,
-    "src": "../trailers/logos/nintendo.svg",
+    "src": "../trailers/logos/nintendo_white.svg",
     "color": "#E60012",
     "band": "NON VUOLE",
     "bandAt": 21,
     "openAt": 34,
-    "pillY": 0.22,
-    "captionsAt": 39
+    "pillY": 0.27,
+    "captionsAt": 39,
+    "pill": {
+     "src": "../trailers/logos/nintendo.svg"
+    },
+    "pillText": "non vuole che tu lo veda",
+    "pillScale": 1.25
    }
   },
   {

@@ -59,13 +59,18 @@
     "type": "brandhook",
     "props": {
      "overFrame": true,
-     "src": "../trailers/logos/nintendo.svg",
+     "src": "../trailers/logos/nintendo_white.svg",
      "color": "#E60012",
      "band": "NON VUOLE",
      "bandAt": 0.71,
      "openAt": 1.15,
-     "pillY": 0.22,
-     "captionsAt": 1.3
+     "pillY": 0.27,
+     "captionsAt": 1.3,
+     "pill": {
+      "src": "../trailers/logos/nintendo.svg"
+     },
+     "pillText": "non vuole che tu lo veda",
+     "pillScale": 1.25
     }
    },
    "sfx": [
