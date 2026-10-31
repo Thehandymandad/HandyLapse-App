@@ -29,7 +29,11 @@ suo tempo, il suo suono e il suo oggetto.
    dopo il suo ok. Regole di scelta: numeri → contatore o anello; liste → card a cascata; app/servizi → UI finta di quel
    servizio; frasi chiave → `ktext` (sans + *corsivo*, stile d'entrata diverso ogni volta); gesti o sguardi in camera →
    grafica vicino alla mano; capitoli → `chapter` fisso in alto; momenti forti → `scene` a schermo intero. Un solo
-   protagonista alla volta.
+   protagonista alla volta. **Tutto inerente a ciò che si dice** (richiesta dell'utente): dentro telefoni e schede va
+   l'oggetto della frase (`screen`: la chat dell'app nominata con il messaggio detto, il foglio con la riga o la cella
+   che cambia, un'immagine o un B-roll dell'oggetto), MAI il soggetto che parla, salvo quando parla di sé. Se serve un
+   oggetto fisico che non c'è nel girato (un pezzo, un magazzino), si propone un'immagine o un B-roll generato
+   (Higgsfield, a crediti: chiedere prima).
 2. `edit/motion-plan.json`: lo stesso piano in forma eseguibile (schema sotto). È l'unica fonte dei tempi per chi anima.
 
 ## Regole dure

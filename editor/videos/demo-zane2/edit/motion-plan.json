@@ -46,23 +46,23 @@
      ],
      "bg": "blur",
      "title": "• LIVE *risposte*",
-     "notifications": [
-      {
-       "at": 1.04,
-       "title": "Risposta arrivata",
-       "sub": "Lastre 3 mm trasparenti"
-      },
-      {
-       "at": 1.99,
-       "title": "34 pezzi",
-       "sub": "Scaffale B2 · magazzino"
-      },
-      {
-       "at": 2.6,
-       "title": "Excel letto",
-       "sub": "Inventario aggiornato alle 09:41"
-      }
-     ]
+     "screen": {
+      "kind": "chat",
+      "title": "Magazzino",
+      "status": "online",
+      "messages": [
+       {
+        "from": "me",
+        "text": "Lastre 3 mm trasparenti, quante ne abbiamo?",
+        "at": 0.15
+       },
+       {
+        "from": "bot",
+        "text": "*34 pezzi*\nScaffale B2 · magazzino nord",
+        "at": 1.04
+       }
+      ]
+     }
     }
    },
    "sfx": [
@@ -71,16 +71,12 @@
      "name": "telefono-entra"
     },
     {
+     "t": 0.15,
+     "name": "invio-messaggio"
+    },
+    {
      "t": 1.04,
      "name": "risposta-messaggio"
-    },
-    {
-     "t": 1.99,
-     "name": "bolla-2"
-    },
-    {
-     "t": 2.6,
-     "name": "bolla-3"
     }
    ]
   },
@@ -169,32 +165,56 @@
     "y": 0.41,
     "props": {
      "bg": "blur",
-     "gray": true,
+     "clip": [
+      7.7,
+      12.0
+     ],
      "pill": "NUOVO PEZZO",
      "cards": [
       {
-       "clip": [
-        16.7,
-        18.6
-       ],
        "at": 9.01,
-       "label": "B-ROLL 01 · CHAT"
+       "label": "WHATSAPP",
+       "screen": {
+        "kind": "chat",
+        "title": "Magazzino",
+        "messages": [
+         {
+          "from": "me",
+          "text": "*Nuovo:* lastra PMMA 3 mm\n2000×1000 · 10 pz",
+          "at": 10.14
+         }
+        ]
+       }
       },
       {
-       "clip": [
-        19.6,
-        21.4
-       ],
-       "at": 10.14,
-       "label": "B-ROLL 02 · MISURA"
-      },
-      {
-       "clip": [
-        21.8,
-        23.6
-       ],
        "at": 10.89,
-       "label": "B-ROLL 03 · EXCEL"
+       "label": "INVENTARIO.XLSX",
+       "screen": {
+        "kind": "sheet",
+        "columns": [
+         "Nome",
+         "Misura",
+         "Qtà"
+        ],
+        "rows": [
+         [
+          "Lastra PMMA 5 mm",
+          "2000×1000",
+          "18"
+         ],
+         [
+          "Profilo alluminio",
+          "3000",
+          "42"
+         ]
+        ],
+        "addAt": 11.4,
+        "addRow": [
+         "Lastra PMMA 3 mm",
+         "2000×1000",
+         "10"
+        ]
+       }
       }
      ],
      "title": "Nome, misura,\n*quantità*",
@@ -208,15 +228,15 @@
     },
     {
      "t": 10.14,
-     "name": "foglio-entra"
+     "name": "invio-messaggio"
     },
     {
      "t": 10.89,
-     "name": "foglio-entra-2"
+     "name": "foglio-entra"
     },
     {
-     "t": 10.95,
-     "name": "cubo-atterra"
+     "t": 11.4,
+     "name": "riga-aggiunta"
     }
    ]
   },
@@ -226,25 +246,24 @@
    "end": 13.58,
    "line": "e viene aggiunto da solo nell'Excel",
    "graphic": {
-    "type": "counter",
-    "y": 0.2,
+    "type": "ktext",
+    "y": 0.68,
     "props": {
-     "from": 24,
-     "to": 34,
-     "suffix": " pz",
-     "icon": "+",
-     "rollAt": 12.3,
-     "rollDur": 24
+     "text": "*da solo*\nnell'Excel",
+     "entry": "sticker",
+     "size": 130,
+     "wordAt": [
+      12.7,
+      12.85,
+      13.0
+     ],
+     "hideCaptions": true
     }
    },
    "sfx": [
     {
-     "t": 12.08,
-     "name": "scheda-entra-2"
-    },
-    {
-     "t": 12.3,
-     "name": "quantita-sale"
+     "t": 12.7,
+     "name": "timbro-1"
     }
    ]
   },
@@ -276,46 +295,75 @@
    "end": 16.64,
    "line": "la quantità si aggiorna",
    "graphic": {
-    "type": "ring",
-    "y": 0.44,
+    "type": "cards3d",
+    "y": 0.4,
     "props": {
-     "label": "Magazzino · lastre",
-     "values": [
+     "cards": [
       {
-       "at": 15.25,
-       "v": 62
+       "at": 14.0,
+       "label": "WHATSAPP",
+       "screen": {
+        "kind": "chat",
+        "title": "Magazzino",
+        "messages": [
+         {
+          "from": "me",
+          "text": "Arrivate *10 lastre* 3 mm",
+          "at": 15.25
+         }
+        ]
+       }
       },
       {
-       "at": 15.83,
-       "v": 98
+       "at": 15.5,
+       "label": "INVENTARIO.XLSX",
+       "screen": {
+        "kind": "sheet",
+        "columns": [
+         "Nome",
+         "Misura",
+         "Qtà"
+        ],
+        "rows": [
+         [
+          "Lastra PMMA 3 mm",
+          "2000×1000",
+          "24"
+         ],
+         [
+          "Lastra PMMA 5 mm",
+          "2000×1000",
+          "18"
+         ]
+        ],
+        "highlightRow": 0,
+        "updateAt": 15.83,
+        "updateRow": 0,
+        "updateCol": 2,
+        "updateTo": 34
+       }
       }
      ],
-     "sub": "pezzi disponibili",
-     "button": "Aggiorna Excel",
-     "done": "Excel aggiornato",
-     "clickAt": 16.14
+     "title": "La quantità\n*si aggiorna*",
+     "titleAt": 15.9
     }
    },
    "sfx": [
     {
-     "t": 13.62,
-     "name": "scheda-entra-3"
+     "t": 14.0,
+     "name": "cubo-cade"
     },
     {
      "t": 15.25,
-     "name": "colonna-misura"
+     "name": "invio-messaggio"
+    },
+    {
+     "t": 15.5,
+     "name": "foglio-entra-2"
     },
     {
      "t": 15.83,
      "name": "quantita-sale"
-    },
-    {
-     "t": 16.14,
-     "name": "scatto"
-    },
-    {
-     "t": 16.2,
-     "name": "check-completo"
     }
    ]
   },

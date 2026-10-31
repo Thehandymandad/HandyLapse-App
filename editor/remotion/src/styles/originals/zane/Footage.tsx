@@ -4,12 +4,14 @@ import { Clip, isSprite, type Sprite } from "../../../lib/media";
 import type { GraphicEvent } from "../../../lib/timeline";
 import { bounce, BOUNCE, BOUNCE_SOFT, breathe, EXIT_FRAMES, exitPull, LAND, nudge, squash, STAGGER, wobble } from "../../../motion/bouncy";
 import { clamp, INTER, MONO, P, rgba } from "../pulse/shared";
+import { ScreenView, type Screen } from "./screens";
 import { KWord, parseRuns } from "./text";
 
 /**
- * Il girato DENTRO le grafiche (README di movimento, sezione 5): 1–3 s del soggetto in un telefono inclinato o in
- * schede 3D, con dietro la copia sfocata dello stesso girato. `clip: [da, a]` nelle props = secondi del montato
- * (hf-project ne fa un foglio di fotogrammi).
+ * Telefono e schede 3D (README di movimento, sezione 5). Dentro c'è `screen`: ciò di cui si sta parlando (la chat
+ * WhatsApp, la riga dell'Excel, un'immagine dell'oggetto, vedi screens.tsx); il girato del soggetto (`clip`) solo
+ * quando parla di sé. `clip: [da, a]` = secondi del montato (hf-project ne fa un foglio di fotogrammi): serve anche
+ * per il fondo sfocato (`bg: "blur"`).
  */
 
 /** Fondo a schermo intero: girato sfocato e scurito, con vignetta d'accento (opzionale per phone/cards: bg "blur"). */
@@ -81,7 +83,7 @@ export const PhoneClip: React.FC<{ g: GraphicEvent }> = ({ g }) => {
           }}
         >
           <div style={{ position: "relative", width: W - 28, height: H - 28, borderRadius: 60, overflow: "hidden", background: "#111" }}>
-            {sprite && <Clip sprite={sprite} f={f} w={W - 28} h={H - 28} gray={!!pr.gray} />}
+            {pr.screen ? <ScreenView screen={pr.screen as Screen} f={f} w={W - 28} h={H - 28} gray={!!pr.gray} /> : sprite && <Clip sprite={sprite} f={f} w={W - 28} h={H - 28} gray={!!pr.gray} />}
             <div style={{ position: "absolute", left: "50%", top: 18, width: 150, height: 42, marginLeft: -75, borderRadius: 21, background: "#000" }} />
             {notes.map((n, i) => {
               const age = f - n.at;
@@ -135,7 +137,7 @@ export const PhoneClip: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   );
 };
 
-type Card = { clip?: Sprite; at?: number; label?: string };
+type Card = { screen?: Screen; clip?: Sprite; at?: number; label?: string };
 
 /**
  * "cards3d": 2–3 schede di girato inclinate in 3D, impilate, che cadono una dopo l'altra (le precedenti vengono spinte);
@@ -150,10 +152,10 @@ export const Cards3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
   const pull = exitPull(f, g.frames - EXIT_FRAMES);
   const cy = (g.y ?? 0.42) * 1920;
   const fade = interpolate(f, [g.frames - 3, g.frames], [1, 0], clamp);
-  const first = cards.find((c) => isSprite(c.clip))?.clip;
+  const first = isSprite(pr.clip) ? pr.clip : cards.find((c) => isSprite(c.clip))?.clip;
   const W = 780;
   const H = 440;
-  const STEP = 205;
+  const STEP = cards.length === 2 ? 285 : 205;
   // pillola e titolo stanno sotto l'ultima scheda
   const lastBottom = cy + ((cards.length - 1) / 2) * STEP + H / 2;
   return (
@@ -185,7 +187,7 @@ export const Cards3D: React.FC<{ g: GraphicEvent }> = ({ g }) => {
                 background: "#111",
               }}
             >
-              {isSprite(c.clip) && <Clip sprite={c.clip} f={age} w={W} h={H} gray={!!pr.gray} />}
+              {c.screen ? <ScreenView screen={c.screen} f={c.screen.kind === "clip" ? age : f} w={W} h={H} gray={!!pr.gray} /> : isSprite(c.clip) && <Clip sprite={c.clip} f={age} w={W} h={H} gray={!!pr.gray} />}
               {c.label && (
                 <div style={{ position: "absolute", left: 22, bottom: 18, fontFamily: MONO, fontSize: 22, letterSpacing: 3, color: "#FFFFFF", textTransform: "uppercase", textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>{c.label}</div>
               )}

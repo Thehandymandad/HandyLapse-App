@@ -56,6 +56,9 @@ def convert_props(props: dict, start: float) -> dict:
             out[k] = rel_frames(v, start)
         elif isinstance(v, list) and v and all(isinstance(x, dict) for x in v):
             out[k] = [convert_props(x, start) for x in v]
+        elif isinstance(v, dict):
+            # oggetti annidati (es. screen: {kind: "chat", messages: [{at…}]}) hanno tempi anche loro
+            out[k] = convert_props(v, start)
         else:
             out[k] = v
     return out

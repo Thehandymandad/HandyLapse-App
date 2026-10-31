@@ -28,6 +28,8 @@ def scale_props(props: dict, k: float) -> None:
             for it in v:
                 if isinstance(it, dict):
                     scale_props(it, k)
+        elif isinstance(v, dict):
+            scale_props(v, k)
 
 
 def main() -> None:

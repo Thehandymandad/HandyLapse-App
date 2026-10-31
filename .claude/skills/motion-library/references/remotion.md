@@ -55,6 +55,10 @@ grafiche di Pulse (nel tema `neon`) più queste:
 | `chart` | crescita, risultati, tempo recuperato | barre che salgono a molla, l'ultima d'accento, linea che le collega, numero a rullo | `values[]`, `from`, `to`, `prefix`, `suffix`, `rollAt` | riga aggiunta + successo |
 | `scribble` | "niente", "zero", sottolineare una cosa detta | freccia disegnata a mano + scritta a mano (Permanent Marker) d'accento attaccata al soggetto; con `grayFootage` il girato va in bianco e nero | `text` (`\n`), `x`, `y`, `arrow` up/down/left/right, `angle`, `writeAt`, `grayFootage` | scivolata + evidenziatore |
 
+Dentro `phoneclip` e `cards3d` va `screen` (`src/styles/originals/zane/screens.tsx`), inerente alla frase:
+`{kind: "chat", title, messages[{from: me|bot, text (*grassetto*), at}]}` (WhatsApp, con "sta scrivendo"),
+`{kind: "sheet", title, columns, rows, highlightRow, addAt + addRow, updateAt + updateRow/updateCol/updateTo}` (Excel),
+`{kind: "image", src}` (B-roll o foto dell'oggetto), `{kind: "clip", clip}` (il soggetto, solo quando parla di sé).
 `clip: [da, a]` (secondi del montato, anche dentro `cards[]`): hf-project ne fa un foglio di fotogrammi 360×640 e lo
 precarica; `src/lib/media.tsx` (`Clip`) lo disegna su canvas, in bianco e nero o sfocato. Tenere i clip a 1–3 s.
 
