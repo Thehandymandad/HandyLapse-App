@@ -9,6 +9,7 @@
 import { seeded } from "../../../lib/timeline";
 import { FpsDuo, GameIntro, GameStack } from "../zane/Games";
 import { Censored } from "./Censored";
+import { BrandHook } from "./BrandHook";
 import { Chip, Grid, Needs, Progress, Promise_, Repo, Title } from "../apple/Graphics";
 import { defineStyle } from "../../base";
 import { definePack } from "../../pack";
@@ -158,5 +159,6 @@ export const pack = definePack({
     progress: Progress,
     title: Title,
     censored: Censored,
+    brandhook: BrandHook,
   },
 });

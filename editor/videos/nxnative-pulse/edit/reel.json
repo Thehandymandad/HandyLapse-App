@@ -705,9 +705,9 @@
  "hook": null,
  "zooms": [
   {
-   "at": 0.71,
+   "at": 1.15,
    "kind": "punch",
-   "strength": 0.6
+   "strength": 0.8
   },
   {
    "at": 2.17,
@@ -732,26 +732,30 @@
  ],
  "graphics": [
   {
-   "type": "censored",
+   "type": "brandhook",
    "at": 0.0,
    "duration": 2.12,
-   "y": 0.265,
    "props": {
-    "title": "Giochi Switch su iPhone",
-    "stamp": "CENSURATO",
-    "stampAt": 21,
-    "barAt": 39
+    "overFrame": true,
+    "src": "../trailers/logos/nintendo.svg",
+    "color": "#E60012",
+    "band": "NON VUOLE",
+    "bandAt": 21,
+    "openAt": 34,
+    "pillY": 0.22,
+    "captionsAt": 39
    }
   },
   {
    "type": "promise",
-   "at": 2.17,
-   "duration": 2.88,
+   "at": 2.2,
+   "duration": 2.85,
    "y": 0.265,
    "scale": 1.45,
    "props": {
     "text": "Alla fine: *cosa ti serve*",
-    "accent": "#FF6633"
+    "accent": "#FF6633",
+    "rise": 420
    }
   },
   {
@@ -782,7 +786,8 @@
     "stars": 10000,
     "starsAt": 73,
     "starsDur": 42,
-    "accent": "#FF6633"
+    "accent": "#FF6633",
+    "rise": 420
    }
   },
   {
@@ -1011,7 +1016,8 @@
       "at": 74,
       "subAt": 97
      }
-    ]
+    ],
+    "rise": 380
    }
   },
   {

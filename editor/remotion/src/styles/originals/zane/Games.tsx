@@ -100,7 +100,7 @@ export const GameStack: React.FC<G> = ({ g }) => {
   const h = w * (9 / 19.5);
   const pull = exitPull(f, g.frames - EXIT_FRAMES);
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{ perspective: 1600 }}>
       {items.map((it, i) => {
         const age = f - it.at;
         if (age < 0) return null;
@@ -113,8 +113,9 @@ export const GameStack: React.FC<G> = ({ g }) => {
         const x = gone * side * 1100;
         const y = (1 - s) * -520 + pull * -800;
         const rot = wobble(age, side * 0.7) + gone * side * 18;
+        const spin = (1 - Math.min(1, s)) * side * 70;
         return (
-          <div key={i} style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.27) * 100}%`, zIndex: 10 + i, transform: `translate(-50%,-50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${q.sx.toFixed(3)}, ${q.sy.toFixed(3)})` }}>
+          <div key={i} style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.27) * 100}%`, zIndex: 10 + i, transform: `translate(-50%,-50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) rotateY(${spin.toFixed(2)}deg) scale(${q.sx.toFixed(3)}, ${q.sy.toFixed(3)})` }}>
             <IPhone w={w}>
               <MediaView m={it.media} f={age} w={w} h={h} />
             </IPhone>

@@ -108,7 +108,7 @@ export const Promise_: React.FC<G> = ({ g }) => {
   const s = pop(f, fps);
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames) }}>
-      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.2) * 100}%`, transform: `translate(-50%,-50%) scale(${(0.6 + 0.4 * s).toFixed(3)})`, opacity: Math.min(1, f / 4) }}>
+      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.2) * 100}%`, transform: `translate(-50%,-50%) translateY(${((1 - s) * num(p.rise, 0)).toFixed(1)}px) scale(${(0.6 + 0.4 * s).toFixed(3)}) rotate(${((1 - Math.min(1, s)) * -6).toFixed(2)}deg)`, opacity: Math.min(1, f / 4) }}>
         <Glass radius={999} pad="20px 36px 20px 24px" style={{ display: "flex", alignItems: "center", gap: 18, whiteSpace: "nowrap" }}>
           <div style={{ width: 64, height: 64, borderRadius: 32, background: AC, display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${(easeOut(lin(f, 10, 26)) * 180).toFixed(1)}deg)` }}>
             <Glyph name="hourglass" size={38} color="#FFFFFF" stroke={2.2} />
@@ -165,7 +165,7 @@ export const Repo: React.FC<G> = ({ g }) => {
   const pulse = landed ? 1 + 0.08 * Math.max(0, Math.sin((f - starsAt - starsDur) / 3)) * Math.max(0, 1 - (f - starsAt - starsDur) / 18) : 1;
   return (
     <AbsoluteFill style={{ opacity: outro(f, g.frames) }}>
-      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.25) * 100}%`, width: 900, transform: `translate(-50%,-50%) translateY(${((1 - s) * 80).toFixed(1)}px) scale(${(0.94 + 0.06 * s).toFixed(3)})`, opacity: Math.min(1, f / 5) }}>
+      <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.25) * 100}%`, width: 900, transform: `translate(-50%,-50%) translateY(${((1 - s) * num(p.rise, 80)).toFixed(1)}px) scale(${(0.94 + 0.06 * s).toFixed(3)}) rotateX(${((1 - s) * 25).toFixed(2)}deg)`, opacity: Math.min(1, f / 5) }}>
         <Glass radius={44} pad="34px 40px">
           <div style={{ display: "flex", alignItems: "center", gap: 16, fontFamily: SANS, fontSize: 30, color: A.sub, fontWeight: 600 }}>
             <Glyph name="repo" size={36} color={A.sub} />
@@ -192,6 +192,22 @@ export const Repo: React.FC<G> = ({ g }) => {
           </div>
         </Glass>
       </div>
+      {landed && f - starsAt - starsDur < 30 && (
+        <div style={{ position: "absolute", left: "50%", top: `${(g.y ?? 0.25) * 100}%`, width: 0, height: 0, transform: "translate(330px, 60px)" }}>
+          {Array.from({ length: 16 }, (_, k) => {
+            const t = (f - starsAt - starsDur) / 30;
+            const ang = (k / 16) * Math.PI * 2 + k * 0.37;
+            const dist = (140 + (k % 4) * 60) * Math.sqrt(t);
+            const x = Math.cos(ang) * dist;
+            const y = Math.sin(ang) * dist + t * t * 220;
+            return (
+              <div key={k} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) rotate(${(t * 360 * (k % 2 ? 1 : -1)).toFixed(0)}deg) scale(${(1 - t) * (0.7 + (k % 3) * 0.25)})`, opacity: 1 - t }}>
+                <Glyph name="star" size={44} color={k % 3 ? "#FFD60A" : AC} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -465,7 +481,8 @@ export const Needs: React.FC<G> = ({ g }) => {
           const s = pop(f, fps, it.at);
           const on = f >= it.at;
           return (
-            <div key={i} style={{ width: tw, transform: `translateY(${((1 - Math.min(1, s)) * 60).toFixed(1)}px) scale(${(0.7 + 0.3 * Math.max(0, s)).toFixed(3)})`, opacity: on ? Math.min(1, (f - it.at) / 4) : 0 }}>
+            <div key={i} style={{ width: tw, perspective: 1200, transform: `translateY(${((1 - Math.min(1, s)) * num(p.rise, 60)).toFixed(1)}px) scale(${(0.7 + 0.3 * Math.max(0, s)).toFixed(3)})`, opacity: on ? Math.min(1, (f - it.at) / 3) : 0 }}>
+              <div style={{ transform: `rotateY(${((1 - Math.min(1, s)) * 100).toFixed(1)}deg)`, transformStyle: "preserve-3d" }}>
               <Glass radius={40} pad="30px 18px 26px" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, textAlign: "center", ...(dark ? { background: "linear-gradient(160deg, #141A12, #0A0D09)", border: `1.5px solid ${AC}33`, boxShadow: "0 30px 60px rgba(0,0,0,0.28)" } : {}) }}>
                 <div style={{ width: 120, height: 120, borderRadius: 32, background: dark ? `${AC}22` : "rgba(31,107,255,0.10)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Glyph name={it.icon} size={84} color={AC} stroke={1.7} />
@@ -473,6 +490,7 @@ export const Needs: React.FC<G> = ({ g }) => {
                 <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, letterSpacing: "-0.03em", color: dark ? "#FFFFFF" : A.ink, lineHeight: 1.05 }}>{it.label}</div>
                 {it.sub && <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 26, color: dark ? "rgba(255,255,255,0.6)" : A.sub, lineHeight: 1.15, ...blurIn(f, fps, it.subAt ?? it.at + 6, 10) }}>{it.sub}</div>}
               </Glass>
+              </div>
             </div>
           );
         })}

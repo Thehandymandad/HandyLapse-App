@@ -17,6 +17,8 @@ export const PulseCaptions: React.FC<{ tl: Timeline; style: ReelStyle }> = ({ tl
   const g = tl.captions.find((c) => frame >= c.from && frame < c.to);
   if (!g) return null;
   if (tl.graphics.some((x) => x.props?.hideCaptions && frame >= x.from && frame < x.from + x.frames)) return null;
+  // props.captionsAt: sottotitoli nascosti dall'inizio della grafica fino a quel momento (es. hook a schermo intero)
+  if (tl.graphics.some((x) => typeof x.props?.captionsAt === "number" && frame >= x.from && frame < x.from + (x.props.captionsAt as number))) return null;
   const c = style.captions;
   const active = g.words.findIndex((w, i) => frame >= w.from && (i === g.words.length - 1 || frame < g.words[i + 1].from));
   const light = P.theme === "light";

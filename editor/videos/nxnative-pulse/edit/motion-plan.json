@@ -24,11 +24,6 @@
  },
  "camera": [
   {
-   "t": 0.71,
-   "op": "punch",
-   "strength": 0.6
-  },
-  {
    "t": 2.17,
    "op": "punch",
    "strength": 0.5
@@ -47,6 +42,11 @@
    "t": 33.86,
    "op": "punch",
    "strength": 0.5
+  },
+  {
+   "t": 1.15,
+   "op": "punch",
+   "strength": 0.8
   }
  ],
  "scenes": [
@@ -56,29 +56,40 @@
    "end": 2.12,
    "line": "Nintendo non vuole che tu veda questo video.",
    "graphic": {
-    "type": "censored",
-    "y": 0.265,
+    "type": "brandhook",
     "props": {
-     "title": "Giochi Switch su iPhone",
-     "stamp": "CENSURATO",
-     "stampAt": 0.71,
-     "barAt": 1.29
+     "overFrame": true,
+     "src": "../trailers/logos/nintendo.svg",
+     "color": "#E60012",
+     "band": "NON VUOLE",
+     "bandAt": 0.71,
+     "openAt": 1.15,
+     "pillY": 0.22,
+     "captionsAt": 1.3
     }
    },
    "sfx": [
     {
-     "t": 0.71,
+     "t": 0.0,
      "name": "timbro-1"
     },
     {
-     "t": 1.29,
-     "name": "x-negato"
+     "t": 0.71,
+     "name": "whip-cta"
+    },
+    {
+     "t": 0.95,
+     "name": "timbro-2"
+    },
+    {
+     "t": 1.15,
+     "name": "pila-crollo"
     }
    ]
   },
   {
    "id": "p1",
-   "start": 2.17,
+   "start": 2.2,
    "end": 5.05,
    "line": "Resta fino alla fine: ti dico esattamente cosa ti serve per provarlo.",
    "graphic": {
@@ -86,7 +97,8 @@
     "y": 0.265,
     "props": {
      "text": "Alla fine: *cosa ti serve*",
-     "accent": "#FF6633"
+     "accent": "#FF6633",
+     "rise": 420
     },
     "scale": 1.45
    },
@@ -142,7 +154,8 @@
      "stars": 10000,
      "starsAt": 7.6,
      "starsDur": 42,
-     "accent": "#FF6633"
+     "accent": "#FF6633",
+     "rise": 420
     }
    },
    "sfx": [
@@ -493,7 +506,8 @@
        "at": 31.6,
        "subAt": 32.34
       }
-     ]
+     ],
+     "rise": 380
     }
    },
    "sfx": [
