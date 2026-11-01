@@ -56,15 +56,15 @@ Tempo da mettere in conto: **2–4 giorni** di sessioni per arrivare al primo re
 1. Su **github.com** crea un repository nuovo, **privato**, per esempio `editor-video`, con un README.
 2. Vai su **claude.ai/code**, entra con il tuo account e collega GitHub, dando accesso a quel repository.
 3. Crea un **ambiente** (environment). Nelle sue impostazioni:
-   - **Network access:** scegli il livello limitato e aggiungi tra gli *Allowed domains*, lasciando attiva la
-     casella dei package manager:
-     `api.elevenlabs.io`, `github.com`, `raw.githubusercontent.com`, `objects.githubusercontent.com`,
-     `registry.npmjs.org`, `pypi.org`, `files.pythonhosted.org`, `drive.google.com`,
-     `drive.usercontent.google.com`, `fonts.googleapis.com`, `fonts.gstatic.com`.
-     Se più avanti qualcosa viene bloccato, Claude ti dice il nome del dominio: aggiungilo qui.
-   - **Chiave di ElevenLabs:** su elevenlabs.io → impostazioni → *API keys* crea una chiave con il permesso
-     "speech to text". Aggiungila nelle impostazioni dell'ambiente, tra i *Network secrets* (o come variabile
-     d'ambiente) con il nome **`ELEVENLABS_API_KEY`**. **Mai incollarla nella chat.**
+    - **Network access:** scegli il livello limitato e aggiungi tra gli *Allowed domains*, lasciando attiva la
+      casella dei package manager:
+      `api.elevenlabs.io`, `github.com`, `raw.githubusercontent.com`, `objects.githubusercontent.com`,
+      `registry.npmjs.org`, `pypi.org`, `files.pythonhosted.org`, `drive.google.com`,
+      `drive.usercontent.google.com`, `fonts.googleapis.com`, `fonts.gstatic.com`.
+      Se più avanti qualcosa viene bloccato, Claude ti dice il nome del dominio: aggiungilo qui.
+    - **Chiave di ElevenLabs:** su elevenlabs.io → impostazioni → *API keys* crea una chiave con il permesso
+      "speech to text". Aggiungila nelle impostazioni dell'ambiente, tra i *Network secrets* (o come variabile
+      d'ambiente) con il nome **`ELEVENLABS_API_KEY`**. **Mai incollarla nella chat.**
 4. Apri una sessione nuova sul repository: da qui in poi lavori lì.
 
 Documentazione ufficiale sugli ambienti: https://code.claude.com/docs/en/cloud-environments
