@@ -75,3 +75,4 @@ __pycache__/
 /editor/videos/*/trailers
 /editor/videos/**/behind/hf/
 /editor/videos/**/.*.hf-transaction-*/
+/editor/videos/yt-ref/
