@@ -51,6 +51,14 @@ if [ ! -f "$HOME/.claude/skills/remotion-to-hyperframes/SKILL.md" ]; then
 fi
 python3 -c 'import cv2, numpy' 2>/dev/null || python3 -m pip install -q opencv-python-headless numpy
 
+# 5. modello per cambiare lo sfondo (RobustVideoMatting, licenza GPL-3.0), usato da background.py e studio.py
+MODEL="$ROOT/editor/assets/models/rvm_mobilenetv3_fp32.onnx"
+if [ ! -f "$MODEL" ]; then
+  mkdir -p "$(dirname "$MODEL")"
+  curl -fsSL -o "$MODEL" https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx
+fi
+python3 -c 'import onnxruntime' 2>/dev/null || python3 -m pip install -q onnxruntime
+
 echo "Editor pronto. Skill del progetto ($SKILLS):"
 ls "$SKILLS"
 echo "Skill globali (~/.claude/skills):"

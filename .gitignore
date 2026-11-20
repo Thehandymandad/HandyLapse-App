@@ -55,7 +55,7 @@ next-env.d.ts
 /editor/videos/**/edit/transcripts/
 /editor/assets/objects/raw/
 __pycache__/
-/editor/assets/sfx/*.wav
+/editor/assets/sfx/raw/
 /editor/assets/sfx/*.mp3
 /editor/videos/**/edit/clips_graded/
 /editor/videos/**/edit/stems/
